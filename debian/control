@@ -1,0 +1,21 @@
+Source: transcriber-ag
+Section: contrib/misc
+Priority: optional
+Maintainer: Giulio Paci <giuliopaci@gmail.com>
+Build-Depends: debhelper (>= 7.0.50~), cdbs, libxerces-c2-dev, libavcodec-dev, libavformat-dev, libswscale-dev, libavdevice-dev
+Standards-Version: 3.9.2
+Homepage: http://transag.sourceforge.net/
+
+Package: transcriber-ag
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Speech transcription tool
+ Transcription tool for assisting the manual annotation of speech
+ signals. It provides a user-friendly graphical user interface (GUI)
+ for segmenting long duration speech recordings, transcribing them,
+ labeling speech turns, topic changes and acoustic conditions.
+ .
+ TranscriberAG is geared toward the needs of the speech research
+ community, but its features might be found useful for other
+ applications. It uses the Annotation Graph format as native format
+ but can read a number of other annotation formats.

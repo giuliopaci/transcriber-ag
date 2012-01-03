@@ -1,0 +1,31 @@
+This package was debianized by Giulio Paci <giuliopaci@gmail.com> on Tue, 03 Jan 2012 20:54:56 +0100.
+
+Upstream Authors:
+    Mailing list <transag-admins@lists.sourceforge.net>
+
+Project coordinators:
+
+    Edouard Geoffrois
+    Karim Boudahmane
+
+
+Copyright: 
+
+    Copyright (C) 2011 DGA - All rights reserved.
+
+License:
+
+    TranscriberAG is released under the GNU GPLv3 license.
+
+    On Debian systems, the complete text of the GNU General Public
+    License can be found in the '/usr/share/common-licenses/GPL-3'
+    file.
+
+
+The Debian packaging is (C) 2011, Giulio Paci <giuliopaci@gmail.com>
+and is licensed under the same license of the upstream package, see
+above.
+
+
+# Please also look if there are files or directories which have a
+# different copyright/license attached and list them here.

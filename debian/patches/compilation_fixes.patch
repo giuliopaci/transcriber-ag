@@ -1,0 +1,329 @@
+Index: transcriber-ag-2.0.0/source/src/DataModel/DataModel.cpp
+===================================================================
+--- transcriber-ag-2.0.0.orig/source/src/DataModel/DataModel.cpp	2011-05-10 09:59:51.000000000 +0200
++++ transcriber-ag-2.0.0/source/src/DataModel/DataModel.cpp	2011-12-09 01:20:33.000000000 +0100
+@@ -3890,7 +3890,7 @@
+ 				if (diff < m_conventions.minSegmentSize(graphtype))
+ 				{
+ 					if (diff < 0)
+-						sprintf(msg, _("Can't set segment end beyond previous/next segment"));
++						sprintf(msg, "%s", _("Can't set segment end beyond previous/next segment"));
+ 					else
+ 						sprintf(msg, _("segment size must be > %f secs"), m_conventions.minSegmentSize(graphtype)) ;
+ 					ok_forw = false;
+@@ -3915,7 +3915,7 @@
+ 					if (diff < m_conventions.minSegmentSize(graphtype))
+ 					{
+ 						if (diff < 0)
+-							sprintf(msg, _("Can't set segment end beyond previous/next segment")) ;
++							sprintf(msg, "%s", _("Can't set segment end beyond previous/next segment")) ;
+ 						else
+ 							sprintf(msg, _("segment size must be > %f secs"), m_conventions.minSegmentSize(graphtype));
+ 						ok_down = false;
+Index: transcriber-ag-2.0.0/source/src/Formats/HTML/HTMLWriter.cpp
+===================================================================
+--- transcriber-ag-2.0.0.orig/source/src/Formats/HTML/HTMLWriter.cpp	2011-05-10 09:59:51.000000000 +0200
++++ transcriber-ag-2.0.0/source/src/Formats/HTML/HTMLWriter.cpp	2011-12-10 00:25:45.000000000 +0100
+@@ -154,7 +154,7 @@
+ 
+ 	// DUREE
+ 	out << "\t\t<tr>" << endl << "\t\t\t<td><strong> Durée </strong></td>" << endl;
+-	out << "\t\t\t<td> " << FormatTime::FormatTime(m_data->getSignalDuration(), true, true);
++	out << "\t\t\t<td> " << FormatTime(m_data->getSignalDuration(), true, true);
+ 	out << " </td>" << endl << "\t\t</tr>" << endl;
+ 
+ 
+Index: transcriber-ag-2.0.0/source/src/Formats/TXT/TXTWriter.cpp
+===================================================================
+--- transcriber-ag-2.0.0.orig/source/src/Formats/TXT/TXTWriter.cpp	2011-05-10 09:59:51.000000000 +0200
++++ transcriber-ag-2.0.0/source/src/Formats/TXT/TXTWriter.cpp	2011-12-10 00:27:00.000000000 +0100
+@@ -90,7 +90,7 @@
+ 	out << "# Nombre de Pistes : " << nb_tracks << endl;
+ 
+ 	// DUREE
+-	out << "# Durée :" << FormatTime::FormatTime(m_data->getSignalDuration(), true, true)  << endl ;
++	out << "# Durée :" << FormatTime(m_data->getSignalDuration(), true, true)  << endl ;
+ 
+ 	// NB DE SPEAKER
+ 	out << "# Nombre de locuteurs : " << m_data->getSpeakerDictionary().size()  << endl;
+Index: transcriber-ag-2.0.0/source/src/GUI/Common/Explorer_popup.cpp
+===================================================================
+--- transcriber-ag-2.0.0.orig/source/src/GUI/Common/Explorer_popup.cpp	2011-05-10 09:59:51.000000000 +0200
++++ transcriber-ag-2.0.0/source/src/GUI/Common/Explorer_popup.cpp	2011-12-11 15:35:27.000000000 +0100
+@@ -94,108 +94,108 @@
+ 	//> add possibilities for NOT SUPPORTED FILES
+ 	if (mode==-1) {
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_RENAME] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_COPY] ] ) ) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_CUT] ] ) ) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PASTE] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_SUPPRESS] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PROPERTY] ] ) ) ;
+ 	}
+ 	//> CLASSIC DIRECTORIES
+ 	else if (mode==1) {
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_REFRESHDIR] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_NEW_DIR] ]) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_RENAME] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_COPY] ] ) ) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_CUT] ] ) ) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PASTE] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_DEFINESHORTCUT] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_SUPPRESS] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PROPERTY] ] ) ) ;
+ 	}
+ 	//> SYSTEM ROOT
+ 	else if (mode==2) {
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_REFRESHDIR] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_NEW_DIR] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PASTE] ] ) ) ;
+ 	}
+ 	//> PROJECT ROOT
+ 	else if (mode==3) {
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_REFRESHDIR] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_CHANGESHORTCUT] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_NEW_DIR] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PASTE] ] ) ) ;
+ 	}
+ 	//> FTP Root
+ 	else if (mode==4) {
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_REFRESHFTPDIR] ] ) ) ;
+-		/*menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		/*menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(map_items[ map_indice[POPUP_TREE_PROPERTY] ] ) ) ;*/
+ 	}
+ 	//> cache FTP ROOT
+ 	else if (mode==5) {
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_REFRESHDIR] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_CHANGESHORTCUT] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_NEW_DIR] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PASTE] ] ) ) ;
+ 	}
+ 	//> shortcut ROOT
+ 	else if (mode==6) {
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_REFRESHDIR] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_NEW_DIR] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PASTE] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_CHANGESHORTCUT] ] ) ) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_DELETESHORTCUT] ] ) ) ;
+ 	}
+ 	//> AUDIO FILES
+ 	else if(mode==101) {
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_OPEN] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_CREATE_SINGLETRANSCRIPTION] ] ) ) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_CREATE_MULTITRANSCRIPTION] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_RENAME] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_COPY] ] ) ) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_CUT] ] ) ) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PASTE] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_SUPPRESS] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PROPERTY] ] ) ) ;
+ 	}
+ 	//> ANNOTATION FILES
+ 	else if(mode==102) {
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_OPEN] ] ) ) ;
+ 		//menulist.push_back( *(map_items[ map_indice[POPUP_TREE_IMPORT_IN] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_RENAME] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_COPY] ] ) ) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_CUT] ] ) ) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PASTE] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_SUPPRESS] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PROPERTY] ] ) ) ;
+ 	}
+ 	//> FTP FILEs
+@@ -206,22 +206,22 @@
+ 	else if(mode==151) {
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_OPEN] ] ) ) ;
+ 		//menulist.push_back( *(map_items[ map_indice[POPUP_TREE_PLAY] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_SUPPRESS] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PROPERTY] ] ) ) ;
+ 	}
+ 	//> ANNOTATION FTP cache FILEs
+ 	else if(mode==152) {
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_OPEN] ] ) ) ;
+ 		//menulist.push_back( *(map_items[ map_indice[POPUP_TREE_IMPORT_IN] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_FTP_UPLOAD] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_COPY] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_SUPPRESS] ] ) ) ;
+-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
++		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
+ 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PROPERTY] ] ) ) ;
+ 	}
+ 	//> FTP directory
+Index: transcriber-ag-2.0.0/source/src/GUI/Speaker/DictionaryManager.cpp
+===================================================================
+--- transcriber-ag-2.0.0.orig/source/src/GUI/Speaker/DictionaryManager.cpp	2011-05-10 09:59:51.000000000 +0200
++++ transcriber-ag-2.0.0/source/src/GUI/Speaker/DictionaryManager.cpp	2011-12-11 15:41:34.000000000 +0100
+@@ -48,7 +48,7 @@
+ 
+ 	//-- Creation
+ 	SpeakerDico_dialog* dialog = NULL ;
+-	dicos.insert(dicos.end(), new SpeakerDico_dialog::SpeakerDico_dialog(editable, modal, win) ) ;
++	dicos.insert(dicos.end(), new SpeakerDico_dialog(editable, modal, win) ) ;
+ 	dialog = dicos[dicos.size()-1] ;
+ 
+ 	//> -- Post options
+@@ -90,7 +90,7 @@
+ 
+ 	//> -- Creation
+ 	SpeakerDico_dialog* dialog = NULL ;
+-	dicos.insert(dicos.end(), new SpeakerDico_dialog::SpeakerDico_dialog(editable, modal, win) ) ;
++	dicos.insert(dicos.end(), new SpeakerDico_dialog(editable, modal, win) ) ;
+ 	dialog = dicos[dicos.size()-1] ;
+ 	global_dictionary = dialog ;
+ 
+Index: transcriber-ag-2.0.0/source/src/MediaComponent/io/FFMpegHandler.cpp
+===================================================================
+--- transcriber-ag-2.0.0.orig/source/src/MediaComponent/io/FFMpegHandler.cpp	2011-05-10 09:59:51.000000000 +0200
++++ transcriber-ag-2.0.0/source/src/MediaComponent/io/FFMpegHandler.cpp	2011-12-11 15:01:31.000000000 +0100
+@@ -98,12 +98,12 @@
+ 	{
+ 		switch( formatCtx->streams[i]->codec->codec_type )
+ 		{
+-			case CODEC_TYPE_VIDEO:
++			case AVMEDIA_TYPE_VIDEO:
+ 				v_streams.push_back(i);
+ 				video_time_base = av_q2d(formatCtx->streams[v_streams[0]]->time_base);
+ 				break;
+ 
+-			case CODEC_TYPE_AUDIO:
++			case AVMEDIA_TYPE_AUDIO:
+ 				a_streams.push_back(i);
+ 				audio_time_base = av_q2d(formatCtx->streams[a_streams[0]]->time_base);
+ 				break;
+@@ -267,7 +267,10 @@
+ 	{
+ 		case AudioCtx:
+ 			frame->len	= AVCODEC_MAX_AUDIO_FRAME_SIZE;
+-			bytes		= avcodec_decode_audio2(decoderCtx, frame->samples, &frame->len, buf, buf_len);
++			AVPacket avpacket;
++			avpacket.size = buf_len;
++			avpacket.data = buf;
++			bytes		= avcodec_decode_audio3(decoderCtx, frame->samples, &frame->len, &avpacket);
+ 
+ 			if (m_info()->audio_channels)
+ 				frame->len /= m_info()->audio_channels;
+@@ -307,7 +310,10 @@
+ 
+ 				f->samples	= new int16_t[AVCODEC_MAX_AUDIO_FRAME_SIZE];
+ 				f->len		= AVCODEC_MAX_AUDIO_FRAME_SIZE;
+-				bytes		= avcodec_decode_audio2(decoderCtx, f->samples, &f->len, buf, toDecode);
++				AVPacket avpacket;
++				avpacket.data = buf;
++				avpacket.size = toDecode;
++				bytes		= avcodec_decode_audio3(decoderCtx, f->samples, &f->len, &avpacket);
+ 
+ 				buf += bytes;
+ 				toDecode -= bytes;
+@@ -500,9 +506,9 @@
+ 			if (pkt.stream_index == v_streams.at(0))
+ 			{
+         		decoderCtx->reordered_opaque= pkt.pts;
+-		        bytes = avcodec_decode_video(decoderCtx,
++		        bytes = avcodec_decode_video2(decoderCtx,
+                                        		 i_frame, &frame_ok,
+-		                                     pkt.data, pkt.size);
++		                                     &pkt);
+ 
+ 				if (bytes <= 0)
+ 				{
+Index: transcriber-ag-2.0.0/source/src/MediaComponent/video/VideoWriter.cpp
+===================================================================
+--- transcriber-ag-2.0.0.orig/source/src/MediaComponent/video/VideoWriter.cpp	2011-05-10 09:59:51.000000000 +0200
++++ transcriber-ag-2.0.0/source/src/MediaComponent/video/VideoWriter.cpp	2011-12-11 15:15:14.000000000 +0100
+@@ -42,15 +42,15 @@
+ 
+ 
+ 	// -- Format guesser & allocation --
+-	outFormat = guess_format(NULL, sourcePath.c_str(), NULL);
++	outFormat = av_guess_format(NULL, sourcePath.c_str(), NULL);
+ 
+ 	if (!outFormat)
+ 	{
+ 		printf("Format Guess Fallback : mpeg\n");
+-		outFormat = guess_format("mpeg", NULL, NULL);
++		outFormat = av_guess_format("mpeg", NULL, NULL);
+ 	}
+     
+-	formatCtx = av_alloc_format_context();
++	formatCtx = avformat_alloc_context();
+ 
+ 	if (!formatCtx)
+ 	{
+@@ -144,7 +144,7 @@
+ 
+ 	codecCtx				= stream->codec;
+ 	codecCtx->codec_id		= CODEC_ID_BMP;
+-	codecCtx->codec_type	= CODEC_TYPE_VIDEO;
++	codecCtx->codec_type	= AVMEDIA_TYPE_VIDEO;
+ 
+ 	// -- Sample parameters --
+ 	codecCtx->bit_rate		= device->m_info()->video_bit_rate;

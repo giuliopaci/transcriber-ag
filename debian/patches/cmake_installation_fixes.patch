@@ -1,0 +1,88 @@
+Index: transcriber-ag-2.0.0/libs/aglib-2.0.1/src/ag/CMakeLists.txt
+===================================================================
+--- transcriber-ag-2.0.0.orig/libs/aglib-2.0.1/src/ag/CMakeLists.txt	2009-12-08 17:10:56.000000000 +0100
++++ transcriber-ag-2.0.0/libs/aglib-2.0.1/src/ag/CMakeLists.txt	2012-01-12 19:30:19.000000000 +0100
+@@ -50,3 +50,10 @@
+ 	
+ 	dl
+ )
++
++install(
++	TARGETS ag
++
++	RUNTIME	DESTINATION bin
++	LIBRARY	DESTINATION lib
++)
+\ No newline at end of file
+Index: transcriber-ag-2.0.0/source/src/GUI/CMakeLists.txt
+===================================================================
+--- transcriber-ag-2.0.0.orig/source/src/GUI/CMakeLists.txt	2011-05-10 13:21:23.000000000 +0200
++++ transcriber-ag-2.0.0/source/src/GUI/CMakeLists.txt	2012-01-12 19:30:19.000000000 +0100
+@@ -167,3 +167,10 @@
+ 	${APPLE_LINKS}
+ 	${WIN32_LINKS}
+ )
++
++install(
++	TARGETS ${ERR_APP} ${APP_NAME}
++
++	RUNTIME	DESTINATION bin
++	LIBRARY	DESTINATION lib
++)
+\ No newline at end of file
+Index: transcriber-ag-2.0.0/source/src/Formats/CTM/CMakeLists.txt
+===================================================================
+--- transcriber-ag-2.0.0.orig/source/src/Formats/CTM/CMakeLists.txt	2010-06-21 18:52:41.000000000 +0200
++++ transcriber-ag-2.0.0/source/src/Formats/CTM/CMakeLists.txt	2012-01-16 01:53:46.000000000 +0100
+@@ -82,7 +82,7 @@
+ )
+ 
+ install(
+-	TARGETS	agfio_plugin_CTM ctm2tag 
++	TARGETS	agfio_plugin_CTM ctm2tag testCTM
+ 
+ 	RUNTIME	DESTINATION bin
+ 	LIBRARY	DESTINATION	lib/ag
+Index: transcriber-ag-2.0.0/source/src/Formats/TransAG_compat/CMakeLists.txt
+===================================================================
+--- transcriber-ag-2.0.0.orig/source/src/Formats/TransAG_compat/CMakeLists.txt	2010-05-28 20:14:37.000000000 +0200
++++ transcriber-ag-2.0.0/source/src/Formats/TransAG_compat/CMakeLists.txt	2012-01-16 01:57:55.000000000 +0100
+@@ -102,7 +102,7 @@
+ )
+ 
+ install(
+-	TARGETS	agfio_plugin_TransAG_compat testTransAG_compat
++	TARGETS	agfio_plugin_TransAG_compat testTransAG_compat compat2tag
+ 	
+ 	RUNTIME	DESTINATION bin
+ 	LIBRARY	DESTINATION	lib/ag
+Index: transcriber-ag-2.0.0/source/src/MediaComponent/CMakeLists.txt
+===================================================================
+--- transcriber-ag-2.0.0.orig/source/src/MediaComponent/CMakeLists.txt	2011-03-31 15:21:00.000000000 +0200
++++ transcriber-ag-2.0.0/source/src/MediaComponent/CMakeLists.txt	2012-01-16 02:00:58.000000000 +0100
+@@ -275,5 +275,11 @@
+ 	${APPLE_LINKS}
+ 	${WIN32_LINKS}
+ )
++install(
++	TARGETS	GenPeaks MMPlayer MediumGuesser MultimediaRTSPServer ThumbnailerTest audioTool
++	
++	RUNTIME	DESTINATION bin
++	LIBRARY	DESTINATION lib
++)
+ endif (VIDEO_BUILD)
+ 
+Index: transcriber-ag-2.0.0/source/src/Tools/CMakeLists.txt
+===================================================================
+--- transcriber-ag-2.0.0.orig/source/src/Tools/CMakeLists.txt	2010-06-21 18:52:41.000000000 +0200
++++ transcriber-ag-2.0.0/source/src/Tools/CMakeLists.txt	2012-01-16 02:03:19.000000000 +0100
+@@ -133,3 +133,9 @@
+     ${APPLE_LINKS}
+     ${WIN32_LINKS}
+ )
++install(
++	TARGETS	add_section clean_tag convert_tag extract_speaker_segments merge_tag print_spk printtag tagstats testag
++	
++	RUNTIME	DESTINATION bin
++	LIBRARY	DESTINATION lib
++)
