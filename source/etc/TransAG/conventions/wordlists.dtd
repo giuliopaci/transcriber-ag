@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DTD for predefined words list in TranscriberAG -->
+
+<!ELEMENT word (#PCDATA)>
+<!ELEMENT wordlist (word+)>
+<!ATTLIST wordlist
+	comment CDATA #REQUIRED
+	label NMTOKEN #REQUIRED
+>
+<!ELEMENT wordlists (wordlist+)>

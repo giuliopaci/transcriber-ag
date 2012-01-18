@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>AGLIB documentation: Using AGLIB (AGAPI) with Java AG wrapper</title>
+</head>
+<body bgcolor="#ffffee">
+
+<h3>Using AGLIB (AGAPI) with Java AG wrapper</h3>
+
+<hr>
+
+<h4>Unix-like systems</h4>
+
+<p>The Java AG wrapper module is installed in
+<tt>&lt;prefix&gt;/lib/ag_wrapper/java</tt>, where <tt>&lt;prefix&gt;</tt>
+is a path where the package is installed, and it can be specified using the
+<a href="install.html#--prefix">--prefix</a> option at configuration
+time.  The default value of <tt>&lt;prefix&gt;</tt> is <tt>/usr/local</tt>.
+</p>
+
+<p>Here is example Java code that uses the Java AG wrapper:</p>
+
+<table width="100%" cellpadding="5px">
+<tr><td bgcolor="#e0e0e0"><pre>
+public class MyClass {
+  static {
+    System.loadLibrary("jag");
+  }
+
+  public static void main(String[] args) {
+    String agsetId = jag.CreateAGSet("TIMIT");
+    String timelineId = jag.CreateTimeline(agsetId);
+    String ag = jag.CreateAG(agsetId, timelineId);
+    String a1 = jag.CreateAnchor(ag);
+    jag.SetAnchorOffset(a1, 1.0);
+    String a2 = jag.CreateAnchor(ag);
+    jag.SetAnchorOffset(a2, 2.0);
+    String ann = jag.CreateAnnotation(ag, a1, a2, "word");
+    jag.SetFeature(ann, "label", "cat");
+    System.out.println(jag.toXML(agsetId));
+  }
+}
+</pre></td></tr>
+</table>
+
+<p><u>Lines 2-4</u> load the Java AG wrapper.  For this code to work, the
+<tt>LD_LIBRARY_PATH</tt> and <tt>CLASSPATH</tt> environment variables
+should be set properly to contain the installation path of the module;
+e.g.:</p>
+
+<pre>
+    LD_LIBRARY_PATH=...:<prefix>/lib/ag_wrapper/java:...
+    CLASSPATH=...:<prefix>/lib/ag_wrapper/java/jag.jar:...
+</pre>
+
+<p><u>Lines 7-14</u> show how AGAPI functions are called.  Note that each function is prefixed by <tt>`jag.'</tt>.</p>
+
+<p>NOTE: Please don't forget to set <tt>LD_LIBRARY_PATH</tt> properly for
+the other required shared libraries (libag and plugins). See
+<a href="install.html#post">Post-installation</a> for details.</p>
+
+<hr><a href="http://agtk.sourceforge.net/">Annotation Graph Toolkit</a>
+
+</body>
+</html>

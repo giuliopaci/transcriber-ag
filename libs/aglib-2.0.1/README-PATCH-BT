@@ -1,0 +1,13 @@
+BERTIN TECHNOLOGIES -  2010.11.09
+----------------------------------------------------------------------------------------------------------------
+
+This version of AGLIB is the 2.0.1 version patched by {Bertin Technologies} .
+The code has been modified for fixing / improving some behaviours related to 
+TranscriberAG.
+
+For compiling the patched version, use the cMake files. 
+
+Modifications in code (source & headers) are surrounded by 
+/* (( PATCH BT -- */
+mymod ;
+/* -- PATCH BT )) */

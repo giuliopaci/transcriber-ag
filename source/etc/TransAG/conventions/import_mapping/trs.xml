@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE parameters SYSTEM "../../configurationAG.dtd">
+<!-- 
+		This file describes the mapping done between trs qualifiers and tag qualifiers.
+		It is used when opening a trs file in TranscriberAG.
+		The convention file used for the resulting tag file is the file given by the
+		load.convention.file value of the current file
+	    (<parameters>
+			<component id="load">
+				<section id="convention")
+		This convention file must be placed into conventions TranscriberAG configuration folder
+	
+	<!> CAUTION
+		When updating current mapping file, be sure the specified convention file handles 
+		all qualifiers (type and desc) resulting from the mapping. 
+		If it doesn't, qualifiers may not be visible in application. A warning dialog will be 
+		displayed while opening a TRS for all unhandled type or desc.
+	
+		Behaviour:
+		==========
+		"type" is not in convention: annotation isn't displayed & warning is popped.
+		"desc" is not in convention:
+				1) If type has parameter "editable" set to true in convention files
+				   (means user can define subtype/desc), import is OK
+				2) If type has parameter "editable" set to false, annotation is displayed
+				   but a warning dialog is popped.
+		
+	<!> CAUTION
+-->	
+<parameters>
+	<component id="load">
+		<section id="convention" label="convention file from convention TranscriberAG directory">
+			<parameter id="file" label="" value="trs_import.rc"/>
+		</section>
+	</component>
+<!--
+		EVENTS MAPPING
+		For each qualifier specified here, if no type or desc are specified, the application
+		will use the same value (take care if that value isn't handled in convention file)
+	
+		<!> REMARK: If event has "desc1" as description, add the type before:
+	
+					Example: for event type=mytype and desc=mydesc
+				
+					<section id="type" label="description mapping">
+						<parameter id="mytype" label="" value="noise"/>
+					</section>
+					<section id="desc" label="description mapping">
+						<parameter id="mytype.mydesc" label="" value="inspiration"/>
+					</section>
+	  
+-->	
+	<component id="event">
+		<section id="type" label="description mapping">
+			<parameter id="noise" label="" value="noise"/>
+			<parameter id="lexical" label="" value="lexical"/>
+			<parameter id="pronounce" label="" value="pronounce"/>
+			<parameter id="language" label="" value="language"/>
+			<parameter id="comment" label="" value="comment"/>											
+		</section>
+		<section id="desc" label="description mapping">
+			<parameter id="noise.i" label="" value="inspiration"/>
+			<parameter id="noise.r" label="" value="breath"/>
+			<parameter id="noise.e" label="" value="expiration"/>
+			<parameter id="noise.rire" label="" value="laugh"/>
+			<parameter id="noise.pi" label="" value="inaudible"/>
+			<parameter id="noise.rev" label="" value="revert"/>			
+			<parameter id="noise.rep" label="" value="repeat"/>
+			<parameter id="noise.n" label="" value="sniffing"/>
+			<parameter id="noise.pf" label="" value="pronounced-low"/>
+			<parameter id="noise.bb" label="" value="mouth"/>
+			<parameter id="noise.bg" label="" value="throat"/>
+			<parameter id="noise.tx" label="" value="cough"/>
+			<parameter id="noise.sif" label="" value="whistling"/>
+			<parameter id="noise.b" label="" value="undefined"/>
+			<parameter id="noise.conv" label="" value="conversation"/>
+			<parameter id="noise.pap" label="" value="paper"/>
+			<parameter id="noise.shh" label="" value="electric"/>
+			<parameter id="noise.mic" label="" value="micro"/>
+			<parameter id="noise.rire en fond" label="" value="laugh-bg"/>
+			<parameter id="noise.toux en fond" label="" value="cough-bg"/>
+			<parameter id="noise.indicatif" label="" value="code"/>
+			<parameter id="noise.jingle" label="" value="jingle"/>
+			<parameter id="noise.top" label="" value="top"/>			
+			<parameter id="noise.musique" label="" value="music"/>
+			<parameter id="noise.applaude" label="" value="applause"/>
+			<parameter id="noise.nontrans" label="" value="notrans"/>
+			<parameter id="lexical.?" label="" value="?"/>			
+			<parameter id="lexical.^^" label="" value="^^"/>
+			<parameter id="lexical.néologisme" label="" value="neologism"/>
+			<parameter id="lexical.()" label="" value="()"/>
+			<parameter id="pronounce.pi" label="" value="unintelligible"/>
+			<parameter id="pronounce.*" label="" value="badly"/>
+			<parameter id="pronounce.lapsus" label="" value="lapsus"/>
+			<parameter id="pronounce.pif" label="" value="unintelligible-low"/>
+			<parameter id="pronounce.ch" label="" value="whisper"/>
+			<parameter id="pronounce.lu" label="" value="abbreviation-read"/>
+			<parameter id="pronounce.épelé" label="" value="abbreviation-spelt"/>
+			<parameter id="pronounce.19 cent..." label="" value="19..."/>
+		</section>
+	</component>
+<!--	
+		ENTITIES MAPPING
+	
+	<!> REMARK: For ENTITIES, TRS format is type.subtype, where subtype can be composed by
+				several elements separated by "." 
+				
+				ex:
+				type.SUBTYPE
+				SUBTYPE = sub1.sub2
+				==> type.sub1.sub2
+	
+				In mapping file, it will be specified by this way:
+				<component id="entity">
+					<section id="type" label="description mapping">
+						<parameter id="type" label="" value="TAGtype"/>
+					</section>
+					<section id="desc" label="description mapping">
+						<parameter id="type.sub1.sub2" label="" value="TAGsub"/>
+					</section>
+				</component>		
+	 
+				NOTE THAT WE KEEP THE "type" INFORMATION IN DESC MAPPING IN ORDER TO ENABLE DIFFERENT MAPPING
+				FOR SAME sub but FROM DIFFERENT TYPE (ex: type1.sub & type2.sub)
+	
+	<!> 
+				If nothing is specified for TYPE mapping, the application will compute the
+				type by cutting the incoming value (part before the first ".")
+				{ex: type.subtype => type}
+	
+				If nothing is specified for DESC mapping, the application will compute the
+				type by cutting the incoming value (part after the first ".")
+				{ex: type.subtype => subtype}
+
+--> 	
+	<component id="entity">
+		<section id="type" label="description mapping">
+			<parameter id="pers" label="" value="person"/>
+			<parameter id="loc" label="" value="location"/>
+			<parameter id="time" label="" value="time"/>
+			<parameter id="org" label="" value="organization"/>
+			<parameter id="fac" label="" value="facilities"/>
+			<parameter id="amount" label="" value="amount"/>
+			<parameter id="gsp" label="" value="gsp"/>
+			<parameter id="unk" label="" value="unknown"/>			
+			<parameter id="prod" label="" value="product"/>	
+		</section>
+		<section id="desc" label="description mapping">
+			<parameter id="pers" label="" value="person"/>
+			<parameter id="pers.hum" label="" value="human"/>
+			<parameter id="pers.anim" label="" value="anime"/>
+			<parameter id="pers.imag" label="" value="image"/>
+			<parameter id="loc" label="" value="location"/>
+			<parameter id="loc.geo" label="" value="geo"/>
+			<parameter id="loc.geo.line" label="" value="geo.line"/>
+			<parameter id="loc.addr" label="" value="address"/>
+			<parameter id="loc.addr.post" label="" value="postal"/>
+			<parameter id="loc.addr.tel" label="" value="tel"/>
+			<parameter id="loc.addr.elec" label="" value="email"/>
+			<parameter id="time" label="" value="time"/>
+			<parameter id="time.date" label="" value="date"/>
+			<parameter id="time.date.abs" label="" value="date.abs"/>
+			<parameter id="time.date.rel" label="" value="date.rel"/>
+			<parameter id="time.hour" label="" value="hour"/>
+			<parameter id="org" label="" value="organization"/>
+			<parameter id="org.pol" label="" value="pol"/>
+			<parameter id="org.edu" label="" value="educative"/>
+			<parameter id="org.non-profit" label="" value="non-profit"/>
+			<parameter id="org.com" label="" value="commercial"/>
+			<parameter id="org.edu/gsp.pers" label="" value="edu/gsp.pers"/>
+			<parameter id="unk" label="" value="unknown"/>
+			<parameter id="fac" label="" value="facilities"/>
+			<parameter id="amount" label="" value="amount"/>
+			<parameter id="amount.phy" label="" value="phy"/>
+			<parameter id="amount.phy.age" label="" value="phy.age"/>
+			<parameter id="amount.phy.dur" label="" value="phy.dur"/>
+			<parameter id="amount.phy.temp" label="" value="phy.temp"/>
+			<parameter id="amount.phy.len" label="" value="phy.len"/>
+			<parameter id="amount.phy.wei" label="" value="phy.wei"/>
+			<parameter id="amount.phy.spd" label="" value="phy.spd"/>
+			<parameter id="amount.cur" label="" value="currency"/>
+			<parameter id="gsp" label="" value="gsp"/>
+			<parameter id="gsp.pers" label="" value="person"/>
+			<parameter id="gsp.org" label="" value="organization"/>
+			<parameter id="gsp.loc" label="" value="location"/>
+			<parameter id="prod" label="" value="product"/>
+			<parameter id="prod.vehicule" label="" value="vehicle"/>
+			<parameter id="prod.award" label="" value="award"/>
+			<parameter id="prod.art" label="" value="art"/>
+			<parameter id="prod.printing" label="" value="printing"/>
+			<parameter id="prod.award/pers.hum" label="" value="award/pers.hum"/>
+		</section>
+	</component>
+<!--	
+			BACKGROUND MAPPING
+--> 		
+	<component id="background">
+		<section id="type" label="background type mapping">
+			<parameter id="music" label="" value="music"/>
+			<parameter id="speech" label="" value="speech"/>
+			<parameter id="shh" label="" value="noise"/>
+			<parameter id="other" label="" value="noise"/>
+		</section>	
+	</component>	
+</parameters>

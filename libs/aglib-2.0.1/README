@@ -1,0 +1,18 @@
+Annotation Graph Library
+========================
+  
+http://agtk.sf.net/
+  
+This library package contains a C++ implementation of the Annotation
+Graph API, a database interface, and file I/O plugins for several
+existing annotation formats.  Wrappers are included which permit the
+libraries to be accessed from Tcl/tk, Python and Java.
+  
+The AG library implements the annotation graph model [1].
+  
+For installation instructions, please see doc/index.html.
+  
+[1] Steven Bird & Mark Liberman (2001).  A formal framework
+    for linguistic annotation.  Speech Communication 33, 23-60.
+    http://www.arXiv.org/abs/cs/0010033
+

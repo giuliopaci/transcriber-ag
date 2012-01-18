@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<annotations>
+	<file_properties>
+		<property label="analysis_status" type="choice_list" choice_list="analysis_status_list"/>
+                <property label="analysis_themes" type="text"/>
+		<property label="file_workload" type="text"/>
+		<property label="file_status" type="choice_list" choice_list="file_status_list"/>
+	</file_properties>
+	<choice_lists>
+		<choice_list id="analysis_status_list">
+			<value text="ok"/>
+			<value text="nok"/>
+			<value text="?"/>
+			<value text="none"/>
+		</choice_list>
+		<choice_list id="file_status_list">
+			<value text="terminated"/>
+			<value text="none"/>
+		</choice_list>
+	</choice_lists>
+</annotations>

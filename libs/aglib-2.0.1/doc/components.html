@@ -1,0 +1,175 @@
+<html>
+<head>
+<title>AGLIB documentation:Components of AGLIB and required
+third-party packages</title>
+</head>
+<body bgcolor="ffffee">
+
+<h2>Components of AGLIB and required third-party packages</h2>
+
+<ul>
+<li><a href="#components">Components of AGLIB</a></li>
+<li><a href="#packages">Required third-party packages</a></li>
+</ul>
+
+
+
+<hr></hr>
+<a name="components"/>
+<h3>Components of AGLIB</h3>
+
+<p><b>AGLIB</b> consists of the main library (<b>libag</b>),
+<b>AG wrapper</b>s, and
+<b>file I/O plugin</b>s.  The diagram below illustrates
+the architecture of AGLIB.</p>
+
+<p align="center"><img src="archi.gif"/></p>
+
+
+
+<br>
+<h4>libag: The main library</h4>
+
+<p>The main library (libag) consists of the <b>core</b>
+library and some API's (<b>AGAPI</b> and the
+<b>Tree API</b>) built on top of it. The core implements the
+annotation graph data structures (classes) and functions (methods) that
+allow users to access the data structure.  The core also implements an ODBC
+interface (<b>agdb</b>) and <b>file I/O
+plugin interface</b>.</p>
+
+<p>The agdb module allows annotation graphs to be stored and loaded from
+database systems via ODBC drivers.</p>
+
+<p>The file I/O plugin interface is an interface for the file I/O plugins,
+and also defines a plugin programming interface.</p>
+
+<p>AGAPI wraps the core, exporting a set of flat functions. The intention
+was to provide a set of functions that can be easily wrapped by <a
+href="http://www.swig.org">SWIG</a> so that we can quickly develop scripting
+language interfaces to the main library.  However, because this flat API
+is so understand and use, it has been widely employed even by AGLIB
+components such as file I/O plugins, which could have used the core
+directly.</p>
+
+<p>The Tree API is written using AGAPI and provides operations that
+manipulate annotation graph representation of tree structures as described
+in [<a href="http://arXiv.org/abs/cs.CL/0204007">Cotton &amp; Bird,
+2002</a>].</p>
+
+
+<br>
+<h4>AG wrappers: Scripting language interfaces</h4>
+
+<p>The AG wrapper modules is a native module of one of the scripting languages,
+allowing programs written in that language to use the AGAPI functions (plus Tree API
+functions). These modules are created by wrapping AGAPI and the Tree
+API of the main library using <a href="http://www.swig.org">SWIG</a>.
+Advantages of this approach, over porting the entire C++ code of AGLIB to
+the native code of the language are that:
+
+<ul>
+<li>it is possible to add a language support very quickly,</li>
+<li>the engine (the main library) is written in C++, so it inherits
+the speed of C++, and</li>
+<li>there is only one code-base to maintain.</li>
+</ul>
+
+Currently there are three AG wrappers available: the Tcl AG wrapper, the
+Python AG wrapper and the Java AG wrapper
+</p>
+
+<br>
+<h4>File I/O plugins</h4>
+
+<p>The File I/O plugins are seperate modules that can be loaded dynamically
+at runtime. These modules export <tt>Load</tt> and <tt>Store</tt>
+functions, which bridge the annotation graph data model and other file
+formats.  As of the release time of AGLIB 2.0, eleven file I/O plugins
+are available. For more information on the supported formats, see
+<a href="formats.html">Supported file formats</a>.</p>
+
+<hr>
+<a name="packages"/>
+<h3>Required third-party packages</h3>
+
+Some AGLIB components require external software packages. They are required
+to take advantage of all the components of AGLIB, but if some components are
+not needed, AGLIB can be built without those components.  If any of the
+components in the following table are missing, the corresponding AGLIB
+components won't be built.  Here is a full list of the packages:
+
+<p>
+<table border="1px" width="100%">
+<tr valign="top">
+<th>Component</th>
+<th>Required package /<br>
+Download site /<br>
+Comments</th>
+</tr>
+
+<tr>
+<td align="center"><b>agdb</b><br>(ODBC interface)</td>
+<td>
+<u><a href="http://www.iodbc.org">iODBC</a> driver manager (libiodbc)</u>
+<li>Download: <a href="http://www.iodbc.org/software.htm">http://www.iodbc.org/software.htm</a></li>
+</td>
+</tr>
+
+<tr>
+<td align="center"><b>Java AG wrapper</b></td>
+<td>
+<u><a href="http://java.sun.com">Java</a> SDK</u>
+<li>Download: <a href="http://java.sun.com">http://java.sun.com</a>
+<li><a href="http://java.sun.com/docs/books/tutorial/native1.1/index.html">JNI</a> development headers are needed at compile time.</li>
+<li>Java VM is needed at run time.</li>
+</td>
+</tr>
+
+<tr>
+<td align="center"><b>Python AG wrapper</b></td>
+<td>
+<u><a href="http://www.python.org">Python</a></u>
+<li>Download: <a href="http://www.python.org/download">http://www.python.org/download</a></li>
+<li>Development headers are needed at compile time.</li>
+<li>Python interpreter is needed at run time.</li>
+</td>
+</tr>
+
+<tr>
+<td align="center"><b>Tcl AG wrapper</b></td>
+<td>
+<u><a href="http://www.scriptics.com">Tcl/Tk</a></u>
+<li>Download: <a href="http://sourceforge.net/project/showfiles.php?group_id=10894">SourceForge</a> (8.0 or above)</li>
+<li>Development headers are needed at compile time.</li>
+<li>tclsh (Tcl only) or wish (Tcl/Tk) is needed at run time.</li>
+</td>
+</tr>
+
+<tr>
+<td align="center"><b>AG, ATLAS</b><br><b>file I/O plugins</b></td>
+<td>
+<u><a href="http://xml.apache.org/xerces-c/index.html">Xerces C++</a></u>
+<li>Download: <a href="http://xml.apache.org/dist/xerces-c/stable">Xerces-C download site</a></li>
+<li>Development headers and libxerces-c are needed at compile time.</li>
+<li>libxerces-c.so is needed at run time.</li>
+</td>
+</tr>
+
+<tr>
+<td align="center"><b>CAG</b><br><b>file I/O plugin</b></td>
+<td>
+<u><a href="http://www.gzip.org/zlib">zlib</a></u>
+<li>Download: <a href="http://www.gzip.org/zlib">http://www.gzip.org/zlib</a></li>
+<li>If development headers and libz are available, output compression will be turned on.</li>
+<li>libz.so might be needed at run time.</li>
+</td>
+</tr>
+
+</table>
+</p>
+
+<hr><a href="http://agtk.sourceforge.net/">Annotation Graph Toolkit</a>
+
+</body>
+</html>

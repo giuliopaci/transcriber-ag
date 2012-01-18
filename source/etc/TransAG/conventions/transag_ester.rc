@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE parameters SYSTEM "../configurationAG.dtd">
+<parameters>
+<component id="Conventions">
+	<!-- Convention **************************************************************************************-->	
+	<section id="reference" label="conventions reference">
+		<parameter id="version" label="conventions version" value="1.0"/>
+		<parameter id="doc,fre" label="conventions specification document" value="ref_doc_ester_fre"/>
+	</section>
+	<!-- Corpus name **************************************************************************************-->		
+	<section id="corpus" label="corpus definition">
+		<parameter id="name" label="default corpus name" value="TAG-ester"/>
+		<parameter id="version" label="default corpus version" value="1.0"/>
+	</section>	
+	<!-- Available graph *********************************************************************************-->	
+	<section id="graphs" label="annotation graphs">
+		<parameter id="transcription_graph" label="enable or disable transcription annotations (true/false)" value="true"/>
+		<parameter id="background_graph" label="enable or disable backgrounds annotations (true/false)" value="true"/>
+	</section>
+	<!-- Extra file for presentation label - add iso-language as extension**********************************-->	
+	<section id="layout" label="presentation rules">
+		<parameter id="labels" label="annotation layout def file" value="qualifiers_transag_ester"/>
+		<parameter id="sort_qualifiers" label="if true put instantaneous qualifiers after non-instantaneous ones with same start anchor" value="true"/>
+	</section>
+	<!-- Extra file for wordlist and properties **********************************************************-->	
+	<section id="extra" label="extra annotation properties">
+		<parameter id="properties" label="extra annotations properties def file" value="annotation_properties"/>
+		<parameter id="wordlists" label="extra predefined words lists (eg. onomatopoeia) (with file extension=language)" value="wordlists"/>
+	</section>
+	<!-- Extra file for topics - add iso-language as extension *******************************************-->	
+	<section id="topics" label="topics properties">
+		<parameter id="topiclist" label="list of available topics (with file extension=language)" value="topics"/>
+	</section>
+	<!-- Space handling configuration ********************************************************************-->	
+	<section id="space_handling" label="space insertion control configuration">
+		<parameter id="single_space" label="forbid two following spaces (true/false)" value="false"/>
+		<parameter id="bordering_spaces" label="force spaces around some characters (characters list, empty for disable)" value=""/>
+	</section>
+	<!-- BACKGROUND definition ****************************************************************************-->
+	<section id="background_graph" label="background graph definition">
+		<parameter id="continuous" label="continuous graph" value="true"/>
+		<parameter id="mainstream" label="mainstream types" value="background"/>
+		<parameter id="signals" label="signal used by graph (separated by coma if several)" value="audio"/>	
+		<parameter id="min_seg_size" label="segmentation min size (in secs)" value="0.001"/>
+	</section>
+	<section id="background" label="background element definition">
+		<parameter id="default_features" label="section default properties" value="type=none;level=low"/>
+		<parameter id="is_anchored" label="anchored annotation type" value="true"/>
+		<parameter id="max_overlap" label="max overlaping segments" value="0"/>
+		<parameter id="subtypes" label="type of background" value="music;speech;noise;none"/>
+		<parameter id="levels" label="audio level of background" value="high;low;medium"/>
+	</section>
+	<!-- TRANSCRIPTION definition ************************************************************************-->
+	<section id="transcription_graph" label="transcription graph definition">
+		<parameter id="continuous" label="continuous graph" value="true"/>
+		<parameter id="type" label="transcription type" value="detailed"/>
+		<parameter id="resize,keep_attachments" label="keep child and parent attachments" value="true"/>
+		<parameter id="overlap,alignment" label="align overlaping segments" value="true"/>
+		<parameter id="mainstream" label="mainstream types hierarchy" value="section;turn;segment;unit"/>
+		<parameter id="qualifier_event" label="text-attached events" value="noise;pronounce;language;comment;lexical"/>
+		<parameter id="qualifier_entity" label="text-attached entities" value="person;organization;location;product;time;amount-phy;function"/>
+		<parameter id="other" label="other annot type" value=""/>
+		<parameter id="signals" label="signal used by graph (separated by coma if several)" value="audio"/>	
+		<parameter id="min_seg_size" label="segmentation min size (in secs)" value="0.001"/>
+	</section>
+	<section id="section" label="sections">
+		<parameter id="default_features" label="section default properties" value="type=nontrans"/>
+		<parameter id="is_anchored" label="anchored annotation type" value="true"/>
+		<parameter id="subtypes" label="subtypes" value="report;nontrans"/>
+		<parameter id="max_overlap" label="max overlaping segments" value="0"/>
+	</section>
+	<section id="turn" label="speech turns">
+		<parameter id="features" label="turn properties" value="speaker"/>	
+		<parameter id="default_features" label="turn default properties" value="speaker=no_speech"/>
+		<parameter id="is_anchored" label="anchored annotation type" value="true"/>
+		<parameter id="max_overlap" label="max overlaping segments" value="1"/>
+	</section>
+	<section id="segment" label="audio signal segments">
+		<parameter id="is_anchored" label="anchored annotation type" value="true"/>
+		<parameter id="max_overlap" label="max overlaping segments" value="0"/>
+	</section>
+	<section id="unit" label="transcription graph base unit">
+		<parameter id="subtypes" label="unit information type" value="unit_text;unit_event"/>
+		<parameter id="features" label="word properties" value="value;subtype;desc"/>
+		<parameter id="is_anchored" label="anchored annotation type" value="false"/>
+		<parameter id="max_overlap" label="max overlaping segments" value="0"/>
+	</section>
+	<section id="unit_text" label="transcription graph base unit with text data">
+		<parameter id="input" label="data input (empty for free text, or element types list for predefined submenu)" value=""/>
+	</section>
+	<section id="unit_event" label="transcription graph base unit with event data">
+		<parameter id="input" label="data input (empty for free text, or element types list for predefined submenu)" value="noise;pronounce;language;comment;lexical"/>
+	</section>	
+	
+	<!-- EVENTS definition ************************************************************************-->	
+	<section id="noise" label="noise type qualifier definition">
+		<parameter id="is_anchored" label="anchored annotation type" value="false"/>
+		<parameter id="can_span_over" label="can span over anchored segments" value="words"/>
+		<parameter id="subtypes" label="subtypes" value="inspiration;breath;expiration;laugh;inaudible;revert;repeat;sniffing;pronounced-low;mouth;throat;cough;whistling;undefined;conversation;paper;electric;micro;laugh-bg;cough-bg;code;jingle;top;music;applause;notrans"/>
+		<parameter id="editable" label="allow user-defined subtypes" value="false"/>
+	</section>
+	<section id="pronounce" label="pronounce type qualifier definition">
+		<parameter id="is_anchored" label="anchored annotation type" value="false"/>
+		<parameter id="can_span_over" label="can span over anchored segments" value="words"/>
+		<parameter id="subtypes" label="subtypes" value="unintelligible;unintelligible-low;badly;lapsus;whisper;abbreviation-read;abbreviation-spelt;19..."/>
+		<parameter id="editable" label="allow user-defined subtypes" value="false"/>
+	</section>
+	<section id="language" label="language type qualifier definition">
+		<parameter id="is_anchored" label="anchored annotation type" value="false"/>
+		<parameter id="can_span_over" label="can span over anchored segments" value="words"/>
+		<parameter id="subtypes" label="subtypes" value=""/>
+		<parameter id="editable" label="allow user-defined subtypes" value="true"/>
+	</section>
+	<section id="lexical" label="lexical type qualifier definition">
+		<parameter id="is_anchored" label="anchored annotation type" value="false"/>
+		<parameter id="can_span_over" label="can span over anchored segments" value="words"/>
+		<parameter id="subtypes" label="subtypes" value="?;^^;neologism;()"/>
+		<parameter id="editable" label="allow user-defined subtypes" value="false"/>
+	</section>
+	<section id="comment" label="language type qualifier definition">
+		<parameter id="is_anchored" label="anchored annotation type" value="false"/>
+		<parameter id="can_span_over" label="can span over anchored segments" value="words"/>
+		<parameter id="subtypes" label="subtypes" value=""/>
+		<parameter id="editable" label="allow user-defined subtypes" value="true"/>
+	</section>
+	<!-- 
+		 ************************************************************************
+		 Qualifiers ENTITIES definition 
+		 Ester conventions 0.3 
+		 ************************************************************************
+	-->
+	<section id="person" label="person type qualifier definition">
+		<parameter id="is_anchored" label="anchored annotation type" value="false"/>
+		<parameter id="can_span_over" label="can span over anchored segments" value="words"/>
+		<parameter id="subtypes" label="subtypes" value="human;anime"/>
+		<parameter id="editable" label="allow user-defined subtypes" value="false"/>
+		<parameter id="allow_norm" label="allow user to enter normalise form" value="false"/>		
+	</section>
+	<section id="function" label="function type qualifier definition">
+		<parameter id="is_anchored" label="anchored annotation type" value="false"/>
+		<parameter id="can_span_over" label="can span over anchored segments" value="words"/>
+		<parameter id="subtypes" label="subtypes" value="political;military;administrative;religious;aristocratic"/>
+		<parameter id="editable" label="allow user-defined subtypes" value="false"/>
+		<parameter id="allow_norm" label="allow user to enter normalise form" value="false"/>		
+	</section>	
+	<section id="organization" label="product type qualifier definition">
+		<parameter id="is_anchored" label="anchored annotation type" value="false"/>
+		<parameter id="can_span_over" label="can span over anchored segments" value="words"/>
+		<parameter id="subtypes" label="subtypes" value="political;educational;commercial;no-profit;entertainment;geo-socio-admin"/>
+		<parameter id="editable" label="allow user-defined subtypes" value="false"/>
+		<parameter id="allow_norm" label="allow user to enter normalise form" value="false"/>		
+	</section>	
+	<section id="location" label="location type qualifier definition">
+		<parameter id="is_anchored" label="location annotation type" value="false"/>
+		<parameter id="can_span_over" label="can span over anchored segments" value="words"/>
+		<parameter id="subtypes" label="subtypes" value="geographic;administrative;line;address.postal;address.tel;address.email;facilities"/>
+		<parameter id="editable" label="allow user-defined subtypes" value="false"/>
+		<parameter id="allow_norm" label="allow user to enter normalized form" value="false"/>		
+	</section>	
+	<section id="product" label="product type qualifier definition">
+		<parameter id="is_anchored" label="anchored annotation type" value="false"/>
+		<parameter id="can_span_over" label="can span over anchored segments" value="words"/>
+		<parameter id="subtypes" label="subtypes" value="vehicle;award;art;doc"/>
+		<parameter id="editable" label="allow user-defined subtypes" value="false"/>
+		<parameter id="allow_norm" label="allow user to enter normalise form" value="false"/>		
+	</section>		
+	<section id="time" label="time type qualifier definition">
+		<parameter id="is_anchored" label="anchored annotation type" value="false"/>
+		<parameter id="can_span_over" label="can span over anchored segments" value="words"/>
+		<parameter id="subtypes" label="subtypes" value="hour;date.absolute;date.relative"/>
+		<parameter id="editable" label="allow user-defined subtypes" value="false"/>
+		<parameter id="allow_norm" label="allow user to enter normalized form" value="false"/>		
+	</section>
+	<section id="amount-phy" label="amount-phy type qualifier definition">
+		<parameter id="is_anchored" label="anchored annotation type" value="false"/>
+		<parameter id="can_span_over" label="can span over anchored segments" value="words"/>
+		<parameter id="subtypes" label="subtypes" value="age;duration;temperature;length;surface;volume;weight;speed;currency;other"/>
+		<parameter id="editable" label="allow user-defined subtypes" value="false"/>
+		<parameter id="allow_norm" label="allow user to enter normalise form" value="false"/>		
+	</section>
+	<!-- SPEAKERS cleanup ************************************************************************-->					
+	<section id="speakers" label="speaker type qualifier definition">
+		<parameter id="auto_cleanup" label="automatic removal of unused speakers" value="true"/>
+	</section>
+	<!-- STATS details ***************************************************************************-->	
+	<section id="stats" label="stats rules">
+		<parameter id="is_noise,instantaneous" label="states if instantaneous noise event is a noise" value="false"/>
+		<parameter id="is_noise,low_level" label="states if low level bg noise event is a noise" value="false"/>
+	</section>
+</component>
+</parameters>

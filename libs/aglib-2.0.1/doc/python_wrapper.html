@@ -1,0 +1,68 @@
+<title>AGLIB documentation: Using AGLIB (AGAPI) with Python AG wrapper</title>
+</head>
+<body bgcolor="#ffffee">
+
+<h3>Using AGLIB (AGAPI) with Python AG wrapper</h3>
+
+<hr>
+
+<h4>Unix-like systems</h4>
+
+
+<p>The Python AG wrapper module is installed in a standard python package
+directory (<tt>site-packages</tt>) unless the <a
+href="install.html#--disable-python-pkgdir">--disable-python-pkgdir</a>
+option is used at configuration time.  If this option is used, the
+module is installed in <tt>&lt;prefix&gt;/lib/ag/python</tt>, where
+<tt>&lt;prefix&gt;</tt> is the installation prefix, which can be specified
+with the <a href="install.html#--prefix">--prefix</a> option.  The default
+value for <tt>&lt;prefix&gt;</tt> is <tt>/usr/local</tt>.</p>
+
+<p>If the wrapper module is not installed in a standard Python package
+directory, or if Python has any trouble locating the module, the
+<tt>PYTHONPATH</tt> environment variable can be set to help Python find
+the module.  <tt>PYTHONPATH</tt> should contain the location of the
+module.</p>
+
+<p>Here is an example of using AGLIB interactively in a Python session:</p>
+
+<table width="100%" cellpadding="5px">
+<tr><td bgcolor="#e0e0e0"><pre>
+sh$ export PYTHONPATH=/home/haepal/pkg/aglib-2.0/lib/ag/python
+sh$ python
+...
+>>> import ag
+>>> agsetId = ag.CreateAGSet("TIMIT")
+>>> ...
+</pre></td></tr>
+</table>
+
+<p>Here is an example of a python script (a .py file) that uses AGLIB:</p>
+
+<table width="100%" cellpadding="5px">
+<tr><td bgcolor="#e0e0e0"><pre>
+#! /usr/local/bin/python2.1
+
+import ag
+
+agsetId = ag.CreateAGSet("TIMIT")
+timelineId = ag.CreateTimeline(agsetId)
+agId = ag.CreateAG(agsetId, timelineId)
+a1 = ag.CreateAnchor(agId)
+ag.SetAnchorOffset(a1, 1.0)
+a2 = ag.CreateAnchor(agId)
+ag.SetAnchorOffset(a2, 2.0)
+ann = ag.CreateAnnotation(agId, a1, a2, "word")
+ag.SetFeature(ann, "label", "cat")
+print ag.toXML(agsetId)
+</pre></td></tr>
+</table>
+
+<p>NOTE: Please don't forget to set <tt>LD_LIBRARY_PATH</tt> properly for
+the required shared libraries (libag and plugins). See
+<a href="install.html#post">Post-installation</a> for details.</p>
+
+<hr><a href="http://agtk.sourceforge.net/">Annotation Graph Toolkit</a>
+
+</body>
+</html>

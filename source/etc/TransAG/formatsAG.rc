@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	File defining handled annotation file formats and theirs associations with plugin AGLIB 
+	(component PluginAG)
+	
+	section: AGLIB plugin format
+		parameter display : label of file format (for GUI display)
+		parameter extension : file extension
+		parameter type : 
+			1- For XML format file, type = DOCTYPE
+			2- For other files, same than extension
+-->
+<parameters>
+	<component id="PluginAG">
+		<section id="TRS" label="plugin format">
+			<parameter id="display" label="label of file format" value="Transcriber Annotation File"/>
+			<parameter id="extension" label="file extension" value=".trs"/>
+			<parameter id="type" label="plugin format" value="Trans"/>
+			<parameter id="io" label="import/export" value="import"/>
+		</section>
+		<section id="VRXML" label="plugin format">
+			<parameter id="display" label="label of file format" value="VRXML File"/>
+			<parameter id="extension" label="file extension" value=".xml"/>
+			<parameter id="type" label="plugin format" value="AudioDoc"/>
+			<parameter id="io" label="import/export" value="import"/>
+		</section>
+		<section id="STM" label="plugin format">
+			<parameter id="display" label="label of file format" value="STM File"/>
+			<parameter id="extension" label="file extension" value=".stm"/>
+			<parameter id="type" label="plugin format" value="stm"/>
+			<parameter id="io" label="import/export" value="both"/>
+		</section>
+		<section id="CTM" label="plugin format">
+			<parameter id="display" label="label of file format" value="CTM File"/>
+			<parameter id="extension" label="file extension" value=".ctm"/>
+			<parameter id="type" label="plugin format" value="ctm"/>
+			<parameter id="io" label="import/export" value="import"/>
+		</section>
+		<section id="VSFT" label="plugin format">
+			<parameter id="display" label="label of file format" value="VSFT Import Text File"/>
+			<parameter id="extension" label="file extension" value=".txt"/>
+			<parameter id="type" label="plugin format" value="vsft"/>
+			<parameter id="io" label="import/export" value="import"/>
+		</section>		
+		<section id="LBL" label="plugin format">
+			<parameter id="display" label="label of file format" value="LIMSI Label File"/>
+			<parameter id="extension" label="file extension" value=".lbl"/>
+			<parameter id="type" label="plugin format" value="lbl"/>
+			<parameter id="io" label="import/export" value="import"/>
+		</section>
+		<section id="SGML" label="plugin format">
+			<parameter id="display" label="label of file format" value="Sclite Alignment Format"/>
+			<parameter id="extension" label="file extension" value=".sgml"/>
+			<parameter id="type" label="plugin format" value="sgml"/>
+			<parameter id="io" label="import/export" value="import"/>
+		</section>				
+		<section id="CHAT" label="plugin format">
+			<parameter id="display" label="label of file format" value="CHAT Transcription Format"/>
+			<parameter id="extension" label="file extension" value=".cha"/>
+			<parameter id="type" label="plugin format" value="cha"/>
+			<parameter id="io" label="import/export" value="both"/>
+		</section>				
+		<section id="MDTM" label="plugin format">
+			<parameter id="display" label="label of file format" value="MetaData Time-Mark Format"/>
+			<parameter id="extension" label="file extension" value=".mdtm"/>
+			<parameter id="type" label="plugin format" value="mdtm"/>
+			<parameter id="io" label="import/export" value="import"/>
+		</section>				
+		<section id="HTML" label="plugin format">
+			<parameter id="display" label="label of file format" value="HTML Export Format"/>
+			<parameter id="extension" label="file extension" value=".html"/>
+			<parameter id="type" label="plugin format" value="html"/>
+			<parameter id="io" label="import/export" value="export"/>
+		</section>				
+		<section id="TXT" label="plugin format">
+			<parameter id="display" label="label of file format" value="TEXT Export Format"/>
+			<parameter id="extension" label="file extension" value=".txt"/>
+			<parameter id="type" label="plugin format" value="txt"/>
+			<parameter id="io" label="import/export" value="export"/>
+		</section>				
+	</component>
+</parameters>

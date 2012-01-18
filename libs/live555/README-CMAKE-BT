@@ -1,0 +1,9 @@
+---------------------------
+README - CMake build system
+Bertin Technologies
+---------------------------
+
+LiveMedia source contains a custom cross-platform build system.
+In order to have a coherent build system on the whole source tree, we added CMake integration,
+which also provides native cross-platform support (Linux, MacOSx, Windows,...).
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated from toolsAG.xml by XMLBuddy -->
+<!ELEMENT object (#PCDATA)>
+<!ELEMENT options (#PCDATA)>
+<!ELEMENT tool (object,options)>
+<!ATTLIST tool
+	display CDATA #REQUIRED
+	id NMTOKEN #REQUIRED
+	scope NMTOKEN #REQUIRED
+	type NMTOKEN #IMPLIED
+>
+<!ELEMENT tools (tool+)>

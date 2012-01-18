@@ -1,0 +1,7 @@
+This directory contains the source files of the AG core library (a.k.a. the
+AG kernel), which stores and manipulates the internal data structure of any
+annotation tools that are built upon it. Indexing of annotation data is
+done so that searching and looking-up can be performed efficiently.
+
+This directory is part of the Annotation Graph Toolkit (AGTK):
+http://agtk.sf.net

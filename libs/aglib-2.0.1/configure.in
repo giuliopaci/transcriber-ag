@@ -1,0 +1,338 @@
+
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(aglib,2.0.1,[http://sourceforge.net/tracker/?group_id=25216&atid=383834])
+AM_INIT_AUTOMAKE
+
+dnl Checks for programs.
+AC_PROG_CC
+AC_PROG_CXX
+AC_PROG_MAKE_SET
+AC_LIBTOOL_WIN32_DLL
+AC_LIBTOOL_DLOPEN
+#AC_PROG_RANLIB
+AC_DISABLE_STATIC
+AC_PROG_LIBTOOL
+AC_SUBST(LIBTOOL_DEPS)
+
+case $host_os in
+	*cygwin* ) CYGWIN_ENV=yes;;
+		* ) CYGWIN_ENV=no;;
+esac
+AM_CONDITIONAL(CYGWIN_ENV, test x$CYGWIN_ENV = xyes)
+
+
+dnl Checks for user options.
+dnl --- agdb ----------------------------------------------------------
+AC_ARG_ENABLE(agdb,
+    AC_HELP_STRING([--disable-agdb],[don't build ODBC interface]))
+AC_CHECK_HEADERS([isql.h isqlext.h], [IODBC_HEADERS_OK=1])
+AC_CHECK_LIB(iodbc, SQLAllocEnv, [IODBC_LIB_OK=1])
+
+AM_CONDITIONAL(AGDB,
+    [ test "$enable_agdb" != no -a "$IODBC_HEADERS_OK" -a "$IODBC_LIB_OK" ])
+if test "$enable_agdb" != no -a "$IODBC_HEADERS_OK" -a "$IODBC_LIB_OK" ; then
+    agdb=true
+    AC_DEFINE(AGDB)
+fi
+
+
+
+dnl --- ag tcl wrapper ------------------------------------------------
+AC_ARG_ENABLE(ag_tcl,
+    AC_HELP_STRING([--disable-ag_tcl],[don't build tcl wrapper]))
+
+AC_ARG_ENABLE(tcl_pkgdir,
+    AC_HELP_STRING([--disable-tcl-pkgdir],[don't use tcl standard package dir for tcl wrapper installation]),,[enable_tcl_pkgdir=yes])
+
+AC_ARG_WITH(tclsh,
+    AC_HELP_STRING([--with-tclsh=PATH],[tclsh binary including the whole path]))
+
+if test -x "$with_tclsh" ; then
+    AC_SUBST(TCLSH,$with_tclsh)
+else
+    AC_PATH_PROG(TCLSH, [tclsh])
+    AC_SUBST(TCLSH)
+fi
+
+if test -x "$TCLSH" ; then
+    TCL_MAJOR_VERSION=`exec $TCLSH <<\EOF
+regexp {^([[0-9]]+)\..*$} [[info tclversion]] a b
+puts -nonewline $b
+EOF`
+    if test "$TCL_MAJOR_VERSION" -lt 8; then
+        AC_MSG_WARN([TCL version 8 or higher is recommended. compilation may fail])
+    fi
+
+    TCL_PACKAGE_PATH=`exec $TCLSH <<\EOF 2> /dev/null
+puts -nonewline $tcl_pkgPath
+EOF`
+    if test "$enable_tcl_pkgdir" != no -a "$TCL_PACKAGE_PATH" ; then
+        AC_SUBST(TCL_INST,$TCL_PACKAGE_PATH/ag_tcl)
+    else
+        AC_SUBST(TCL_INST,\${prefix}/lib/ag/tcl)
+    fi
+
+    AC_SUBST(TCL_INC,[-I`dirname \`dirname $TCLSH\``/include])
+    X=$CPPFLAGS
+    CPPFLAGS="$TCL_INC $CPPFLAGS"
+    AC_CHECK_HEADERS(tcl.h,[TCL_HEADER_OK=1])
+    CPPFLAGS=$X
+fi
+
+AM_CONDITIONAL(AG_TCL, [test "$enable_ag_tcl" != no -a "$TCL_HEADER_OK" -a -x "$TCLSH"])
+if test "$enable_ag_tcl" != no -a "$TCL_HEADER_OK" -a -x "$TCLSH" ; then
+    ag_tcl=true
+fi
+
+
+
+dnl --- ag python wrapper ------------------------------------------------
+AC_ARG_ENABLE(ag_python,
+    AC_HELP_STRING([--disable-ag_python],[don't build ag python wrapper]))
+
+AC_ARG_ENABLE(python_pkgdir,
+    AC_HELP_STRING([--disable-python-pkgdir],[don't use python standard package dir for python wrapper installation]),,[enable_python_pkgdir=yes])
+
+AC_ARG_WITH(python,
+    AC_HELP_STRING([--with-python=PATH],[python binary including the whole path]))
+
+if test -x "$with_python" ; then
+    AC_SUBST(PYTHON_PRO,$with_python)
+else
+    AC_PATH_PROG(PYTHON_PRO, [python])
+    AC_SUBST(PYTHON_PRO)
+fi
+
+if test -x "$PYTHON_PRO" ; then
+    PYTHON_VER=python`exec $PYTHON_PRO <<\EOF
+import sys
+sys.stdout.write(str(sys.version_info[[0]]))
+sys.stdout.write('.')
+sys.stdout.write(str(sys.version_info[[1]]))
+EOF`
+    PYTHON_PREFIX=`exec $PYTHON_PRO <<\EOF
+import sys
+sys.stdout.write(sys.prefix)
+EOF`
+    AC_SUBST(PYTHON_INC,-I$PYTHON_PREFIX/include/$PYTHON_VER)
+
+    if test "$enable_python_pkgdir" != no ; then
+        PYTHON_INST=`exec $PYTHON_PRO <<\EOF
+import sys, site
+sys.stdout.write(site.sitedirs[[0]])
+EOF`
+    else
+        PYTHON_INST=\${prefix}/lib/ag/python
+    fi
+
+    AC_SUBST(PYTHON_INST)
+fi
+
+AM_CONDITIONAL(AG_PYTHON, [test "$enable_ag_python" != no -a -x "$PYTHON_PRO"])
+if test "$enable_ag_python" != no -a -x "$PYTHON_PRO" ; then
+    ag_python=true
+fi
+
+
+
+dnl --- ag java wrapper ------------------------------------------------
+AC_ARG_ENABLE(ag_java,
+    AC_HELP_STRING([--disable-ag_java],[don't build ag java wrapper]))
+AC_CHECK_HEADERS([jni.h jni_md.h],[JNI_HEADER_OK=1])
+
+AM_CONDITIONAL(AG_JAVA,[test "$enable_ag_java" != no -a "$JNI_HEADER_OK"])
+if test "$enable_ag_java" != no -a "$JNI_HEADER_OK" ; then
+    ag_java=true
+    AC_SUBST(JAVA_INST, [\${prefix}/lib/ag/java])
+fi
+
+
+
+dnl --- big ball ? ------------------------------------------------
+AC_ARG_ENABLE(bigball,
+    AC_HELP_STRING([--enable-bigball],[include ag library in wrapper module]))
+
+AM_CONDITIONAL(BIG_BALL, [test "$enable_bigball" = yes])
+if test "$enable_bigball" = yes ; then
+    echo "*****************************************************"
+    echo " WARNING: There is a known problem with this option."
+    echo " Wrapper modules built with this option wouldn't work"
+    echo " with file i/o plugins"
+    echo "*****************************************************"
+    bigball=true
+fi
+
+
+
+dnl --- xercesc ------------------------------------------------------
+AC_MSG_CHECKING([for xercesc library version])
+cat > xercesc_ver.cc <<\EOF
+#include <iostream>
+#include <xercesc/util/XercesDefs.hpp>
+using std::cout;
+int main()
+{
+  cout << gXercesFullVersionStr;
+  return 0;
+}
+EOF
+$CXX -o xercesc_ver xercesc_ver.cc $CPPFLAGS 1>&5 2>&1
+if test $? -ne 0 ; then
+    AC_MSG_RESULT([n/a])
+else
+    XERCESC_VER=`./xercesc_ver`
+    XERCESC_LIB=-lxerces-c$XERCESC_VER
+    AC_MSG_RESULT($XERCESC_VER)
+    AC_LANG_PUSH(C++)
+    AC_MSG_CHECKING([for libxerces-c$XERCESC_VER])
+    X=$LIBS
+    LIBS="$XERCESC_LIB $LIBS"
+    AC_LINK_IFELSE(
+        [AC_LANG_PROGRAM(
+            [#include <xercesc/util/PlatformUtils.hpp>],
+            [#ifdef XERCES_HAS_CPP_NAMESPACE
+             XERCES_CPP_NAMESPACE_USE
+             #endif
+             XMLPlatformUtils::Initialize();])],
+        [AC_MSG_RESULT(yes); XERCESC_OK=1; AC_SUBST(XERCESC_LIB)],
+        [AC_MSG_RESULT(no)])
+    LIBS=$X
+    if test -z "$XERCESC_OK" ; then
+        AC_MSG_CHECKING([for libxerces-c])
+	XERCESC_LIB=-lxerces-c
+	X=$LIBS
+        LIBS="$XERCESC_LIB $LIBS"
+        AC_LINK_IFELSE(
+            [AC_LANG_PROGRAM(
+                [#include <xercesc/util/PlatformUtils.hpp>],
+                [#ifdef XERCES_HAS_CPP_NAMESPACE
+                 XERCES_CPP_NAMESPACE_USE
+                 #endif
+                 XMLPlatformUtils::Initialize();])],
+            [AC_MSG_RESULT(yes); XERCESC_OK=1; AC_SUBST(XERCESC_LIB)],
+            [AC_MSG_RESULT(no)])
+	LIBS=$X
+    fi
+    AC_LANG_POP()
+fi
+rm -f xercesc_ver*
+AM_CONDITIONAL(XML, [test "$XERCESC_OK"])
+if test "$XERCESC_OK" ; then
+    xml=true
+fi
+
+
+
+dnl --- zlib ---------------------------------------------------------
+AC_CHECK_HEADERS(zlib.h,Z_HEADERS_OK=1)
+AC_CHECK_LIB(z,zlibVersion,[Z_LIB_OK=1; AC_DEFINE(HAVE_LIBZ)])
+AM_CONDITIONAL(ZLIB, [test "$Z_HEADERS_OK" -a "$Z_LIB_OK"])
+if test "$Z_HEADERS_OK" -a "$Z_LIB_OK" ; then
+    zlib=true
+fi
+
+
+
+AC_OUTPUT([Makefile
+           src/Makefile
+           src/ag/Makefile
+           src/ag_wrapper/Makefile
+           src/ag_wrapper/tcl/Makefile
+           src/ag_wrapper/python/Makefile
+           src/ag_wrapper/java/Makefile
+           src/formats/Makefile
+           src/formats/AG/Makefile
+           src/formats/ATLAS/Makefile
+           src/formats/BAS/Makefile
+           src/formats/BU/Makefile
+           src/formats/CAG/Makefile
+           src/formats/LCF/Makefile
+           src/formats/SwitchBoard/Makefile
+           src/formats/TF/Makefile
+           src/formats/TIMIT/Makefile
+           src/formats/TreeBank/Makefile
+           src/formats/XLabel/Makefile
+           scripts/Makefile
+           demo/Makefile
+           doc/Makefile
+           doc/dtd/Makefile])
+
+
+
+#### Report summary
+if test "$prefix" = NONE ; then
+    X=$ac_default_prefix
+else
+    X=$prefix
+fi
+
+echo "\
+
+
+Configuration summary.
+"
+
+if test x$agdb = xtrue; then echo "\
+  * agdb:           yes"
+else echo "\
+  * agdb:           no"
+fi
+
+if test x$ag_tcl = xtrue; then echo "\
+  * tcl wrapper:    yes"
+  if test -n "$TCL_INC"; then echo "\
+      headers:      $TCL_INC"
+  fi
+  if test x$bigball = xtrue; then echo "\
+      big-ball:     yes"
+  else echo "\
+      big-ball:     no"
+  fi
+  echo "\
+      install dir:  $TCL_INST"
+else echo "\
+  * tcl wrapper:    no"
+fi
+
+if test x$ag_python = xtrue; then echo "\
+  * python wrapper: yes"
+  if test -n "$PYTHON_INC"; then echo "\
+      headers:      $PYTHON_INC"
+  fi
+  if test x$bigball = xtrue; then echo "\
+      big-ball:     yes"
+  else echo "\
+      big-ball:     no"
+  fi
+  echo "\
+      install dir:  $PYTHON_INST"
+else echo "\
+  * python wrapper: no"
+fi
+
+if test x$ag_java = xtrue; then echo "\
+  * java wrapper:   yes"
+  if test x$bigball = xtrue; then echo "\
+      big-ball:     yes"
+  else echo "\
+      big-ball:     no"
+  fi
+  echo "\
+      install dir:  $JAVA_INST"
+else echo "\
+  * java wrapper:   no"
+fi
+
+if test x$xml = xtrue; then echo "\
+  * Xerces-C:       yes"
+else echo "\
+  * Xerces-C:       no"
+fi
+
+if test x$zlib = xtrue; then echo "\
+  * zlib:           yes"
+else echo "\
+  * zlib:           no"
+fi
+
+echo;echo

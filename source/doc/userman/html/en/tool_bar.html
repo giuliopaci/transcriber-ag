@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Menu And Tool Bars</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<a name="top"></a>
+<h1>The Tool Bar</h1>
+<br> <br>
+<p>When there is no file opened, you just can: quit <em>TranscriberAG</em>,
+open a file, show/hide the explorer or consult the global dictionary.</p>
+<img src="pics/tool_bar.jpg" alt="Picture Not Found" align="middle" border="1">
+<p>When a file is opened, then menubar looks like this:</p>
+<img src="pics/tool_bar_with_open_file.jpg" alt="Picture Not Found"
+	align="middle" border="1">
+<p>Tool bar buttons are described hereafter:</p>
+<table class="indent_table" summary="table">
+	<tbody>
+		<tr>
+			<td valign="middle"><img alt="Picture Not Found"
+				src="pics/tool_bar_quit.jpg" border="1"></td>
+			<td valign="middle"><strong>Quit </strong> button quits
+			Transcriber AG.</td>
+		</tr>
+		<tr>
+			<td valign="middle"><img alt="Picture Not Found"
+				src="pics/tool_bar_open.jpg" border="1"></td>
+			<td valign="middle"><strong>Open </strong> button opens a file.
+			</td>
+		</tr>
+		<tr>
+			<td valign="middle"><img alt="Picture Not Found"
+				src="pics/tool_bar_save.jpg" border="1"></td>
+			<td valign="middle"><strong>Save </strong> button saves current
+			file.</td>
+		</tr>
+		<tr>
+			<td valign="middle"><img alt="Picture Not Found"
+				src="pics/tool_bar_close.jpg" border="1"></td>
+			<td valign="middle"><strong>Close </strong> button closes the
+			currently open file.</td>
+		</tr>
+		<tr>
+			<td valign="middle"><img alt="Picture Not Found"
+				src="pics/tool_bar_refresh.jpg" border="1"></td>
+			<td valign="middle"><strong>Refresh </strong> button refreshes
+			the text and audio waveform of the currently  open file.</td>
+		</tr>
+		<tr>
+			<td valign="middle"><img alt="Picture Not Found"
+				src="pics/tool_bar_undo.jpg" border="1"></td>
+			<td valign="middle"><strong>Undo </strong> button cancels
+			previous editing action.</td>
+		</tr>
+		<tr>
+			<td valign="middle"><img alt="Picture Not Found"
+				src="pics/tool_bar_redo.jpg" border="1"></td>
+			<td valign="middle"><strong>Redo </strong> button restores a
+			previously canceled editing action.</td>
+		</tr>
+		<tr>
+			<td valign="middle"><img alt="Picture Not Found"
+				src="pics/tool_bar_copy.jpg" border="1"></td>
+			<td valign="middle"><strong>Copy </strong> button copies
+			selected text area from annotation editor to selection buffer.</td>
+		</tr>
+		<tr>
+			<td valign="middle"><img alt="Picture Not Found"
+				src="pics/tool_bar_paste.jpg" border="1"></td>
+			<td valign="middle"><strong>Paste </strong> button copies
+			selection buffer contents to annotation editor at current text cursor
+			position.</td>
+		</tr>
+		<tr>
+			<td valign="middle"><img alt="Picture Not Found"
+				src="pics/tool_bar_cut.jpg" border="1"></td>
+			<td valign="middle"><strong>Cut </strong> button copies selected
+			text area to selection buffer and deletes it from annotation editor.
+			</td>
+		</tr>
+		<tr>
+			<td valign="middle"><img alt="Picture Not Found"
+				src="pics/tool_bar_search.jpg" border="1"></td>
+			<td valign="middle"><strong>Search </strong> button opens <a
+				href="text_widget.html#search">Search dialog popup</a>, either as a
+			dialog box or as a tool bar at editor's bottom line</td>
+		</tr>
+		<tr>
+			<td valign="middle"><img alt="Picture Not Found"
+				src="pics/tool_bar_file_properties.jpg" border="1"></td>
+			<td valign="middle"><strong>File Properties </strong> button
+			opens the <a href="annotation_file_properties.html">File
+			Properties </a> dialog for the current file.</td>
+		</tr>
+		<tr>
+			<td valign="middle"><img alt="Picture Not Found"
+				src="pics/tool_bar_explorer.jpg" border="1"></td>
+			<td valign="middle"><strong>Show/Hide explorer </strong> button
+			shows or hides the <a href="explorer_tree.html">File Explorer</a>.</td>
+		</tr>
+		<tr>
+			<td valign="middle"><img alt="Picture Not Found"
+				src="pics/tool_bar_global_dictionary.jpg" border="1"></td>
+			<td valign="middle"><strong>Global speakers dictionary
+			</strong> button opens the <a href="speaker_dictionary.html">Global
+			Dictionary </a>.</td>
+		</tr>
+		<tr>
+			<td valign="middle"><img alt="Picture Not Found"
+				src="pics/tool_bar_language.jpg" border="1"></td>
+			<td valign="middle"><a name="keyboard_language"><strong>Keyboard
+			language </strong> button</a> allows to set current input language for the
+			keyboard (shortcut: <strong>&lt;ctrl+shift+page up/down&gt;</strong>).</td>
+		</tr>
+		<tr>
+			<td valign="middle"><img alt="Picture Not Found"
+				src="pics/tool_bar_edit_mode.jpg" border="1"></td>
+			<td valign="middle"><strong>File locked </strong> button
+			indicates current file editability state: when shown as an open
+			padlock, then current file can be updated. When shown as a closed
+			padlock, then current file is only readable. By clicking on the
+			button, one can change the editability state of the editor buffer <strong>BUT
+			NOT OF THE FILE</strong>. This is useful to avoid modifying a writable buffer,
+			when browsing it for instance (shortcut: <strong>&lt;F6&gt;</strong>).</td>
+		</tr>
+		<tr>
+			<td valign="middle"><img alt="Picture Not Found"
+				src="pics/tool_bar_displayed_editor_tag.jpg" border="1"></td>
+			<td valign="middle"><strong>Editor qualifiers tags
+			displayed </strong> button allows to show or hide qualifier tags in the text
+			widget (shortcut: <strong>&lt;F7&gt;</strong>). Clicking on the
+			button allows to hide or display the qualifiers. When hidden mode is
+			on, clicking on the arrow button on the right allows to switch
+			between modes (hide all qualifiers, only events, only entities, ...)
+			</td>
+		</tr>
+		<tr>
+			<td valign="middle"><img alt="Picture Not Found"
+				src="pics/tool_bar_sync_signal.jpg" border="1"></td>
+			<td valign="middle"><strong>Text synchronized to signal</strong>
+			button allows to activate/deactivate automatic positioning of the
+			text cursor relatively to the current signal offset. When shown as
+			illustrated, text is synchronized with signal, which means that text
+			cursor "follows" the signal cursor. When shown crossed with a red
+			line, text is not synchronized with the signal (shortcut: <strong>&lt;F8&gt;</strong>).</td>
+		</tr>
+		<tr>
+			<td valign="middle"><img alt="Picture Not Found"
+				src="pics/tool_bar_sync_text.jpg" border="1"></td>
+			<td valign="middle"><strong>Signal synchronized to text
+			</strong> button allows to activate/deactivate automatic positioning of the
+			signal cursor relatively to the current text cursor position. When
+			shown as illustrated, signal is synchronized with text, which means
+			that signal cursor "follows" the text cursor. When shown crossed with
+			a red line, signal is not synchronized with the text (shortcut: <strong>&lt;F9&gt;</strong>).</td>
+		</tr>
+		<tr>
+			<td valign="middle"><img alt="Picture Not Found"
+				src="pics/tool_bar_highlight.jpg" border="1"></td>
+			<td valign="middle"><strong>Highlight </strong> button when
+			activated (shows as illustrated), the current segment of text in the
+			annotation editor is highlighted. When shown crossed with a red line,
+			text highlighting is disabled. For a stereo file with
+			multiple views, one can refine highlighting options by clicking on the
+			arrow button on the right, and select in which view to activate
+			highlight (shortcut: <strong>&lt;F11&gt;</strong>).</td>
+		</tr>
+		<tr>
+			<td valign="middle"><img alt="Picture Not Found"
+				src="pics/tool_bar_unique_editor.jpg" border="1"></td>
+			<td valign="middle"><strong>Unique editor </strong> button (only
+			with stereo files). Allows to switch between various display modes for
+			stereo files: a single view displaying annotations for both tracks,
+			two "dual" views (one for each track) side by side, a single view for
+			one of the tracks. Clicking on the "terminal" icon allows to switch
+			between single / dual view. When in single view, clicking on the
+			arrow button on the right allows to select between merged / track1 /
+			track2 modes (shortcut: <strong>&lt;F12&gt;</strong>).</td>
+		</tr>
+		<tr>
+			<td valign="middle"><img alt="Picture Not Found"
+				src="pics/tool_bar_clipboard.jpg" border="1"></td>
+			<td valign="middle"><strong>Clipboard </strong> button Show /
+			hide <a href="text_widget.html#clipboard">Clipboard</a> window
+			(shortcut: <strong>&lt;shift+alt+c&gt;</strong>).</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td valign="middle"><strong>remark:</strong> The classic option icons (such as open, save, 
+			copy, paste) depend on the Gtk theme used by your system, and can differ from the pictures of the current pages.</td>
+		</tr>
+
+	</tbody>
+</table>
+<br>
+<hr><a href="#top" target="content_frame"> &gt;&gt; Back to top
+</a>
+</body>
+</html>

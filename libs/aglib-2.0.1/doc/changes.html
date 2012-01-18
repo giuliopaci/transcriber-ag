@@ -1,0 +1,247 @@
+<html>
+<head>
+<title>AGLIB documentation: Changes from previous release</title>
+</head>
+<body bgcolor="#ffffee">
+
+<h3>Changes from previous release</h3>
+<hr>
+
+<p> This release contains some important changes in the main API.  In
+particular, the first two changes described below will require
+modifications to applications which are based on earlier versions of
+AGLIB (version 1.*).  These changes are the result of input from
+developers, and we feel that such changes are necessary.  The two
+essential changes are 1) the list return types, and 2) the optional type
+arguments.
+</p>
+
+<p>
+In addition, this release contains some new additions to the
+features of AGLIB, which we hope developers find useful.
+</p>
+
+
+<br>
+<h4>New functions and obsolete functions</h4>
+
+<p>New functions:</p>
+
+<ul>
+<li><a href="api/interfaceAGAPI.html#z7_4">Store2</a></li>
+<li><a href="api/interfaceAGAPI.html#z3_8">GetAnnotationSet</a></li>
+</ul>
+
+<p>Obsolete functions:</p>
+
+<ul>
+<li>GetAnnotationSetByType</li>
+<li>GetIncomingAnnotationSetByType</li>
+<li>GetOutgoingAnnotationSetByType</li>
+<li>load</li>
+<li>store</li>
+</ul>
+
+<p>The <tt>Store2</tt> function has been added.  In contrast to the
+<tt>Store</tt> function which accepts only one AG or AGSet id, <tt>Store2</tt>
+accepts a list of AG or AGSet ids to be stored, giving more options to the
+implementation of file I/O modules.</p>
+
+<p>The <tt>GetAnnotationSet</tt> function has been added and
+the <tt>GetAnnotationSetByType</tt> function has been incorporated
+into it, by virtue of the optional type argument of the <tt>GetAnnotationSet</tt> function.</p>
+
+<p>Because of the optional type arguments of the
+<tt>GetIncomingAnnotationSet</tt> and <tt>GetOutgoingAnnotationSet</tt>,
+the <tt>GetIncomingAnnotationSetByType</tt> and
+<tt>GetOutgoingAnnotationSetByType</tt> were no longer needed
+and have been dropped.</p>
+
+<p>The <tt>load</tt> and <tt>store</tt> functions were aliases to
+<tt>Load</tt> and <tt>Store</tt>.  They are no longer supported.</p>
+
+<br><br>
+<h4>List return values</h4>
+
+<p>The first of the important API level changes is the list return types:
+functions that used to return a space-separated string of items now
+return a true list.  This means that the applications written for
+previous releases of AGLIB will need to be modified slightly
+in order to use AGLIB version 2.0 and later.</p>
+
+<p>Here is the list of functions that are affected:</p>
+
+<ul>
+<li><a href="api/interfaceAGAPI.html#z0_3">GetAGIds</a></li>
+<li><a href="api/interfaceAGAPI.html#z3_4">GetAnchorSet</a></li>
+<li><a href="api/interfaceAGAPI.html#z3_6">GetAnchorSetByOffset</a></li>
+<li><a href="api/interfaceAGAPI.html#z3_7">GetAnchorSetNearestOffset</a></li>
+<li><a href="api/interfaceAGAPI.html#z5_12">GetAnchorSignalIds</a></li>
+<li><a href="api/interfaceAGAPI.html#z6_4">GetAnnotationFeatureNames</a></li>
+<li><a href="api/interfaceAGAPI.html#z3_11">GetAnnotationSeqByOffset</a></li>
+<li><a href="api/interfaceAGAPI.html#z3_9">GetAnnotationSetByFeature</a></li>
+<li><a href="api/interfaceAGAPI.html#z3_10">GetAnnotationSetByOffset</a></li>
+<li><a href="api/interfaceAGAPI.html#z6_3">GetAnnotationTypes</a></li>
+<li><a href="api/interfaceAGAPI.html#z6_10">GetFeatureNames</a></li>
+<li><a href="api/interfaceAGAPI.html#z5_14">GetIncomingAnnotationSet</a></li>
+<li><a href="api/interfaceAGAPI.html#z5_15">GetOutgoingAnnotationSet</a></li>
+<li><a href="api/interfaceAGAPI.html#z1_3">GetSignals</a></li>
+<li><a href="api/interfaceAGAPI.html#z7_2">Load</a></li>
+<li><a href="api/interfaceAGAPI.html#z4_5">NSplitAnnotation</a></li>
+<li><a href="api/interfaceAGAPI.html#z4_4">SplitAnnotation</a></li>
+<li><a href="api/interfaceAGAPI.html#z7_7">StoreSQLs</a></li>
+</ul>
+
+<p>The following functions have been modified to accept a list of
+SignalIds.</p>
+
+<ul>
+<li><a href="api/interfaceAGAPI.html#z5_1">CreateAnchor</a></li>
+<li><a href="api/interfaceAGAPI.html#z5_12">SetAnchorSignalIds</a></li>
+</ul>
+
+<p>Additionally, the following functions are modified to accept and return
+a hash table of feature-value pairs.</p>
+
+<ul>
+<li><a href="api/interfaceAGAPI.html#z6_12">GetFeatures</a></li>
+<li><a href="api/interfaceAGAPI.html#z6_11">SetFeatures</a></li>
+</ul>
+
+
+
+<br><br>
+<h4>Optional type arguments</h4>
+
+<p>An optional argument for annotation type is added to some
+functions. This optional type argument is used to restrict the operation to
+the annotations of a specified type.  This makes it easy for an
+application to ignore the existence of annotations it doesn't care
+about (e.g. annotations created by some other application).
+Affected functions are:</p>
+
+<ul>
+<li><a href="api/interfaceAGAPI.html#z3_12">GetAnnotationByOffset</a></li>
+<li><a href="api/interfaceAGAPI.html#z6_4">GetAnnotationFeatureNames</a></li>
+<li><a href="api/interfaceAGAPI.html#z3_11">GetAnnotationSeqByOffset</a></li>
+<li><a href="api/interfaceAGAPI.html#z3_9">GetAnnotationSetByFeature</a></li>
+<li><a href="api/interfaceAGAPI.html#z3_10">GetAnnotationSetByOffset</a></li>
+<li><a href="api/interfaceAGAPI.html#z5_14">GetIncomingAnnotationSet</a></li>
+<li><a href="api/interfaceAGAPI.html#z5_15">GetOutgoingAnnotationSet</a></li>
+</ul>
+
+
+
+<br><br>
+<h4>ID scheme</h4>
+
+<p>The naming scheme for the AG object IDs that are automatically
+generated by AGLIB has changed in version 2.  AGLIB can still read old AG
+(AIF-Level0) xml files and use the IDs stored in those files; also,
+applications can use their own ID assignment schemes.</p>
+
+<p>The prefixes <tt>AG</tt>, <tt>Annotation</tt>, <tt>Anchor</tt>,
+<tt>Timeline</tt> and <tt>Signal</tt> have been replaced with simpler
+strings or empty strings. For example, <tt>Timeline</tt> becomes
+<tt>T</tt>, and <tt>Annotation</tt> becomes <tt>E</tt>. The rest are
+replaced with empty strings. The numbering scheme is also changed to use
+base-60 numbers. The digits come from [0-9A-DF-SU-Za-z].  Note that E and T
+are reserved for Annotation and Timeline IDs. Here are some examples:</p>
+
+<pre>
+    TIMIT:AG6:Annotation115  --->  TIMIT:6:E1v
+    TIMIT:AG23:Anchor87      --->  TIMIT:N:1R
+    TIMIT:Timeline1:Signal2  --->  TIMIT:T1:2
+</pre>
+
+<p>It is still possible for users to specify custom IDs when creating
+the objects, e.g. CreateAG("TIMIT:Timeline1"),
+CreateAnchor("TIMIT:Timeline1:Signal1"), etc.</p>
+
+<p>These changes will reduce the size of the AG (AIF-Level0) format files,
+and memory usage of the kernel.  The changes don't imply modifications of
+applications, since applications are not supposed to manipulate IDs
+directly.</p>
+
+<br><br>
+<h4>File I/O plugin architecture</h4>
+
+<p>A file I/O plugin architecture has been introduced in AGLIB 2.0. The
+basic idea is to make a seperate module (or plugin) for each file format
+that can be dynamically loaded at runtime. The plugins are kept in the file
+system, and loaded into the memory only when they are needed. The new
+lightweight libag, without the file I/O modules that were previously built
+into it, can save loading time and memory.</p>
+
+<p>Another important benefit of the architecture is that it
+decentralizes the file I/O development and reduces engineering efforts
+required to add a new format support.  The old development model was
+something like this: develop a file I/O module; adding the module
+by editing several other AGLIB modules, Makefiles and possibly
+configuration scripts; make a
+patch and report this to the central development site
+(<a href="http://agtk.sf.net">http://agtk.sf.net</a>); an AGTK
+developer reviews the patch and incorporates it into a new release of
+AGLIB. With the new architecture, you just follow the file I/O plugin
+framework to develop your plugin. It doesn't involve any modification
+of AGLIB sources at all. You can post your plugin on your web
+site so that people can download and use it.  We hope this encourages
+wider participation in the development of AGLIB I/O modules.</p>
+
+<br><br>
+<h4>More formats</h4>
+
+<p>The <a href="formats.html#ATLAS"><b>ATLAS</b> (AIF level 1) format</a>
+has been added the supported file format list. Since the ATLAS data model
+is a superset of the annotation graph model, there are some restrictions on
+data which the ATLAS format plugin can deal with. As long as the data is
+for a linear signal and the annotations are fielded records,
+everything should work fine.</p>
+
+<p>The <a href="formats.html#CAG"><b>CAG</b> (Compact Annotation Graph)
+format</a> has been added to the supported file format list. CAG is a compact
+table representation of the annotation graph data model. It's a
+significant space saver
+for a project that has to deal with a large quantity of data.</p>
+
+<br><br>
+<h4>Java support</h4>
+
+<p>A Java AG wrapper has been added. (This is in addition to the Java
+support already provided with the Java port of AGLIB.)
+The Java AG wrapper is a Java version of
+AGAPI, which is a collection of C++ functions that wrap the C++ core
+of AGLIB.  The AGLIB Java port rewrites the C++ core in Java.  The
+difference is the programming interface: Java AG wrapper exports the
+flat AGAPI, while the AGLIB Java port takes an object oriented approach.</p>
+
+<br><br>
+<h4>Miscellany</h4>
+
+<p><li>The format name '<b>AIF</b>' (for the AG or AIF-Level0 format) is
+obsolete. Use '<a href="formats.html#AG"><b>AG</b></a>' instead.</p>
+
+<p><li>An <a href="formats.html#AG">AG format</a> (previously AIF format)
+file can be loaded without a DTD validation. Also, the DTD location can be
+specified using the <tt>options</tt> parameter of <tt>Load</tt> function.</p>
+
+<p><li>A <tt>Store</tt> function for the <a href="formats.html#AG">AG
+format</a> has been added for completeness. The encoding of the output
+can be specified using the <tt>options</tt> parameter. NB: this doesn't
+change the encoding of the output itself; but this option outputs the
+encoding name in the XML header, such as below.</p>
+
+<p><li>There were many changes in the configuration options for compiling
+the package.  Please see the <a href="install.html">Installation from
+source package</a> section.</p>
+
+<p><li>The AGLIB source package has been reorganized.</p>
+
+<p><li>This HTML documentation has been added.</p>
+
+<p><li>Various bug fixes have been incorporated.</li></p>
+
+<hr><a href="http://agtk.sourceforge.net/">Annotation Graph Toolkit</a>
+
+</body>
+</html>

@@ -1,0 +1,1087 @@
+<html>
+<head>
+<title>AGLIB documentation:Supported file formats</title>
+</head>
+<body bgcolor="ffffee">
+
+<h3>Supported file formats</h3>
+
+<ul>
+<li><a href="#AG">AG</a> - Annotation Graph format, aka <b>AIF</b> (ATLAS Interchange Format) level 0</li>
+<li><a href="#ATLAS">ATLAS</a> - <b>AIF</b> level 1</li>
+<li><a href="#BAS">BAS</a> - BAS (Barvarian Archive for Speech Signals) Partitur format, v1.2.5</li>
+<li><a href="#BU">BU</a> - Boston University Radio Speech Corpus format</li>
+<li><a href="#CAG">CAG</a> - Compact Annotation Graph format</li>
+<li><a href="#LCF">LCF</a> - LDC Callhome format</li>
+<li><a href="#SwitchBoard">SwitchBoard</a> - Switchboard corpus format</li>
+<li><a href="#TF">TF</a> - Table format</li>
+<li><a href="#TIMIT">TIMIT</a> - TIMIT corpus format</li>
+<li><a href="#TreeBank">TreeBank</a> - Penn Treebank format</li>
+<li><a href="#XLabel">XLabel</a> - xlabel format</li>
+</ul>
+
+
+
+<hr></hr>
+<a name="AG"/>
+<h4>AG format</h4>
+
+<p>The AG format is an XML representation of annotation graph
+data model, and the official format for annotation graphs.</p>
+
+<li>Format name: ATLAS Interchange Format level 0 or Annotation Graph
+format</li>
+<li>AGLIB format name: <b>AG</b></li>
+<li>Input/Output: yes/yes</li>
+<li>Resources: <a href="http://agtk.sf.net/doc/xml/ag-1.1.dtd">DTD</a>,
+<a href="http://agtk.sf.net">Annotation Graph Toolkit</a></li>
+<li>Programming interface
+
+<dl><dd>
+
+<!-------------------- Load -------------------->
+<table cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<tt><a href="api/interfaceAGAPI.html#a82">Load</a>(format, filename,
+id, sigInfo, options)</tt><br><br>
+returns a list of AGIds loaded
+</td></tr>
+</table>
+
+<table>
+<tr><td align="right"><tt>format</tt>:</td><td><i>AG</i></td></tr>
+<tr><td align="right"><tt>filename</tt>:</td><td>name of the file to load</td></tr>
+<tr><td align="right"><tt>id</tt>:</td><td>optional, ignored</td></tr>
+<tr><td align="right"><tt>sigInfo</tt>:</td><td>optional, ignored</td></tr>
+<tr valign="top"><td align="right"><tt>options</tt>:</td><td>optional<br>
+
+<table border="1px"><tr>
+<th>Option</th>
+<th>Posible values</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td align="center"><i>dtd</i></td>
+<td align="center">A path or URL to the DTD</td>
+<td>Specifies the location of the DTD. If not present, the system id
+in DOCTYPE declaration in the document is used by default.</td>
+</tr>
+
+<tr>
+<td align="center"><i>encoding</i></td>
+<td align="center"><i>ASCII</i>, <i><u>UTF-8</u></i>, <i>UTF-16</i>,
+<i>UCS4</i>, <i>IBM037</i>, <i>IBM1140</i>, <i>ISO-8859-1</i>,
+<i>Windows-1252</i></td>
+<td>Force the loader to treat the document as if it's in the specified
+encoding.  By default, the encoding specified in XML declaration is
+used. If none are given, defaults to <i>UTF-8</i>.</td>
+</tr>
+
+<tr>
+<td align="center"><i>DTDvalidation</i></td>
+<td align="center"><i><u>true</u></i>, <i>false</i></td>
+<td>Tells the loader whether or not to perform a DTD validation. Default
+value is <i>true</i>.</td>
+</tr>
+</table>
+
+</td></tr>
+</table>
+
+<!-------------------- Store -------------------->
+<br><br>
+<table cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<tt><a href="api/interfaceAGAPI.html#a83">Store</a>(format, filename,
+id, options)</tt><br><br>
+returns an empty string
+</td></tr>
+</table>
+
+<table>
+<tr><td align="right"><tt>format</tt>:</td><td><i>AG</i></td></tr>
+<tr><td align="right"><tt>filename</tt>:</td><td>name of the file to load</td></tr>
+<tr><td align="right"><tt>id</tt>:</td><td>AGId or AGSetId to be stored</td></tr>
+<tr valign="top"><td align="right"><tt>options</tt>:</td><td>optional<br>
+
+<table border="1px"><tr>
+<th>Option</th>
+<th>Posible values</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td align="center"><i>dtd</i></td>
+<td align="center">A path or URL to the DTD</td>
+<td>Specifies the location of the DTD in the output file. Default
+value is <a href="http://agtk.sf.net/doc/xml/ag-1.1.dtd">http://agtk.sf.net/doc/xml/ag-1.1.dtd</a></td>
+</tr>
+
+<tr>
+<td align="center"><i>encoding</i></td>
+<td align="center">Any encoding allowed for XML</td>
+<td>Writes the encoding in the XML declaration of output file. If not
+given, no encoding will be written in the XML declaration.</td>
+</tr>
+</table>
+
+</td></tr>
+</table>
+
+</dd></dl>
+
+
+
+<hr></hr>
+<a name="ATLAS"/>
+<h4>ATLAS format</h4>
+
+<li>Format name: ATLAS Interchange Format level 1</li>
+<li>AGLIB format name: <b>ATLAS</b></li>
+<li>Input/Output: yes/yes</li>
+<li>Resources:
+<a href="http://www.nist.gov/speech/atlas/jatlas">jATLAS homepage</a>,
+<a href="http://www.nist.gov/speech/atlas/develop/std-dtd.html#core">AIF DTD</a>,
+<a href="http://www.nist.gov/speech/atlas/develop/maia.html">MAIA</a>
+<li>Programming interface
+
+
+<dl>
+<!-------------------- Load -------------------->
+<dd>
+<table cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<tt><a href="api/interfaceAGAPI.html#a82">Load</a>(format, filename,
+id, sigInfo, options)</tt><br><br>
+returns a list of AGIds loaded
+</td></tr>
+</table>
+
+<table>
+<tr><td align="right"><tt>format</tt>:</td><td><i>ATLAS</i></td></tr>
+<tr><td align="right"><tt>filename</tt>:</td><td>name of the file to load</td></tr>
+<tr><td align="right"><tt>id</tt>:</td><td>optional AGSetId. If not
+given or an empty string is given, <i>ATLAS</i> is assumed.</td></tr>
+<tr><td align="right"><tt>sigInfo</tt>:</td><td>optional, ignored</td></tr>
+<tr valign="top"><td align="right"><tt>options</tt>:</td><td>optional<br>
+
+<table border="1px"><tr>
+<th>Option</th>
+<th>Posible values</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td align="center"><i>MAIA</i></td>
+<td align="center">A path to the MAIA file</td>
+<td>Specifies the location of the MAIA file. If not given, the value
+specified in the ATLAS file will be used.</td>
+</tr>
+
+<tr>
+<td align="center"><i>agann</i></td>
+<td align="center">ATLAS annotation type</td>
+<td>This type of ATLAS Annotations and their sub Annotations will
+become AG's.  The higher level Annotations will be put in an extra AG.
+If not given, the top ATLAS Annotation type in the hierarchy will be
+used.</td>
+</tr>
+
+<tr>
+<td align="center"><i>DTDvalidation</i></td>
+<td align="center"><i><u>true</u></i>, <i>false</i></td>
+<td>Tells the loader whether or not to perform a DTD validation. The DTD
+validation process includes a validation of the ATLAS file and a validation of the MAIA file. The default value is <i>true</i>.</td>
+</tr>
+</table>
+
+</td></tr>
+</table>
+</dd>
+
+<!-------------------- Store -------------------->
+<dd>
+<br><br>
+<table cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<tt><a href="api/interfaceAGAPI.html#a83">Store</a>(format, filename,
+id, options)</tt><br><br>
+returns an empty string
+</td></tr>
+</table>
+
+<table>
+<tr><td align="right"><tt>format</tt>:</td><td><i>ATLAS</i></td></tr>
+<tr><td align="right"><tt>filename</tt>:</td><td>name of the file to
+load</td></tr>
+<tr><td align="right"><tt>id</tt>:</td><td>AGId or AGSetId to be
+stored</td></tr>
+<tr valign="top"><td align="right"><tt>options</tt>:</td><td>optional<br>
+
+<table border="1px"><tr>
+<th>Option</th>
+<th>Posible values</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td align="center"><i>encoding</i></td>
+<td align="center">Any encoding name allowed in XML</td>
+<td>Writes the given encoding string in the XML declaration of the
+output file. If not given, the output won't have encoding
+specification in the XML declaration.</td>
+</tr>
+
+
+<tr>
+<td align="center"><i>schemeLocation</i></td>
+<td align="center">A path of URL to the MAIA file</td>
+<td>The value is for the schemeLocation attribute of Corpus tag. If
+not given, AGSet's _AtlasSchemeLocation_ feature is used. If the
+feature is not available or invalid, the value of <i>MAIA</i> option
+is used.  The specified file may not exist.</td>
+</tr>
+
+<tr>
+<td align="center"><i>MAIA</i></td>
+<td align="center">A path of URL to the MAIA file</td>
+<td>The MAIA file on which the annotation graphs to be stored are
+based. If not given, the value of <i>schemeLocation</i> is used. The
+file should actually exist. If not, store process can proceed and an
+exception is thrown.</td>
+</tr>
+
+<tr>
+<td align="center"><i>Corpus/type</i></td>
+<td align="center">Corpus type as defined in MAIA file</td>
+<td>The corpus type that the annotation graphs are emulating. If not
+given, AGSet's _AtlasCorpusType_ feature will be used. If it's not
+available of invalid, an exception is thrown.</td>
+</tr>
+
+<tr>
+<td align="center"><i>Corpus/id</i></td>
+<td align="center">Corpus id</td>
+<td>The corpus id that will be written as the value of id attribute of
+Corpus element in the output. If not given, AGSet's _AtlasCorpusID_
+feature is used. If it's not available or invalid. AGSetId is used. If
+it's not valid again, an exception is thrown.</td>
+</tr>
+
+<tr>
+<td align="center"><i>type_rename</i></td>
+<td align="center">AG Annotation type and ATLAS Annotation type
+pairs</td>
+<td>If there is mismatch beteen AG Annotation type name and ATLAS
+Annotation type name, this option can be used to map the different
+names.</td>
+</tr>
+
+<tr>
+<td align="center"><i>AnaIdMap</i></td>
+<td align="center">Analysis type, role and id triples</td>
+<td>There is a mapping between Analysis type&amp;role and Analysis
+id in an ATLAS file. Using this option, you can substitute the default
+mapping which is established when an ATLAS file loaded.</td>
+</tr>
+
+<tr>
+<td align="center"><i>DTDvalidation</i></td>
+<td align="center"><i><u>true</u></i>, <i>false</i></td>
+<td>Tells the function whether or not to do DTD validation of MAIA
+file. Default value is <i>true</i>.</td>
+</tr>
+</table>
+
+</td></tr>
+</table>
+</dd>
+
+<!-------------------- Store2 -------------------->
+<dd>
+<br><br>
+<table cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<tt><a href="api/interfaceAGAPI.html#a84">Store2</a>(format, filename,
+ids, options)</tt><br><br>
+returns an empty string
+</td></tr>
+</table>
+
+<table>
+<tr><td align="right"><tt>format</tt>:</td><td><i>ATLAS</i></td></tr>
+<tr><td align="right"><tt>filename</tt>:</td><td>name of the file to
+load</td></tr>
+<tr><td align="right"><tt>ids</tt>:</td><td>A list of AGIds to be
+stored</td></tr>
+<tr valign="top"><td align="right"><tt>options</tt>:</td><td>See
+options of <tt>Store()</tt></tr>
+</table>
+</dd>
+
+<dd>
+<br><br>
+<table border="1px" cellpadding="5px"><tr><td>
+<p><b>Annotation graph model of ATLAS format</b></p>
+
+<p> The Atlas format extends annotation graph data model in various ways.  Most
+of all, it generalizes the concept of anchor.  Anchor is not just a time
+mark in Atlas.  It is a point in a multi-dimensional space.  Region
+revives in Atlas.  It specifies a portion in a signal to be annotated.
+Region can be expressed in a very complex way, using anchors, annotations
+and even regions.
+
+<p> By restricting the target signals to linear ones, it is still possible
+to model Atlas format as annotation graph.  The restriction coded in
+ATLAS class is as follows:</p>
+
+<ul>
+<li> Anchor has one and only one parameter of numeric type.
+<li> Region has exactly two anchor references.  The role of one anchor
+reference must be <tt>start</tt> and the other must be <tt>end</tt>.
+<tt>start</tt> anchor specifies the start offset and <tt>end</tt> anchor
+specifies the end offset.
+</ul>
+
+<p> Atlas also extends the content model of annotation of annotation graph,
+and this also needs to be restricted.</p>
+
+<ul>
+<li> The content must be a list of parameters.  Role of a parameter
+is mapped to annotation feature name.  The text content of parameter is
+mapped to annotation feature value.
+</ul>
+
+<p> Atlas makes the hierarchy of annotations explicit be specifying the
+annotation's children.  In annotation graph, such hierarchy is implicit
+and incomplete.  To solve this problem, Atlas ag model introduces a
+special annotation feature, <i>_AtlasAnnChil_</i>.  There are other
+special features, and they are summarized below.</p>
+
+<ul>
+<li> <i>_AtlasAnnChil_</i> : Annotation feature. List of child
+annotations, e.g.
+
+  <table border="0px" cellpadding="3px"><tr><td><small><tt>token token
+  ATLAS:AG1:Annotation1 ATLAS:AG1:Annotation2 ATLAS:AG1:Annotation3 ;
+  token interruptionPoint ATLAS:AG1:Annotation3</tt></small></td></tr>
+  </table>
+  This example means the annotation has 2 children group.  The first group
+  contains <tt>token</tt> type children and their role is <tt>token</tt>.  The
+  second group contains <tt>token</tt> type children and their role is
+  <tt>interruptionPoint</tt>.
+
+   <p><b>Important:</b> Applications should carefully manupulate the
+   <i>_AtlasAnnChil_</i> feature.  The value of that feature is critical in
+   generating Atlas output.</p>
+
+<li> <i>_AtlasAnnID_</i> : Annotation feature.  Atlas allows external
+  references to annotation.  Thus, it's important to keep original ids
+  during conversion.  This feature keeps the original id.
+<li> <i>_AtlasRegID_</i> : Annotation feature.  Atlas region id.
+<li> <i>_AtlasStartAncID_</i> : Annotation feature.  Atlas start anchor id.
+<li> <i>_AtlasEndAncID_</i> : Annotation feature.  Atlas end anchor id.
+<li> <i>_AtlasCorpusID_</i> : AGSet feature (metadata).  Atlas corpus id.
+<li> <i>_AtlasSchemeLocation_</i> : AGSet feature (metadata).  The location
+  of MAIA file.
+<li> <i>_AtlasAnaMapStr_</i> : AGSet feature (metadata).  Records original
+  Atlas analysis ids.
+<li> <i>_AtlasSignalID_</i> : Signal feature (metadata).  Atlas signal id.
+<li> <i>_AtlasCorpusType_</i> : AGSet feature (metadata).  Atlas corpus type.
+</ul>
+</td></tr></table>
+</dd>
+</dl>
+
+
+
+<hr></hr>
+<a name="BAS"/>
+<h4>BAS format</h4>
+
+<li>Format name: BAS (Barvarian Archive for Speech Signals) Partitur
+format, v1.2.5</li>
+<li>AGLIB format name: <b>BAS</b></li>
+<li>Input/Output: yes/no</li>
+<li>Resources: <a href="http://www.phonetik.uni-muenchen.de/Bas/BasFormatseng.html">Format documentation</a>
+<li>Programming interface:</li>
+
+<dl>
+<!-------------------- Load -------------------->
+<dd>
+<table cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<tt><a href="api/interfaceAGAPI.html#a82">Load</a>(format, filename,
+id, sigInfo, options)</tt><br><br>
+returns a list of AGIds loaded
+</td></tr>
+</table>
+
+<table>
+<tr><td align="right"><tt>format</tt>:</td><td><i>BAS</i></td></tr>
+<tr><td align="right"><tt>filename</tt>:</td><td>name of the file to
+load</td></tr>
+<tr><td align="right"><tt>id</tt>:</td><td>AGId or AGSetId. If the
+object by the id doesn't exist, the loader will create one.</td></tr>
+<tr><td align="right"><tt>sigInfo</tt>:</td><td>optional. See <tt><a
+href="api/interfaceAGAPI.html#a82">Load</a></tt> in AGAPI doc for the
+value.</td></tr>
+<tr><td align="right"><tt>options</tt>:</td><td>optional, ignored</td></tr>
+</table>
+</dd>
+</dl>
+
+
+
+<hr></hr>
+<a name="BU"/>
+<h4>BU format</h4>
+
+<li>Format name: Boston University Radio Speech Corpus format</li>
+<li>AGLIB format name: <b>BU</b></li>
+<li>Input/Output: yes/no</li>
+<li>Programming interface:</li>
+
+<dl>
+<!-------------------- Load -------------------->
+<dd>
+<table cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<tt><a href="api/interfaceAGAPI.html#a82">Load</a>(format, filename,
+id, sigInfo, options)</tt><br><br>
+returns a list of AGIds loaded
+</td></tr>
+</table>
+
+<table>
+<tr><td align="right"><tt>format</tt>:</td><td><i>BU</i></td></tr>
+<tr><td align="right"><tt>filename</tt>:</td><td>Common prefix of
+annotation file set to load</td></tr>
+<tr><td align="right"><tt>id</tt>:</td><td>AGId or AGSetId. If the
+object by the id doesn't exist, the loader will create one.</td></tr>
+<tr><td align="right"><tt>sigInfo</tt>:</td><td>optional. See <tt><a
+href="api/interfaceAGAPI.html#a82">Load</a></tt> in AGAPI doc for the
+value.</td></tr>
+<tr valign="top"><td align="right"><tt>options</tt>:</td><td>optional,
+
+<table border="1px"><tr>
+<th>Option</th>
+<th>Posible values</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td align="center"><i>base</i></td>
+<td align="center"><i>lbl</i></td>
+<td>If there exist both .lba and .lbl file, the loader uses .lba file
+for base annotations by default.  Use this option to force the loader
+to choose .lbl file.  If only one of them exists, there is no
+choice and the option is ignored.
+</tr>
+</table>
+
+</td></tr>
+</table>
+</dd>
+</dl>
+
+
+
+<hr></hr>
+<a name="CAG"/>
+<h4>CAG format</h4>
+
+<p>The CAG format has been developed to reduce the size of annotation
+files while keeping the equivalence with the AG format.  The CAG format could
+be an alternative of the AG format when the storage space matters.</p>
+
+<p>This format can be stored over several files. <i>Dictionary</i> is
+a part of the format that contains anchors. <i>Annotation</i> is the
+part that contains anchors.  The anchors in
+<i>Dictionary</i> are referenced by annotations in the
+<i>Annotation</i> part. An <i>Annotation</i> file should specifies the
+<i>Dictionary</i> file to include in the header. The header is
+processed by the loader to include appropriate <i>Dictionary</i>
+files. The <i>Annotation</i> part also can be spreaded out by
+annotation types.  In other words, each type of annotations can be
+stored in a seperated file. Those <i>Annotation</i> files can be
+included and referenced by other <i>Annotation</i> files.</p>
+
+<li>Format name: Compact Annotation Graph format</li>
+<li>AGLIB format name: <b>CAG</b></li>
+<li>Input/Output: yes/yes</li>
+<li>Resources: <a href="cag.txt">BNF style format definition</a>
+<li>Programming interface
+
+<dl><dd>
+
+<!-------------------- Load -------------------->
+<table cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<tt><a href="api/interfaceAGAPI.html#a82">Load</a>(format, filename,
+id, sigInfo, options)</tt><br><br>
+returns a list of AGIds loaded
+</td></tr>
+</table>
+
+<table>
+<tr><td align="right"><tt>format</tt>:</td><td><i>CAG</i></td></tr>
+<tr><td align="right"><tt>filename</tt>:</td><td>name of the file to
+load</td></tr>
+<tr><td align="right"><tt>id</tt>:</td><td>optional, ignored</td></tr>
+<tr><td align="right"><tt>sigInfo</tt>:</td><td>optional, ignored</td></tr>
+<tr valign="top"><td align="right"><tt>options</tt>:</td><td>optional<br>
+
+<table border="1px"><tr>
+<th>Option</th>
+<th>Posible values</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td align="center"><i>compress</i></td>
+<td align="center"><i>true</i>, <i><u>false</u></i></td>
+<td>Tells if the input file is gzip-compressed or not. Default value
+is false. Note that this option is effective only when the zlib is
+compiled in the plugin.</td>
+</tr>
+</table>
+
+</td></tr>
+</table>
+</dd>
+
+<!-------------------- Store -------------------->
+<dd>
+<br><br>
+<table cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<tt><a href="api/interfaceAGAPI.html#a83">Store</a>(format, filename,
+id, options)</tt><br><br>
+returns an empty string
+</td></tr>
+</table>
+
+<table>
+<tr><td align="right"><tt>format</tt>:</td><td><i>CAG</i></td></tr>
+<tr><td valign="top" align="right"><tt>filename</tt>:</td><td>output
+filename. Used only when the both <i>dictionary</i> and
+<i>annotation</i> options are not set.</td></tr>
+<tr><td align="right"><tt>id</tt>:</td><td>AGId or AGSetId to be
+stored</td></tr>
+<tr valign="top"><td align="right"><tt>options</tt>:</td><td>optional<br>
+
+<table border="1px"><tr>
+<th>Option</th>
+<th>Posible values</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td align="center"><i>compress</i></td>
+<td align="center"><i>true</i>, <i><u>false</u></i></td>
+<td>Tells whether of not to gzip-compress the output. Default value
+is false. Note that this option is effective only when the zlib is
+compiled in the plugin.</td>
+</tr>
+
+<tr>
+<td align="center"><i>dictionary</i></td>
+<td align="center">Dictionary file name</td>
+<td>The <i>Dictionary</i> part will be stored in this file.</td>
+</tr>
+
+<tr>
+<td align="center"><i>annotation</i></td>
+<td align="center">Annotatoin file name</td>
+<td>The <i>Annotation</i> part will be stored in this file.</td>
+</tr>
+
+<tr>
+<td align="center"><i>include</i></td>
+<td align="center">List of dictionary file names (space seperated string)</td>
+<td>These file are written in the <i>Annotation</i> file header in the
+include section.</td>
+</tr>
+
+<tr>
+<td align="center"><i>types</i></td>
+<td align="center">List of annotation types (space seperated string)</td>
+<td>If specified, only these types of annotations are stored in the
+<i>annotation file</i>. By default, all the annotations are stored.</td>
+</tr>
+</table>
+
+<p>The following combination of options are possible:
+<table border="1px">
+<tr>
+<td><i>dictionary</i></td>
+<td><i>annotatoin</i></td>
+<td><i>include</i></td>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td align="center">o</td><td align="center">o</td><td align="center">?</td>
+<td>Both <i>Dictionary</i> and <i>Annotation</i> are
+created. <i>include</i> option is not necessary, since the value of
+the <i>dictionary</i> option will be used. But if given, they will
+be added in the header of the <i>Annotation</i> file.</td>
+</tr>
+
+<tr>
+<td align="center">o</td><td align="center">x</td><td align="center">?</td>
+<td>Only <i>Dictionary</i> file is created. <i>include</i> option is
+ignored.</td>
+</tr>
+
+<tr>
+<td align="center">x</td><td align="center">o</td><td align="center">o</td>
+<td>Only <i>Annotation</i> file is created. <i>include</i> option
+should be set.</td>
+</tr>
+
+<tr>
+<td align="center">x</td><td align="center">x</td><td align="center">?</td>
+<td>One combo file is created with the filename given in the function
+arguments. <i>include</i> option is ignored.</td>
+</tr>
+</table>
+</p>
+
+</td></tr>
+</table>
+</dd>
+
+<!-------------------- Store2 -------------------->
+<dd>
+<br><br>
+<table cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<tt><a href="api/interfaceAGAPI.html#a84">Store2</a>(format, filename,
+ids, options)</tt><br><br>
+returns an empty string
+</td></tr>
+</table>
+
+<p>Same as <tt>Store()</tt>, except that <tt>Store2</tt> accepts list
+of AGIds for <tt>ids</tt>.</p>
+
+</dd>
+</dl>
+
+
+
+
+<hr></hr>
+<a name="LCF"/>
+<h4>LCF format</h4>
+
+<li>Format name: LDC Callhome Format</li>
+<li>AGLIB format name: <b>LCF</b></li>
+<li>Input/Output: yes/yes</li>
+<li>Programming interface:</li>
+
+<dl>
+<!-------------------- Load -------------------->
+<dd>
+<table cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<tt><a href="api/interfaceAGAPI.html#a82">Load</a>(format, filename,
+id, sigInfo, options)</tt><br><br>
+returns a list of AGIds loaded
+</td></tr>
+</table>
+
+<table>
+<tr><td align="right"><tt>format</tt>:</td><td><i>LCF</i></td></tr>
+<tr><td align="right"><tt>filename</tt>:</td><td>name of the file to
+load</td></tr>
+<tr><td align="right"><tt>id</tt>:</td><td>AGId or AGSetId. If the
+object by the id doesn't exist, the loader will create one.</td></tr>
+<tr><td align="right"><tt>sigInfo</tt>:</td><td>optional. See <tt><a
+href="api/interfaceAGAPI.html#a82">Load</a></tt> in AGAPI doc for the
+value.</td></tr>
+<tr><td align="right"><tt>options</tt>:</td><td>optional, ignored</td></tr>
+</table>
+</dd>
+
+<!-------------------- Store -------------------->
+<dd>
+<br><br>
+<table cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<tt><a href="api/interfaceAGAPI.html#a83">Store</a>(format, filename,
+id, options)</tt><br><br>
+returns an empty string
+</td></tr>
+</table>
+
+<table>
+<tr><td align="right"><tt>format</tt>:</td><td><i>LCF</i></td></tr>
+<tr><td valign="top" align="right"><tt>filename</tt>:</td><td>output
+filename</td></tr>
+<tr><td align="right"><tt>id</tt>:</td><td>AGId or AGSetId to be
+stored</td></tr>
+<tr valign="top"><td align="right"><tt>options</tt>:</td><td>optional,
+ignored</td></tr>
+</table>
+</dd>
+
+<!-------------------- Store2 -------------------->
+<dd>
+<br><br>
+<table cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<tt><a href="api/interfaceAGAPI.html#a84">Store2</a>(format, filename,
+ids, options)</tt><br><br>
+returns an empty string
+</td></tr>
+</table>
+
+<p>Same as <tt>Store()</tt>, except that <tt>Store2</tt> accepts list
+of AGIds for <tt>ids</tt>.</p>
+</dd>
+</dl>
+
+
+
+
+<hr></hr>
+<a name="SwitchBoard"/>
+<h4>SwitchBoard format</h4>
+
+<li>Format name: Switchboard corpus format</li>
+<li>AGLIB format name: <b>SwitchBoard</b></li>
+<li>Input/Output: yes/no</li>
+<li>Programming interface:</li>
+
+<dl>
+<!-------------------- Load -------------------->
+<dd>
+<table cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<tt><a href="api/interfaceAGAPI.html#a82">Load</a>(format, filename,
+id, sigInfo, options)</tt><br><br>
+returns a list of AGIds loaded
+</td></tr>
+</table>
+
+<table>
+<tr><td align="right"><tt>format</tt>:</td><td><i>SwitchBoard</i></td></tr>
+<tr><td align="right"><tt>filename</tt>:</td><td>name of the file to
+load</td></tr>
+<tr><td align="right"><tt>id</tt>:</td><td>AGId or AGSetId. If the
+object by the id doesn't exist, the loader will create one.</td></tr>
+<tr><td align="right"><tt>sigInfo</tt>:</td><td>optional. See <tt><a
+href="api/interfaceAGAPI.html#a82">Load</a></tt> in AGAPI doc for the
+value.</td></tr>
+<tr><td align="right"><tt>options</tt>:</td><td>optional, ignored</td></tr>
+</table>
+</dd>
+</dl>
+
+
+
+
+<hr></hr>
+<a name="TF"/>
+<h4>TF format</h4>
+
+<p>The TF format is composed of records.  Each record is composed of fields
+that are seperated by a delimiter.  The first field is assumed to be
+the start time, and the second field, end time.  The rest are features
+for the annotation that are identified by the start/end time. TF
+loader/writer can be used for TDF and CSV formats.</p>
+
+<li>Format name: Table Format</li>
+<li>AGLIB format name: <b>TF</b></li>
+<li>Input/Output: yes/yes</li>
+<li>Programming interface:</li>
+
+<dl>
+<!-------------------- Load -------------------->
+<dd>
+<table cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<tt><a href="api/interfaceAGAPI.html#a82">Load</a>(format, filename,
+id, sigInfo, options)</tt><br><br>
+returns a list of AGIds loaded
+</td></tr>
+</table>
+
+<table>
+<tr><td align="right"><tt>format</tt>:</td><td><i>TF</i></td></tr>
+<tr><td align="right"><tt>filename</tt>:</td><td>name of the file to
+load</td></tr>
+<tr><td align="right"><tt>id</tt>:</td><td>AGId or AGSetId. If the
+object by the id doesn't exist, the loader will create one.</td></tr>
+<tr><td align="right"><tt>sigInfo</tt>:</td><td>optional. See <tt><a
+href="api/interfaceAGAPI.html#a82">Load</a></tt> in AGAPI doc for the
+value.</td></tr>
+<tr><td valign="top" align="right"><tt>options</tt>:</td><td><b>Required</b>
+<table border="1px"><tr>
+<th>Option</th>
+<th>Posible values</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td align="center"><i>seprator</i></td>
+<td align="center">a string</td>
+<td>This string is used as the field delimiter.</td>
+</tr>
+
+<tr>
+<td align="center"><i>header</i></td>
+<td align="center">list of field names delimited by the <i>seperator</i></td>
+<td>This is used to determine the annotation feature names.</td>
+</tr>
+
+<tr>
+<td align="center"><i>ann_type</i></td>
+<td align="center">a string with no white space in it</td>
+<td>Annotations' type will be set to this value. <i>TF</i> is assumed
+by default.</td>
+</tr>
+</table>
+</td>
+</table>
+</dd>
+
+<!-------------------- Store -------------------->
+<dd>
+<br><br>
+<table cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<tt><a href="api/interfaceAGAPI.html#a83">Store</a>(format, filename,
+id, options)</tt><br><br>
+returns an empty string
+</td></tr>
+</table>
+
+<table>
+<tr><td align="right"><tt>format</tt>:</td><td><i>TF</i></td></tr>
+<tr><td valign="top" align="right"><tt>filename</tt>:</td><td>output
+filename</td></tr>
+<tr><td align="right"><tt>id</tt>:</td><td>AGId or AGSetId to be
+stored</td></tr>
+<tr valign="top"><td align="right"><tt>options</tt>:</td><td><b>Required</b><br>
+<table border="1px"><tr>
+<th>Option</th>
+<th>Posible values</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td align="center"><i>seprator</i></td>
+<td align="center">a string</td>
+<td>This string is used as the field delimiter for writing.</td>
+</tr>
+
+<tr>
+<td align="center"><i>header</i></td>
+<td align="center">list of feature names delimited by the
+<i>seperator</i></td>
+<td>This is needed to format the output. Only the features in the
+header will be stored in the output. The header also determines the
+order of fields.</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</dd>
+
+<!-------------------- Store2 -------------------->
+<dd>
+<br><br>
+<table cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<tt><a href="api/interfaceAGAPI.html#a84">Store2</a>(format, filename,
+ids, options)</tt><br><br>
+returns an empty string
+</td></tr>
+</table>
+
+<p>Same as <tt>Store()</tt>, except that <tt>Store2</tt> accepts list
+of AGIds for <tt>ids</tt>.</p>
+</dd>
+</dl>
+
+
+
+
+<hr></hr>
+<a name="TIMIT"/>
+<h4>TIMIT format</h4>
+
+<li>Format name: TIMIT corpus format</li>
+<li>AGLIB format name: <b>TIMIT</b></li>
+<li>Input/Output: yes/no</li>
+<li>Resources: <a href="http://www.ldc.upenn.edu/lol/docs/TIMIT.html">TIMIT
+Corpus</a>
+<li>Programming interface:</li>
+
+<dl>
+<!-------------------- Load -------------------->
+<dd>
+<table cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<tt><a href="api/interfaceAGAPI.html#a82">Load</a>(format, filename,
+id, sigInfo, options)</tt><br><br>
+returns a list of AGIds loaded
+</td></tr>
+</table>
+
+<table>
+<tr><td align="right"><tt>format</tt>:</td><td><i>TIMIT</i></td></tr>
+<tr><td align="right"><tt>filename</tt>:</td><td>The common prefix of
+annotation file set to load.</td></tr>
+<tr><td align="right"><tt>id</tt>:</td><td>AGId or AGSetId. If the
+object by the id doesn't exist, the loader will create one.</td></tr>
+<tr><td align="right"><tt>sigInfo</tt>:</td><td>optional. See <tt><a
+href="api/interfaceAGAPI.html#a82">Load</a></tt> in AGAPI doc for the
+value.</td></tr>
+<tr><td align="right"><tt>options</tt>:</td><td>optional, ignored</td></tr>
+</table>
+</dd>
+</dl>
+
+
+
+
+<hr></hr>
+<a name="TreeBank"/>
+<h4>TreeBank format</h4>
+
+<li>Format name: Penn Treebank format</li>
+<li>AGLIB format name: <b>TreeBank</b></li>
+<li>Input/Output: yes/yes</li>
+<li>Resources: <a
+href="http://www.cis.upenn.edu/~treebank/home.html">Penn Treebank
+project homepage</a>
+<li>Programming interface:</li>
+
+<dl>
+<!-------------------- Load -------------------->
+<dd>
+<table cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<tt><a href="api/interfaceAGAPI.html#a82">Load</a>(format, filename,
+id, sigInfo, options)</tt><br><br>
+returns a list of AGIds loaded
+</td></tr>
+</table>
+
+<table>
+<tr><td align="right"><tt>format</tt>:</td><td><i>TreeBank</i></td></tr>
+<tr><td valign="top" align="right"><tt>filename</tt>:</td><td>
+(1) The file name to load.<br>
+(2) Treebank string, if <i>input type</i> option is used.
+</td></tr>
+<tr><td valign="top" align="right"><tt>id</tt>:</td><td>AGId or
+AGSetId. If the object by the id doesn't exist, the loader will create
+one.<br>
+</td></tr>
+<tr><td align="right"><tt>sigInfo</tt>:</td><td>optional. See <tt><a
+href="api/interfaceAGAPI.html#a82">Load</a></tt> in AGAPI doc for the
+value.</td></tr>
+<tr><td valign="top" align="right"><tt>options</tt>:</td><td>optional,<br>
+<table border="1px"><tr>
+<th>Option</th>
+<th>Posible values</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td align="center"><i>input type</i></td>
+<td align="center">"<i>string</i>" (without quotes)</td>
+<td>Tells the <tt>filename</tt> argument is not a filename, but a
+string in the TreeBank format.</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</dd>
+
+<!-------------------- Store -------------------->
+<dd>
+<br><br>
+<table cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<tt><a href="api/interfaceAGAPI.html#a83">Store</a>(format, filename,
+id, options)</tt><br><br>
+returns an empty string
+</td></tr>
+</table>
+
+<table>
+<tr><td align="right"><tt>format</tt>:</td><td><i>TreeBank</i></td></tr>
+<tr><td valign="top" align="right"><tt>filename</tt>:</td><td>output
+filename</td></tr>
+<tr><td align="right"><tt>id</tt>:</td><td>AGId or AGSetId to be
+stored</td></tr>
+<tr valign="top"><td align="right"><tt>options</tt>:</td><td>optional,
+ignored</td></tr>
+</table>
+</dd>
+
+<!-------------------- Store2 -------------------->
+<dd>
+<br><br>
+<table cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<tt><a href="api/interfaceAGAPI.html#a84">Store2</a>(format, filename,
+ids, options)</tt><br><br>
+returns an empty string
+</td></tr>
+</table>
+
+<p>Same as <tt>Store()</tt>, except that <tt>Store2</tt> accepts list
+of AGIds for <tt>ids</tt>.</p>
+</dd>
+</dl>
+
+
+
+
+<hr></hr>
+<a name="XLabel"/>
+<h4>XLabel format</h4>
+
+<li>Format name: xlabel format</li>
+<li>AGLIB format name: <b>XLabel</b></li>
+<li>Input/Output: yes/no</li>
+Corpus</a>
+<li>Programming interface:</li>
+
+<dl>
+<!-------------------- Load -------------------->
+<dd>
+<table cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<tt><a href="api/interfaceAGAPI.html#a82">Load</a>(format, filename,
+id, sigInfo, options)</tt><br><br>
+returns a list of AGIds loaded
+</td></tr>
+</table>
+
+<table>
+<tr><td align="right"><tt>format</tt>:</td><td><i>XLabel</i></td></tr>
+<tr><td align="right"><tt>filename</tt>:</td><td>The common prefix of
+annotation file set to load.</td></tr>
+<tr><td align="right"><tt>id</tt>:</td><td>AGId or AGSetId. If the
+object by the id doesn't exist, the loader will create one.</td></tr>
+<tr><td align="right"><tt>sigInfo</tt>:</td><td>optional. See <tt><a
+href="api/interfaceAGAPI.html#a82">Load</a></tt> in AGAPI doc for the
+value.</td></tr>
+<tr><td align="right"><tt>options</tt>:</td><td>optional, ignored</td></tr>
+</table>
+</dd>
+</dl>
+
+<hr><a href="http://agtk.sourceforge.net/">Annotation Graph Toolkit</a>
+
+</body>
+</html>

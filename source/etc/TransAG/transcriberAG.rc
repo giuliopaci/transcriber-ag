@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE parameters SYSTEM "configurationAG.dtd">
+<parameters>
+	<component id="AnnotationEditor">
+		<section id="Activity" label="activity measurement parameters">
+			<parameter id="delay" label="inactivity delay" value="300"/>
+		</section>
+		<section id="AnnotationLayout" label="Annotation editor - Annotation formats">
+			<parameter id="noise,label,show" label="Show noise labels" value="true"/>
+			<parameter id="qualifiers,show" label="Which qualifiers to show" value="noise;pronounce;language;disfluence;comment;quality"/>
+			<parameter id="section,label" label="Label format" value=" $topic.desc|$type "/>
+			<parameter id="section,label,centered" label="Center label" value="true"/>
+			<parameter id="section,newline" label="Newline on section start" value="true"/>
+			<parameter id="section,show" label="Show sections" value="true"/>
+			<parameter id="segment,label" label="Label format" value=" o "/>
+			<parameter id="segment,label,show" label="Show segments labels" value="true"/>
+			<parameter id="segment,newline" label="Newline on segment start" value="true"/>
+			<parameter id="segment,show" label="Show segments" value="true"/>
+			<parameter id="turn,label" label="Label format" value=" $speaker.fullname "/>
+			<parameter id="turn,label,show" label="Show segments labels" value="true"/>
+			<parameter id="turn,newline" label="Newline on turn start" value="true"/>
+			<parameter id="turn,show" label="Show turns" value="true"/>
+			<parameter id="word,score_threshold" label="Show word" value="0.7"/>
+			<parameter id="word,show" label="Show word" value="true"/>
+			<parameter id="background,show" label="Show background" value="true"/>
+			<parameter id="word,show_score" label="Show word" value="true"/>
+		</section>
+		<section id="BrowseMode" label="Annotation editor - browse mode">
+			<parameter id="synchro_force_interval" label="Min interval between 2 clicks to force synchro" value="0.500"/>
+		</section>
+		<section id="EditMode" label="Annotation editor - edition mode">
+			<parameter id="synchro_force_interval" label="Min interval between 2 clicks to force synchro" value="0.500"/>
+		</section>
+		<section id="Signal" label="Annotation editor - signal display">
+			<parameter id="synchrotypes" label="Determine the synchro granularity" value="segment;unit"/>
+			<parameter id="save_peaks" label="Save computed signal peaks" value="true"/>
+			<parameter id="rewind_at_end" label="Automatic rewind at signal end" value="false"/>
+			<parameter id="rewind_at_selection_end" label="Automatic rewind at selection end" value="false"/>			
+			<parameter id="cursor,size" label="Show signal widget" value="1"/>
+			<parameter id="show" label="Show signal widget" value="true"/>
+			<parameter id="skip_delay" label="value for FFW/FBW step (secs)" value="3.0"/>
+			<parameter id="disable_highlight" label="disable highlight on active signal element: indicates type for which it will be proceeded" value="alignmentREF;alignmentHYP"/>
+			<parameter id="trackcolor" label="Track color for segments" value="section=IndianRed;turn=SteelBlue;segment=Aquamarine3;background=SlateGray"/>
+			<parameter id="tracklabel" label="label for segments" value="section=$topic;turn=$speaker;segment=text;background=type"/>
+			<parameter id="tracks" label="Tracks to show, detailed transcription mode" value="alignmentREF;alignmentHYP;section;turn;segment;unit;background"/>
+			<parameter id="tracks,show_begin" label="Tracks to show, detailed transcription mode" value="segment;unit"/>
+			<parameter id="tracks,stereo" label="Tracks to show, detailed transcription mode, stereo file" value="segment;unit;background"/>
+		</section>	
+		<section id="Validation" label="Model validation">
+			<parameter id="activated" label="activate or deactivate the model validation at file loading" value="true"/>
+		</section>				
+		<section id="Speller" label="Spell checker">
+			<parameter id="elision_chars,fre" label="elision chars to consider for word tokenization during spell checking" value="'"/>
+			<parameter id="ignored" label="iso639-2 language codes for which speller will be ignored" value="chi;unk"/>
+		</section>
+		<section id="threads" label="internal">
+			<parameter id="protect" label="internal" value="false"/>
+		</section>
+	</component>
+	<component id="Data">
+		<section id="inputLanguage" label="Transcriber Languages Input">
+			<parameter id="inputFile" label="Transcriber Languages Input File" value="input_language.xml"/>
+		</section>
+		<section id="languages" label="Transcriber Languages ">
+			<parameter id="languagesFile" label="Transcriber Languages File" value="languagesAG.xml"/>
+		</section>		
+	</component>
+	<component id="DataModel">
+		<section id="Configuration" label="">
+			<parameter id="conventions" label="Available conventions" value="mono_h4_detailed;stereo_h5_detailed;transag_default;transag_ester"/>
+			<parameter id="lang" label="Available languages" value="fre;eng;ara;rus;chi"/>
+		</section>
+		<section id="Default" label="">
+			<parameter id="corpus" label="Default general transcription corpus name (if value set, would overwrite values specified in convention files)" value=""/>
+			<parameter id="corpus_version" label="Default general transcription corpus version (only used if default name has been set)" value=""/>			
+			<parameter id="type" label="Transcription type" value="detailed"/>
+		</section>
+		<section id="Layout" label="Annotations layout">
+			<parameter id="mainstream" label="Main annotation sequence" value=" section turn segment "/>
+		</section>
+		<section id="metadata" label="">
+			<parameter id="items" label="items list" value="type;source;category;date_start=date"/>
+			<parameter id="meta_suffix" label="suffix for meta data file" value=".info"/>
+		</section>
+	</component>
+	<component id="FTP">
+		<section id="connection" label="Connection">
+			<parameter id="toSendFTP" label="ToSendFTP" value="sendFTP.GUI"/>
+		</section>
+	</component>
+	<component id="GUI">
+		<section id="data" label="data">
+			<parameter id="clipboard" label="Clipboard" value="clipboard.GUI"/>
+			<parameter id="openedFile" label="OpenedFile" value="opened.GUI"/>
+			<parameter id="recentFile" label="RecentFile" value="recent.GUI"/>
+			<parameter id="shortcuts" label="Shortcuts" value="shortcuts.GUI"/>
+			<parameter id="settings" label="settings" value="settings.GUI"/>
+		</section>
+	</component>
+	<component id="General">
+		<section id="Transcription" label="">
+			<parameter id="control" label="Transcription control" value="VSLabs"/>
+		</section>
+		<section id="LOG" label="">
+			<parameter id="log_file" label="File receiving application traces (extension will be automatically set to .log)" value="~/.TransAG-log/transcriberAG"/>
+			<parameter id="mode" label="value=classic for file logging, value=debug for console logging" value="classic"/>
+		</section>
+		<section id="VERSION" label="">
+			<parameter id="versionREF" label="current version of transcriber" value="1.6.0"/>
+		</section>
+		<section id="start" label="Start">
+			<parameter id="config" label="" value=""/>
+			<parameter id="demo" label="default demo directory" value="demo"/>
+			<parameter id="homeFolder" label="HomeFolder" value=".TransAG"/>
+			<parameter id="dtd" label="Dtd" value="TransAG-3.0.dtd"/>
+			<parameter id="dtd_config" label="Dtd for configuration files" value="configurationAG.dtd"/>
+			<parameter id="gtkrc" label="Gtkrc" value="transcriber_default.gtkrc"/>
+		</section>
+		<section id="Doc" label="User documentation">
+			<parameter id="Docpath" label="path of transcriber documentation" value="doc/userman/html/en/index.html"/>
+		</section>
+		<section id="ENV" label="variables environnement">
+			<parameter id="gtk_im_module" label="input module variable" value="scim"/>
+		</section>
+	</component>
+</parameters>

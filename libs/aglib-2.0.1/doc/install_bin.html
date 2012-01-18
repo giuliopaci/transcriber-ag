@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>AGLIB documentation:Installing binary packages</title>
+</head>
+<body bgcolor="#ffffee">
+
+<h3><blink>INCOMPLETE: Installing binary packages</blink></h3>
+
+<hr>
+<h4>Windows zip package</h4>
+
+<p> A set of AGLIB components compiled on an Intel Windows platform are
+distributed as a zip package.  This package includes all components of
+AGLIB described in the <a href="components.html#components">Components
+of AGLIB and required third-party packages</a>.  However, a Python
+interpreter, a Tcl/Tk interpreter and a Java Virtual Machine are not
+included in the package, and they need to be installed separately if
+any of these languages are to be used.  </p>
+
+<p> When unpacked, the zip file installs the following files:
+<tt>libag.dll</tt>, <tt>ag\agfio_plugin_*.dll</tt>, <tt>ag\java\*</tt>,
+<tt>ag\python\*</tt>, and <tt>ag\tcl\*</tt>.
+</p>
+
+<p> The <tt>libag.dll</tt> is the main .dll file that can be used from C
+and C++.  The <tt>ag\agfio_plugin_*.dll</tt> files are the optional plugin
+.dll files for the file I/O architecture of AGLIB.
+</p>
+
+<p> We advise against installing the .dll files in a system directory.
+Instead, we recommend setting a path to include the .dll files from a
+start-up batch file for each application.
+</p>
+
+<p> Please note that there are two <tt>ag.dll</tt> files in the pacakge.
+One is for Tcl and one is for Python, and they are incompatible with each
+other.  
+</p>
+
+<p>
+If the zip file is unpacked in the <tt>C:\aglib2.0</tt> directory, the
+following DOS commands will set the environment variables to use the
+libraries of the package.
+</p>
+
+<p>
+<table width="100%" cellpadding="5px">
+<tr><td bgcolor="#e0e0e0"><pre>
+C:\> set Path=C:\aglib2.0;C:\aglib2.0\ag;\aglib2.0\ag\tcl;%PATH%
+C:\> set TCLLIBPATH=C:\aglib2.0\ag\tcl;%TCLLIBPATH%
+</pre></td></tr>
+</table>
+</p>
+
+<table width="100%" cellpadding="5px">
+<tr><td bgcolor="#e0e0e0"><pre>
+C:\> wish
+% package require ag
+</pre></td></tr>
+</table>
+
+<p>
+(Example follows)
+</p>
+<!--<h4>RPM packages</h4>
+
+<hr>
+<h4>Mac .sit packages</ht>
+-->
+<hr><a href="http://agtk.sourceforge.net/">Annotation Graph Toolkit</a>
+
+</body>
+</html>

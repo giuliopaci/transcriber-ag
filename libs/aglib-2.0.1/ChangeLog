@@ -1,0 +1,379 @@
+2004-01-15  Haejoong Lee  <haejoong@ldc.upenn.edu>
+
+	* AGLIB 2.0.1 released with several bugs fixed from 2.0
+	
+2004-01-12  Haejoong Lee  <haejoong@ldc.upenn.edu>
+
+	* src/formats/CAG/CAG.h: a minor bug fix, which caused a problem
+	when calling the load() function multiple times.
+	
+2003-11-19  Haejoong Lee  <haejoong@ldc.upenn.edu>
+
+	* AGDB fixes: field names should be quoted using ` in the annotation
+	feature table because some feature names can be MySQL reserved words.
+	* Database schema fixes: char type keys of the tables should be
+	declared as BINARY to make them case-sensitive.
+	
+2003-09-24  Haejoong Lee  <haejoong@ldc.upenn.edu>
+	* src/formats/*/agfXercesUtils.cc: commented out
+	XMLPlatformUtils::Terminate() line. Doesn't seem to be necessary
+	and causes segfaluts in some platforms.
+	* configure.in: since python 2.3.0 site.sitedir disapeared. had to
+	use sitedirs[]
+	
+2003-07-08  Haejoong Lee  <haejoong@ldc.upenn.edu>
+
+	* added vc7 project files in the cvs source tree
+	* gzstream.cc: vc++ compilation problem fix
+
+2003-07-07  Haejoong Lee  <haejoong@ldc.upenn.edu>
+
+	* java wrapper: important bug fixes in typemaps. null is treated
+	as sdfan empty set/list/map
+	
+2003-06-30  Haejoong Lee  <haejoong@ldc.upenn.edu>
+
+	* AG.cc, etc.: some important bug fixes -- AnnotationSeq update
+	problem after offset updates and deletion
+	* Xerces-c 2.3.0 compilation problem fix (thanks to Eugene Koonts)
+
+2003-05-23  Haejoong Lee  <haejoong@ldc.upenn.edu>
+
+	* CreateAGTables.c: multi-line string literals are deprecated in the
+	new GCC's (>= v3.3)
+	* 2.0b2 released
+	
+2003-05-15  Haejoong Lee  <haejoong@ldc.upenn.edu>
+
+	* doc/newformat.html: formating error fix (thanks to Gilles)
+	* compilation problem (with xercesc 2.2.0) fix (thanks to Magnus)
+	* src/formats/CAG.cc: ag metadata was missing in the output
+	* doc/cag.txt: gave more pricese format definition
+	* agfXercesUtils.cc: disabled namespace processing (xercesc 2.2.0
+	complains about ids if it is turned on)
+	
+2003-05-08  Haejoong Lee  <haejoong@ldc.upenn.edu>
+
+	* GetAnchorSet, GetAnchorSetByOffset and GetAnnotationSetByOffset
+	now return list<...> instead of set<...>
+	(thanks Matthia for the input!)
+
+	
+2003-05-07  Haejoong Lee  <haejoong@ldc.upenn.edu>
+
+	* 2.0b1 released
+	
+2003-01-31  Haejoong Lee  <haejoong@ldc.upenn.edu>
+
+	* Functions that used to return a space-seperated string for a
+	list return a true list. This means that the applications that is
+	written for previous releases of aglib won't work with this new
+	aglib.Here is the list of functions that are affected:
+	
+            GetAGIds 
+            GetAnchorSet 
+            GetAnchorSetByOffset 
+            GetAnchorSetNearestOffset 
+            GetAnchorSignalIds 
+            GetAnnotationFeatureNames 
+            GetAnnotationSeqByOffset 
+            GetAnnotationSetByFeature 
+            GetAnnotationSetByOffset 
+            GetAnnotationSetByType 
+            GetAnnotationTypes 
+            GetFeatureNames 
+            GetIncomingAnnotationSet 
+            GetOutgoingAnnotationSet 
+            GetSignals 
+            Load 
+            NSplitAnnotation 
+            SplitAnnotation 
+            StoreSQLs 
+
+        * Following functions are changed to accept a list for
+	SignalIds. Note that Store2 is newly added for file I/O modules
+	that accept a list of ids of objects to be stored.
+
+            CreateAnchor 
+            SetAnchorSignalIds 
+            Store2 
+
+        * Following functions are changed to accept and return a hash
+	table of feature-value pairs.
+
+            GetFeatures 
+            SetFeatures 
+
+	* An optional argument for annotation type is added for some
+	functions. This optional type argument is used to restrict the
+	operation to the annotations of specified type. Affected functions
+	are:
+
+            GetAnnotationByOffset 
+            GetAnnotationFeatureNames 
+            GetAnnotationSeqByOffset 
+            GetAnnotationSetByFeature 
+            GetAnnotationSetByOffset 
+            GetIncomingAnnotationSet 
+            GetOutgoingAnnotationSet 
+
+        Consequently, following functions are obsolete now.
+
+            GetIncomingAnnotationSetByType 
+            GetOutgoingAnnotationSetByType 
+
+	* The prefixes AG, Annotation, Anchor, Timeline and Signal of ids
+	have been replaced with simpler strings or empty strings. Timeline
+	bacomes T, and Annotation becomes E. The rest are replaced with
+	empty strings. The numbering scheme is also changed to use base-60
+	numbers. The digits come from [0-9A-DF-SU-Za-z]. These changes
+	will reduce the size of the AG(AIF) format files, and memory usage
+	of the kernel. The changes don't imply modifications of
+	applications, since applications are not supposed to manipulate
+	ids directly.
+	
+        * File I/O plugin architecture has been added
+	* ATLAS (AIF level 1) format support has been added. Since ATLAS
+	data model is a super set of annotaion graph data model, there are
+	some restriction on data which ATLAS format plugin can deal
+	with. As long as the data is about linear signal like speech
+	signal, it should be okay.
+	* CAG (Compact Annotation Graph) format has been added. CAG is a
+	compact representation of annotation graph data model. It's a
+	space saver for a project that has to deal with large quantity of
+	data.
+	* Java AG wrapper has been added.
+	* The format name `AIF' is obsolete. Use `AG' instead.
+	* An AG (previously AIF) file can be loaded without DTD
+	validation. Also, the DTD location can be specified using options
+	parameter of Load function.
+	* Store function for AG format has been added for
+	completeness. The encoding of the output can be specified using
+	options parameter. NB: this doesn't change the encoding of the
+	output, but outputs the encoding in the XML header.
+	* There were many changes in configuration options. Please check
+	Installation from source package section.
+	* The aglib source package has been reorganized.
+	* This html documentation has been added.
+	* Bug fixes.
+
+2002-10-23  Haejoong Lee  <haejoong@ldc.upenn.edu>
+
+	* v1.2a - new xml file io module: AIF (Level 1)
+	* configure.in - --enable-aif is now --enable-xml.  This option
+	enables all xml-related file io modules.
+
+	
+2002-07-02  Haejoong Lee  <haejoong@ldc.upenn.edu>
+
+	* new functions:
+
+	(kernel)
+	AG::getAnnotationFeatureNames
+	AG::getAnnotationTypes
+	AGSet::getAnnotationFeatureNames
+	AGSet::getAnnotationFeatureNames
+	checkAnchorOffsetTotal
+	checkAnchorOffsetBounded
+	checkFeatureExists
+	checkFeatureIsAnnotationId
+	checkLinear
+	checkConnected
+	checkCoextensive
+	checkSpan
+	
+	(AGAPI flat interface)
+	GetAnnotationFeatureNames
+	GetAnnotationTypes
+	CheckAnchorOffsetTotal
+	CheckAnchorOffsetBounded
+	CheckFeatureExists
+	CheckFeatureIsAnnotationId
+	CheckLinear
+	CheckConnected
+	CheckCoextensive
+	CheckSpan
+
+	
+2002-05-08  Haejoong Lee  <haejoong@ldc.upenn.edu>
+
+	* new functions for ag core (GetOutgoingAnnotationSetByFeature,
+	GetIncomingAnnotationSetByFeature, SPrecedes)
+
+	* added treebank api
+
+	* added flat version of io functions (Load, Store)
+
+	
+2002-04-10  Haejoong Lee  <haejoong@ldc.upenn.edu>
+
+	* ag and agf are merged to yield one library called libag
+	
+	* bigball wrapper (ag+agf+wrapper) is an option; the bigball wrapper
+	has no dependency on ag and agf
+	
+	* source directories (ag, agf, ag_wrapper) are moved under 'src'
+	directory to facilitate those buidings describe above
+	
+	* wrappers are installed into package directories for target
+	scripting languages by default.  This can be disabled at
+	configuration time, and in this case, they are installed into
+	<prefix>/lib/ag_wrapper/<language name>.  TCLLIBPATH or
+	PYTHONPATH environmental variables can be used to locate the
+	wrapper modules automatically.  Note that 'package require ag' is
+	now possible for the tcl wrapper.
+
+	* configuration script and makefiles are rewritten to reflect those
+	changes
+
+	* encoder-decoder approach in ag wrapper is abandoned.  Instead,
+	ag functions are now directly wrapped, still using SWIG.
+	
+	* 'Load' and 'Store' functions are added to the wrapper modules.
+	'load' and 'store' are still possible.
+
+	* 'AG::' namespace is introduced for the tcl wrapper module.
+	'AG_' and 'AGF_' prefixes are gone!
+
+	
+2002-02-04  Haejoong Lee  <haejoong@ldc.upenn.edu>
+
+	* HS regex library added to the package
+
+	* minor bug fix on ag_wrapper/Makefile.am
+
+	
+2001-11-14 Xiaoyi Ma <xma@ldc.upenn.edu>
+        * Bugs in ag/AnnotationIndex.cc fixed.
+2001-10-19 Xiaoyi Ma <xma@ldc.upenn.edu>
+        * hash_map and hash_set in place of map and set for some
+	variables to speedup the kernel.
+	* InternalId removed. String identifiers are used instead.
+	* Kernel performance doubled because of the two changes made above.
+	* Measures were taken to deal with the changing of location
+	of hash_map and hash_set from GCC 2.95.* to GCC 3.*
+	* A bug in AG.cc which causes crashes on linux fixed.
+	* Bug fixed in fuction GetAGId.
+	* toXML was changed to use strings instead of stream, which is 
+	  buggy in GCC implementation and causes strange errors.
+	
+2001-10-16  Haejoong Lee  <haejoong@ldc.upenn.edu>
+
+	* There have been modifications for gcc3.
+
+	* Used new autotools for gcc3:
+	autoconf 2.52/automake 1.5/libtool 1.4.2
+	
+	* TreeBank: added depth feature.
+
+	
+2001-09-18  Haejoong Lee  <haejoong@ldc.upenn.edu>
+
+	* Added exception handler for ag wrapper which was iplemented using
+	SWIG. Script languages can now handle C++ exceptions from AG library.
+
+	* Changes in ag wrapper due to the changes in AG APIs.
+
+	* Ugly type fix in ag.tcl & ag.py: spsilon --> epsilon (Thanks Claude!)
+
+	* Some changes in demo programs due to toXML() change.
+
+	* agf: Invisible interface change, but big internal structure change
+	to allow users to give AGId instead of AGSetId for load method's
+	argument.
+
+	* agf: LCF store method has been implemented. Comment line handling
+	function added.
+
+	* agf: Format name change: Aif --> AIF
+	File name changes: Aif* --> AIF*, Agfio* --> agfio*, Timit* --> TIMIT*
+
+	
+2001-08-09 Xiaoyi Ma <xma@ldc.upenn.edu>
+        * Normalization of AG Anchors done.
+	* LoadFromDB and StoreToDB were changed to return a boolean
+	* Multiple AGSet are allowed
+	* StoreToDB API changed to allow multiple AGSet
+2001-07-19 Xiaoyi Ma <xma@ldc.upenn.edu>
+	* bug fixed in ag_wrapper/tcl/ag.tcl, function SetStartAnchor
+	* bug fixed in scripts/CreateTable.c
+	* bug fixed in ag/AG.cc, function StoreSQLs
+	* bug fixed in demo/TIMIT_test.cc
+2001-07-06 Xiaoyi Ma <xma@ldc.upenn.edu>
+	* bug fixed in demo/Makefile.am
+	* demo/TIMIT_test.cc demo/XLable_test.cc added
+2001-07-2 Xiaoyi Ma <xma@ldc.upenn.edu>
+        * bug fixed in CreateTables script
+	* explanation of connect string added
+	
+2001-07-01  Haejoong Lee  <haejoong@ldc.upenn.edu>
+
+	* agf: bug fixes. load functions were written not to return AG ids.
+	TF created wrong AG.
+
+	* agf: the XLabel loader added. Original XLabel, which was a file model
+	class, was renamed as XLabelFile.
+
+	* agf: store function for TF implemented
+
+	* agf: format name change: Timit --> TIMIT
+	
+	* ag_wrapper: updates due to agf changes
+
+	* agf API doc: updates due to agf changes
+
+	* demo: XLabel demo added
+	
+	* configure.in: aglib version 0.98.2 --> 0.98.3
+	
+
+2001-06-06  Haejoong Lee  <haejoong@ldc.upenn.edu>
+
+	* agf: loader interface changed. Old interface is still available,
+	but will be unavailable in 1.0 release. Note that in spite of the
+	interface change, we didn't change the version number(0.0.0) of agf.so.
+
+	* agf: some clean-up's
+	
+	* ag_wrapper: AGF_load interface changed in accord with the agf loader
+	interface change.
+
+	* agf demos: agf demos are modified to use the new agf interface.
+	
+	* agf API doc: API doc is generated using doxygen instead of cxxwrap.
+
+	* configure.in: aglib version is now 0.98.2
+
+	
+2001-05-24 Xiaoyi Ma <xma@ldc.upenn.edu>
+	
+	* agdemo added to demo directory
+
+	* bug fixed in demo/Makefile.am
+
+	* Exception handling added in AG kernel
+	
+	
+2001-05-22  Haejoong Lee  <haejoong@ldc.upenn.edu>
+
+	* Python ag wrapper is done
+	
+	* ag_tcl and ag_python are optionally built depending on the
+	configuration.
+
+	* ag_wrapper: added ag db functions
+
+	* demo/ag_wrapper_test.py: Python ag wrapper test program
+	
+	* configure.in: added the options for Python ag wrapper
+
+	* Makefile.am's: edited entries for distribution to exclude CVS
+	directories
+
+	* INSTALL: added trouble shooting for forcing the configuration script
+	to choose tools such as gcc, g++, etc.
+	
+2001-05-11  Haejoong Lee  <haejoong@ldc.upenn.edu>
+
+	* aglib 0.98 released
+	* congratulations!!

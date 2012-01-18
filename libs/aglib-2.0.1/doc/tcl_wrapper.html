@@ -1,0 +1,68 @@
+<title>AGLIB documentation: Using AGLIB (AGAPI) with Tcl AG wrapper</title>
+</head>
+<body bgcolor="#ffffee">
+
+<h3>Using AGLIB (AGAPI) with Tcl AG wrapper</h3>
+
+<hr>
+
+<h4>Unix-like systems</h4>
+
+<p>The Tcl AG wrapper is installed in a standard tcl package directory
+unless the <a
+href="install.html#--disable-tcl-pkgdir">--disable-tcl-pkgdir</a> option is
+used at configuration time.  If this option is used, the module is
+installed in <tt>&lt;prefix&gt;/lib/ag/tcl</tt>, where
+<tt>&lt;prefix&gt;</tt> is the installation prefix, which can be specified
+with the <a href="install.html#--prefix">--prefix</a> option.  The default value for <tt>&lt;prefix&gt;</tt> is <tt>/usr/local</tt>.</p>
+
+<p>If the Tcl module is not installed in a standard Tcl package directory,
+or if the Tcl/Tk interpreter (tclsh or wish) has any trouble locating the
+module, the <tt>TCLLIBPATH</tt> environment variable can be set to help
+tclsh or wish find the module. <tt>TCLLIBPATH</tt> should contain the
+location of the module.
+</p>
+
+<p>Here is an example of using AGLIB in an interactive tclsh session:</p>
+
+<table width="100%" cellpadding="5px">
+<tr><td bgcolor="#e0e0e0"><pre>
+sh$ export TCLLIBPATH=/home/haepal/pkg/aglib-2.0/lib/ag/tcl
+sh$ tclsh8.3
+% package require ag
+2.0
+% set agsetId [AG::CreateAGSet "TIMIT"]
+% ...
+</pre></td></tr>
+</table>
+
+<p>Here is an example of a Tcl script that uses AGLIB:</p>
+
+<table width="100%" cellpadding="5px">
+<tr><td bgcolor="#e0e0e0"><pre>
+#! /usr/local/bin/tclsh8.3
+
+package require ag
+
+set agsetId [AG::CreateAGSet TIMIT]
+set timelineId [AG::CreateTimeline $agsetId]
+set agId [AG::CreateAG $agsetId $timelineId]
+set a1 [AG::CreateAnchor $agId]
+AG::SetAnchorOffset $a1 1.0
+set a2 [AG::CreateAnchor $agId]
+AG::SetAnchorOffset $a2 2.0
+set ann [AG::CreateAnnotation $agId $a1 $a2 word]
+AG::SetFeature $ann label cat
+puts [AG::toXML $agsetId]
+</pre></td></tr>
+</table>
+
+<p>NOTE: Please don't forget to set <tt>LD_LIBRARY_PATH</tt> properly for
+the required shared libraries (libag and plugins). See
+<a href="install.html#post">Post-installation</a> for details.</p>
+
+<hr><a href="http://agtk.sourceforge.net/">Annotation Graph Toolkit</a>
+
+</body>
+</html>
+

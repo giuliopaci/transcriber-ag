@@ -1,0 +1,298 @@
+###################################################################################
+############################## Default TranscriberAG theme ###################
+###################################################################################
+
+
+###################################################################################
+############################################################## GUI STYLE ##########
+
+gtk-toolbar-icon-size = small-toolbar
+
+gtk-button-images = 1
+
+style "theme-text" = "theme-default"
+{
+    bg[NORMAL]     = "#E5E5E5"  
+}
+
+style "wait_panel_label" {
+	fg[NORMAL] = "#585858"
+	font_name = "Sans Bold 14"
+}
+
+widget "*wait_panel_label" style "wait_panel_label" 
+
+style "widget_black_bg" {
+	bg[NORMAL] = "#000000"
+}
+
+widget "*widget_black_bg" style "widget_black_bg"
+
+### SPLASHCREEN #######################################################################
+
+style "waiting_panel" {
+	#fg[NORMAL] = "#617C5B"
+}
+
+style "waiting_panel_label" {
+	#fg[NORMAL] = "#617C5B"
+	font_name = "Sans Bold 12"
+}
+
+widget "*waiting_panel" style "waiting_panel" 
+
+### TOOLTIP #######################################################################
+
+style "tooltip_status_yes_label" {
+	fg[NORMAL] = "#0F5926"
+	font_name = "Sans Bold 10"
+}
+
+style "tooltip_status_no_label" {
+	fg[NORMAL] = "#AB1616"
+	font_name = "Sans Bold 10"
+}
+
+style "tooltip_label" {
+	fg[NORMAL] = "#000000"
+	font_name = "Sans 10"
+}
+
+style "tooltip_label_bold" {
+	fg[NORMAL] = "#000000"
+	font_name = "Sans Bold 10"
+}
+
+style "tooltip_window" {
+	bg[NORMAL] = "#FFFFD0"
+	fg[NORMAL] = "#FFFFFF"
+}
+
+style "tooltip_segment" {
+	bg[NORMAL] = "#FFF3F0"
+	fg[NORMAL] = "#FFFFFF"
+}
+widget "*tooltip_segment" style "tooltip_segment" 
+
+style "tooltip_editor" {
+	bg[NORMAL] = "#ECF4FF"
+	fg[NORMAL] = "#FFFFFF"
+}
+
+widget "*tooltip_segment" style "tooltip_segment" 
+widget "*tooltip_editor" style "tooltip_editor" 
+
+widget "*tooltip_win" style "tooltip_window" 
+widget "*tooltip_import_status_yes" style "tooltip_status_yes_label"
+widget "*tooltip_import_status_no" style "tooltip_status_no_label"
+widget "*tooltip_lab" style "tooltip_label"
+widget "*tooltip_label_bold" style "tooltip_label_bold"
+
+
+### Notebook ####################################################################
+
+style "notebook_label_updated" {
+	font_name = "Bold"
+	fg[NORMAL] = "#570C0C"
+}
+
+widget "*notebook_label_updated" style "notebook_label_updated"
+
+
+### SPEAKER DATA ####################################################################
+
+style "speaker_data" {
+	font_name = "Sans Bold 10"
+}
+
+widget "*speakerDataLabel" style "speaker_data"
+
+
+### TREE EXPANDERS ####################################################################
+
+style "expander_tree_label" {
+	font_name = "Sans Bold 10"
+	fg[NORMAL] = "#535378"
+	fg[PRELIGHT] = "#FFFFFF"		
+}
+
+widget "*expander_tree_label" style "expander_tree_label"
+
+style "expander_tree" {
+	fg[NORMAL] = "#535378"
+	bg[NORMAL] = "#535378"
+	fg[PRELIGHT] = "#FFFFFF"
+	bg[PRELIGHT] = "#535378"
+}
+
+widget "*expander_tree" style "expander_tree"
+
+
+style "tree_box" {
+	base[NORMAL] = "#FFFFFF"
+}
+
+widget "*tree_box" style "tree_box"
+
+
+### SEARCH PANEL ####################################################################
+
+style "search_combo_end" {
+	font_name = "Sans 10"
+	text[NORMAL] = "#FFFFFF"
+	base[NORMAL] = "#F27C7C"
+}
+
+style "search_combo_default" {
+	font_name = "Sans 10"
+	text[NORMAL] = "#000000"
+	base[NORMAL] = "#FFFFFF"
+}
+
+widget "*combo_search_end" style "search_combo_end"
+widget "*combo_search_default" style "search_combo_default"
+
+
+### COMMON ####################################################################
+
+style "bold_label" {
+	font_name = "Sans Bold 11"
+}
+
+widget "*bold_label" style "bold_label"
+
+
+style "italic_label" {
+	font_name = "Sans Italic 11"
+}
+
+widget "*italic_label" style "italic_label"
+
+style "bold_label_green" {
+	font_name = "Sans Bold 11"
+	fg[NORMAL] = "#0C710C"
+}
+widget "*bold_label_green" style "bold_label_green"
+
+style "bold_label_red" {
+	font_name = "Sans Bold 11"
+	fg[NORMAL] = "#CD1719"
+}
+widget "*bold_label_red" style "bold_label_red"
+
+
+### CONFIGURATION PANNEL ####################################################################
+
+style "preferences_label" {
+	font_name = "Sans Bold 12"
+}
+
+widget "*preferences_label" style "preferences_label"
+
+
+### PERSONNAL DIALOG ####################################################################
+
+style "dialog_label" {
+	font_name = "Sans Bold 12"
+}
+
+widget "*dialog_label" style "dialog_label"
+
+
+### FTP WATCHER ####################################################################
+
+style "ftp_vbox" {
+		bg[NORMAL] = "#000000"
+}
+widget "*ftp_vbox" style "ftp_vbox"
+
+style "download_frame" {
+		base[NORMAL] = "#FFFFFF"
+		bg[NORMAL] = "#FFFFFF"
+}
+widget "*download_frame" style "download_frame"
+
+### ANNOTATION VIEW ####################################################################
+
+style "normal_editor_font" {
+	fg[NORMAL] = "#000000"
+	font_name = "Sans 10"
+	base[NORMAL] = "#F2F2F2"
+}
+widget "*normal_editor_font" style "normal_editor_font"
+
+style "medium_editor_font" {
+	fg[NORMAL] = "#000000"
+	font_name = "Sans 12"
+	base[NORMAL] = "#F2F2F2"
+}
+widget "*medium_editor_font" style "medium_editor_font"
+
+style "large_editor_font" {
+	fg[NORMAL] = "#000000"
+	font_name = "Sans 16"
+	base[NORMAL] = "#F2F2F2"
+}
+widget "*large_editor_font" style "large_editor_font"
+
+
+### AUDIO WIDGET ####################################################################
+
+style "small_scale" {
+	GtkScale::slider-length=10
+}
+widget "*small_scale" style "small_scale"
+
+
+### TOPICS PREFERENCES################################################################
+
+style "topics_details_view" = "topics_details_view"
+{
+    base[NORMAL]     = "#FFF9ED"  
+}
+widget "*topics_details_view" style "topics_details_view"
+
+style "topics_details_box" = "topics_details_box"
+{
+    base[NORMAL]     = "#FFF9ED"  
+}
+widget "*topics_details_box" style "topics_details_box"
+
+style "topics_details_scrolled" = "topics_details_scrolled"
+{
+    base[NORMAL]     = "#FFF9ED"  
+}
+widget "*topics_details_scrolled" style "topics_details_scrolled"
+
+
+### CHECKER DIALOG ################################################################
+
+style "chk_dlg_bold_title" {
+	font_name = "Sans Bold 12"
+}
+
+style "chk_dlg_bold_label_blue" {
+	font_name = "Sans Bold 12"
+	fg[NORMAL] = "#0000AE"
+}
+
+style "chk_dlg_bold_label_orange" {
+	font_name = "Sans Bold 12"
+	fg[NORMAL] = "#D4610C"
+}
+
+style "chk_dlg_bold_label_red" {
+	font_name = "Sans Bold 12"
+	fg[NORMAL] = "#9B0606"
+}
+
+style "chk_dlg_check_label" {
+	font_name = "Sans Italic 12"
+	fg[NORMAL] = "#535378"
+}
+
+widget "*chk_dlg_bold_title" style "chk_dlg_bold_title"
+widget "*chk_dlg_bold_label_blue" style "chk_dlg_bold_label_blue"
+widget "*chk_dlg_bold_label_orange" style "chk_dlg_bold_label_orange"
+widget "*chk_dlg_bold_label_red" style "chk_dlg_bold_label_red"
+widget "*chk_dlg_check_label" style "chk_dlg_check_label"

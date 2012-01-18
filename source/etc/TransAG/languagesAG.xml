@@ -1,0 +1,2473 @@
+<parameters>
+	<!-- list of all languages available : not used in current version 
+		 for modifying application list, see next componenent below 
+	-->
+	<component id="All">
+		<section id="aar" label="afar">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="aa"/>
+			<parameter id="eng" label="English Description" value="Afar"/>
+			<parameter id="fre" label="French Description" value="afar"/>
+		</section>
+		<section id="abk" label="abkhaze">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ab"/>
+			<parameter id="eng" label="English Description" value="Abkhazian"/>
+			<parameter id="fre" label="French Description" value="abkhaze"/>
+		</section>
+		<section id="ace" label="aceh">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Achinese"/>
+			<parameter id="fre" label="French Description" value="aceh"/>
+		</section>
+		<section id="ach" label="acoli">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Acoli"/>
+			<parameter id="fre" label="French Description" value="acoli"/>
+		</section>
+		<section id="ada" label="adangme">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Adangme"/>
+			<parameter id="fre" label="French Description" value="adangme"/>
+		</section>
+		<section id="ady" label="adyghe">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Adyghe; Adygei"/>
+			<parameter id="fre" label="French Description" value="adyghe"/>
+		</section>
+		<section id="afa" label="afro-asiatiques, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Afro-Asiatic (Other)"/>
+			<parameter id="fre" label="French Description" value="afro-asiatiques, autres langues"/>
+		</section>
+		<section id="afh" label="afrihili">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Afrihili"/>
+			<parameter id="fre" label="French Description" value="afrihili"/>
+		</section>
+		<section id="afr" label="afrikaans">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="af"/>
+			<parameter id="eng" label="English Description" value="Afrikaans"/>
+			<parameter id="fre" label="French Description" value="afrikaans"/>
+		</section>
+		<section id="ain" label="ainou">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Ainu"/>
+			<parameter id="fre" label="French Description" value="ainou"/>
+		</section>
+		<section id="aka" label="akan">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ak"/>
+			<parameter id="eng" label="English Description" value="Akan"/>
+			<parameter id="fre" label="French Description" value="akan"/>
+		</section>
+		<section id="akk" label="akkadien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Akkadian"/>
+			<parameter id="fre" label="French Description" value="akkadien"/>
+		</section>
+		<section id="alb/sqi" label="albanais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="sq"/>
+			<parameter id="eng" label="English Description" value="Albanian"/>
+			<parameter id="fre" label="French Description" value="albanais"/>
+		</section>
+		<section id="ale" label="aleoute">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Aleut"/>
+			<parameter id="fre" label="French Description" value="aleoute"/>
+		</section>
+		<section id="alg" label="algonquines, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Algonquian languages"/>
+			<parameter id="fre" label="French Description" value="algonquines, langues"/>
+		</section>
+		<section id="alt" label="altai du Sud">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Southern Altai"/>
+			<parameter id="fre" label="French Description" value="altai du Sud"/>
+		</section>
+		<section id="amh" label="amharique">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="am"/>
+			<parameter id="eng" label="English Description" value="Amharic"/>
+			<parameter id="fre" label="French Description" value="amharique"/>
+		</section>
+		<section id="ang" label="anglo-saxon (ca.450-1100)">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="English, Old (ca.450-1100)"/>
+			<parameter id="fre" label="French Description" value="anglo-saxon (ca.450-1100)"/>
+		</section>
+		<section id="anp" label="angika">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Angika"/>
+			<parameter id="fre" label="French Description" value="angika"/>
+		</section>
+		<section id="apa" label="apache">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Apache languages"/>
+			<parameter id="fre" label="French Description" value="apache"/>
+		</section>
+		<section id="ara" label="arabe">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ar"/>
+			<parameter id="eng" label="English Description" value="Arabic"/>
+			<parameter id="fre" label="French Description" value="arabe"/>
+		</section>
+		<section id="arc" label="arameen">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Aramaic"/>
+			<parameter id="fre" label="French Description" value="arameen"/>
+		</section>
+		<section id="arg" label="aragonais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="an"/>
+			<parameter id="eng" label="English Description" value="Aragonese"/>
+			<parameter id="fre" label="French Description" value="aragonais"/>
+		</section>
+		<section id="arm/hye" label="armenien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="hy"/>
+			<parameter id="eng" label="English Description" value="Armenian"/>
+			<parameter id="fre" label="French Description" value="armenien"/>
+		</section>
+		<section id="arn" label="mapudungun; mapuche; mapuce">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Mapudungun; Mapuche"/>
+			<parameter id="fre" label="French Description" value="mapudungun; mapuche; mapuce"/>
+		</section>
+		<section id="arp" label="arapaho">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Arapaho"/>
+			<parameter id="fre" label="French Description" value="arapaho"/>
+		</section>
+		<section id="art" label="artificielles, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Artificial (Other)"/>
+			<parameter id="fre" label="French Description" value="artificielles, autres langues"/>
+		</section>
+		<section id="arw" label="arawak">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Arawak"/>
+			<parameter id="fre" label="French Description" value="arawak"/>
+		</section>
+		<section id="asm" label="assamais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="as"/>
+			<parameter id="eng" label="English Description" value="Assamese"/>
+			<parameter id="fre" label="French Description" value="assamais"/>
+		</section>
+		<section id="ast" label="asturien; bable">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Asturian; Bable"/>
+			<parameter id="fre" label="French Description" value="asturien; bable"/>
+		</section>
+		<section id="ath" label="athapascanes, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Athapascan languages"/>
+			<parameter id="fre" label="French Description" value="athapascanes, langues"/>
+		</section>
+		<section id="aus" label="australiennes, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Australian languages"/>
+			<parameter id="fre" label="French Description" value="australiennes, langues"/>
+		</section>
+		<section id="ava" label="avar">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="av"/>
+			<parameter id="eng" label="English Description" value="Avaric"/>
+			<parameter id="fre" label="French Description" value="avar"/>
+		</section>
+		<section id="ave" label="avestique">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ae"/>
+			<parameter id="eng" label="English Description" value="Avestan"/>
+			<parameter id="fre" label="French Description" value="avestique"/>
+		</section>
+		<section id="awa" label="awadhi">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Awadhi"/>
+			<parameter id="fre" label="French Description" value="awadhi"/>
+		</section>
+		<section id="aym" label="aymara">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ay"/>
+			<parameter id="eng" label="English Description" value="Aymara"/>
+			<parameter id="fre" label="French Description" value="aymara"/>
+		</section>
+		<section id="aze" label="azeri">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="az"/>
+			<parameter id="eng" label="English Description" value="Azerbaijani"/>
+			<parameter id="fre" label="French Description" value="azeri"/>
+		</section>
+		<section id="bad" label="banda, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Banda languages"/>
+			<parameter id="fre" label="French Description" value="banda, langues"/>
+		</section>
+		<section id="bai" label="bamilekes, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Bamileke languages"/>
+			<parameter id="fre" label="French Description" value="bamilekes, langues"/>
+		</section>
+		<section id="bak" label="bachkir">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ba"/>
+			<parameter id="eng" label="English Description" value="Bashkir"/>
+			<parameter id="fre" label="French Description" value="bachkir"/>
+		</section>
+		<section id="bal" label="baloutchi">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Baluchi"/>
+			<parameter id="fre" label="French Description" value="baloutchi"/>
+		</section>
+		<section id="bam" label="bambara">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="bm"/>
+			<parameter id="eng" label="English Description" value="Bambara"/>
+			<parameter id="fre" label="French Description" value="bambara"/>
+		</section>
+		<section id="ban" label="balinais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Balinese"/>
+			<parameter id="fre" label="French Description" value="balinais"/>
+		</section>
+		<section id="baq/eus" label="basque">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="eu"/>
+			<parameter id="eng" label="English Description" value="Basque"/>
+			<parameter id="fre" label="French Description" value="basque"/>
+		</section>
+		<section id="bas" label="basa">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Basa"/>
+			<parameter id="fre" label="French Description" value="basa"/>
+		</section>
+		<section id="bat" label="baltiques, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Baltic (Other)"/>
+			<parameter id="fre" label="French Description" value="baltiques, autres langues"/>
+		</section>
+		<section id="bej" label="bedja">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Beja"/>
+			<parameter id="fre" label="French Description" value="bedja"/>
+		</section>
+		<section id="bel" label="bielorusse">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="be"/>
+			<parameter id="eng" label="English Description" value="Belarusian"/>
+			<parameter id="fre" label="French Description" value="bielorusse"/>
+		</section>
+		<section id="bem" label="bemba">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Bemba"/>
+			<parameter id="fre" label="French Description" value="bemba"/>
+		</section>
+		<section id="ben" label="bengali">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="bn"/>
+			<parameter id="eng" label="English Description" value="Bengali"/>
+			<parameter id="fre" label="French Description" value="bengali"/>
+		</section>
+		<section id="ber" label="berberes, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Berber (Other)"/>
+			<parameter id="fre" label="French Description" value="berberes, autres langues"/>
+		</section>
+		<section id="bho" label="bhojpuri">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Bhojpuri"/>
+			<parameter id="fre" label="French Description" value="bhojpuri"/>
+		</section>
+		<section id="bih" label="bihari">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="bh"/>
+			<parameter id="eng" label="English Description" value="Bihari"/>
+			<parameter id="fre" label="French Description" value="bihari"/>
+		</section>
+		<section id="bik" label="bikol">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Bikol"/>
+			<parameter id="fre" label="French Description" value="bikol"/>
+		</section>
+		<section id="bin" label="bini; edo">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Bini; Edo"/>
+			<parameter id="fre" label="French Description" value="bini; edo"/>
+		</section>
+		<section id="bis" label="bichlamar">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="bi"/>
+			<parameter id="eng" label="English Description" value="Bislama"/>
+			<parameter id="fre" label="French Description" value="bichlamar"/>
+		</section>
+		<section id="bla" label="blackfoot">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Siksika"/>
+			<parameter id="fre" label="French Description" value="blackfoot"/>
+		</section>
+		<section id="bnt" label="bantoues, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Bantu (Other)"/>
+			<parameter id="fre" label="French Description" value="bantoues, autres langues"/>
+		</section>
+		<section id="bos" label="bosniaque">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="bs"/>
+			<parameter id="eng" label="English Description" value="Bosnian"/>
+			<parameter id="fre" label="French Description" value="bosniaque"/>
+		</section>
+		<section id="bra" label="braj">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Braj"/>
+			<parameter id="fre" label="French Description" value="braj"/>
+		</section>
+		<section id="bre" label="breton">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="br"/>
+			<parameter id="eng" label="English Description" value="Breton"/>
+			<parameter id="fre" label="French Description" value="breton"/>
+		</section>
+		<section id="btk" label="batak, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Batak languages"/>
+			<parameter id="fre" label="French Description" value="batak, langues"/>
+		</section>
+		<section id="bua" label="bouriate">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Buriat"/>
+			<parameter id="fre" label="French Description" value="bouriate"/>
+		</section>
+		<section id="bug" label="bugi">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Buginese"/>
+			<parameter id="fre" label="French Description" value="bugi"/>
+		</section>
+		<section id="bul" label="bulgare">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="bg"/>
+			<parameter id="eng" label="English Description" value="Bulgarian"/>
+			<parameter id="fre" label="French Description" value="bulgare"/>
+		</section>
+		<section id="bur/mya" label="birman">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="my"/>
+			<parameter id="eng" label="English Description" value="Burmese"/>
+			<parameter id="fre" label="French Description" value="birman"/>
+		</section>
+		<section id="byn" label="blin; bilen">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Blin; Bilin"/>
+			<parameter id="fre" label="French Description" value="blin; bilen"/>
+		</section>
+		<section id="cad" label="caddo">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Caddo"/>
+			<parameter id="fre" label="French Description" value="caddo"/>
+		</section>
+		<section id="cai" label="indiennes d'Amerique centrale, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Central American Indian (Other)"/>
+			<parameter id="fre" label="French Description" value="indiennes d'Amerique centrale, autres langues"/>
+		</section>
+		<section id="car" label="karib; galibi; carib">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Galibi Carib"/>
+			<parameter id="fre" label="French Description" value="karib; galibi; carib"/>
+		</section>
+		<section id="cat" label="catalan; valencien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ca"/>
+			<parameter id="eng" label="English Description" value="Catalan; Valencian"/>
+			<parameter id="fre" label="French Description" value="catalan; valencien"/>
+		</section>
+		<section id="cau" label="caucasiennes, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Caucasian (Other)"/>
+			<parameter id="fre" label="French Description" value="caucasiennes, autres langues"/>
+		</section>
+		<section id="ceb" label="cebuano">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Cebuano"/>
+			<parameter id="fre" label="French Description" value="cebuano"/>
+		</section>
+		<section id="cel" label="celtiques, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Celtic (Other)"/>
+			<parameter id="fre" label="French Description" value="celtiques, autres langues"/>
+		</section>
+		<section id="cha" label="chamorro">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ch"/>
+			<parameter id="eng" label="English Description" value="Chamorro"/>
+			<parameter id="fre" label="French Description" value="chamorro"/>
+		</section>
+		<section id="chb" label="chibcha">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Chibcha"/>
+			<parameter id="fre" label="French Description" value="chibcha"/>
+		</section>
+		<section id="che" label="tchetchene">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ce"/>
+			<parameter id="eng" label="English Description" value="Chechen"/>
+			<parameter id="fre" label="French Description" value="tchetchene"/>
+		</section>
+		<section id="chg" label="djaghatai">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Chagatai"/>
+			<parameter id="fre" label="French Description" value="djaghatai"/>
+		</section>
+		<section id="chi/zho" label="chinois">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="zh"/>
+			<parameter id="eng" label="English Description" value="Chinese"/>
+			<parameter id="fre" label="French Description" value="chinois"/>
+		</section>
+		<section id="chk" label="chuuk">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Chuukese"/>
+			<parameter id="fre" label="French Description" value="chuuk"/>
+		</section>
+		<section id="chm" label="mari">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Mari"/>
+			<parameter id="fre" label="French Description" value="mari"/>
+		</section>
+		<section id="chn" label="chinook, jargon">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Chinook jargon"/>
+			<parameter id="fre" label="French Description" value="chinook, jargon"/>
+		</section>
+		<section id="cho" label="choctaw">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Choctaw"/>
+			<parameter id="fre" label="French Description" value="choctaw"/>
+		</section>
+		<section id="chp" label="chipewyan">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Chipewyan"/>
+			<parameter id="fre" label="French Description" value="chipewyan"/>
+		</section>
+		<section id="chr" label="cherokee">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Cherokee"/>
+			<parameter id="fre" label="French Description" value="cherokee"/>
+		</section>
+		<section id="chu" label="slavon d'eglise; vieux slave; slavon liturgique; vieux bulgare">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="cu"/>
+			<parameter id="eng" label="English Description" value="Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic"/>
+			<parameter id="fre" label="French Description" value="slavon d'eglise; vieux slave; slavon liturgique; vieux bulgare"/>
+		</section>
+		<section id="chv" label="tchouvache">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="cv"/>
+			<parameter id="eng" label="English Description" value="Chuvash"/>
+			<parameter id="fre" label="French Description" value="tchouvache"/>
+		</section>
+		<section id="chy" label="cheyenne">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Cheyenne"/>
+			<parameter id="fre" label="French Description" value="cheyenne"/>
+		</section>
+		<section id="cmc" label="chames, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Chamic languages"/>
+			<parameter id="fre" label="French Description" value="chames, langues"/>
+		</section>
+		<section id="cop" label="copte">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Coptic"/>
+			<parameter id="fre" label="French Description" value="copte"/>
+		</section>
+		<section id="cor" label="cornique">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="kw"/>
+			<parameter id="eng" label="English Description" value="Cornish"/>
+			<parameter id="fre" label="French Description" value="cornique"/>
+		</section>
+		<section id="cos" label="corse">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="co"/>
+			<parameter id="eng" label="English Description" value="Corsican"/>
+			<parameter id="fre" label="French Description" value="corse"/>
+		</section>
+		<section id="cpe" label="creoles et pidgins anglais, autres">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Creoles and pidgins, English based (Other)"/>
+			<parameter id="fre" label="French Description" value="creoles et pidgins anglais, autres"/>
+		</section>
+		<section id="cpf" label="creoles et pidgins français, autrest">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Creoles and pidgins, French-based (Other)"/>
+			<parameter id="fre" label="French Description" value="creoles et pidgins francais, autrest"/>
+		</section>
+		<section id="cpp" label="creoles et pidgins portugais, autres">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Creoles and pidgins, Portuguese-based (Other)"/>
+			<parameter id="fre" label="French Description" value="creoles et pidgins portugais, autres"/>
+		</section>
+		<section id="cre" label="cree">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="cr"/>
+			<parameter id="eng" label="English Description" value="Cree"/>
+			<parameter id="fre" label="French Description" value="cree"/>
+		</section>
+		<section id="crh" label="tatar de Crime">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Crimean Tatar; Crimean Turkish"/>
+			<parameter id="fre" label="French Description" value="tatar de Crime"/>
+		</section>
+		<section id="crp" label="creoles et pidgins divers">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Creoles and pidgins (Other)"/>
+			<parameter id="fre" label="French Description" value="creoles et pidgins divers"/>
+		</section>
+		<section id="csb" label="kachoube">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Kashubian"/>
+			<parameter id="fre" label="French Description" value="kachoube"/>
+		</section>
+		<section id="cus" label="couchitiques, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Cushitic (Other)"/>
+			<parameter id="fre" label="French Description" value="couchitiques, autres langues"/>
+		</section>
+		<section id="cze/ces" label="tcheque">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="cs"/>
+			<parameter id="eng" label="English Description" value="Czech"/>
+			<parameter id="fre" label="French Description" value="tcheque"/>
+		</section>
+		<section id="dak" label="dakota">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Dakota"/>
+			<parameter id="fre" label="French Description" value="dakota"/>
+		</section>
+		<section id="dan" label="danois">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="da"/>
+			<parameter id="eng" label="English Description" value="Danish"/>
+			<parameter id="fre" label="French Description" value="danois"/>
+		</section>
+		<section id="dar" label="dargwa">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Dargwa"/>
+			<parameter id="fre" label="French Description" value="dargwa"/>
+		</section>
+		<section id="day" label="dayak, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Land Dayak languages"/>
+			<parameter id="fre" label="French Description" value="dayak, langues"/>
+		</section>
+		<section id="del" label="delaware">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Delaware"/>
+			<parameter id="fre" label="French Description" value="delaware"/>
+		</section>
+		<section id="den" label="esclave (athapascan)">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Slave (Athapascan)"/>
+			<parameter id="fre" label="French Description" value="esclave (athapascan)"/>
+		</section>
+		<section id="dgr" label="dogrib">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Dogrib"/>
+			<parameter id="fre" label="French Description" value="dogrib"/>
+		</section>
+		<section id="din" label="dinka">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Dinka"/>
+			<parameter id="fre" label="French Description" value="dinka"/>
+		</section>
+		<section id="div" label="maldivien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="dv"/>
+			<parameter id="eng" label="English Description" value="Divehi; Dhivehi; Maldivian"/>
+			<parameter id="fre" label="French Description" value="maldivien"/>
+		</section>
+		<section id="doi" label="dogri">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Dogri"/>
+			<parameter id="fre" label="French Description" value="dogri"/>
+		</section>
+		<section id="dra" label="dravidiennes, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Dravidian (Other)"/>
+			<parameter id="fre" label="French Description" value="dravidiennes, autres langues"/>
+		</section>
+		<section id="dsb" label="bas-sorabe">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Lower Sorbian"/>
+			<parameter id="fre" label="French Description" value="bas-sorabe"/>
+		</section>
+		<section id="dua" label="douala">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Duala"/>
+			<parameter id="fre" label="French Description" value="douala"/>
+		</section>
+		<section id="dum" label="neerlandais moyen (ca. 1050-1350)">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Dutch, Middle (ca.1050-1350)"/>
+			<parameter id="fre" label="French Description" value="neerlandais moyen (ca. 1050-1350)"/>
+		</section>
+		<section id="dut/nld" label="neerlandais; flamand">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="nl"/>
+			<parameter id="eng" label="English Description" value="Dutch; Flemish"/>
+			<parameter id="fre" label="French Description" value="neerlandais; flamand"/>
+		</section>
+		<section id="dyu" label="dioula">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Dyula"/>
+			<parameter id="fre" label="French Description" value="dioula"/>
+		</section>
+		<section id="dzo" label="dzongkha">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="dz"/>
+			<parameter id="eng" label="English Description" value="Dzongkha"/>
+			<parameter id="fre" label="French Description" value="dzongkha"/>
+		</section>
+		<section id="efi" label="efik">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Efik"/>
+			<parameter id="fre" label="French Description" value="efik"/>
+		</section>
+		<section id="egy" label="egyptien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Egyptian (Ancient)"/>
+			<parameter id="fre" label="French Description" value="egyptien"/>
+		</section>
+		<section id="eka" label="ekajuk">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Ekajuk"/>
+			<parameter id="fre" label="French Description" value="ekajuk"/>
+		</section>
+		<section id="elx" label="elamite">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Elamite"/>
+			<parameter id="fre" label="French Description" value="elamite"/>
+		</section>
+		<section id="eng" label="anglais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="en"/>
+			<parameter id="eng" label="English Description" value="English"/>
+			<parameter id="fre" label="French Description" value="anglais"/>
+		</section>
+		<section id="enm" label="anglais moyen (1100-1500)">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="English, Middle (1100-1500)"/>
+			<parameter id="fre" label="French Description" value="anglais moyen (1100-1500)"/>
+		</section>
+		<section id="epo" label="esperanto">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="eo"/>
+			<parameter id="eng" label="English Description" value="Esperanto"/>
+			<parameter id="fre" label="French Description" value="esperanto"/>
+		</section>
+		<section id="est" label="estonien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="et"/>
+			<parameter id="eng" label="English Description" value="Estonian"/>
+			<parameter id="fre" label="French Description" value="estonien"/>
+		</section>
+		<section id="ewe" label="ewe">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ee"/>
+			<parameter id="eng" label="English Description" value="Ewe"/>
+			<parameter id="fre" label="French Description" value="ewe"/>
+		</section>
+		<section id="ewo" label="ewondo">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Ewondo"/>
+			<parameter id="fre" label="French Description" value="ewondo"/>
+		</section>
+		<section id="fan" label="fang">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Fang"/>
+			<parameter id="fre" label="French Description" value="fang"/>
+		</section>
+		<section id="fao" label="feroien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="fo"/>
+			<parameter id="eng" label="English Description" value="Faroese"/>
+			<parameter id="fre" label="French Description" value="feroien"/>
+		</section>
+		<section id="fat" label="fanti">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Fanti"/>
+			<parameter id="fre" label="French Description" value="fanti"/>
+		</section>
+		<section id="fij" label="fidjien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="fj"/>
+			<parameter id="eng" label="English Description" value="Fijian"/>
+			<parameter id="fre" label="French Description" value="fidjien"/>
+		</section>
+		<section id="fil" label="filipino; pilipino">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Filipino; Pilipino"/>
+			<parameter id="fre" label="French Description" value="filipino; pilipino"/>
+		</section>
+		<section id="fin" label="finnois">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="fi"/>
+			<parameter id="eng" label="English Description" value="Finnish"/>
+			<parameter id="fre" label="French Description" value="finnois"/>
+		</section>
+		<section id="fiu" label="finno-ougriennes, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Finno-Ugrian (Other)"/>
+			<parameter id="fre" label="French Description" value="finno-ougriennes, autres langues"/>
+		</section>
+		<section id="fon" label="fon">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Fon"/>
+			<parameter id="fre" label="French Description" value="fon"/>
+		</section>
+		<section id="fre/fra" label="français">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="fr"/>
+			<parameter id="eng" label="English Description" value="French"/>
+			<parameter id="fre" label="French Description" value="francais"/>
+		</section>
+		<section id="frm" label="français moyen (1400-1600)0">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="French, Middle (ca.1400-1600)"/>
+			<parameter id="fre" label="French Description" value="francais moyen (1400-1600)0"/>
+		</section>
+		<section id="fro" label="français ancien (842-ca.1400)e">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="French, Old (842-ca.1400)"/>
+			<parameter id="fre" label="French Description" value="francais ancien (842-ca.1400)e"/>
+		</section>
+		<section id="frr" label="frison septentrional">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Northern Frisian"/>
+			<parameter id="fre" label="French Description" value="frison septentrional"/>
+		</section>
+		<section id="frs" label="frison oriental">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Eastern Frisian"/>
+			<parameter id="fre" label="French Description" value="frison oriental"/>
+		</section>
+		<section id="fry" label="frison occidental">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="fy"/>
+			<parameter id="eng" label="English Description" value="Western Frisian"/>
+			<parameter id="fre" label="French Description" value="frison occidental"/>
+		</section>
+		<section id="ful" label="peul">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ff"/>
+			<parameter id="eng" label="English Description" value="Fulah"/>
+			<parameter id="fre" label="French Description" value="peul"/>
+		</section>
+		<section id="fur" label="frioulan">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Friulian"/>
+			<parameter id="fre" label="French Description" value="frioulan"/>
+		</section>
+		<section id="gaa" label="ga">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Ga"/>
+			<parameter id="fre" label="French Description" value="ga"/>
+		</section>
+		<section id="gay" label="gayo">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Gayo"/>
+			<parameter id="fre" label="French Description" value="gayo"/>
+		</section>
+		<section id="gba" label="gbaya">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Gbaya"/>
+			<parameter id="fre" label="French Description" value="gbaya"/>
+		</section>
+		<section id="gem" label="germaniques, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Germanic (Other)"/>
+			<parameter id="fre" label="French Description" value="germaniques, autres langues"/>
+		</section>
+		<section id="geo/kat" label="georgien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ka"/>
+			<parameter id="eng" label="English Description" value="Georgian"/>
+			<parameter id="fre" label="French Description" value="georgien"/>
+		</section>
+		<section id="ger/deu" label="allemand">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="de"/>
+			<parameter id="eng" label="English Description" value="German"/>
+			<parameter id="fre" label="French Description" value="allemand"/>
+		</section>
+		<section id="gez" label="gueze">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Geez"/>
+			<parameter id="fre" label="French Description" value="gueze"/>
+		</section>
+		<section id="gil" label="kiribati">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Gilbertese"/>
+			<parameter id="fre" label="French Description" value="kiribati"/>
+		</section>
+		<section id="gla" label="gaelique; gaelique ecossais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="gd"/>
+			<parameter id="eng" label="English Description" value="Gaelic; Scottish Gaelic"/>
+			<parameter id="fre" label="French Description" value="gaelique; gaelique ecossais"/>
+		</section>
+		<section id="gle" label="irlandais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ga"/>
+			<parameter id="eng" label="English Description" value="Irish"/>
+			<parameter id="fre" label="French Description" value="irlandais"/>
+		</section>
+		<section id="glg" label="galicien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="gl"/>
+			<parameter id="eng" label="English Description" value="Galician"/>
+			<parameter id="fre" label="French Description" value="galicien"/>
+		</section>
+		<section id="glv" label="manx; mannois">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="gv"/>
+			<parameter id="eng" label="English Description" value="Manx"/>
+			<parameter id="fre" label="French Description" value="manx; mannois"/>
+		</section>
+		<section id="gmh" label="allemand, moyen haut (ca. 1050-1500)">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="German, Middle High (ca.1050-1500)"/>
+			<parameter id="fre" label="French Description" value="allemand, moyen haut (ca. 1050-1500)"/>
+		</section>
+		<section id="goh" label="allemand, vieux haut (ca. 750-1050)">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="German, Old High (ca.750-1050)"/>
+			<parameter id="fre" label="French Description" value="allemand, vieux haut (ca. 750-1050)"/>
+		</section>
+		<section id="gon" label="gond">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Gondi"/>
+			<parameter id="fre" label="French Description" value="gond"/>
+		</section>
+		<section id="gor" label="gorontalo">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Gorontalo"/>
+			<parameter id="fre" label="French Description" value="gorontalo"/>
+		</section>
+		<section id="got" label="gothique">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Gothic"/>
+			<parameter id="fre" label="French Description" value="gothique"/>
+		</section>
+		<section id="grb" label="grebo">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Grebo"/>
+			<parameter id="fre" label="French Description" value="grebo"/>
+		</section>
+		<section id="grc" label="grec ancien (jusqu'à 1453)5">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Greek, Ancient (to 1453)"/>
+			<parameter id="fre" label="French Description" value="grec ancien (jusqu'à 1453)5"/>
+		</section>
+		<section id="gre/ell" label="grec moderne (apres 1453)">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="el"/>
+			<parameter id="eng" label="English Description" value="Greek, Modern (1453-)"/>
+			<parameter id="fre" label="French Description" value="grec moderne (apres 1453)"/>
+		</section>
+		<section id="grn" label="guarani">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="gn"/>
+			<parameter id="eng" label="English Description" value="Guarani"/>
+			<parameter id="fre" label="French Description" value="guarani"/>
+		</section>
+		<section id="gsw" label="alemanique">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Swiss German; Alemannic"/>
+			<parameter id="fre" label="French Description" value="alemanique"/>
+		</section>
+		<section id="guj" label="goudjrati">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="gu"/>
+			<parameter id="eng" label="English Description" value="Gujarati"/>
+			<parameter id="fre" label="French Description" value="goudjrati"/>
+		</section>
+		<section id="gwi" label="gwich´ine">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Gwich´ine"/>
+			<parameter id="fre" label="French Description" value="gwich´ine"/>
+		</section>
+		<section id="hai" label="haida">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Haida"/>
+			<parameter id="fre" label="French Description" value="haida"/>
+		</section>
+		<section id="hat" label="haitien; creole haitien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ht"/>
+			<parameter id="eng" label="English Description" value="Haitian; Haitian Creole"/>
+			<parameter id="fre" label="French Description" value="haitien; creole haitien"/>
+		</section>
+		<section id="hau" label="haoussa">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ha"/>
+			<parameter id="eng" label="English Description" value="Hausa"/>
+			<parameter id="fre" label="French Description" value="haoussa"/>
+		</section>
+		<section id="haw" label="hawaien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Hawaiian"/>
+			<parameter id="fre" label="French Description" value="hawaien"/>
+		</section>
+		<section id="heb" label="hebreu">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="he"/>
+			<parameter id="eng" label="English Description" value="Hebrew"/>
+			<parameter id="fre" label="French Description" value="hebreu"/>
+		</section>
+		<section id="her" label="herero">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="hz"/>
+			<parameter id="eng" label="English Description" value="Herero"/>
+			<parameter id="fre" label="French Description" value="herero"/>
+		</section>
+		<section id="hil" label="hiligaynon">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Hiligaynon"/>
+			<parameter id="fre" label="French Description" value="hiligaynon"/>
+		</section>
+		<section id="him" label="himachali">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Himachali"/>
+			<parameter id="fre" label="French Description" value="himachali"/>
+		</section>
+		<section id="hin" label="hindi">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="hi"/>
+			<parameter id="eng" label="English Description" value="Hindi"/>
+			<parameter id="fre" label="French Description" value="hindi"/>
+		</section>
+		<section id="hit" label="hittite">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Hittite"/>
+			<parameter id="fre" label="French Description" value="hittite"/>
+		</section>
+		<section id="hmn" label="hmong">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Hmong"/>
+			<parameter id="fre" label="French Description" value="hmong"/>
+		</section>
+		<section id="hmo" label="hiri motu">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ho"/>
+			<parameter id="eng" label="English Description" value="Hiri Motu"/>
+			<parameter id="fre" label="French Description" value="hiri motu"/>
+		</section>
+		<section id="hsb" label="haut-sorabe">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Upper Sorbian"/>
+			<parameter id="fre" label="French Description" value="haut-sorabe"/>
+		</section>
+		<section id="hun" label="hongrois">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="hu"/>
+			<parameter id="eng" label="English Description" value="Hungarian"/>
+			<parameter id="fre" label="French Description" value="hongrois"/>
+		</section>
+		<section id="hup" label="hupa">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Hupa"/>
+			<parameter id="fre" label="French Description" value="hupa"/>
+		</section>
+		<section id="iba" label="iban">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Iban"/>
+			<parameter id="fre" label="French Description" value="iban"/>
+		</section>
+		<section id="ibo" label="igbo">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ig"/>
+			<parameter id="eng" label="English Description" value="Igbo"/>
+			<parameter id="fre" label="French Description" value="igbo"/>
+		</section>
+		<section id="ice/isl" label="islandais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="is"/>
+			<parameter id="eng" label="English Description" value="Icelandic"/>
+			<parameter id="fre" label="French Description" value="islandais"/>
+		</section>
+		<section id="ido" label="ido">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="io"/>
+			<parameter id="eng" label="English Description" value="Ido"/>
+			<parameter id="fre" label="French Description" value="ido"/>
+		</section>
+		<section id="iii" label="yi de Sichuan">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ii"/>
+			<parameter id="eng" label="English Description" value="Sichuan Yi"/>
+			<parameter id="fre" label="French Description" value="yi de Sichuan"/>
+		</section>
+		<section id="ijo" label="ijo, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Ijo languages"/>
+			<parameter id="fre" label="French Description" value="ijo, langues"/>
+		</section>
+		<section id="iku" label="inuktitut">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="iu"/>
+			<parameter id="eng" label="English Description" value="Inuktitut"/>
+			<parameter id="fre" label="French Description" value="inuktitut"/>
+		</section>
+		<section id="ile" label="interlingue">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ie"/>
+			<parameter id="eng" label="English Description" value="Interlingue"/>
+			<parameter id="fre" label="French Description" value="interlingue"/>
+		</section>
+		<section id="ilo" label="ilocano">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Iloko"/>
+			<parameter id="fre" label="French Description" value="ilocano"/>
+		</section>
+		<section id="ina" label="interlingua (langue auxiliaire internationale)">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ia"/>
+			<parameter id="eng" label="English Description" value="Interlingua (International Auxiliary Language Association)"/>
+			<parameter id="fre" label="French Description" value="interlingua (langue auxiliaire internationale)"/>
+		</section>
+		<section id="inc" label="indo-aryennes, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Indic (Other)"/>
+			<parameter id="fre" label="French Description" value="indo-aryennes, autres langues"/>
+		</section>
+		<section id="ind" label="indonesien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="id"/>
+			<parameter id="eng" label="English Description" value="Indonesian"/>
+			<parameter id="fre" label="French Description" value="indonesien"/>
+		</section>
+		<section id="ine" label="indo-europeennes, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Indo-European (Other)"/>
+			<parameter id="fre" label="French Description" value="indo-europeennes, autres langues"/>
+		</section>
+		<section id="inh" label="ingouche">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Ingush"/>
+			<parameter id="fre" label="French Description" value="ingouche"/>
+		</section>
+		<section id="ipk" label="inupiaq">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ik"/>
+			<parameter id="eng" label="English Description" value="Inupiaq"/>
+			<parameter id="fre" label="French Description" value="inupiaq"/>
+		</section>
+		<section id="ira" label="iraniennes, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Iranian (Other)"/>
+			<parameter id="fre" label="French Description" value="iraniennes, autres langues"/>
+		</section>
+		<section id="iro" label="iroquoises, langues (famille)">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Iroquoian languages"/>
+			<parameter id="fre" label="French Description" value="iroquoises, langues (famille)"/>
+		</section>
+		<section id="ita" label="italien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="it"/>
+			<parameter id="eng" label="English Description" value="Italian"/>
+			<parameter id="fre" label="French Description" value="italien"/>
+		</section>
+		<section id="jav" label="javanais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="jv"/>
+			<parameter id="eng" label="English Description" value="Javanese"/>
+			<parameter id="fre" label="French Description" value="javanais"/>
+		</section>
+		<section id="jbo" label="lojban">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Lojban"/>
+			<parameter id="fre" label="French Description" value="lojban"/>
+		</section>
+		<section id="jpn" label="japonais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ja"/>
+			<parameter id="eng" label="English Description" value="Japanese"/>
+			<parameter id="fre" label="French Description" value="japonais"/>
+		</section>
+		<section id="jpr" label="judeo-persan">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Judeo-Persian"/>
+			<parameter id="fre" label="French Description" value="judeo-persan"/>
+		</section>
+		<section id="jrb" label="judeo-arabe">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Judeo-Arabic"/>
+			<parameter id="fre" label="French Description" value="judeo-arabe"/>
+		</section>
+		<section id="kaa" label="karakalpak">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Kara-Kalpak"/>
+			<parameter id="fre" label="French Description" value="karakalpak"/>
+		</section>
+		<section id="kab" label="kabyle">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Kabyle"/>
+			<parameter id="fre" label="French Description" value="kabyle"/>
+		</section>
+		<section id="kac" label="kachin; jingpho">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Kachin; Jingpho"/>
+			<parameter id="fre" label="French Description" value="kachin; jingpho"/>
+		</section>
+		<section id="kal" label="groenlandais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="kl"/>
+			<parameter id="eng" label="English Description" value="Kalaallisut; Greenlandic"/>
+			<parameter id="fre" label="French Description" value="groenlandais"/>
+		</section>
+		<section id="kam" label="kamba">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Kamba"/>
+			<parameter id="fre" label="French Description" value="kamba"/>
+		</section>
+		<section id="kan" label="kannada">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="kn"/>
+			<parameter id="eng" label="English Description" value="Kannada"/>
+			<parameter id="fre" label="French Description" value="kannada"/>
+		</section>
+		<section id="kar" label="karen, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Karen languages"/>
+			<parameter id="fre" label="French Description" value="karen, langues"/>
+		</section>
+		<section id="kas" label="kashmiri">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ks"/>
+			<parameter id="eng" label="English Description" value="Kashmiri"/>
+			<parameter id="fre" label="French Description" value="kashmiri"/>
+		</section>
+		<section id="kau" label="kanouri">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="kr"/>
+			<parameter id="eng" label="English Description" value="Kanuri"/>
+			<parameter id="fre" label="French Description" value="kanouri"/>
+		</section>
+		<section id="kaw" label="kawi">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Kawi"/>
+			<parameter id="fre" label="French Description" value="kawi"/>
+		</section>
+		<section id="kaz" label="kazakh">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="kk"/>
+			<parameter id="eng" label="English Description" value="Kazakh"/>
+			<parameter id="fre" label="French Description" value="kazakh"/>
+		</section>
+		<section id="kbd" label="kabardien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Kabardian"/>
+			<parameter id="fre" label="French Description" value="kabardien"/>
+		</section>
+		<section id="kha" label="khasi">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Khasi"/>
+			<parameter id="fre" label="French Description" value="khasi"/>
+		</section>
+		<section id="khi" label="khoisan, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Khoisan (Other)"/>
+			<parameter id="fre" label="French Description" value="khoisan, autres langues"/>
+		</section>
+		<section id="khm" label="khmer central">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="km"/>
+			<parameter id="eng" label="English Description" value="Central Khmer"/>
+			<parameter id="fre" label="French Description" value="khmer central"/>
+		</section>
+		<section id="kho" label="khotanais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Khotanese"/>
+			<parameter id="fre" label="French Description" value="khotanais"/>
+		</section>
+		<section id="kik" label="kikuyu">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ki"/>
+			<parameter id="eng" label="English Description" value="Kikuyu; Gikuyu"/>
+			<parameter id="fre" label="French Description" value="kikuyu"/>
+		</section>
+		<section id="kin" label="rwanda">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="rw"/>
+			<parameter id="eng" label="English Description" value="Kinyarwanda"/>
+			<parameter id="fre" label="French Description" value="rwanda"/>
+		</section>
+		<section id="kir" label="kirghiz">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ky"/>
+			<parameter id="eng" label="English Description" value="Kirghiz; Kyrgyz"/>
+			<parameter id="fre" label="French Description" value="kirghiz"/>
+		</section>
+		<section id="kmb" label="kimbundu">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Kimbundu"/>
+			<parameter id="fre" label="French Description" value="kimbundu"/>
+		</section>
+		<section id="kok" label="konkani">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Konkani"/>
+			<parameter id="fre" label="French Description" value="konkani"/>
+		</section>
+		<section id="kom" label="kom">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="kv"/>
+			<parameter id="eng" label="English Description" value="Komi"/>
+			<parameter id="fre" label="French Description" value="kom"/>
+		</section>
+		<section id="kon" label="kongo">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="kg"/>
+			<parameter id="eng" label="English Description" value="Kongo"/>
+			<parameter id="fre" label="French Description" value="kongo"/>
+		</section>
+		<section id="kor" label="coreen">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ko"/>
+			<parameter id="eng" label="English Description" value="Korean"/>
+			<parameter id="fre" label="French Description" value="coreen"/>
+		</section>
+		<section id="kos" label="kosrae">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Kosraean"/>
+			<parameter id="fre" label="French Description" value="kosrae"/>
+		</section>
+		<section id="kpe" label="kpelle">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Kpelle"/>
+			<parameter id="fre" label="French Description" value="kpelle"/>
+		</section>
+		<section id="krc" label="karatchai balkar">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Karachay-Balkar"/>
+			<parameter id="fre" label="French Description" value="karatchai balkar"/>
+		</section>
+		<section id="krl" label="carelien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Karelian"/>
+			<parameter id="fre" label="French Description" value="carelien"/>
+		</section>
+		<section id="kro" label="krou, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Kru languages"/>
+			<parameter id="fre" label="French Description" value="krou, langues"/>
+		</section>
+		<section id="kru" label="kurukh">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Kurukh"/>
+			<parameter id="fre" label="French Description" value="kurukh"/>
+		</section>
+		<section id="kua" label="kuanyama; kwanyama">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="kj"/>
+			<parameter id="eng" label="English Description" value="Kuanyama; Kwanyama"/>
+			<parameter id="fre" label="French Description" value="kuanyama; kwanyama"/>
+		</section>
+		<section id="kum" label="koumyk">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Kumyk"/>
+			<parameter id="fre" label="French Description" value="koumyk"/>
+		</section>
+		<section id="kur" label="kurde">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ku"/>
+			<parameter id="eng" label="English Description" value="Kurdish"/>
+			<parameter id="fre" label="French Description" value="kurde"/>
+		</section>
+		<section id="kut" label="kutenai">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Kutenai"/>
+			<parameter id="fre" label="French Description" value="kutenai"/>
+		</section>
+		<section id="lad" label="judeo-espagnol">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Ladino"/>
+			<parameter id="fre" label="French Description" value="judeo-espagnol"/>
+		</section>
+		<section id="lah" label="lahnda">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Lahnda"/>
+			<parameter id="fre" label="French Description" value="lahnda"/>
+		</section>
+		<section id="lam" label="lamba">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Lamba"/>
+			<parameter id="fre" label="French Description" value="lamba"/>
+		</section>
+		<section id="lao" label="lao">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="lo"/>
+			<parameter id="eng" label="English Description" value="Lao"/>
+			<parameter id="fre" label="French Description" value="lao"/>
+		</section>
+		<section id="lat" label="latin">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="la"/>
+			<parameter id="eng" label="English Description" value="Latin"/>
+			<parameter id="fre" label="French Description" value="latin"/>
+		</section>
+		<section id="lav" label="letton">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="lv"/>
+			<parameter id="eng" label="English Description" value="Latvian"/>
+			<parameter id="fre" label="French Description" value="letton"/>
+		</section>
+		<section id="lez" label="lezghien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Lezghian"/>
+			<parameter id="fre" label="French Description" value="lezghien"/>
+		</section>
+		<section id="lim" label="limbourgeois">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="li"/>
+			<parameter id="eng" label="English Description" value="Limburgan; Limburger; Limburgish"/>
+			<parameter id="fre" label="French Description" value="limbourgeois"/>
+		</section>
+		<section id="lin" label="lingala">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ln"/>
+			<parameter id="eng" label="English Description" value="Lingala"/>
+			<parameter id="fre" label="French Description" value="lingala"/>
+		</section>
+		<section id="lit" label="lituanien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="lt"/>
+			<parameter id="eng" label="English Description" value="Lithuanian"/>
+			<parameter id="fre" label="French Description" value="lituanien"/>
+		</section>
+		<section id="lol" label="mongo">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Mongo"/>
+			<parameter id="fre" label="French Description" value="mongo"/>
+		</section>
+		<section id="loz" label="lozi">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Lozi"/>
+			<parameter id="fre" label="French Description" value="lozi"/>
+		</section>
+		<section id="ltz" label="luxembourgeois">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="lb"/>
+			<parameter id="eng" label="English Description" value="Luxembourgish; Letzeburgesch"/>
+			<parameter id="fre" label="French Description" value="luxembourgeois"/>
+		</section>
+		<section id="lua" label="luba-lulua">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Luba-Lulua"/>
+			<parameter id="fre" label="French Description" value="luba-lulua"/>
+		</section>
+		<section id="lub" label="luba-katanga">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="lu"/>
+			<parameter id="eng" label="English Description" value="Luba-Katanga"/>
+			<parameter id="fre" label="French Description" value="luba-katanga"/>
+		</section>
+		<section id="lug" label="ganda">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="lg"/>
+			<parameter id="eng" label="English Description" value="Ganda"/>
+			<parameter id="fre" label="French Description" value="ganda"/>
+		</section>
+		<section id="lui" label="luiseno">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Luiseno"/>
+			<parameter id="fre" label="French Description" value="luiseno"/>
+		</section>
+		<section id="lun" label="lunda">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Lunda"/>
+			<parameter id="fre" label="French Description" value="lunda"/>
+		</section>
+		<section id="luo" label="luo (Kenya et Tanzanie)">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Luo (Kenya and Tanzania)"/>
+			<parameter id="fre" label="French Description" value="luo (Kenya et Tanzanie)"/>
+		</section>
+		<section id="lus" label="lushai">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Lushai"/>
+			<parameter id="fre" label="French Description" value="lushai"/>
+		</section>
+		<section id="mac/mkd" label="macedonien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="mk"/>
+			<parameter id="eng" label="English Description" value="Macedonian"/>
+			<parameter id="fre" label="French Description" value="macedonien"/>
+		</section>
+		<section id="mad" label="madourais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Madurese"/>
+			<parameter id="fre" label="French Description" value="madourais"/>
+		</section>
+		<section id="mag" label="magahi">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Magahi"/>
+			<parameter id="fre" label="French Description" value="magahi"/>
+		</section>
+		<section id="mah" label="marshall">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="mh"/>
+			<parameter id="eng" label="English Description" value="Marshallese"/>
+			<parameter id="fre" label="French Description" value="marshall"/>
+		</section>
+		<section id="mai" label="maithili">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Maithili"/>
+			<parameter id="fre" label="French Description" value="maithili"/>
+		</section>
+		<section id="mak" label="makassar">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Makasar"/>
+			<parameter id="fre" label="French Description" value="makassar"/>
+		</section>
+		<section id="mal" label="malayalam">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ml"/>
+			<parameter id="eng" label="English Description" value="Malayalam"/>
+			<parameter id="fre" label="French Description" value="malayalam"/>
+		</section>
+		<section id="man" label="mandingue">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Mandingo"/>
+			<parameter id="fre" label="French Description" value="mandingue"/>
+		</section>
+		<section id="mao/mri" label="maori">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="mi"/>
+			<parameter id="eng" label="English Description" value="Maori"/>
+			<parameter id="fre" label="French Description" value="maori"/>
+		</section>
+		<section id="map" label="malayo-polynesiennes, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Austronesian (Other)"/>
+			<parameter id="fre" label="French Description" value="malayo-polynesiennes, autres langues"/>
+		</section>
+		<section id="mar" label="marathe">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="mr"/>
+			<parameter id="eng" label="English Description" value="Marathi"/>
+			<parameter id="fre" label="French Description" value="marathe"/>
+		</section>
+		<section id="mas" label="massaïp">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Masai"/>
+			<parameter id="fre" label="French Description" value="massaïp"/>
+		</section>
+		<section id="may/msa" label="malais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ms"/>
+			<parameter id="eng" label="English Description" value="Malay"/>
+			<parameter id="fre" label="French Description" value="malais"/>
+		</section>
+		<section id="mdf" label="moksa">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Moksha"/>
+			<parameter id="fre" label="French Description" value="moksa"/>
+		</section>
+		<section id="mdr" label="mandar">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Mandar"/>
+			<parameter id="fre" label="French Description" value="mandar"/>
+		</section>
+		<section id="men" label="mende">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Mende"/>
+			<parameter id="fre" label="French Description" value="mende"/>
+		</section>
+		<section id="mga" label="irlandais moyen (900-1200)">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Irish, Middle (900-1200)"/>
+			<parameter id="fre" label="French Description" value="irlandais moyen (900-1200)"/>
+		</section>
+		<section id="mic" label="mi'kmaq; micmac">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Mi'kmaq; Micmac"/>
+			<parameter id="fre" label="French Description" value="mi'kmaq; micmac"/>
+		</section>
+		<section id="min" label="minangkabau">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Minangkabau"/>
+			<parameter id="fre" label="French Description" value="minangkabau"/>
+		</section>
+		<section id="mis" label="diverses, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Miscellaneous languages"/>
+			<parameter id="fre" label="French Description" value="diverses, langues"/>
+		</section>
+		<section id="mkh" label="môn-khmer, autres languese">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Mon-Khmer (Other)"/>
+			<parameter id="fre" label="French Description" value="môn-khmer, autres languese"/>
+		</section>
+		<section id="mlg" label="malgache">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="mg"/>
+			<parameter id="eng" label="English Description" value="Malagasy"/>
+			<parameter id="fre" label="French Description" value="malgache"/>
+		</section>
+		<section id="mlt" label="maltais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="mt"/>
+			<parameter id="eng" label="English Description" value="Maltese"/>
+			<parameter id="fre" label="French Description" value="maltais"/>
+		</section>
+		<section id="mnc" label="mandchou">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Manchu"/>
+			<parameter id="fre" label="French Description" value="mandchou"/>
+		</section>
+		<section id="mni" label="manipuri">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Manipuri"/>
+			<parameter id="fre" label="French Description" value="manipuri"/>
+		</section>
+		<section id="mno" label="manobo, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Manobo languages"/>
+			<parameter id="fre" label="French Description" value="manobo, langues"/>
+		</section>
+		<section id="moh" label="mohawk">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Mohawk"/>
+			<parameter id="fre" label="French Description" value="mohawk"/>
+		</section>
+		<section id="mol" label="moldave">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="mo"/>
+			<parameter id="eng" label="English Description" value="Moldavian"/>
+			<parameter id="fre" label="French Description" value="moldave"/>
+		</section>
+		<section id="mon" label="mongol">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="mn"/>
+			<parameter id="eng" label="English Description" value="Mongolian"/>
+			<parameter id="fre" label="French Description" value="mongol"/>
+		</section>
+		<section id="mos" label="more">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Mossi"/>
+			<parameter id="fre" label="French Description" value="more"/>
+		</section>
+		<section id="mul" label="multilingue">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Multiple languages"/>
+			<parameter id="fre" label="French Description" value="multilingue"/>
+		</section>
+		<section id="mun" label="mounda, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Munda languages"/>
+			<parameter id="fre" label="French Description" value="mounda, langues"/>
+		</section>
+		<section id="mus" label="muskogee">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Creek"/>
+			<parameter id="fre" label="French Description" value="muskogee"/>
+		</section>
+		<section id="mwl" label="mirandais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Mirandese"/>
+			<parameter id="fre" label="French Description" value="mirandais"/>
+		</section>
+		<section id="mwr" label="marvari">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Marwari"/>
+			<parameter id="fre" label="French Description" value="marvari"/>
+		</section>
+		<section id="myn" label="maya, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Mayan languages"/>
+			<parameter id="fre" label="French Description" value="maya, langues"/>
+		</section>
+		<section id="myv" label="erza">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Erzya"/>
+			<parameter id="fre" label="French Description" value="erza"/>
+		</section>
+		<section id="nah" label="nahuatl, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Nahuatl languages"/>
+			<parameter id="fre" label="French Description" value="nahuatl, langues"/>
+		</section>
+		<section id="nai" label="indiennes d'Amerique du Nord, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="North American Indian"/>
+			<parameter id="fre" label="French Description" value="indiennes d'Amerique du Nord, autres langues"/>
+		</section>
+		<section id="nap" label="napolitain">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Neapolitan"/>
+			<parameter id="fre" label="French Description" value="napolitain"/>
+		</section>
+		<section id="nau" label="nauruan">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="na"/>
+			<parameter id="eng" label="English Description" value="Nauru"/>
+			<parameter id="fre" label="French Description" value="nauruan"/>
+		</section>
+		<section id="nav" label="navaho">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="nv"/>
+			<parameter id="eng" label="English Description" value="Navajo; Navaho"/>
+			<parameter id="fre" label="French Description" value="navaho"/>
+		</section>
+		<section id="nbl" label="ndebele du Sud">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="nr"/>
+			<parameter id="eng" label="English Description" value="Ndebele, South; South Ndebele"/>
+			<parameter id="fre" label="French Description" value="ndebele du Sud"/>
+		</section>
+		<section id="nde" label="ndebele du Nord">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="nd"/>
+			<parameter id="eng" label="English Description" value="Ndebele, North; North Ndebele"/>
+			<parameter id="fre" label="French Description" value="ndebele du Nord"/>
+		</section>
+		<section id="ndo" label="ndonga">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ng"/>
+			<parameter id="eng" label="English Description" value="Ndonga"/>
+			<parameter id="fre" label="French Description" value="ndonga"/>
+		</section>
+		<section id="nds" label="bas allemand; bas saxon; allemand, bas; saxon, bas">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Low German; Low Saxon; German, Low; Saxon, Low"/>
+			<parameter id="fre" label="French Description" value="bas allemand; bas saxon; allemand, bas; saxon, bas"/>
+		</section>
+		<section id="nep" label="nepalais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ne"/>
+			<parameter id="eng" label="English Description" value="Nepali"/>
+			<parameter id="fre" label="French Description" value="nepalais"/>
+		</section>
+		<section id="new" label="nepal bhasa; newari">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Nepal Bhasa; Newari"/>
+			<parameter id="fre" label="French Description" value="nepal bhasa; newari"/>
+		</section>
+		<section id="nia" label="nias">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Nias"/>
+			<parameter id="fre" label="French Description" value="nias"/>
+		</section>
+		<section id="nic" label="nigero-congolaises, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Niger-Kordofanian (Other)"/>
+			<parameter id="fre" label="French Description" value="nigero-congolaises, autres langues"/>
+		</section>
+		<section id="niu" label="niue">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Niuean"/>
+			<parameter id="fre" label="French Description" value="niue"/>
+		</section>
+		<section id="nno" label="norvegien nynorsk; nynorsk, norvegien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="nn"/>
+			<parameter id="eng" label="English Description" value="Norwegian Nynorsk; Nynorsk, Norwegian"/>
+			<parameter id="fre" label="French Description" value="norvegien nynorsk; nynorsk, norvegien"/>
+		</section>
+		<section id="nob" label="norvegien bokmåln">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="nb"/>
+			<parameter id="eng" label="English Description" value="Bokmål, Norwegian; Norwegian Bokmåls;"/>
+			<parameter id="fre" label="French Description" value="norvegien bokmåln"/>
+		</section>
+		<section id="nog" label="nogaï; nogaym">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Nogai"/>
+			<parameter id="fre" label="French Description" value="nogaï; nogaym"/>
+		</section>
+		<section id="non" label="norrois, vieux">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Norse, Old"/>
+			<parameter id="fre" label="French Description" value="norrois, vieux"/>
+		</section>
+		<section id="nor" label="norvegien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="no"/>
+			<parameter id="eng" label="English Description" value="Norwegian"/>
+			<parameter id="fre" label="French Description" value="norvegien"/>
+		</section>
+		<section id="nqo" label="n'ko">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="N'Ko"/>
+			<parameter id="fre" label="French Description" value="n'ko"/>
+		</section>
+		<section id="nso" label="pedi; sepedi; sotho du Nord">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Pedi; Sepedi; Northern Sotho"/>
+			<parameter id="fre" label="French Description" value="pedi; sepedi; sotho du Nord"/>
+		</section>
+		<section id="nub" label="nubiennes, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Nubian languages"/>
+			<parameter id="fre" label="French Description" value="nubiennes, langues"/>
+		</section>
+		<section id="nwc" label="newari classique">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Classical Newari; Old Newari; Classical Nepal Bhasa"/>
+			<parameter id="fre" label="French Description" value="newari classique"/>
+		</section>
+		<section id="nya" label="chichewa; chewa; nyanja">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ny"/>
+			<parameter id="eng" label="English Description" value="Chichewa; Chewa; Nyanja"/>
+			<parameter id="fre" label="French Description" value="chichewa; chewa; nyanja"/>
+		</section>
+		<section id="nym" label="nyamwezi">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Nyamwezi"/>
+			<parameter id="fre" label="French Description" value="nyamwezi"/>
+		</section>
+		<section id="nyn" label="nyankole">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Nyankole"/>
+			<parameter id="fre" label="French Description" value="nyankole"/>
+		</section>
+		<section id="nyo" label="nyoro">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Nyoro"/>
+			<parameter id="fre" label="French Description" value="nyoro"/>
+		</section>
+		<section id="nzi" label="nzema">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Nzima"/>
+			<parameter id="fre" label="French Description" value="nzema"/>
+		</section>
+		<section id="oci" label="occitan (apres 1500); provençala">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="oc"/>
+			<parameter id="eng" label="English Description" value="Occitan (post 1500); Provencall"/>
+			<parameter id="fre" label="French Description" value="occitan (apres 1500); provencala"/>
+		</section>
+		<section id="oji" label="ojibwa">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="oj"/>
+			<parameter id="eng" label="English Description" value="Ojibwa"/>
+			<parameter id="fre" label="French Description" value="ojibwa"/>
+		</section>
+		<section id="ori" label="oriya">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="or"/>
+			<parameter id="eng" label="English Description" value="Oriya"/>
+			<parameter id="fre" label="French Description" value="oriya"/>
+		</section>
+		<section id="orm" label="galla">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="om"/>
+			<parameter id="eng" label="English Description" value="Oromo"/>
+			<parameter id="fre" label="French Description" value="galla"/>
+		</section>
+		<section id="osa" label="osage">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Osage"/>
+			<parameter id="fre" label="French Description" value="osage"/>
+		</section>
+		<section id="oss" label="ossete">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="os"/>
+			<parameter id="eng" label="English Description" value="Ossetian; Ossetic"/>
+			<parameter id="fre" label="French Description" value="ossete"/>
+		</section>
+		<section id="ota" label="turc ottoman (1500-1928)">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Turkish, Ottoman (1500-1928)"/>
+			<parameter id="fre" label="French Description" value="turc ottoman (1500-1928)"/>
+		</section>
+		<section id="oto" label="otomangue, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Otomian languages"/>
+			<parameter id="fre" label="French Description" value="otomangue, langues"/>
+		</section>
+		<section id="paa" label="papoues, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Papuan (Other)"/>
+			<parameter id="fre" label="French Description" value="papoues, autres langues"/>
+		</section>
+		<section id="pag" label="pangasinan">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Pangasinan"/>
+			<parameter id="fre" label="French Description" value="pangasinan"/>
+		</section>
+		<section id="pal" label="pahlavi">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Pahlavi"/>
+			<parameter id="fre" label="French Description" value="pahlavi"/>
+		</section>
+		<section id="pam" label="pampangan">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Pampanga"/>
+			<parameter id="fre" label="French Description" value="pampangan"/>
+		</section>
+		<section id="pan" label="pendjabi">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="pa"/>
+			<parameter id="eng" label="English Description" value="Panjabi; Punjabi"/>
+			<parameter id="fre" label="French Description" value="pendjabi"/>
+		</section>
+		<section id="pap" label="papiamento">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Papiamento"/>
+			<parameter id="fre" label="French Description" value="papiamento"/>
+		</section>
+		<section id="pau" label="palau">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Palauan"/>
+			<parameter id="fre" label="French Description" value="palau"/>
+		</section>
+		<section id="peo" label="perse, vieux (ca. 600-400 av. J.-C.)">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Persian, Old (ca.600-400 B.C.)"/>
+			<parameter id="fre" label="French Description" value="perse, vieux (ca. 600-400 av. J.-C.)"/>
+		</section>
+		<section id="per/fas" label="persan">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="fa"/>
+			<parameter id="eng" label="English Description" value="Persian"/>
+			<parameter id="fre" label="French Description" value="persan"/>
+		</section>
+		<section id="phi" label="philippines, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Philippine (Other)"/>
+			<parameter id="fre" label="French Description" value="philippines, autres langues"/>
+		</section>
+		<section id="phn" label="phenicien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Phoenician"/>
+			<parameter id="fre" label="French Description" value="phenicien"/>
+		</section>
+		<section id="pli" label="pali">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="pi"/>
+			<parameter id="eng" label="English Description" value="Pali"/>
+			<parameter id="fre" label="French Description" value="pali"/>
+		</section>
+		<section id="pol" label="polonais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="pl"/>
+			<parameter id="eng" label="English Description" value="Polish"/>
+			<parameter id="fre" label="French Description" value="polonais"/>
+		</section>
+		<section id="pon" label="pohnpei">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Pohnpeian"/>
+			<parameter id="fre" label="French Description" value="pohnpei"/>
+		</section>
+		<section id="por" label="portugais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="pt"/>
+			<parameter id="eng" label="English Description" value="Portuguese"/>
+			<parameter id="fre" label="French Description" value="portugais"/>
+		</section>
+		<section id="pra" label="prâkritl">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Prakrit languages"/>
+			<parameter id="fre" label="French Description" value="prâkritl"/>
+		</section>
+		<section id="pro" label="provençal ancien (jusqu'à 1500)C.">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Provencal, Old (to 1500)e"/>
+			<parameter id="fre" label="French Description" value="provencal ancien (jusqu'à 1500)C."/>
+		</section>
+		<section id="pus" label="pachto">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ps"/>
+			<parameter id="eng" label="English Description" value="Pushto"/>
+			<parameter id="fre" label="French Description" value="pachto"/>
+		</section>
+		<section id="qaa-qtz" label="reservee à l'usage localà">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Reserved for local use"/>
+			<parameter id="fre" label="French Description" value="reservee à l'usage localà"/>
+		</section>
+		<section id="que" label="quechua">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="qu"/>
+			<parameter id="eng" label="English Description" value="Quechua"/>
+			<parameter id="fre" label="French Description" value="quechua"/>
+		</section>
+		<section id="raj" label="rajasthani">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Rajasthani"/>
+			<parameter id="fre" label="French Description" value="rajasthani"/>
+		</section>
+		<section id="rap" label="rapanui">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Rapanui"/>
+			<parameter id="fre" label="French Description" value="rapanui"/>
+		</section>
+		<section id="rar" label="rarotonga; maori des iles Cook">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Rarotongan; Cook Islands Maori"/>
+			<parameter id="fre" label="French Description" value="rarotonga; maori des iles Cook"/>
+		</section>
+		<section id="roa" label="romanes, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Romance (Other)"/>
+			<parameter id="fre" label="French Description" value="romanes, autres langues"/>
+		</section>
+		<section id="roh" label="romanche">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="rm"/>
+			<parameter id="eng" label="English Description" value="Romansh"/>
+			<parameter id="fre" label="French Description" value="romanche"/>
+		</section>
+		<section id="rom" label="tsigane">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Romany"/>
+			<parameter id="fre" label="French Description" value="tsigane"/>
+		</section>
+		<section id="rum/ron" label="roumain">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ro"/>
+			<parameter id="eng" label="English Description" value="Romanian"/>
+			<parameter id="fre" label="French Description" value="roumain"/>
+		</section>
+		<section id="run" label="rundi">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="rn"/>
+			<parameter id="eng" label="English Description" value="Rundi"/>
+			<parameter id="fre" label="French Description" value="rundi"/>
+		</section>
+		<section id="rup" label="aroumain; macedo-roumain">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Aromanian; Arumanian; Macedo-Romanian"/>
+			<parameter id="fre" label="French Description" value="aroumain; macedo-roumain"/>
+		</section>
+		<section id="rus" label="russe">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ru"/>
+			<parameter id="eng" label="English Description" value="Russian"/>
+			<parameter id="fre" label="French Description" value="russe"/>
+		</section>
+		<section id="sad" label="sandawe">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Sandawe"/>
+			<parameter id="fre" label="French Description" value="sandawe"/>
+		</section>
+		<section id="sag" label="sango">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="sg"/>
+			<parameter id="eng" label="English Description" value="Sango"/>
+			<parameter id="fre" label="French Description" value="sango"/>
+		</section>
+		<section id="sah" label="iakoute">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Yakut"/>
+			<parameter id="fre" label="French Description" value="iakoute"/>
+		</section>
+		<section id="sai" label="indiennes d'Amerique du Sud, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="South American Indian (Other)"/>
+			<parameter id="fre" label="French Description" value="indiennes d'Amerique du Sud, autres langues"/>
+		</section>
+		<section id="sal" label="salish, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Salishan languages"/>
+			<parameter id="fre" label="French Description" value="salish, langues"/>
+		</section>
+		<section id="sam" label="samaritain">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Samaritan Aramaic"/>
+			<parameter id="fre" label="French Description" value="samaritain"/>
+		</section>
+		<section id="san" label="sanskrit">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="sa"/>
+			<parameter id="eng" label="English Description" value="Sanskrit"/>
+			<parameter id="fre" label="French Description" value="sanskrit"/>
+		</section>
+		<section id="sas" label="sasak">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Sasak"/>
+			<parameter id="fre" label="French Description" value="sasak"/>
+		</section>
+		<section id="sat" label="santal">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Santali"/>
+			<parameter id="fre" label="French Description" value="santal"/>
+		</section>
+		<section id="scc/srp" label="serbe">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="sr"/>
+			<parameter id="eng" label="English Description" value="Serbian"/>
+			<parameter id="fre" label="French Description" value="serbe"/>
+		</section>
+		<section id="scn" label="sicilien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Sicilian"/>
+			<parameter id="fre" label="French Description" value="sicilien"/>
+		</section>
+		<section id="sco" label="ecossais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Scots"/>
+			<parameter id="fre" label="French Description" value="ecossais"/>
+		</section>
+		<section id="scr/hrv" label="croate">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="hr"/>
+			<parameter id="eng" label="English Description" value="Croatian"/>
+			<parameter id="fre" label="French Description" value="croate"/>
+		</section>
+		<section id="sel" label="selkoupe">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Selkup"/>
+			<parameter id="fre" label="French Description" value="selkoupe"/>
+		</section>
+		<section id="sem" label="semitiques, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Semitic (Other)"/>
+			<parameter id="fre" label="French Description" value="semitiques, autres langues"/>
+		</section>
+		<section id="sga" label="irlandais ancien (jusqu'à 900)t">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Irish, Old (to 900)"/>
+			<parameter id="fre" label="French Description" value="irlandais ancien (jusqu'à 900)t"/>
+		</section>
+		<section id="sgn" label="langues des signes">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Sign Languages"/>
+			<parameter id="fre" label="French Description" value="langues des signes"/>
+		</section>
+		<section id="shn" label="chan">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Shan"/>
+			<parameter id="fre" label="French Description" value="chan"/>
+		</section>
+		<section id="sid" label="sidamo">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Sidamo"/>
+			<parameter id="fre" label="French Description" value="sidamo"/>
+		</section>
+		<section id="sin" label="singhalais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="si"/>
+			<parameter id="eng" label="English Description" value="Sinhala; Sinhalese"/>
+			<parameter id="fre" label="French Description" value="singhalais"/>
+		</section>
+		<section id="sio" label="sioux, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Siouan languages"/>
+			<parameter id="fre" label="French Description" value="sioux, langues"/>
+		</section>
+		<section id="sit" label="sino-tibetaines, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Sino-Tibetan (Other)"/>
+			<parameter id="fre" label="French Description" value="sino-tibetaines, autres langues"/>
+		</section>
+		<section id="sla" label="slaves, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Slavic (Other)"/>
+			<parameter id="fre" label="French Description" value="slaves, autres langues"/>
+		</section>
+		<section id="slo/slk" label="slovaque">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="sk"/>
+			<parameter id="eng" label="English Description" value="Slovak"/>
+			<parameter id="fre" label="French Description" value="slovaque"/>
+		</section>
+		<section id="slv" label="slovene">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="sl"/>
+			<parameter id="eng" label="English Description" value="Slovenian"/>
+			<parameter id="fre" label="French Description" value="slovene"/>
+		</section>
+		<section id="sma" label="sami du Sud">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Southern Sami"/>
+			<parameter id="fre" label="French Description" value="sami du Sud"/>
+		</section>
+		<section id="sme" label="sami du Nord">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="se"/>
+			<parameter id="eng" label="English Description" value="Northern Sami"/>
+			<parameter id="fre" label="French Description" value="sami du Nord"/>
+		</section>
+		<section id="smi" label="sami, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Sami languages (Other)"/>
+			<parameter id="fre" label="French Description" value="sami, autres langues"/>
+		</section>
+		<section id="smj" label="sami de Lule">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Lule Sami"/>
+			<parameter id="fre" label="French Description" value="sami de Lule"/>
+		</section>
+		<section id="smn" label="sami d'Inari">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Inari Sami"/>
+			<parameter id="fre" label="French Description" value="sami d'Inari"/>
+		</section>
+		<section id="smo" label="samoan">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="sm"/>
+			<parameter id="eng" label="English Description" value="Samoan"/>
+			<parameter id="fre" label="French Description" value="samoan"/>
+		</section>
+		<section id="sms" label="sami skolt">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Skolt Sami"/>
+			<parameter id="fre" label="French Description" value="sami skolt"/>
+		</section>
+		<section id="sna" label="shona">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="sn"/>
+			<parameter id="eng" label="English Description" value="Shona"/>
+			<parameter id="fre" label="French Description" value="shona"/>
+		</section>
+		<section id="snd" label="sindhi">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="sd"/>
+			<parameter id="eng" label="English Description" value="Sindhi"/>
+			<parameter id="fre" label="French Description" value="sindhi"/>
+		</section>
+		<section id="snk" label="soninke">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Soninke"/>
+			<parameter id="fre" label="French Description" value="soninke"/>
+		</section>
+		<section id="sog" label="sogdien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Sogdian"/>
+			<parameter id="fre" label="French Description" value="sogdien"/>
+		</section>
+		<section id="som" label="somali">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="so"/>
+			<parameter id="eng" label="English Description" value="Somali"/>
+			<parameter id="fre" label="French Description" value="somali"/>
+		</section>
+		<section id="son" label="songhai, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Songhai languages"/>
+			<parameter id="fre" label="French Description" value="songhai, langues"/>
+		</section>
+		<section id="sot" label="sotho du Sud">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="st"/>
+			<parameter id="eng" label="English Description" value="Sotho, Southern"/>
+			<parameter id="fre" label="French Description" value="sotho du Sud"/>
+		</section>
+		<section id="spa" label="espagnol; castillan">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="es"/>
+			<parameter id="eng" label="English Description" value="Spanish; Castilian"/>
+			<parameter id="fre" label="French Description" value="espagnol; castillan"/>
+		</section>
+		<section id="srd" label="sarde">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="sc"/>
+			<parameter id="eng" label="English Description" value="Sardinian"/>
+			<parameter id="fre" label="French Description" value="sarde"/>
+		</section>
+		<section id="srn" label="sranan tongo">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Sranan Tongo"/>
+			<parameter id="fre" label="French Description" value="sranan tongo"/>
+		</section>
+		<section id="srr" label="serere">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Serer"/>
+			<parameter id="fre" label="French Description" value="serere"/>
+		</section>
+		<section id="ssa" label="nilo-sahariennes, autres langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Nilo-Saharan (Other)"/>
+			<parameter id="fre" label="French Description" value="nilo-sahariennes, autres langues"/>
+		</section>
+		<section id="ssw" label="swati">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ss"/>
+			<parameter id="eng" label="English Description" value="Swati"/>
+			<parameter id="fre" label="French Description" value="swati"/>
+		</section>
+		<section id="suk" label="sukuma">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Sukuma"/>
+			<parameter id="fre" label="French Description" value="sukuma"/>
+		</section>
+		<section id="sun" label="soundanais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="su"/>
+			<parameter id="eng" label="English Description" value="Sundanese"/>
+			<parameter id="fre" label="French Description" value="soundanais"/>
+		</section>
+		<section id="sus" label="soussou">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Susu"/>
+			<parameter id="fre" label="French Description" value="soussou"/>
+		</section>
+		<section id="sux" label="sumerien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Sumerian"/>
+			<parameter id="fre" label="French Description" value="sumerien"/>
+		</section>
+		<section id="swa" label="swahili">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="sw"/>
+			<parameter id="eng" label="English Description" value="Swahili"/>
+			<parameter id="fre" label="French Description" value="swahili"/>
+		</section>
+		<section id="swe" label="suedois">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="sv"/>
+			<parameter id="eng" label="English Description" value="Swedish"/>
+			<parameter id="fre" label="French Description" value="suedois"/>
+		</section>
+		<section id="syr" label="syriaque">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Syriac"/>
+			<parameter id="fre" label="French Description" value="syriaque"/>
+		</section>
+		<section id="tah" label="tahitien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ty"/>
+			<parameter id="eng" label="English Description" value="Tahitian"/>
+			<parameter id="fre" label="French Description" value="tahitien"/>
+		</section>
+		<section id="tai" label="thaïes, autres languess">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Tai (Other)"/>
+			<parameter id="fre" label="French Description" value="thaïes, autres languess"/>
+		</section>
+		<section id="tam" label="tamoul">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ta"/>
+			<parameter id="eng" label="English Description" value="Tamil"/>
+			<parameter id="fre" label="French Description" value="tamoul"/>
+		</section>
+		<section id="tat" label="tatar">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="tt"/>
+			<parameter id="eng" label="English Description" value="Tatar"/>
+			<parameter id="fre" label="French Description" value="tatar"/>
+		</section>
+		<section id="tel" label="telougou">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="te"/>
+			<parameter id="eng" label="English Description" value="Telugu"/>
+			<parameter id="fre" label="French Description" value="telougou"/>
+		</section>
+		<section id="tem" label="temne">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Timne"/>
+			<parameter id="fre" label="French Description" value="temne"/>
+		</section>
+		<section id="ter" label="tereno">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Tereno"/>
+			<parameter id="fre" label="French Description" value="tereno"/>
+		</section>
+		<section id="tet" label="tetum">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Tetum"/>
+			<parameter id="fre" label="French Description" value="tetum"/>
+		</section>
+		<section id="tgk" label="tadjik">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="tg"/>
+			<parameter id="eng" label="English Description" value="Tajik"/>
+			<parameter id="fre" label="French Description" value="tadjik"/>
+		</section>
+		<section id="tgl" label="tagalog">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="tl"/>
+			<parameter id="eng" label="English Description" value="Tagalog"/>
+			<parameter id="fre" label="French Description" value="tagalog"/>
+		</section>
+		<section id="tha" label="thaïo">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="th"/>
+			<parameter id="eng" label="English Description" value="Thai"/>
+			<parameter id="fre" label="French Description" value="thaïo"/>
+		</section>
+		<section id="tib/bod" label="tibetain">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="bo"/>
+			<parameter id="eng" label="English Description" value="Tibetan"/>
+			<parameter id="fre" label="French Description" value="tibetain"/>
+		</section>
+		<section id="tig" label="tigre">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Tigre"/>
+			<parameter id="fre" label="French Description" value="tigre"/>
+		</section>
+		<section id="tir" label="tigrigna">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ti"/>
+			<parameter id="eng" label="English Description" value="Tigrinya"/>
+			<parameter id="fre" label="French Description" value="tigrigna"/>
+		</section>
+		<section id="tiv" label="tiv">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Tiv"/>
+			<parameter id="fre" label="French Description" value="tiv"/>
+		</section>
+		<section id="tkl" label="tokelau">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Tokelau"/>
+			<parameter id="fre" label="French Description" value="tokelau"/>
+		</section>
+		<section id="tlh" label="klingon">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Klingon; tlhIngan-Hol"/>
+			<parameter id="fre" label="French Description" value="klingon"/>
+		</section>
+		<section id="tli" label="tlingit">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Tlingit"/>
+			<parameter id="fre" label="French Description" value="tlingit"/>
+		</section>
+		<section id="tmh" label="tamacheq">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Tamashek"/>
+			<parameter id="fre" label="French Description" value="tamacheq"/>
+		</section>
+		<section id="tog" label="tonga (Nyasa)">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Tonga (Nyasa)"/>
+			<parameter id="fre" label="French Description" value="tonga (Nyasa)"/>
+		</section>
+		<section id="ton" label="tongan (iles Tonga)">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="to"/>
+			<parameter id="eng" label="English Description" value="Tonga (Tonga Islands)"/>
+			<parameter id="fre" label="French Description" value="tongan (iles Tonga)"/>
+		</section>
+		<section id="tpi" label="tok pisin">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Tok Pisin"/>
+			<parameter id="fre" label="French Description" value="tok pisin"/>
+		</section>
+		<section id="tsi" label="tsimshian">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Tsimshian"/>
+			<parameter id="fre" label="French Description" value="tsimshian"/>
+		</section>
+		<section id="tsn" label="tswana">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="tn"/>
+			<parameter id="eng" label="English Description" value="Tswana"/>
+			<parameter id="fre" label="French Description" value="tswana"/>
+		</section>
+		<section id="tso" label="tsonga">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ts"/>
+			<parameter id="eng" label="English Description" value="Tsonga"/>
+			<parameter id="fre" label="French Description" value="tsonga"/>
+		</section>
+		<section id="tuk" label="turkmene">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="tk"/>
+			<parameter id="eng" label="English Description" value="Turkmen"/>
+			<parameter id="fre" label="French Description" value="turkmene"/>
+		</section>
+		<section id="tum" label="tumbuka">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Tumbuka"/>
+			<parameter id="fre" label="French Description" value="tumbuka"/>
+		</section>
+		<section id="tup" label="tupi, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Tupi languages"/>
+			<parameter id="fre" label="French Description" value="tupi, langues"/>
+		</section>
+		<section id="tur" label="turc">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="tr"/>
+			<parameter id="eng" label="English Description" value="Turkish"/>
+			<parameter id="fre" label="French Description" value="turc"/>
+		</section>
+		<section id="tut" label="altaïques, autres languesa">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Altaic (Other)"/>
+			<parameter id="fre" label="French Description" value="altaïques, autres languesa"/>
+		</section>
+		<section id="tvl" label="tuvalu">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Tuvalu"/>
+			<parameter id="fre" label="French Description" value="tuvalu"/>
+		</section>
+		<section id="twi" label="twi">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="tw"/>
+			<parameter id="eng" label="English Description" value="Twi"/>
+			<parameter id="fre" label="French Description" value="twi"/>
+		</section>
+		<section id="tyv" label="touva">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Tuvinian"/>
+			<parameter id="fre" label="French Description" value="touva"/>
+		</section>
+		<section id="udm" label="oudmourte">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Udmurt"/>
+			<parameter id="fre" label="French Description" value="oudmourte"/>
+		</section>
+		<section id="uga" label="ougaritique">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Ugaritic"/>
+			<parameter id="fre" label="French Description" value="ougaritique"/>
+		</section>
+		<section id="uig" label="ouigour">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ug"/>
+			<parameter id="eng" label="English Description" value="Uighur; Uyghur"/>
+			<parameter id="fre" label="French Description" value="ouigour"/>
+		</section>
+		<section id="ukr" label="ukrainien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="uk"/>
+			<parameter id="eng" label="English Description" value="Ukrainian"/>
+			<parameter id="fre" label="French Description" value="ukrainien"/>
+		</section>
+		<section id="umb" label="umbundu">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Umbundu"/>
+			<parameter id="fre" label="French Description" value="umbundu"/>
+		</section>
+		<section id="und" label="indeterminee">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Undetermined"/>
+			<parameter id="fre" label="French Description" value="indeterminee"/>
+		</section>
+		<section id="urd" label="ourdou">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ur"/>
+			<parameter id="eng" label="English Description" value="Urdu"/>
+			<parameter id="fre" label="French Description" value="ourdou"/>
+		</section>
+		<section id="uzb" label="ouszbek">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="uz"/>
+			<parameter id="eng" label="English Description" value="Uzbek"/>
+			<parameter id="fre" label="French Description" value="ouszbek"/>
+		</section>
+		<section id="vai" label="vaïb">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Vai"/>
+			<parameter id="fre" label="French Description" value="vaïb"/>
+		</section>
+		<section id="ven" label="venda">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ve"/>
+			<parameter id="eng" label="English Description" value="Venda"/>
+			<parameter id="fre" label="French Description" value="venda"/>
+		</section>
+		<section id="vie" label="vietnamien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="vi"/>
+			<parameter id="eng" label="English Description" value="Vietnamese"/>
+			<parameter id="fre" label="French Description" value="vietnamien"/>
+		</section>
+		<section id="vol" label="volapuk">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="vo"/>
+			<parameter id="eng" label="English Description" value="Volapuk"/>
+			<parameter id="fre" label="French Description" value="volapuk"/>
+		</section>
+		<section id="vot" label="vote">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Votic"/>
+			<parameter id="fre" label="French Description" value="vote"/>
+		</section>
+		<section id="wak" label="wakashennes, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Wakashan languages"/>
+			<parameter id="fre" label="French Description" value="wakashennes, langues"/>
+		</section>
+		<section id="wal" label="walamo">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Walamo"/>
+			<parameter id="fre" label="French Description" value="walamo"/>
+		</section>
+		<section id="war" label="waray">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Waray"/>
+			<parameter id="fre" label="French Description" value="waray"/>
+		</section>
+		<section id="was" label="washo">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Washo"/>
+			<parameter id="fre" label="French Description" value="washo"/>
+		</section>
+		<section id="wel/cym" label="gallois">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="cy"/>
+			<parameter id="eng" label="English Description" value="Welsh"/>
+			<parameter id="fre" label="French Description" value="gallois"/>
+		</section>
+		<section id="wen" label="sorabes, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Sorbian languages"/>
+			<parameter id="fre" label="French Description" value="sorabes, langues"/>
+		</section>
+		<section id="wln" label="wallon">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="wa"/>
+			<parameter id="eng" label="English Description" value="Walloon"/>
+			<parameter id="fre" label="French Description" value="wallon"/>
+		</section>
+		<section id="wol" label="wolof">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="wo"/>
+			<parameter id="eng" label="English Description" value="Wolof"/>
+			<parameter id="fre" label="French Description" value="wolof"/>
+		</section>
+		<section id="xal" label="kalmouk; oïrats">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Kalmyk; Oirat"/>
+			<parameter id="fre" label="French Description" value="kalmouk; oïrats"/>
+		</section>
+		<section id="xho" label="xhosa">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="xh"/>
+			<parameter id="eng" label="English Description" value="Xhosa"/>
+			<parameter id="fre" label="French Description" value="xhosa"/>
+		</section>
+		<section id="yao" label="yao">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Yao"/>
+			<parameter id="fre" label="French Description" value="yao"/>
+		</section>
+		<section id="yap" label="yapois">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Yapese"/>
+			<parameter id="fre" label="French Description" value="yapois"/>
+		</section>
+		<section id="yid" label="yiddish">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="yi"/>
+			<parameter id="eng" label="English Description" value="Yiddish"/>
+			<parameter id="fre" label="French Description" value="yiddish"/>
+		</section>
+		<section id="yor" label="yoruba">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="yo"/>
+			<parameter id="eng" label="English Description" value="Yoruba"/>
+			<parameter id="fre" label="French Description" value="yoruba"/>
+		</section>
+		<section id="ypk" label="yupik, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Yupik languages"/>
+			<parameter id="fre" label="French Description" value="yupik, langues"/>
+		</section>
+		<section id="zap" label="zapoteque">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Zapotec"/>
+			<parameter id="fre" label="French Description" value="zapoteque"/>
+		</section>
+		<section id="zen" label="zenaga">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Zenaga"/>
+			<parameter id="fre" label="French Description" value="zenaga"/>
+		</section>
+		<section id="zha" label="zhuang; chuang">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="za"/>
+			<parameter id="eng" label="English Description" value="Zhuang; Chuang"/>
+			<parameter id="fre" label="French Description" value="zhuang; chuang"/>
+		</section>
+		<section id="znd" label="zande, langues">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Zande languages"/>
+			<parameter id="fre" label="French Description" value="zande, langues"/>
+		</section>
+		<section id="zul" label="zoulou">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="zu"/>
+			<parameter id="eng" label="English Description" value="Zulu"/>
+			<parameter id="fre" label="French Description" value="zoulou"/>
+		</section>
+		<section id="zun" label="zuni">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Zuni"/>
+			<parameter id="fre" label="French Description" value="zuni"/>
+		</section>
+		<section id="zxx" label="pas de contenu linguistique">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="No linguistic content"/>
+			<parameter id="fre" label="French Description" value="pas de contenu linguistique"/>
+		</section>
+		<section id="zza" label="zaza; dimili; dimli; kirdki; kirmanjki; zazaki">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
+			<parameter id="eng" label="English Description" value="Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki"/>
+			<parameter id="fre" label="French Description" value="zaza; dimili; dimli; kirdki; kirmanjki; zazaki"/>
+		</section>
+	</component>
+	<!-- List of languages used by TranscriberAG : can be extended with languages above -->
+	<component id="Usual">
+		<section id="ara" label="arabe">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ar"/>
+			<parameter id="eng" label="English Description" value="Arabic"/>
+			<parameter id="fre" label="French Description" value="arabe"/>
+			<parameter id="accents,fre" label="accents,French description" value="français"/>
+			<parameter id="accents,eng" label="accents, english description" value="french"/>
+			<parameter id="dialects,fre" label="dialects,French description" value="syro-libanais"/>
+			<parameter id="dialects,eng" label="dialects, english description" value="syro-lebanese"/>
+		</section>		
+		<section id="chi" label="chinois">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="zh"/>
+			<parameter id="eng" label="English Description" value="Chinese"/>
+			<parameter id="fre" label="French Description" value="chinois"/>
+		</section>
+			<section id="eng" label="anglais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="en"/>
+			<parameter id="eng" label="English Description" value="English"/>
+			<parameter id="fre" label="French Description" value="anglais"/>
+			<parameter id="accents,fre" label="accents,French description" value="français,arabe,indien"/>
+			<parameter id="accents,eng" label="accents, english description" value="french,arabic,indian"/>
+		</section>
+			<section id="fre" label="français">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="fr"/>
+			<parameter id="eng" label="English Description" value="French"/>
+			<parameter id="fre" label="French Description" value="francais"/>
+			<parameter id="accents,fre" label="accents,French description" value="africain,arabe,belge,canadien,suisse"/>
+			<parameter id="accents,eng" label="accents, english description" value="african,arabic,belgian,canadian,swiss"/>
+		</section>	
+			<section id="ger" label="allemand">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="de"/>
+			<parameter id="eng" label="English Description" value="German"/>
+			<parameter id="fre" label="French Description" value="allemand"/>
+		</section>	
+			<section id="rus" label="russe">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="ru"/>
+			<parameter id="eng" label="English Description" value="Russian"/>
+			<parameter id="fre" label="French Description" value="russe"/>
+		</section>
+			<section id="spa" label="espagnol; castillan">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="es"/>
+			<parameter id="eng" label="English Description" value="Spanish; Castilian"/>
+			<parameter id="fre" label="French Description" value="espagnol; castillan"/>
+		</section>	
+	</component>
+</parameters>

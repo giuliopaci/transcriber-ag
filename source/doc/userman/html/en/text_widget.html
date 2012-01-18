@@ -1,0 +1,452 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<title>Text Widget</title>
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+	</head>
+
+	<body>
+	
+		<h1>Text Widget</h1>
+		<h2>Screenshot</h2>
+		<p class="centered"><img alt="text_widget" src="pics/text_widget.jpg"/></p>
+
+		<h2>Description</h2>
+		<p>The text widget supports the display and input of textual annotations for current audio signal, typically the segmentation and verbatim transcription of an audio signal. </p>
+		<p>The text widget offers full UTF-8 support for text input and rendering. Text display uses the native language script, and bidirectionality is well handled. <br />
+		The input method relies either on internal keyboard mappings, or on common input methods like IME (windows) or SCIM (Linux).</p>
+		<p><a name="menu"></a>This page describes main editing functionalities:</p>
+			<ul class="feature_list">
+				<li><a href="#annotation"> Signal Annotation</a>
+					<ul class="feature_list1">
+						<li><a href="#segmentation">Signal segmentation</a></li>
+							<ul class="feature_list1">
+								<li><a href="#seg_lab_lay">Segmentation labels layout</li>
+								<li><a href="#new_segment">Adding a new segment boundary</li>
+								<li><a href="#new_timestamp">Adding intermediate timestamps within a segment</li>
+								<li><a href="#new_turn">Adding a new turn</li>
+								<li><a href="#new_overlapping_turn">Adding a new overlapping turn</li>
+								<li><a href="#new_section">Adding a new section</li>
+								<li><a href="#new_background">Adding a new background</li>
+							</ul>
+						<li><a href="#transcription">Verbatim transcription</a></li>
+						<li><a href="#events">Detailed annotation</a></li>
+					</ul>
+				</li>
+				<li><a href="#contextual_menus">Contextual menus</a>
+					<ul class="feature_list1">
+						<li><a href="#text_menu">Text contextual menu</a></li>
+						<li><a href="#turn_menu">Turn contextual menu</a></li>
+						<li><a href="#event_menu">Event contextual menu</a></li>
+						<li><a href="#entity_menu">Named entity contextual menu</a></li>
+					</ul>
+				</li>
+				<li><a href="#properties">Annotation properties</a>
+					<ul class="feature_list1">
+						<li><a href="#section_properties">Section properties dialog</a></li>
+						<li><a href="#turn_properties">Turn properties dialog</a></li>
+						<li><a href="#background_properties">Background properties dialog</a></li>
+						<li><a href="#event_properties">Event properties dialog</a></li>
+						<li><a href="#entity_properties">Named entity properties dialog</a></li>
+					</ul>
+				</li>
+				<li><a href="#features">Other editing features</a>
+					<ul class="feature_list1">
+						<li><a href="#input_mode">Keyboard mapping and input modes</a></li>
+						<li><a href="#search">Search and replace</a></li>
+						<li><a href="#search_spec">Special search</a></li>
+						<li><a href="#clipboard">Edit clipboard</a></li>
+<!-- 	SPELL				<li><a href="#spell_check">Spell checking</a></li> -->
+					</ul>
+				</li>
+			</ul>
+<hr />
+		<h2><a name="annotation"/>Signal Annotation</h2>
+		<h3><a name="segmentation"> </a>Signal segmentation</h3>
+			<p>The following description assumes that a section / turn / segment segmentation scheme is configured for applicable annotation conventions.</p>
+			<table class="feature_list" summary="segment types">
+				<tr><td valign="top" align="center"><img src="pics/text_widget_segment_tag.jpg" alt="segment_tag" width="21" height="22" /></td><td width="10"/>
+				<td>The basic signal segmentation unit is the &quot;<strong>segment</strong>&quot; which identifies a continuous portion of signal with homogeneous acoustic conditions, holding speech or not. The segment start is materialized in text widget by a green circle - as shown - placed just before the transcription text. </td></tr>
+				<tr><td valign="top" align="center"> <img src="pics/text_widget_speaker_tag.jpg" alt="turn_tag" /></td><td width="10"/>
+				<td> A &quot;<strong>turn</strong>&quot; is a continuous sequence of speech segments with the same speaker, including possible short non-speech segments. A turn start is attached to a segment start. A turn start is materialized in text widget by a label - as shown - displaying the turn speaker's name (or &quot;No speaker&quot; when it corresponds to a non-speech signal portion), placed just before the start mark of the segment. </td></tr>
+				<tr><td valign="top" align="center"> <img src="pics/text_widget_section_tag.jpg" alt="section_tag" /></td><td width="10"/>
+				<td>A <strong>section</strong> is a continuous set of turns with a thematic homogeneity. A section start is attached to a turn start. Section starts are materialized in text widget by a label - as shown - displaying the section name, placed just before a turn label. Sections can also be used to tag rather long non-transcripted signal parts.</td></tr>
+			</table>
+			<p>Those labels are not editable. <a href="#contextual_menus">Contextual menus</a> are associated to each label type.</p>
+			<h4><a name="seg_lab_lay"/>Segmentation labels layout</h4>
+			<p>Turns and segments layouts can be "widespread", as shown in above screenshot, where turns labels are isolated on a separate line. They can also be more compact, with turns labels being placed at the start line of the first segment. This is only a matter of presentation, and has no impact on other editor functionalities.</p>
+
+			<p >The following screenshot illustrates a "compact" layout for arabic language.</p>
+			<p class="centered"><img src="pics/text_widget_compact_ara.jpg" alt="text_widget_compact_ara" width="550" height="216" border="1" /></p>
+
+			<p> Presentation preferences can be set through <em>TranscriberAG</em> <a href="configuration.html"> Configuration</a> panel.</p>
+
+			<h4><a name="new_segment"/>Adding a new segment boundary</h4>
+			<p>Pressing <strong>&lt;return&gt;</strong> (or using <strong>Annotate &gt; New segment</strong> menu option) inserts a new segment boundary for the current audio cursor value at current text cursor position.<br/>
+			If the cursor was set at a line end, a new blank line is inserted starting with a segment mark. If text cursor was set within line text, then the text is split at cursor position, and the remaining line goes into a new segment line.</p>
+			<p>When a splitted segment is enclosed by an event tag, then this event is also splitted, and the new segment is also enclosed by the event tag, as shown:</p>
+			<ul class="menu_list">
+				<li>Before split:<br />&nbsp;&nbsp;&nbsp;<img src="pics/text_widget_seg_1.jpg" alt="seg_before_split"  /></li>
+				<li>After split:<br />&nbsp;&nbsp;&nbsp;<img src="pics/text_widget_seg_2.jpg" alt="seg_after_split" /></li>
+			</ul>
+			<p>The newly created segment is displayed in corresponding <a href="audio_widget.html#segment_tracks">segment track</a> in the audio widget.</p>
+
+			<h4><a name="new_timestamp"/>Adding intermediate timestamps within a segment</h4>
+			<p>It is possible to define intermediate timestamps within a segment, at a word or an event start: place the text cursor at the desired position, place the signal cursor at the desired offset,then press <strong>&lt;alt+return&gt;</strong> keys, or select <strong>Add a time stamp</strong>.
+			A timestamp mark will be displayed in the text buffer, showing the action has been taken into account, as shown below:<br />
+					<td><img src="pics/text_widget_timestamps.png" alt="text_widget_timestamps"/></td><br/>
+				As any other annotation, this timestamp can be modified or deleted through contextual menu options.
+			</p>
+			<p><b>Warning :</b> If a qualifier or a foreground event is located at a segment start, the timestamp green mark is displayed before the element tag. This is not an intermediate timestamp (it can't be deleted). It just indicates that the qualifier or the event is linked to the start of the segment:</p> 
+			<td><img src="pics/text_widget_unit_at_start.png" alt="text_widget_timestamps_remark"/></td>
+		
+			<h4><a name="new_turn"/>Adding a new turn</h4>
+			<p>Pressing <strong>&lt;ctrl+t&gt;</strong> (or using <strong>Annotate &gt; New turn</strong> menu option) inserts a new turn anchored at the current segment start. Turn speaker is by default set to the last used speaker. New turn label is displayed at segment start, and <a href="#turn_menu">turn contextual menu</a> is automatically popped to allow actual speaker name selection.</p>
+			<p> Pressing <strong>&lt;Escape&gt;</strong> discards the popup menu. Selecting <strong> Delete turn</strong> deletes newly inserted turns.</p>
+			<p> The newly created turn is displayed in corresponding <a href="audio_widget.html#segment_tracks">turn track</a> in the audio widget.</p>
+			<p> Trying to create a new turn on an existing turn will result in an overlapping turn, see <a href="#new_overlapping_turn">below</a>.</p>
+	<p>Another turn creation modality is provided through the audio widget, see section <a href="audio_widget.html#create_seg">Creating a new turn for current selection</a> in audio widget description</p>
+
+			<h4><a name="new_overlapping_turn"/>Adding a new overlapping turn</h4>
+			<p>An overlapping speech turn can be created in two ways:</p>
+			<ul class="feature_list">
+				<li>Pressing <strong>&lt;ctrl+t&gt;</strong> (or using <strong>Annotate &gt; New turn</strong> menu option) when cursor is set on a segment to which a turn is already attached. The following dialog is then popped:<br />
+					<table summary="overlap"><tr>
+						<td><img src="pics/text_widget_overlap_dlg.jpg" alt="overlap_dlg" /> </td><td width="10"></td><td valign="top">If "yes" is selected, an overlapping turn label is inserted and and <a href="#turn_menu">turn contextual menu</a> is automatically popped to allow selection of the current speaker's name.</td>
+					</tr></table>
+				</li>
+				<li>Selecting <strong>Overlapping speech</strong> through <a href="#turn_menu">turn contextual menu</a>. An overlapping turn label is inserted, with the speaker's name set to default. </li>
+			</ul>
+			<p>The overlapping turn label and attached segment mark are indented from "base" turn.</p>
+			<p>When the overlapping turn is created on a turn having 2 speech segments, as shown below, the new overlapping turn will span over the first segment only, "base" turn will automatically be split at first segment end. </p>
+			<table summary="overlap2"><tr>
+				<td valign="top" align="right"><img src="pics/text_widget_before_overlap.jpg" alt="overlap_2" /> <br /> ---&gt;&gt;&gt;&nbsp;&nbsp; <strong>gives ---&gt;&gt;&gt;&nbsp;&nbsp;</strong> </td><td width="10"></td><td valign="top"><img src="pics/text_widget_after_overlap.jpg" alt="overlap_2" /></td>
+			</tr></table>
+			<p>The newly created turn is displayed in corresponding <a href="audio_widget.html#segment_tracks">turn track</a> in the audio widget.</p>
+			<p><em>TranscriberAG</em> forbids new overlapping turn creation when one already exists.</p>
+			<h4><a name="new_section"/>Adding a new section</h4>
+			<p>Pressing <strong>&lt;ctrl+r&gt;</strong> (or using <strong>Annotate &gt; New section</strong> menu option) inserts a new section anchored at current segment start. A section label is inserted before the turn label, and <a href="#section_menu">section contextual menu</a> is automatically popped to allow selection of the current section type.</p> 
+			<p> If the segment start doesn't correspond to a turn start, then a new turn is automatically inserted at segment start, and <a href="#turn_menu">turn contextual menu</a> is also automatically popped after section menu to allow selection of the current speaker's name.</p> 
+
+			<h4><a name="new_background"/>Adding a new background</h4>
+			<p>Pressing <strong>&lt;ctrl+b&gt;</strong> (or using <strong>Annotate &gt; New background</strong> menu option) inserts a new background anchored at current signal cursor position.</p>
+<p>Backgrounds start "((o-))"and end "((-o))" marks are inserted in text widget in corresponding segments, as shown below. The <a href="#background_properties">background properties dialog</a> is automatically popped, to allow background type and noise level definition. Background brackets are noted like this: </p>
+			<p class="right"><img src="pics/text_widget_background.jpg" alt="overlap_2" /></p>
+
+		<h3><a name="transcription"></a>Verbatim transcription</h3>
+		<p><em>TranscriberAG</em> offers classical text editing features:</p> 
+		<ul>
+						<li><a href="#contextual_menus">contextual editing menus</a> for each annotation tag type,</li>
+			<li>insert/delete/replace text,</li>
+			<li>cut/copy/paste pieces of text,</li>
+			<li>special paste inserts previously copied transcription graph part (ie transcription text along with copied segmentation information (segments, turns, sections) and annotated events, entities, etc.),</li>
+			<li>cursor moves:
+				<ul>
+					<li>1 char left/right with <strong>&lt;Left&gt; / &lt;Right&gt; </strong>arrows,</li>
+					<li>1 word left/right with <strong>&lt;ctrl+Left&gt; / &lt;ctrl+Right&gt;</strong>arrows,</li>
+					<li>1 line top/down with <strong>&lt;Top&gt; / &lt;Down&gt;</strong> arrows,</li>
+					<li>go to line start / line end with <strong>&lt;Home&gt; / &lt;End&gt;</strong> keys,</li>
+					<li>go to buffer start / buffer end with <strong>&lt;ctrl+Home&gt; / &lt;ctrl+End&gt;</strong> keys,</li>
+					<li>select characters if <strong>&lt;Shift&gt;</strong> key is pressed while moving cursor,</li>
+				</ul>
+			</li>
+		</ul>
+		<p> When moving the cursor with arrows, <em>TranscriberAG</em> automatically sets it to editable positions (ie. skips non editable labels). </p>
+		<p>Verbatim transcription of speech segment uses the native language script, and uses the native writing direction, ie left to right (LTR) for most languages, right to left (RTL) for arabic and hebraic languages (yet writing top to down for some asian languages is not supported).<br /> It is possible to mix several languages in the same segment line, <em>TranscriberAG</em> handles properly text display and cursor moves, in particular when switching from RTL to LTR. </p>
+		It must be noted that there is no need to precisely adjust selections on word boundaries. The event start and end tags will be added before the first word and after last word of the selection range. In particular, defining an event over a single word can be done by just placing the cursor in the word and pressing <strong>&lt;ctrl+d&gt;</strong>. 
+
+<p>Entities annotation is just the same process as event annotation; it can be defined thanks to <strong>&lt;ctrl+e&gt;</strong> shortcut, or by selecting <strong>Annotate &gt; New named entity</strong> menu option. Again, the <a href="#entity_menu">entity contextual menu</a> is  popped to allow entity type definition.</p>
+
+
+<a href="#menu" target="content_frame"> &gt;&gt; Back to page menu </a>
+<br /><hr />
+		<h2><a name="contextual_menus"></a>Contextual menus</h2><br />
+		<p>A right-click on the text widget pops up a contextual menu. The contents of this menu vary depending on the item clicked in the text widget. It also varies according to applicable <a href="annotation_editor.html#anno_conv">annotation conventions</a>.</p>
+<p> All menus are described hereafter.</p>
+		<h3><a name="text_menu" /> Basic text contextual menu</h3>
+		<p>The following menu is popped when right clicking on text:</p>
+		<table summary="text_popup"><tr>
+		<td valign="middle"><img src="pics/text_widget_rc.jpg" alt="text_popup" /></td>
+		<td>
+			<ul class="menu_list">
+				<li><strong>Undo </strong> button cancels last edit action.</li>
+				<li><strong>Redo </strong> button redoes canceled edit action.</li>
+<!--	SPELL			<li><strong>Spelling suggestions </strong> appears only when clicked word is misspelled and pops up spelling suggestions menu (see <a href="#spell_check">Spell checking </a> section below).</li> -->
+				<li><strong>New foreground event </strong> pops up the <a href="#event_menu">new event submenu</a> (see below), to allow new event insertion at current cursor position </li>
+				<li>The optional <strong>Predefined words</strong> menu pops up predefined words lists, through which it is possible to select a word to insert at current cursor position. </li>
+				<li>The <strong>cut</strong>, <strong>copy</strong> and <strong>paste</strong> are usual edit functions. Note that the "paste" inserts only the selected transcription text at current cursor position.</li>
+				<li>The <strong>special paste</strong> inserts the transcription graph stored in selection buffer, ie transcription text along with copied segmentation information (segments, turns, sections) and annotated events, entities, etc.), at current text position. This may result in new segments and turns inserted at current signal cursor position.</li>
+			</ul>
+		</td>
+		</tr></table>
+		<h3><a name="segment_menu" /> Segment contextual menu</h3>
+		<p>The following menu is popped when right clicking on a segment start tag:</p>
+		<table summary="segment_popup"><tr>
+		<td valign="middle"><img src="pics/text_widget_segment_rc.jpg" alt="segment_popup" /></td>
+		<td>
+			<ul class="menu_list">
+				<li><strong>Delete segment</strong> suppresses current segment from data model. Segment contents are attached to previous segment end.</li>
+				<li><strong>Edit segment properties </strong> opens <a href="#segment_properties">segment properties</a> dialog box.
+				</li>
+			</ul>
+		</td>
+		</tr></table>	
+		<p>Some corner cases may occur when deleting a segment:</p> 
+			<ul>
+			<li>if current segment is the first one of the file, then deletion is forbidden and a message stating "can't delete first segment" is displayed,</li>
+			<li>if current segment if the first one of a turn, then the parent turn is also deleted (see below),</li>
+			</ul>
+		<table summary="turn_popup"><tr>
+		<td width="10" />
+		<td valign="middle"><img src="pics/text_widget_layout_after_del.jpg" alt="text_popup" /></td>
+		<td>It may happen after a deletion that turns and segments layout in text widget seems a bit awkward, as shown (this merely happens when deleting the first turn after an overlapping turn). This as no impact on edition. Use <strong>&lt;ctrl+l&gt;</strong> shortcut or <strong>File > refresh </strong> menu option to restore a correct layout.
+		</td>
+		</tr></table>
+		<h3><a name="turn_menu" /> Turn contextual menu</h3>
+		<p>The following menu is popped when right clicking on a speaker tag, or when a new turn is created:</p>
+		<table summary="turn_popup"><tr>
+		<td valign="middle"><img src="pics/text_widget_speaker_rc.jpg" alt="text_popup" /></td>
+		<td>
+			<ul class="menu_list">
+				<li>The names of the last 2 "recent" speakers chosen as turn speaker; selecting a name sets is as current turn speaker.</li>
+				<li><strong>New speaker </strong> adds a new speaker to current file speakers dictionary (with default name) and sets it as current turn speaker.</li>
+				<li><strong>(No speaker)</strong> sets current turn as a non-speech turn (yet this will not erase any text associated to the turn)</li>
+				<li><strong>Overlapping speech </strong> inserts an overlapping turn aligned on current turn. </li>
+				<li><strong>Set speaker</strong> pops up a complete speaker selection menu, showing all speakers defined in current file speakers dictionary. Selecting one of these speakers sets it as current turn speaker. </li>
+				<li><strong>Speaker properties</strong> opens current file <a href="speaker_dictionary.html"> speakers dictionary</a> dialog box, displaying current speaker properties. Note that double-clicking on speaker tag does the same.</li>
+				<li><strong>Delete turn</strong> suppresses current turn from data model. Turn segments are not deleted, but attached to previous turn.</li>
+				<li><strong>Edit turn properties </strong> opens <a href="#turn_properties">turn properties</a> dialog box.
+				</li>
+			</ul>
+		</td>
+		</tr></table>	
+		<p>Some corner cases may occur when deleting a turn:</p> 
+			<ul>
+			<li>if current turn is the first one of the file, then deletion is forbidden and a message stating "can't delete first turn" is displayed,</li>
+			<li>if current turn if the first one of a section, then parent section is also deleted,</li>
+			<li>If current turn is an overlapping turn, then turn AND its child segments are deleted. Yet eventual transcription text (and associated) events are not deleted, but added at overlapped turn last segment.</li>
+			</ul>
+		<table summary="turn_popup"><tr>
+		<td width="10" />
+		<td valign="middle"><img src="pics/text_widget_layout_after_del.jpg" alt="text_popup" /></td>
+		<td>It may happen after a deletion that turns and segments layout in text widget seems a bit awkward, as shown (this merely happens when deleting first turn after an overlapping turn). This as no impact on edition. Use <strong>&lt;ctrl+l&gt;</strong> shortcut or <strong>File > refresh </strong> menu option to restore a correct layout.
+		</td>
+		</tr></table>
+		<h3><a name="event_menu" /> Event contextual menu</h3>
+		When <strong>&lt;ctrl+d&gt;</strong> is used or when a new event is inserted  from <b>Annotation menu</b>, a menu is popped: it allows the user to display two submenus, foreground events menu or qualifier events menu.<br />The qualifier events sub-menu is only available when some text is selected in editor, whereas the foreground events sub-menu will not be reachable if a text selection exists.<br /><br />
+		<td valign="middle"><img src="pics/text_widget_event_gen.jpg" alt="event_popup" /><br /><br /></td>
+		
+		The following sub-menu corresponds to <u></u><b><u>qualifiers events</u></b> (can be popped by right clicking on a qualifier event):<br /><br />
+		<table summary="event_popup"><tr>
+		<td valign="middle"><img src="pics/text_widget_event_rc.jpg" alt="event_popup" /></td>
+		<td>
+			<ul class="menu_list">
+				<li>Available event types depend on applicable <a href="annotation_editor.html#anno_conv">annotation conventions</a> (which can be configured, cf. <strong>TranscriberAG configuration manual</strong>). If the selected event type has predefined subtypes, a submenu allowing subtype selection is popped. Else, if selected event may have user-input subtype, a <a href="#event_properties">event properties</a> dialog is popped to allow direct input of the event type.				 </li>
+			</ul>
+		</td>
+		</tr></table>
+		<p>The following sub-menu corresponds to <b><u>foreground events</u></b> (can be popped by right clicking on a qualifier event):</p>
+		<table summary="event_popup2"><tr>
+		<td valign="middle"><img src="pics/text_widget_event_rc_fg.jpg" alt="event_popup2" /></td>
+		<td>
+			<ul class="menu_list">
+				<li>Available events types depend on applicable <a href="annotation_editor.html#anno_conv">annotation conventions</a> (which can be configured, cf. <strong>TranscriberAG configuration manual</strong>). If the selected event type has predefined subtypes, a submenu allowing subtype selection is popped. Else, if the selected event may have user-input subtype, an <a href="#event_properties">event properties</a> dialog is popped to allow direct input of the event type.				 </li>
+			</ul>
+		</td>
+		</tr></table>	
+
+		<table summary="event_popup3">
+		<tr>
+			<td valign="middle"><img src="pics/text_widget_event_rc_add.jpg" alt="event_popup3" /></td>
+			<td>
+				<ul class="menu_list">
+					When accessing the contextual menu by right click on an existing event, additional entries are available:
+					<li><strong>Remove time mark annotation</strong> suppresses the time mark if relevant (otherwise the option is unsensitive).</li>
+					<li><strong>Delete event</strong> suppresses current event annotation from data model.</li>
+					<li><strong>Edit event properties </strong> opens <a href="#event_properties">event properties</a> dialog box.
+					</li>
+				</ul>
+			</td>
+		</tr>
+		</table>	
+			
+<br />
+		<h3><a name="entity_menu"></a>Named entity contextual menu</h3>
+		<p>When right clicking on an entity tag (or when <strong>&lt;ctrl+e&gt;</strong> is used), the following menu is popped:</p>
+		<table summary="entity_popup"><tr>
+		<td valign="middle"><img src="pics/text_widget_detailed_annot_entity.jpg" alt="entity_popup" /></td>
+		<td>
+			<ul class="menu_list">
+				<li>Available entity types depend on applicable <a href="annotation_editor.html#anno_conv">annotation conventions</a> (which can be configured, cf. <strong>TranscriberAG configuration manual</strong>). If the selected entity type has predefined subtypes, a submenu allowing subtype selection is popped. Else, if selected entity may have user-input subtype, a <a href="#entity_properties">entity properties</a> dialog is popped to allow type direct input of the entity type.</li>
+			</ul>
+		</td>
+		</tr></table>
+		<table summary="entity_popup2">
+		<tr>
+			<td valign="middle"><img src="pics/text_widget_detailed_annot_entity_add.jpg" alt="event_popup3" /></td>
+			<td>
+				<ul class="menu_list">
+					When accessing the contextual menu by right clicking on an existing entity, additional entries are available:
+					<li><strong>Remove time mark annotation</strong> suppresses the time mark if relevant (otherwise the option is unsensitive, cf. picture).</li>
+					<li><strong>Delete named entity</strong> suppresses current entity annotation from data model.</li>
+					<li><strong>Edit named entity properties </strong> opens <a href="#entity_properties">event properties</a> dialog box.
+					</li>
+				</ul>
+			</td>
+		</tr>
+		</table>
+				
+<br />
+<a href="#menu" target="content_frame"> &gt;&gt; Back to page menu </a>
+<br /><hr />
+<!--<img src="pics/goto_menu.jpg" alt="goto_menu" onclick="window.location='#menu';" />&nbsp;&nbsp;-->
+		<h2><a name="properties" />Annotation properties</h2>
+		<h3><a name="section_properties"></a>Section properties</h3>
+		<p>Double-clicking on a section tag or selecting <strong>Edit section properties</strong> in section contextual menu opens the following dialog box, allowing to edit section descriptions. The <strong>Language</strong> combo allows to set the current input language (by default it is set to &quot;system&quot; language). </p>
+		<p class="centered">
+			<img src="pics/section_properties_dialog.jpg" alt="section_properties_dialog" />
+		</p>
+		<p>Through this dialog, one can also define the main topic associated to current section. Topic is to be seleected from the topics list defined in current <a href="annotation_editor.html#anno_conv">annotation conventions</a>, by clicking on <strong>Change</strong> button, or let undefined if none is matching current section contents (which can be done with <strong>No topic</strong> button). A short description of the contents of the section can also be entered.</p>
+		<h3><a name="turn_properties"></a>Turn properties</h3>
+		<p>Selecting <strong>Edit turn properties</strong> in turn contextual menu opens the following dialog box: </p>
+		<p class="centered">
+			<img src="pics/turn_properties_dialog.jpg" alt="turn_properties_dialog" />
+		</p>
+		<p>Through this dialog, one can set turn speakers and turn languages. </p>
+
+		<h3><a name="background_properties"></a>Background properties</h3>
+		<p>Pressing <strong>&lt;ctrl+b&gt;</strong> makes the following popup appear:</p>
+		<p class="centered">
+			<img src="pics/text_widget_background_properties.jpg" alt="background_properties_dialog" />
+		</p>
+		<p>This popup allows to define background type and noise level.</p>
+
+		<h3><a name="event_properties"></a>Event properties</h3>
+		<p>Double-clicking on an event tag or selecting <strong>Edit event properties</strong> in the event contextual menu (displayed when right-clicking on event tag) opens the following dialog box, allowing to edit event description, with respect to applicable <a href="annotation_editor.html#anno_conv">annotation conventions</a>.</p>
+	<p class="centered">
+			<img src="pics/event_properties_dialog.jpg" alt="event_properties_dialog" />
+		</p>
+	<p>If event type is defined as non-editable, one can only select a new description from predefined subtypes listed in <strong>description</strong> combo; if it is defined as editable, a free description can also be input. The <strong>Language</strong> combo allows to set keyboard mapping for event description input (by default it is set to &quot;system&quot; language).</p>
+<p>Event type cannot be modified through this dialog. It can be changed by right-clicking on event tag in annnotation editor text widget, and selecting a new type through the contextual menu.</p>
+		<h3><a name="entity_properties"></a>Named entity properties</h3>
+		<p>Double-clicking on an entity tag or selecting <strong>Edit named entity properties</strong> in entity contextual menu (displayed when right-clicking on entity tag) opens the following dialog box, allowing to edit entity description, with respect to applicable <a href="annotation_editor.html#anno_conv">annotation conventions</a>.</p>
+		<p class="centered"><img src="pics/entity_properties_dialog.jpg" /></p><!--<img src="pics/goto_menu.jpg" alt="goto_menu"/>-->
+	<p>If entity type is defined as non-editable, one can only select a new description from predefined subtypes listed in <strong>description</strong> combo; if it is defined as editable, a free description can also be input. The <strong>Language</strong> combo allows to set keyboard mapping for entity description input (by default it is set to &quot;system&quot; language).</p>
+<p>Entity type cannot be modified through this dialog. It can be changed by right-clicking on entity tag in annnotation editor text widget, and selecting a new type through the contextual menu.</p>
+<a href="#menu" target="content_frame">&gt;&gt; Back to page menu </a>
+<br /><hr />
+		<h2><a name="features" />Other editing features</h2>
+		<h3><a name="input_mode" />Keyboard mapping and input modes</h3>
+		<p>Keyboard mapping can be set in various ways:</p>
+		<ul>
+			<li>It is set by default for main transcription language defined for current file,</li>
+			<li>New mapping can be selected through the input language selector <img alt="Picture Not Found" src="pics/tool_bar_language_thin.jpg" align="middle" />&nbsp;in the toolbar,</li>
+			<li>Pressing <strong>&lt;shift+ctrl+page_up&gt;</strong> or <strong>&lt;shift+ctrl+page_down&gt;</strong> shortcuts allows to switch through available keyboard mappings. </li>
+		</ul>
+		<p><strong>Chinese</strong> language input is supported via external input methods: <strong>SCIM</strong> on Linux platforms, <strong>IME</strong> on Windows platforms. 
+			<br />To enable Chinese input mode, select <strong>SCIM</strong> mode in the language selector in the toolbar, and select <strong>Smart Pinyin</strong> in SCIM or IME toolbar (which is generally located in the lower right corner of the display on unix platforms, on the top the the display on windows platform)
+			<br /><br /> <img alt="Picture Not Found" align="center" src="pics/scim_pinyin.png" align="middle" /><br /><br />
+			Easy switching between Chinese input mode and default keyboard input mode in SCIM is possible with the following keyboard shortcut: press <strong>and</strong> release <strong>&lt;Alt&gt;</strong> key then press (left or right) <strong>&lt;Shift&gt;</strong> key.
+		 </p>
+		<br />
+			
+		<h3><a name="search" />Search and replace</h3>
+		<p>Pressing <strong>&lt;ctrl+f&gt;</strong> shortcut or selecting <strong>Search</strong> menu activates search function. The search window can be opened in 2 modes:</p>
+		<ul class="feature_list">
+			<li>in toolbar mode, on the bottom side of main window,<br />
+			<img src="pics/search_toolbar_mode.jpg" alt="search_toolbar_mode" />
+			</li>
+			<li>in dialog box mode, a search dialog popup is opened offering also replace feature.<br />
+			<img src="pics/search_dialog_mode.jpg" alt="search_dialog_mode" />
+			</li>
+		</ul>
+		<p>It is possible to switch from one mode to the other by clicking on <img src="pics/search_switch_dialog.jpg" alt="search_switch_dialog" align="middle" /> button in search toolbar or <img src="pics/search_switch_toolbar.jpg" alt="search_switch_toolbar" align="middle" /> in search dialog. Default mode can be set in <em>TranscriberAG</em> <a href="configuration.html">Configuration</a> window. </p>
+		<p>The keyboard focus is set on search criteria field. Previous criteria can be reloaded by clicking on the arrow right to search criteria</p>
+		<p>Clicking on <strong>Next</strong> button (or pressing <strong>&lt;F3&gt;</strong> key in toolbar mode) allows to go to next occurrence. Clicking on <strong>Previous</strong> button (or pressing <strong>&lt;shift + F3&gt;</strong> key in toolbar mode) allows to go to previous occurrence. If no next or previous occurrence is found, the search criteria background is set to red.</p>
+		<p><b><u>Research options</u></b><br />Checking <strong>Whole word</strong> checkbox restricts search to whole words only. <br />The <strong>Case sensitive </strong> checkbox allows the research to be sensitive or not. <br />A combo list allows you to specify where searching for the martching term: in edition text, in tags text, or in all text.<br />The <strong>Language</strong> combo allows to set the input language specifically for the search criteria.</p>
+
+		<p><b><u>Specific dialog options</u></b> <br />In dialog box mode, extra search and replace options are available.
+			<br />The <strong>Scope</strong> options allows to set the searched text range (in whole buffer / in selected text only). If some text is selected when activating search function, then it is set as search criteria.
+			<br />The <strong>Replace with</strong> criteria allows to set a replacement string for search string. First occurrence to replace must first be searched using <strong>Next</strong> or <strong>Previous</strong> buttons. Clicking on <strong>Replace</strong> button replaces current occurrence and moves to next occurrence. Clicking on <strong>Replace all</strong> button replaces all occurrences in buffer.
+		</p>
+		<p>The <strong>Close </strong> (or <img src="pics/search_close_tb.jpg" alt="search_close_tb" />) button closes the search window.</p>
+		<br />
+
+		<h3><a name="search_spec" />Special search</h3>
+		Pressing <strong>&lt;ctrl+alt+f&gt;</strong> shortcut or selecting <strong>Search -> Find/Replace</strong> menu activates the special search function.<br />
+		Special search enables you to search for: 
+		<table>
+			<tr>
+				<td><li><i>Speaker</i> within current file <i>turns<br />Clicking the &quot;Select speaker&quot; button opens the local speaker<br />dictionary list</i> of the curent file</li></td>
+				<td valign="center"><img src="pics/search_dialog_special_speaker.jpg" alt="special search dialog" /></td>
+			</tr>
+			<tr>
+				<td><li><i>Topic</i> within current file <i>sections</i><br />Clicking the &quot;Select topic&quot; button opens the topic selection dialog</li></td>	
+				<td valign="center"><img src="pics/search_dialog_special_topic.jpg" alt="special search dialog" /></td>
+			</tr>
+		</table>
+		
+		
+
+		<h3><a name="clipboard"></a>Edit Clipboard</h3>
+
+		<p>The clipboard stores words or pieces of text, which can be pasted in the text area. This is useful to ease the repetitive input of complex family names or places, for instance, with correct spelling. Text can be imported in the clipboard from a text widget, and exported back from the clipboard to a text widget.</p> 
+		<p>To use the clipboard, it must be opened either by clicking on clipboard icon <img src="pics/tool_bar_clipboard_small.jpg" alt="tool_bar_clipboard_small" align="middle" /> in the toolbar, or pressing <strong>&lt;shift+alt+c&gt;</strong> shortcut. The following window is then opened:</p>
+		<table summary="table" class="indent_table"> <tr>
+			<td valign="middle"><img src="pics/clipboard.jpg" alt="clipboard" /></td>
+			<td> 
+				<ul class="menu_list">
+					<li>The <strong>Up </strong> and <strong>Down </strong> buttons allow to select a word in the clipboard.</li>
+					<li>the <strong>export</strong> button pastes selected clipboard entry at current text widget insert position. </li>				<li>the <strong>import</strong> button adds current text widget selected text to the clipboard contents. </li>
+
+					<li>The <strong>A-Z</strong> and <strong>Z-A</strong> buttons allow to sort clipboard contents in ascending / descending alphabetical order.</li>
+					<li><strong>Clear</strong> button clears all clipboard entries.</li>
+					<li><strong>Delete</strong> button erases currently selected clipboard entry.</li>
+		
+				</ul>
+			</td>
+		</tr> </table>
+		<p> Clipboard contents are saved when <em>TranscriberAG</em> is closed, and restored when it is restarted.</p>
+		<br />
+<!--	SPELL	
+		<h3><a name="spell_check"></a>Spell Checking</h3>
+		<p><em>TranscriberAG</em> includes an automatic spell checking feature. Spell check occurs when the file is loaded in the editor, and during edits, as soon as a new word input is done or as text cursor leaves a modified word. The chosen speller dictionary is the one corresponding to the main transcription language. </p>
+		<p> Misspelled words are underlined in red, as shown: &nbsp;<img src="pics/text_widget_misspelled_word.jpg" alt="misspelled_word" align="middle" />.</p>
+	
+		<p>Spelling suggestions for the misspelled word can be displayed by right-clicking on the word. The text contextual menu is popped, including a <strong>Spelling suggestions </strong> item. Selecting this item displays the following popup menu:</p>
+	
+		<table summary="spelling_suggestion">
+		<tr>
+		<td valign="middle"><img src="pics/text_widget_spelling_suggestions.jpg" alt="spelling_suggestion" /></td>
+		<td width="10" />
+		<td valign="top">A list of words with "close" spelling is proposed. If any word of the list is selected, it replaces the misspelled word in the text view.<br />Some extra options are also available:
+			<ul class="feature_list">
+				<li><strong>More </strong> gives access to more orthographic suggestions.</li>
+				<li>Checking <strong>Replace all </strong> checkbox will cause the replacement of all occurrences of the misspelled word in the text by selected suggestion.</li>
+				<li><strong>Add to dictionary</strong> option adds current word to user dictionary. This word will afterwards be considered as correctly spelled.</li>
+				<li><strong>Ignore all</strong> option tells the speller to ignore this word for future checks.</li>
+			</ul>
+			The 2 last options can be disabled in <a href="configuration.html#spell_config"><em>TranscriberAG</em> Configurations > Spell Checker Configurations</a>.
+		</td>
+		</tr></table>
+		<p>For some languages, some pre-preprocessing may occur before actual spell checking. In arabic for instance, if words have been input with vowels, then vowels are suppressed before spell checking, as dictionary usually do not contain vowelled words. Therefore, suggested orthographic forms will not contain any vowels either. </p>
+-->
+<br /><hr />
+<a href="#menu" target="content_frame"> &gt;&gt; Back to page menu </a>
+<br />
+	</p><p>Various input modes are supported, depending on target language, see section <a href="#input_mode">Keyboard mapping and input modes</a> below. 
+		<h3><a name="events"></a>Detailed annotation</h3>
+		<p>Detailed annotation consists in adding &quot;events&quot or &quot;entities&quot; to transcription text. These events and entities are marked by tags. These tags do not require a precise positioning vs signal timeline, and are therefore only &quot;anchored&quot; on text.</p>
+		<p> Events can be used to annotate some brief acoustic conditions than occur during speech, or eventual pronouncation problems, speech disfluencies, language changes. Entities are used to annotate person or location names, time information, etc., that occur in the text.
+		As a special hack, events can also be used to add comments on transcription text.
+		</p>
+		<p>The following image illustrates the detailed annotation of a speech segment, with disfluencies and normalisation of some terms. As shown, events appear as light-blue tags noted between square brackets, precising event type and subtype. By default, entities have no background color. Isolated events that do not overlap speech parts are noted &quot;<strong>[</strong><em> event </em><strong>]</strong>&quot;. Events and entities that overlap one or more words are noted &quot;<strong>[ </strong><em>event_start</em><strong> -]</strong> words <strong>[- </strong><em>event_end</em><strong> ]</strong>&quot;.</p>
+		<p class="centered"><img src="pics/text_widget_detailed_annot.jpg" alt="text_detailed_annot" /></p>
+
+		<p>Isolated events can be then inserted at segment start or end, or between two words by placing the cursor at the right position and pressing <strong>&lt;ctrl+d&gt;</strong> shortcut, or selecting <strong>Annotate &gt; New event</strong> menu option. The 
+<a href="#event_menu">event contextual menu</a> is then popped to allow event type definition, and an event tag will be added at current cursor position.</p> 
+		<p> To define an overlapping event, one must select overlapped words, and press <strong>&lt;ctrl+d&gt;</strong> shortcut, or select <strong>Annotate &gt; New event</strong> menu option. Again, the 
+<a href="#event_menu">event contextual menu</a> is  popped to allow event type definition. </p>
+		</body>
+</html>

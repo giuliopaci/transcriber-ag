@@ -1,0 +1,27 @@
+<!-- 
+	DTD for TranscriberAG Speakers
+	to be used for "standalone" global speaker dictionaries and 
+	included in TranscriberAG base DTD for local speaker dictionary
+-->
+
+<!ELEMENT Speakers ( Speaker* )>
+
+<!ELEMENT Speaker ( SpokenLanguage* )>
+<!ATTLIST Speaker
+    id         ID          #REQUIRED
+    gender     CDATA	    #IMPLIED
+    name.first CDATA       #IMPLIED
+    name.last  CDATA       #IMPLIED
+    scope      CDATA     #IMPLIED
+    desc	CDATA	   #IMPLIED
+>
+
+<!ELEMENT SpokenLanguage EMPTY>
+<!ATTLIST SpokenLanguage
+    code        NMTOKEN    #REQUIRED
+    dialect     CDATA      #IMPLIED
+    isnative    NMTOKEN    #IMPLIED
+    isusual     NMTOKEN    #IMPLIED
+    accent      CDATA      #IMPLIED
+>
+

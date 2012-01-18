@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<title>Configuration</title>
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<a name="top"/><div align="left"></div>
+		<h1>Configuration</h1>
+
+		<h2>Description</h2>
+
+		This section explains how to customize TranscriberAG. There are seven configuration tabs:
+
+<ul>
+	<td valign="middle"> <img src="pics/conf_general.jpg" /> <a href="#general_config"> General Configuration</a></td><br />
+	<td valign="middle"> <img src="pics/conf_transcription.jpg" /> <a href="#trans_config">Transcription Configuration</a></td><br />
+	<td valign="middle"> <img src="pics/conf_editor.jpg" /> <a href="#text_config">Text Editor Configuration</a></td><br />
+	<td valign="middle"> <img src="pics/conf_audio.jpg" /> <a href="#audio_config">Audio Panel Configuration</a></td><br />
+	<td valign="middle"> <img src="pics/conf_video.jpg" /> <a href="#video_config">Video Panel Configuration</a></td><br />
+<!-- SPELL <td valign="middle"> <img src="pics/conf_spell.jpg" /> <a href="#spell_config">Spell Configuration</a></td><br />-->
+	<td valign="middle"> <img src="pics/conf_loc.jpg" /> <a href="#loc_config">Speakers Configuration</a></td><br />
+	<td valign="middle"> <img src="pics/conf_look.jpg" /> <a href="#look_config">Look'N'Feel Configuration</a></td>
+</ul>
+
+
+<hr />
+	<h2><a name="general_config"></a>General Configuration</h2>
+	<p>The general tab allows to make some basic configuration like defining the user TranscriberAG name, the default html browser, etc.</p>
+	<img src="pics/gen_conf_tab.jpg" align="middle" alt="Picture Not Found" />
+	<p>The browser item defines which tool to use to read this manual. Default browser depends on current OS:</p>
+		<ul class="feature_list">
+			<li>Firefox for Linux,</li>
+			<li>Internet Explorer for Windows,</li>
+			<li>Safari for MAC OS.</li>
+		</ul>
+	<p>TranscriberAG automatically saves files being edited at a periodicity defined by "<strong>File autosave periodicity</strong>" item. This allows to recover edits from a rather recent version of the file in case TranscriberAG crashes, and can also allow to revert edits to a previous saved version, using <strong>File > Revert file > Revert to autosaved file</strong> menu option. Autosaved files are suffixed with a "~" character. They are suppressed when the file is saved by the user. </p>
+	<a href="#top" target="content_frame">
+	<p></p> &gt;&gt; Back to top </a>
+<br />
+
+<hr />
+	<h2><a name="trans_config"></a>Transcription Configuration</h2>
+	<p>This tab permits you to define the default language and convention used when creating a transcription.</p>
+	<img src="pics/trans_tab.jpg" align="middle" alt="Picture Not Found" />
+
+
+	<a href="#top" target="content_frame">
+	<p></p> &gt;&gt; Back to top </a>
+<br />
+
+<hr />
+	<h2><a name="text_config"></a>Text Editor Configuration</h2>
+	<p>Text Editor's tab configures entity's color, suppression shortcuts, synchronization mode, etc.</p>
+	<img src="pics/text_conf_tab.jpg" align="middle" alt="Picture Not Found" />
+	<p> First combo-box in <strong>Input options</strong> allows to define how segmentation marks can be deleted. <strong>&lt;backspace&gt;</strong> and <strong>&lt;suppr&gt;</strong> allow deletion of text, events and entity marks, but it may be undesirable to delete segmentation marks too easily. Segmentation deletion modality can be set to: </p>
+		<ul class="feature_list">
+			<li>"Control + suppression key": only <strong>&lt;ctrl+backspace&gt;</strong> and <strong>&lt;ctrl+suppr&gt;</strong> can delete segmentations marks,</li>
+			<li>"Allowed" : segmentations marks can be deleted with <strong>&lt;backspace&gt;</strong> and <strong>&lt;suppr&gt;</strong>, like text, event and entity marks,</li>
+			<li>"Forbidden":  segmentations marks deletion is only possible via contextual popup menu.</li>
+		</ul>
+
+	<a href="#top" target="content_frame">
+	<p></p> &gt;&gt; Back to top </a>
+<br />
+
+<hr />
+	<h2><a name="audio_config"></a>Audio Configuration</h2>
+	<p>This tab allows to manage the waveform's resolution, the norm used, and some other behaviors.</p>
+	<img src="pics/audio_tab.jpg" align="middle" alt="Picture Not Found" />
+	<p>"Audio signal zone size" allow to define waveform display height, in pixels. This value can be changed in the following ways: </p>
+	<ul>
+		<li>input new size in the widget</li>
+			<li>left click on widget controls: on widget controls: increment/decrement by one</li>
+		<li>middle click on widget controls: increment/decrement by ten </li>
+		<li>right click on widget controls: set to min/max values (10/200)</li>
+	</ul>
+
+	<a href="#top" target="content_frame">
+	<p></p> &gt;&gt; Back to top </a>
+<br />
+
+<hr />
+
+	<h2><a name="video_config"></a>Video Configuration</h2>
+	<p>This tab allows to manage the number of frames extracted per seconds  for the video frame browser.</p>
+	<img src="pics/video_tab.jpg" align="middle" alt="Picture Not Found" />
+	<a href="#top" target="content_frame">
+	<p></p> &gt;&gt; Back to top </a>
+<br />
+<!-- SPELL
+<hr />
+	<h2><a name="spell_config"></a>Spell Checking Configuration</h2>
+	<p>This tab permits to load the default used dictionary.</p>
+	<img src="pics/spell_tab.jpg" align="middle" alt="Picture Not Found" />
+
+
+	<a href="#top" target="content_frame">
+	<p></p> &gt;&gt; Back to top </a>
+<br />
+-->
+
+<hr />
+	<h2><a name="loc_config"></a>Speakers Configuration</h2>
+	<p>This panel allows to define the default dictionary speaker.</p>
+	<img src="pics/loc_tab.jpg" align="middle" alt="Picture Not Found" />
+
+
+	<a href="#top" target="content_frame">
+	<p></p> &gt;&gt; Back to top </a>
+<br />
+
+<hr />
+	<h2><a name="look_config"></a>Look'N'Feel Configuration</h2>
+	<p>The following picture is the color sub-tab which allows to choose colors for audio and text editor widget:</p>
+	<img src="pics/look_color_tab.jpg" align="middle" alt="Picture Not Found" />
+
+	<p>The following picture is the fonts sub-tab allows to select default font:</p>
+	<img src="pics/look_font_tab.jpg" align="middle" alt="Picture Not Found" />
+
+
+	<a href="#top" target="content_frame">
+	<p></p> &gt;&gt; Back to top </a>
+<br />
+
+	</body>	
+</html>

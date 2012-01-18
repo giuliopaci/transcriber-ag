@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wordlists SYSTEM "wordlists.dtd">
+<!-- Predefined words list: create a submenu for each wordlist 
+		with respect to words list order in file
+	 In submenus words are reordered in alphabetical order -->
+<wordlists>
+	<wordlist label="Onomatopées" comment="predefined onomatopoeia">
+		<word>ouais</word>
+		<word>bof</word>
+		<word>argh</word>
+		<word>beurk</word>
+		<word>mouais</word>
+		<word>miam</word>
+		<word>hum</word>
+	</wordlist>
+	<wordlist label="Voitures" comment="predefined cars list">
+		<word>Opel</word>
+		<word>Ferrari</word>
+		<word>Bentley</word>
+		<word>Jaguar</word>
+	</wordlist>
+</wordlists>

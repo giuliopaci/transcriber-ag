@@ -1,0 +1,103 @@
+h1 {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+  color: navy;
+  background: transparent;
+	font-size: 200%;
+  font-weight: bold;
+  text-align: center;
+}
+
+h2 {
+  color: navy;
+  background: transparent;
+	font-size: 150%;
+  font-weight: bold;
+  text-align: left;
+}
+
+h3 {
+  color: navy;
+  background: transparent;
+	font-size: 115%;
+  font-weight: bold;
+  text-align: left;
+	margin-left: 0.2in;
+}
+
+h4 {
+  color: navy;
+  background: transparent;
+  font-weight: bold;
+  text-align: left;
+	margin-left: 0.2in;
+}
+
+.text_normal {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 100%;
+}
+
+.text_small {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 75%;
+}
+
+.text_highlight {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+  	font-weight: bold;
+	font-size: 100%;
+}
+
+.text_code {
+	font-family: Fixed, monospace;
+}
+
+.centered {
+	text-align: center;
+}
+
+
+.text_code_highlight {
+	font-family: Fixed, monospace;
+  	font-weight: bold;
+}
+
+.feature_list {
+	display: block;
+	line-height: 2;
+}
+
+.feature_list1 {
+	display: block;
+	line-height: 1.2;
+}
+
+.feature_list2 {
+	display: block;
+	list-style-type: none;
+	list-style-position: outside;
+	line-height: 2;
+}
+.menu_list {
+	display: block;
+	list-style-type: none;
+	list-style-position: outside;
+	line-height: 150%;
+}
+.indent_table {
+	margin-left: 0.3in;
+	
+}
+.indent_table2 {
+	margin-left: 0.6in;
+}
+
+.align_left {
+	text-align: left;
+}
+
+.align_mid {
+	vertical-align: middle;
+}
+
+

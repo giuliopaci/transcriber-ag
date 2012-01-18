@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<title>Annotation Editor</title>
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<a name="top"></a>
+		<h1>Annotation Editor</h1>
+
+		<h2>Screenshot</h2>
+			<p class="centered"> <img src="pics/annotation_editor.jpg" alt="Picture Not Found" /></p>
+
+		<a name="menu"><h2>Description</h2></a>
+			
+		
+			<p>The annotation editor is the <em>TranscriberAG</em> component through which one can create and edit textual annotations on an audio signal (or the audio track of a video signal). The editor window can be composed of several parts:</p>
+			<ul class="feature_list">
+				<li><a href="text_widget.html" target="content_frame">The Text Widget</a>  supports the display and input of textual annotations for current audio signal,
+				</li>			
+				<li><a href="audio_widget.html" target="content_frame">The Audio Widget</a> displays information about the audio signal - among which a waveform - and supports user interactions with it.
+				</li>
+				<li><a href="video_widget.html" target="content_frame">The Video Widget</a> displays information about the audio signal - among which a waveform - and supports user interactions with it.
+				</li>				
+			</ul>
+			<p>This page describes general features of the annotation editor:</p>
+				<ul class="feature_list">
+					<li><a href="#new_file">Creating</a> a new annotation file</li>
+					<li><a href="#open_file">Opening</a> or <a href="#import_file">importing</a> an existing annotation file</li>
+					<li><a href="#save_file">Saving</a> or <a href="#export_file">exporting</a> an annotation file</li>
+					<li><a href="#autosave_file">Automatic backup and revert to saved</a> features</li>
+					<li><a href="#synchro">Synchronized browsing</a> between the annotations and the signal</li>
+					<li><a href="#stereo">Stereo files</a> support</li>
+				</ul>
+
+			<p>Specific features of the <a href="text_widget.html" target="content_frame">text</a> and <a href="audio_widget.html" target="content_frame">audio</a> widgets are described in corresponding pages.</p>
+	
+			<h3>Multiple files support</h3>
+				<p>Several files can be opened at the same time within <em>TranscriberAG</em>. Each file is then loaded in a separate AnnotationEditor, and docked in a notebook, as shown in above screenshot. One can switch to the current file by clicking on the upper notebook label, or pressing <strong>&lt;ctrl+PageDown&gt;</strong> (go to next page) or <strong>&lt;ctrl+PageUp&gt;</strong> (go to previous page).</p>
+				<p>Loaded files gain exclusive access to the audio device only when signal is played. Thus, only one signal can be played at a time, but as soon as current soundtrack is paused, another soundtrack can be played or another application can gain access to the audio device. Reciprocally, if another application uses the audio device, <em>TranscriberAG</em> will not be able to get exclusive access to the device. Depending on how the other application manages audio device locking, pausing the playback within this application may be not sufficient. Stopping the playback may be necessary.</p>
+				<p>Clicking on the cross icon &nbsp;<img alt="Picture Not Found" src="pics/text_widget_cross.jpg"/>&nbsp; next to file name (or using <strong>&lt;ctrl+w&gt;</strong> shortcut, or <strong>File > Close</strong> menu option) causes corresponding file to close.</p>
+			<h3>Supported audio file types</h3>
+				<em>TranscriberAG</em> supports the following audio file formats and codecs:
+				<ul>
+					<li>WAV files, with A-law or u-law codecs (*.wav),</li>
+					<li>SUN AU files (*.au),</li>
+					<li>Apple AIFF files (*.aiff / *.aif),</li>
+					<li>MP3 compressed files (*.mp3),</li>
+					<li>NIST sphere files (*.sph),</li>
+					<li>and other formats and codecs supported by libavcodec and libavformat libraries (among which FLAC, MP2, MP3, RealAudio 1.0, Real Audio 2.0, Vorbis, Windows Media Audio, refer to FFmpeg project home page at <a href="http://ffmpeg.org">http://ffmpeg.org</a> for more informations).</li>
+				</ul>
+				<em>TranscriberAG</em> supports the annotation of stereo files, and provides specific features to ease this task, see <a href="#stereo">Stereo files</a> below.
+			
+			<h3>Supported video file types</h3>
+				<em>TranscriberAG</em> supports the following video file formats and codecs:
+				<ul>
+					<li>MPEG-1, MPEG-2, MPEG-4, DivX codecs</li>
+					<li>AVI, MPEG, OGG files</li>
+					<li>and other formats and codecs supported by libavcodec and libavformat libraries (refer to FFmpeg project home page at <a href="http://ffmpeg.org">http://ffmpeg.org</a> for more informations).</li>
+				</ul>	
+				<p><i><b>Notice</b>: In the explorer tree, TranscriberAG displays usual media files. For opening others formats compatible with FFmpeg, please choose "All files" display.</i>
+						
+<br /><hr />
+		<h2><a  name="new_file"/>Creating a new annotation file</h2>
+			<p>When an audio file is opened through the <a href="explorer_tree.html">File Explorer</a> (or using the <strong>File > Open</strong> menu option), <em>TranscriberAG</em> first checks if any annotation file exists for selected signal (lookup being performed on file naming rules). <br />
+			If not, a new annotation file will be automatically created. The user is prompted to select main transcription language and applicable
+<a href="#anno_conv">annotation conventions</a>:</p>
+			<p class="centered"><img src="pics/new_file_dlg.jpg"  alt="Picture Not Found" /></p>
+			<h3>Transcription language</h3>
+<!-- SPELL		<p>The main transcription language defines the default keyboard mode set for text input, and activates the appropriate spelling dictionaries (see <a href="text_widget.html#spell_check">Spell Checker</a> feature for the text widget). The current version is configured with the following languages :</p>-->
+			<p>The main transcription language defines the default keyboard mode set for text input. The current version is configured with the following languages :</p>
+			<ul>
+				<li>French,</li>
+				<li>English,</li>
+				<li>Arabic,</li>
+				<li>Russian,</li>
+				<li>Chinese.</li>
+			</ul>
+			<p>Other latin languages can easily be configured by a corpus administrator (refer to <strong>TranscriberAG configuration manual</strong>).</p>	
+			<h3><a  name="anno_conv"/>Transcription conventions</h3>
+			<p>Transcription conventions define the way speech transcription should be undertaken :</p>
+	<ul>
+	<li>signal timeline segmentation: speech segments / turns / sections, background conditions eg.,</li>
+<!-- SPELL <li>orthographic conventions: words lists (onomatopoeia eg...), spelling dictionary,... </li>-->
+	<li>orthographic conventions: words lists (onomatopoeia eg...), ... </li>
+	<li>detailed annotation types of events:foreground noises, disfluencies, ... </li>
+	<li>enriched speech annotation: applicable named entity ontology, topic lists,...</li>
+</ul>
+<p>Those conventions are usually detailled in a transcription conventions document. <em>TranscriberAG</em> provides mechanisms to enforce and control their application.</p>  
+			<p>Different conventions can be configured by a corpus administrator (refer to <strong>TranscriberAG configuration manual</strong> for more information on how to configure annotation conventions).</p>
+			<p>Annotation editor menus and actions will be automatically configured for selected annotation conventions (see <a href="text_widget.html#annotation">Signal Annotation</a>).</p>
+			<p>The following default conventions are defined:</p>
+			<ul>
+				<li>transag_default: default (detailed) transcription conventions </li>
+				<li>mono_h4_detailed: very close to transag_default; provided for corpus backward compatibility</li>
+				<li>stereo_h5_detailed: very close to transag_default, with forbidden overlapping turns. This is provided for corpus backward compatibility</li>
+			</ul>
+
+			<h3>Confirmation popup</h3>
+
+			<p><strong>OK</strong> button validates new file creation. A new annotation graph is initialized for selected annotation conventions, containing basically one segment for each segmentation level. The user can then create new annotations, as explained in <a href="text_widget.html" target="content_frame">Text Widget</a> section. </p>
+			<p>If <strong>Cancel</strong> is selected, new file creation is aborted.</p>
+			<p>If an existing annotation file can be found for selected signal file, then the user is prompted to confirm new annotation file creation or use existing file:</p>
+			<p class="centered"><img src="pics/confirm_new_file_dlg.jpg"  alt="Picture Not Found" /></p>
+			<p><strong>Yes</strong> button validates new file creation, whereas <strong>No</strong> button will cause existing file (which name is displayed in dialog) to be loaded in the editor.</p><br />
+
+<a href="#menu" target="content_frame"> &gt;&gt; Back to page menu </a>
+
+
+
+<br /><hr />
+		<h2><a  name="open_file"/>Opening an existing annotation file</h2>
+			<h3>Opening a TranscriberAG ".tag" file</h3>
+				<p>When a <em>TranscriberAG</em> annotation file (generally suffixed ".tag") is opened through the <a href="explorer_tree.html">File Explorer Tree</a> (or using the <strong>File > Open</strong> menu option or <strong>&lt;ctrl+o&gt;</strong> shortcut), <em>TranscriberAG</em> loads annotation and corresponding signal files in a new annotation editor session.</p>
+				<p>Signal file lookup is done with respect to signal file name stored in the annotation file. If signal full pathname isn't defined, then <em>TranscriberAG</em> first looks in the annotation file parent directory. If not found, then it looks in the default directory for audio files defined in configuration parameters. If not found, then it prompts the user to manually select the signal file:</p>
+				<p  class="centered"><img src="pics/select_signal_dlg.jpg" alt="Picture Not Found" /></p>
+				<p>If a signal file is selected, its path is stored in annotation file, allowing its automatic reload next time annotation file is reloaded.
+				To avoid sound association press <strong>Without signal</strong> button; annotation file is still opened but displays only textual annotations.</p>
+			<h3>File editability</h3>
+				<table class="indent_table" summary="file_locked">	
+					<tr><td valign="middle">
+						<img alt="Picture Not Found" src="pics/tool_bar_edit_mode.jpg"/></td>
+					<td width="10"/>
+					<td valign="middle"> <strong>File locked </strong> button in the <a  href="tool_bar.html">Toolbar</a> indicates current file editability state: when shown as an open padlock, as illustrated, then current file can be updated. When shown as a closed padlock, then current file is only readable. <br />By clicking on the button, one can change the editability state of the editor buffer <strong>BUT NOT OF THE FILE</strong>. It can be useful to lock current file to avoid unwanted modifications when browsing into it.</td>
+					</tr>
+				</table>
+				<br />
+			<h3><a name="import_file"/>Importing another annotation file format</h3>
+				<p><em>TranscriberAG</em> natively supports reading the following annotation file formats:</p>
+				<ul>
+					<li>&quot;old&quot; transcriber format (*.trs, with DTD trans-13.dtd or trans-14.dtd)</li>
+					<li>NIST STM (Segment Time Mark) format (*.stm) </li>
+					<li>NIST CTM (Conversation Time Mark) format (*.ctm) </li>
+					<li>NIST Childes format (*.cha) </li>
+					<li>NIST mdtm data (*.mdtm), limited to speakers information </li>
+					<li>NIST SCLITE alignment data (*.sgml) </li>
+				</ul>
+				<p>If any file of one of these formats is opened in <em>TranscriberAG</em>, it is "on the fly" converted to TAG format and displayed in a new annotation editor. It can then be edited.</p>
+				<p> Except for SCLITE format, some command-line tools are also provided to convert files to TAG format (<code>trs2tag, chat2tag, ctm2tag, stm2tag, mdtm2tag,...</code>).
+				<p> Other file formats can be loaded in <em>TranscriberAG</em> if appropriate format support plug-ins are provided </p>  
+<a href="#menu" target="content_frame"> &gt;&gt; Back to page menu </a>
+<br /><hr />
+		<h2><a  name="save_file"/>Saving current annotation file</h2>
+			<h3>Saving in TAG format</h3>
+				<table class="indent_table" summary="save">	
+					<tr><td valign="middle">
+						<img alt="Picture Not Found" src="pics/tool_bar_save.jpg"/></td>
+					<td width="10"/>
+					<td valign="middle"> Pressing the <strong>Save</strong> button in the <a  href="tool_bar.html">Toolbar</a> (or using the <strong>File > Save</strong> menu option or <strong>&lt;ctrl+s&gt;</strong> shortcut) saves current annotation buffer contents to TAG file format.</td>
+					</tr>
+					<table class="indent_table" summary="save_as">	
+						<tr><td valign="middle">
+							<img src="pics/tool_bar_save_as.jpg" alt="Picture Not Found"  />
+						<td width="10"/>
+						<td valign="middle">Using <strong>File > Save As</strong> menu option opens the an open dialog to allow the user to input a new file name.</p></td>
+						</tr>
+					</table>
+					<tr>
+						<td><i>remark</i></td>
+						<td width="10"/>
+						<td valign="middle"><i> 
+							A similar dialog will be opened when using the <b>Save</b> option when the current edited file has not been saved yet and a file with same name already exists.						
+						</i>
+						</td>					
+					</tr>
+				</table>
+			<h3><a name="export_file"/>Exporting to another file format</h3>
+				<p><em>TranscriberAG</em> natively supports exporting annotations to the following annotation file formats:</p>
+				<ul>
+					<li>NIST STM (Segment Time Mark) format (*.stm), </li>
+
+					<li>HTML, </li>
+					<li>Plain text, </li>
+					<li>NIST Childes format (*.cha), </li>
+					<li>User defined format. </li>
+				</ul>
+				<p>Due to the modeling restrictions inherent to each format, some information losses may occur during conversion.</p>
+				<p> Some command-line tools are also provided to convert files from TAG format (<code>tag2chat, tag2stm, tag2html, tag2txt, ...</code>).
+				<p> Other file formats can be loaded in <em>TranscriberAG</em> if appropriate format support plug-ins are provided </p>  
+
+<a href="#menu" target="content_frame"> &gt;&gt; Back to page menu </a>
+<br /><hr />
+		<h2><a  name="autosave_file"/>Automatic backup and revert to saved</h2>
+		<p><em>TranscriberAG</em> automatically backups any edited file at a given period (which can be configured, see <a  href="configuration.html">Configuration </a> section).</p> 
+		<table summary="recover"><tr>
+		<td valign="top"><img src="pics/recover_from_autosave.jpg" alt="recover_from_autosave" /></td><td width="10"/> 
+		<td valign="middle">Should current editing session crash, then automatic backup restoration will be proposed next time file is opened</td>
+		</tr></table>
+		<p><strong>File > Revert file > Revert to saved file</strong> menu option allows to revert buffer contents to last saved version of current file, canceling all edit actions done since. Last saved version can be found in file named &lt;file_name&gt;<strong>#</strong>. </p>
+		<p><strong>File > Revert file > Revert to autosaved file</strong> allows to revert  buffer contents to last automatic backup of current file (which is generally more recent than last save). Auto-saved files are periodically saved in file named &lt;file_name&gt;<strong>~</strong>. Autosave period is configurable (cf. <a  href="configuration.html#general_config">Configuration > General Configurations</a>).</p><br />
+<a href="#menu" target="content_frame"> &gt;&gt; Back to page menu </a>
+<br /><hr />
+		<h2><a  name="synchro"/>Synchronized browsing through textual annotations and signal</h2>
+		<p>The following toolbar buttons allow to manage text and signal synchronization during file browses. <br />This allows to set eg. "full synchronization" between text and signal, when manually transcribing an audio file, and to disconnect this synchronization for a quick browse through the transcription text while signal is playing.</p>
+		<p>It is also possible to activate or inhibit highlighting or tags of current text segment.</p>
+		<table summary="synchro">
+
+				<tr><td valign="middle">
+					<img alt="Picture Not Found" src="pics/tool_bar_displayed_editor_tag.jpg"/></td>
+		<td valign="middle"> <strong>Editor tags displayed button </strong>When activated (show as illustrated) all qualifiers tags are displayed in editor. When shown crossed with a red line, qualifiers hidden mode is ON, and the user can refine hidden mode options by clicking on the arrow button on the right, and select which kind of qualifiers should be hidden.</td>
+				</tr>
+
+				<tr><td valign="middle">
+					<img alt="Picture Not Found" src="pics/tool_bar_sync_signal.jpg"/></td>
+		<td valign="middle"> <strong>Text synchronized to signal button</strong> allows to activate/deactivate automatic positioning of the text cursor relatively to the current signal offset. When shown as illustrated, text is synchronized to signal, which means that text cursor "follows" the signal cursor. When shown crossed with a red line, text is not synchronized to the signal. </td>
+				</tr>
+
+				<tr><td valign="middle">
+					<img alt="Picture Not Found" src="pics/tool_bar_sync_text.jpg"/></td>
+		<td valign="middle"> <strong>Signal synchronized to text button</strong> allows to activate/deactivate automatic positioning of the signal cursor relatively to the current text cursor position. When shown as illustrated, signal is synchronized to text, which means that signal cursor "follows" the text cursor. When shown crossed with a red line, signal is not synchronized to the text.  </td>
+				</tr>
+
+				<tr><td valign="middle">
+					<img alt="Picture Not Found" src="pics/tool_bar_highlight.jpg"/></td>
+		<td valign="middle"> <strong>Highlight button</strong> when activated (shows as illustrated), the current segment of text in the annotation editor is highlighted. When shown crossed with a red line, text highlighting is disabled. For a stereo file with multiple views, one can refine highlighting options by clicking on the arrow button on the right, and select in which view to activate highlight. </td>
+				</tr>
+
+		</table><br />
+<a href="#menu" target="content_frame"> &gt;&gt; Back to page menu </a>
+<br /><hr />
+		<h2><a name="stereo"/>Stereo files</h2>
+			<p><em>TranscriberAG</em> supports the annotation of stereo files, and provides specific features to ease this task, such as:</p>
+			<ul >
+				<li>both channels <a href="audio_widget.html#audio_tracks">waveforms</a> display, </li>
+				<li><a href="audio_widget.html#track_control">Volume and pitch</a> ajustment independently for each channel,</li>
+				<li>Volume cut for one channel while playing,</li>
+				<li>Textual annotation display and input for each channel through one "merged" view or through two separate (and synchronized) <a href="text_widget.html">text widgets</a> displayed side by side.</li>
+			</ul>
+			<p class="centered"><img src="pics/stereo_view.jpg" alt="Picture Not Found" /></p>
+			<p>Most of the time, users will find it more practical to use dual text widgets when editing speech transcription. </p>
+			<p>When just browsing through a conversational-type stereo file transcription, it may be more comfortable to use a "merged" view to get a better overview of the dialog. Speech turns associated to second channel then appear indented, as shown below:
+			</p>
+			<p class="centered"><img src="pics/merged_view.jpg" alt="Picture Not Found" /></p>
+			<br />
+			<table summary="Unique">
+				<tr><td valign="top">
+					<img alt="Picture Not Found" src="pics/tool_bar_unique_editor.jpg"/></td>
+				<td width="10"></td>
+				<td valign="top"> <strong>Unique editor </strong> button in the toolbar allows to switch between various display modes for stereo files: 
+				<ul>
+					<li>a single view displaying annotations for both tracks,</li> 
+					<li>two "dual" views (one for each track) side by side,</li>
+					<li> a single view for one of the tracks.</li>
+				</ul>
+				 Clicking on the "terminal" icon allows to switch between single / dual view. When in single view, clicking on the arrow button on the right allows to select between merged / track1 / track2 modes.</td>
+			</tr></table>
+<br /><hr />
+<a href="#menu" target="content_frame"> &gt;&gt; Back to page menu </a>
+	</body>
+</html>

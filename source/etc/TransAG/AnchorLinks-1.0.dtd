@@ -1,0 +1,12 @@
+<!-- 
+	DTD for Anchor links
+	to be used for optional anchor link files 
+-->
+
+<!ELEMENT AnchorLinks ( AnchorLink* )>
+
+<!ELEMENT AnchorLink ANY>
+<!ATTLIST AnchorLink
+    id        CDATA    #REQUIRED
+    links     CDATA	   #REQUIRED
+>

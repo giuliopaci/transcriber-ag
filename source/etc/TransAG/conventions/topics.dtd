@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DTD for topics list and composition in TranscriberAG -->
+
+<!ELEMENT context (#PCDATA)>
+<!ELEMENT detail (#PCDATA)>
+<!ATTLIST detail
+	label CDATA #REQUIRED
+	type  NMTOKEN #REQUIRED
+>
+<!ELEMENT details (detail+)>
+<!ELEMENT topic (context,details)>
+<!ATTLIST topic
+	id ID #REQUIRED
+	label CDATA #REQUIRED
+>
+<!ELEMENT topicgroup (topic+)>
+<!ATTLIST topicgroup
+	id ID #REQUIRED
+	label CDATA #REQUIRED
+>
+<!ELEMENT topics (topicgroup+)>

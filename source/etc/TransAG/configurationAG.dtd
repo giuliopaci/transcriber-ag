@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TranscriberAG configuration file DTD -->
+<!ELEMENT component (section+)>
+<!ATTLIST component id ID #REQUIRED>
+<!ELEMENT parameter EMPTY>
+<!ATTLIST parameter
+	id CDATA #REQUIRED
+	label CDATA #REQUIRED
+	value CDATA #REQUIRED
+>
+<!ELEMENT parameters (component+)>
+<!ELEMENT section (parameter+)>
+<!ATTLIST section
+	id ID #REQUIRED
+	label CDATA #REQUIRED
+>

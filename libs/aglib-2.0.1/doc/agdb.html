@@ -1,0 +1,150 @@
+<html>
+<head>
+<title>AGLIB documentation: Using Database Module (agdb)</title>
+</head>
+<body bgcolor="#ffffee">
+
+<h3>Using Database Module (agdb)</h3>
+
+<hr>
+
+<p>To use agdb, you must first install the iODBC driver manager before
+configuring and installing AGLIB. See <a
+href="components.html">Components of AGLIB and required third-party
+packages</a> for more information on agdb and see <a
+href="install.html">Installation</a> for installation information. You
+also need to install a database server (such as MySQL) and its ODBC
+driver (such as MyODBC).</p>
+
+<p>The system was tested under the following configuration:</p>
+
+<blockquote>
+MySQL-3.23.33 or above<br>
+MyODBC-2.50.36 or above<br>
+libiodbc-2.50.3 or above<br>
+(Note: if you are installing iODBC RPMs, you need both iODBC Driver Manager
+Runtime Package and iODBC RPM Developers Kit)
+</blockquote>
+
+<p>Recommended installation procedure:</p>
+
+<ol>
+<li>Install latest MySQL (avaliable at <a
+href="http://www.mysql.com">http://www.mysql.com</a>)</li>
+<li>Install latest MyODBC (avaliable at <a
+href="http://www.mysql.com">http://www.mysql.com</a>)</li>
+<li>Install latest iODBC (avaliable at <a
+href="http://www.iodbc.org">http://www.iodbc.org</a>)</li>
+<li>Configure your MySQL:
+<ol type="a">
+<li>create database (which will contain tables for AGLIB)</li>
+<li>create user account to access the database server (if you don't
+have one)</li>
+<li>grant user read and write access to the database created.</li>
+</ol>
+<li>Use <tt>&lt;Your iODBC DIR&gt;/samples/odbctest</tt> to test if
+you have everything setup correctly. See below for an explaination of
+connect string.</li>
+<li>Run configure and make of your AGLIB, with agdb enabled.</li>
+<li>Run <tt>&lt;AGLIB DIR&gt;/scripts/CreateAGTables</tt> to create AG
+tables.</li>
+<li>Run <tt>&lt;AGLIB DIR&gt;/demo/agdb_demo</tt> to see if everything
+works correctly. It's working well if you don't see any error
+message.</li>
+</ol>
+
+<p>ODBC uses connection strings to connect to database servers. A
+connection string contains information such as hostname, database
+name, user name, password etc.</p>
+
+<p>The following table shows some of the parameters used in a connect
+string, for a complete list, see
+<a href="http://www.mysql.com/doc/M/y/MyODBC_connect_parameters.html">http://www.mysql.com/doc/M/y/MyODBC_connect_parameters.html</a>.
+</p>
+
+<table border="1px">
+<tr>
+<th>ODBC connect string arguments</th>
+<th>What the argument specifies</th>
+</tr>
+
+<tr>
+<td>DSN</td>
+<td>Registered ODBC Data Source Name.</td>
+<tr>
+
+<tr>
+<td>SERVER</td>
+<td>The hostname of the database server.</td>
+</tr>
+
+<tr>
+<td>UID</td>
+<td>User name as established on the server. In SQL Server this is the
+logon name.</td>
+</tr>
+
+<tr>
+<td>PWD</td>
+<td>Password that corresponds with the logon name.</td>
+</tr>
+
+<tr>
+<td>DATABASE</td>
+<td>Database to connect to. If not given, DSN is used.</td>
+</tr>
+</table>
+
+
+<p>DSN is the registered ODBC Data Source Name, it should be defined
+in your ~/.odbc.ini file. All other arguments can be either defined in
+.odbc.ini file, or defined in the connect string itself.</p>
+
+<p>To gain access to most ODBC data sources, you must provide a valid
+User ID and corresponding password. These values are initially
+registered by the database administrator.</p>
+
+<p>Probably the easiest way is to define every argument in file
+.odbc.ini under your home directory. The following is a sample entry
+for DSN 'talkbank' in the configuration file for iODBC. To simplify
+the explanation line numbers have been included. Please note that UID
+and PWD become USER and PASSWORD, respectively, in iODBC's
+configuration file.</p>
+
+<blockquote><pre>
+1  [talkbank]
+2  Driver   = /pkg/ldc/lib/libmyodbc.so
+3  DSN      = talkbank
+4  SERVER   = talkbank.ldc.upenn.edu
+5  USER     = myuserid
+6  PASSWORD = mypasswd
+7  DATABASE = talkbank
+</pre></blockquote>
+
+<p>Line 1 is the name of the driver section, which is 'talkbank'. You
+can have multiple driver sections in one configuration file. Line 2
+specifies the odbc driver to use. Line 3 gives the name of the DSN,
+which is 'talkbank'. Line 4 specifies the hostname of the machine on
+which the database server is running. Line 5 is the user name to use
+to connect to the server. Line 6 is the password associated with the
+user name. Line 7 is the database to connect to.</p>
+
+<p>If you have all required arguments specified in your .odbc.ini file
+like the one above, the connect string can simply be:</p>
+
+<blockquote><pre>
+DSN=talkbank;
+</pre></blockquote>
+
+<p>If you have not specified some of the arguments, say USER and
+PASSWORD, in the configuration file, you can still specify them in
+your connect string:</p>
+
+<blockquote><pre>
+DSN=talkbank;UID=myuserid;PWD=mypasswd;
+</pre></blockquote>
+
+<hr><a href="http://agtk.sourceforge.net/">Annotation Graph Toolkit</a>
+
+</body>
+</html>

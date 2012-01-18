@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<title>Text Widget</title>
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+	</head>
+
+	<body>
+	
+		<h1>Video Widgets</h1>
+		<h2>Screenshots</h2>
+		<table>
+			<tr>
+				<td><img alt="text_widget" src="pics/video_widget_viewer.jpg"/></td>
+				<td width="15"/>
+				<td><img alt="text_widget" src="pics/video_widget_browser.jpg"/></td>
+			</tr>
+		</table>
+
+		<h2>Description</h2>
+		<p>The video widgets are displayed when opening a video file or a transcription file using a video media.</p>
+		
+		<p><a name="menu"></a>The video part is composed of two floatting windows: </p>
+			<ul class="feature_list1">
+				<li>the <b>video player</b> displays the video. Navigation inside video media is controlled by the <a href="audio_widget.html" target="content_frame">audio widget</a></li>
+				<li>The <b>frame browser</b> extracts N frames per second (see <a href="configuration.html" target="content_frame">video configuration page</a>  for setting extraction step) and displays them for enabling a quick overview and easy navigation.<br />
+				<i><b>Remark:</b> When media is playing, using the frame browser scrollbar causes conflicting behaviour with the automatic synchronization. It is recommended to use it only when media is not playing.</i>  </li>
+			</ul>
+		<p>Both  player and browser are fully synchronized with each other and with <a href="audio_widget.html" target="content_frame">audio widget</a>. </p>	
+		<p><a name="menu"></a>It is possible to hide player or browser, or both of them:</p>
+			<ul class="feature_list1">
+				<li><b>Ctrl+F1</b> (or menu Video -&gt;  Show/Hide video panels): hide or display <b>all video widgets</b> of the current file</li>
+				<li><b>Ctrl+F2</b> (or menu Video -&gt;  Show/Hide video player):  hide or display the <b>video player</b> of the current file</li>
+				<li><b>Ctrl+F3</b> (or menu Video -&gt;  Show/Hide video browser):  hide or display the <b>video browser</b> of the current file</li>			
+			</ul>
+		<p><i><b>REMARK:</b> in the Windows version, the windows manager seems to prevent TranscriberAG to be minimized when the video windows are displayed. A workaround of this issue is to hide the video windows (<b>Ctrl+F1</b>) before minimizing. </i></p>
+		</body>
+</html>

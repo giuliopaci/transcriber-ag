@@ -1,0 +1,603 @@
+/********************************************************************************/
+/*************** Copyright (C) 2006-2011 Bertin Technologies, SAS  **************/
+/*			  				      	TranscriberAG	 							*/
+/* 	         																	*/
+/* See COPYING for license information										  	*/
+/* 	         																	*/
+/********************************************************************************/
+/**
+*  ISO639  language codes
+*/
+
+#include <string.h>
+#include <iostream>
+#include <stdlib.h>
+#include <ctype.h>
+#include "iso639.h"
+#include <glib.h>
+
+namespace ISO639 {
+
+
+/**
+* Iso639-2 / Iso639-1 codes list
+*/
+static struct _iso639_def {
+	const char* code_2b;
+	const char* code_2t;
+	const char* code_1;
+	const char* name_eng;
+	const char* name_fre;
+} codes_list[] =  {
+	{"aar", "aar", "aa", "Afar", "afar"},
+	{"abk", "abk", "ab", "Abkhazian", "abkhaze"},
+	{"ace", "ace", "", "Achinese", "aceh"},
+	{"ach", "ach", "", "Acoli", "acoli"},
+	{"ada", "ada", "", "Adangme", "adangme"},
+	{"ady", "ady", "", "Adyghe", "adyghé"},
+	{"afa", "afa", "", "Afro-Asiatic (Other)", "afro-asiatiques, autres langues"},
+	{"afh", "afh", "", "Afrihili", "afrihili"},
+	{"afr", "afr", "af", "Afrikaans", "afrikaans"},
+	{"ain", "ain", "", "Ainu", "aïnou"},
+	{"aka", "aka", "ak", "Akan", "akan"},
+	{"akk", "akk", "", "Akkadian", "akkadien"},
+	{"alb", "sqi", "sq", "Albanian", "albanais"},
+	{"ale", "ale", "", "Aleut", "aléoute"},
+	{"alg", "alg", "", "Algonquian languages", "algonquines, langues"},
+	{"alt", "alt", "", "Southern Altai", "altai du Sud"},
+	{"amh", "amh", "am", "Amharic", "amharique"},
+	{"ang", "ang", "", "English, Old (ca.450-1100)", "anglo-saxon (ca.450-1100)"},
+	{"anp", "anp", "", "Angika", "angika"},
+	{"apa", "apa", "", "Apache languages", "apache"},
+	{"ara", "ara", "ar", "Arabic", "arabe"},
+	{"arc", "arc", "", "Aramaic", "araméen"},
+	{"arg", "arg", "an", "Aragonese", "aragonais"},
+	{"arm", "hye", "hy", "Armenian", "arménien"},
+	{"arn", "arn", "", "Mapudungun", "mapudungun"},
+	{"arp", "arp", "", "Arapaho", "arapaho"},
+	{"art", "art", "", "Artificial (Other)", "artificielles, autres langues"},
+	{"arw", "arw", "", "Arawak", "arawak"},
+	{"asm", "asm", "as", "Assamese", "assamais"},
+	{"ast", "ast", "", "Asturian", "asturien"},
+	{"ath", "ath", "", "Athapascan languages", "athapascanes, langues"},
+	{"aus", "aus", "", "Australian languages", "australiennes, langues"},
+	{"ava", "ava", "av", "Avaric", "avar"},
+	{"ave", "ave", "ae", "Avestan", "avestique"},
+	{"awa", "awa", "", "Awadhi", "awadhi"},
+	{"aym", "aym", "ay", "Aymara", "aymara"},
+	{"aze", "aze", "az", "Azerbaijani", "azéri"},
+	{"bad", "bad", "", "Banda languages", "banda, langues"},
+	{"bai", "bai", "", "Bamileke languages", "bamilékés, langues"},
+	{"bak", "bak", "ba", "Bashkir", "bachkir"},
+	{"bal", "bal", "", "Baluchi", "baloutchi"},
+	{"bam", "bam", "bm", "Bambara", "bambara"},
+	{"ban", "ban", "", "Balinese", "balinais"},
+	{"baq", "eus", "eu", "Basque", "basque"},
+	{"bas", "bas", "", "Basa", "basa"},
+	{"bat", "bat", "", "Baltic (Other)", "baltiques, autres langues"},
+	{"bej", "bej", "", "Beja", "bedja"},
+	{"bel", "bel", "be", "Belarusian", "biélorusse"},
+	{"bem", "bem", "", "Bemba", "bemba"},
+	{"ben", "ben", "bn", "Bengali", "bengali"},
+	{"ber", "ber", "", "Berber (Other)", "berbères, autres langues"},
+	{"bho", "bho", "", "Bhojpuri", "bhojpuri"},
+	{"bih", "bih", "bh", "Bihari", "bihari"},
+	{"bik", "bik", "", "Bikol", "bikol"},
+	{"bin", "bin", "", "Bini", "bini"},
+	{"bis", "bis", "bi", "Bislama", "bichlamar"},
+	{"bla", "bla", "", "Siksika", "blackfoot"},
+	{"bnt", "bnt", "", "Bantu (Other)", "bantoues, autres langues"},
+	{"bos", "bos", "bs", "Bosnian", "bosniaque"},
+	{"bra", "bra", "", "Braj", "braj"},
+	{"bre", "bre", "br", "Breton", "breton"},
+	{"btk", "btk", "", "Batak languages", "batak, langues"},
+	{"bua", "bua", "", "Buriat", "bouriate"},
+	{"bug", "bug", "", "Buginese", "bugi"},
+	{"bul", "bul", "bg", "Bulgarian", "bulgare"},
+	{"bur", "mya", "my", "Burmese", "birman"},
+	{"byn", "byn", "", "Blin", "blin"},
+	{"cad", "cad", "", "Caddo", "caddo"},
+	{"cai", "cai", "", "Central American Indian (Other)", "indiennes d'Amérique centrale, autres langues"},
+	{"car", "car", "", "Galibi Carib", "karib"},
+	{"cat", "cat", "ca", "Catalan", "catalan"},
+	{"cau", "cau", "", "Caucasian (Other)", "caucasiennes, autres langues"},
+	{"ceb", "ceb", "", "Cebuano", "cebuano"},
+	{"cel", "cel", "", "Celtic (Other)", "celtiques, autres langues"},
+	{"cha", "cha", "ch", "Chamorro", "chamorro"},
+	{"chb", "chb", "", "Chibcha", "chibcha"},
+	{"che", "che", "ce", "Chechen", "tchétchène"},
+	{"chg", "chg", "", "Chagatai", "djaghataï"},
+	{"chi", "zho", "zh", "Chinese", "chinois"},
+	{"chk", "chk", "", "Chuukese", "chuuk"},
+	{"chm", "chm", "", "Mari", "mari"},
+	{"chn", "chn", "", "Chinook jargon", "chinook, jargon"},
+	{"cho", "cho", "", "Choctaw", "choctaw"},
+	{"chp", "chp", "", "Chipewyan", "chipewyan"},
+	{"chr", "chr", "", "Cherokee", "cherokee"},
+	{"chu", "chu", "cu", "Church Slavic", "slavon d'église"},
+	{"chv", "chv", "cv", "Chuvash", "tchouvache"},
+	{"chy", "chy", "", "Cheyenne", "cheyenne"},
+	{"cmc", "cmc", "", "Chamic languages", "chames, langues"},
+	{"cop", "cop", "", "Coptic", "copte"},
+	{"cor", "cor", "kw", "Cornish", "cornique"},
+	{"cos", "cos", "co", "Corsican", "corse"},
+	{"cpe", "cpe", "", "Creoles and pidgins, English based (Other)", "créoles et pidgins anglais, autres"},
+	{"cpf", "cpf", "", "Creoles and pidgins, French-based (Other)", "créoles et pidgins français, autres"},
+	{"cpp", "cpp", "", "Creoles and pidgins, Portuguese-based (Other)", "créoles et pidgins portugais, autres"},
+	{"cre", "cre", "cr", "Cree", "cree"},
+	{"crh", "crh", "", "Crimean Tatar", "tatar de Crimé"},
+	{"crp", "crp", "", "Creoles and pidgins (Other)", "créoles et pidgins divers"},
+	{"csb", "csb", "", "Kashubian", "kachoube"},
+	{"cus", "cus", "", "Cushitic (Other)", "couchitiques, autres langues"},
+	{"cze", "ces", "cs", "Czech", "tchèque"},
+	{"dak", "dak", "", "Dakota", "dakota"},
+	{"dan", "dan", "da", "Danish", "danois"},
+	{"dar", "dar", "", "Dargwa", "dargwa"},
+	{"day", "day", "", "Land Dayak languages", "dayak, langues"},
+	{"del", "del", "", "Delaware", "delaware"},
+	{"den", "den", "", "Slave (Athapascan)", "esclave (athapascan)"},
+	{"dgr", "dgr", "", "Dogrib", "dogrib"},
+	{"din", "din", "", "Dinka", "dinka"},
+	{"div", "div", "dv", "Divehi", "maldivien"},
+	{"doi", "doi", "", "Dogri", "dogri"},
+	{"dra", "dra", "", "Dravidian (Other)", "dravidiennes, autres langues"},
+	{"dsb", "dsb", "", "Lower Sorbian", "bas-sorabe"},
+	{"dua", "dua", "", "Duala", "douala"},
+	{"dum", "dum", "", "Dutch, Middle (ca.1050-1350)", "néerlandais moyen (ca. 1050-1350)"},
+	{"dut", "nld", "nl", "Dutch", "néerlandais"},
+	{"dyu", "dyu", "", "Dyula", "dioula"},
+	{"dzo", "dzo", "dz", "Dzongkha", "dzongkha"},
+	{"efi", "efi", "", "Efik", "efik"},
+	{"egy", "egy", "", "Egyptian (Ancient)", "égyptien"},
+	{"eka", "eka", "", "Ekajuk", "ekajuk"},
+	{"elx", "elx", "", "Elamite", "élamite"},
+	{"eng", "eng", "en", "English", "anglais"},
+	{"enm", "enm", "", "English, Middle (1100-1500)", "anglais moyen (1100-1500)"},
+	{"epo", "epo", "eo", "Esperanto", "espéranto"},
+	{"est", "est", "et", "Estonian", "estonien"},
+	{"ewe", "ewe", "ee", "Ewe", "éwé"},
+	{"ewo", "ewo", "", "Ewondo", "éwondo"},
+	{"fan", "fan", "", "Fang", "fang"},
+	{"fao", "fao", "fo", "Faroese", "féroïen"},
+	{"fat", "fat", "", "Fanti", "fanti"},
+	{"fij", "fij", "fj", "Fijian", "fidjien"},
+	{"fil", "fil", "", "Filipino", "filipino"},
+	{"fin", "fin", "fi", "Finnish", "finnois"},
+	{"fiu", "fiu", "", "Finno-Ugrian (Other)", "finno-ougriennes, autres langues"},
+	{"fon", "fon", "", "Fon", "fon"},
+	{"fre", "fra", "fr", "French", "francais"},
+	{"frm", "frm", "", "French, Middle (ca.1400-1600)", "français moyen (1400-1600)"},
+	{"fro", "fro", "", "French, Old (842-ca.1400)", "français ancien (842-ca.1400)"},
+	{"frr", "frr", "", "Northern Frisian", "frison septentrional"},
+	{"frs", "frs", "", "Eastern Frisian", "frison oriental"},
+	{"fry", "fry", "fy", "Western Frisian", "frison occidental"},
+	{"ful", "ful", "ff", "Fulah", "peul"},
+	{"fur", "fur", "", "Friulian", "frioulan"},
+	{"gaa", "gaa", "", "Ga", "ga"},
+	{"gay", "gay", "", "Gayo", "gayo"},
+	{"gba", "gba", "", "Gbaya", "gbaya"},
+	{"gem", "gem", "", "Germanic (Other)", "germaniques, autres langues"},
+	{"geo", "kat", "ka", "Georgian", "géorgien"},
+	{"ger", "deu", "de", "German", "allemand"},
+	{"gez", "gez", "", "Geez", "guèze"},
+	{"gil", "gil", "", "Gilbertese", "kiribati"},
+	{"gla", "gla", "gd", "Gaelic", "gaélique"},
+	{"gle", "gle", "ga", "Irish", "irlandais"},
+	{"glg", "glg", "gl", "Galician", "galicien"},
+	{"glv", "glv", "gv", "Manx", "manx"},
+	{"gmh", "gmh", "", "German, Middle High (ca.1050-1500)", "allemand, moyen haut (ca. 1050-1500)"},
+	{"goh", "goh", "", "German, Old High (ca.750-1050)", "allemand, vieux haut (ca. 750-1050)"},
+	{"gon", "gon", "", "Gondi", "gond"},
+	{"gor", "gor", "", "Gorontalo", "gorontalo"},
+	{"got", "got", "", "Gothic", "gothique"},
+	{"grb", "grb", "", "Grebo", "grebo"},
+	{"grc", "grc", "", "Greek, Ancient (to 1453)", "grec ancien (jusqu'à 1453)"},
+	{"gre", "ell", "el", "Greek, Modern (1453-)", "grec moderne (après 1453)"},
+	{"grn", "grn", "gn", "Guarani", "guarani"},
+	{"gsw", "gsw", "", "Swiss German", "alémanique"},
+	{"guj", "guj", "gu", "Gujarati", "goudjrati"},
+	{"gwi", "gwi", "", "Gwich´in", "gwich´in"},
+	{"hai", "hai", "", "Haida", "haida"},
+	{"hat", "hat", "ht", "Haitian", "haïtien"},
+	{"hau", "hau", "ha", "Hausa", "haoussa"},
+	{"haw", "haw", "", "Hawaiian", "hawaïen"},
+	{"heb", "heb", "he", "Hebrew", "hébreu"},
+	{"her", "her", "hz", "Herero", "herero"},
+	{"hil", "hil", "", "Hiligaynon", "hiligaynon"},
+	{"him", "him", "", "Himachali", "himachali"},
+	{"hin", "hin", "hi", "Hindi", "hindi"},
+	{"hit", "hit", "", "Hittite", "hittite"},
+	{"hmn", "hmn", "", "Hmong", "hmong"},
+	{"hmo", "hmo", "ho", "Hiri Motu", "hiri motu"},
+	{"hsb", "hsb", "", "Upper Sorbian", "haut-sorabe"},
+	{"hun", "hun", "hu", "Hungarian", "hongrois"},
+	{"hup", "hup", "", "Hupa", "hupa"},
+	{"iba", "iba", "", "Iban", "iban"},
+	{"ibo", "ibo", "ig", "Igbo", "igbo"},
+	{"ice", "isl", "is", "Icelandic", "islandais"},
+	{"ido", "ido", "io", "Ido", "ido"},
+	{"iii", "iii", "ii", "Sichuan Yi", "yi de Sichuan"},
+	{"ijo", "ijo", "", "Ijo languages", "ijo, langues"},
+	{"iku", "iku", "iu", "Inuktitut", "inuktitut"},
+	{"ile", "ile", "ie", "Interlingue", "interlingue"},
+	{"ilo", "ilo", "", "Iloko", "ilocano"},
+	{"ina", "ina", "ia", "Interlingua (International Auxiliary Language Association)", "interlingua (langue auxiliaire internationale)"},
+	{"inc", "inc", "", "Indic (Other)", "indo-aryennes, autres langues"},
+	{"ind", "ind", "id", "Indonesian", "indonésien"},
+	{"ine", "ine", "", "Indo-European (Other)", "indo-européennes, autres langues"},
+	{"inh", "inh", "", "Ingush", "ingouche"},
+	{"ipk", "ipk", "ik", "Inupiaq", "inupiaq"},
+	{"ira", "ira", "", "Iranian (Other)", "iraniennes, autres langues"},
+	{"iro", "iro", "", "Iroquoian languages", "iroquoises, langues (famille)"},
+	{"ita", "ita", "it", "Italian", "italien"},
+	{"jav", "jav", "jv", "Javanese", "javanais"},
+	{"jbo", "jbo", "", "Lojban", "lojban"},
+	{"jpn", "jpn", "ja", "Japanese", "japonais"},
+	{"jpr", "jpr", "", "Judeo-Persian", "judéo-persan"},
+	{"jrb", "jrb", "", "Judeo-Arabic", "judéo-arabe"},
+	{"kaa", "kaa", "", "Kara-Kalpak", "karakalpak"},
+	{"kab", "kab", "", "Kabyle", "kabyle"},
+	{"kac", "kac", "", "Kachin", "kachin"},
+	{"kal", "kal", "kl", "Kalaallisut", "groenlandais"},
+	{"kam", "kam", "", "Kamba", "kamba"},
+	{"kan", "kan", "kn", "Kannada", "kannada"},
+	{"kar", "kar", "", "Karen languages", "karen, langues"},
+	{"kas", "kas", "ks", "Kashmiri", "kashmiri"},
+	{"kau", "kau", "kr", "Kanuri", "kanouri"},
+	{"kaw", "kaw", "", "Kawi", "kawi"},
+	{"kaz", "kaz", "kk", "Kazakh", "kazakh"},
+	{"kbd", "kbd", "", "Kabardian", "kabardien"},
+	{"kha", "kha", "", "Khasi", "khasi"},
+	{"khi", "khi", "", "Khoisan (Other)", "khoisan, autres langues"},
+	{"khm", "khm", "km", "Central Khmer", "khmer central"},
+	{"kho", "kho", "", "Khotanese", "khotanais"},
+	{"kik", "kik", "ki", "Kikuyu", "kikuyu"},
+	{"kin", "kin", "rw", "Kinyarwanda", "rwanda"},
+	{"kir", "kir", "ky", "Kirghiz", "kirghiz"},
+	{"kmb", "kim", "", "Kimbundu", "kimbundu"},
+	{"kok", "kok", "", "Konkani", "konkani"},
+	{"kom", "kom", "kv", "Komi", "kom"},
+	{"kon", "kon", "kg", "Kongo", "kongo"},
+	{"kor", "kor", "ko", "Korean", "coréen"},
+	{"kos", "kos", "", "Kosraean", "kosrae"},
+	{"kpe", "kpe", "", "Kpelle", "kpellé"},
+	{"krc", "krc", "", "Karachay-Balkar", "karatchai balkar"},
+	{"krl", "krl", "", "Karelian", "carélien"},
+	{"kro", "kro", "", "Kru languages", "krou, langues"},
+	{"kru", "kru", "", "Kurukh", "kurukh"},
+	{"kua", "kua", "kj", "Kuanyama", "kuanyama"},
+	{"kum", "kum", "", "Kumyk", "koumyk"},
+	{"kur", "kur", "ku", "Kurdish", "kurde"},
+	{"kut", "kut", "", "Kutenai", "kutenai"},
+	{"lad", "lad", "", "Ladino", "judéo-espagnol"},
+	{"lah", "lah", "", "Lahnda", "lahnda"},
+	{"lam", "lam", "", "Lamba", "lamba"},
+	{"lao", "lao", "lo", "Lao", "lao"},
+	{"lat", "lat", "la", "Latin", "latin"},
+	{"lav", "lav", "lv", "Latvian", "letton"},
+	{"lez", "lez", "", "Lezghian", "lezghien"},
+	{"lim", "lim", "li", "Limburgan", "limbourgeois"},
+	{"lin", "lin", "ln", "Lingala", "lingala"},
+	{"lit", "lit", "lt", "Lithuanian", "lituanien"},
+	{"lol", "lol", "", "Mongo", "mongo"},
+	{"loz", "loz", "", "Lozi", "lozi"},
+	{"ltz", "ltz", "lb", "Luxembourgish", "luxembourgeois"},
+	{"lua", "lua", "", "Luba-Lulua", "luba-lulua"},
+	{"lub", "lub", "lu", "Luba-Katanga", "luba-katanga"},
+	{"lug", "lug", "lg", "Ganda", "ganda"},
+	{"lui", "lui", "", "Luiseno", "luiseno"},
+	{"lun", "lun", "", "Lunda", "lunda"},
+	{"luo", "luo", "", "Luo (Kenya and Tanzania)", "luo (Kenya et Tanzanie)"},
+	{"lus", "lus", "", "Lushai", "lushai"},
+	{"mac", "mkd", "mk", "Macedonian", "macédonien"},
+	{"mad", "mad", "", "Madurese", "madourais"},
+	{"mag", "mag", "", "Magahi", "magahi"},
+	{"mah", "mah", "mh", "Marshallese", "marshall"},
+	{"mai", "mai", "", "Maithili", "maithili"},
+	{"mak", "mak", "", "Makasar", "makassar"},
+	{"mal", "mal", "ml", "Malayalam", "malayalam"},
+	{"man", "man", "", "Mandingo", "mandingue"},
+	{"mao", "mri", "mi", "Maori", "maori"},
+	{"map", "map", "", "Austronesian (Other)", "malayo-polynésiennes, autres langues"},
+	{"mar", "mar", "mr", "Marathi", "marathe"},
+	{"mas", "mas", "", "Masai", "massaï"},
+	{"may", "msa", "ms", "Malay", "malais"},
+	{"mdf", "mdf", "", "Moksha", "moksa"},
+	{"mdr", "mdr", "", "Mandar", "mandar"},
+	{"men", "men", "", "Mende", "mendé"},
+	{"mga", "mga", "", "Irish, Middle (900-1200)", "irlandais moyen (900-1200)"},
+	{"mic", "mic", "", "Mi'kmaq", "mi'kmaq"},
+	{"min", "min", "", "Minangkabau", "minangkabau"},
+	{"mis", "mis", "", "Miscellaneous languages", "diverses, langues"},
+	{"mkh", "mkh", "", "Mon-Khmer (Other)", "môn-khmer, autres langues"},
+	{"mlg", "mlg", "mg", "Malagasy", "malgache"},
+	{"mlt", "mlt", "mt", "Maltese", "maltais"},
+	{"mnc", "mnc", "", "Manchu", "mandchou"},
+	{"mni", "mni", "", "Manipuri", "manipuri"},
+	{"mno", "mno", "", "Manobo languages", "manobo, langues"},
+	{"moh", "moh", "", "Mohawk", "mohawk"},
+	{"mol", "mol", "mo", "Moldavian", "moldave"},
+	{"mon", "mon", "mn", "Mongolian", "mongol"},
+	{"mos", "mos", "", "Mossi", "moré"},
+	{"mul", "mul", "", "Multiple languages", "multilingue"},
+	{"mun", "mun", "", "Munda languages", "mounda, langues"},
+	{"mus", "mus", "", "Creek", "muskogee"},
+	{"mwl", "mwl", "", "Mirandese", "mirandais"},
+	{"mwr", "mwr", "", "Marwari", "marvari"},
+	{"myn", "myn", "", "Mayan languages", "maya, langues"},
+	{"myv", "myv", "", "Erzya", "erza"},
+	{"nah", "nah", "", "Nahuatl languages", "nahuatl, langues"},
+	{"nai", "nai", "", "North American Indian", "indiennes d'Amérique du Nord, autres langues"},
+	{"nap", "nap", "", "Neapolitan", "napolitain"},
+	{"nau", "nau", "na", "Nauru", "nauruan"},
+	{"nav", "nav", "nv", "Navajo", "navaho"},
+	{"nbl", "nbl", "nr", "Ndebele, South", "ndébélé du Sud"},
+	{"nde", "nde", "nd", "Ndebele, North", "ndébélé du Nord"},
+	{"ndo", "ndo", "ng", "Ndonga", "ndonga"},
+	{"nds", "nds", "", "Low German", "bas allemand"},
+	{"nep", "nep", "ne", "Nepali", "népalais"},
+	{"new", "new", "", "Nepal Bhasa", "nepal bhasa"},
+	{"nia", "nia", "", "Nias", "nias"},
+	{"nic", "nic", "", "Niger-Kordofanian (Other)", "nigéro-congolaises, autres langues"},
+	{"niu", "niu", "", "Niuean", "niué"},
+	{"nno", "nno", "nn", "Norwegian Nynorsk", "norvégien nynorsk"},
+	{"nob", "nob", "nb", "Bokmål, Norwegian", "norvégien bokmål"},
+	{"nog", "nog", "", "Nogai", "nogaï"},
+	{"non", "non", "", "Norse, Old", "norrois, vieux"},
+	{"nor", "nor", "no", "Norwegian", "norvégien"},
+	{"nqo", "nqo", "", "N'Ko", "n'ko"},
+	{"nso", "nso", "", "Pedi", "pedi"},
+	{"nub", "nub", "", "Nubian languages", "nubiennes, langues"},
+	{"nwc", "nwc", "", "Classical Newari", "newari classique"},
+	{"nya", "nya", "ny", "Chichewa", "chichewa"},
+	{"nym", "nym", "", "Nyamwezi", "nyamwezi"},
+	{"nyn", "nyn", "", "Nyankole", "nyankolé"},
+	{"nyo", "nyo", "", "Nyoro", "nyoro"},
+	{"nzi", "nzi", "", "Nzima", "nzema"},
+	{"oci", "oci", "oc", "Occitan (post 1500)", "occitan (après 1500)"},
+	{"oji", "oji", "oj", "Ojibwa", "ojibwa"},
+	{"ori", "ori", "or", "Oriya", "oriya"},
+	{"orm", "orm", "om", "Oromo", "galla"},
+	{"osa", "osa", "", "Osage", "osage"},
+	{"oss", "oss", "os", "Ossetian", "ossète"},
+	{"ota", "ota", "", "Turkish, Ottoman (1500-1928)", "turc ottoman (1500-1928)"},
+	{"oto", "oto", "", "Otomian languages", "otomangue, langues"},
+	{"paa", "paa", "", "Papuan (Other)", "papoues, autres langues"},
+	{"pag", "pag", "", "Pangasinan", "pangasinan"},
+	{"pal", "pal", "", "Pahlavi", "pahlavi"},
+	{"pam", "pam", "", "Pampanga", "pampangan"},
+	{"pan", "pan", "pa", "Panjabi", "pendjabi"},
+	{"pap", "pap", "", "Papiamento", "papiamento"},
+	{"pau", "pau", "", "Palauan", "palau"},
+	{"peo", "peo", "", "Persian, Old (ca.600-400 B.C.)", "perse, vieux (ca. 600-400 av. J.-C.)"},
+	{"per", "fas", "fa", "Persian", "persan"},
+	{"phi", "phi", "", "Philippine (Other)", "philippines, autres langues"},
+	{"phn", "phn", "", "Phoenician", "phénicien"},
+	{"pli", "pli", "pi", "Pali", "pali"},
+	{"pol", "pol", "pl", "Polish", "polonais"},
+	{"pon", "pon", "", "Pohnpeian", "pohnpei"},
+	{"por", "por", "pt", "Portuguese", "portugais"},
+	{"pra", "pra", "", "Prakrit languages", "prâkrit"},
+	{"pro", "pro", "", "Provençal, Old (to 1500)", "provençal ancien (jusqu'à 1500)"},
+	{"pus", "pus", "ps", "Pushto", "pachto"},
+	{"qaa", "qaa", "", "Reserved for local use", "réservée à l'usage local"},
+	{"que", "que", "qu", "Quechua", "quechua"},
+	{"raj", "raj", "", "Rajasthani", "rajasthani"},
+	{"rap", "rap", "", "Rapanui", "rapanui"},
+	{"rar", "rar", "", "Rarotongan", "rarotonga"},
+	{"roa", "roa", "", "Romance (Other)", "romanes, autres langues"},
+	{"roh", "roh", "rm", "Romansh", "romanche"},
+	{"rom", "rom", "", "Romany", "tsigane"},
+	{"rum", "ron", "ro", "Romanian", "roumain"},
+	{"run", "run", "rn", "Rundi", "rundi"},
+	{"rup", "rup", "", "Aromanian", "aroumain"},
+	{"rus", "rus", "ru", "Russian", "russe"},
+	{"sad", "sad", "", "Sandawe", "sandawe"},
+	{"sag", "sag", "sg", "Sango", "sango"},
+	{"sah", "sah", "", "Yakut", "iakoute"},
+	{"sai", "sai", "", "South American Indian (Other)", "indiennes d'Amérique du Sud, autres langues"},
+	{"sal", "sal", "", "Salishan languages", "salish, langues"},
+	{"sam", "sam", "", "Samaritan Aramaic", "samaritain"},
+	{"san", "san", "sa", "Sanskrit", "sanskrit"},
+	{"sas", "sas", "", "Sasak", "sasak"},
+	{"sat", "sat", "", "Santali", "santal"},
+	{"scc", "srp", "sr", "Serbian", "serbe"},
+	{"scn", "scn", "", "Sicilian", "sicilien"},
+	{"sco", "sco", "", "Scots", "écossais"},
+	{"scr", "hrv", "hr", "Croatian", "croate"},
+	{"sel", "sel", "", "Selkup", "selkoupe"},
+	{"sem", "sem", "", "Semitic (Other)", "sémitiques, autres langues"},
+	{"sga", "sga", "", "Irish, Old (to 900)", "irlandais ancien (jusqu'à 900)"},
+	{"sgn", "sgn", "", "Sign Languages", "langues des signes"},
+	{"shn", "shn", "", "Shan", "chan"},
+	{"sid", "sid", "", "Sidamo", "sidamo"},
+	{"sin", "sin", "si", "Sinhala", "singhalais"},
+	{"sio", "sio", "", "Siouan languages", "sioux, langues"},
+	{"sit", "sit", "", "Sino-Tibetan (Other)", "sino-tibétaines, autres langues"},
+	{"sla", "sla", "", "Slavic (Other)", "slaves, autres langues"},
+	{"slo", "slk", "sk", "Slovak", "slovaque"},
+	{"slv", "slv", "sl", "Slovenian", "slovène"},
+	{"sma", "sma", "", "Southern Sami", "sami du Sud"},
+	{"sme", "sme", "se", "Northern Sami", "sami du Nord"},
+	{"smi", "smi", "", "Sami languages (Other)", "sami, autres langues"},
+	{"smj", "smj", "", "Lule Sami", "sami de Lule"},
+	{"smn", "smn", "", "Inari Sami", "sami d'Inari"},
+	{"smo", "smo", "sm", "Samoan", "samoan"},
+	{"sms", "sms", "", "Skolt Sami", "sami skolt"},
+	{"sna", "sna", "sn", "Shona", "shona"},
+	{"snd", "snd", "sd", "Sindhi", "sindhi"},
+	{"snk", "snk", "", "Soninke", "soninké"},
+	{"sog", "sog", "", "Sogdian", "sogdien"},
+	{"som", "som", "so", "Somali", "somali"},
+	{"son", "son", "", "Songhai languages", "songhai, langues"},
+	{"sot", "sot", "st", "Sotho, Southern", "sotho du Sud"},
+	{"spa", "spa", "es", "Spanish", "espagnol"},
+	{"srd", "srd", "sc", "Sardinian", "sarde"},
+	{"srn", "srn", "", "Sranan Tongo", "sranan tongo"},
+	{"srr", "srr", "", "Serer", "sérère"},
+	{"ssa", "ssa", "", "Nilo-Saharan (Other)", "nilo-sahariennes, autres langues"},
+	{"ssw", "ssw", "ss", "Swati", "swati"},
+	{"suk", "suk", "", "Sukuma", "sukuma"},
+	{"sun", "sun", "su", "Sundanese", "soundanais"},
+	{"sus", "sus", "", "Susu", "soussou"},
+	{"sux", "sux", "", "Sumerian", "sumérien"},
+	{"swa", "swa", "sw", "Swahili", "swahili"},
+	{"swe", "swe", "sv", "Swedish", "suédois"},
+	{"syr", "syr", "", "Syriac", "syriaque"},
+	{"tah", "tah", "ty", "Tahitian", "tahitien"},
+	{"tai", "tai", "", "Tai (Other)", "thaïes, autres langues"},
+	{"tam", "tam", "ta", "Tamil", "tamoul"},
+	{"tat", "tat", "tt", "Tatar", "tatar"},
+	{"tel", "tel", "te", "Telugu", "télougou"},
+	{"tem", "tem", "", "Timne", "temne"},
+	{"ter", "ter", "", "Tereno", "tereno"},
+	{"tet", "tet", "", "Tetum", "tetum"},
+	{"tgk", "tgk", "tg", "Tajik", "tadjik"},
+	{"tgl", "tgl", "tl", "Tagalog", "tagalog"},
+	{"tha", "tha", "th", "Thai", "thaï"},
+	{"tib", "bod", "bo", "Tibetan", "tibétain"},
+	{"tig", "tig", "", "Tigre", "tigré"},
+	{"tir", "tir", "ti", "Tigrinya", "tigrigna"},
+	{"tiv", "tiv", "", "Tiv", "tiv"},
+	{"tkl", "tkl", "", "Tokelau", "tokelau"},
+	{"tlh", "tlh", "", "Klingon", "klingon"},
+	{"tli", "tli", "", "Tlingit", "tlingit"},
+	{"tmh", "tmh", "", "Tamashek", "tamacheq"},
+	{"tog", "tog", "", "Tonga (Nyasa)", "tonga (Nyasa)"},
+	{"ton", "ton", "to", "Tonga (Tonga Islands)", "tongan (Îles Tonga)"},
+	{"tpi", "tpi", "", "Tok Pisin", "tok pisin"},
+	{"tsi", "tsi", "", "Tsimshian", "tsimshian"},
+	{"tsn", "tsn", "tn", "Tswana", "tswana"},
+	{"tso", "tso", "ts", "Tsonga", "tsonga"},
+	{"tuk", "tuk", "tk", "Turkmen", "turkmène"},
+	{"tum", "tum", "", "Tumbuka", "tumbuka"},
+	{"tup", "tup", "", "Tupi languages", "tupi, langues"},
+	{"tur", "tur", "tr", "Turkish", "turc"},
+	{"tut", "tut", "", "Altaic (Other)", "altaïques, autres langues"},
+	{"tvl", "tvl", "", "Tuvalu", "tuvalu"},
+	{"twi", "twi", "tw", "Twi", "twi"},
+	{"tyv", "tyv", "", "Tuvinian", "touva"},
+	{"udm", "udm", "", "Udmurt", "oudmourte"},
+	{"uga", "uga", "", "Ugaritic", "ougaritique"},
+	{"uig", "uig", "ug", "Uighur", "ouïgour"},
+	{"ukr", "ukr", "uk", "Ukrainian", "ukrainien"},
+	{"umb", "umb", "", "Umbundu", "umbundu"},
+	{"und", "und", "", "Undetermined", "indéterminée"},
+	{"urd", "urd", "ur", "Urdu", "ourdou"},
+	{"uzb", "uzb", "uz", "Uzbek", "ouszbek"},
+	{"vai", "vai", "", "Vai", "vaï"},
+	{"ven", "ven", "ve", "Venda", "venda"},
+	{"vie", "vie", "vi", "Vietnamese", "vietnamien"},
+	{"vol", "vol", "vo", "Volapük", "volapük"},
+	{"vot", "vot", "", "Votic", "vote"},
+	{"wak", "wak", "", "Wakashan languages", "wakashennes, langues"},
+	{"wal", "wal", "", "Walamo", "walamo"},
+	{"war", "war", "", "Waray", "waray"},
+	{"was", "was", "", "Washo", "washo"},
+	{"wel", "cym", "cy", "Welsh", "gallois"},
+	{"wen", "wen", "", "Sorbian languages", "sorabes, langues"},
+	{"wln", "wln", "wa", "Walloon", "wallon"},
+	{"wol", "wol", "wo", "Wolof", "wolof"},
+	{"xal", "xal", "", "Kalmyk", "kalmouk"},
+	{"xho", "xho", "xh", "Xhosa", "xhosa"},
+	{"yao", "yao", "", "Yao", "yao"},
+	{"yap", "yap", "", "Yapese", "yapois"},
+	{"yid", "yid", "yi", "Yiddish", "yiddish"},
+	{"yor", "yor", "yo", "Yoruba", "yoruba"},
+	{"ypk", "ypk", "", "Yupik languages", "yupik, langues"},
+	{"zap", "zap", "", "Zapotec", "zapotèque"},
+	{"zen", "zen", "", "Zenaga", "zenaga"},
+	{"zha", "zha", "za", "Zhuang", "zhuang"},
+	{"znd", "znd", "", "Zande languages", "zandé, langues"},
+	{"zul", "zul", "zu", "Zulu", "zoulou"},
+	{"zun", "zun", "", "Zuni", "zuni"},
+	{"zxx", "zxx", "", "No linguistic content", "pas de contenu linguistique"},
+	{"zza", "zza", "", "Zaza", "zaza"},
+	{NULL, NULL, NULL, NULL, NULL},};
+
+const char* get3LetterCode(const char* code, bool bib)
+{
+	int i;
+
+	if ( strlen(code) == 2 ) {
+		for ( i=0; codes_list[i].code_2b != NULL; ++i ) {
+			if ( strcmp(codes_list[i].code_1, code) == 0 )
+				return ( bib ? codes_list[i].code_2b : codes_list[i].code_2t );
+		}
+	} else {
+		for ( i=0; codes_list[i].code_2b != NULL; ++i ) {
+			if ( strcmp(codes_list[i].code_2b, code) == 0 || strcmp(codes_list[i].code_2t, code) == 0 )
+				return ( bib ? codes_list[i].code_2b : codes_list[i].code_2t );
+		}
+	}
+	return "";
+}
+
+const char* get2LetterCode(const char* three_letter_code)
+{
+	int i;
+
+	for ( i=0; codes_list[i].code_2b != NULL; ++i ) {
+	    if ( strcmp(codes_list[i].code_2b, three_letter_code) == 0 || strcmp(codes_list[i].code_2t, three_letter_code) == 0 )
+			return codes_list[i].code_1;
+	}
+	return "";
+}
+
+
+const char* getLanguageName(const char* three_letter_code, const char* locale)
+{
+	int i;
+
+	for ( i=0; codes_list[i].code_2b != NULL; ++i ) {
+	    if ( strcmp(codes_list[i].code_2b, three_letter_code) == 0 || strcmp(codes_list[i].code_2t, three_letter_code) == 0 )
+			if ( strcmp(locale, "fre") == 0 || strcmp(locale, "fra") == 0 ) return  codes_list[i].name_fre;
+			else return codes_list[i].name_eng;
+	}
+	return "";
+}
+
+const char* get3LetterCodeFromName(const char* name, bool bib)
+{
+	int i;
+
+	for ( i=0; codes_list[i].code_2b != NULL; ++i ) {
+	    if ( strcasecmp(codes_list[i].name_eng, name) == 0
+	    		||strcasecmp(codes_list[i].name_fre, name) == 0 )
+			return ( bib ? codes_list[i].code_2b : codes_list[i].code_2t );
+	}
+	return "";
+}
+
+const char* getLocale( bool bib)
+{
+	const char* lang = NULL;
+
+	#ifdef WIN32
+		std::string slang = g_win32_getlocale();
+		unsigned int i;
+		for (i=0; i < slang.length(); ++i)
+			if ( isupper(slang[i]) ) slang[i] = tolower(slang[i]);
+		lang = slang.c_str();
+//	lang = g_win32_getlocale();
+//		lang = StringOps(lang).toLower().c_str();
+	#else
+		lang = getenv("LANG");
+	#endif
+
+	// -- Locale Code Check --
+	if (lang != NULL)
+	{
+		char locale[strlen(lang)];
+		strcpy(locale, lang);
+		if (strlen(locale) > 2) locale[2] = 0;
+		
+		return ISO639::get3LetterCode(locale, bib);
+
+	}
+	
+	return "";
+}
+
+} /* namespace ISO639 */
+

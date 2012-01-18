@@ -1,0 +1,9 @@
+---------------------------
+README - CMake build system
+Bertin Technologies
+---------------------------
+
+GNU Autotools is the original build system for PortAudio.
+In order to have a coherent build system on the whole source tree, we added CMake integration,
+which also provides native cross-platform support (Linux, MacOSx, Windows,...).
+

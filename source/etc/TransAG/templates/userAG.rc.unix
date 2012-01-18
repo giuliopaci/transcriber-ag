@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE parameters SYSTEM "configurationAG.dtd">
+<parameters>
+	<component id="AnnotationEditor">
+		<section id="AnnotationLayout" label="Annotation editor - Annotation formats">	
+			<parameter id="turn,newline_after_label" label="Newline after label" value="true"/>
+			<parameter id="turn,newline_after_label,stereo" label="Newline after label" value="false"/>
+			<parameter id="section,newline_after_label" label="Newline after label" value="true"/>
+			<parameter id="section,newline_after_label,stereo" label="Newline after label" value="true"/>
+			<parameter id="qualifiers,entity_bg" label="use colored background for entities" value="true"/>
+			<parameter id="qualifiers,tooltip" label="display tooltip on qualifiers" value="true"/>
+		</section>
+		<section id="Autosave" label="autosave parameters">
+			<parameter id="period" label="autosave periodicity (seconds)" value="180"/>
+		</section>
+		<section id="Confidence" label="confidence parameters">
+			<parameter id="display" label="display or not confidence information" value="true"/>
+		</section>
+		<section id="BrowseMode" label="Annotation editor - browse mode">
+			<parameter id="highlight_current" label="highlight current text position track1/track2/selected/both/none" value="both"/>
+			<parameter id="stereo,viewmode" label="default view mode for stereo files dual/merged/track1/track2" value="dual"/>
+			<parameter id="stereo,hide_nospeech" label="hide nospeech turns for stereo files true/false" value="true"/>
+			<parameter id="synchro_signal_to_text" label="Synchronize signal with current text position" value="true"/>
+			<parameter id="synchro_text_to_signal" label="Synchronize text with current signal position" value="true"/>
+			<parameter id="allow_browse_on_tags" label="allow cursor displacement on tags" value="false"/>
+			<parameter id="allow_key_delete" label="allow segment deletion with backspace/del" value="false"/>
+		</section>
+		<section id="EditMode" label="Annotation editor - edition mode">
+			<parameter id="highlight_current" label="highlight current text position: track1/track2/selected/both/none" value="none"/>
+			<parameter id="stereo,viewmode" label="default view mode for stereo files dual/merged/track1/track2" value="dual"/>
+			<parameter id="stereo,hide_nospeech" label="hide nospeech turns for stereo files true/false" value="false"/>
+			<parameter id="synchro_signal_to_text" label="Synchronize signal with current text position" value="true"/>
+			<parameter id="synchro_text_to_signal" label="Synchronize text with current signal position" value="true"/>
+			<parameter id="autoset_language" label="set automatically current language on turn change" value="true"/>
+			<parameter id="allow_key_delete" label="allow time-anchored elements deletion with backspace/del: true/false/control" value="control"/>			
+			<parameter id="allow_browse_on_tags" label="allow cursor displacement on tags" value="false"/>
+		</section>
+		<section id="Signal" label="Annotation editor - signal display">
+			<parameter id="resolution" label="waveform resolution" value="0.001"/>			
+			<parameter id="horizontal_scale_size" label="size of horizontal audio widget scales (integer)" value="65"/>
+			<parameter id="peaks_norm" label="set if the display of waveform peaks use absolute or relative norm (absolute/relative)" value="absolute"/>
+			<parameter id="vertical_scale_size" label="size of vertical audio widget scales (integer)" value="60"/>
+			<parameter id="stop_on_click" label="Stop playing when signal clicked" value="false"/>
+			<parameter id="scale,show" label="Show time scale" value="true"/>
+			<parameter id="restart_delay" label="backward delay when restarting signalignal play (secs)" value="0.000"/>			
+			<parameter id="force_single_line" label="force unique displayed line for overlapped type segment (which must be in conventions)" value="segment"/> 
+		</section>
+		<section id="Speller" label="Spell checker">
+			<parameter id="enabled" label="Activate or deactivate speller" value="true"/>
+			<parameter id="allow_ignore_word" label="Allow ignore word" value="false"/>
+			<parameter id="allow_user_dic" label="Allow user dictionaries" value="false"/>
+			<parameter id="directory" label="user dictionaries directory (searches in installation etc directory if no absolute path)" value="Dico"/>
+		</section>
+		<section id="interline" label="interline">
+			<parameter id="above_default" label="default top interline" value="0"/>
+			<parameter id="above_large" label="large top interline" value="9"/>
+			<parameter id="below_default" label="default bottom interline" value="0"/>
+			<parameter id="below_large" label="large bottom interline" value="9"/>
+		</section>
+		<section id="style" label="editor style">
+			<parameter id="defaultfont" label="default starting font" value="normal_editor_font"/>
+		</section>
+	</component>
+	<component id="Data">
+		<section id="inputLanguage" label="Transcriber Languages Input">
+			<parameter id="enableIME" label="Enable or not the use of external IME" value="true"/>
+		</section>
+		<section id="speaker" label="Speaker configuration">
+			<parameter id="globalDictionary" label="Global Speaker Dictionary (searches in installation etc/TransAG directory if no absolute path)" value="defaultSpeakerDictionary.xml"/>
+		</section>
+	</component>
+	<component id="DataModel">
+		<section id="Default" label="">
+			<parameter id="convention" label="Transcription conventions" value="transag_default"/>
+			<parameter id="lang" label="Main transcription language" value="fre"/>
+		</section>
+	</component>
+	<component id="FTP">
+		<section id="connection" label="Connection">
+			<parameter id="machine" label="Machine" value="corserv01"/>
+			<parameter id="receivedFTP" label="default ftp received files directory" value="~/transcription/ReceivedFiles"/>
+		</section>
+	</component>
+	<component id="Video">
+		<section id="frameBrowser" label="Connection">
+			<parameter id="frame-w" label="Preferred width of preview frames" value="80"/>
+			<parameter id="frame-h" label="Preferred height of preview frames" value="40"/>
+			<parameter id="resolution" label="if value set to N, extracts 1 frame each N seconds" value="5"/>
+		</section>
+	</component>	
+	<component id="GUI">
+		<section id="data" label="data">
+			<parameter id="openLastFiles" label="OpenLastFiles" value="false"/>
+		</section>
+		<section id="search" label="search">
+			<parameter id="toolbarMode" label="mini search mode" value="true"/>
+		</section>
+		<section id="toolbar" label="toolbar gui">
+			<parameter id="display_label" label="display label of toolbar icons (true/false/text)" value="false"/>
+			<parameter id="show" label="show or hide toolbar (true/false)" value="true"/>
+		</section>
+		<section id="statusbar" label="other">
+			<parameter id="show" label="show or hide statusbar (true/false)" value="true"/>
+		</section>		
+	</component>
+	<component id="General">
+		<section id="User" label="User identification">
+			<parameter id="acronym" label="User acronym" value=""/>
+		</section>
+		<section id="VERSION" label="">
+			<parameter id="versionUSER" label="version user file" value="1.5"/>
+		</section>
+		<section id="start" label="Start">
+			<parameter id="audiodir" label="audio files default path" value=""/>
+			<parameter id="workdir" label="default work directory" value="~/WorkAG"/>
+		</section>
+		<section id="Browser" label="web browser">
+			<parameter id="default" label="default web browser" value=""/>
+		</section>
+		<section id="External" label="Externals audio tools path">
+			<parameter id="audacity" label="audacity installation path" value="/usr/bin/audacity"/>
+			<parameter id="praat" label="praat installation path" value="/usr/bin/praat"/>
+			<parameter id="wavesurfer" label="websurfer installation path" value="/usr/bin/wavesurfer"/>
+		</section>
+	</component>
+	<component id="Display">
+		<section id="Colors-editor" label="Editor colors configuration">
+			<parameter id="text_fg" label="" value="#000000"/>
+			<parameter id="text_bg" label="" value="#FFFFFF"/>
+			<parameter id="section_bg" label="" value="#CD5C5C"/>
+			<parameter id="section_fg" label="" value="#000000"/>
+			<parameter id="section_weight" label="" value="bold"/>
+			<parameter id="section_style" label="" value=""/>
+			<parameter id="turn_bg" label="" value="#a2a2d5"/>
+			<parameter id="turn_fg" label="" value="black"/>
+			<parameter id="turn_style" label="" value=""/>
+			<parameter id="turn_weight" label="" value="bold"/>
+			<parameter id="turn_female_bg" label="" value="#d5aee2"/>
+			<parameter id="turn_female_fg" label="" value="#8a0a0a"/>
+			<parameter id="turn_female_style" label="" value=""/>
+			<parameter id="turn_female_weight" label="" value="bold"/>
+			<parameter id="turn_male_bg" label="" value="#B2C0F3"/>
+			<parameter id="turn_male_fg" label="" value="#8a0a0a"/>
+			<parameter id="turn_male_style" label="" value=""/>
+			<parameter id="turn_male_weight" label="" value="bold"/>
+			<parameter id="turn_nospeech_bg" label="" value="#bfbfbf"/>
+			<parameter id="turn_nospeech_fg" label="" value="#615050"/>
+			<parameter id="turn_nospeech_style" label="" value="italic"/>
+			<parameter id="turn_nospeech_weight" label="" value="bold"/>
+			<parameter id="segment_fg" label="" value="#006400"/>
+			<parameter id="segment_weight" label="" value="bold"/>
+			<parameter id="qualifier_entity_fg" label="" value="#513f3f"/>
+			<parameter id="qualifier_entity_bg" label="" value="#e4e4e4"/>
+			<parameter id="qualifier_entity_style" label="" value="italic"/>
+			<parameter id="qualifier_entity_weight" label="" value="normal"/>	
+			<parameter id="qualifier_event_bg" label="" value="#dff3fc"/>
+			<parameter id="qualifier_event_fg" label="" value="#7f7f7f"/>
+			<parameter id="qualifier_event_style" label="" value="italic"/>
+			<parameter id="qualifier_event_weight" label="" value="normal"/>	
+			<parameter id="qualifier_unknown_bg" label="" value="grey85"/>
+			<parameter id="qualifier_unknown_fg" label="" value="grey55"/>
+			<parameter id="qualifier_unknown_style" label="" value="italic"/>
+			<parameter id="qualifier_unknown_weight" label="" value="normal"/>	
+			<parameter id="unit_unknown_bg" label="" value="grey85"/>
+			<parameter id="unit_unknown_fg" label="" value="grey55"/>
+			<parameter id="unit_unknown_style" label="" value="italic"/>
+			<parameter id="unit_unknown_weight" label="" value="normal"/>	
+			<parameter id="highlight1_segment_bg" label="" value="#ffdf00"/>			
+			<parameter id="highlight2_segment_bg" label="" value="#a2ff00"/>
+			<parameter id="background_fg" label="" value="#513f3f"/>
+			<parameter id="background_bg" label="" value=""/>
+			<parameter id="background_style" label="" value="italic"/>
+			<parameter id="background_weight" label="" value="normal"/>
+			<parameter id="unit_bg" label="" value="#dff3fc"/>
+			<parameter id="unit_fg" label="" value="#7f7f7f"/>
+			<parameter id="timestamp_bg" label="" value="#88FF88"/>
+			<parameter id="timestamp_fg" label="" value="#7f7f7f"/>
+		</section>
+		<section id="Colors-audio" label="Audio Widget colors configuration">
+			<parameter id="signal_bg_active" label="" value="#CCA6A6"/>
+			<parameter id="signal_bg" label="" value="#CCCCCC"/>
+			<parameter id="signal_fg" label="" value="#0000FF"/>
+			<parameter id="signal_selection" label="" value="#595959"/>
+			<parameter id="signal_disabled" label="" value="#CCCCCC"/>
+			<parameter id="signal_tip_fg" label="" value="#000000"/>
+			<parameter id="signal_tip_bg" label="" value="#FFFFFF"/>
+			<parameter id="signal_segment_end" label="" value="#FF3300"/>
+			<parameter id="signal_cursor" label="" value="#FFF11E"/>
+		</section>
+		<section id="Fonts-editor" label="Font editor configuration">
+			<parameter id="text" label="" value="Sans 12"/>
+			<parameter id="label" label="" value="12"/>
+		</section>			
+	</component>
+</parameters>

@@ -1,0 +1,20 @@
+-----------------------
+README - Custom patches
+Bertin Technologies
+-----------------------
+
+This is a patched version of the original SoundTouch 1.4.0 source code.
+This code has been updated by Bertin Technologies, for fixing some technical
+issues and improving some behaviours.
+
+--------
+Diff log
+--------
+
+** source/SoundTouch/TDStretch.cpp **
+
+<   assert(offset + seekWindowLength <= (int)inputBuffer.numSamples());
+---
+>         
+> 	//assert(offset + seekWindowLength <= (int)inputBuffer.numSamples());
+

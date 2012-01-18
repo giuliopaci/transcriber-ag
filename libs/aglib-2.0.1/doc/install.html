@@ -1,0 +1,410 @@
+<html>
+<head>
+<title>AGLIB documentation:Installation</title>
+</head>
+<body bgcolor="#ffffee">
+
+<h3>Installation (UNIX-like systems)</h3>
+
+<ul>
+<li><a href="#quick">Quick installation</a></li>
+<li><a href="#config">Configuration</a></li>
+<li><a href="#build">Building and installing</a></li>
+<li><a href="#post">Post-installation</a></li>
+</ul>
+
+
+
+<hr></hr>
+<a name="quick"/>
+<h4>Quick installation</h4>
+
+<p>The following sequence of commands will compile the package and
+install files in several directories under <tt>/usr/local</tt> such as
+<tt>bin</tt>, <tt>include</tt>, <tt>lib</tt> and <tt>share</tt>. You
+will need write permission on those directories.</p>
+
+<table width="100%" cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<b><pre>
+./configure
+make
+make install</pre></b>
+</td></tr>
+</table>
+
+<p>If everything goes well, you can proceed to the <a
+href="#post">Post-installation</a> section.</p>
+
+<p>Note that these instructions are over-simplified. By default,
+all configuration options, except the <a href="#--enable-bigball">bigball
+option</a>, are turned on. However, some components of the package might
+not be built by this simple installation method, if the
+configuration script doesn't find appropriate resources. If this is the case,
+proceed to the <a href="#config">Configuration</a> section for the available
+configuration options.  Also you can disable building unwanted components
+using the configuration options.</p>
+
+<hr></hr>
+<a name="config"/>
+<h4>Configuration</h4>
+
+<p>The configuration script collects system information and
+determines, based on that information, what components to build and
+how.  However the information is never complete: the configuration
+script doesn't and can't search the whole disks for a specific header
+file; therefore, sometimes the information is incorrect.</p>
+
+<p>Using configuration options, you can modify the configuration
+information to change the behavior of the configuration script.</p>
+
+<p>Before we start, it might be useful to know about the AGLIB components
+and the required external software packages (see <a
+href="components.html">Components of AGLIB and required third-party
+packages</a>).</p>
+
+<p>Note: the following command will print a short description of
+the available configuration options:</p>
+
+<table width="100%" cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<b><pre>
+./configure --help</pre></b>
+</td></tr>
+</table>
+
+
+<dl>
+
+<dt><br><br><p><u>General options</u></p></dt>
+
+<dl>
+<a name="--prefix"/>
+<dt><tt><b>--prefix</b>=&lt;DIR&gt;</tt> &nbsp;&nbsp;&nbsp;&nbsp;
+Change installation directory</dt>
+
+<dd>
+<p><table cellpadding="3px">
+<tr><td bgcolor="a0e0e0" valign="top"><b>ex</b></td>
+<td bgcolor="#e0e0e0"><pre>
+./configure --prefix=/home/haepal/pkg/aglib-2.0
+</pre></td></tr>
+</table></p>
+
+<p>By default the package is installed in <tt>/usr/local</tt>.  This
+options is used to change the installation directory</p>
+
+<p>The option value <tt>&lt;DIR&gt;</tt> is an absolute path to a
+directory.  If the directory doesn't exist at installation time, it
+will be created automatically.  The following is a directory layout
+created on top of <tt>&lt;DIR&gt;</tt> at installation time. You have
+to make sure that you have write permission on those directories.</p>
+
+<p align="center"><img src="layout.gif"/></p>
+
+<p>Note: <tt>ag/python</tt> and <tt>ag/tcl</tt> won't be created unless
+<a href="#--disable-python-pkgdir">--disable-python-pkgdir</a> and
+<a href="#--disable-tcl-pkgdir">--disable-tcl-pkgdir</a> are used.</p>
+
+<p>It is also possible to specify the installation prefix at
+installation time (see <a href="#build">Build and
+install</a>).</p>
+</dd>
+
+<br><br>
+<a name="CPPFLAGS"/>
+<dt><tt><b>CPPFLAGS=</b>&lt;DIRS&gt;</tt> &nbsp;&nbsp;&nbsp;&nbsp;
+Where to search for headers?</dt>
+
+<dd>
+<p><table cellpadding="3px">
+<tr><td bgcolor="a0e0e0" valign="top"><b>ex</b></td>
+<td bgcolor="#e0e0e0"><pre>
+./configure CPPFLAGS="\
+    -I/home/haepal/pkg/xercesc-2.0.0/include \
+    -I/home/haepal/pkg/iodbc-3.0.6/include"
+</pre></td></tr>
+</table></p>
+
+<p>Sometimes header files that are needed to build AGLIB package are
+located in non-standard directories, and these cannot be found by the
+configure program.  If the required headers are not found at
+the configuration time, the corresponding components of the package won't
+be built.  Using the CPPFLAGS option, you can add any header locations
+to the search list of your compiler.</p>
+
+<p>The option value <tt>&lt;DIRS&gt;</tt> is a string of directory
+items seperated by white spaces, where each item should be prefixed by
+`-I'.  If there is more than one item, the string should be
+quoted.</p>
+
+<p>Note that the earlier the directory appears in the value string,
+the higher its priority is.  Also the directories in the value string
+have higher priorities than the other header directories that are
+recognized by preprocessor by default.</p>
+</dd>
+
+
+<br><br>
+<a name="LDFLAGS"/>
+<dt><tt><b>LDFLAGS</b>=&lt;DIRS&gt;</tt> &nbsp;&nbsp;&nbsp;&nbsp;
+Where to search for libraries?</dt>
+
+<dd>
+<p><table cellpadding="3px">
+<tr><td bgcolor="a0e0e0" valign="top"><b>ex</b></td>
+<td bgcolor="#e0e0e0"><pre>
+./configure LDFLAGS="\
+    -L/home/haepal/pkg/xercesc-2.0.0/lib \
+    -L/home/haepal/pkg/iodbc-3.0.6/lib"
+</pre></td></tr>
+</table></p>
+
+<p>Same as <a href="#CPPFLAGS">CPPFLAGS</a> except that it helps
+linker to find libraries, and that each directory is prefixed by
+`-L'.</p>
+</dd>
+</dl>
+
+<!------------------------------------------------------------>
+
+<dt><br><br><p><u>agdb options</u></p></dt> <dd><p>If the <a
+href="http://www.iodbc.org">iODBC</a> headers and library are found at the
+configuration time, the AG ODBC interface will be built into the package
+automatically.  If the iODBC headers and library are installed but not
+detected by the configuration script, consider using <a
+href="#CPPFLAGS">CPPFLAGS</a> and <a href="#LDFLAGS">LDFLAGS</a>.
+</p></dd>
+
+<dl>
+<a name="--disable-agdb"/>
+<dt><tt><b>--disable-agdb</b></tt> &nbsp;&nbsp;&nbsp;&nbsp;
+Do not build ODBC interface</dt>
+
+<dd><p>Prevent agdb from being built even if the iODBC headers and
+library are found.</p></dd>
+</dl>
+
+<!------------------------------------------------------------>
+
+<dt><br><br><p><u>AG wrapper options</u></p></dt>
+
+<dl>
+<a name="--enable-bigball"/>
+<dt><tt><b>--enable-bigball</b></tt> &nbsp;&nbsp;&nbsp;&nbsp;
+Include libag in the wrappers.</dt>
+
+<dd><p>AG wrappers depend on the libag shered object (.so file --- UNIX) or
+dynamic linking library (.dll file --- Windows) at runtime by default.
+This option removes that dependency by including libag in each AG
+wrapper.</p></dd>
+
+
+<br>
+<a name="--disable-ag_java"/>
+<dt><tt><b>--disable-ag_java</b></tt> &nbsp;&nbsp;&nbsp;&nbsp;
+Do not build Java AG wrapper.</dt>
+
+<dd><p>If jni.h and jni_md.h are found at configuration, a Java AG
+wrapper is built automatically.  This option prevents that.</p></dd>
+
+<br>
+<a name="--with-python"/>
+<dt><tt><b>--with-python</b>=&lt;PRO&gt;</tt> &nbsp;&nbsp;&nbsp;&nbsp;
+Specify Python interpreter to use.</dt>
+
+<dd>
+<p><table cellpadding="3px">
+<tr><td bgcolor="a0e0e0" valign="top"><b>ex</b></td>
+<td bgcolor="#e0e0e0"><pre>
+./configure --with-python=/home/haepal/pkg/Python-2.2.1/bin/python2.2
+</pre></td></tr>
+</table></p>
+
+<p>The configuration script uses a <tt>python</tt> interpreter found first
+in your <tt>PATH</tt>.  This interpreter is used to determine the location
+of Python headers and an installation directory of the Python AG wrapper.
+You can force the configuration script to use <tt>&lt;PRO&gt;</tt>.</p> </dd>
+
+<br>
+<a name="--disable-ag_python"/>
+<dt><tt><b>--disable-ag_python</b></tt> &nbsp;&nbsp;&nbsp;&nbsp;
+Do not build the Python AG wrapper.</dt>
+
+<dd><p>If <tt>python</tt> is found in your <tt>PATH</tt> and the
+installation is okay, the Python AG wrapper is built automatically.  This
+option prevents that.<p></dd>
+
+
+<br>
+<a name="--disable-python-pkgdir"/>
+<dt><tt><b>--disable-python-pkgdir</b></tt> &nbsp;&nbsp;&nbsp;&nbsp;
+Do not use standard Python pkg dir for installation.</dt>
+
+<dd><p>The AG Python wrapper is installed in the standard Python package
+directory (<tt>site-packages</tt>) by default.  If this option is
+specified the wrapper will be installed in
+<tt>&lt;PREFIX&gt;/lib/ag/python</tt>. <tt>&lt;PREFIX&gt;</tt> is
+the <a href="#--prefix">installation prefix</a>.</p></dd>
+
+
+<br>
+<a name="--with-tclsh"/>
+<dt><tt><b>--with-tclsh</b>=&lt;PRO&gt;</tt> &nbsp;&nbsp;&nbsp;&nbsp;
+Specify which tclsh to use.</dt>
+
+<dd>
+<p><table cellpadding="3px">
+<tr><td bgcolor="a0e0e0" valign="top"><b>ex</b></td>
+<td bgcolor="#e0e0e0"><pre>
+./configure --with-tclsh=/home/haepal/pkg/tcl-8.4.1/bin/tclsh8.4
+</pre></td></tr>
+</table></p>
+
+<p>The configuration script uses the <tt>tclsh</tt> binary found first in
+your <tt>PATH</tt> by default.  This binary is used to determine the
+location of Tcl headers and an installation directory of the TCL AG wrapper.
+You can force the configuration script to use <tt>&lt;PRO&gt;</tt> as the
+tclsh.</p> </dd>
+
+
+<br>
+<a name="--disable-ag_tcl"/>
+<dt><tt><b>--disable-ag_tcl</b></tt> &nbsp;&nbsp;&nbsp;&nbsp;
+Do not build Tcl AG wrapper.</dt>
+
+<dd><p>If <tt>tclsh</tt> is found in your <tt>PATH</tt> and the
+installation is okay, Tcl AG wrapper is built automatically.  This
+option prevents that.<p></dd>
+
+
+<br>
+<a name="--disable-tcl-pkgdir"/>
+<dt><tt><b>--disable-tcl-pkgdir</b></tt> &nbsp;&nbsp;&nbsp;&nbsp;
+Do not use standard Tcl pkg dir for installation.</dt>
+
+<dd><p>The Tcl Python wrapper is installed in the standard Tcl package
+directory by default.  If this option is specified the wrapper will be
+installed in <tt>&lt;PREFIX&gt;/lib/ag/tcl</tt>. <tt>&lt;PREFIX&gt;</tt> is
+the <a href="#--prefix">installation prefix</a>.</p></dd> </dl>
+
+<!------------------------------------------------------------>
+
+<dt><br><br><p><u>Misc.</u></p></dt>
+<dd><p>Among the file I/O plugins, the <u>AG</u> and <u>ATLAS</u> format
+plugins require Xerces-C++, and the <u>CAG</u> format plugin requires
+zlib (see <a href="components.html#packages">Components of AGLIB and
+required third-party packages</a> for download information).  The
+header and library locations should be specified using <a
+href="#CPPFLAGS">CPPFLAGS</a> and <a href="#LDFLAGS">LDFLAGS</a> if
+they are not detected automatically. The configuration summary will show
+you whether they are detected or not.</p></dd>
+
+</dl>
+
+
+
+<hr></hr>
+<a name="build"/>
+<h4>Building and installing</h4>
+
+<p>Once the configuration is complete, it is straightforward to build and
+install the package.  Just issue the following two commands.  Building the
+package will take a while.</p>
+
+<table width="100%" cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<b><pre>
+make
+make install</pre></b>
+</td></tr>
+</table>
+
+<p>Uninstallation is also simple:</p>
+
+<table width="100%" cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<b><pre>
+make uninstall</pre></b>
+</td></tr>
+</table>
+
+<p>If you forgot to specify the installation prefix at the configuration
+time, it can be specified at the installation time as follows:
+</p>
+
+<table width="100%" cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<b><pre>
+make prefix=/home/haepal/pkg/aglib-2.0 install</pre></b>
+</td></tr>
+</table>
+
+<p>A corresponding uninstallation command is:</p>
+
+<table width="100%" cellpadding="5px">
+<tr><td bgcolor="#e0e0e0">
+<b><pre>
+make prefix=/home/haepal/pkg/aglib-2.0 uninstall</pre></b>
+</td></tr>
+</table>
+
+
+
+<hr></hr>
+<a name="post"/>
+<h4>Post-installation</h4>
+
+<p>Now you have built and installed your AGLIB package.  Before you can use
+the package, there are a few environment variables to be set.  These can be
+specified in the user's shell start-up files (.cshsh, .profile, etc.), or in
+shell scripts that start applications.  </p>
+
+<p>Let <tt>&lt;PREFIX&gt;</tt> be your installation prefix. The
+following table shows environment variables and appropriate values for
+them:</p>
+
+<table border="1px">
+<tr><th>Variable</th><th>Value</th></tr>
+
+<tr>
+<td>PATH</td>
+<td><tt>&lt;PREFIX&gt;/bin:$PATH</tt></td>
+</tr>
+
+<tr>
+<td>LD_LIBRARY_PATH</td>
+<td><tt>&lt;PREFIX&gt;/lib:&lt;PREFIX&gt;/lib/ag:<font
+color="#0000aa">&lt;PREFIX&gt;/lib/ag/java</font><sup><font color="#aa0000">(1)</font></sup>:$LD_LIBRARY_PATH</tt></td>
+</tr>
+
+<tr>
+<td>CLASSPATH<sup><font color="#aa0000">(1)</font></sup></td>
+<td><tt>&lt;PREFIX&gt;/lib/ag/java:$CLASSPATH</tt></td>
+</tr>
+
+<tr>
+<td>PYTHONPATH<sup><font color="#aa0000">(2)</font></sup></td>
+<td><tt>&lt;PREFIX&gt;/lib/ag/python:$PYTHONPATH</tt></td>
+</tr>
+
+<tr>
+<td>TCLLIBPATH<sup><font color="#aa0000">(3)</font></sup></td>
+<td><tt>&lt;PREFIX&gt;/lib/ag/tcl:$TCLLIBPATH</tt></td>
+</tr>
+</table>
+
+<p><sup><font color="#aa0000">(1)</font></sup> This is for the Java AG wrapper.</p>
+
+<p><sup><font color="#aa0000">(2)</font></sup> This is for the Python AG wrapper that
+is configured with the <a
+href="#--disable-python-pkgdir">--disable-python-pkgdir</a> option.</p>
+
+<p><sup><font color="#aa0000">(3)</font></sup> This is for the Tcl AG wrapper that is
+configured with the <a
+href="#--disable-tcl-pkgdir">--disable-tcl-pkgdir</a> option.</p>
+
+<hr><a href="http://agtk.sourceforge.net/">Annotation Graph Toolkit</a>
+
+</body>
+</html>

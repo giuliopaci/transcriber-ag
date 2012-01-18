@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wordlists SYSTEM "wordlists.dtd">
+<!-- Predefined words list: create a submenu for each wordlist 
+		with respect to words list order in file
+	 In submenus words are reordered in alphabetical order -->
+<wordlists>
+	<wordlist label="Onomatopoeia" comment="predefined onomatopoeia">
+		<word>yeah</word>
+		<word>yeark</word>
+		<word>grmph</word>
+		<word>damn</word>
+		<word>gosh</word>
+	</wordlist>
+</wordlists>

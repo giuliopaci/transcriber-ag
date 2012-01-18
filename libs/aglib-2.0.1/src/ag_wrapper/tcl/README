@@ -1,0 +1,67 @@
+How to use AG Tcl module (Unix-like systems)
+============================================
+
+   The AG Tcl module can be installed in a standard tcl package directory
+   if the --enable-tclpkgdir option is used at the configuration time.
+   Otherwise, the module will get installed in <prefix>/lib/ag_wrapper/tcl.
+   '<prefix>' is a path that can be specified using --prefix option at
+   the configuration time.  The default value of <prefix> is /usr/local.
+
+   If the tcl module is not installed in a standard tcl package directory,
+   or if tclsh/wish has any trouble locating the module, the TCLLIBPATH
+   environment variable can be set to help tclsh/wish find the module.
+   TCLLIBPATH should contain the location of the module.
+
+   You can use the 'package' command to load the module.  Here are some
+   examples:
+
+   sh$ tclsh8.3
+   % package require ag
+   % set agset_id [AG_CreateAGSet "Timit"]
+   % ...
+
+   or in your tcl program
+   +------------
+   |#! /usr/local/bin/tclsh8.3
+   |
+   |package require ag
+   |
+   |set agset_id [AG_CreateAGSet "Timit"]
+   |...
+   |
+
+   NOTE: Don't forget to set LD_LIBRARY_PAPTH properly for the required
+         shared libraries.
+
+
+For Maintainer
+==============
+
+   To make a C++ source code from AGAPI.i, the SWIG interface file for the
+   C++ AG library, do something like the following: (tested with SWIG
+   version 1.3.11u-20020202-2330, 1.3.18 and 1.3.19):
+
+   $ swig -tcl8 -pkgversion 2.0 -namespace -prefix AG -c++ \
+          -module ag -o ag.cc -I.. ../AGAPI.i
+
+   Version number, namespace name, and module name can be anything you like.
+   Find the following chunk of lines in ag.cc:
+
+--------------------
+    { SWIG_prefix "LoadFromDB", (swig_wrapper_func) _wrap_LoadFromDB, NULL},
+    { SWIG_prefix "StoreToDB", (swig_wrapper_func) _wrap_StoreToDB, NULL},
+    { SWIG_prefix "StoreSQLs", (swig_wrapper_func) _wrap_StoreSQLs, NULL},
+--------------------
+
+   Replace them with:
+
+--------------------
+#ifdef AGDB
+    { SWIG_prefix "LoadFromDB", (swig_wrapper_func) _wrap_LoadFromDB, NULL},
+    { SWIG_prefix "StoreToDB", (swig_wrapper_func) _wrap_StoreToDB, NULL},
+    { SWIG_prefix "StoreSQLs", (swig_wrapper_func) _wrap_StoreSQLs, NULL},
+#endif
+--------------------
+
+   Note: SWIG 1.3.18 and 1.3.19 doesn't handle optional arguments of c++
+         very well.  To fix this problem, apply bugfix.sed to ag.cc.

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Speakers SYSTEM "Speakers-2.0.dtd">
+<Speakers>
+<Speaker id="spk1" gender="" name.first="" name.last="A" scope="local" desc="Etiquetage H4 - A = Advertisement (publicité)"/>
+<Speaker id="spk10" gender="" name.first="" name.last="OS+M" scope="local" desc="Etiquetage H4 - OS+M = Overlap Speech + Music (parole superposée + musique)"/>
+<Speaker id="spk100" gender="female" name.first="Emilie" name.last="Briffod" scope="local" desc="FINTER"/>
+<Speaker id="spk101" gender="male" name.first="José" name.last="Setien" scope="local" desc="FINTER"/>
+<Speaker id="spk102" gender="male" name.first="Alexandre" name.last="Chassignon" scope="local" desc="FINTER"/>
+<Speaker id="spk103" gender="female" name.first="Brigitte" name.last="Becker" scope="local" desc="FINTER"/>
+<Speaker id="spk104" gender="female" name.first="Hélène" name.last="Chevallier" scope="local" desc="FINTER"/>
+<Speaker id="spk105" gender="female" name.first="Estelle" name.last="Schmitt" scope="local" desc="FINTER"/>
+<Speaker id="spk106" gender="male" name.first="Guillaume" name.last="Gaven" scope="local" desc="FINTER"/>
+<Speaker id="spk107" gender="female" name.first="Laëtitia" name.last="Saavedra" scope="local" desc="FINTER"/>
+<Speaker id="spk108" gender="female" name.first="Marion" name.last="Lhour" scope="local" desc="FINTER"/>
+<Speaker id="spk109" gender="female" name.first="Dominique" name.last="Delaroa" scope="local" desc="FINTER"/>
+<Speaker id="spk11" gender="" name.first="" name.last="OS+N" scope="local" desc="Etiquetage H4 - OS+N = Overlap Speech + Noise (parole superposée + bruit)"/>
+<Speaker id="spk110" gender="male" name.first="Alain" name.last="Acco" scope="local" desc="EUROP1"/>
+<Speaker id="spk111" gender="female" name.first="Elizabeth" name.last="Assayag" scope="local" desc="EUROP1"/>
+<Speaker id="spk112" gender="female" name.first="Astrid" name.last="Bard" scope="local" desc="EUROP1"/>
+<Speaker id="spk113" gender="male" name.first="Guillaume" name.last="Biet" scope="local" desc="EUROP1"/>
+<Speaker id="spk114" gender="female" name.first="Wendy" name.last="Bouchard" scope="local" desc="EUROP1"/>
+<Speaker id="spk115" gender="female" name.first="Catherine" name.last="Boullay" scope="local" desc="EUROP1"/>
+<Speaker id="spk116" gender="male" name.first="Yaël" name.last="Goosz" scope="local" desc="EUROP1"/>
+<Speaker id="spk118" gender="male" name.first="Christophe" name.last="Lamarre" scope="local" desc="EUROP1"/>
+<Speaker id="spk119" gender="female" name.first="Marie" name.last="Peyraube" scope="local" desc="EUROP1"/>
+<Speaker id="spk12" gender="female" name.first="Clélie" name.last="Mathias" scope="local" desc="Direct8 - Flash Info"/>
+<Speaker id="spk120" gender="male" name.first="Maxime" name.last="Swytek" scope="local" desc="EUROP1"/>
+<Speaker id="spk121" gender="male" name.first="Christophe" name.last="Brun" scope="local" desc="EUROP1"/>
+<Speaker id="spk122" gender="male" name.first="Christian" name.last="Buchet" scope="local" desc="EUROP1"/>
+<Speaker id="spk123" gender="male" name.first="Nicolas" name.last="Canteloup" scope="local" desc="EUROP1"/>
+<Speaker id="spk124" gender="female" name.first="Catherine" name.last="Chabaud" scope="local" desc="EUROP1"/>
+<Speaker id="spk125" gender="female" name.first="Caroline" name.last="Corvaisier" scope="local" desc="EUROP1"/>
+<Speaker id="spk126" gender="male" name.first="Charles" name.last="Dantzig" scope="local" desc="EUROP1"/>
+<Speaker id="spk127" gender="female" name.first="Fabiola" name.last="Flex" scope="local" desc="EUROP1"/>
+<Speaker id="spk128" gender="female" name.first="Françoise" name.last="Gaujour" scope="local" desc="EUROP1"/>
+<Speaker id="spk129" gender="male" name.first="Marc" name.last="Gonnet" scope="local" desc="EUROP1"/>
+<Speaker id="spk13" gender="male" name.first="Jean-Jacques" name.last="Bourdin" scope="local" desc="BFMTV - Jean-Jacques Bourdin"/>
+<Speaker id="spk130" gender="female" name.first="Esther" name.last="Leneman" scope="local" desc="EUROP1"/>
+<Speaker id="spk131" gender="male" name.first="Erik" name.last="Izraelewicz" scope="local" desc="EUROP1"/>
+<Speaker id="spk132" gender="female" name.first="Catherine" name.last="Nay" scope="local" desc="EUROP1"/>
+<Speaker id="spk133" gender="female" name.first="Catherine" name.last="Nivez" scope="local" desc="EUROP1"/>
+<Speaker id="spk134" gender="male" name.first="Jean-Luc" name.last="Petitrenaud" scope="local" desc="EUROP1"/>
+<Speaker id="spk135" gender="female" name.first="Marie-Madeleine" name.last="Rigopoulos" scope="local" desc="EUROP1"/>
+<Speaker id="spk136" gender="male" name.first="Daniel" name.last="Schick" scope="local" desc="EUROP1"/>
+<Speaker id="spk137" gender="male" name.first="Louis" name.last="Schweitzer" scope="local" desc="EUROP1"/>
+<Speaker id="spk138" gender="male" name.first="Dominique" name.last="Seux" scope="local" desc="EUROP1"/>
+<Speaker id="spk139" gender="female" name.first="Vanessa" name.last="Zha" scope="local" desc="EUROP1"/>
+<Speaker id="spk14" gender="female" name.first="Anne" name.last="Denis" scope="local" desc="Direct8 - Flash Info"/>
+<Speaker id="spk140" gender="male" name.first="Stéphane" name.last="Place" scope="local" desc="EUROP1"/>
+<Speaker id="spk141" gender="male" name.first="Lionel" name.last="Gougelot" scope="local" desc="EUROP1"/>
+<Speaker id="spk142" gender="male" name.first="Jean-Luc" name.last="Boujon" scope="local" desc="EUROP1"/>
+<Speaker id="spk143" gender="male" name.first="Jean-noël" name.last="Tournier" scope="local" desc="EUROP1"/>
+<Speaker id="spk144" gender="male" name.first="François" name.last="Clauss" scope="local" desc="EUROP1"/>
+<Speaker id="spk145" gender="male" name.first="François" name.last="Coulon" scope="local" desc="EUROP1"/>
+<Speaker id="spk146" gender="female" name.first="Brigitte" name.last="Renaldi" scope="local" desc="EUROP1"/>
+<Speaker id="spk147" gender="male" name.first="Jean" name.last="Fritsch" scope="local" desc="EUROP1"/>
+<Speaker id="spk148" gender="male" name.first="Patrick" name.last="Meneyrol" scope="local" desc="EUROP1"/>
+<Speaker id="spk149" gender="female" name.first="Hélène" name.last="Kohl" scope="local" desc="EUROP1"/>
+<Speaker id="spk15" gender="female" name.first="Nathalie" name.last="Levy" scope="local" desc="BFMTV - BFM Soir, Nathalie Levy"/>
+<Speaker id="spk150" gender="female" name.first="Céline" name.last="Pigalle" scope="local" desc="EUROP1"/>
+<Speaker id="spk151" gender="female" name.first="Emmanuelle" name.last="Faux" scope="local" desc="EUROP1"/>
+<Speaker id="spk152" gender="male" name.first="Jean-Bernard" name.last="Cadier" scope="local" desc="EUROP1"/>
+<Speaker id="spk153" gender="male" name.first="François" name.last="Clémenceau" scope="local" desc="EUROP1"/>
+<Speaker id="spk16" gender="female" name.first="Gilane" name.last="Barret" scope="local" desc="BFMTV - BFM Soir, Nathalie Levy"/>
+<Speaker id="spk17" gender="male" name.first="Julian" name.last="Bugier" scope="local" desc="BFMTV - BFM Soir, Nathalie Levy"/>
+<Speaker id="spk18" gender="female" name.first="Ruth" name.last="Elkrief" scope="local" desc="BFMTV - Ruth Elkrief"/>
+<Speaker id="spk19" gender="male" name.first="Rachid" name.last="M'Barki" scope="local" desc="BFMTV - Ruth Elkrief"/>
+<Speaker id="spk2" gender="" name.first="" name.last="L" scope="local" desc="Etiquetage H4 - L = Lyrics (chant)"/>
+<Speaker id="spk20" gender="male" name.first="Julian" name.last="Bugier" scope="local" desc="BFMTV - Ruth Elkrief"/>
+<Speaker id="spk21" gender="female" name.first="Florence" name.last="Duprat" scope="local" desc="BFMTV - BFM Soir, Florence Duprat"/>
+<Speaker id="spk22" gender="male" name.first="Rachid" name.last="M'Barki" scope="local" desc="BFMTV - BFM Soir, Florence Duprat"/>
+<Speaker id="spk23" gender="male" name.first="Julian" name.last="Burget" scope="local" desc="BFMTV - BFM Soir, Florence Duprat"/>
+<Speaker id="spk24" gender="male" name.first="David" name.last="Pujadas" scope="local" desc="FRANCE2 - Journal de 20h"/>
+<Speaker id="spk25" gender="male" name.first="Thierry" name.last="Arnaud" scope="local" desc="BFMTV - BFM Soir, Florence Duprat"/>
+<Speaker id="spk26" gender="male" name.first="Laurent" name.last="Delahousse" scope="local" desc="FRANCE2 - Journal de 20h"/>
+<Speaker id="spk27" gender="female" name.first="Caroline" name.last="Gosse" scope="local" desc="TV5FBS - TV5 Monde le journal"/>
+<Speaker id="spk28" gender="female" name.first="Isabelle" name.last="Malivoir" scope="local" desc="TV5FBS - TV5 Monde le journal"/>
+<Speaker id="spk29" gender="female" name.first="Isabelle" name.last="Mougère" scope="local" desc="TV5FBS - TV5 Monde le journal"/>
+<Speaker id="spk3" gender="" name.first="" name.last="S" scope="local" desc="Etiquetage H4 - S = Speech (parole)"/>
+<Speaker id="spk30" gender="female" name.first="Linda" name.last="Giguère" scope="local" desc="TV5FBS - TV5 Monde le journal"/>
+<Speaker id="spk31" gender="male" name.first="Patrick" name.last="Simonin" scope="local" desc="TV5FBS - TV5 Monde le journal"/>
+<Speaker id="spk32" gender="male" name.first="Ronald" name.last="Guintrange" scope="local" desc="TV5FBS - TV5 Monde le journal"/>
+<Speaker id="spk33" gender="male" name.first="Sébastien" name.last="Le Belzic" scope="local" desc="TV5FBS - TV5 Monde le journal"/>
+<Speaker id="spk34" gender="female" name.first="Valérie" name.last="Tibet" scope="local" desc="TV5FBS - TV5 Monde le journal"/>
+<Speaker id="spk35" gender="male" name.first="Bernard" name.last="Derome" scope="local" desc="TV5FBS - Journal de Radio Canada"/>
+<Speaker id="spk36" gender="female" name.first="Céline" name.last="Galipeau" scope="local" desc="TV5FBS - Journal de Radio Canada"/>
+<Speaker id="spk37" gender="male" name.first="Claude" name.last="Bellei" scope="local" desc="LCP - Info 13"/>
+<Speaker id="spk38" gender="female" name.first="Emilie" name.last="Aubry" scope="local" desc="LCP - Info 13"/>
+<Speaker id="spk39" gender="male" name.first="Jean-Pierre" name.last="Pernaut" scope="local" desc="TF1 - Journal de 13h"/>
+<Speaker id="spk4" gender="" name.first="" name.last="OS" scope="local" desc="Etiquetage H4 - OS = Overlap Speech (parole superposée)"/>
+<Speaker id="spk40" gender="male" name.first="Jacques" name.last="Legros" scope="local" desc="TF1 - Journal de 13h"/>
+<Speaker id="spk41" gender="female" name.first="Claire" name.last="Chazal" scope="local" desc="TF1 - Journal de 13h"/>
+<Speaker id="spk42" gender="female" name.first="Anne-Sophie" name.last="Lapix" scope="local" desc="TF1 - Journal de 13h"/>
+<Speaker id="spk43" gender="male" name.first="Patrick" name.last="Poivre d'Arvor" scope="local" desc="TF1 - Journal de 20h"/>
+<Speaker id="spk44" gender="female" name.first="Claire" name.last="Chazal" scope="local" desc="TF1 - Journal de 20h"/>
+<Speaker id="spk45" gender="male" name.first="Harry" name.last="Roselmack" scope="local" desc="TF1 - Journal de 20h"/>
+<Speaker id="spk46" gender="female" name.first="Anne-Sophie" name.last="Lapix" scope="local" desc="TF1 - Journal de 20h"/>
+<Speaker id="spk47" gender="female" name.first="Elise" name.last="Lucet" scope="local" desc="FRANCE2 - Journal de 13h"/>
+<Speaker id="spk48" gender="male" name.first="Laurent" name.last="Delahousse" scope="local" desc="FRANCE2 - Journal de 13h"/>
+<Speaker id="spk49" gender="male" name.first="David" name.last="Boeri" scope="local" desc="FRANCE2 - Journal de 8h"/>
+<Speaker id="spk5" gender="" name.first="" name.last="M" scope="local" desc="Etiquetage H4 - M = Music (musique)"/>
+<Speaker id="spk50" gender="male" name.first="Olivier" name.last="Galzi" scope="local" desc="FRANCE2 - Journal de 13h"/>
+<Speaker id="spk51" gender="female" name.first="Françoise" name.last="Laborde" scope="local" desc="FRANCE2 - Journal de 13h"/>
+<Speaker id="spk52" gender="female" name.first="Françoise" name.last="Laborde" scope="local" desc="FRANCE2 - Journal de 20h"/>
+<Speaker id="spk53" gender="male" name.first="Laurent" name.last="Delahousse" scope="local" desc="FRANCE2 - Journal de 20h"/>
+<Speaker id="spk54" gender="male" name.first="Stéphane" name.last="Lippert" scope="local" desc="FRANCE3 - Le 12/13"/>
+<Speaker id="spk55" gender="female" name.first="Catherine" name.last="Mataush" scope="local" desc="FRANCE3 - Le 12/13"/>
+<Speaker id="spk56" gender="female" name.first="Audrey" name.last="Pulvar" scope="local" desc="FRANCE3 - Le Journal National"/>
+<Speaker id="spk57" gender="male" name.first="Louis" name.last="Laforge" scope="local" desc="FRANCE3 - Le Journal National"/>
+<Speaker id="spk58" gender="male" name.first="Francis" name.last="Letellier" scope="local" desc="FRANCE3 - Le Journal National"/>
+<Speaker id="spk59" gender="female" name.first="Nathalie" name.last="Renoux" scope="local" desc="M6 - Le 12.50"/>
+<Speaker id="spk6" gender="" name.first="" name.last="N" scope="local" desc="Etiquetage H4 - N = Noise (bruit)"/>
+<Speaker id="spk60" gender="female" name.first="Marie-Pierre" name.last="Verot" scope="local" desc="FCULTUR - Le Journal de 7h"/>
+<Speaker id="spk61" gender="female" name.first="Véronique" name.last="Pellerin" scope="local" desc="FCULTUR - Le Journal de 7h"/>
+<Speaker id="spk62" gender="male" name.first="Hervé" name.last="Gardette" scope="local" desc="FCULTUR - Le Journal de 8h"/>
+<Speaker id="spk63" gender="male" name.first="Antoine" name.last="Mercier" scope="local" desc="FCULTUR - Le Journal de 12h30"/>
+<Speaker id="spk64" gender="female" name.first="Florence" name.last="Sturm" scope="local" desc="FCULTUR - Le Journal de 18h"/>
+<Speaker id="spk65" gender="male" name.first="Hubert" name.last="Vieille" scope="local" desc="FCULTUR - Le Journal de 22h"/>
+<Speaker id="spk66" gender="female" name.first="Véronique" name.last="Pellerin" scope="local" desc="FCULTUR - Le Journal de 8h"/>
+<Speaker id="spk67" gender="female" name.first="Véronique" name.last="Pellerin" scope="local" desc="FCULTUR - Le Journal de 9h"/>
+<Speaker id="spk68" gender="female" name.first="Véronique" name.last="Pellerin" scope="local" desc="FCULTUR - Le Journal de 12h30"/>
+<Speaker id="spk69" gender="male" name.first="Jean-Marc" name.last="Chardon" scope="local" desc="FCULTUR - Le Journal de 18h"/>
+<Speaker id="spk7" gender="" name.first="" name.last="?" scope="local" desc="Etiquetage H4 - ? = ? (interrogation)"/>
+<Speaker id="spk70" gender="male" name.first="Jean-Marc" name.last="Chardon" scope="local" desc="FCULTUR - Le Journal de 22h"/>
+<Speaker id="spk71" gender="female" name.first="Sophie" name.last="Auvigne" scope="local" desc="FINFO"/>
+<Speaker id="spk72" gender="male" name.first="Frédéric" name.last="Béniada" scope="local" desc="FINFO"/>
+<Speaker id="spk73" gender="male" name.first="Gilles" name.last="Bessec" scope="local" desc="FINFO"/>
+<Speaker id="spk74" gender="male" name.first="Olivier" name.last="Bost" scope="local" desc="FINFO"/>
+<Speaker id="spk75" gender="male" name.first="Didier" name.last="Charpin" scope="local" desc="FINFO"/>
+<Speaker id="spk76" gender="male" name.first="Eric" name.last="Chataignon" scope="local" desc="FINFO"/>
+<Speaker id="spk77" gender="female" name.first="Anne" name.last="Chepeau" scope="local" desc="FINFO"/>
+<Speaker id="spk78" gender="male" name.first="Stéphane" name.last="Duault" scope="local" desc="FINFO"/>
+<Speaker id="spk79" gender="female" name.first="Raphaëlle" name.last="Duchemin" scope="local" desc="FINFO"/>
+<Speaker id="spk8" gender="" name.first="" name.last="S+M" scope="local" desc="Etiquetage H4 - S+M = Speech + Music (parole + musique)"/>
+<Speaker id="spk80" gender="female" name.first="Olivia" name.last="Ferrandi" scope="local" desc="FINFO"/>
+<Speaker id="spk81" gender="female" name.first="Laurence" name.last="Jousserandot" scope="local" desc="FINFO"/>
+<Speaker id="spk82" gender="male" name.first="Olivier" name.last="de Lagarde" scope="local" desc="FINFO"/>
+<Speaker id="spk83" gender="male" name.first="Emmanuel" name.last="Langlois" scope="local" desc="FINFO"/>
+<Speaker id="spk84" gender="female" name.first="Virginie" name.last="Lebrun" scope="local" desc="FINFO"/>
+<Speaker id="spk85" gender="male" name.first="François" name.last="Lepage" scope="local" desc="FINFO"/>
+<Speaker id="spk86" gender="male" name.first="Valéry" name.last="Lerouge" scope="local" desc="FINFO"/>
+<Speaker id="spk87" gender="male" name.first="Jean" name.last="Leymarie" scope="local" desc="FINFO"/>
+<Speaker id="spk88" gender="female" name.first="Dominique" name.last="Loriou" scope="local" desc="FINFO"/>
+<Speaker id="spk89" gender="female" name.first="Claude" name.last="Meinau" scope="local" desc="FINFO"/>
+<Speaker id="spk9" gender="" name.first="" name.last="S+N" scope="local" desc="Etiquetage H4 - S+N = Speech + Noise (parole + bruit)"/>
+<Speaker id="spk90" gender="male" name.first="Pierre" name.last="Neveux" scope="local" desc="FINFO"/>
+<Speaker id="spk91" gender="male" name.first="Frank" name.last="Noblesse" scope="local" desc="FINFO"/>
+<Speaker id="spk92" gender="male" name.first="Armand" name.last="Peyrou-Lauga" scope="local" desc="FINFO"/>
+<Speaker id="spk93" gender="female" name.first="Catherine" name.last="Pottier" scope="local" desc="FINFO"/>
+<Speaker id="spk94" gender="female" name.first="Agnès" name.last="Soubiran" scope="local" desc="FINFO"/>
+<Speaker id="spk95" gender="male" name.first="Bernard" name.last="Thomasson" scope="local" desc="FINFO"/>
+<Speaker id="spk96" gender="female" name.first="Agnès" name.last="Bonfillon" scope="local" desc="FINTER"/>
+<Speaker id="spk97" gender="male" name.first="Serge" name.last="Martin" scope="local" desc="FINTER"/>
+<Speaker id="spk98" gender="female" name.first="Bernadette" name.last="Chamonaz" scope="local" desc="FINTER"/>
+<Speaker id="spk99" gender="male" name.first="Michael" name.last="Thébault" scope="local" desc="FINTER"/>
+</Speakers>

@@ -1,0 +1,279 @@
+BNF style CAG format definition
+===============================
+
+CAGFILE := DICFILE | ANNFILE | COMBOFILE
+
+
+DICFILE := DICTIONARY
+DICTIONARY := A | A nl T | A nl G | A nl T nl G
+A := "#A" nl AGSETID | "#A" nl AGSETID nl METADATA
+T := "#T" nl TIMELINEID_LOCAL |
+     "#T" nl TIMELINEID_LOCAL nl S |
+     "#T" nl TIMELINEID_LOCAL nl METADATA |
+     "#T" nl TIMELINEID_LOCAL nl METADATA nl S |
+     T nl T
+S := "#S" nl SIGNALID_LOCAL sp URI sp MIMECLASS sp MIMETYPE sp ENCODING sp UNIT |
+     "#S" nl SIGNALID_LOCAL sp URI sp MIMECLASS sp MIMETYPE sp ENCODING sp UNIT nl METADATA |
+     "#S" nl SIGNALID_LOCAL sp URI sp MIMECLASS sp MIMETYPE sp ENCODING sp UNIT sp TRACK |
+     "#S" nl SIGNALID_LOCAL sp URI sp MIMECLASS sp MIMETYPE sp ENCODING sp UNIT sp TRACK nl METADATA |
+     S nl S
+G := "#G" nl AGID_LOCAL sp TIMELINEID_LOCAL nl V |
+     "#G" nl AGID_LOCAL sp TIMELINEID_LOCAL nl METADATA nl V |
+     G nl G
+V := "#V" nl UNIT TIMELINEID VSUB | V nl V
+VSUB := ANCHORID_LOCAL sp | ANCHORID_LOCAL sp OFFSET | VSUB nl VSUB
+METADATA := METADATANAME sp METADATAVALUE | METADATA nl METADATA
+
+
+ANNFILE := I nl ANNOTATION
+I := "#I" nl DICFILENAME | I nl DICFILENAME
+ANNOTATION := ML nl MT nl "#E" nl E
+ML := "#ML" nl FEATURENAME sp FEATURENAME_INDEX |
+      ML nl FEATURENAME sp FEATURENAME_INDEX
+MT := "#MT" nl ANNOTATIONTYPE sp ANNOTATIONTYPE_INDEX |
+      MT nl ANNOTATIONTYPE sp ANNOTATIONTYPE_INDEX
+E := AGID_LOCAL sp ANNOTATIONID_LOCAL sp ANCHORID_LOCAL sp ANCHORID_LOCAL sp ANNOTATIONTYPE_INDEX ";" F |
+     E nl E
+F := FEATURENAME_INDEX sp FEATUREVALUE | F ";" F
+
+ 
+COMBOFILE := DICTIONARY nl ANNOTATION
+
+
+nl := new line character
+sp := space character
+TIMELINEID_LOCAL := TimelineId minus AGSetId
+SIGNALID_LOCAL := SignalId minus TimelineId
+AGID_LOCAL := AGId minus AGSetId
+ANNOTATIONID_LOCAL := AnnotationId minus AGId
+ANCHORID_LOCAL := AnchorId minus AGId
+
+
+
+"DICFILE" sample (d.dic)
+========================
+
+#A
+Timit
+#T
+T1
+#S
+1 LDC93S1/train/dr1/fjsp0/sa1.wav audio wav wav 16kHz 
+#G
+1 T1
+#V
+16kHz Timit:T1:1
+1 0
+2 3050
+3 4559
+4 5723
+5 6642
+6 8772
+7 9190
+8 10337
+9 11517
+A 12500
+B 12640
+C 14714
+D 15870
+F 16334
+G 18088
+H 20417
+I 21199
+J 22560
+K 22920
+L 23271
+M 24229
+N 25566
+O 27156
+P 28064
+Q 29660
+R 31719
+S 33360
+U 33754
+V 34715
+W 36080
+X 36326
+Y 37556
+Z 39561
+a 40313
+b 42059
+c 43479
+d 44586
+e 46720
+f 46797
+
+
+
+"ANNFILE" sample (a.ann)
+========================
+
+#I
+d.dic
+#ML
+label 0
+#MT
+phn 0
+txt 1
+wrd 2
+#E
+1 E1 1 2 0;0 h#
+1 Ee 1 4 2;0 she
+1 Ep 1 f 1;0 She had your dark suit in greasy wash water all year.
+1 E2 2 3 0;0 sh
+1 E3 3 4 0;0 ix
+1 E4 4 5 0;0 hv
+1 Ef 4 8 2;0 had
+1 E5 5 6 0;0 eh
+1 E6 6 7 0;0 dcl
+1 E7 7 8 0;0 jh
+1 E8 8 9 0;0 ih
+1 Eg 8 9 2;0 your
+1 E9 9 A 0;0 dcl
+1 Eh 9 F 2;0 dark
+1 EA A B 0;0 d
+1 EB B C 0;0 ah
+1 EC C D 0;0 kcl
+1 ED D F 0;0 k
+1 EF F G 0;0 s
+1 Ei F I 2;0 suit
+1 EG G H 0;0 ux
+1 EH H I 0;0 q
+1 EI I J 0;0 en
+1 Ej I J 2;0 in
+1 EJ J K 0;0 gcl
+1 Ek J P 2;0 greasy
+1 EK K L 0;0 g
+1 EL L M 0;0 r
+1 EM M N 0;0 ix
+1 EN N O 0;0 s
+1 EO O P 0;0 ix
+1 EP P Q 0;0 w
+1 El P S 2;0 wash
+1 EQ Q R 0;0 ao
+1 ER R S 0;0 sh
+1 ES S U 0;0 epi
+1 Em S Y 2;0 water
+1 EU U V 0;0 w
+1 EV V W 0;0 ao
+1 EW W X 0;0 dx
+1 EX X Y 0;0 axr
+1 EY Y Z 0;0 ao
+1 En Y a 2;0 all
+1 EZ Z a 0;0 l
+1 Ea a b 0;0 y
+1 Eo a d 2;0 year
+1 Eb b c 0;0 ih
+1 Ec c d 0;0 axr
+1 Ed d e 0;0 h#
+
+
+
+"COMBOFILE" sample (c.cag)
+==========================
+
+#A
+TIMIT22
+#T
+T1
+#S
+1 LDC93S1/train/dr1/fjsp0/sa1.wav audio wav wav 16kHz 
+#G
+1 T1
+#V
+16kHz TIMIT22:T1:1
+1 0
+2 3050
+3 4559
+4 5723
+5 6642
+6 8772
+7 9190
+8 10337
+9 11517
+A 12500
+B 12640
+C 14714
+D 15870
+F 16334
+G 18088
+H 20417
+I 21199
+J 22560
+K 22920
+L 23271
+M 24229
+N 25566
+O 27156
+P 28064
+Q 29660
+R 31719
+S 33360
+U 33754
+V 34715
+W 36080
+X 36326
+Y 37556
+Z 39561
+a 40313
+b 42059
+c 43479
+d 44586
+e 46720
+f 46797
+#ML
+label 0
+#MT
+phn 0
+txt 1
+wrd 2
+#E
+1 E1 1 2 0;0 h#
+1 Ee 1 4 2;0 she
+1 Ep 1 f 1;0 She had your dark suit in greasy wash water all year.
+1 E2 2 3 0;0 sh
+1 E3 3 4 0;0 ix
+1 E4 4 5 0;0 hv
+1 Ef 4 8 2;0 had
+1 E5 5 6 0;0 eh
+1 E6 6 7 0;0 dcl
+1 E7 7 8 0;0 jh
+1 E8 8 9 0;0 ih
+1 Eg 8 9 2;0 your
+1 E9 9 A 0;0 dcl
+1 Eh 9 F 2;0 dark
+1 EA A B 0;0 d
+1 EB B C 0;0 ah
+1 EC C D 0;0 kcl
+1 ED D F 0;0 k
+1 EF F G 0;0 s
+1 Ei F I 2;0 suit
+1 EG G H 0;0 ux
+1 EH H I 0;0 q
+1 EI I J 0;0 en
+1 Ej I J 2;0 in
+1 EJ J K 0;0 gcl
+1 Ek J P 2;0 greasy
+1 EK K L 0;0 g
+1 EL L M 0;0 r
+1 EM M N 0;0 ix
+1 EN N O 0;0 s
+1 EO O P 0;0 ix
+1 EP P Q 0;0 w
+1 El P S 2;0 wash
+1 EQ Q R 0;0 ao
+1 ER R S 0;0 sh
+1 ES S U 0;0 epi
+1 Em S Y 2;0 water
+1 EU U V 0;0 w
+1 EV V W 0;0 ao
+1 EW W X 0;0 dx
+1 EX X Y 0;0 axr
+1 EY Y Z 0;0 ao
+1 En Y a 2;0 all
+1 EZ Z a 0;0 l
+1 Ea a b 0;0 y
+1 Eo a d 2;0 year
+1 Eb b c 0;0 ih
+1 Ec c d 0;0 axr
+1 Ed d e 0;0 h#

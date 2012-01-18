@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<title>File Explorer Tree</title>
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+	</head>
+
+	<body>
+		<a name="top"></a>
+		<h1>File Explorer Tree</h1>
+		<br /><br />
+		<h2>Screenshot</h2>
+		<img alt="Picture Not Found" src="pics/explorer_tree.jpg"/><br /><br />
+		<h2>Description</h2>
+			<p>
+			The file explorer tree aims at <a href="#browse">browsing</a> the file system in order to select and open a file. </p> 
+			<p>The file explorer contains the following parts:
+			<ul class="feature_list">
+				<li>  <strong>SYSTEM</strong>  gives access to local file system  when opening &quot;My Computer&quot; tree, starting at system root. </li>
+				<li>  <strong>MY SHORTCUTS</strong> gives access to user defined <a href="#shortcuts">shortcuts</a> allowing direct access to selected directories. </li></ul>
+			</p>
+<br />
+<a name="browse"></a>
+<h2>Browsing through trees</h2>
+<p>Clicking on the &nbsp;<img src="pics/open_tree_icon.jpg" alt="open_tree" width="10" height="15" />&nbsp; icon left to a tree element or double-clicking on its name allows to open it and display its contents (or close it if it was already opened).</p>
+<p> When a branch is opened, its contents are displayed in alphabetical order, according to current filtering rules (see <a href="#filtering" target="content_frame">filtering</a> below). Items display an icon according to item type (folder, annotation file, audio file, other type), and the file or folder name.
+</p>
+<br />
+Right clicking on the root item of a tree pops up the following menu:<br />
+	
+	<ul class="menu_list" >
+		<li><img alt="Picture Not Found" src="pics/explorer_tree_refresh.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Refresh</strong> refreshes tree display.
+		</li>
+		<li><img alt="Picture Not Found" src="pics/explorer_tree_new_folder.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>New Folder</strong> creates a new folder in tree root folder.
+		</li>
+		<li><img alt="Picture Not Found" src="pics/explorer_tree_paste.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Paste</strong> pastes previously copied folder in root folder.
+		</li>
+	</ul>
+<br />
+Right clicking on a folder-type item of a tree pops up the following menu:
+
+	<ul class="menu_list" >
+		<li><img alt="Picture Not Found" src="pics/explorer_tree_refresh.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Refresh</strong> refreshes current folder display.
+		</li>
+		<li><img alt="Picture Not Found" src="pics/explorer_tree_new_folder.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>New Folder</strong> creates a new folder in current folder.
+		</li>
+		<li><img alt="Picture Not Found" src="pics/explorer_tree_rename.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Rename</strong> renames current folder.
+		</li>
+		<li><img alt="Picture Not Found" src="pics/explorer_tree_copy.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Copy</strong> copies current folder.
+		</li>
+		<li><img alt="Picture Not Found" src="pics/explorer_tree_cut.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Cut</strong> copies and deletes current folder.
+		</li>
+		<li><img alt="Picture Not Found" src="pics/explorer_tree_paste.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Paste</strong> pastes previously copied folder in current folder.
+		</li>
+		<li><img alt="Picture Not Found" src="pics/explorer_tree_add_shortcut.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Add to shortcut</strong> opens the shortcut creation dialog with fields correctly filled.
+		</li>
+		<li><img alt="Picture Not Found" src="pics/explorer_tree_delete.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Delete</strong> deletes current folder.
+		</li>
+		<li><img alt="Picture Not Found" src="pics/explorer_tree_properties.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Property</strong> displays information on current folder.
+		</li>
+	</ul>
+<br />
+Right clicking on a file-type item of a tree displays the following popup menu:
+	<ul class="menu_list">
+		<li><img alt="Picture Not Found" src="pics/explorer_tree_open.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Open</strong> opens current file.
+		</li>
+		<li><img alt="Picture Not Found" src="pics/explorer_tree_create.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Create</strong> creates a new transcription file (option available only for audio items).
+		</li>
+		<li><img alt="Picture Not Found" src="pics/explorer_tree_create_multi.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Create Multi</strong> creates a new stereo transcription (option available only for audio items).
+		</li>
+		<li><img alt="Picture Not Found" src="pics/explorer_tree_rename.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Rename</strong> renames current file.
+		</li>
+		<li><img alt="Picture Not Found" src="pics/explorer_tree_copy.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Copy</strong> copies current file.
+		</li>
+		<li><img alt="Picture Not Found" src="pics/explorer_tree_cut.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Cut</strong> copies and deletes current file.
+		</li>
+		<li><img alt="Picture Not Found" src="pics/explorer_tree_paste.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Paste</strong> pastes previously copied file in current folder.
+		</li>
+		<li><img alt="Picture Not Found" src="pics/explorer_tree_delete.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Delete</strong> deletes current file.
+		</li>
+		<li><img alt="Picture Not Found" src="pics/explorer_tree_properties.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Property</strong> displays information on current file, according to file type: 
+<table><tr><td width="120"></td><td><img src="pics/file_properties_popup.jpg" /></td><td><img src="pics/file_properties_popup2.jpg" /></td></tr></table>
+		</li>
+	</ul>
+<br />
+	<h2><a name="shortcuts"></a>Using shortcuts</h2>
+		<p>Shortcuts are aimed at avoiding loosing time in repeating file tree browsing by giving direct access to a previously "tagged" directory path.</p>
+
+		<h3><a name="creating_shortcuts"></a>Creating Shortcuts</h3>
+		<p>
+		Clicking on &nbsp;&nbsp;<img alt="Picture Not Found" src="pics/explorer_tree_shortcut_button.jpg" border="1" align="middle"/>&nbsp;&nbsp; button makes the shortcut creation dialog appear:
+		</p>
+		<table><tr>
+		<td valign="center"><img alt="Picture Not Found" src="pics/explorer_tree_shortcut.jpg" border="1" align="middle"/></td></tr></table>
+		<p>The target path for the shortcut must be defined in the <strong>Target path</strong> field.</p>
+		<p>The name of the shortcut must be defined in <strong>Shortcut name</strong> field (it is by default set to the target path base name).</p>
+		<p>The following button: &nbsp;&nbsp;<img alt="Picture Not Found" src="pics/explorer_tree_proposal.jpg" border="1" align="middle"/>&nbsp;&nbsp; gives access to the OS standard file browser composed of a file selection dialog through which one can select shortcut target path.</p>
+		<p>A shorcut can also be created with a right click on a folder thanks to the button "add to shortcut" from the contextual menu.
+		<br />
+	<h3>Using shortcuts</h3>
+	Using shortcuts is similar to using the SYSTEM root tree. Right clicking on a shortcut displays the following popup menu:
+
+	<ul class="menu_list">
+		<li>
+		<img alt="Picture Not Found" src="pics/explorer_tree_refresh.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Refresh</strong> refreshes the tree display.
+		</li>
+
+		<li>
+		<img alt="Picture Not Found" src="pics/explorer_tree_new_folder.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>New Folder</strong> creates a new folder with name to fill in.
+		</li>
+
+		<li>
+		<img alt="Picture Not Found" src="pics/explorer_tree_paste.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Paste</strong> pastes the copied folder in shorcut root folder.
+		</li>
+
+		<li>
+		<img alt="Picture Not Found" src="pics/explorer_tree_modify_shortcut.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Modify shortcut</strong> for modifying the name or the path of the shortcut.
+		</li>
+		<li>
+		<img alt="Picture Not Found" src="pics/explorer_tree_delete_shortcut.jpg" border="1" align="middle"/>&nbsp;&nbsp;
+		<strong>Delete shortcut</strong> deletes shortcut.
+		</li>
+	</ul>
+	<br />
+<h2>Filtering displayed file types</h2>
+<a name="filtering"></a>
+</p>
+<table><tr>
+<td valign="center"><img alt="Picture Not Found" src="pics/explorer_tree_filter.jpg" border="1" align="middle"/></td>
+<td width="20"></td>
+<td valign="center">The <strong>Filter</strong> combo on top of the subwindow allows to filter displayed directories contents, to show only files of selected file type: 
+<ul >
+<li>audio and annotation files (any audio file or importable file),</li>
+<li>audio files (.wav, .mp3, .au, .sph, .aiff),</li>
+<li>video files (.mpg, .mpeg, .avi),</li>
+<li> <em>TranscriberAG</em> files (.tag),</li>
+<li>text files (.txt),</li>
+<li>all files (*).</li>
+</ul>
+<p>Importable file formats can be configured in the formatAG.rc file (see <strong>TranscriberAG Configuration Manual</strong>)</p>
+<p><i><b>Notice</b>: TranscriberAG displays usual media files. For opening others formats compatible with FFmpeg, use "All files".</i>
+</tr></table>
+<br /><hr />
+<p><a href="#top">Back to top</a></p>		
+
+	</body>
+</html>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE parameters SYSTEM "../../configurationAG.dtd">
+<parameters>
+	<component id="load">
+		<section id="convention" label="convention file from convention TranscriberAG directory">
+			<parameter id="file" label="" value="chat_import.rc"/>
+		</section>
+	</component>
+</parameters>

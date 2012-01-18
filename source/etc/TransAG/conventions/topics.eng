@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topics SYSTEM "topics.dtd">
+<!-- 
+	Definition of annotation topics for english transcription
+	<!!!> WARNING <!!!>
+		"id" elements HAVE TO BE unique for a correct behaviour
+ -->
+<topics>
+	<topicgroup id="g1" label="Category 1">
+		<topic id="t1" label="Topic 1">
+			<context>Fast description of Topic 1</context>
+			<details> 
+				<detail type="cpos" label="positive criterias">
+					criterias defining a pertinent document
+				</detail>	
+				<detail type="cneg" label="negative criterias">
+					criterias defining a non-pertinent document
+				</detail>	
+			</details>	
+		</topic>
+		<topic id="t2" label="Topic 2">
+			<context>Fast description of Topic 2</context>
+			<details> 
+				<detail type="cpos" label="positive criterias">
+					criterias defining a pertinent document
+				</detail>	
+				<detail type="cneg" label="negative criterias">
+					criterias defining a non-pertinent document
+				</detail>
+				<detail type="mkey" label="keywords">
+					- keyword 1
+					- keyword 2
+					- keyword 3
+					- ...
+				</detail>					
+			</details>	
+		</topic>
+	</topicgroup>
+	<topicgroup id="g2" label="Category 2">
+		<topic id="t3" label="Topic 3">
+			<context>Fast description of Topic 3</context>
+			<details> 
+				<detail type="cpos" label="positive criterias">
+					criterias defining a pertinent document
+				</detail>	
+				<detail type="cneg" label="negative criterias">
+					criterias defining a non-pertinent document
+				</detail>	
+			</details>	
+		</topic>
+		<topic id="t4" label="Topic 4">
+			<context>Fast description of Topic 4</context>
+			<details> 
+				<detail type="cpos" label="positive criterias">
+					criterias defining a pertinent document
+				</detail>	
+				<detail type="cneg" label="negative criterias">
+					criterias defining a non-pertinent document
+				</detail>
+				<detail type="mkey" label="keywords">
+					- keyword 1
+					- keyword 2
+					- keyword 3
+					- ...
+				</detail>					
+			</details>	
+		</topic>
+	</topicgroup>	
+</topics>

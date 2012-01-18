@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE parameters SYSTEM "../configurationQualifiersAG.dtd">
+<parameters>
+	<component id="Labels">
+			<section id="label" label="section labels">
+				<parameter id="section" label="label for section" value="section"/>
+				<parameter id="turn" label="label for turn" value="turn"/>
+				<parameter id="segment" label="label for segment" value="segment"/>
+			</section>
+			<section id="file_properties" label="extra properties labels">
+		<parameter id="analysis_themes" label="label for analysis_themes" value="Themes"/>
+		<parameter id="analysis_status" label="label for analysis_status" value="Analysis"/>
+		<parameter id="file_workload" label="label file_workload" value="W (hh:mm)"/>
+		<parameter id="file_status" label="label for file_status" value="Status"/>
+			</section>
+	<section id="analysis_status_list" label="analysis_status_list labels">
+                <parameter id="ok" label="label for ok" value="OK for transcription"/>
+                <parameter id="nok" label="label for nok" value="NOK for transcription"/>
+                <parameter id="?" label="label for ?" value="To be confirmed ?"/>
+                <parameter id="none" label="label for none" value=""/>
+	</section>
+	<section id="file_status_list" label="file_status_list labels">
+                <parameter id="terminated" label="label for terminated" value="Terminated"/>
+                <parameter id="none" label="label for none" value=""/>
+			</section>
+	</component>
+	
+<!-- Specify menu display for qualifiers defined in convention files
+	 For each value, adding an "_" symbol before a letter means that
+	 letter will be use as shortcut with "ALT" modifier when menu is
+	 popped.		 
+ -->
+<component id="Menu">
+	<section id="section" label="section menu">
+		<parameter id="report" label="label for report section" value="_report"/>
+		<parameter id="nontrans" label="label for turn" value="_not transcribed"/>
+	</section>
+	<section id="qualifier_event" label="Qualifiers menuitems">
+		<parameter id="label" label="menuitem for event submenu" value="new _event"/>
+		<parameter id="noise" label="menuitem for noise" value="_noise"/>
+			<parameter id="noise,breath" label="menuitem for noise" value="_breath"/>
+			<parameter id="noise,general" label="menuitem for noise" value="_general"/>
+			<parameter id="noise,conv" label="menuitem for noise" value="_conversation"/>
+		<parameter id="pronounce" label="menuitem for pronounce" value="_pronounciation"/>
+			<parameter id="pronounce,unintelligible" label="menuitem for pronounce" value="_unintelligible"/>
+		<parameter id="language" label="menuitem for language" value="_language"/>
+		<parameter id="normalization" label="menuitem for normalization" value="_normalization"/>
+			<parameter id="normalization,user" label="menuitem for normalization" value="_description"/>
+		<parameter id="disfluence" label="menuitem for disfluence" value="_disfluency"/>
+			<parameter id="disfluence,repeat" label="menuitem for disfluence" value="_repeat"/>
+			<parameter id="disfluence,revise" label="menuitem for disfluence" value="re_vision"/>
+			<parameter id="disfluence,hesitate" label="menuitem for disfluence" value="_hesitation"/>
+			<parameter id="disfluence,discoursemarkup" label="menuitem for disfluence" value="_discourse markup"/>
+		<parameter id="comment" label="menuitem for comment" value="_comment"/>
+		<parameter id="quality" label="menuitem for quality" value="quality control"/>
+	</section>
+	<section id="qualifier_entity" label="Qualifiers named entities menuitems">
+		<parameter id="person" label="menu item label" value="_person"/>
+		<parameter id="person,human" label="menu item label" value="_human"/>
+		<parameter id="person,anime" label="menu item label" value="a_nime"/>
+		<parameter id="location" label="menu item label" value="_location"/>
+		<parameter id="location,administrative" label="menu item label" value="_administrative"/>
+		<parameter id="location,geographic" label="menu item label" value="_geographic"/>
+		<parameter id="location,line" label="menu item label" value="traffic _line"/>
+		<parameter id="location,address.postal" label="menu item label" value="postal a_dress"/>
+		<parameter id="location,address.tel" label="menu item label" value="_telephone"/>
+		<parameter id="location,address.email" label="menu item label" value="_email"/>
+		<parameter id="location,facilities" label="menu item label" value="_facilities"/>									
+		<parameter id="time" label="menu item label" value="_time"/>
+		<parameter id="time,hour" label="menu item label" value="_hour"/>
+		<parameter id="time,date.absolute" label="menu item label" value="_absolute date"/>			
+		<parameter id="time,date.relative" label="menu item label" value="_relative date"/>
+		<parameter id="amount-phy" label="menu item label" value="_physic amount"/>
+		<parameter id="amount-phy,age" label="menu item label"	value="a_ge"/>
+		<parameter id="amount-phy,duration" label="menu item label" value="_duration"/>
+		<parameter id="amount-phy,temperature" label="tag layout"	value="te_mperature"/>
+		<parameter id="amount-phy,length" label="menu item label" value="_length"/>
+		<parameter id="amount-phy,weight" label="menu item label"	value="_weight"/>
+		<parameter id="amount-phy,speed" label="menu item label" value="_speed"/>
+		<parameter id="amount-phy,currency" label="menu item label"	value="mo_ney"/>
+		<parameter id="amount-phy,other" label="menu item label" value="_other"/>
+		<parameter id="product" label="meni item label" value="human p_roduction"/>
+		<parameter id="product,vehicle" label="menu item label" value="_vehicle"/>
+		<parameter id="product,award" label="menu item label" value="_award"/>
+		<parameter id="product,art" label="menu item label" value="ar_t"/>
+		<parameter id="product,doc" label="menu item label" value="_documentation"/>			
+		<parameter id="organization" label="menu item label" value="_organization"/>
+		<parameter id="organization,political" label="menu item label" value="_political"/>			
+		<parameter id="organization,educational" label="menu item label" value="_educational"/>
+		<parameter id="organization,commercial" label="menu item label" value="_commercial"/>
+		<parameter id="organization,no-profit" label="menu item label" value="_no lucrative"/>		
+		<parameter id="organization,entertainment" label="menu item label" value="enter_tainment"/>
+		<parameter id="organization,geo-socio-admin" label="menu item label" value="_geo-socio-administrative"/>			
+		<parameter id="function" label="menu item label" value="_function"/>
+		<parameter id="function,political" label="menu item label" value="_political"/>
+		<parameter id="function,military" label="menu item label" value="_military"/>
+		<parameter id="function,admnistrative" label="menu item label" value="_administrative"/>
+		<parameter id="function,religious" label="menu item label" value="_religious"/>
+		<parameter id="function,aristocratic" label="menu item label" value="_aristocratic"/>			
+	</section>
+</component>
+<component id="Layout">
+	<section id="qualifier_event" label="Qualifiers layout">
+		<parameter id="noise" label="label for noise" value="noise="/>
+			<parameter id="noise,breath" label="label for noise" value="breath"/>
+			<parameter id="noise,general" label="label for noise" value="noise"/>
+			<parameter id="noise,conv" label="label for noise" value="conv"/>
+		<parameter id="pronounce" label="label for pronounce" value="pron="/>
+			<parameter id="pronounce,unintelligible" label="label for pronounce" value="pron=pi"/>
+			<parameter id="pronounce,user,layout" label="layout for user-specific label for pronounce start/end/both" value="end"/>
+		<parameter id="language" label="label for language" value="lang="/>
+			<parameter id="language,user,layout" label="layout for user-specific label for language start/end/both" value="end"/>
+		<parameter id="normalization" label="label for normalization" value="norm="/>
+			<parameter id="normalization,user,layout" label="layout for user-specific label for normalization start/end/both" value="end"/>
+		<parameter id="disfluence" label="label for disfluence" value="dis="/>
+			<parameter id="disfluence,repeat" label="label for disfluence" value="dis=rep"/>
+			<parameter id="disfluence,revise" label="label for disfluence" value="dis=rev"/>
+		<parameter id="disfluence,hesitate" label="label for disfluence" value="dis=hes"/>
+			<parameter id="disfluence,discoursemarkup" label="label for disfluence" value="dis=dm"/>
+		<parameter id="comment" label="label for comment" value="comment="/>
+			<parameter id="comment,user,layout" label="layout for user-specific label for comment start/end/both" value="end"/>
+		<parameter id="quality" label="label for quality" value="quality="/>
+			<parameter id="quality,user,layout" label="layout for user-specific label for quality start/end/both" value="end"/>
+	</section>
+	<section id="qualifier_entity" label="Specific entities menuitems">
+		<parameter id="person" label="label for person" value="prs::"/>
+			<parameter id="person,human" label="label for human person" value="prs::hum"/>
+			<parameter id="person,anime" label="label for anime person" value="prs::ani"/>
+			<parameter id="person,user,layout" label="label for juristic person" value="end"/>
+		<parameter id="location" label="label for location" value="loc::"/>
+			<parameter id="location,country" label="label for location" value="loc::cou"/>
+			<parameter id="location,city" label="label for location" value="loc::city"/>
+			<parameter id="location,region" label="label for location" value="loc::reg"/>
+			<parameter id="location,user,layout" label="label for location" value="end"/>
+		<parameter id="time" label="label for time" value="time::"/>
+			<parameter id="time,date" label="label for time" value="time::date"/>
+			<parameter id="time,hour" label="label for time" value="time::hour"/>
+			<parameter id="time,user,layout" label="label for time" value="end"/>
+		<parameter id="amount" label="label for amount" value="amount::"/>
+			<parameter id="amount,currency" label="label for amount" value="amount::cur"/>
+			<parameter id="amount,user,layout" label="label for amount" value="end"/>
+		<parameter id="product" label="label for product" value="prod="/>
+			<parameter id="product,vehicle" label="label for product" value="prod::veh"/>
+			<parameter id="product,art" label="label for product" value="prod::art"/>
+			<parameter id="product,user,layout" label="label for product" value="end"/>
+		<parameter id="organization" label="label for organization" value="org::"/>
+			<parameter id="organization,non-profit" label="label for organization" value="org::n-pr"/>
+			<parameter id="organization,educative" label="label for organization" value="org::edu"/>
+			<parameter id="organization,commercial" label="label for organization" value="org::com"/>
+			<parameter id="organization,user,layout" label="label for organization" value="end"/>
+		<parameter id="unknown" label="label for unknown" value="unk"/>
+		<parameter id="gsp" label="label for gsp" value="gsp::"/>
+			<parameter id="gsp,person" label="label for gsp" value="gsp::prs"/>
+			<parameter id="gsp,organization" label="label for gsp" value="gsp::org"/>
+			<parameter id="gsp,location" label="label for gsp" value="gsp::loc"/>		
+			<parameter id="gsp,user,layout" label="label for gsp" value="end"/>
+		<parameter id="facilities" label="label for facilities" value="fac"/>
+		<parameter id="other" label="label for other" value="oth::"/>
+	</section>		
+</component>
+<!-- Specify a background and a foreground color foreach main type of qualifier
+	 entity and for section types
+	 The parameter ID must be 
+		"ID-element"_fg for foreground color 
+	   	"ID-element"_bg for background color 
+-->	
+<component id="Colors">
+	<section id="qualifier_entity" label="Specific entities colors">
+		<parameter id="person_fg" label="label for person" value="#0000ff"/>
+		<parameter id="person_bg" label="label for person" value="#D6D6FF"/>
+		<parameter id="location_fg" label="label for places" value="#007f3f"/>
+		<parameter id="location_bg" label="label for places" value="#d2f3e3"/>
+		<parameter id="time_fg" label="label for time" value="#05949d"/>
+		<parameter id="time_bg" label="label for time" value="#d2e8ea"/>
+		<parameter id="amount_fg" label="label for amount" value="#a020f0"/>
+		<parameter id="amount_bg" label="label for amount" value="#e3d5ec"/>
+		<parameter id="product_fg" label="label for product" value="#D16F64"/>
+		<parameter id="product_bg" label="label for product" value="#F3DDDA"/>
+		<parameter id="organization_fg" label="label for organization" value="#bf0c00"/>
+		<parameter id="organization_bg" label="label for organization" value="#ffcfcc"/>
+		<parameter id="unknown_fg" label="label for unknown" value="#918f8f"/>
+		<parameter id="unknown_bg" label="label for unknown" value="#ffffff"/>
+		<parameter id="gsp_fg" label="label for gsp" value="#b37400"/>
+		<parameter id="gsp_bg" label="label for gsp" value="#ffe2ac"/>
+		<parameter id="facilities_fg" label="label for facility" value="#902929"/>
+		<parameter id="facilities_bg" label="label for facility" value="#f9a6a6"/>
+		<parameter id="other_fg" label="label for other" value="#513f3f"/>
+		<parameter id="other_bg" label="label for other" value="#e4e4e4"/>
+	</section>		
+</component>	
+</parameters>

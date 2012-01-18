@@ -1,0 +1,9 @@
+	../src/Common/Dialogs.cpp \
+	../src/AudioComponent/AudioWidget/AudioVolumeControlWidget.cpp \
+	../src/AudioComponent/AudioWidget/AudioSoundTouchControlWidget.cpp \
+	../src/AudioComponent/AudioWidget/AudioEqualizerControlWidget.cpp \
+	../src/AudioComponent/AudioWidget/AudioSignalView.cpp \
+	../src/AnnotationEditor/AnnotationData.cpp \
+	../src/AnnotationEditor/AnnotationEditor.cpp \
+	../src/AnnotationEditor/SpeakerDictionary.cpp \
+	../src/AnnotationEditor/SpeakerMenu.cpp

@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE Trans SYSTEM "trans-diva.dtd">
+<Trans scribe="user" audio_filename="/bali/croatie/DACTILO/DATA/ANNOT/fre_h5_20050615.wav" version="1" version_date="050613">
+<Speakers>
+<Speaker id="spk1" name="unknown_speaker1" type="unknown" accent="" scope="local" check="no"/>
+<Speaker id="spk2" name="unknown_speaker2" type="unknown" accent="" scope="local" check="no"/>
+</Speakers>
+<Episode>
+<Section type="report" startTime="0.000" endTime="121.106">
+<Turn speaker="spk1" startTime="0.000" endTime="0.720">
+<Sync startTime="0.000" endTime="0.720">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="0.05" endTime="0.22" conf="1.000">oui</Word>
+<Word startTime="0.22" endTime="0.61" conf="0.999">allô</Word>
+</Sync>
+</Turn>
+<Turn startTime="0.720" endTime="1.100">
+<Sync startTime="0.720" endTime="1.100">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+</Sync>
+</Turn>
+<Turn speaker="spk2" startTime="1.100" endTime="1.880">
+<Sync startTime="1.100" endTime="1.880">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="1.20" endTime="1.53" conf="1.000">oui</Word>
+<Word startTime="1.53" endTime="1.79" conf="0.988">bonjour</Word>
+</Sync>
+</Turn>
+<Turn speaker="spk1" startTime="1.880" endTime="5.670">
+<Sync startTime="1.880" endTime="5.670">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="1.88" endTime="2.02" conf="0.996">donc</Word>
+<Word startTime="3.08" endTime="3.25" conf="0.456">bon</Word>
+<Word startTime="3.25" endTime="3.61" conf="0.905">aujourd'hui</Word>
+<Word startTime="3.70" endTime="3.85" conf="0.916">il</Word>
+<Word startTime="3.93" endTime="4.07" conf="0.927">fait</Word>
+<Word startTime="4.15" endTime="4.28" conf="0.517">six</Word>
+<Word startTime="4.36" endTime="4.54" conf="0.866">juillet</Word>
+<Word startTime="4.63" endTime="4.82" conf="0.429">appareil</Word>
+<Word startTime="4.82" endTime="5.08" conf="0.457">pareil</Word>
+</Sync>
+</Turn>
+<Turn startTime="5.670" endTime="6.310">
+<Sync startTime="5.670" endTime="6.310">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+</Sync>
+</Turn>
+<Turn speaker="spk2" startTime="6.310" endTime="7.330">
+<Sync startTime="6.310" endTime="7.330">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="6.53" endTime="6.75" conf="1.000">comment</Word>
+<Word startTime="6.75" endTime="6.89" conf="0.989">vas</Word>
+<Word startTime="6.89" endTime="7.11" conf="0.985">-tu</Word>
+</Sync>
+</Turn>
+<Turn startTime="7.330" endTime="7.620">
+<Sync startTime="7.330" endTime="7.620">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+</Sync>
+</Turn>
+<Turn speaker="spk1" startTime="7.620" endTime="12.560">
+<Sync startTime="7.620" endTime="12.560">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="7.80" endTime="8.14" conf="1.000">très</Word>
+<Word startTime="8.14" endTime="8.56" conf="0.999">bien</Word>
+<Word startTime="8.72" endTime="8.95" conf="0.998">très</Word>
+<Word startTime="8.95" endTime="9.32" conf="0.999">bien</Word>
+<Word startTime="9.36" endTime="9.51" conf="0.478">hein</Word>
+<Word startTime="10.03" endTime="10.5" conf="0.999">alors</Word>
+<Word startTime="10.54" endTime="10.68" conf="0.930">dis</Word>
+<Word startTime="10.68" endTime="10.93" conf="0.927">-moi</Word>
+<Word startTime="10.97" endTime="11.13" conf="0.999">tu</Word>
+<Word startTime="11.13" endTime="11.24" conf="0.831">veux</Word>
+<Word startTime="11.24" endTime="11.32" conf="0.940">me</Word>
+<Word startTime="11.32" endTime="11.6" conf="0.999">parler</Word>
+<Word startTime="11.60" endTime="11.66" conf="0.804">de</Word>
+<Word startTime="11.66" endTime="11.79" conf="0.656">ça</Word>
+<Word startTime="11.79" endTime="11.99" conf="0.961">tu</Word>
+<Word startTime="12.16" endTime="12.29" conf="0.896">vois</Word>
+</Sync>
+</Turn>
+<Turn startTime="12.560" endTime="12.920">
+<Sync startTime="12.560" endTime="12.920">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+</Sync>
+</Turn>
+<Turn speaker="spk2" startTime="12.920" endTime="17.850">
+<Sync startTime="12.920" endTime="17.850">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="13.13" endTime="13.51" conf="0.996">oui</Word>
+<Word startTime="13.64" endTime="13.79" conf="0.995">je</Word>
+<Word startTime="13.83" endTime="14.02" conf="0.995">suis</Word>
+<Word startTime="14.07" endTime="14.23" conf="0.999">pour</Word>
+<Word startTime="14.23" endTime="14.35" conf="0.987">la</Word>
+<Word startTime="14.35" endTime="14.53" conf="0.725">pour</Word>
+<Word startTime="14.53" endTime="14.63" conf="0.716">les</Word>
+<Word startTime="14.63" endTime="14.78" conf="0.281">fesses</Word>
+<Word startTime="14.82" endTime="14.94" conf="0.855">je</Word>
+<Word startTime="14.97" endTime="15.17" conf="0.920">suis</Word>
+<Word startTime="15.17" endTime="15.59" conf="0.962">contre</Word>
+<Word startTime="15.72" endTime="15.94" conf="0.343">chanson</Word>
+<Word startTime="16.11" endTime="16.19" conf="0.797">là</Word>
+<Word startTime="16.30" endTime="16.4" conf="0.988">pour</Word>
+<Word startTime="16.40" endTime="16.48" conf="0.890">les</Word>
+<Word startTime="16.48" endTime="16.72" conf="0.998">faire</Word>
+<Word startTime="16.72" endTime="16.78" conf="0.994">à</Word>
+<Word startTime="16.79" endTime="16.99" conf="0.982">son</Word>
+<Word startTime="17.16" endTime="17.48" conf="0.972">handicap</Word>
+<Word startTime="17.48" endTime="17.8" conf="0.985">quatre</Word>
+</Sync>
+</Turn>
+<Turn startTime="17.850" endTime="18.360">
+<Sync startTime="17.850" endTime="18.360">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+</Sync>
+</Turn>
+<Turn speaker="spk2" startTime="18.360" endTime="22.510">
+<Sync startTime="18.360" endTime="22.510">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="18.59" endTime="18.68" conf="0.994">en</Word>
+<Word startTime="18.68" endTime="18.94" conf="0.983">France</Word>
+<Word startTime="19.46" endTime="19.67" conf="0.943">ailleurs</Word>
+<Word startTime="19.67" endTime="19.75" conf="0.730">d'</Word>
+<Word startTime="19.75" endTime="19.96" conf="0.730">ailleurs</Word>
+<Word startTime="20.60" endTime="20.81" conf="0.640">quand</Word>
+<Word startTime="20.81" endTime="20.93" conf="0.609">même</Word>
+<Word startTime="21.32" endTime="21.59" conf="0.940">situation</Word>
+<Word startTime="21.66" endTime="21.72" conf="0.587">est</Word>
+<Word startTime="21.72" endTime="21.9" conf="0.689">très</Word>
+<Word startTime="22.03" endTime="22.37" conf="0.528">simple</Word>
+</Sync>
+</Turn>
+<Turn startTime="22.510" endTime="23.240">
+<Sync startTime="22.510" endTime="23.240">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+</Sync>
+</Turn>
+<Turn speaker="spk2" startTime="23.240" endTime="30.740">
+<Sync startTime="23.240" endTime="30.740">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="23.43" endTime="23.55" conf="0.988">c'</Word>
+<Word startTime="23.55" endTime="23.78" conf="0.985">est</Word>
+<Word startTime="23.78" endTime="23.84" conf="0.533">un</Word>
+<Word startTime="23.84" endTime="24.01" conf="0.533">truc</Word>
+<Word startTime="24.21" endTime="24.28" conf="0.505">c'</Word>
+<Word startTime="24.35" endTime="24.52" conf="0.592">est</Word>
+<Word startTime="24.77" endTime="24.93" conf="0.493">ces</Word>
+<Word startTime="25.09" endTime="25.23" conf="0.636">ces</Word>
+<Word startTime="25.23" endTime="25.46" conf="0.925">engins</Word>
+<Word startTime="25.82" endTime="26.02" conf="0.683">on</Word>
+<Word startTime="26.02" endTime="26.08" conf="0.322">la</Word>
+<Word startTime="26.13" endTime="26.3" conf="0.458">enfin</Word>
+<Word startTime="26.34" endTime="26.53" conf="0.733">je</Word>
+<Word startTime="27.54" endTime="27.96" conf="0.969">habitude</Word>
+<Word startTime="27.96" endTime="28.12" conf="0.696">de</Word>
+<Word startTime="28.12" endTime="28.57" conf="0.848">consommer</Word>
+<Word startTime="28.69" endTime="28.9" conf="1.000">des</Word>
+<Word startTime="28.90" endTime="29.51" conf="0.989">quantités</Word>
+<Word startTime="29.51" endTime="29.9" conf="0.986">énormes</Word>
+<Word startTime="29.93" endTime="30.01" conf="0.932">de</Word>
+<Word startTime="30.01" endTime="30.56" conf="0.996">carburant</Word>
+</Sync>
+</Turn>
+<Turn startTime="30.740" endTime="31.290">
+<Sync startTime="30.740" endTime="31.290">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+</Sync>
+</Turn>
+<Turn speaker="spk2" startTime="31.290" endTime="31.530">
+<Sync startTime="31.290" endTime="31.530">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+</Sync>
+</Turn>
+<Turn speaker="spk1" startTime="31.530" endTime="32.150">
+<Sync startTime="31.530" endTime="32.150">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="31.63" endTime="32.01" conf="0.999">oui</Word>
+</Sync>
+</Turn>
+<Turn startTime="32.150" endTime="32.500">
+<Sync startTime="32.150" endTime="32.500">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+</Sync>
+</Turn>
+<Turn speaker="spk2" startTime="32.500" endTime="36.700">
+<Sync startTime="32.500" endTime="36.700">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="32.72" endTime="32.79" conf="0.519">et</Word>
+<Word startTime="33.23" endTime="33.38" conf="0.892">ceci</Word>
+<Word startTime="33.57" endTime="33.64" conf="0.689">est</Word>
+<Word startTime="33.64" endTime="33.86" conf="0.568">dû</Word>
+<Word startTime="33.94" endTime="34.04" conf="1.000">en</Word>
+<Word startTime="34.04" endTime="34.74" conf="0.996">particulier</Word>
+<Word startTime="34.96" endTime="35.18" conf="1.000">alors</Word>
+<Word startTime="35.18" endTime="35.35" conf="0.712">que</Word>
+<Word startTime="35.35" endTime="35.59" conf="1.000">moi</Word>
+<Word startTime="35.91" endTime="36.11" conf="0.601">mon</Word>
+<Word startTime="36.28" endTime="36.52" conf="0.601">voisin</Word>
+<Word startTime="36.52" endTime="36.66" conf="0.601">qui</Word>
+</Sync>
+</Turn>
+<Turn speaker="spk1" startTime="36.700" endTime="37.070">
+<Sync startTime="36.700" endTime="37.070">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="36.70" endTime="37.02" conf="1.000">oui</Word>
+</Sync>
+</Turn>
+<Turn speaker="spk2" startTime="37.070" endTime="38.660">
+<Sync startTime="37.070" endTime="38.660">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="37.07" endTime="37.14" conf="0.549">c'</Word>
+<Word startTime="37.16" endTime="37.2" conf="0.598">est</Word>
+<Word startTime="37.20" endTime="37.35" conf="0.861">par</Word>
+<Word startTime="37.42" endTime="37.69" conf="0.869">rapport</Word>
+<Word startTime="37.69" endTime="37.75" conf="0.861">à</Word>
+<Word startTime="37.77" endTime="37.87" conf="0.999">une</Word>
+<Word startTime="37.87" endTime="38.28" conf="0.993">berline</Word>
+</Sync>
+</Turn>
+<Turn startTime="38.660" endTime="39.610">
+<Sync startTime="38.660" endTime="39.610">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+</Sync>
+</Turn>
+<Turn speaker="spk2" startTime="39.610" endTime="47.000">
+<Sync startTime="39.610" endTime="47.000">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="39.79" endTime="40.33" conf="0.939">et</Word>
+<Word startTime="40.59" endTime="40.79" conf="0.928">c'</Word>
+<Word startTime="41.07" endTime="41.47" conf="0.999">est</Word>
+<Word startTime="41.81" endTime="41.85" conf="0.845">c'</Word>
+<Word startTime="41.86" endTime="41.9" conf="0.617">est</Word>
+<Word startTime="41.96" endTime="42.12" conf="0.998">une</Word>
+<Word startTime="42.12" endTime="42.29" conf="0.999">des</Word>
+<Word startTime="42.29" endTime="42.54" conf="1.000">raisons</Word>
+<Word startTime="42.54" endTime="42.72" conf="1.000">pour</Word>
+<Word startTime="42.72" endTime="43.02" conf="0.993">lesquelles</Word>
+<Word startTime="43.02" endTime="43.36" conf="0.999">notamment</Word>
+<Word startTime="43.36" endTime="43.45" conf="0.999">aux</Word>
+<Word startTime="43.45" endTime="43.93" conf="0.995">Etats-Unis</Word>
+<Word startTime="44.60" endTime="44.75" conf="0.980">et</Word>
+<Word startTime="44.98" endTime="45.11" conf="0.567">ces</Word>
+<Word startTime="45.11" endTime="45.55" conf="0.851">véhicules</Word>
+<Word startTime="45.55" endTime="45.99" conf="0.638">commence</Word>
+<Word startTime="45.99" endTime="46.02" conf="0.978">à</Word>
+<Word startTime="46.06" endTime="46.22" conf="0.998">être</Word>
+<Word startTime="46.25" endTime="46.38" conf="0.928">mis</Word>
+<Word startTime="46.38" endTime="46.43" conf="0.996">à</Word>
+<Word startTime="46.44" endTime="46.48" conf="1.000">l'</Word>
+<Word startTime="46.48" endTime="46.96" conf="1.000">index</Word>
+</Sync>
+</Turn>
+<Turn startTime="47.000" endTime="47.680">
+<Sync startTime="47.000" endTime="47.680">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+</Sync>
+</Turn>
+<Turn speaker="spk2" startTime="47.680" endTime="47.860">
+<Sync startTime="47.680" endTime="47.860">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+</Sync>
+</Turn>
+<Turn speaker="spk1" startTime="47.860" endTime="48.420">
+<Sync startTime="47.860" endTime="48.420">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="47.86" endTime="47.99" conf="0.539">ah</Word>
+<Word startTime="48.03" endTime="48.27" conf="0.998">bon</Word>
+</Sync>
+</Turn>
+<Turn speaker="spk2" startTime="48.420" endTime="49.300">
+<Sync startTime="48.420" endTime="49.300">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="48.42" endTime="49.21" conf="1.000">oui</Word>
+</Sync>
+</Turn>
+<Turn startTime="49.300" endTime="49.690">
+<Sync startTime="49.300" endTime="49.690">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+</Sync>
+</Turn>
+<Turn speaker="spk2" startTime="49.690" endTime="50.010">
+<Sync startTime="49.690" endTime="50.010">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+</Sync>
+</Turn>
+<Turn speaker="spk1" startTime="50.010" endTime="56.680">
+<Sync startTime="50.010" endTime="56.680">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="50.01" endTime="50.08" conf="0.988">et</Word>
+<Word startTime="50.08" endTime="50.16" conf="1.000">en</Word>
+<Word startTime="50.16" endTime="50.65" conf="0.999">France</Word>
+<Word startTime="50.65" endTime="50.96" conf="0.998">on</Word>
+<Word startTime="51.16" endTime="51.26" conf="0.923">on</Word>
+<Word startTime="51.26" endTime="51.72" conf="0.907">continue</Word>
+<Word startTime="51.72" endTime="51.78" conf="0.987">à</Word>
+<Word startTime="51.81" endTime="51.99" conf="0.756">plus</Word>
+<Word startTime="52.02" endTime="52.16" conf="0.763">oui</Word>
+<Word startTime="52.16" endTime="53.43" conf="0.785">nouveau</Word>
+<Word startTime="53.55" endTime="53.86" conf="0.915">notre</Word>
+<Word startTime="53.86" endTime="54.38" conf="0.987">campagne</Word>
+<Word startTime="54.49" endTime="54.63" conf="0.980">une</Word>
+<Word startTime="55.07" endTime="55.2" conf="0.981">une</Word>
+<Word startTime="55.28" endTime="55.48" conf="0.533">français</Word>
+<Word startTime="55.59" endTime="55.97" conf="0.519">rendement</Word>
+<Word startTime="56.04" endTime="56.35" conf="0.796">voilà</Word>
+<Word startTime="56.49" endTime="56.63" conf="0.735">ouais</Word>
+</Sync>
+</Turn>
+<Turn speaker="spk2" startTime="56.680" endTime="70.710">
+<Sync startTime="56.680" endTime="70.710">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="56.80" endTime="56.86" conf="0.852">c'</Word>
+<Word startTime="56.92" endTime="57.01" conf="0.934">est</Word>
+<Word startTime="57.01" endTime="57.61" conf="0.994">surtout</Word>
+<Word startTime="57.61" endTime="57.84" conf="0.884">moi</Word>
+<Word startTime="57.92" endTime="58.22" conf="0.610">rejeté</Word>
+<Word startTime="58.55" endTime="58.62" conf="0.576">c'</Word>
+<Word startTime="58.62" endTime="58.76" conf="0.579">est</Word>
+<Word startTime="58.80" endTime="58.93" conf="0.995">des</Word>
+<Word startTime="58.93" endTime="59.27" conf="0.996">grosses</Word>
+<Word startTime="59.27" endTime="59.75" conf="0.982">quantités</Word>
+<Word startTime="59.87" endTime="59.99" conf="1.000">je</Word>
+<Word startTime="59.99" endTime="60.17" conf="0.998">crois</Word>
+<Word startTime="60.19" endTime="60.25" conf="0.817">que</Word>
+<Word startTime="60.25" endTime="60.3" conf="0.753">c'</Word>
+<Word startTime="60.30" endTime="60.34" conf="0.850">est</Word>
+<Word startTime="60.34" endTime="60.62" conf="0.701">dit</Word>
+<Word startTime="61.23" endTime="61.37" conf="0.988">je</Word>
+<Word startTime="61.44" endTime="61.53" conf="0.994">sais</Word>
+<Word startTime="61.55" endTime="61.77" conf="0.997">plus</Word>
+<Word startTime="61.95" endTime="62.03" conf="0.480">qu'</Word>
+<Word startTime="62.14" endTime="62.22" conf="0.328">se</Word>
+<Word startTime="62.36" endTime="62.52" conf="0.782">dit</Word>
+<Word startTime="62.61" endTime="62.81" conf="0.949">aussi</Word>
+<Word startTime="62.81" endTime="62.98" conf="0.803">du</Word>
+<Word startTime="62.98" endTime="63.34" conf="0.705">soufre</Word>
+<Word startTime="63.91" endTime="64.07" conf="1.000">enfin</Word>
+<Word startTime="64.07" endTime="64.19" conf="0.999">ou</Word>
+<Word startTime="64.19" endTime="64.34" conf="0.999">du</Word>
+<Word startTime="64.54" endTime="64.66" conf="0.647">ou</Word>
+<Word startTime="64.66" endTime="64.72" conf="0.674">deux</Word>
+<Word startTime="65.62" endTime="65.73" conf="0.877">qui</Word>
+<Word startTime="65.73" endTime="66.05" conf="0.695">polluent</Word>
+<Word startTime="66.05" endTime="66.1" conf="1.000">l'</Word>
+<Word startTime="66.10" endTime="66.84" conf="0.999">environnement</Word>
+<Word startTime="67.56" endTime="67.66" conf="0.934">et</Word>
+<Word startTime="67.72" endTime="67.8" conf="0.995">c'</Word>
+<Word startTime="67.80" endTime="67.87" conf="0.999">est</Word>
+<Word startTime="67.87" endTime="68.08" conf="0.903">dû</Word>
+<Word startTime="68.08" endTime="68.88" conf="1.000">essentiellement</Word>
+<Word startTime="68.88" endTime="68.92" conf="0.998">à</Word>
+<Word startTime="68.94" endTime="69.04" conf="1.000">la</Word>
+<Word startTime="69.04" endTime="69.76" conf="0.999">consommation</Word>
+<Word startTime="69.76" endTime="69.91" conf="1.000">de</Word>
+<Word startTime="69.91" endTime="70.18" conf="0.981">ces</Word>
+<Word startTime="70.18" endTime="70.45" conf="0.976">engins</Word>
+</Sync>
+</Turn>
+<Turn startTime="70.710" endTime="70.930">
+<Sync startTime="70.710" endTime="70.930">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+</Sync>
+</Turn>
+<Turn speaker="spk2" startTime="70.930" endTime="71.260">
+<Sync startTime="70.930" endTime="71.260">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+</Sync>
+</Turn>
+<Turn speaker="spk1" startTime="71.260" endTime="71.900">
+<Sync startTime="71.260" endTime="71.900">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="71.26" endTime="71.86" conf="1.000">oui</Word>
+</Sync>
+</Turn>
+<Turn speaker="spk2" startTime="71.900" endTime="80.740">
+<Sync startTime="71.900" endTime="80.740">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="72.00" endTime="72.49" conf="0.769">consomme</Word>
+<Word startTime="72.95" endTime="73.36" conf="0.754">entière</Word>
+<Word startTime="73.60" endTime="74.06" conf="0.942">voir</Word>
+<Word startTime="75.21" endTime="75.38" conf="1.000">le</Word>
+<Word startTime="75.38" endTime="75.79" conf="0.984">double</Word>
+<Word startTime="76.05" endTime="76.15" conf="0.505">de</Word>
+<Word startTime="76.15" endTime="76.28" conf="0.374">des</Word>
+<Word startTime="76.34" endTime="77.06" conf="0.802">consommation</Word>
+<Word startTime="77.06" endTime="77.54" conf="0.687">habituelle</Word>
+<Word startTime="77.56" endTime="77.64" conf="0.735">des</Word>
+<Word startTime="77.64" endTime="78.03" conf="0.594">berlines</Word>
+<Word startTime="78.63" endTime="78.73" conf="0.976">qui</Word>
+<Word startTime="78.73" endTime="78.89" conf="1.000">sont</Word>
+<Word startTime="78.89" endTime="79.49" conf="0.999">susceptibles</Word>
+<Word startTime="79.49" endTime="79.6" conf="0.999">de</Word>
+<Word startTime="79.60" endTime="79.94" conf="1.000">rendre</Word>
+<Word startTime="79.94" endTime="80.01" conf="0.998">le</Word>
+<Word startTime="80.01" endTime="80.2" conf="1.000">même</Word>
+<Word startTime="80.20" endTime="80.69" conf="1.000">service</Word>
+</Sync>
+</Turn>
+<Turn startTime="80.740" endTime="81.160">
+<Sync startTime="80.740" endTime="81.160">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+</Sync>
+</Turn>
+<Turn speaker="spk2" startTime="81.160" endTime="81.370">
+<Sync startTime="81.160" endTime="81.370">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+</Sync>
+</Turn>
+<Turn speaker="spk1" startTime="81.370" endTime="82.510">
+<Sync startTime="81.370" endTime="82.510">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="81.56" endTime="82.27" conf="1.000">d'accord</Word>
+<Word startTime="82.27" endTime="82.47" conf="1.000">ouais</Word>
+</Sync>
+</Turn>
+<Turn speaker="spk2" startTime="82.510" endTime="82.750">
+<Sync startTime="82.510" endTime="82.750">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+</Sync>
+</Turn>
+<Turn speaker="spk1" startTime="82.750" endTime="89.040">
+<Sync startTime="82.750" endTime="89.040">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="83.27" endTime="83.44" conf="0.949">ouais</Word>
+<Word startTime="84.37" endTime="84.53" conf="0.983">et</Word>
+<Word startTime="84.56" endTime="84.67" conf="0.903">en</Word>
+<Word startTime="84.67" endTime="84.81" conf="0.900">plus</Word>
+<Word startTime="84.81" endTime="85.12" conf="0.998">rouler</Word>
+<Word startTime="85.19" endTime="85.29" conf="0.494">ou</Word>
+<Word startTime="85.38" endTime="85.6" conf="0.424">autant</Word>
+<Word startTime="85.75" endTime="86.06" conf="0.850">dans</Word>
+<Word startTime="86.06" endTime="86.28" conf="0.850">dans</Word>
+<Word startTime="86.28" endTime="86.5" conf="0.981">les</Word>
+<Word startTime="86.85" endTime="87.02" conf="0.993">dans</Word>
+<Word startTime="87.02" endTime="87.31" conf="0.999">les</Word>
+<Word startTime="87.31" endTime="88.04" conf="0.739">chemins</Word>
+</Sync>
+</Turn>
+<Turn speaker="spk2" startTime="89.040" endTime="95.500">
+<Sync startTime="89.040" endTime="95.500">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="89.04" endTime="89.14" conf="0.425">non</Word>
+<Word startTime="89.32" endTime="89.4" conf="0.337">mais</Word>
+<Word startTime="89.40" endTime="89.54" conf="0.999">dans</Word>
+<Word startTime="89.54" endTime="89.62" conf="1.000">les</Word>
+<Word startTime="89.64" endTime="89.94" conf="0.809">chemins</Word>
+<Word startTime="90.01" endTime="90.11" conf="0.786">mais</Word>
+<Word startTime="90.18" endTime="90.3" conf="0.994">ça</Word>
+<Word startTime="90.30" endTime="90.4" conf="0.993">c'</Word>
+<Word startTime="90.40" endTime="90.45" conf="1.000">est</Word>
+<Word startTime="90.45" endTime="90.49" conf="0.993">l'</Word>
+<Word startTime="90.57" endTime="90.87" conf="0.993">exception</Word>
+<Word startTime="90.97" endTime="91.07" conf="0.725">des</Word>
+<Word startTime="91.07" endTime="91.25" conf="1.000">gens</Word>
+<Word startTime="91.25" endTime="91.4" conf="1.000">qui</Word>
+<Word startTime="91.40" endTime="91.76" conf="1.000">achètent</Word>
+<Word startTime="91.76" endTime="91.86" conf="0.727">ce</Word>
+<Word startTime="91.89" endTime="92.05" conf="0.870">genre</Word>
+<Word startTime="92.05" endTime="92.14" conf="0.870">de</Word>
+<Word startTime="92.14" endTime="92.58" conf="0.999">véhicule</Word>
+<Word startTime="93.01" endTime="93.15" conf="0.394">sont</Word>
+<Word startTime="93.15" endTime="93.3" conf="0.388">déjà</Word>
+<Word startTime="93.38" endTime="93.45" conf="0.666">en</Word>
+<Word startTime="93.45" endTime="93.87" conf="0.875">général</Word>
+<Word startTime="93.93" endTime="94.18" conf="0.985">qui</Word>
+<Word startTime="94.18" endTime="94.31" conf="0.986">qui</Word>
+<Word startTime="94.31" endTime="94.48" conf="0.947">vivent</Word>
+<Word startTime="94.61" endTime="94.75" conf="0.997">en</Word>
+<Word startTime="94.75" endTime="95.06" conf="0.998">ville</Word>
+</Sync>
+</Turn>
+<Turn speaker="spk1" startTime="95.500" endTime="96.080">
+<Sync startTime="95.500" endTime="96.080">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="95.50" endTime="96.03" conf="1.000">oui</Word>
+</Sync>
+</Turn>
+<Turn speaker="spk2" startTime="96.080" endTime="98.650">
+<Sync startTime="96.080" endTime="98.650">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="96.23" endTime="96.48" conf="0.932">qui</Word>
+<Word startTime="96.52" endTime="96.61" conf="0.950">qui</Word>
+<Word startTime="96.64" endTime="96.84" conf="0.606">roule</Word>
+<Word startTime="96.84" endTime="97.12" conf="0.631">surtout</Word>
+<Word startTime="97.28" endTime="97.45" conf="1.000">sur</Word>
+<Word startTime="97.45" endTime="97.55" conf="1.000">les</Word>
+<Word startTime="97.55" endTime="98.21" conf="1.000">trottoirs</Word>
+</Sync>
+</Turn>
+<Turn speaker="spk1" startTime="98.650" endTime="99.190">
+<Sync startTime="98.650" endTime="99.190">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="98.65" endTime="99.14" conf="1.000">oui</Word>
+</Sync>
+</Turn>
+<Turn speaker="spk2" startTime="99.190" endTime="108.270">
+<Sync startTime="99.190" endTime="108.270">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="99.19" endTime="99.39" conf="0.507">donc</Word>
+<Word startTime="100.16" endTime="100.66" conf="0.989">et</Word>
+<Word startTime="101.27" endTime="101.61" conf="1.000">bon</Word>
+<Word startTime="102.42" endTime="102.64" conf="0.820">qu'</Word>
+<Word startTime="102.67" endTime="102.81" conf="0.501">il</Word>
+<Word startTime="102.81" endTime="103.12" conf="0.453">trouve</Word>
+<Word startTime="103.15" endTime="103.25" conf="0.828">en</Word>
+<Word startTime="103.25" endTime="103.29" conf="0.495">as</Word>
+<Word startTime="103.29" endTime="103.63" conf="0.975">intérêt</Word>
+<Word startTime="103.63" endTime="104.13" conf="0.962">particulier</Word>
+<Word startTime="104.28" endTime="104.38" conf="1.000">en</Word>
+<Word startTime="104.38" endTime="104.52" conf="1.000">ce</Word>
+<Word startTime="104.52" endTime="104.84" conf="1.000">sens</Word>
+<Word startTime="105.03" endTime="105.18" conf="0.997">que</Word>
+<Word startTime="105.18" endTime="105.34" conf="0.998">ce</Word>
+<Word startTime="105.34" endTime="105.56" conf="1.000">sont</Word>
+<Word startTime="105.56" endTime="105.68" conf="1.000">des</Word>
+<Word startTime="105.68" endTime="106.14" conf="0.977">véhicules</Word>
+<Word startTime="106.29" endTime="106.4" conf="0.914">qui</Word>
+<Word startTime="106.40" endTime="106.54" conf="0.999">sont</Word>
+<Word startTime="106.54" endTime="106.68" conf="0.999">pas</Word>
+<Word startTime="106.68" endTime="106.88" conf="1.000">très</Word>
+<Word startTime="106.88" endTime="107.37" conf="0.855">sensible</Word>
+<Word startTime="107.39" endTime="107.45" conf="0.748">au</Word>
+<Word startTime="107.45" endTime="107.65" conf="0.389">chaud</Word>
+</Sync>
+</Turn>
+<Turn speaker="spk1" startTime="108.270" endTime="108.660">
+<Sync startTime="108.270" endTime="108.660">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+</Sync>
+</Turn>
+<Turn speaker="spk2" startTime="108.660" endTime="119.490">
+<Sync startTime="108.660" endTime="119.490">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="108.66" endTime="108.72" conf="0.675">ah</Word>
+<Word startTime="108.74" endTime="108.86" conf="0.868">bon</Word>
+<Word startTime="108.86" endTime="109.1" conf="0.998">pour</Word>
+<Word startTime="109.10" endTime="109.5" conf="0.905">garer</Word>
+<Word startTime="110.65" endTime="110.71" conf="0.691">c'</Word>
+<Word startTime="110.71" endTime="110.75" conf="0.699">est</Word>
+<Word startTime="110.75" endTime="110.97" conf="0.853">sûr</Word>
+<Word startTime="111.77" endTime="111.89" conf="0.440">où</Word>
+<Word startTime="111.94" endTime="112.03" conf="0.938">le</Word>
+<Word startTime="112.03" endTime="112.51" conf="0.964">conducteur</Word>
+<Word startTime="112.51" endTime="112.56" conf="0.841">est</Word>
+<Word startTime="112.56" endTime="113.01" conf="0.460">situé</Word>
+<Word startTime="113.13" endTime="113.84" conf="1.000">relativement</Word>
+<Word startTime="113.84" endTime="114.01" conf="0.312">aussi</Word>
+<Word startTime="114.08" endTime="114.16" conf="0.793">qui</Word>
+<Word startTime="114.18" endTime="114.31" conf="0.993">lui</Word>
+<Word startTime="114.31" endTime="114.68" conf="0.871">permet</Word>
+<Word startTime="114.68" endTime="114.86" conf="0.999">de</Word>
+<Word startTime="114.91" endTime="115.1" conf="0.992">mieux</Word>
+<Word startTime="115.10" endTime="115.45" conf="0.966">gérer</Word>
+<Word startTime="116.27" endTime="116.41" conf="0.994">la</Word>
+<Word startTime="116.41" endTime="117.36" conf="1.000">circulation</Word>
+<Word startTime="117.55" endTime="117.65" conf="0.985">l'</Word>
+<Word startTime="117.65" endTime="118.25" conf="1.000">environnement</Word>
+<Word startTime="118.25" endTime="118.36" conf="1.000">dans</Word>
+<Word startTime="118.36" endTime="118.59" conf="0.980">lequel</Word>
+<Word startTime="118.65" endTime="118.89" conf="0.541">évolue</Word>
+</Sync>
+</Turn>
+<Turn speaker="spk1" startTime="119.490" endTime="120.050">
+<Sync startTime="119.490" endTime="120.050">
+<Lang name="rej" score="0"/>
+<Lang name="fre" score="100"/>
+<Word startTime="119.49" endTime="120.01" conf="1.000">oui</Word>
+</Sync>
+</Turn>
+</Section>
+</Episode>
+</Trans>

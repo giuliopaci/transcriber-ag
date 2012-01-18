@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<title>Audio Widget</title>
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<div align="left"></div>
+		<h1>Audio Widget</h1>
+		<h2>Screenshots</h2>
+		<ul class="menu_list">
+			<li>The audio widget displays for a mono-channel signal:</li>
+			<li><img src="pics/audio_widget.jpg"  alt="Picture Not Found"/></li>
+			<li><br />The audio widget displays for a stereo signal (showing only speech and background segments):</li>
+			<li><img src="pics/audio_widget_stereo.jpg" alt="Picture Not Found" /></li>
+		</ul>
+		<a name="top"><h2>Description</h2></a>
+		<p>
+		The audio widget contains, from top to bottom, a <a href="#toolbar">Toolbar</a>, giving access to main playback actions, <a href="#audio_tracks">Audio Tracks</a>, representing the signal's waveform, optional <a href="#segment_tracks">Segment Tracks</a>, showing various levels of signal segmentation, and a time scale showing current displayed timeline range.<br/>
+		<br />The scrollbar at the bottom of the widget gives indication of the overall signal length and allows to scroll within the signal.<br /><i><b>Remark:</b> When audio is playing, using the scrollbar causes conflicting behaviour with the automatic synchronization. It is recommended to use it only when audio is not playing.  </i></p>
+		<p>All the tracks are synchronized along the same timeline. The cursor (in yellow) is common for all the tracks, and represents current playback position.<br/>
+		The controls in the top <a href="#toolbar">toolbar</a> apply to all tracks. The <a href="#track_controls">side controls</a> of each track apply to corresponding track only.
+		</p>
+		<p>The user interface elements of the audio widget are detailed hereafter following this plan:</p>
+			<ul class="feature_list">
+				<li><a href="#toolbar">The Audio Toolbar</a>
+					<ul class="feature_list1">
+						<li><a href="#playback">The playback frame</li>
+						<li><a href="#selection">The selection frame</li>
+						<li><a href="#tempo">The tempo frame</li>
+						<li><a href="#zoom">The zoom frame</li>
+						<li><a href="#informations">The information frame</li>
+					</ul>
+				</li>
+				<li><a href="#audio_tracks">The Audio Tracks</a>
+					<ul class="feature_list1">
+						<li><a href="#move_cursor">Moving the audio cursor</a></li>
+						<li><a href="#select_signal">Selecting a signal part</a></li>
+						<li><a href="#create_seg">Creating a new segment from current selection</a></li>
+						<li><a href="#create_back">Creating a new background from cursor or current selection</a></li>
+						<li><a href="#save_signal">Save a signal selection</a></li>
+						<li><a href="#export_signal">Export signal/selection to a signal editor</a></li>
+						<li><a href="#track_controls">Track playback controls</a></li>
+					</ul>
+				</li>
+				<li><a href="#segment_tracks">The Segment Tracks</a>
+					<ul class="feature_list1">
+						<li><a href="#mov_seg">Moving segment boundaries</a></li>
+						<li><a href="#select_seg"> Selecting a segment</a></li>
+						<li><a href="#show_seg"> Showing/hiding segment tracks</a></li>
+					</ul>
+				</li>
+			</ul>
+
+		<hr />
+		<h2><a name="toolbar"></a>The Audio Toolbar</h2>
+		<p>The toolbar contains the following controls and information:</p>
+		<p>&nbsp;&nbsp;
+			<a name="playback"><img src="pics/audio_widget_playback.jpg" align="middle" alt="Picture Not Found" />&nbsp;&nbsp;
+			the <strong>Playback frame</strong> contains signal playback controls.</p>
+			
+			<ul class="feature_list">
+				<li><strong>Play/pause </strong> button &nbsp;<img src="pics/audio_widget_play_pause.jpg" align="middle"  alt="Picture Not Found"/>&nbsp; starts or stops playing signal from current cursor position. (also possible using  <strong>&lt;escape&gt;</strong> shortcut).
+				</li>
+				<li>
+				<strong>Loop </strong> checkbox enables or disables playing in loop when reaching the end of the signal or the end of a selection.</li>
+				<li><strong>More options</strong> button &nbsp;<img src="pics/audio_widget_plus.jpg" align="middle" alt="Picture Not Found"/>&nbsp;&nbsp;gives access to more playback options: </li>
+				<img src="pics/audio_widget_playback_expanded.jpg"  alt="Picture Not Found" align="middle"/>
+				&nbsp;&nbsp;<strong>Extra playback options</strong>
+				<ul class="feature_list">
+
+					<li><strong>Delay </strong> field allows to set a  delay (in seconds) for playback before looping.</li>
+
+					<li><strong>Only speech </strong> checkbox enables or disables playing only speech segments.</li>
+
+					<li>The close button &nbsp;<img src="pics/audio_widget_minus.jpg" align="middle" alt="Picture Not Found"/>&nbsp;  collapses extra playback options frame.</li>
+				</ul>
+			</ul>
+		<br />
+		<p>&nbsp;&nbsp;
+			<a name="selection"><img src="pics/audio_widget_selection.jpg" align="middle" alt="Picture Not Found"/>&nbsp;&nbsp;
+			<strong>Selection frame</strong> checkbox enables or disables automatic playback of signal selection. If automatic playback is on, selected signal portion will be played as soon as mouse button is released, either when selecting a signal part from the waveform or by clicking on a segment track to select corresponding signal part.</p>		
+		<br />
+		<p>&nbsp;&nbsp;
+			<a name="tempo"><img src="pics/audio_widget_tempo.jpg" align="middle" alt="Picture Not Found"/>&nbsp;&nbsp;
+			<strong>Tempo frame</strong> contains tempo controls. Tempo modifies "on the fly" playback speed without altering pitch.</p>
+			<ul class="feature_list">
+				<li ><strong>Tempo ruler</strong> adjusts tempo factor from 0.25 (4x slower) to 4 (4x faster).</li>
+				<li ><strong>Reset </strong> shortcut <strong>&lt;ctrl+left click&gt;</strong> on tempo ruler resets tempo factor to 1, normal tempo.</li>
+			</ul>
+		
+		<br />
+		<p>&nbsp;&nbsp;
+			<a name="zoom"><img src="pics/audio_widget_zoom.jpg"  align="middle" alt="Picture Not Found"/>&nbsp;&nbsp;
+			<strong>Zoom frame</strong> contains zoom controls for the waveform display.</p>
+			<ul class="feature_list">
+				<li><strong>Zoom in (+) </strong> button doubles waveform resolution for each click. The highest zoom is a <em>TranscriberAG</em> configuration parameter, set by default to 1 millisecond by pixel.</li>
+				<li><strong>Zoom out (-) </strong> button divides waveform resolution by 2 for each click. The lowest zoom level displays the entire timeline.</li>
+			</ul>
+		
+		<br/>
+		<p>&nbsp;&nbsp;
+			<a name="informations"><img src="pics/audio_widget_information.jpg"  align="middle" alt="Picture Not Found"/>&nbsp;&nbsp;
+			<strong>Informations frame </strong> displays general information on signal. </p>
+			<ul class="feature_list">
+				<li>Time display format is "minutes:seconds:milliseconds".</li>
+				<li><strong>Cursor</strong> item displays current signal cursor position.</li>
+				<li><strong>Selection </strong> item displays the length of the current selection if any.</li>
+				<li><strong>Total </strong> item displays the total length of the timeline.</li>				
+			</ul>
+			<br/>
+
+
+<a href="#top" target="content_frame"> &gt;&gt; Back to top </a>
+<br /><hr />
+		<h2><a name="audio_tracks"></a>Audio Tracks</h2>
+		
+		<p> <img src="pics/audio_widget_audio_tracks.jpg"  align="middle" alt="Picture Not Found"/></p><br />
+		<p>The <strong>Signal waveform</strong> displays signal peaks along the timeline. When working with a multi-channel audio file (or when 2 synchronized signal files are annotated), a waveform is displayed for each audio channel, as illustrated above.</p>
+		<p>Current audio cursor position is materialized by a yellow vertical bar. Cursor position is common to all tracks. When playback is started, the signal is played from current cursor position. A left-click on the waveform allows repositioning of the cursor.</p>
+		<h3><a name="move_cursor">Moving the audio cursor</h3>
+		<p>The audio cursor defines the playback start point. It can be set by: </p>
+		<ul class="feature_list">
+			<li>clicking on desired position on the waveform, </li>
+			<li>clicking on a segment (or a turn, section, background). Cursor is set at element start.</li>
+			<li> or <a href="#sel_segment">selecting a segment</a>, or moving to <a href="#prev_next_segment">previous or next segment</a>,</li>
+			<li> using the <strong>&lt;F1&gt;</strong> "rewind" or <strong>&lt;F4&gt;</strong> "fast forward" keys which allow to go back/advance in timeline by a (configurable) amount of time (3 secs by default) while playing.</li>
+		</ul>
+		<p>When signal to text synchronisation is enabled, the audio cursor will also be automatically moved to current segment start when the text cursor is placed on a new segment.</p>
+		<h3><a name="select_signal">Selecting a signal part</h3>
+		<p> A selection can be set up by maintaining the left mouse button pressed while dragging the mouse on the waveform. The selection is materialized by a darker area. Selection duration is displayed in a small popup window and refreshed while moving cursor. This popup vanishes when cursor is placed outside the selection, and redisplayed when cursor is placed on the selection.</p>
+		<p> Current selection can be canceled by clicking on the waveform.</p>
+		<table summary="selection"><tr><td>When placing the cursor upon the selected area,.</table>
+		<h3><a name="create_seg">Creating a new turn for current selection</h3>
+<p>Select a signal portion, right-click on selection, and select the <strong>New turn</strong> option in the contextual menu. This will insert a new segment and a new turn for selected signal part, accordingly adjusting existing segments and turns: </p>
+<ul>
+<li>"original" segment and turn corresponding to signal selection start are terminated at selection start (we'll call "original segment end" its end offset before truncation occurs) </li>
+<li>New segment and turn starting at selection start and ending either at selection end, if lower than original segment end, else at "original" segment end, are inserted. New turn speaker is set to default speaker. If text cursor was set before original segment text line end, then all textual annotations up to line end are attached to new segment.</li>
+<li>if new segment end is lower than "original" segment end, another segment and turn are inserted, having the same properties as the "original" ones, starting at new segment end and terminating at "original" segment end. </li>
+</ul>
+<p>Using <strong>New no speech turn</strong> option will have the same effect, but will set the turn speaker to "No speaker". </p>
+<p> <img src="pics/audio_widget_new_turn.jpg" alt="audio_widget_new_turn" />  </p>
+
+<p>This feature complements the <a href="text_widget.html/#new_turn"> text widget <strong>Annotate &gt; New turn menu option</strong> (&lt;ctrl+T&gt;)</a>, and should be preferred for scarse speech signals (like conversational recordings), when it is easy to visually identify speech segments through the waveform. It can then be useful to increase the waveform with the vertical zoom to enhance speech segments identification, see <a href="audio_widget.html#track_controls">Audio widget track controls</a> section.</p>
+<p>When creating a new turn, transcription text for the current segment can be split at current text cursor position, with the text corresponding to the end of line being attached to the newly inserted segment. </p>
+		<br />
+		<h3><a name="create_back">Creating a new background from cursor or for current selection</h3>
+<p><img src="pics/audio_widget_popup_background.jpg"  align="middle" alt="Picture Not Found"/></p>
+<p>Set the cursor within the signal or select a signal portion, right-click on the waveform, and select <strong>New background</strong> option in the contextual menu; this will insert a new background starting at current cursor position, ending at:</p>
+<ul>
+<li>selection end, if any,</li>
+<li>next background start, if no selection or lower than selection end</li>
+<li>signal end</li>
+</ul>
+<p> accordingly adjusting existing backgrounds.</p>
+<p>Through this menu, you can also edit selected background properties, or delete selected background.</p>
+
+		<h3><a name="save_signal">Save a signal selection</h3>
+
+		<p><strong>Save signal selection</strong> option of the contextual menu displayed when right-clicking on a selection offers the possibility to save the selected signal part to a file, in wav format. The dialog below is popped, allowing to define a destination file.</p>
+		<img src="pics/audio_widget_popup_save_selection.jpg"  align="middle" alt="Picture Not Found"/>
+
+		<h3><a name="export_signal">Export signal/selection to an external tool</h3>
+		<p><strong>Export signal/selection to ...</strong> options of the contextual menu displayed when right-clicking on a selection offers the possibility to save the whole signal (or selected signal part if any selection active) to a temporary file, in wav format, and automatically start chosen tool for this temporary file. </p>
+		<img src="pics/audio_widget_export_to.jpg"  align="middle" alt="Picture Not Found"/>
+		<br />
+		<h3><a name="track_controls">Track controls</h3>
+		<p>The <strong>Volume </strong> ruler allows to adjust volume factor from -14dB to +14dB, independently for each track.</p>
+		<p>The <img src="pics/audio_widget_speaker_button.jpg" align="middle" alt="Picture Not Found"/> button left to the waveform allows to cut/restore volume for corresponding track (when volume is cut, track waveform is dimmed and speaker button is shown crossed with a red line).</p>
+		<p>The expander button <img src="pics/audio_widget_plus.jpg" align="middle" alt="Picture Not Found"/> right to the volume control allows to show or hide more track controls: </p>
+
+		<p>&nbsp;&nbsp;<img src="pics/audio_widget_audio_tracks_expanded.jpg" align="middle" alt="Picture Not Found"/>&nbsp;&nbsp; 	(Audio tracks controls expanded) </p>
+		<ul class="feature_list">
+			<li>The <strong>Pitch</strong> ruler allows to adjust signal pitch from 0.4 (2.5x lower) to 2.5 (2.5x upper). </li>
+			<li>The <strong>VZoom </strong> ruler allows to adjusts vertical zoom (i.e. the amplitude)  of the waveform.</li>
+			<li>The <strong>Offset</strong> field allows to define an offset (in seconds) to apply to corresponding audio track, relatively to other tracks, when both tracks recording start are desynchronized. Setting a positive offset makes the signal play later for this track, while a negative makes the signal play sooner. 0 cancels the offset. A click on the "Update" button applies the offset.</li>
+			<li>The &nbsp;<img src="pics/audio_widget_minus.jpg" align="middle"  alt="Picture Not Found"/> button collapses the extra controls frame.</li>
+		</ul>
+		<br />
+
+<a href="#top" target="content_frame"> &gt;&gt; Back to top </a>
+<br /><hr />
+		<h2><a name="segment_tracks"></a>Segment Tracks</h2>
+		<p>The following image shows section, turn and speech segments tracks, with an overlapping turn.</p>
+		<p><img src="pics/audio_widget_main_segment.jpg" alt="Picture Not Found"/></p>
+		<p>The segment area displays signal segmentation along the timeline, for the different levels of segmentation configured for current annotation conventions, typically a section / turn / speech segment scheme, as shown above.<br />
+		Each track corresponds to a given level. Segments are drawn with respect to their position and size, taking into account current zoom level. Segment labels contain the section title for sections, the speaker name for turns, the transcription contents for speech segments. <br />
+		When the cursor is placed upon a segment, the segment label is displayed in a popup window, which vanishes when cursor is moved (this allows to display segment contents even at zoom levels where they are not or partially visible).
+		</p>
+		<p>Current audio cursor position is materialized by a yellow vertical bar. When the cursor reaches a segment, this segment is displayed more brightly.</p>
+		<p>When some overlapping segments have been defined, they appear stacked in segment tracks, as illustrated in above screenshot. Thus it is fairly easy to retrieve visually overlapping segments in a file by scrolling the audio widget.</p>
+		<p><a name="prev_next_segment"/>Controls on the right of each segment track allow to move the audio cursor backward &nbsp;<img src="pics/audio_widget_back.jpg" align="middle" alt="Picture Not Found"/>&nbsp; or forward &nbsp;<img src="pics/audio_widget_forward.jpg" align="middle" alt="Picture Not Found"/>&nbsp; to the next segment boundary.</p>
+		<p>The expander button <img src="pics/audio_widget_plus.jpg" align="middle"  alt="Picture Not Found"/> gives access to extra options controlling playback behaviour when reaching a segment end: </p>
+
+		<p>&nbsp;&nbsp;<img src="pics/audio_widget_segment_extended.jpg" border="1" align="middle" alt="Picture Not Found"/>&nbsp;&nbsp; Extra playback controls for segment track </p>
+		<ul class="feature_list">
+			<li>The <strong>delay </strong> field allows to force a playback pause for given delay when reaching a segment end, before resuming play. </li>
+			<li>If <strong>stop</strong> is checked, playback will stop when reaching a segment end.</li>
+			<li>The &nbsp;<img src="pics/audio_widget_minus.jpg" align="middle"  alt="Picture Not Found"/> button collapses the extra controls frame.</li>
+		</ul>
+		<br />
+
+
+
+		<h3><a name="mov_seg">Moving segment boundaries</h3>
+		<p>Segment boundaries can be graphically adjusted through the segment tracks. Two methods can be used to move a boundary:</p>
+		<ul class="feature_list">
+			<li>Place the mouse pointer on the segment boundary, and hold mouse left button pressed while dragging the mouse pointer toward new segment position, then release the button,</li>
+			<li>Set the (yellow) audio cursor to target position, place the mouse pointer on the segment boundary, and hold <strong>&lt;Control&gt;</strong> key while clicking on the boundary; the clicked boundary will then be automatically moved to the previously set cursor position. </li>
+		</ul>
+		<p>The latter method generally proves to be more efficient and permits to place with a single click the boundary with accuracy to the current cursor position, which can have been set in different manners, e.g. :</p>
+		<ul>
+		<li> one can precisely position the cursor within the waveform, following its shape (at a signal peak start e.g.) </li>
+		<li> one can play the signal and interrupt playback at a precise position </li>
+		<li> cursor can be set to a precise timecode using "go to signal position" function(cf. <a href="menu_bar.html#signal_menu">signal menu</a>) </li>
+		</ul>
+		<br />
+		<p>When the mouse pointer is placed on a segment boundary, its shape changes, indicating that the boundary can be grabbed and moved. Depending on current window manager theme, the pointer may look like a double-arrow, or like a left-oriented or right-oriented arrow.<br /> While dragging a segment boundary, it may happen that a "grey" zone appears between the two segments, because the neighboring segment hasn't been yet redrawn up to the new boundary. This has no impact on the final result, as the neighbor segment will be accurately displayed when the mouse button is released. </p>
+		<p>When the moved boundary corresponds also to an upper level segment track boundary (e.g. a speech segment boundary which also marks a turn boundary), then tied boundaries are moved together. </p>
+		<br />
+		<h3><a name="select_seg"><a name="sel_segment"/> Selecting a segment</h3>
+		<p>Clicking on a segment automatically selects corresponding signal portion.</p>
+		<br />
+		<h3><a name="show_seg"/> Showing/hiding segment tracks</h3>
+		<table summary="popup"><tr>
+			<td valign="middle"><img src="pics/audio_widget_popup_menu_extanded.jpg"  align="middle" alt="Picture Not Found"/></td>
+			<td width="10"></td>
+			<td valign="middle">
+			 Through the <strong>Show signal tracks</strong> submenu displayed when Right-clicking on audio widget, one can select which tracks should be displayed. A "checked" tracks is displayed, an "unchecked" isn't.</td>
+		</table>
+<br /><hr />
+<a href="#top" target="content_frame"> &gt;&gt; Back to top </a>
+
+	</body>
+</html>

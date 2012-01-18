@@ -1,0 +1,611 @@
+<!-- v1.3 16 avril, 2009, LINUX VERSION --> 
+<!-- 
+	
+	LANGUAGE NODE
+		Name: name of language 
+		Shortcut: used to link with Language in configuration file
+		ModeLeft2Right: input mode 
+		SpaceSeparated: if words in language are usually separated by space character
+		IsActivated:
+			0: language won't be displayed in combo (deprecated)
+			1: language has its own mapping
+			2: language uses external IME
+		MappingMode: "Logic" or "Hardware" indicates which code to use for mapping keys and letters
+
+	KEYMAP NODE
+		gdk_keyval: logic value 
+		gdk_hardware_code: hardware value 
+		label: value on azerty keyboards 
+		unicode_value: unicode value of the caracter
+		modifier: special mask key use for getting this character
+			maj        = CAPS LOCK or SHIFT
+			alt/alt gr = ALT
+			ctrl+shift = CTRL + SHIFT
+	
+	KEYMAP ADDITIONAL NODE for ARABIC
+		isolated_form: unicode value of arabic isolated form DEPRECATED 
+		initial_form: unicode value of arabic initial form DEPRECATED
+		isolated_form: unicode value of arabic isolated form DEPRECATED
+		medial_form: unicode value of arabic medial form DEPRECATED
+		final_form: unicode value of arabic final form DEPRECATED
+		Unlinked_char: 1 if this caracter should not link other DEPRECATED  
+		is_composed: 1 if this caracter is a composition of others DEPRECATED
+		is_vowel: 1 for classic vowel, 2 for shadda
+		no_check: 1 if speller has to skip this character 
+		is_punctuation: DEPRECATED
+
+	HARDWARE MAPPING 
+		recommanded one - can have some inversed keys with QWERTY, in this case use LOGIC MAPPING 
+	
+	! REMARK !
+	For enabling us and gb, ALTGR is replaced with ALT
+	
+	see your /etc/X11/xorg.conf for keyboard options:
+	"XkbOptions" "caps:shiftlock" for enabling transcriberAG mapping with capsLock
+	is some xkbvariant option set, some keys can not work, disable this option for enabling transcriberAG mapping 
+	
+-->
+
+
+<Input_Languages>
+	<Language Name="arabe" Type="ar" Shortcut="ara" ModeLeft2Right="0" SpaceSeparated="1" IsActivated="1" MappingMode="Hardware">
+		<!-- language gunichar range  -->
+		<Language_gunichar_range start="0x0600" end="0x06ff"/>
+		<Language_gunichar_range start="0xfdf0" end="0xfdfd"/>
+		<Language_gunichar_range start="0xfb50" end="0xfdc5"/>
+		<Language_gunichar_range start="0xfe70" end="0xfeff"/>
+
+		<!-- uppercase letters -->
+		<KeyMap gdk_keyval="0x041" gdk_hardware_code="0x018" modifier="maj" label="A" unicode_value="0x064e"><!-- FATHA  -->
+			<isolated_form value="0x064e"/>
+			<is_vowel value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x042" gdk_hardware_code="0x038" modifier="maj" label="B" unicode_value="0xfef5" unicode_replace="0x0644,0x0622"> <!-- LAM WITH ALEF WITH MADDA ABOVE -->
+			<isolated_form value="0xfef5"/>
+			<initial_form value="0xfef5"/>
+			<medial_form value="0xfef6"/>
+			<final_form value="0xfef6"/>
+			<Unlinked_char value="1"/>
+			<is_composed value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x043" gdk_hardware_code="0x036" modifier="maj" label="C" unicode_value="0x007b"/><!-- RIGHT CURLY BRACKET -->
+		<KeyMap gdk_keyval="0x044" gdk_hardware_code="0x028" modifier="maj" label="D" unicode_value="0x005b"/><!-- RIGHT SQUARE BRACKET -->
+		<KeyMap gdk_keyval="0x045" gdk_hardware_code="0x01a" modifier="maj" label="E" unicode_value="0x064f"><!-- DAMMA  -->
+			<isolated_form value="0x064f"/>
+			<is_vowel value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x046" gdk_hardware_code="0x029" modifier="maj" label="F" unicode_value="0x005d"/><!-- LEFT SQUARE BRACKET -->
+		<KeyMap gdk_keyval="0x047" gdk_hardware_code="0x02a" modifier="maj" label="G" unicode_value="0xfef7" unicode_replace="0x0644,0x0623"><!-- LAM WITH ALEF WITH HAMZA ABOVE -->
+			<isolated_form value="0xfef7"/>
+			<initial_form value="0xfef7"/>
+			<medial_form value="0xfef8"/>
+			<final_form value="0xfef8"/>
+			<Unlinked_char value="1"/>
+			<is_composed value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x048" gdk_hardware_code="0x02b" modifier="maj" label="H" unicode_value="0x0623"><!-- ALEF WITH HAMZA ABOVE -->
+			<isolated_form value="0xfe83"/>
+			<final_form value="0xfe84"/>
+			<initial_form value="0xfe83"/>
+			<medial_form value="0xfe84"/>
+			<Unlinked_char value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x049" gdk_hardware_code="0x01f" modifier="maj" label="I" unicode_value="0x00f7"/><!-- DIVISION SIGN -->
+		<KeyMap gdk_keyval="0x04a" gdk_hardware_code="0x02c" modifier="maj" label="J" unicode_value="0x0640"><!-- TATWEEL (KASHIDA) -->
+			<no_check value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x04b" gdk_hardware_code="0x02d" modifier="maj" label="K" unicode_value="0x060c"/><!-- ARABIC COMMA -->
+		<KeyMap gdk_keyval="0x04c" gdk_hardware_code="0x02e" modifier="maj" label="L" unicode_value="0x002f"/><!-- SLASH -->
+		<KeyMap gdk_keyval="0x04d" gdk_hardware_code="0x02f" modifier="maj" label="M" unicode_value="0x003a"/><!-- COLON -->
+		<KeyMap gdk_keyval="0x04e" gdk_hardware_code="0x039" modifier="maj" label="N" unicode_value="0x0622"><!-- ALEF WITH MADDA ABOVE -->
+			<isolated_form value="0xfe81"/>
+			<final_form value="0xfe82"/>
+			<initial_form value="0xfe81"/>
+			<medial_form value="0xfe82"/>
+			<Unlinked_char value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x04f" gdk_hardware_code="0x020" modifier="maj" label="O" unicode_value="0x00D7"/><!-- MULTIPLICATION SIGN -->
+		<KeyMap gdk_keyval="0x050" gdk_hardware_code="0x021" modifier="maj" label="P" unicode_value="0x061b"><!-- ARABIC SEMICOLON -->
+			<is_punctuation value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x051" gdk_hardware_code="0x026" modifier="maj" label="Q" unicode_value="0x0650"><!-- KASRA -->
+			<isolated_form value="0x0650"/>
+			<is_vowel value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x052" gdk_hardware_code="0x01b" modifier="maj" label="R" unicode_value="0x064c"><!-- DAMMATAN -->
+			<isolated_form value="0x064c"/>
+			<is_vowel value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x053" gdk_hardware_code="0x027" modifier="maj" label="S" unicode_value="0x064d"><!-- KASRATAN -->
+			<isolated_form value="0x064d"/>
+			<is_vowel value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x054" gdk_hardware_code="0x01c" modifier="maj" label="T" unicode_value="0xfef9" unicode_replace="0x0644,0x0625"><!-- LAM WITH ALEF WITH HAMZA BELOW -->
+			<isolated_form value="0xfef9"/>
+			<final_form value="0xfefa"/>
+			<initial_form value="0xfef9"/>
+			<medial_form value="0xfefa"/>
+			<Unlinked_char value="1"/>
+			<is_composed value="1"/>			
+		</KeyMap>
+		<KeyMap gdk_keyval="0x055" gdk_hardware_code="0x01e" modifier="maj" label="U" unicode_value="0x060c"/><!-- ARABIC COMMA? -->
+		<KeyMap gdk_keyval="0x056" gdk_hardware_code="0x037" modifier="maj" label="V" unicode_value="0x007d"/><!-- LEFT CURLY BRACKET -->
+		<KeyMap gdk_keyval="0x057" gdk_hardware_code="0x034" modifier="maj" label="W" unicode_value="0x0653"><!-- MADDA -->
+			<isolated_form value="0x0653"/>
+			<is_vowel value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x058" gdk_hardware_code="0x035" modifier="maj" label="X" unicode_value="0x0652"><!-- SUKUN -->
+			<isolated_form value="0x0652"/>
+			<is_vowel value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x059" gdk_hardware_code="0x01d" modifier="maj" label="Y" unicode_value="0x0625"><!-- ALEF WITH HAMZA BELOW -->
+			<isolated_form value="0xfe87"/>
+			<final_form value="0xfe88"/>
+			<initial_form value="0xfe87"/>
+			<medial_form value="0xfe88"/>
+			<Unlinked_char value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x05a" gdk_hardware_code="0x019" modifier="maj" label="Z" unicode_value="0x064b"><!-- TATWEEL WITH FATHATAN ABOVE -->
+			<isolated_form value="0x064b"/>
+			<is_vowel value="1"/>
+		</KeyMap>
+		
+		<!-- lowercase letters -->
+		<KeyMap gdk_keyval="0x061" gdk_hardware_code="0x018" label="a" unicode_value="0x0636"><!-- DAD -->
+			<isolated_form value="0xfebd"/>
+			<initial_form value="0xfebf"/>
+			<medial_form value="0xfec0"/>
+			<final_form value="0xfebe"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x062" gdk_hardware_code="0x038" label="b" unicode_value="0xfefb" unicode_replace="0x0644,0x0627"><!-- LAM WITH ALEF -->
+			<isolated_form value="0xfefb"/>
+			<initial_form value="0xfefb"/>
+			<medial_form value="0xfefc"/>
+			<final_form value="0xfefc"/>
+			<Unlinked_char value="1"/>
+			<is_composed value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x063" gdk_hardware_code="0x036" label="c" unicode_value="0x0624"><!-- WAW WITH HAMZA ABOVE -->
+			<isolated_form value="0xfe85"/>
+			<final_form value="0xfe86"/>
+			<initial_form value="0xfe85"/>
+			<medial_form value="0xfe86"/>
+			<Unlinked_char value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x064" gdk_hardware_code="0x028" label="d" unicode_value="0x064a"><!-- YEH -->
+			<isolated_form value="0xfef1"/>
+			<initial_form value="0xfef3"/>
+			<medial_form value="0xfef4"/>
+			<final_form value="0xfef2"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x065" gdk_hardware_code="0x01a" label="e" unicode_value="0x062b"><!-- THEH -->
+			<isolated_form value="0xfe99"/>
+			<initial_form value="0xfe9b"/>
+			<medial_form value="0xfe9c"/>
+			<final_form value="0xfe9a"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x066" gdk_hardware_code="0x029" label="f" unicode_value="0x0628"><!-- BEH -->
+			<isolated_form value="0xfe8f"/>
+			<initial_form value="0xfe91"/>
+			<medial_form value="0xfe92"/>
+			<final_form value="0xfe90"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x067" gdk_hardware_code="0x02a" label="g" unicode_value="0x0644"><!-- LAM -->
+			<isolated_form value="0xfedd"/>
+			<initial_form value="0xfedf"/>
+			<medial_form value="0xfee0"/>
+			<final_form value="0xfede"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x068" gdk_hardware_code="0x02b" label="h" unicode_value="0x0627"><!-- ALEF -->
+			<isolated_form value="0xfe8d"/>
+			<final_form value="0xfe8e"/>
+			<initial_form value="0xfe8d"/>
+			<medial_form value="0xfe8e"/>
+			<Unlinked_char value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x069" gdk_hardware_code="0x01f" label="i" unicode_value="0x0647"><!-- HEH -->
+			<isolated_form value="0xfee9"/>
+			<initial_form value="0xfeeb"/>
+			<medial_form value="0xfeec"/>
+			<final_form value="0xfeea"/>
+
+		</KeyMap>
+		<KeyMap gdk_keyval="0x06a" gdk_hardware_code="0x02c" label="j" unicode_value="0x062a"><!-- TEH -->
+			<isolated_form value="0xfe95"/>
+			<initial_form value="0xfe97"/>
+			<medial_form value="0xfe98"/>
+			<final_form value="0xfe96"/>
+
+		</KeyMap>
+		<KeyMap gdk_keyval="0x06b" gdk_hardware_code="0x02d" label="k" unicode_value="0x0646"><!-- NOON -->
+			<isolated_form value="0xfee5"/>
+			<initial_form value="0xfee7"/>
+			<medial_form value="0xfee8"/>
+			<final_form value="0xfee6"/>
+
+		</KeyMap>
+		<KeyMap gdk_keyval="0x06c" gdk_hardware_code="0x02e" label="l" unicode_value="0x0645"><!-- MEEM -->
+			<isolated_form value="0xfee1"/>
+			<initial_form value="0xfee3"/>
+			<medial_form value="0xfee4"/>
+			<final_form value="0xfee2"/>
+
+		</KeyMap>
+		<KeyMap gdk_keyval="0x06d" gdk_hardware_code="0x02f" label="m" unicode_value="0x0643"><!-- KAF -->
+			<isolated_form value="0xfed9"/>
+			<initial_form value="0xfedb"/>
+			<medial_form value="0xfedc"/>
+			<final_form value="0xfeda"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x06e" gdk_hardware_code="0x039" label="n" unicode_value="0x0649"><!--ALEF MAKSURA -->
+			<isolated_form value="0xfeef"/>
+			<final_form value="0xfef0"/>
+			<initial_form value="0xfeef"/>
+			<medial_form value="0xfef0"/>
+			
+			<Unlinked_char value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x06f" gdk_hardware_code="0x020" label="o" unicode_value="0x062e"><!-- KHAH -->
+			<isolated_form value="0xfea5"/>
+			<initial_form value="0xfea7"/>
+			<medial_form value="0xfea8"/>
+			<final_form value="0xfea6"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x070" gdk_hardware_code="0x021" label="p" unicode_value="0x062d"><!-- HAH -->
+			<isolated_form value="0xfea1"/>
+			<initial_form value="0xfea3"/>
+			<medial_form value="0xfea4"/>
+			<final_form value="0xfea2"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x071" gdk_hardware_code="0x026" label="q" unicode_value="0x0634"><!-- SHEEN -->
+			<isolated_form value="0xfeb5"/>
+			<initial_form value="0xfeb7"/>
+			<medial_form value="0xfeb8"/>
+			<final_form value="0xfeb6"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x072" gdk_hardware_code="0x01b" label="r" unicode_value="0x0642"><!-- QAF -->
+			<isolated_form value="0xfed5"/>
+			<initial_form value="0xfed7"/>
+			<medial_form value="0xfed8"/>
+			<final_form value="0xfed6"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x073" gdk_hardware_code="0x027" label="s" unicode_value="0x0633"><!-- SEEN -->
+			<isolated_form value="0xfeb1"/>
+			<initial_form value="0xfeb3"/>
+			<medial_form value="0xfeb4"/>
+			<final_form value="0xfeb2"/>
+		</KeyMap>				
+		<KeyMap gdk_keyval="0x074" gdk_hardware_code="0x01c" label="t" unicode_value="0x0641"><!-- FEH -->
+			<isolated_form value="0xfed1"/>
+			<initial_form value="0xfed3"/>
+			<medial_form value="0xfed4"/>
+			<final_form value="0xfed2"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x075" gdk_hardware_code="0x01e" label="u" unicode_value="0x0639"><!-- AIN -->
+			<isolated_form value="0xfec9"/>
+			<initial_form value="0xfecb"/>
+			<medial_form value="0xfecc"/>
+			<final_form value="0xfeca"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x076" gdk_hardware_code="0x037" label="v" unicode_value="0x0631"><!-- REH -->
+			<isolated_form value="0xfead"/>
+			<final_form value="0xfeae"/>
+			<initial_form value="0xfead"/>
+			<medial_form value="0xfeae"/>
+			<Unlinked_char value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x077" gdk_hardware_code="0x034" label="w" unicode_value="0x0626"><!-- YEH WITH HAMZA ABOVE -->
+			<isolated_form value="0xfe89"/>
+			<initial_form value="0xfe8b"/>
+			<medial_form value="0xfe8c"/>
+			<final_form value="0xfe8a"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x078" gdk_hardware_code="0x035" label="x" unicode_value="0x0621"><!-- HAMZA -->
+			<isolated_form value="0xfe80"/>
+			<Unlinked_char value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x079" gdk_hardware_code="0x01d" label="y" unicode_value="0x063a"><!-- GHAIN -->
+			<isolated_form value="0xfecd"/>
+			<initial_form value="0xfecf"/>
+			<medial_form value="0xfed0"/>
+			<final_form value="0xfece"/>
+			
+		</KeyMap>
+		<KeyMap gdk_keyval="0x07a" gdk_hardware_code="0x019" label="z" unicode_value="0x0635"><!-- SAD -->
+			<isolated_form value="0xfeb9"/>
+			<initial_form value="0xfebb"/>
+			<medial_form value="0xfebc"/>
+			<final_form value="0xfeba"/>
+		</KeyMap>
+
+		<!--special letters -->
+		<KeyMap gdk_keyval="0x0046" gdk_hardware_code="0x0029" modifier="ctrl+shift" label="Alt Gr   f" unicode_value="0x067E"/><!--PEH-->
+		<KeyMap gdk_keyval="0x004d" gdk_hardware_code="0x002f" modifier="ctrl+shift" label="Alt Gr  m" unicode_value="0x06AF"/><!--GAF-->
+		<KeyMap gdk_keyval="0x0054" gdk_hardware_code="0x001c" modifier="ctrl+shift" label="Alt Gr  t" unicode_value="0x06A4"/><!--VEH-->
+		<KeyMap gdk_keyval="0x003f" gdk_hardware_code="0x003a" modifier="ctrl+shift" label="Alt Gr  ?" unicode_value="0x0671"/><!--ALIF WASLA-->
+		<!--specials first line + ALT gr-->
+		<KeyMap gdk_keyval="0x00b0" gdk_hardware_code="0x0014" modifier="ctrl+shift" label="right_square_bracket_bracket" unicode_value="0x00bb"/><!--left quote -->
+		<KeyMap gdk_keyval="0x002b" gdk_hardware_code="0x0015" modifier="ctrl+shift" label="right_curly_bracket" unicode_value="0x00ab"/><!-- rigth quote -->
+		
+		<!--additional shortcut of existing letter cause lazy key on laptop -->
+		<KeyMap gdk_keyval="0x0050" gdk_hardware_code="0x0021" modifier="ctrl+shift" label="Alt Gr  p" unicode_value="0x003e"/><!-- lesser than sign -->
+		<KeyMap gdk_keyval="0x00a3" gdk_hardware_code="0x0023" modifier="ctrl+shift" label="Alt Gr  dollar" unicode_value="0x062c"/><!-- lesser than sign -->
+				
+		<!--shortcuts-->
+		<KeyMap gdk_keyval="0x0041" gdk_hardware_code="0x0018" modifier="ctrl+shift" label="AltGr  A" unicode_value="0x064e" unicode_replace="0x0651,0x064e"> <!--SHADDA with FATHA-->
+			<is_composed value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x005a" gdk_hardware_code="0x0019" modifier="ctrl+shift" label="AltGr  Z" unicode_value="0x064b" unicode_replace="0x0651,0x064b"> <!--SHADDA with FATHATAN-->
+			<is_composed value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x0045" gdk_hardware_code="0x001a" modifier="ctrl+shift" label="AltGr  E" unicode_value="0x064f" unicode_replace="0x0651,0x064f"> <!--SHADDA with DAMMA-->
+			<is_composed value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x0052" gdk_hardware_code="0x001b" modifier="ctrl+shift" label="AltGr  R" unicode_value="0x064c" unicode_replace="0x0651,0x064c"> <!--SHADDA with DAMMATAN-->
+			<is_composed value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x0051" gdk_hardware_code="0x0026" modifier="ctrl+shift" label="AltGr  Q" unicode_value="0x0650" unicode_replace="0x0651,0x0650"> <!--SHADDA with KASRA-->
+			<is_composed value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x0053" gdk_hardware_code="0x0027" modifier="ctrl+shift" label="AltGr  S" unicode_value="0x064d" unicode_replace="0x0651,0x064d"> <!--SHADDA with KASRATAN-->
+			<is_composed value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x0057" gdk_hardware_code="0x0034" modifier="ctrl+shift" label="AltGr  W" unicode_value="0x0653" unicode_replace="0x0651,0x0653"> <!--SHADDA with MADDA-->
+			<is_composed value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x0058" gdk_hardware_code="0x0035" modifier="ctrl+shift" label="AltGr  X" unicode_value="0x0652" unicode_replace="0x0651,0x0652"> <!--SHADDA with SUKUN-->		
+			<is_composed value="1"/>
+		</KeyMap>
+
+		<!-- digit -->	
+		<KeyMap gdk_keyval="0x0030" gdk_hardware_code="0x013" modifier="maj" label="0" unicode_value="0x0028"/>
+		<KeyMap gdk_keyval="0x0031" gdk_hardware_code="0x00a" modifier="maj" label="1" unicode_value="0x0021"/>
+		<KeyMap gdk_keyval="0x0032" gdk_hardware_code="0x00b" modifier="maj" label="2" unicode_value="0x0040"/>
+		<KeyMap gdk_keyval="0x0033" gdk_hardware_code="0x00c" modifier="maj" label="3" unicode_value="0x0023"/>
+		<KeyMap gdk_keyval="0x0034" gdk_hardware_code="0x00d" modifier="maj" label="4" unicode_value="0x0024"/>
+		<KeyMap gdk_keyval="0x0035" gdk_hardware_code="0x00e" modifier="maj" label="5" unicode_value="0x0025"/>
+		<KeyMap gdk_keyval="0x0036" gdk_hardware_code="0x00f" modifier="maj" label="6" unicode_value="0x005e"/>
+		<KeyMap gdk_keyval="0x0037" gdk_hardware_code="0x010" modifier="maj" label="7" unicode_value="0x0026"/>
+		<KeyMap gdk_keyval="0x0038" gdk_hardware_code="0x011" modifier="maj" label="8" unicode_value="0x002a"/>
+		<KeyMap gdk_keyval="0x0039" gdk_hardware_code="0x012" modifier="maj" label="9" unicode_value="0x0029"/>
+		<KeyMap gdk_keyval="0x007e" gdk_hardware_code="0x031" modifier="maj" label="over two_superior" unicode_value="0x0651"> <!-- Shadda-->
+			<isolated_form value="0x0651"/>
+			<is_vowel value="2"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x0b0" gdk_hardware_code="0x014" modifier="maj" label="degree" unicode_value="0x005F"/>
+		<KeyMap gdk_keyval="0x03d" gdk_hardware_code="0x015" modifier="maj" label="plus" unicode_value="0x002B"/>
+
+		
+		<!-- chars under digit -->		
+		<KeyMap gdk_keyval="0x0026" gdk_hardware_code="0x00a" label="ampersand" unicode_value="0x0031"/>
+		<KeyMap gdk_keyval="0x00e9" gdk_hardware_code="0x00b" label="eacute" unicode_value="0x0032"/>
+		<KeyMap gdk_keyval="0x0022" gdk_hardware_code="0x00c" label="dblquote" unicode_value="0x0033"/>
+		<KeyMap gdk_keyval="0x0027" gdk_hardware_code="0x00d" label="apostrophe" unicode_value="0x0034"/>
+		<KeyMap gdk_keyval="0x0028" gdk_hardware_code="0x00e" label="paren left" unicode_value="0x0035"/>
+		<KeyMap gdk_keyval="0x002d" gdk_hardware_code="0x00f" label="hypen minus" unicode_value="0x0036"/>
+		<KeyMap gdk_keyval="0x00e8" gdk_hardware_code="0x010" label="egrave" unicode_value="0x0037"/>
+		<KeyMap gdk_keyval="0x05f" gdk_hardware_code="0x011" label="underscore" unicode_value="0x0038"/>
+		<KeyMap gdk_keyval="0x0e7" gdk_hardware_code="0x012" label="cedilla" unicode_value="0x0039"/>
+		<KeyMap gdk_keyval="0x0e0" gdk_hardware_code="0x013" label="agrave" unicode_value="0x0030"/>
+		<KeyMap gdk_keyval="0x0029" gdk_hardware_code="0x014" label="paren right" unicode_value="0x002D"/>
+		<KeyMap gdk_keyval="0x0b2" gdk_hardware_code="0x031" label="two_superior" unicode_value="0x0630"> <!-- ? -->
+			<isolated_form value="0xfeab"/>
+			<final_form value="0xfeac"/>
+			<initial_form value="0xfeab"/>
+			<medial_form value="0xfeac"/>
+			<Unlinked_char value="1"/>
+		</KeyMap>
+
+		<!-- first line + AltGr -->
+		<KeyMap gdk_keyval="0x0026" gdk_hardware_code="0x00a" modifier="alt" label="superscript_one" unicode_value="0x0661"/><!-- ARABIC_EXTENDED_INDIC_DIGIT_ONE -->
+		<KeyMap gdk_keyval="0x00e9" gdk_hardware_code="0x00b" modifier="alt" label="tilde" unicode_value="0x0662"/><!-- ARABIC_EXTENDED_INDIC_DIGIT_TWO -->
+		<KeyMap gdk_keyval="0x0022" gdk_hardware_code="0x00c" modifier="alt" label="number sign" unicode_value="0x0663"/><!-- ARABIC_EXTENDED_INDIC_DIGIT_THREE -->
+		<KeyMap gdk_keyval="0x0027" gdk_hardware_code="0x00d" modifier="alt" label="left_curly_bracket" unicode_value="0x0664"/><!-- ARABIC_EXTENDED_INDIC_DIGIT_FOUR -->
+		<KeyMap gdk_keyval="0x0028" gdk_hardware_code="0x00e" modifier="alt" label="left_square_bracket_bracket" unicode_value="0x0665"/><!-- ARABIC_INDIC_DIGIT_FIVE -->
+		<KeyMap gdk_keyval="0x002d" gdk_hardware_code="0x00f" modifier="alt" label="vertical line" unicode_value="0x0666"/><!-- ARABIC_INDIC_DIGIT_SIX -->
+		<KeyMap gdk_keyval="0x00e8" gdk_hardware_code="0x010" modifier="alt" label="grave_accent" unicode_value="0x0667"/><!-- ARABIC_INDIC_DIGIT_SEVEN -->
+		<KeyMap gdk_keyval="0x005f" gdk_hardware_code="0x011" modifier="alt" label="reverse_solidus" unicode_value="0x0668"/><!-- ARABIC_INDIC_DIGIT_EIGHT -->
+		<KeyMap gdk_keyval="0x00e7" gdk_hardware_code="0x012" modifier="alt" label="circumflex_accent" unicode_value="0x0669"/><!-- ARABIC_INDIC_DIGIT_NINE -->
+		<KeyMap gdk_keyval="0x00e0" gdk_hardware_code="0x013" modifier="alt" label="commercial_at" unicode_value="0x0660"/><!-- ARABIC_INDIC_DIGIT_ZERO -->
+
+		<!-- miscellaneous uppercase -->
+		<KeyMap gdk_keyval="0xfe57" gdk_hardware_code="0x022" modifier="maj" label="dead_diaeresis" unicode_value="0x003e"/><!-- lesser than sign -->
+		<KeyMap gdk_keyval="0x00a3" gdk_hardware_code="0x023" modifier="maj" label="sterling" unicode_value="0x003c"/><!-- greater than sign -->
+		<KeyMap gdk_keyval="0x0025" gdk_hardware_code="0x030" modifier="maj" label="percent" unicode_value="0x022"/><!-- QUOTATION MARK -->
+		<KeyMap gdk_keyval="0x0b5" gdk_hardware_code="0x033" modifier="maj" label="mu" unicode_value="0x007c"/><!-- vertical bar -->
+		<KeyMap gdk_keyval="0x002e" gdk_hardware_code="0x03b" modifier="maj" label="period" unicode_value="0x066b"/><!-- ARABIC DECIMAL SEPARATOR -->
+		<KeyMap gdk_keyval="0x002f" gdk_hardware_code="0x03c" modifier="maj" label="slash" unicode_value="0x002e"/><!-- FULL STOP -->
+		<KeyMap gdk_keyval="0x00a7" gdk_hardware_code="0x03d" modifier="maj" label="section" unicode_value="0x061f"><!-- ARABIC QUESTION MARK -->
+			<is_punctuation value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x03e" gdk_hardware_code="0x05e" modifier="maj" label="greater azerty" unicode_value="0x007c"/><!-- vertical bar -->
+		<KeyMap gdk_keyval="0x003f" gdk_hardware_code="0x03a" modifier="maj" label="question" unicode_value="0x066c"/><!-- ARABIC THOUSANDS SEPARATOR -->
+				
+		<!-- miscellaneous lowercase -->
+		<KeyMap gdk_keyval="0xfe52" gdk_hardware_code="0x022" label="dead_circumflex" unicode_value="0x062c"><!-- JEEM -->
+			<isolated_form value="0xfe9d"/>
+			<initial_form value="0xfe9f"/>
+			<medial_form value="0xfea0"/>
+			<final_form value="0xfe9e"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x0024" gdk_hardware_code="0x023" label="dollar" unicode_value="0x062f"><!-- DAL -->
+			<isolated_form value="0xfea9"/>
+			<final_form value="0xfeaa"/>
+			<initial_form value="0xfea9"/>
+			<medial_form value="0xfeaa"/>
+			<Unlinked_char value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x00f9" gdk_hardware_code="0x030" label="ugrave" unicode_value="0x0637"><!-- TAH -->
+			<isolated_form value="0xfec1"/>
+			<initial_form value="0xfec3"/>
+			<medial_form value="0xfec4"/>
+			<final_form value="0xfec2"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x002a" gdk_hardware_code="0x033" label="asterisk" unicode_value="0x05c"/><!-- reverse solidus -->
+		<KeyMap gdk_keyval="0x002c" gdk_hardware_code="0x03a" label="comma" unicode_value="0x0629"><!-- TEH MARBUTA -->
+			<isolated_form value="0xfe93"/>
+			<final_form value="0xfe94"/>
+			<initial_form value="0xfe93"/>
+			<medial_form value="0xfe94"/>
+			<Unlinked_char value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x003b" gdk_hardware_code="0x03b" label="semicolon" unicode_value="0x0648"><!-- WAW -->
+			<isolated_form value="0xfeed"/>
+			<final_form value="0xfeee"/>
+			<initial_form value="0xfeed"/>
+			<medial_form value="0xfeee"/>
+			<Unlinked_char value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x003a" gdk_hardware_code="0x03c" label="colon" unicode_value="0x0632"><!-- ZAIN -->
+			<isolated_form value="0xfeaf"/>
+			<final_form value="0xfeb0"/>
+			<initial_form value="0xfeaf"/>
+			<medial_form value="0xfeb0"/>
+			<Unlinked_char value="1"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x0021" gdk_hardware_code="0x03d" label="exclamation" unicode_value="0x0638"><!-- ZAH -->
+			<isolated_form value="0xfec5"/>
+			<initial_form value="0xfec7"/>
+			<medial_form value="0xfec8"/>
+			<final_form value="0xfec6"/>
+		</KeyMap>
+		<KeyMap gdk_keyval="0x03c" gdk_hardware_code="0x05e" label="lesser azerty" unicode_value="0x05c"/><!-- reverse solidus  -->
+	</Language>
+
+	<Language Name="cyrillic" Shortcut="rus" ModeLeft2Right="1" SpaceSeparated="1" IsActivated="1" MappingMode="Hardware">
+		<Language_gunichar_range start="0x0400" end="0x04ff"/>
+		
+		<!-- uppercase letters -->
+		<KeyMap gdk_keyval="0x041" gdk_hardware_code="0x018" modifier="maj" label="A" unicode_value="0x0419"/>
+		<KeyMap gdk_keyval="0x042" gdk_hardware_code="0x038" modifier="maj" label="B" unicode_value="0x0418"/>
+		<KeyMap gdk_keyval="0x043" gdk_hardware_code="0x036" modifier="maj" label="C" unicode_value="0x0421"/>
+		<KeyMap gdk_keyval="0x044" gdk_hardware_code="0x028" modifier="maj" label="D" unicode_value="0x0412"/>
+		<KeyMap gdk_keyval="0x045" gdk_hardware_code="0x01a" modifier="maj" label="E" unicode_value="0x0423"/>
+		<KeyMap gdk_keyval="0x046" gdk_hardware_code="0x029" modifier="maj" label="F" unicode_value="0x0410"/>
+		<KeyMap gdk_keyval="0x047" gdk_hardware_code="0x02a" modifier="maj" label="G" unicode_value="0x041f"/>
+		<KeyMap gdk_keyval="0x048" gdk_hardware_code="0x02b" modifier="maj" label="H" unicode_value="0x0420"/>
+		<KeyMap gdk_keyval="0x049" gdk_hardware_code="0x01f" modifier="maj" label="I" unicode_value="0x0428"/>
+		<KeyMap gdk_keyval="0x04a" gdk_hardware_code="0x02c" modifier="maj" label="J" unicode_value="0x041e"/>
+		<KeyMap gdk_keyval="0x04b" gdk_hardware_code="0x02d" modifier="maj" label="K" unicode_value="0x041b"/>
+		<KeyMap gdk_keyval="0x04c" gdk_hardware_code="0x02e" modifier="maj" label="L" unicode_value="0x0414"/>
+		<KeyMap gdk_keyval="0x04d" gdk_hardware_code="0x02f" modifier="maj" label="M" unicode_value="0x0416"/>
+		<KeyMap gdk_keyval="0x04e" gdk_hardware_code="0x039" modifier="maj" label="N" unicode_value="0x0422"/>
+		<KeyMap gdk_keyval="0x04f" gdk_hardware_code="0x020" modifier="maj" label="O" unicode_value="0x0429"/>
+		<KeyMap gdk_keyval="0x050" gdk_hardware_code="0x021" modifier="maj" label="P" unicode_value="0x0417"/>
+		<KeyMap gdk_keyval="0x051" gdk_hardware_code="0x026" modifier="maj" label="Q" unicode_value="0x0424"/>
+		<KeyMap gdk_keyval="0x052" gdk_hardware_code="0x01b" modifier="maj" label="R" unicode_value="0x041a"/>
+		<KeyMap gdk_keyval="0x053" gdk_hardware_code="0x027" modifier="maj" label="S" unicode_value="0x042b"/>				
+		<KeyMap gdk_keyval="0x054" gdk_hardware_code="0x01c" modifier="maj" label="T" unicode_value="0x0415"/>
+		<KeyMap gdk_keyval="0x055" gdk_hardware_code="0x01e" modifier="maj" label="U" unicode_value="0x0413"/>
+		<KeyMap gdk_keyval="0x056" gdk_hardware_code="0x037" modifier="maj" label="V" unicode_value="0x041c"/>
+		<KeyMap gdk_keyval="0x057" gdk_hardware_code="0x034" modifier="maj" label="W" unicode_value="0x042f"/>
+		<KeyMap gdk_keyval="0x058" gdk_hardware_code="0x035" modifier="maj" label="X" unicode_value="0x0427"/>
+		<KeyMap gdk_keyval="0x059" gdk_hardware_code="0x01d" modifier="maj" label="Y" unicode_value="0x041d"/>
+		<KeyMap gdk_keyval="0x05a" gdk_hardware_code="0x019" modifier="maj" label="Z" unicode_value="0x0426"/>
+		
+		<!-- lowercase letters -->
+		<KeyMap gdk_keyval="0x061" gdk_hardware_code="0x018" label="a" unicode_value="0x0439"/>
+		<KeyMap gdk_keyval="0x062" gdk_hardware_code="0x038" label="b" unicode_value="0x0438"/>
+		<KeyMap gdk_keyval="0x063" gdk_hardware_code="0x036" label="c" unicode_value="0x0441"/>
+		<KeyMap gdk_keyval="0x064" gdk_hardware_code="0x028" label="d" unicode_value="0x0432"/>
+		<KeyMap gdk_keyval="0x065" gdk_hardware_code="0x01a" label="e" unicode_value="0x0443"/>
+		<KeyMap gdk_keyval="0x066" gdk_hardware_code="0x029" label="f" unicode_value="0x0430"/>
+		<KeyMap gdk_keyval="0x067" gdk_hardware_code="0x02a" label="g" unicode_value="0x043f"/>
+		<KeyMap gdk_keyval="0x068" gdk_hardware_code="0x02b" label="h" unicode_value="0x0440"/>
+		<KeyMap gdk_keyval="0x069" gdk_hardware_code="0x01f" label="i" unicode_value="0x0448"/>
+		<KeyMap gdk_keyval="0x06a" gdk_hardware_code="0x02c" label="j" unicode_value="0x043e"/>
+		<KeyMap gdk_keyval="0x06b" gdk_hardware_code="0x02d" label="k" unicode_value="0x043b"/>
+		<KeyMap gdk_keyval="0x06c" gdk_hardware_code="0x02e" label="l" unicode_value="0x0434"/>
+		<KeyMap gdk_keyval="0x06d" gdk_hardware_code="0x02f" label="m" unicode_value="0x0436"/>
+		<KeyMap gdk_keyval="0x06e" gdk_hardware_code="0x039" label="n" unicode_value="0x0442"/>
+		<KeyMap gdk_keyval="0x06f" gdk_hardware_code="0x020" label="o" unicode_value="0x0449"/>
+		<KeyMap gdk_keyval="0x070" gdk_hardware_code="0x021" label="p" unicode_value="0x0437"/>
+		<KeyMap gdk_keyval="0x071" gdk_hardware_code="0x026" label="q" unicode_value="0x0444"/>
+		<KeyMap gdk_keyval="0x072" gdk_hardware_code="0x01b" label="r" unicode_value="0x043a"/>
+		<KeyMap gdk_keyval="0x073" gdk_hardware_code="0x027" label="s" unicode_value="0x044b"/>				
+		<KeyMap gdk_keyval="0x074" gdk_hardware_code="0x01c" label="t" unicode_value="0x0435"/>
+		<KeyMap gdk_keyval="0x075" gdk_hardware_code="0x01e" label="u" unicode_value="0x0433"/>
+		<KeyMap gdk_keyval="0x076" gdk_hardware_code="0x037" label="v" unicode_value="0x043c"/>
+		<KeyMap gdk_keyval="0x077" gdk_hardware_code="0x034" label="w" unicode_value="0x044f"/>
+		<KeyMap gdk_keyval="0x078" gdk_hardware_code="0x035" label="x" unicode_value="0x0447"/>
+		<KeyMap gdk_keyval="0x079" gdk_hardware_code="0x01d" label="y" unicode_value="0x043d"/>
+		<KeyMap gdk_keyval="0x07a" gdk_hardware_code="0x019" label="z" unicode_value="0x0446"/>
+		
+		<!-- digit -->	
+		<!-- in comment on the right of some symbols, changes for applying alt value to maj mask -->
+		<KeyMap gdk_keyval="0x0030" gdk_hardware_code="0x013" modifier="maj" label="0" unicode_value="0x0029"/>
+		<KeyMap gdk_keyval="0x0031" gdk_hardware_code="0x00a" modifier="maj" label="1" unicode_value="0x0021"/>
+		<KeyMap gdk_keyval="0x0032" gdk_hardware_code="0x00b" modifier="maj" label="2" unicode_value="0x0022"/><!--0040-->
+		<KeyMap gdk_keyval="0x0033" gdk_hardware_code="0x00c" modifier="maj" label="3" unicode_value="0x2116"/><!--0023-->
+		<KeyMap gdk_keyval="0x0034" gdk_hardware_code="0x00d" modifier="maj" label="4" unicode_value="0x003b"/><!--0024-->
+		<KeyMap gdk_keyval="0x0035" gdk_hardware_code="0x00e" modifier="maj" label="5" unicode_value="0x0025"/>
+		<KeyMap gdk_keyval="0x0036" gdk_hardware_code="0x00f" modifier="maj" label="6" unicode_value="0x003a"/><!--005e-->
+		<KeyMap gdk_keyval="0x0037" gdk_hardware_code="0x010" modifier="maj" label="7" unicode_value="0x003f"/><!--0026-->
+		<KeyMap gdk_keyval="0x0038" gdk_hardware_code="0x011" modifier="maj" label="8" unicode_value="0x002a"/>
+		<KeyMap gdk_keyval="0x0039" gdk_hardware_code="0x012" modifier="maj" label="9" unicode_value="0x0028"/>
+		<KeyMap gdk_keyval="0x00b0" gdk_hardware_code="0x014" modifier="maj" label="degree" unicode_value="0x2013"/><!--005f-->
+		<KeyMap gdk_keyval="0x007e" gdk_hardware_code="0x031" modifier="maj" label="ascii_tilde" unicode_value="0x0401"/>
+		<KeyMap gdk_keyval="0x002b" gdk_hardware_code="0x015" modifier="maj" label="plus" unicode_value="0x002B"/>
+					
+		<!-- chars under digit -->		
+		<KeyMap gdk_keyval="0x0026" gdk_hardware_code="0x00a" label="ampersand" unicode_value="0x0031"/>
+		<KeyMap gdk_keyval="0x00e9" gdk_hardware_code="0x00b" label="eacute" unicode_value="0x0032"/>
+		<KeyMap gdk_keyval="0x0022" gdk_hardware_code="0x00c" label="dblquote" unicode_value="0x0033"/>
+		<KeyMap gdk_keyval="0x0027" gdk_hardware_code="0x00d" label="apostrophe" unicode_value="0x0034"/>
+		<KeyMap gdk_keyval="0x0028" gdk_hardware_code="0x00e" label="paren left" unicode_value="0x0035"/>
+		<KeyMap gdk_keyval="0x002d" gdk_hardware_code="0x00f" label="hypen minus" unicode_value="0x0036"/>
+		<KeyMap gdk_keyval="0x00e8" gdk_hardware_code="0x010" label="egrave" unicode_value="0x0037"/>
+		<KeyMap gdk_keyval="0x005f" gdk_hardware_code="0x011" label="underscore" unicode_value="0x0038"/>
+		<KeyMap gdk_keyval="0x00e7" gdk_hardware_code="0x012" label="cedilla" unicode_value="0x0039"/>
+		<KeyMap gdk_keyval="0x00e0" gdk_hardware_code="0x013" label="agrave" unicode_value="0x0030"/>
+		<KeyMap gdk_keyval="0x0029" gdk_hardware_code="0x014" label="paren right" unicode_value="0x002d"/>
+		<KeyMap gdk_keyval="0x00b2" gdk_hardware_code="0x031" label="two_superior" unicode_value="0x0451"/>
+		<KeyMap gdk_keyval="0x003d" gdk_hardware_code="0x015" label="egal" unicode_value="0x003d"/>
+
+		<!-- number + alt -->
+		<!-- in comment on the right of some symbols, changes for applying maj-value to alt mask -->
+		<KeyMap gdk_keyval="0x00e9" gdk_hardware_code="0x00b" modifier="alt" label="tilde" unicode_value="0x0040"/><!--0022-->
+		<KeyMap gdk_keyval="0x0022" gdk_hardware_code="0x00c" modifier="alt" label="number sign" unicode_value="0x0023"/><!--2116-->
+		<KeyMap gdk_keyval="0x0027" gdk_hardware_code="0x00d" modifier="alt" label="left_curly_bracket" unicode_value="0x0024"/><!--003b-->
+		<KeyMap gdk_keyval="0x0028" gdk_hardware_code="0x00e" modifier="alt" label="left_square_bracket" unicode_value="0x0665"/>
+		<KeyMap gdk_keyval="0x002d" gdk_hardware_code="0x00f" modifier="alt" label="vertical line" unicode_value="0x005e"/><!--003a-->
+		<KeyMap gdk_keyval="0x00e8" gdk_hardware_code="0x010" modifier="alt" label="grave_accent" unicode_value="0x0026"/><!--003f-->
+		<KeyMap gdk_keyval="0x00b0" gdk_hardware_code="0x014" modifier="alt" label="hyphen" unicode_value="0x005f"/><!--special add-->
+					
+		<!-- special char -->
+		<KeyMap gdk_keyval="0x0050" gdk_hardware_code="0x021" modifier="ctrl+shift" label="ALT GR + p" unicode_value="0x0445"/><!--additional existing char cause key lazy on laptop-->
+		<KeyMap gdk_keyval="0x00a3" gdk_hardware_code="0x023" modifier="ctrl+shift" label="ALT GR + dollar" unicode_value="0x0425"/><!--additional existing char cause key lazy on laptop-->
+		
+		<!-- miscellaneous uppercase-->
+		<KeyMap gdk_keyval="0xfe57" gdk_hardware_code="0x022" modifier="maj" label="diaeresis" unicode_value="0x0425"/>
+		<KeyMap gdk_keyval="0x00a3" gdk_hardware_code="0x023" modifier="maj" label="sterling" unicode_value="0x042a"/>
+		<KeyMap gdk_keyval="0x0025" gdk_hardware_code="0x030" modifier="maj" label="percent" unicode_value="0x042d"/>
+		<KeyMap gdk_keyval="0x00b5" gdk_hardware_code="0x033" modifier="maj" label="mu" unicode_value="0x002f"/>
+		<KeyMap gdk_keyval="0x003f" gdk_hardware_code="0x03a" modifier="maj" label="question" unicode_value="0x042c"/>
+		<KeyMap gdk_keyval="0x002e" gdk_hardware_code="0x03b" modifier="maj" label="period" unicode_value="0x0411"/>
+		<KeyMap gdk_keyval="0x002f" gdk_hardware_code="0x03c" modifier="maj" label="slash" unicode_value="0x042e"/>
+		<KeyMap gdk_keyval="0x00a7" gdk_hardware_code="0x03d" modifier="maj" label="section" unicode_value="0x002c"/>
+		<KeyMap gdk_keyval="0x03e" gdk_hardware_code="0x05e" modifier="maj" label="greater" unicode_value="0x007c"/>
+
+		<!-- miscellaneous lowercase-->		
+		<KeyMap gdk_keyval="0xfe52" gdk_hardware_code="0x022" label="dead_circumflex" unicode_value="0x0445"/>
+		<KeyMap gdk_keyval="0x0024" gdk_hardware_code="0x023" label="dollar" unicode_value="0x044a"/>
+		<KeyMap gdk_keyval="0x0f9" gdk_hardware_code="0x030" label="ugrave" unicode_value="0x044d"/>
+		<KeyMap gdk_keyval="0x002a" gdk_hardware_code="0x033" label="asterisk" unicode_value="0x005c"/>
+		<KeyMap gdk_keyval="0x002c" gdk_hardware_code="0x03a" label="comma" unicode_value="0x044c"/>
+		<KeyMap gdk_keyval="0x003b" gdk_hardware_code="0x03b" label="semicolon" unicode_value="0x0431"/>
+		<KeyMap gdk_keyval="0x003a" gdk_hardware_code="0x03c" label="colon" unicode_value="0x044e"/>
+		<KeyMap gdk_keyval="0x0021" gdk_hardware_code="0x03d" label="exclamation" unicode_value="0x002e"/>
+		<KeyMap gdk_keyval="0x03c" gdk_hardware_code="0x05e" label="lesser" unicode_value="0x005c"/>
+	</Language>
+	
+	<Language Name="Chinese" Shortcut="chi" ModeLeft2Right="1" SpaceSeparated="1" IsActivated="2" MappingMode="Hardware">
+		<Language_gunichar_range start="0x3190" end="0x319f"/>
+		<Language_gunichar_range start="0x3400" end="0x34ff"/>
+		<Language_gunichar_range start="0x4e00" end="0x9fbf"/>
+		<Language_gunichar_range start="0xf900" end="0xf9ff"/>
+		<Language_gunichar_range start="0xf800" end="0x2fa1f"/>
+		<Language_gunichar_range start="0x20000" end="0x200ff"/>
+	</Language>	
+	
+</Input_Languages>

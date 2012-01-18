@@ -1,0 +1,17 @@
+This directory contains scripts and programs for various tasks.
+
+CreateAGTables.c
+
+	- CreateAGTables creates database tables, which will be 
+	  used to store AG data if you choose to enable database
+   	  support, on the specified database server.
+
+	- To enable database support, run configure with AGDB enabled,
+	  see the INSTALL section in the doc directory for details.
+
+	- How to use CreateAGTables:
+	  Usage: CreateAGTables <connection string>
+
+	  See the INSTALL document or the AG developer's manual for details
+	  about connection strings.
+

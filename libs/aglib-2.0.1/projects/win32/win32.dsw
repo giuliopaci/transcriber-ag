@@ -1,0 +1,254 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "ag_java"=".\ag_java\ag_java.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libag
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "ag_python"=".\ag_python\ag_python.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libag
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "ag_tcl"=".\ag_tcl\ag_tcl.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libag
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "agfio_plugin_AG"=".\agfio_plugin_AG\agfio_plugin_AG.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libag
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "agfio_plugin_ATLAS"=".\agfio_plugin_ATLAS\agfio_plugin_ATLAS.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libag
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "agfio_plugin_BAS"=".\agfio_plugin_BAS\agfio_plugin_BAS.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libag
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "agfio_plugin_BU"=".\agfio_plugin_BU\agfio_plugin_BU.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libag
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "agfio_plugin_CAG"=".\agfio_plugin_CAG\agfio_plugin_CAG.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libag
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "agfio_plugin_LCF"=".\agfio_plugin_LCF\agfio_plugin_LCF.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libag
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "agfio_plugin_SwitchBoard"=".\agfio_plugin_SwitchBoard\agfio_plugin_SwitchBoard.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libag
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "agfio_plugin_TF"=".\agfio_plugin_TF\agfio_plugin_TF.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libag
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "agfio_plugin_TIMIT"=".\agfio_plugin_TIMIT\agfio_plugin_TIMIT.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libag
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "agfio_plugin_TreeBank"=".\agfio_plugin_TreeBank\agfio_plugin_TreeBank.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libag
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "agfio_plugin_XLabel"=".\agfio_plugin_XLabel\agfio_plugin_XLabel.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libag
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "libag"=".\libag\libag.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name regex
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "regex"=".\regex\regex.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

@@ -1,0 +1,70 @@
+How to use AG Python module (Unix-like systems)
+===============================================
+
+   The AG Python module can be installed in a standard python package
+   directory if the --enable-tclpkgdir option is used at the configuration
+   time.  Otherwise, the module will get installed in
+   <prefix>/lib/ag_wrapper/python.  '<prefix>' is a path that can be
+   specified using the --prefix option at the configuration time.  The
+   default value of <prefix> is /usr/local.
+
+   If the python module is not installed in a standard tcl package
+   directory, or if python has any trouble locating the module, the
+   PYTHONPATH environment variable can be set to help python find the
+   module.  PYTHONPATH should contain the location of the module.
+
+   Here are some examples:
+
+   sh$ python
+   % import ag
+   % agset_id = ag.CreateAGSet("Timit")
+   % ...
+
+   or in your python program
+   +----------
+   |#! /usr/local/bin/python2.1
+   |# My program by me
+   |
+   |import ag
+   |
+   |agset_id = ag.CreateAGSet("Timit")
+   |...
+   |
+
+   NOTE: Don't forget to set LD_LIBRARY_PAPTH properly for required
+         shared libraries.
+   
+
+For Maintainer
+==============
+
+   To make a C++ source from AGAPI.i, the SWIG interface file for C++
+   AG library, do the following (tested with SWIG version 1.3.18 and
+   1.3.19):
+
+   $ swig -python -noproxy -c++ -module ag -o ag.cc -I.. ../AGAPI.i
+
+   Find the following chunk of lines in ag.cc:
+
+--------------------
+         { (char *)"LoadFromDB", _wrap_LoadFromDB, METH_VARARGS },
+         { (char *)"StoreToDB", _wrap_StoreToDB, METH_VARARGS },
+         { (char *)"StoreSQLs", _wrap_StoreSQLs, METH_VARARGS },
+--------------------
+
+   Replace them with:
+
+--------------------
+#ifdef AGDB
+         { (char *)"LoadFromDB", _wrap_LoadFromDB, METH_VARARGS },
+         { (char *)"StoreToDB", _wrap_StoreToDB, METH_VARARGS },
+         { (char *)"StoreSQLs", _wrap_StoreSQLs, METH_VARARGS },
+#endif
+--------------------
+
+   Note: Before generate ag.cc, edit pythontypemaps.i file to set a module
+         version properly.  (Find the line with '__version__'.)
+
+   Note: SWIG 1.3.18 and 1.3.19 don't handle optional argument of c++ very
+         well.  To fix this problem apply bugfix.sed to ag.cc.
+

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topics SYSTEM "topics.dtd">
+<!-- 
+	Définition des thèmes pour une transcription en français
+ -->
+<topics>
+	<topicgroup id="g1" label="Catégorie 1">
+		<topic id="t1" label="Thème 1">
+			<context>Rapide description du thème 1</context>
+			<details> 
+				<detail type="cpos" label="critères positifs">
+					critères qui définissent un document pertinent
+				</detail>	
+				<detail type="cneg" label="critères négatifs">
+					critères qui définissent un document non pertinent
+				</detail>	
+			</details>	
+		</topic>
+		<topic id="t2" label="Thème 2">
+			<context>Rapide description du thème 2</context>
+			<details> 
+				<detail type="cpos" label="critères positifs">
+					critères qui définissent un document pertinent
+				</detail>	
+				<detail type="cneg" label="critères négatifs">
+					critères qui définissent un document non pertinent
+				</detail>
+				<detail type="mkey" label="mots-clefs">
+					- mot clef 1
+					- mot clef 2
+					- mot clef 3
+					- ...
+				</detail>					
+			</details>	
+		</topic>
+	</topicgroup>
+	<topicgroup id="g2" label="Catégorie 2">
+		<topic id="t3" label="Thème 3">
+			<context>Rapide description du thème 3</context>
+			<details> 
+				<detail type="cpos" label="critères positifs">
+					critères qui définissent un document pertinent
+				</detail>	
+				<detail type="cneg" label="critères négatifs">
+					critères qui définissent un document non pertinent
+				</detail>	
+			</details>	
+		</topic>
+		<topic id="t4" label="Thème 4">
+			<context>Rapide description du thème 4</context>
+			<details> 
+				<detail type="cpos" label="critères positifs">
+					critères qui définissent un document pertinent
+				</detail>	
+				<detail type="cneg" label="critères négatifs">
+					critères qui définissent un document non pertinent
+				</detail>
+				<detail type="mkey" label="mots-clefs">
+					- mot clef 1
+					- mot clef 2
+					- mot clef 3
+					- ...
+				</detail>					
+			</details>	
+		</topic>
+	</topicgroup>	
+</topics>

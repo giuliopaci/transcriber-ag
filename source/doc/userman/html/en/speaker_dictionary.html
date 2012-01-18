@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<title>Speaker Dictionaries</title>
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+	</head>
+
+	<body>
+		
+		<h1><a name="top"></a>Speaker Dictionaries</h1>
+		<h2>Overview</h2>
+			<em>TranscriberAG</em> supports two levels of speaker dictionary:
+			
+			<ul class="feature_list">
+				<li>The <strong>File Speaker Dictionary</strong> (also called &quot;local&quot; dictionary) which is associated to the current edited file, and lists the speakers identified in current file,</li>
+
+				<li>The <strong>Global Speaker Dictionary</strong> which constitutes a reference of "well-known" speakers, independently from any file, and - depending on <em>TranscriberAG</em> installation and configuration - can be common to all <em>TranscriberAG</em> users or specific for current user.</li>
+			</ul>
+			<p>Both dictionaries are very similar in form and behaviour. </p> 
+			<p>The global dictionary can be opened using <strong>&lt;ctrl+g&gt;</strong> shortcut, or <strong>Speakers > Global speaker dictionary </strong> menu option.</p>
+			<p> The file dictionary can be opened using <strong>&lt;shift+alt+g&gt;</strong> shortcut, or <strong>Speakers > File speaker dictionary </strong> menu option, or double-clicking on a turn tag in the text widget of the annotation editor.</p> 
+			<p> Speaker dictionary features are described hereafter.</p>
+		<h2>Screenshot</h2>
+		<p class="centered">
+		<img alt="Picture Not Found" src="pics/global_dictionary.jpg"/></p>
+		<h2>Description</h2>
+		<p>The speaker dictionary windows shows on its left side the list of speakers it contains, and on its right side the details for currently selected speaker.</p>
+		<table summary="details" class="indent_table"><tr>
+			<td><img alt="Picture Not Found" src="pics/global_dictionary_button_details.jpg"/></td>
+			<td width="10"></td>
+			<td>The&nbsp;<strong>Show/Hide details</strong> button allows to show or hide speaker details subwindow. By default, speaker details are shown.
+			</td>
+		</tr>
+		</table>		
+		<table summary="details" class="indent_table">
+		<tr>
+			<td><img alt="Picture Not Found" src="pics/global_dictionary_button_raise_local.jpg"/></td>
+			<td width="10"></td>
+			<td>The&nbsp;<strong>Raise local dictionary</strong> button allows to open or raise in foreground the local dictionary, i.e speaker dictionary of current annotation file.
+			</td>
+		</tr>
+		</table>
+		<tr>
+			<td><i>For local dictionary, a similar button is available for opening the global dictionary:</i></td>
+		</tr>
+		<table summary="details" class="indent_table"><tr>
+			<td><img alt="Picture Not Found" src="pics/global_dictionary_button_raise_global.jpg"/></td>
+			<td width="10"></td>
+			<td>The&nbsp;<strong>Raise global dictionary </strong>button allows to open or raise in foreground the global dictionary.
+			</td>
+		</tr>
+		</table>				
+		<h3>Speakers list subwindow</h3>
+		<table summary="speaker_list" class="indent_table"><tr>
+			<td><img alt="Picture Not Found" src="pics/speakers_list.jpg"/></td>
+			<td width="10"></td>
+			<td>Clicking on any column header allows to sort the list on corresponding item, by ascending alphabetical order.<br />
+			Browsing through the speakers' list displays details for each speaker in turn in the speaker details subwindow.
+			</td>
+		</tr></table>
+		<p>Clicking on <strong>Add a speaker</strong> button opens speaker details subwindow with empty fields, so that user can fill in new speaker description. </p>
+		<p>Another way to add a speaker to current dictionary is to <strong>drag</strong> a speaker entry from another dictionary, and <strong>drop</strong> it on the current list. This can be used from global to local dictionary, or from local to global (providing current user gives access to global dictionary), or from local to local.</p>
+		<p>Clicking on the <strong>Remove speaker</strong> button deletes speaker from the dictionary. If a local dictionary is edited, and if the speaker has associated turns, then removal is prohibited. </p>
+		<h3>Speaker details subwindow</h3>
+			<table summary="speaker_details" class="indent_table"><tr>
+				<td><img alt="Picture Not Found" src="pics/local_dictionary_detail.jpg"/></td>
+				<td width="10"></td>
+				<td>The following items can be defined for the current speaker:
+					<ul class="feature_list1">
+						<li>first name (optional)</li>
+						<li>last name (mandatory)</li>
+						<li>gender (set by default to &quot;unknown&quot;)</li>
+						<li>spoken languages (one or more): clicking on <strong>Add language</strong> adds a new language for the speaker. The following properties can be set by clicking on corresponding items in the new row:
+							<ul class="feature_list1">
+								<li>the language name, to be selected in the popped up list </li>
+								<li>when relevant, the dialect and accent names, to be selected in the popped up list </li>
+								<li>the &quot;is usual&quot; and &quot;is native&quot; checkboxes, to be checked if language is usual or native for current speaker </li>
+							</ul>
+						Clicking on <strong>Remove language</strong> removes selected language.
+						</li>
+						<li>a brief description (optional)</li>
+					</ul>
+					Clicking on the <strong>Validate</strong> button save edits to speaker dictionary. <br /><br />
+					<strong>WARNING !</strong> Edits are not saved until <strong>Validate</strong>  has been pressed. Thus, if another speaker is selected in the list, edits for the current speaker will be lost. 
+				</td>
+			</tr></table>
+			<p>When editing a local dictionary, if speaker name or gender has been modified, the turn tags in the text buffer are updated.</p>
+			<p>Another efficient way to update speaker data, from a global dictionary for instance, is to <strong>drag</strong> a speaker from the reference dictionary and <strong>drop</strong> it onto the speakers details subwindow. Current speaker data are then replaced by reference speaker data. </p>
+
+
+		<h3>Saving edits</h3>
+		<p> Edits to a local dictionary are saved when the file is saved.</p>
+		<p> Edits to the global dictionaries are saved when <strong>Apply</strong> button is pressed. Pressing <strong>Cancel</strong> cancels all edits and reloads the global dictionary from its last saved state.</p>
+
+		<h3>Importing a speaker from global dictionary</h3>
+		<table summary="speaker_import" class="indent_table">
+			<tr><td>The easiest way to import a speaker from the global dictionary to a local dictionary is to open both dictionaries, and to <strong>drag and drop</strong> selected speaker from <i><u>global speakers' <b>list</b></u></i> onto <i><u>local speakers' <b>list</b></u></i>. Global speaker will then be added to local dictionary.</td></tr>
+			<tr>
+				<td align="center"><img alt="Picture Not Found" src="pics/global_dictionary_method_import.jpg" style="width: 856px; height: 270px; "/></td>
+			</tr>
+		</table>
+		
+		<h3>Exporting a speaker to global dictionary</h3>
+		<table summary="speaker_import" class="indent_table">
+			<tr><td>The easiest way to import a speaker from the global dictionary to a local dictionary is to open both dictionaries, and to <strong>drag and drop</strong> selected speaker from <i><u>global speakers' <b>list</b></u></i> onto <i><u>local speakers' <b>list</b></u></i>. Global speaker will then be added to local dictionary.</td></tr>
+			<tr>
+				<td align="center"><img alt="Picture Not Found" src="pics/global_dictionary_method_import_reverse.jpg" style="width: 831px; height: 229px; "/></td>
+			</tr>
+		</table>
+
+		<h3>Replacing a speaker in local dictionary</h3>
+		<table summary="speaker_import" class="indent_table">
+			<tr><td>It can happen that a speaker created in local dictionary already exists in global dictionary. As the local speaker has been used in annotation, you don't want to delete it. In this case you can replace the given speaker by the one existing in the global dictionary.
+			For that, just <strong>drag and drop</strong> the selected speaker from <i><u>global speakers' <b>list</b></u></i> onto <i><u>corresponding speaker <b>data</b></u></i>.
+			</td></tr>
+			<tr>
+				<td align="center"><img alt="Picture Not Found" src="pics/global_dictionary_method_replace.jpg"/></td>
+			</tr>
+			<tr><td>A confirmation dialog will be prompted and will allow you to cancel or proceed to the action. Note that this action is only available for local dictionary, because the global dictionary is the reference and its speakers should never be replaced by local speakers.</td></tr>
+		</table>
+	<br /><hr />
+	<a href="#top" target="content_frame"> &gt;&gt; Back to top </a>		
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tools SYSTEM "toolsAG.dtd">
+<!--
+	Simple XML file for tool launcher. 
+	Adds here scripts or executable	
+
+	Example:
+
+	<tool id="t1" display="tool 1" scope="global" type="bin">
+		<object>ls</object>
+ 		<options>-l -a /usr/local/etc/TransAG</options>
+	</tool>
+	
+	Attributes:
+		id: unique id
+		display: display name
+		scope: file for file related tool, global otherwise
+		type: bin for binaries, script for scripts (for script, a dialog will be prompted)
+	
+	- object:     processus command (absolute path or search in system path)
+	- options :   command line arguments and options
+
+	(!) Remark: If the object and the options field are empty, the tool  won't be loaded.
+    
+    (!) Remark: 
+    		For scripts on linux, <object> must be the command line interpreter et options the absolute path of the script
+    		For scripts on windows, <object> must be the absolute path of the batch file
+-->
+
+<tools>
+	<tool id="t1" display="tool 1" scope="file" type="bin">
+		<object></object>
+ 		<options></options><!-- for "file" scope, %f will be replaced by tag filename -->
+	</tool>
+	<tool id="t2" display="tool 2" scope="global"  type="script">
+		<object></object>
+ 		<options></options><!-- for "file" scope, %f will be replaced by tag filename -->
+	</tool>
+</tools>
