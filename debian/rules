@@ -12,6 +12,7 @@ DEB_TAR_SRCDIR := .
 DEB_SRCDIR := ./
 
 common-install-arch::
+	dh_install
 	$(RM) $(cdbs_make_curdestdir)/etc/TransAG/information/COPYING
 	chmod 644 -R $(cdbs_make_curdestdir)/etc/
 	chmod a+X -R $(cdbs_make_curdestdir)/etc/
