@@ -1,3 +1,4 @@
 compile_everything_with_single_cmake.patch
 compilation_fixes.patch
 cmake_installation_fixes.patch
+configuration_changes.patch
