@@ -1,7 +1,7 @@
-Index: transcriber-ag-2.0.0/libs/aglib-2.0.1/src/ag/CMakeLists.txt
+Index: transcriber-ag/libs/aglib-2.0.1/src/ag/CMakeLists.txt
 ===================================================================
---- transcriber-ag-2.0.0.orig/libs/aglib-2.0.1/src/ag/CMakeLists.txt	2009-12-08 17:10:56.000000000 +0100
-+++ transcriber-ag-2.0.0/libs/aglib-2.0.1/src/ag/CMakeLists.txt	2012-01-12 19:30:19.000000000 +0100
+--- transcriber-ag.orig/libs/aglib-2.0.1/src/ag/CMakeLists.txt	2012-01-21 23:00:01.000000000 +0100
++++ transcriber-ag/libs/aglib-2.0.1/src/ag/CMakeLists.txt	2012-02-06 00:27:58.000000000 +0100
 @@ -50,3 +50,10 @@
  	
  	dl
@@ -14,10 +14,10 @@ Index: transcriber-ag-2.0.0/libs/aglib-2.0.1/src/ag/CMakeLists.txt
 +	LIBRARY	DESTINATION lib
 +)
 \ No newline at end of file
-Index: transcriber-ag-2.0.0/source/src/GUI/CMakeLists.txt
+Index: transcriber-ag/source/src/GUI/CMakeLists.txt
 ===================================================================
---- transcriber-ag-2.0.0.orig/source/src/GUI/CMakeLists.txt	2011-05-10 13:21:23.000000000 +0200
-+++ transcriber-ag-2.0.0/source/src/GUI/CMakeLists.txt	2012-01-12 19:30:19.000000000 +0100
+--- transcriber-ag.orig/source/src/GUI/CMakeLists.txt	2012-01-21 23:00:01.000000000 +0100
++++ transcriber-ag/source/src/GUI/CMakeLists.txt	2012-02-06 00:27:58.000000000 +0100
 @@ -167,3 +167,10 @@
  	${APPLE_LINKS}
  	${WIN32_LINKS}
@@ -30,10 +30,10 @@ Index: transcriber-ag-2.0.0/source/src/GUI/CMakeLists.txt
 +	LIBRARY	DESTINATION lib
 +)
 \ No newline at end of file
-Index: transcriber-ag-2.0.0/source/src/Formats/CTM/CMakeLists.txt
+Index: transcriber-ag/source/src/Formats/CTM/CMakeLists.txt
 ===================================================================
---- transcriber-ag-2.0.0.orig/source/src/Formats/CTM/CMakeLists.txt	2010-06-21 18:52:41.000000000 +0200
-+++ transcriber-ag-2.0.0/source/src/Formats/CTM/CMakeLists.txt	2012-01-16 01:53:46.000000000 +0100
+--- transcriber-ag.orig/source/src/Formats/CTM/CMakeLists.txt	2012-01-21 23:00:01.000000000 +0100
++++ transcriber-ag/source/src/Formats/CTM/CMakeLists.txt	2012-02-06 00:27:58.000000000 +0100
 @@ -82,7 +82,7 @@
  )
  
@@ -43,10 +43,10 @@ Index: transcriber-ag-2.0.0/source/src/Formats/CTM/CMakeLists.txt
  
  	RUNTIME	DESTINATION bin
  	LIBRARY	DESTINATION	lib/ag
-Index: transcriber-ag-2.0.0/source/src/Formats/TransAG_compat/CMakeLists.txt
+Index: transcriber-ag/source/src/Formats/TransAG_compat/CMakeLists.txt
 ===================================================================
---- transcriber-ag-2.0.0.orig/source/src/Formats/TransAG_compat/CMakeLists.txt	2010-05-28 20:14:37.000000000 +0200
-+++ transcriber-ag-2.0.0/source/src/Formats/TransAG_compat/CMakeLists.txt	2012-01-16 01:57:55.000000000 +0100
+--- transcriber-ag.orig/source/src/Formats/TransAG_compat/CMakeLists.txt	2012-01-21 23:00:01.000000000 +0100
++++ transcriber-ag/source/src/Formats/TransAG_compat/CMakeLists.txt	2012-02-06 00:27:58.000000000 +0100
 @@ -102,7 +102,7 @@
  )
  
@@ -56,10 +56,10 @@ Index: transcriber-ag-2.0.0/source/src/Formats/TransAG_compat/CMakeLists.txt
  	
  	RUNTIME	DESTINATION bin
  	LIBRARY	DESTINATION	lib/ag
-Index: transcriber-ag-2.0.0/source/src/MediaComponent/CMakeLists.txt
+Index: transcriber-ag/source/src/MediaComponent/CMakeLists.txt
 ===================================================================
---- transcriber-ag-2.0.0.orig/source/src/MediaComponent/CMakeLists.txt	2011-03-31 15:21:00.000000000 +0200
-+++ transcriber-ag-2.0.0/source/src/MediaComponent/CMakeLists.txt	2012-01-16 02:00:58.000000000 +0100
+--- transcriber-ag.orig/source/src/MediaComponent/CMakeLists.txt	2012-01-21 23:00:01.000000000 +0100
++++ transcriber-ag/source/src/MediaComponent/CMakeLists.txt	2012-02-06 00:27:58.000000000 +0100
 @@ -275,5 +275,11 @@
  	${APPLE_LINKS}
  	${WIN32_LINKS}
@@ -72,10 +72,10 @@ Index: transcriber-ag-2.0.0/source/src/MediaComponent/CMakeLists.txt
 +)
  endif (VIDEO_BUILD)
  
-Index: transcriber-ag-2.0.0/source/src/Tools/CMakeLists.txt
+Index: transcriber-ag/source/src/Tools/CMakeLists.txt
 ===================================================================
---- transcriber-ag-2.0.0.orig/source/src/Tools/CMakeLists.txt	2010-06-21 18:52:41.000000000 +0200
-+++ transcriber-ag-2.0.0/source/src/Tools/CMakeLists.txt	2012-01-16 02:03:19.000000000 +0100
+--- transcriber-ag.orig/source/src/Tools/CMakeLists.txt	2012-01-21 23:00:01.000000000 +0100
++++ transcriber-ag/source/src/Tools/CMakeLists.txt	2012-02-06 00:27:58.000000000 +0100
 @@ -133,3 +133,9 @@
      ${APPLE_LINKS}
      ${WIN32_LINKS}
@@ -86,3 +86,84 @@ Index: transcriber-ag-2.0.0/source/src/Tools/CMakeLists.txt
 +	RUNTIME	DESTINATION bin
 +	LIBRARY	DESTINATION lib
 +)
+Index: transcriber-ag/CMakeLists.txt
+===================================================================
+--- transcriber-ag.orig/CMakeLists.txt	2012-02-06 00:27:56.000000000 +0100
++++ transcriber-ag/CMakeLists.txt	2012-02-06 00:56:52.000000000 +0100
+@@ -1,5 +1,6 @@
+ 
+ cmake_minimum_required	(VERSION 2.6)
++add_definitions(-DPREFIX=\"${CMAKE_INSTALL_PREFIX}\")
+ add_subdirectory	(libs)
+ add_subdirectory	(source)
+ 
+Index: transcriber-ag/source/src/DataModel/DataModel_Cfg.cpp
+===================================================================
+--- transcriber-ag.orig/source/src/DataModel/DataModel_Cfg.cpp	2012-01-21 22:40:47.000000000 +0100
++++ transcriber-ag/source/src/DataModel/DataModel_Cfg.cpp	2012-02-06 00:51:50.000000000 +0100
+@@ -80,18 +80,18 @@
+ 		if ( !Glib::file_test(m_localDTD, Glib::FILE_TEST_EXISTS) )
+ 		{
+ 			m_agOptions["system"] = "TransAG-3.0.dtd";
+-			m_localDTD = "/usr/local/etc/TransAG/TransAG-3.0.dtd";
++			m_localDTD = PREFIX "/etc/TransAG/TransAG-3.0.dtd";
+ 
+ 			if ( !Glib::file_test(m_localDTD, Glib::FILE_TEST_EXISTS) )
+ 			{
+ 				m_agOptions["system"] = "TransAG-2.0.dtd";
+-				m_localDTD = "/usr/local/etc/TransAG/TransAG-2.0.dtd";
++				m_localDTD = PREFIX "/etc/TransAG/TransAG-2.0.dtd";
+ 			}
+ 
+ 			if ( !Glib::file_test(m_localDTD, Glib::FILE_TEST_EXISTS) )
+ 			{
+ 				m_agOptions["system"] = "TransAG-1.0.dtd";
+-				m_localDTD = "/usr/local/etc/TransAG/TransAG-1.0.dtd";
++				m_localDTD = PREFIX "/etc/TransAG/TransAG-1.0.dtd";
+ 			}
+ 		}
+ 
+@@ -200,7 +200,7 @@
+ 
+ 		string pdir = curpath;
+ 		if ( pdir.empty() )
+-			pdir="/usr/local";
++			pdir = PREFIX;
+ 		else {
+ 			if ( FileInfo(curpath).isFile() ) pdir = FileInfo(pdir).dirname();
+ 
+@@ -229,8 +229,8 @@
+ 				else lib_path = "";
+ 			}
+ 
+-			if ( lib_path.empty() && FileInfo("/usr/local/lib/ag").exists() ) {
+-				lib_path = "/usr/local/lib:/usr/local/lib/ag";
++			if ( lib_path.empty() && FileInfo(PREFIX "/lib/ag").exists() ) {
++				lib_path = PREFIX "/lib:" PREFIX "/lib/ag";
+ 			}
+ 			if ( ! lib_path.empty() ) {
+ 				if ( !ld_library_path.empty() ) ld_library_path += ":";
+@@ -266,7 +266,7 @@
+ 		if ( ! etc_ok )
+ 		{
+ 			// check if exists in in /usr/local/etc
+-			string dir = "/usr/local/etc/TransAG";
++			string dir = PREFIX "/etc/TransAG";
+ 			if ( FileInfo(dir).exists() ) {
+ 				etc_ok = true;
+ 				configuration_path = dir ;
+Index: transcriber-ag/source/src/Tools/txt2tag.cpp
+===================================================================
+--- transcriber-ag.orig/source/src/Tools/txt2tag.cpp	2012-01-21 22:40:47.000000000 +0100
++++ transcriber-ag/source/src/Tools/txt2tag.cpp	2012-02-06 00:55:59.000000000 +0100
+@@ -130,8 +130,8 @@
+ {
+ 	if (g_getenv("LD_LIBRARY_PATH") == NULL ) {
+ 		string lib_path("");
+-		if ( FileInfo("/usr/local/lib/ag").exists() ) {
+-			lib_path = "/usr/local/lib:/usr/local/lib/ag";
++		if ( FileInfo(PREFIX "/lib/ag").exists() ) {
++			lib_path = PREFIX "/lib:" PREFIX "/lib/ag";
+ 		} else {
+ 			gchar* cfgdir = g_path_get_dirname(progname);
+ 			if ( !g_path_is_absolute (cfgdir) ) {
