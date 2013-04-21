@@ -1,7 +1,5 @@
-Index: transcriber-ag-2.0.0/source/src/DataModel/DataModel.cpp
-===================================================================
---- transcriber-ag-2.0.0.orig/source/src/DataModel/DataModel.cpp	2011-05-10 09:59:51.000000000 +0200
-+++ transcriber-ag-2.0.0/source/src/DataModel/DataModel.cpp	2011-12-09 01:20:33.000000000 +0100
+--- a/source/src/DataModel/DataModel.cpp
++++ b/source/src/DataModel/DataModel.cpp
 @@ -3890,7 +3890,7 @@
  				if (diff < m_conventions.minSegmentSize(graphtype))
  				{
@@ -20,10 +18,8 @@ Index: transcriber-ag-2.0.0/source/src/DataModel/DataModel.cpp
  						else
  							sprintf(msg, _("segment size must be > %f secs"), m_conventions.minSegmentSize(graphtype));
  						ok_down = false;
-Index: transcriber-ag-2.0.0/source/src/Formats/HTML/HTMLWriter.cpp
-===================================================================
---- transcriber-ag-2.0.0.orig/source/src/Formats/HTML/HTMLWriter.cpp	2011-05-10 09:59:51.000000000 +0200
-+++ transcriber-ag-2.0.0/source/src/Formats/HTML/HTMLWriter.cpp	2011-12-10 00:25:45.000000000 +0100
+--- a/source/src/Formats/HTML/HTMLWriter.cpp
++++ b/source/src/Formats/HTML/HTMLWriter.cpp
 @@ -154,7 +154,7 @@
  
  	// DUREE
@@ -33,10 +29,8 @@ Index: transcriber-ag-2.0.0/source/src/Formats/HTML/HTMLWriter.cpp
  	out << " </td>" << endl << "\t\t</tr>" << endl;
  
  
-Index: transcriber-ag-2.0.0/source/src/Formats/TXT/TXTWriter.cpp
-===================================================================
---- transcriber-ag-2.0.0.orig/source/src/Formats/TXT/TXTWriter.cpp	2011-05-10 09:59:51.000000000 +0200
-+++ transcriber-ag-2.0.0/source/src/Formats/TXT/TXTWriter.cpp	2011-12-10 00:27:00.000000000 +0100
+--- a/source/src/Formats/TXT/TXTWriter.cpp
++++ b/source/src/Formats/TXT/TXTWriter.cpp
 @@ -90,7 +90,7 @@
  	out << "# Nombre de Pistes : " << nb_tracks << endl;
  
@@ -46,10 +40,8 @@ Index: transcriber-ag-2.0.0/source/src/Formats/TXT/TXTWriter.cpp
  
  	// NB DE SPEAKER
  	out << "# Nombre de locuteurs : " << m_data->getSpeakerDictionary().size()  << endl;
-Index: transcriber-ag-2.0.0/source/src/GUI/Common/Explorer_popup.cpp
-===================================================================
---- transcriber-ag-2.0.0.orig/source/src/GUI/Common/Explorer_popup.cpp	2011-05-10 09:59:51.000000000 +0200
-+++ transcriber-ag-2.0.0/source/src/GUI/Common/Explorer_popup.cpp	2011-12-11 15:35:27.000000000 +0100
+--- a/source/src/GUI/Common/Explorer_popup.cpp
++++ b/source/src/GUI/Common/Explorer_popup.cpp
 @@ -94,108 +94,108 @@
  	//> add possibilities for NOT SUPPORTED FILES
  	if (mode==-1) {
@@ -218,10 +210,8 @@ Index: transcriber-ag-2.0.0/source/src/GUI/Common/Explorer_popup.cpp
  		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PROPERTY] ] ) ) ;
  	}
  	//> FTP directory
-Index: transcriber-ag-2.0.0/source/src/GUI/Speaker/DictionaryManager.cpp
-===================================================================
---- transcriber-ag-2.0.0.orig/source/src/GUI/Speaker/DictionaryManager.cpp	2011-05-10 09:59:51.000000000 +0200
-+++ transcriber-ag-2.0.0/source/src/GUI/Speaker/DictionaryManager.cpp	2011-12-11 15:41:34.000000000 +0100
+--- a/source/src/GUI/Speaker/DictionaryManager.cpp
++++ b/source/src/GUI/Speaker/DictionaryManager.cpp
 @@ -48,7 +48,7 @@
  
  	//-- Creation
@@ -240,10 +230,8 @@ Index: transcriber-ag-2.0.0/source/src/GUI/Speaker/DictionaryManager.cpp
  	dialog = dicos[dicos.size()-1] ;
  	global_dictionary = dialog ;
  
-Index: transcriber-ag-2.0.0/source/src/MediaComponent/io/FFMpegHandler.cpp
-===================================================================
---- transcriber-ag-2.0.0.orig/source/src/MediaComponent/io/FFMpegHandler.cpp	2011-05-10 09:59:51.000000000 +0200
-+++ transcriber-ag-2.0.0/source/src/MediaComponent/io/FFMpegHandler.cpp	2011-12-11 15:01:31.000000000 +0100
+--- a/source/src/MediaComponent/io/FFMpegHandler.cpp
++++ b/source/src/MediaComponent/io/FFMpegHandler.cpp
 @@ -98,12 +98,12 @@
  	{
  		switch( formatCtx->streams[i]->codec->codec_type )
@@ -295,10 +283,8 @@ Index: transcriber-ag-2.0.0/source/src/MediaComponent/io/FFMpegHandler.cpp
  
  				if (bytes <= 0)
  				{
-Index: transcriber-ag-2.0.0/source/src/MediaComponent/video/VideoWriter.cpp
-===================================================================
---- transcriber-ag-2.0.0.orig/source/src/MediaComponent/video/VideoWriter.cpp	2011-05-10 09:59:51.000000000 +0200
-+++ transcriber-ag-2.0.0/source/src/MediaComponent/video/VideoWriter.cpp	2011-12-11 15:15:14.000000000 +0100
+--- a/source/src/MediaComponent/video/VideoWriter.cpp
++++ b/source/src/MediaComponent/video/VideoWriter.cpp
 @@ -42,15 +42,15 @@
  
  
@@ -327,3 +313,16 @@ Index: transcriber-ag-2.0.0/source/src/MediaComponent/video/VideoWriter.cpp
  
  	// -- Sample parameters --
  	codecCtx->bit_rate		= device->m_info()->video_bit_rate;
+--- a/source/src/Tools/tagstats.cpp
++++ b/source/src/Tools/tagstats.cpp
+@@ -14,9 +14,7 @@
+ #include <algorithm>
+ #include <vector>
+ #include <sys/time.h>
+-#ifdef WIN32
+-	#include <getopt.h>
+-#endif
++#include <getopt.h>
+ 
+ #include "DataModel/DataModel_StatHelper.h"
+ #include "Common/FileInfo.h"
