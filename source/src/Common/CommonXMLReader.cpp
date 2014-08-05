@@ -156,7 +156,7 @@ CommonXMLHandler::getString(const XMLCh* const chars, string& s)
 
 void
 CommonXMLHandler::writeChars(const XMLByte* const toWrite,
-                                 const unsigned int count,
+                                 const XMLSize_t count,
                                  XMLFormatter* const formatter)
 {
   m_targetString->assign((char*) toWrite, count);

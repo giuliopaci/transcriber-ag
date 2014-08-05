@@ -102,7 +102,7 @@ class CommonXMLHandler : public DefaultHandler, public XMLFormatTarget
 		std::string* m_targetString;
 		std::string m_buffer;
 		void writeChars(const XMLByte* const toWrite,
-					const unsigned int count,
+					const XMLSize_t count,
 					XMLFormatter* const formatter);
 };
 
