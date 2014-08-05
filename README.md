@@ -20,7 +20,11 @@ globally
 
 should do it. Then
 
- * `cd source`
+ * `cd libs`
+ * `cmake .`
+ * `make`
+ * `sudo make install`
+ * `cd ../source`
  * `cmake .`
  * `make`
  * `sudo make install`
