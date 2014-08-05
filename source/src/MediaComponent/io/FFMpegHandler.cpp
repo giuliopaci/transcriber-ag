@@ -82,7 +82,7 @@ bool FFMpegHandler::m_open(const char *inMedium, int)
 
 
 	// Step 1 - Opening
-	err = av_open_input_file(&formatCtx, medium, NULL, 0, NULL);
+	err = avformat_open_input(&formatCtx, medium, NULL, NULL);
 
 	if (err)
 	{
@@ -202,12 +202,12 @@ void FFMpegHandler::setHandlerContext(HandlerCtx in_mode)
 
 
 // --- InitEncoder ---
-bool FFMpegHandler::initEncoder(CodecID codec_id)
+bool FFMpegHandler::initEncoder(AVCodecID codec_id)
 {
-	encoderCtx	= avcodec_alloc_context();
+	encoderCtx	= avcodec_alloc_context3(NULL);
 	encoder		= avcodec_find_encoder(codec_id);
 
-	if (avcodec_open(encoderCtx, encoder) < 0)
+	if (avcodec_open2(encoderCtx, encoder, NULL) < 0)
 	{
 		fprintf(stderr, "FFMpegHandler --> Unable to initialize encoder\n");
 		return false;
@@ -218,14 +218,14 @@ bool FFMpegHandler::initEncoder(CodecID codec_id)
 
 
 // --- InitDecoder ---
-bool FFMpegHandler::initDecoder(CodecID codec_id, bool allocate)
+bool FFMpegHandler::initDecoder(AVCodecID codec_id, bool allocate)
 {
 	if (allocate)
-		decoderCtx = avcodec_alloc_context() ;
+		decoderCtx = avcodec_alloc_context3(NULL) ;
 
 	decoder	= avcodec_find_decoder(codec_id);
 
-	if (avcodec_open(decoderCtx, decoder) < 0)
+	if (avcodec_open2(decoderCtx, decoder, NULL) < 0)
 	{
 		fprintf(stderr, "FFMpegHandler --> Unable to initialize decoder\n");
 		return false;
@@ -254,7 +254,7 @@ void FFMpegHandler::initFrame()
 	frame = new MediumFrame;
 
 	/** av_malloc aligns data for us! */
-	frame->samples = (int16_t*)av_malloc( AVCODEC_MAX_AUDIO_FRAME_SIZE * sizeof(int16_t) );
+	frame->samples = (int16_t*)av_malloc( MAX_AUDIO_FRAME_SIZE * sizeof(int16_t) );
 }
 
 
@@ -266,7 +266,7 @@ MediumFrame* FFMpegHandler::decode(uint8_t *buf, int buf_len)
 	switch(av_ctx)
 	{
 		case AudioCtx:
-			frame->len	= AVCODEC_MAX_AUDIO_FRAME_SIZE;
+			frame->len	= MAX_AUDIO_FRAME_SIZE;
 			AVPacket avpacket;
 			avpacket.size = buf_len;
 			avpacket.data = buf;
@@ -308,8 +308,8 @@ vector<MediumFrame*> FFMpegHandler::decodeMulti(uint8_t* buf, int buf_len)
 			{
 				MediumFrame* f = new MediumFrame;
 
-				f->samples	= new int16_t[AVCODEC_MAX_AUDIO_FRAME_SIZE];
-				f->len		= AVCODEC_MAX_AUDIO_FRAME_SIZE;
+				f->samples	= new int16_t[MAX_AUDIO_FRAME_SIZE];
+				f->len		= MAX_AUDIO_FRAME_SIZE;
 				AVPacket avpacket;
 				avpacket.data = buf;
 				avpacket.size = toDecode;
@@ -790,9 +790,9 @@ void FFMpegHandler::m_formatDescription()
 	// -- Data Encoding --
 	switch (decoderCtx->sample_fmt)
 	{
-		case SAMPLE_FMT_U8		: sample_resolution = 8;	break;
-		case SAMPLE_FMT_S16		: sample_resolution = 16;	break;
-		case SAMPLE_FMT_S32		: sample_resolution = 32;	break;
+		case AV_SAMPLE_FMT_U8		: sample_resolution = 8;	break;
+		case AV_SAMPLE_FMT_S16		: sample_resolution = 16;	break;
+		case AV_SAMPLE_FMT_S32		: sample_resolution = 32;	break;
 		default					: sample_resolution = -1;	break;
 	}
 

@@ -11,7 +11,7 @@
 #ifndef FFMPEGHANDLER_H
 #define FFMPEGHANDLER_H
 
-#define __STDC_CONSTANT_MACROS
+#define MAX_AUDIO_FRAME_SIZE 192000
 
 #include "IODevice.h"
 #include <vector>
@@ -96,7 +96,7 @@ public:
 	 * @param codec_id Codec ID
 	 * @return True on success, false otherwise.
 	 */
-	bool			initEncoder(CodecID codec_id);
+	bool			initEncoder(AVCodecID codec_id);
 
 	/**
 	 * Initializes a decoder for specified codec ID
@@ -104,7 +104,7 @@ public:
 	 * @param allocate		If true, allocates a new context
 	 * @return True on success, false otherwise.
 	 */
-	bool			initDecoder(CodecID codec_id, bool allocate=false);
+	bool			initDecoder(AVCodecID codec_id, bool allocate=false);
 
 	/**
 	 * Sets decoder extra parameters (channels, samplerate)
