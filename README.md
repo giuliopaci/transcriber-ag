@@ -16,7 +16,7 @@ people needing to build it from sources, with a few improvements.
 You'll have to play a bit with apt/aptitude to get the right dependencies, but
 globally
 
-`aptitude install cdbs libxerces-c-dev libavcodec-dev libavformat-dev libswscale-dev libavdevice-dev libgtkmm-2.4-dev portaudio19-dev`
+`aptitude install cdbs libxerces-c-dev libavcodec-dev libavformat-dev libswscale-dev libavdevice-dev libgtkmm-2.4-dev portaudio19-dev libsndfile1-dev`
 
 should do it. Then
 
