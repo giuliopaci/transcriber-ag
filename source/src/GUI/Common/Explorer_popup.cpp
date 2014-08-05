@@ -94,108 +94,108 @@ void Explorer_popup::prepare_explorer_popup(int mode)
 	//> add possibilities for NOT SUPPORTED FILES
 	if (mode==-1) {
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_RENAME] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_COPY] ] ) ) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_CUT] ] ) ) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PASTE] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_SUPPRESS] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PROPERTY] ] ) ) ;
 	}
 	//> CLASSIC DIRECTORIES
 	else if (mode==1) {
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_REFRESHDIR] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_NEW_DIR] ]) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_RENAME] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_COPY] ] ) ) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_CUT] ] ) ) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PASTE] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_DEFINESHORTCUT] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_SUPPRESS] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PROPERTY] ] ) ) ;
 	}
 	//> SYSTEM ROOT
 	else if (mode==2) {
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_REFRESHDIR] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_NEW_DIR] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PASTE] ] ) ) ;
 	}
 	//> PROJECT ROOT
 	else if (mode==3) {
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_REFRESHDIR] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_CHANGESHORTCUT] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_NEW_DIR] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PASTE] ] ) ) ;
 	}
 	//> FTP Root
 	else if (mode==4) {
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_REFRESHFTPDIR] ] ) ) ;
-		/*menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		/*menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(map_items[ map_indice[POPUP_TREE_PROPERTY] ] ) ) ;*/
 	}
 	//> cache FTP ROOT
 	else if (mode==5) {
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_REFRESHDIR] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_CHANGESHORTCUT] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_NEW_DIR] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PASTE] ] ) ) ;
 	}
 	//> shortcut ROOT
 	else if (mode==6) {
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_REFRESHDIR] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_NEW_DIR] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PASTE] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_CHANGESHORTCUT] ] ) ) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_DELETESHORTCUT] ] ) ) ;
 	}
 	//> AUDIO FILES
 	else if(mode==101) {
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_OPEN] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_CREATE_SINGLETRANSCRIPTION] ] ) ) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_CREATE_MULTITRANSCRIPTION] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_RENAME] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_COPY] ] ) ) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_CUT] ] ) ) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PASTE] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_SUPPRESS] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PROPERTY] ] ) ) ;
 	}
 	//> ANNOTATION FILES
 	else if(mode==102) {
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_OPEN] ] ) ) ;
 		//menulist.push_back( *(map_items[ map_indice[POPUP_TREE_IMPORT_IN] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_RENAME] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_COPY] ] ) ) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_CUT] ] ) ) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PASTE] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_SUPPRESS] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PROPERTY] ] ) ) ;
 	}
 	//> FTP FILEs
@@ -206,22 +206,22 @@ void Explorer_popup::prepare_explorer_popup(int mode)
 	else if(mode==151) {
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_OPEN] ] ) ) ;
 		//menulist.push_back( *(map_items[ map_indice[POPUP_TREE_PLAY] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_SUPPRESS] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PROPERTY] ] ) ) ;
 	}
 	//> ANNOTATION FTP cache FILEs
 	else if(mode==152) {
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_OPEN] ] ) ) ;
 		//menulist.push_back( *(map_items[ map_indice[POPUP_TREE_IMPORT_IN] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_FTP_UPLOAD] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_COPY] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_SUPPRESS] ] ) ) ;
-		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem::SeparatorElem()) ;
+		menulist.push_back(Gtk::Menu_Helpers::SeparatorElem()) ;
 		menulist.push_back( *(itemList[ map_indice[POPUP_TREE_PROPERTY] ] ) ) ;
 	}
 	//> FTP directory

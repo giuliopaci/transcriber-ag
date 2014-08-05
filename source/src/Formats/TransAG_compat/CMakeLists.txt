@@ -102,7 +102,7 @@ set_target_properties(
 )
 
 install(
-	TARGETS	agfio_plugin_TransAG_compat testTransAG_compat
+	TARGETS	agfio_plugin_TransAG_compat testTransAG_compat compat2tag
 	
 	RUNTIME	DESTINATION bin
 	LIBRARY	DESTINATION	lib/ag

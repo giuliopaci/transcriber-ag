@@ -275,5 +275,11 @@ target_link_libraries(
 	${APPLE_LINKS}
 	${WIN32_LINKS}
 )
+install(
+	TARGETS	GenPeaks MMPlayer MediumGuesser MultimediaRTSPServer ThumbnailerTest audioTool
+	
+	RUNTIME	DESTINATION bin
+	LIBRARY	DESTINATION lib
+)
 endif (VIDEO_BUILD)
 

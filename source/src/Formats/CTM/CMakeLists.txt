@@ -82,7 +82,7 @@ set_target_properties(
 )
 
 install(
-	TARGETS	agfio_plugin_CTM ctm2tag 
+	TARGETS	agfio_plugin_CTM ctm2tag testCTM
 
 	RUNTIME	DESTINATION bin
 	LIBRARY	DESTINATION	lib/ag

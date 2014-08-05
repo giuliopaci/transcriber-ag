@@ -98,12 +98,12 @@ bool FFMpegHandler::m_open(const char *inMedium, int)
 	{
 		switch( formatCtx->streams[i]->codec->codec_type )
 		{
-			case CODEC_TYPE_VIDEO:
+			case AVMEDIA_TYPE_VIDEO:
 				v_streams.push_back(i);
 				video_time_base = av_q2d(formatCtx->streams[v_streams[0]]->time_base);
 				break;
 
-			case CODEC_TYPE_AUDIO:
+			case AVMEDIA_TYPE_AUDIO:
 				a_streams.push_back(i);
 				audio_time_base = av_q2d(formatCtx->streams[a_streams[0]]->time_base);
 				break;
@@ -267,7 +267,10 @@ MediumFrame* FFMpegHandler::decode(uint8_t *buf, int buf_len)
 	{
 		case AudioCtx:
 			frame->len	= AVCODEC_MAX_AUDIO_FRAME_SIZE;
-			bytes		= avcodec_decode_audio2(decoderCtx, frame->samples, &frame->len, buf, buf_len);
+			AVPacket avpacket;
+			avpacket.size = buf_len;
+			avpacket.data = buf;
+			bytes		= avcodec_decode_audio3(decoderCtx, frame->samples, &frame->len, &avpacket);
 
 			if (m_info()->audio_channels)
 				frame->len /= m_info()->audio_channels;
@@ -307,7 +310,10 @@ vector<MediumFrame*> FFMpegHandler::decodeMulti(uint8_t* buf, int buf_len)
 
 				f->samples	= new int16_t[AVCODEC_MAX_AUDIO_FRAME_SIZE];
 				f->len		= AVCODEC_MAX_AUDIO_FRAME_SIZE;
-				bytes		= avcodec_decode_audio2(decoderCtx, f->samples, &f->len, buf, toDecode);
+				AVPacket avpacket;
+				avpacket.data = buf;
+				avpacket.size = toDecode;
+				bytes		= avcodec_decode_audio3(decoderCtx, f->samples, &f->len, &avpacket);
 
 				buf += bytes;
 				toDecode -= bytes;
@@ -500,9 +506,9 @@ MediumFrame* FFMpegHandler::m_next_frame()
 			if (pkt.stream_index == v_streams.at(0))
 			{
         		decoderCtx->reordered_opaque= pkt.pts;
-		        bytes = avcodec_decode_video(decoderCtx,
+		        bytes = avcodec_decode_video2(decoderCtx,
                                        		 i_frame, &frame_ok,
-		                                     pkt.data, pkt.size);
+		                                     &pkt);
 
 				if (bytes <= 0)
 				{

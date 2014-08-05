@@ -14,9 +14,7 @@
 #include <algorithm>
 #include <vector>
 #include <sys/time.h>
-#ifdef WIN32
-	#include <getopt.h>
-#endif
+#include <getopt.h>
 
 #include "DataModel/DataModel_StatHelper.h"
 #include "Common/FileInfo.h"

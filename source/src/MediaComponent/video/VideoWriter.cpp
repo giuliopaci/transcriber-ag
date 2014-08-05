@@ -42,15 +42,15 @@ VideoWriter::generateVideo()
 
 
 	// -- Format guesser & allocation --
-	outFormat = guess_format(NULL, sourcePath.c_str(), NULL);
+	outFormat = av_guess_format(NULL, sourcePath.c_str(), NULL);
 
 	if (!outFormat)
 	{
 		printf("Format Guess Fallback : mpeg\n");
-		outFormat = guess_format("mpeg", NULL, NULL);
+		outFormat = av_guess_format("mpeg", NULL, NULL);
 	}
     
-	formatCtx = av_alloc_format_context();
+	formatCtx = avformat_alloc_context();
 
 	if (!formatCtx)
 	{
@@ -144,7 +144,7 @@ VideoWriter::addVideoStream(AVFormatContext *formatCtx, CodecID codecID)
 
 	codecCtx				= stream->codec;
 	codecCtx->codec_id		= CODEC_ID_BMP;
-	codecCtx->codec_type	= CODEC_TYPE_VIDEO;
+	codecCtx->codec_type	= AVMEDIA_TYPE_VIDEO;
 
 	// -- Sample parameters --
 	codecCtx->bit_rate		= device->m_info()->video_bit_rate;

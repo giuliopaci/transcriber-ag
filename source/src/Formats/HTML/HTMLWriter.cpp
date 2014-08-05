@@ -154,7 +154,7 @@ int HTMLWriter::write(ostream& out, DataModel* data)
 
 	// DUREE
 	out << "\t\t<tr>" << endl << "\t\t\t<td><strong> Durée </strong></td>" << endl;
-	out << "\t\t\t<td> " << FormatTime::FormatTime(m_data->getSignalDuration(), true, true);
+	out << "\t\t\t<td> " << FormatTime(m_data->getSignalDuration(), true, true);
 	out << " </td>" << endl << "\t\t</tr>" << endl;
 
 

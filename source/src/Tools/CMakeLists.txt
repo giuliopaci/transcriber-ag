@@ -133,3 +133,9 @@ target_link_libraries(
     ${APPLE_LINKS}
     ${WIN32_LINKS}
 )
+install(
+	TARGETS	add_section clean_tag convert_tag extract_speaker_segments merge_tag print_spk printtag tagstats testag
+	
+	RUNTIME	DESTINATION bin
+	LIBRARY	DESTINATION lib
+)

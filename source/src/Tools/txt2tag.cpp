@@ -130,8 +130,8 @@ void checkLibraryPath(const char* progname)
 {
 	if (g_getenv("LD_LIBRARY_PATH") == NULL ) {
 		string lib_path("");
-		if ( FileInfo("/usr/local/lib/ag").exists() ) {
-			lib_path = "/usr/local/lib:/usr/local/lib/ag";
+		if ( FileInfo(PREFIX "/lib/ag").exists() ) {
+			lib_path = PREFIX "/lib:" PREFIX "/lib/ag";
 		} else {
 			gchar* cfgdir = g_path_get_dirname(progname);
 			if ( !g_path_is_absolute (cfgdir) ) {

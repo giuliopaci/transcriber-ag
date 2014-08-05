@@ -50,3 +50,10 @@ target_link_libraries(
 	
 	dl
 )
+
+install(
+	TARGETS ag
+
+	RUNTIME	DESTINATION bin
+	LIBRARY	DESTINATION lib
+)

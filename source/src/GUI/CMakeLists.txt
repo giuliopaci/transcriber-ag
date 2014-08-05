@@ -167,3 +167,10 @@ target_link_libraries(
 	${APPLE_LINKS}
 	${WIN32_LINKS}
 )
+
+install(
+	TARGETS ${ERR_APP} ${APP_NAME}
+
+	RUNTIME	DESTINATION bin
+	LIBRARY	DESTINATION lib
+)

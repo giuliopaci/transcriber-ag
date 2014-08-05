@@ -2468,6 +2468,11 @@
 			<parameter id="code2" label="ISO 639 code 2 numbers" value="es"/>
 			<parameter id="eng" label="English Description" value="Spanish; Castilian"/>
 			<parameter id="fre" label="French Description" value="espagnol; castillan"/>
+		</section>
+		<section id="ita" label="italien">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="it"/>
+			<parameter id="eng" label="English Description" value="Italian"/>
+			<parameter id="fre" label="French Description" value="italien"/>
 		</section>	
 	</component>
 </parameters>

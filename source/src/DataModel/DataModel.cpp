@@ -3890,7 +3890,7 @@ bool DataModel::checkRemainingMinsize(const string& type, int order,
 				if (diff < m_conventions.minSegmentSize(graphtype))
 				{
 					if (diff < 0)
-						sprintf(msg, _("Can't set segment end beyond previous/next segment"));
+						sprintf(msg, "%s", _("Can't set segment end beyond previous/next segment"));
 					else
 						sprintf(msg, _("segment size must be > %f secs"), m_conventions.minSegmentSize(graphtype)) ;
 					ok_forw = false;
@@ -3915,7 +3915,7 @@ bool DataModel::checkRemainingMinsize(const string& type, int order,
 					if (diff < m_conventions.minSegmentSize(graphtype))
 					{
 						if (diff < 0)
-							sprintf(msg, _("Can't set segment end beyond previous/next segment")) ;
+							sprintf(msg, "%s", _("Can't set segment end beyond previous/next segment")) ;
 						else
 							sprintf(msg, _("segment size must be > %f secs"), m_conventions.minSegmentSize(graphtype));
 						ok_down = false;

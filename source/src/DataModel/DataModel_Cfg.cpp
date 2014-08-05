@@ -80,18 +80,18 @@ void DataModel::setAGOptions(string format, bool savemode)
 		if ( !Glib::file_test(m_localDTD, Glib::FILE_TEST_EXISTS) )
 		{
 			m_agOptions["system"] = "TransAG-3.0.dtd";
-			m_localDTD = "/usr/local/etc/TransAG/TransAG-3.0.dtd";
+			m_localDTD = PREFIX "/etc/TransAG/TransAG-3.0.dtd";
 
 			if ( !Glib::file_test(m_localDTD, Glib::FILE_TEST_EXISTS) )
 			{
 				m_agOptions["system"] = "TransAG-2.0.dtd";
-				m_localDTD = "/usr/local/etc/TransAG/TransAG-2.0.dtd";
+				m_localDTD = PREFIX "/etc/TransAG/TransAG-2.0.dtd";
 			}
 
 			if ( !Glib::file_test(m_localDTD, Glib::FILE_TEST_EXISTS) )
 			{
 				m_agOptions["system"] = "TransAG-1.0.dtd";
-				m_localDTD = "/usr/local/etc/TransAG/TransAG-1.0.dtd";
+				m_localDTD = PREFIX "/etc/TransAG/TransAG-1.0.dtd";
 			}
 		}
 
@@ -200,7 +200,7 @@ void DataModel::initEnviron(string curpath)
 
 		string pdir = curpath;
 		if ( pdir.empty() )
-			pdir="/usr/local";
+			pdir = PREFIX;
 		else {
 			if ( FileInfo(curpath).isFile() ) pdir = FileInfo(pdir).dirname();
 
@@ -229,8 +229,8 @@ void DataModel::initEnviron(string curpath)
 				else lib_path = "";
 			}
 
-			if ( lib_path.empty() && FileInfo("/usr/local/lib/ag").exists() ) {
-				lib_path = "/usr/local/lib:/usr/local/lib/ag";
+			if ( lib_path.empty() && FileInfo(PREFIX "/lib/ag").exists() ) {
+				lib_path = PREFIX "/lib:" PREFIX "/lib/ag";
 			}
 			if ( ! lib_path.empty() ) {
 				if ( !ld_library_path.empty() ) ld_library_path += ":";
@@ -266,7 +266,7 @@ void DataModel::initEnviron(string curpath)
 		if ( ! etc_ok )
 		{
 			// check if exists in in /usr/local/etc
-			string dir = "/usr/local/etc/TransAG";
+			string dir = PREFIX "/etc/TransAG";
 			if ( FileInfo(dir).exists() ) {
 				etc_ok = true;
 				configuration_path = dir ;
