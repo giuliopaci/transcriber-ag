@@ -30,6 +30,12 @@ const utils::Encoding* utf8 = NULL;
 
 #define DTD_VERSION "3.0"
 
+#define QUOTEME(x) #x
+
+#ifndef PREFIX
+#  define PREFIX QUOTEME(CMAKE_INSTALL_PREFIX)
+#endif
+
 using namespace std;
 
 namespace tag {

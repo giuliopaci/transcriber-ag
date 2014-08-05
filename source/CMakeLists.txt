@@ -69,7 +69,7 @@ set	(LIVEMEDIA_BUILD	${LIBS}/build/live555)
 set	(SOUNDTOUCH_BUILD	${LIBS}/build/soundtouch-1.4.0)
 
 # --- Recent distributions need this ---
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__STDC_CONSTANT_MACROS -fPIC")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__STDC_CONSTANT_MACROS -DCMAKE_INSTALL_PREFIX='${CMAKE_INSTALL_PREFIX}' -fPIC")
 
 
 # --- GetText ---
