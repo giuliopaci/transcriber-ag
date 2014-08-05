@@ -102,7 +102,7 @@ class SAX_TransAGHandler : public HandlerBase, private XMLFormatTarget
 
 	  XMLFormatter* formatter;
 	  string* targetString;
-	  void writeChars(const XMLByte* const, const unsigned int, XMLFormatter* const);
+	  void writeChars(const XMLByte* const, const XMLSize_t, XMLFormatter* const);
 	  string& set_string(string&, const XMLCh* const);
 
 	  // StartFP: a type for function pointers to element handlers which are

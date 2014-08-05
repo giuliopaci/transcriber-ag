@@ -334,7 +334,7 @@ void SAX_SGMLHandler::fatalError(const SAXParseException& e)
 }
 
 void SAX_SGMLHandler::writeChars(const XMLByte* const toWrite,
-			const unsigned int count,
+			const XMLSize_t count,
 			XMLFormatter* const formatter)
 {
 	targetString.assign((char*) toWrite, count);

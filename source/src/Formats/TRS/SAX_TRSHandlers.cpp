@@ -1175,7 +1175,7 @@ void SAX_TRSHandlers::fatalError(const SAXParseException& e)
 }
 
 void SAX_TRSHandlers::writeChars(const XMLByte* const toWrite,
-			const unsigned int count,
+			const XMLSize_t count,
 			XMLFormatter* const formatter)
 {
 	targetString.assign((char*) toWrite, count);
