@@ -53,7 +53,7 @@ class VideoWriter
 		 * @param codecID
 		 * @return
 		 */
-		AVStream*		addVideoStream(AVFormatContext* oc, CodecID codecID);
+		AVStream*		addVideoStream(AVFormatContext* oc, AVCodecID codecID);
 
 		/**
 		 *
