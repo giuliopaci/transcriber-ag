@@ -63,10 +63,10 @@ set	(AGLIB				${LIBS}/aglib-2.0.1)
 set	(LIVEMEDIA			${LIBS}/live555)
 set	(SOUNDTOUCH			${LIBS}/soundtouch-1.4.0)
 
-set (AGLIB_BUILD		${LIBS}/build/aglib-2.0.1)
+set (AGLIB_BUILD		${LIBS}/aglib-2.0.1)
 #set	(GTKSPELL_BUILD		${LIBS}/build/gtkspell-2.0.11-patch-BT)
-set	(LIVEMEDIA_BUILD	${LIBS}/build/live555)
-set	(SOUNDTOUCH_BUILD	${LIBS}/build/soundtouch-1.4.0)
+set	(LIVEMEDIA_BUILD	${LIBS}/live555)
+set	(SOUNDTOUCH_BUILD	${LIBS}/soundtouch-1.4.0)
 
 # --- Recent distributions need this ---
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__STDC_CONSTANT_MACROS -DCMAKE_INSTALL_PREFIX='${CMAKE_INSTALL_PREFIX}' -fPIC")

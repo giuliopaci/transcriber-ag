@@ -139,6 +139,7 @@ target_link_libraries(
 	${GTKMM_LINK_LIBRARIES}
 	${APPLE_LINKS}
 	${WIN32_LINKS}
+	X11
 )
 
 # ------------------------------------------------
