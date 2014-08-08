@@ -2133,10 +2133,11 @@
 			<parameter id="eng" label="English Description" value="Thai"/>
 			<parameter id="fre" label="French Description" value="thaïo"/>
 		</section>
-		<section id="tib/bod" label="tibetain">
+		<section id="bod" label="tibetain">
 			<parameter id="code2" label="ISO 639 code 2 numbers" value="bo"/>
 			<parameter id="eng" label="English Description" value="Tibetan"/>
-			<parameter id="fre" label="French Description" value="tibetain"/>
+			<parameter id="fre" label="French Description" value="tibétain"/>
+			<parameter id="bod" label="Tibetan Description" value="བོད་ཡིག།"/>
 		</section>
 		<section id="tig" label="tigre">
 			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
