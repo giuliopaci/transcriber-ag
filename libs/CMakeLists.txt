@@ -3,6 +3,10 @@ cmake_minimum_required(VERSION 2.6)
 # --- Project Root Name ---
 project					(TranscriberAG_LIBS)
 
+if (UNIX)
+	set (CMAKE_INSTALL_PREFIX /usr)
+endif (UNIX)
+
 # --- Core Libraries ---
 add_subdirectory(aglib-2.0.1)
 #add_subdirectory(gtkspell-2.0.11-patch-BT)

@@ -43,7 +43,6 @@ if (UNIX)
 	# --- Global Package Dependencies ---
 	find_package			(PkgConfig	REQUIRED)
 	find_package			(ZLIB		REQUIRED)
-	set (CMAKE_INSTALL_PREFIX "/usr/")
 endif (UNIX)
 
 # --- Global variables ---
