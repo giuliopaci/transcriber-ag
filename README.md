@@ -28,3 +28,5 @@ should do it. Then
  * `cmake .`
  * `make`
  * `sudo make install`
+ * `cd ..`
+ * `sudo cp -R etc/TransAG /etc/`

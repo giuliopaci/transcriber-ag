@@ -146,7 +146,7 @@ int main(int argc, char *argv[])
 	bool found = false ;
 	up = FileInfo(exedir).dirname(lev-1);
 	bool start_ok0 = true ;
-
+	#if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__) || defined(__APPLE__)
 	try
 	{
 		Glib::Dir dir(up) ;
@@ -174,7 +174,14 @@ int main(int argc, char *argv[])
 		start_ok0 = false ;
 		Log::err() << "TranscriberAG --> <*> General configuration problem :> can't read configuration file "<< std::endl ;
 	}
-
+    #else
+    Glib::ustring etcTransAG = "/etc/TransAG";//FileHelper::build_path("etc","TransAG") ;
+    defaultConfig_path = "/etc/TransAG";
+    if ( ! Glib::file_test(defaultConfig_path, Glib::FILE_TEST_EXISTS) ) {
+		start_ok0 = false ;
+		Log::err() << "TranscriberAG --> <*> General configuration problem :> can't read configuration file "<< std::endl ;
+    }
+    #endif
 	Log::out() << "TranscriberAG --> <*> Configuration directory: " << defaultConfig_path << endl;
 
 	Glib::ustring ime_to_restore = "" ;
