@@ -50,7 +50,7 @@ if (UNIX)
     endif(NOT LIBTAG)
 
 	# -- Install --
-	set(CMAKE_INSTALL_PREFIX	/usr/local)
+	set(CMAKE_INSTALL_PREFIX	/usr)
 endif (UNIX)
 
 # --- Global variables ---
