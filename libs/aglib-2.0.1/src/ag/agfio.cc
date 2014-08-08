@@ -122,6 +122,9 @@ agfio::store(const string& format,
   }
 }
 
+#define QUOTEME(x) #x
+#define PREFIX "/usr/lib/ag/" //TODO: FIXME!!!
+
 agfio_plugin*
 agfio::plug(const string& format)
   throw (const string&)
@@ -156,8 +159,8 @@ agfio::plug(const string& format)
 /* -- BT Patch )) */
 
 /* (( BT Patch -- */
-//  void* plugin = dlopen(plugin_name.c_str(), RTLD_LAZY);
- 	void* plugin = NULL;
+    //void* plugin = dlopen(plugin_name.c_str(), RTLD_LAZY);
+    void* plugin = NULL;
   	if (/*!plugin && */ getenv(LD_LIBRARY_PATH) != NULL )
   	{
 	 	// PATCH by BT-PLr 2008-06-04
@@ -187,22 +190,23 @@ agfio::plug(const string& format)
 				break;
 		  }
 	  }
+	  if ( plugin == NULL)
+	  {
+	      string err = string("Cannot load plugin: ") + plugin_name.c_str() + "\n" ;
+	      throw err ;
+	  }
   } 
   else 
   {
 	  cerr << " LOAD PLUGIN : " << plugin_name.c_str() << endl;
+	  plugin_name = string(PREFIX) + plugin_name;
 	  plugin = dlopen(plugin_name.c_str(), RTLD_LAZY);
+	  if ( plugin == NULL)
+	  {
+	      throw string("Cannot load plugin: ") + dlerror() + '\n';
+	  }
   }
 /* -- BT Patch )) */ 
-
-  if ( plugin == NULL )  
-  {
-	  /* (( BT Patch -- */
-	  //throw string("Cannot load plugin: ") + dlerror() + '\n';
-	  string err = string("Cannot load plugin: ") + plugin_name.c_str() + "\n" ;
-	  throw err ;
-	  /* -- PATCH BT )) */
-  }
 
   // load the symbols
   create_func_t* create_func = (create_func_t*) dlsym(plugin, "create");

@@ -43,6 +43,7 @@ if (UNIX)
 	# --- Global Package Dependencies ---
 	find_package			(PkgConfig	REQUIRED)
 	find_package			(ZLIB		REQUIRED)
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DAG_PLUGINDIR=${CMAKE_INSTALL_PREFIX}/lib/ag/")
 endif (UNIX)
 
 # --- Global variables ---

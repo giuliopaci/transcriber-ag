@@ -32,9 +32,7 @@ const utils::Encoding* utf8 = NULL;
 
 #define QUOTEME(x) #x
 
-#ifndef PREFIX
-#  define PREFIX QUOTEME(CMAKE_INSTALL_PREFIX)
-#endif
+#define PREFIX ""
 
 using namespace std;
 
