@@ -71,11 +71,6 @@ set	(SOUNDTOUCH_BUILD	${LIBS}/soundtouch-1.4.0)
 # --- Recent distributions need this ---
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__STDC_CONSTANT_MACROS -DCMAKE_INSTALL_PREFIX='${CMAKE_INSTALL_PREFIX}' -fPIC")
 
-
-# --- GetText ---
-file(GLOB PO_FILES *.po)
-
-
 # -- Global Includes --
 
 # --- Win32 Settings ---
@@ -253,8 +248,46 @@ set(FFMPEG_LIBRARIES
 
 # --- Main subdirectory - src ---
 add_subdirectory	(src)
-add_subdirectory	(po)
 
+# -- Gettext handling --
+
+# adding some modules, coming from Wesnoth
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake/")
+# gettext executables are not required when NLS is deactivated
+find_package(Gettext)
+
+# translation options
+if(NOT MSVC)
+# Pot updates don't work under Windows so no reason to even try
+option(ENABLE_POT_UPDATE_TARGET "Enables the tools to update the pot files and manuals. This target has extra dependencies." ON)
+endif(NOT MSVC)
+option(ENABLENLS "Enable building of translations" ON)
+if (ENABLENLS)
+  set(ENABLE_NLS 1)
+else (ENABLENLS)
+  set(ENABLE_NLS 0)
+endif (ENABLENLS)
+
+
+find_package( Gettext )
+
+# get languages
+file(READ po/LINGUAS LINGUAS)
+string(REPLACE "\n" "" LINGUAS ${LINGUAS})
+separate_arguments(LINGUAS)
+
+if(ENABLE_POT_UPDATE_TARGET)
+	find_package(TranslationTools REQUIRED)
+endif(ENABLE_POT_UPDATE_TARGET)
+
+if (GETTEXT_FOUND AND ENABLENLS)
+ 	add_subdirectory(po)
+endif (GETTEXT_FOUND AND ENABLENLS)
+
+configure_file (
+  "${PROJECT_SOURCE_DIR}/config.h.in"
+  "${PROJECT_BINARY_DIR}/config.h"
+  )
 
 # --- CPack Settings ---
 

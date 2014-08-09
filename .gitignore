@@ -4,9 +4,12 @@
 # Cmake
 CMakeCache.txt
 CMakeFiles
+CPackConfig.cmake
+CPackSourceConfig.cmake
 Makefile
 cmake_install.cmake
 install_manifest.txt
+
 
 # Compiled Object files
 *.slo
@@ -32,3 +35,6 @@ install_manifest.txt
 *.exe
 *.out
 *.app
+
+config.h
+
