@@ -161,7 +161,7 @@ agfio::plug(const string& format)
 
 /* (( BT Patch -- */
     void* plugin = dlopen(plugin_name.c_str(), RTLD_LAZY);
-  	if (/*!plugin && */ getenv(LD_LIBRARY_PATH) != NULL )
+  	if (!plugin && getenv(LD_LIBRARY_PATH) != NULL )
   	{
 	 	// PATCH by BT-PLr 2008-06-04
 	  	// HINT if  LD_LIBRARY_PATH set by calling program -> then it may be ignored by dlopen, so we scan
