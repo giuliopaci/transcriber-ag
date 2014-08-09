@@ -7,6 +7,7 @@ people needing to build it from sources, with a few improvements.
 
 ##Changelog##
 
+ * improving translation system
  * adding Tibetan as possible input language
  * minor improvements to make compilation possible
  * 2.0.0 version plus Debian patches
