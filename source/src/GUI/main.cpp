@@ -33,6 +33,9 @@
 
 using namespace tag ;
 
+#define xstr(s) str(s)
+#define str(s) #s
+#define STR_LOCALEDIR xstr(LOCALEDIR)
 
 int main(int argc, char *argv[])
 {
@@ -142,11 +145,12 @@ int main(int argc, char *argv[])
 
 	//> -- TranscriberAG Configuration base
 	Glib::ustring defaultConfig_path = "" ;
+	Glib::ustring defaultLocale_path = "" ;
 	Glib::ustring current_name, up ;
 	bool found = false ;
 	up = FileInfo(exedir).dirname(lev-1);
 	bool start_ok0 = true ;
-	#if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__) || defined(__APPLE__)
+	#if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
 	try
 	{
 		Glib::Dir dir(up) ;
@@ -174,13 +178,15 @@ int main(int argc, char *argv[])
 		start_ok0 = false ;
 		Log::err() << "TranscriberAG --> <*> General configuration problem :> can't read configuration file "<< std::endl ;
 	}
+	defaultLocale_path = defaultConfig_path + "/locales";
     #else
-    Glib::ustring etcTransAG = "/etc/TransAG";//FileHelper::build_path("etc","TransAG") ;
+    Glib::ustring etcTransAG = "/etc/TransAG";
     defaultConfig_path = "/etc/TransAG";
     if ( ! Glib::file_test(defaultConfig_path, Glib::FILE_TEST_EXISTS) ) {
 		start_ok0 = false ;
 		Log::err() << "TranscriberAG --> <*> General configuration problem :> can't read configuration file "<< std::endl ;
     }
+    defaultLocale_path = STR_LOCALEDIR;
     #endif
 	Log::out() << "TranscriberAG --> <*> Configuration directory: " << defaultConfig_path << endl;
 
@@ -214,10 +220,13 @@ int main(int argc, char *argv[])
 	if (start_ok0)
 	{
 		//> -- Prepare domain
-		bindtextdomain(GETTEXT_PACKAGE, (defaultConfig_path + "/locales").c_str());
+		setlocale(LC_ALL,"");
+		bindtextdomain(GETTEXT_PACKAGE, (defaultLocale_path).c_str());
+		bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+        textdomain (GETTEXT_PACKAGE);
 		
 		#ifdef __APPLE__
-		bindtextdomain("gtk20", (defaultConfig_path + "/locales").c_str());
+		bindtextdomain("gtk20", (defaultLocale_path).c_str());
 		#endif
 
 		//> -- Load Default Parameters

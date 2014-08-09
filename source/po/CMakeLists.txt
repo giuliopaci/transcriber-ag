@@ -182,8 +182,10 @@ if(ENABLENLS)
 				COMMENT "mo-update [${LINGUA}]: Creating mo file."
 			)
 
-			install(FILES ${CMAKE_BINARY_DIR}/po/${LINGUA}/LC_MESSAGES/TranscriberAG.mo
-					DESTINATION ${LOCALE_INSTALL}/${LINGUA}/LC_MESSAGES)
+            IF (UNIX OR APPLE)
+			    install(FILES ${CMAKE_BINARY_DIR}/po/${LINGUA}/LC_MESSAGES/TranscriberAG.mo
+					DESTINATION ${LOCALEDIR}/${LINGUA}/LC_MESSAGES)
+		    ENDIF (UNIX OR APPLE)
 
 			set(mo-update-SRC ${mo-update-SRC} 
 				${CMAKE_BINARY_DIR}/po/${LINGUA}/LC_MESSAGES/TranscriberAG.mo

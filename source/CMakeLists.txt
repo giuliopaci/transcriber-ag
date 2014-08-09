@@ -3,7 +3,7 @@
 # ----------------------------------
 
 # --- CMake Internals ---
-cmake_minimum_required	(VERSION 2.6)
+cmake_minimum_required	(VERSION 2.8)
 include (CPack)
 
 # --- Project Root Name ---
@@ -72,6 +72,8 @@ set	(SOUNDTOUCH_BUILD	${LIBS}/soundtouch-1.4.0)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__STDC_CONSTANT_MACROS -DCMAKE_INSTALL_PREFIX='${CMAKE_INSTALL_PREFIX}' -fPIC")
 
 # -- Global Includes --
+
+include_directories("${PROJECT_BINARY_DIR}/include/")
 
 # --- Win32 Settings ---
 #
@@ -225,6 +227,10 @@ if (APPLE)
 
 endif (APPLE)
 
+if (UNIX OR APPLE)
+    set(LOCALEDIR "/usr/share/locale" CACHE STRING "change the name of the locale data directory to a non-default name")
+    add_definitions(-DLOCALEDIR=${LOCALEDIR})    
+endif (UNIX OR APPLE)
 
 # --- Main Libraries Variables ---
 set(LIVEMEDIA_LIBRARIES
@@ -275,13 +281,11 @@ if(ENABLE_POT_UPDATE_TARGET)
 	find_package(TranslationTools REQUIRED)
 endif(ENABLE_POT_UPDATE_TARGET)
 
-if (GETTEXT_FOUND AND ENABLENLS)
- 	add_subdirectory(po)
-endif (GETTEXT_FOUND AND ENABLENLS)
+add_subdirectory(po)
 
 configure_file (
-  "${PROJECT_SOURCE_DIR}/config.h.in"
-  "${PROJECT_BINARY_DIR}/config.h"
+  "${PROJECT_SOURCE_DIR}/include/config.h.in"
+  "${PROJECT_BINARY_DIR}/include/config.h"
   )
 
 # --- CPack Settings ---

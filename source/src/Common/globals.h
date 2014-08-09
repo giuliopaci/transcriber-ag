@@ -12,7 +12,11 @@
 #ifndef _HAVE_COMMON_GLOBALS_H
 #define _HAVE_COMMON_GLOBALS_H 1
 
-#include <libintl.h>
+#include "config.h"
+
+#if ENABLE_NLS
+
+#include "gettext.h"
 #include <iostream>
 #include <fstream>
 
@@ -25,12 +29,17 @@
 #define GETTEXT_PACKAGE "TranscriberAG"
 
 // --- Cross-platform Definition : _ --
-//#ifdef WIN32
-//	#define _(a) (char*)tag::FormatToUTF8::checkUTF8(dgettext(GETTEXT_PACKAGE,a), "", true).c_str()
-//#else
-//	#define _(a) dgettext(GETTEXT_PACKAGE,a)
-//#endif
-#define _(a) (char*)tag::FormatToUTF8::checkUTF8(dgettext(GETTEXT_PACKAGE,a), "", true).c_str()
+#ifdef WIN32
+	#define _(a) (char*)tag::FormatToUTF8::checkUTF8(dgettext(GETTEXT_PACKAGE,a), "", true).c_str()
+#else
+	#define _(a) dgettext(GETTEXT_PACKAGE,a)
+#endif
+
+#else
+
+#define _(a) a
+
+#endif /* ENABLE_NLS */
 
 #ifdef ASSERT
 #undef ASSERT
