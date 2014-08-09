@@ -160,8 +160,7 @@ agfio::plug(const string& format)
 /* -- BT Patch )) */
 
 /* (( BT Patch -- */
-    //void* plugin = dlopen(plugin_name.c_str(), RTLD_LAZY);
-    void* plugin = NULL;
+    void* plugin = dlopen(plugin_name.c_str(), RTLD_LAZY);
   	if (/*!plugin && */ getenv(LD_LIBRARY_PATH) != NULL )
   	{
 	 	// PATCH by BT-PLr 2008-06-04
