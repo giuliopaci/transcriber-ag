@@ -122,8 +122,9 @@ agfio::store(const string& format,
   }
 }
 
-#define QUOTEME(x) #x
-#define PREFIX "/usr/lib/ag/" //TODO: FIXME!!!
+#define xstr(s) str(s)
+#define str(s) #s
+#define PREFIX (xstr(CMAKE_INSTALL_PREFIX) "/lib/ag/")
 
 agfio_plugin*
 agfio::plug(const string& format)
