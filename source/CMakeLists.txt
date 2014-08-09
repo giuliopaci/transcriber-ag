@@ -253,8 +253,6 @@ add_subdirectory	(src)
 
 # adding some modules, coming from Wesnoth
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake/")
-# gettext executables are not required when NLS is deactivated
-find_package(Gettext)
 
 # translation options
 if(NOT MSVC)
@@ -267,9 +265,6 @@ if (ENABLENLS)
 else (ENABLENLS)
   set(ENABLE_NLS 0)
 endif (ENABLENLS)
-
-
-find_package( Gettext )
 
 # get languages
 file(READ po/LINGUAS LINGUAS)
