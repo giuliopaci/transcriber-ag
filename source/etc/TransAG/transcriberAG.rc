@@ -68,7 +68,7 @@
 	<component id="DataModel">
 		<section id="Configuration" label="">
 			<parameter id="conventions" label="Available conventions" value="mono_h4_detailed;stereo_h5_detailed;transag_default;transag_ester"/>
-			<parameter id="lang" label="Available languages" value="fre;eng;ara;rus;chi"/>
+			<parameter id="lang" label="Available languages" value="fre;eng;bod;ara;rus;chi"/>
 		</section>
 		<section id="Default" label="">
 			<parameter id="corpus" label="Default general transcription corpus name (if value set, would overwrite values specified in convention files)" value=""/>
