@@ -2137,7 +2137,7 @@
 			<parameter id="code2" label="ISO 639 code 2 numbers" value="bo"/>
 			<parameter id="eng" label="English Description" value="Tibetan"/>
 			<parameter id="fre" label="French Description" value="tibétain"/>
-			<parameter id="bod" label="Tibetan Description" value="བོད་ཡིག།"/>
+			<parameter id="bod" label="Tibetan Description" value="བོད་སྐད་།"/>
 		</section>
 		<section id="tig" label="tigre">
 			<parameter id="code2" label="ISO 639 code 2 numbers" value=""/>
@@ -2427,13 +2427,38 @@
 	</component>
 	<!-- List of languages used by TranscriberAG : can be extended with languages above -->
 	<component id="Usual">
+		<section id="eng" label="anglais">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="en"/>
+			<parameter id="eng" label="English Description" value="English"/>
+			<parameter id="fre" label="French Description" value="anglais"/>
+			<parameter id="accents,fre" label="accents, French description" value="français,arabe,indien"/>
+			<parameter id="accents,eng" label="accents, english description" value="french,arabic,indian"/>
+		</section>
+		<section id="fre" label="français">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="fr"/>
+			<parameter id="eng" label="English Description" value="French"/>
+			<parameter id="fre" label="French Description" value="francais"/>
+			<parameter id="accents,fre" label="accents, French description" value="africain,arabe,belge,canadien,suisse"/>
+			<parameter id="accents,eng" label="accents, english description" value="african,arabic,belgian,canadian,swiss"/>
+		</section>
+		<section id="bod" label="tibetan">
+			<parameter id="code2" label="ISO 639 code 2 numbers" value="bo"/>
+			<parameter id="eng" label="English Description" value="Tibetan"/>
+			<parameter id="fre" label="French Description" value="tibétain"/>
+			<parameter id="bod" label="Tibetan Description" value="བོད་སྐད་།"/>
+			<parameter id="accents,fre" label="accents, French description" value="central,khampa,amdoa,ladakhi,sikkhimais,dzongkha,sherpa"/>
+			<parameter id="accents,eng" label="accents, english description" value="central,khampa,amdoa,ladakhi,sikkhimese,dzongkha,sherpa"/>
+			<parameter id="accents,bod" label="accents, tibetan description" value="central,khampa,amdoa,ladakhi,sikkhimese,dzongkha,sherpa"/>
+			<parameter id="dialects,fre" label="dialects, French description" value="central,khampa,amdoa,ladakhi,sikkhimese,dzongkha,sherpa"/>
+			<parameter id="dialects,eng" label="dialects, english description" value="central,khampa,amdoa,ladakhi,sikkhimese,dzongkha,sherpa"/>
+		</section>
 		<section id="ara" label="arabe">
 			<parameter id="code2" label="ISO 639 code 2 numbers" value="ar"/>
 			<parameter id="eng" label="English Description" value="Arabic"/>
 			<parameter id="fre" label="French Description" value="arabe"/>
-			<parameter id="accents,fre" label="accents,French description" value="français"/>
+			<parameter id="accents,fre" label="accents, French description" value="français"/>
 			<parameter id="accents,eng" label="accents, english description" value="french"/>
-			<parameter id="dialects,fre" label="dialects,French description" value="syro-libanais"/>
+			<parameter id="dialects,fre" label="dialects, French description" value="syro-libanais"/>
 			<parameter id="dialects,eng" label="dialects, english description" value="syro-lebanese"/>
 		</section>		
 		<section id="chi" label="chinois">
@@ -2441,20 +2466,6 @@
 			<parameter id="eng" label="English Description" value="Chinese"/>
 			<parameter id="fre" label="French Description" value="chinois"/>
 		</section>
-			<section id="eng" label="anglais">
-			<parameter id="code2" label="ISO 639 code 2 numbers" value="en"/>
-			<parameter id="eng" label="English Description" value="English"/>
-			<parameter id="fre" label="French Description" value="anglais"/>
-			<parameter id="accents,fre" label="accents,French description" value="français,arabe,indien"/>
-			<parameter id="accents,eng" label="accents, english description" value="french,arabic,indian"/>
-		</section>
-			<section id="fre" label="français">
-			<parameter id="code2" label="ISO 639 code 2 numbers" value="fr"/>
-			<parameter id="eng" label="English Description" value="French"/>
-			<parameter id="fre" label="French Description" value="francais"/>
-			<parameter id="accents,fre" label="accents,French description" value="africain,arabe,belge,canadien,suisse"/>
-			<parameter id="accents,eng" label="accents, english description" value="african,arabic,belgian,canadian,swiss"/>
-		</section>	
 			<section id="ger" label="allemand">
 			<parameter id="code2" label="ISO 639 code 2 numbers" value="de"/>
 			<parameter id="eng" label="English Description" value="German"/>
@@ -2465,7 +2476,7 @@
 			<parameter id="eng" label="English Description" value="Russian"/>
 			<parameter id="fre" label="French Description" value="russe"/>
 		</section>
-			<section id="spa" label="espagnol; castillan">
+		<section id="spa" label="espagnol; castillan">
 			<parameter id="code2" label="ISO 639 code 2 numbers" value="es"/>
 			<parameter id="eng" label="English Description" value="Spanish; Castilian"/>
 			<parameter id="fre" label="French Description" value="espagnol; castillan"/>
