@@ -22,6 +22,8 @@ option(DEBUG		"Sets Debug Mode"							OFF)
 option(LIBTAG		"Sets libtag only  mode"					OFF)
 option(MEDIA_TOOLS	"(use with LIBTAG=ON) Adds (audio) Media tools to build rules"	OFF)
 
+
+
 # --- Debug Mode ---
 if (DEBUG)
 	set(CMAKE_BUILD_TYPE Debug)
@@ -32,6 +34,9 @@ if(LIBTAG)
     set(VIDEO_BUILD OFF)
 endif(LIBTAG)
 
+if(CMAKE_COMPILER_IS_GNUCC)
+  set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -ggdb3 -O0 -pedantic")
+endif()
 
 # --- Unix Settings ---
 if (UNIX)
