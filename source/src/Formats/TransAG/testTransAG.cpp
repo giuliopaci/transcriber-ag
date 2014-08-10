@@ -29,7 +29,7 @@ int TransAG_load(const char* path)
 
   bool val_opt = true;
   string encoding = "";
-      handler.set_localDTD("/home/lecuyer/.TransAG/TransAG-1.0.dtd");
+      handler.set_localDTD("../../../etc/TransAG/TransAG-1.0.dtd");
       val_opt = false;
 
   try {
@@ -52,7 +52,7 @@ int TransAG_load(const char* path)
 cout << "AGID = " << *(result.begin()) << endl;
 cout << "AGSETID = " << GetAGSetId(*(result.begin())) << endl;
 
-//	toXML(GetAGSetId(*(result.begin())));
+	cout << toXML(GetAGSetId(*(result.begin())));
 
   return 0;
 
