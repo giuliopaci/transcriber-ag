@@ -89,7 +89,7 @@ VersionList_XMLHandler::endElement (const XMLCh * const uri,
 }
 
 void
-VersionList_XMLHandler::characters (const XMLCh * const chars, const unsigned int length)
+VersionList_XMLHandler::characters (const XMLCh * const chars, const XMLSize_t length)
 {
 
   if (length != 0)

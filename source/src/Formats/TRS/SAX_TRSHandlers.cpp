@@ -1117,7 +1117,7 @@ void SAX_TRSHandlers::TurnEnd(const XMLCh* const name)
  *
  * Let's keep them in a stack, they will be applied at the next SYNC start tag
  */
-void SAX_TRSHandlers::characters (const XMLCh* const chars, const unsigned int length)
+void SAX_TRSHandlers::characters (const XMLCh* const chars, const XMLSize_t length)
 {
 	string current_chars;
 	set_string(current_chars, chars);

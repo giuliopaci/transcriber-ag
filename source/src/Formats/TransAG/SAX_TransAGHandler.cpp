@@ -35,9 +35,7 @@ SAX_TransAGHandler::SAX_TransAGHandler(const string& encoding,
   : localDTD(dtd), prevValue("")
 {
   formatter = new XMLFormatter(encoding.c_str(),
-#if _XERCES_VERSION >= 20300
                                "1.0",
-#endif
                                this,
                                XMLFormatter::NoEscapes,
                                XMLFormatter::UnRep_CharRef);
@@ -57,9 +55,7 @@ void SAX_TransAGHandler::set_encoding(const string& encoding)
 {
   delete formatter;
   formatter = new XMLFormatter(encoding.c_str(),
-#if _XERCES_VERSION >= 20300
                                "1.0",
-#endif
                                this,
                                XMLFormatter::NoEscapes,
                                XMLFormatter::UnRep_CharRef);
@@ -326,7 +322,7 @@ void SAX_TransAGHandler::FeatureEnd(const XMLCh* const name)
 }
 
 void SAX_TransAGHandler::characters
-(const XMLCh* const chars, const unsigned int length)
+(const XMLCh* const chars, const XMLSize_t length)
 {
   string s;
   set_string(s, chars);

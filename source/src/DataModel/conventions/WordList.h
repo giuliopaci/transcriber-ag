@@ -122,7 +122,7 @@ public:
 	 * @param chars
 	 * @param length
 	 */
-	void characters(const XMLCh* const chars, const unsigned int length);
+	void characters(const XMLCh* const chars, const XMLSize_t length);
 
 private:
 	list<WordList>& m_wordLists;

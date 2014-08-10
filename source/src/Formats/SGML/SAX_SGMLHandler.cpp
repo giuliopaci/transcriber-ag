@@ -276,7 +276,7 @@ void SAX_SGMLHandler::PathEnd(const XMLCh* const name)
 }
 
 // invoked when PCDATA encountered
-void SAX_SGMLHandler::characters(const XMLCh* const chars, const unsigned int length)
+void SAX_SGMLHandler::characters(const XMLCh* const chars, const XMLSize_t length)
 {
 	currentCDATAvalue.clear() ;
 	string s;

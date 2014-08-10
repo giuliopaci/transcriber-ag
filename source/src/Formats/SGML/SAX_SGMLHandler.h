@@ -66,7 +66,7 @@ class SAX_SGMLHandler : public HandlerBase, private XMLFormatTarget
 		void endElement(const XMLCh* const name);
 
 		/** Characters element handler */
-		void characters(const XMLCh* const chars, const unsigned int length);
+		void characters(const XMLCh* const chars, const XMLSize_t length);
 
 		/** Warning handler */
 		void warning(const SAXParseException& exception);

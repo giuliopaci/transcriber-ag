@@ -29,7 +29,7 @@ int TransAG_load(const char* path)
 
   bool val_opt = true;
   string encoding = "";
-      handler.set_localDTD("../../../etc/TransAG/TransAG-1.0.dtd");
+      handler.set_localDTD("../../../etc/TransAG/TransAG-3.0.dtd");
       val_opt = false;
 
   try {

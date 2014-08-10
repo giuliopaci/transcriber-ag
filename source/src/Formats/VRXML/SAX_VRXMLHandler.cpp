@@ -486,7 +486,7 @@ void SAX_VRXMLHandler::WordEnd(const XMLCh* const name)
 
 // invoked when PCDATA encountered
 void SAX_VRXMLHandler::characters
-(const XMLCh* const chars, const unsigned int length)
+(const XMLCh* const chars, const XMLSize_t length)
 {
 	string s;
 	set_string(s, chars);
