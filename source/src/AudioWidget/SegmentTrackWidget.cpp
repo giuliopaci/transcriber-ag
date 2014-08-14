@@ -54,8 +54,7 @@ SegmentTrackWidget::SegmentTrackWidget(float p_duration, string p_label, int p_n
 	a_segment->show();
 
 	// GTK Widgets
-	Gtk::Button* b = Gtk::manage(new Gtk::Button(Gtk::Stock::MEDIA_PREVIOUS));
-	b->set_label("");
+	Gtk::Button* b = Gtk::manage(new Gtk::Button());
 	b->set_image(a_imagePrevious);
 //	if (!flatMode)
 //	{
@@ -74,9 +73,8 @@ SegmentTrackWidget::SegmentTrackWidget(float p_duration, string p_label, int p_n
 		b->set_size_request(-1, 22);
 
 
-	Gtk::Button* b2 = Gtk::manage(new Gtk::Button(Gtk::Stock::MEDIA_NEXT));
+	Gtk::Button* b2 = Gtk::manage(new Gtk::Button());
 	b2->set_image(a_imageNext);
-	b2->set_label("");
 //	if (!flatMode)
 //	{
 //		b2->set_size_request(-1, 22);
