@@ -10,7 +10,7 @@ include_directories(
 	${LIVEMEDIA}/groupsock/include
 	${LIVEMEDIA}/UsageEnvironment/include
 	${LIVEMEDIA}/BasicUsageEnvironment/include
-	${SOUNDTOUCH}/include
+	${SOUNDTOUCH_INCLUDE_DIRS}
 	${GTKMM_INCLUDE_DIRS}
 )
 

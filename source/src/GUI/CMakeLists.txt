@@ -9,7 +9,7 @@ include_directories(
 	${LIVEMEDIA}/UsageEnvironment/include
 	${LIVEMEDIA}/BasicUsageEnvironment/include
 #	${GTKSPELL}
-	${SOUNDTOUCH}/include
+	${SOUNDTOUCH_INCLUDE_DIRS}
 	${GTKMM_INCLUDE_DIRS}
 	${AGLIB}/src/ag
 	${SRC}/Editors
@@ -34,7 +34,7 @@ link_directories(
 	${LIVEMEDIA_BUILD}/BasicUsageEnvironment
 	${AGLIB_BUILD}/src/ag
 #	${GTKSPELL_BUILD}/gtkspell
-	${SOUNDTOUCH_BUILD}/source/SoundTouch
+	${SOUNDTOUCH_LIBRARY_DIRS}
 	${GTKMM_LIBRARY_DIRS}
 	${SRC}/Common
 	${SRC}/CommonWidgets

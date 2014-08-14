@@ -18,7 +18,7 @@ include_directories(
 link_directories(
 	${GLIBMM_LIBRARY_DIRS}
 	${SRC}/MediaComponent
-	${SOUNDTOUCH_BUILD}/source/SoundTouch
+#	${SOUNDTOUCH_LIBRARY_DIRS}
 	${AGLIB_BUILD}/src/ag
 	${LIVEMEDIA_BUILD}/liveMedia
 	${LIVEMEDIA_BUILD}/groupsock

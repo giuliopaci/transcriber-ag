@@ -28,7 +28,7 @@ include_directories(
 	${LIVEMEDIA}/groupsock/include
 	${LIVEMEDIA}/UsageEnvironment/include
 	${LIVEMEDIA}/BasicUsageEnvironment/include
-	${SOUNDTOUCH}/include
+	${SOUNDTOUCH_INCLUDE_DIRS}
 	${G_INCLUDE_DIRS}
     ${SRC}/MediaComponent
 	${SRC}/Common
@@ -46,7 +46,7 @@ link_directories(
 	${LIVEMEDIA_BUILD}/UsageEnvironment
 	${LIVEMEDIA_BUILD}/BasicUsageEnvironment
 	${G_LIBRARY_DIRS}
-    ${SOUNDTOUCH_BUILD}/source/SoundTouch
+    ${SOUNDTOUCH_LIBRARY_DIRS}
 )
 
 SET(APP_BUILD_MODE	"")
