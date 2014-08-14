@@ -49,10 +49,9 @@ AudioTrackWidget::AudioTrackWidget(IODevice *inDevice, bool silentMode)
 
 	a_imageAudioOn		= new Gtk::Image(a_pixbufAudioOn);
 	a_imageAudioOff		= new Gtk::Image(a_pixbufAudioOff);
-	a_activateButton	= Gtk::manage(new Gtk::Button(Gtk::Stock::MEDIA_PLAY));
+	a_activateButton	= Gtk::manage(new Gtk::Button());
 
 	a_activateButton->set_focus_on_click(false);
-	a_activateButton->set_label("");
 	a_activateButton->set_image(*a_imageAudioOn);
 	a_activateButton->signal_clicked().connect(sigc::mem_fun(*this, &AudioTrackWidget::onActivateClicked));
 	a_activateButton->set_size_request(30, -1);

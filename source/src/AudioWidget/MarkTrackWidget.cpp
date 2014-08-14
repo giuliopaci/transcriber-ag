@@ -31,20 +31,18 @@ MarkTrackWidget::MarkTrackWidget(float p_duration, int nbtrack) : TrackWidget(),
 	pack_start(*a_mark, true, true, 2);
 	a_mark->show();
 
-	Gtk::Button* b = Gtk::manage(new Gtk::Button(Gtk::Stock::MEDIA_PREVIOUS));
+	Gtk::Button* b = Gtk::manage(new Gtk::Button());
 	b->set_focus_on_click(false);
 	b->set_image(a_imagePrevious);
-	b->set_label("");
 	b->signal_clicked().connect(sigc::mem_fun(*this, &MarkTrackWidget::onPreviousClicked));
 	pack_start(*b, false, false, 2);
 	b->show();
 	a_tooltips.set_tip(*b, string(_("Allow repositionning cursor at the previous mark.")));
 	b->set_size_request(-1, 22);
 
-	Gtk::Button* b2 = Gtk::manage(new Gtk::Button(Gtk::Stock::MEDIA_NEXT));
+	Gtk::Button* b2 = Gtk::manage(new Gtk::Button());
 	b2->set_focus_on_click(false);
 	b2->set_image(a_imageNext);
-	b2->set_label("");
 	b2->signal_clicked().connect(sigc::mem_fun(*this, &MarkTrackWidget::onNextClicked));
 	pack_start(*b2, false, false, 2);
 	b2->show();

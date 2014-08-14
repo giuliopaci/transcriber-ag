@@ -26,16 +26,15 @@ void AudioPlayControlWidget::updateGUI()
 	show();
 }
 
-AudioPlayControlWidget::~AudioPlayControlWidget()
+AudioPlayControlWidget::~AudioPlayControlWidget() 
 {
 }
 
-AudioPlayControlWidget::AudioPlayControlWidget() : Gtk::Button(Gtk::Stock::MEDIA_PLAY),
+AudioPlayControlWidget::AudioPlayControlWidget() : Gtk::Button(),
 	a_imgPlay(Gtk::Stock::MEDIA_PLAY, Gtk::ICON_SIZE_MENU),
 	a_imgPause(Gtk::Stock::MEDIA_PAUSE, Gtk::ICON_SIZE_MENU)
 {
 	a_play = false;
-	set_label("");
 
 	updateGUI();
 }

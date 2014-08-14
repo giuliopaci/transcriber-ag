@@ -17,11 +17,10 @@ namespace tag {
 
 // --- AudioZoomControlWidget ---
 AudioZoomControlWidget::AudioZoomControlWidget(bool p_zoomIn)
- :	Gtk::Button(Gtk::Stock::MEDIA_PLAY),
+ :	Gtk::Button(),
 	a_image( (p_zoomIn ? Gtk::Stock::ZOOM_IN : Gtk::Stock::ZOOM_OUT),
 			 Gtk::ICON_SIZE_MENU)
 {
-	set_label("");
 	set_image(a_image);
 }
 
