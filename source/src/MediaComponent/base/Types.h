@@ -19,6 +19,8 @@
 #include <stdint.h>
 #include <string>
 
+#include "STTypes.h"
+
 using namespace std;
 
 /**
@@ -32,7 +34,7 @@ using namespace std;
  */
 typedef struct
 {
-	int16_t*	samples;		/**< Audio samples */
+	soundtouch::SAMPLETYPE*	samples;		/**< Audio samples */
 	uint8_t**	v_samples;		/**< Video samples */
 	float		ts;				/**< Frame timestamp */
 	int*		v_linesize;		/**< Video linesizes */

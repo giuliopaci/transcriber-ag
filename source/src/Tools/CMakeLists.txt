@@ -20,6 +20,7 @@ include_directories(
     ${SRC}
 #	${SRC}/MediaComponent
 	${MM_INCLUDES}
+	${SOUNDTOUCH_INCLUDE_DIRS}
 )
 
 
@@ -33,7 +34,7 @@ link_directories(
 	${LIVEMEDIA_BUILD}/groupsock
 	${LIVEMEDIA_BUILD}/UsageEnvironment
 	${LIVEMEDIA_BUILD}/BasicUsageEnvironment
-	${SOUNDTOUCH_BUILD}/source/SoundTouch
+	${SOUNDTOUCH_LIBRARY_DIRS}
 )
 
 

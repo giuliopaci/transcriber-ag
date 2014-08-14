@@ -64,9 +64,9 @@ void SoundTouchFilter::init(MediumInfo *info)
 	f_step		= (float)fSize / (float)info->audio_sample_rate;
 	st			= new SoundTouch();
 	st_size		= 0;
-	st_input	= new int16_t[nSamples];
-	st_output	= new int16_t[nSamples];
-	st_recv		= new int16_t[nSamples];
+	st_input	= new SAMPLETYPE[nSamples];
+	st_output	= new SAMPLETYPE[nSamples];
+	st_recv		= new SAMPLETYPE[nSamples];
 
 	// -- SoundTouch Processor Settings --
 	st->setSampleRate(info->audio_sample_rate);
