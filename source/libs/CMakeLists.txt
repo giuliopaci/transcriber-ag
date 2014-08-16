@@ -7,7 +7,7 @@ add_subdirectory(live555)
 add_subdirectory(soundtouch-1.4.0)
 
 # --- Win32 ---
-if(WIN32)
+if(WIN32 AND NOT MINGW)
 	add_subdirectory(portaudio)
-endif(WIN32)
+endif(WIN32 AND NOT MINGW)
 
