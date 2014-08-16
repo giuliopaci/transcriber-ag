@@ -54,9 +54,6 @@ if (UNIX OR MINGW)
         	pkg_check_modules		(PORTAUDIO	portaudio-2.0)
         endif(MEDIA_TOOLS)
     endif(NOT LIBTAG)
-
-	# -- Install --
-	set(CMAKE_INSTALL_PREFIX	/usr)
 endif (UNIX OR MINGW)
 
 add_subdirectory	(libs)
