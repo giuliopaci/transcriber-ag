@@ -4,9 +4,9 @@
 
 if (LIBTAG)
     set(MM_INCLUDES  ${GLIBMM_INCLUDE_DIRS})
-   set(MM_LIBS  ${GLIBMM_LIBRARY_DIRS})
+    set(MM_LIBS  ${GLIBMM_LIBRARY_DIRS})
 else(LIBTAG)
-     set(MM_INCLUDES ${GTKMM_INCLUDE_DIRS})
+    set(MM_INCLUDES ${GTKMM_INCLUDE_DIRS})
     set(MM_LIBS ${GTKMM_LIBRARY_DIRS})
 endif(LIBTAG)
 
@@ -53,11 +53,11 @@ add_executable(
 
 
 # --- Linking ---
-set(LINKS	TransAG TAG TXT Common ag xerces-c ${GLIBMM_LINK_LIBRARIES})
+set(LINKS	TransAG TAG TXT Common ag xerces-c ${GLIBMM_LIBRARIES})
 
-if (WIN32)
+if (WIN32 AND NOT MINGW)
 	set(LINKS ${LINKS} dl)
-endif(WIN32)
+endif(WIN32 AND NOT MINGW)
 
 target_link_libraries(
 	add_section

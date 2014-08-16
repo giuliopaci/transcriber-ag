@@ -59,16 +59,14 @@ endif (UNIX OR MINGW)
 add_subdirectory	(libs)
 
 # --- Global variables ---
-set	(LIBS_SRC			${PROJECT_SOURCE_DIR}/libs)
-set	(LIBS_BIN			${PROJECT_BINARY_DIR}/libs)
 set	(SRC				${PROJECT_SOURCE_DIR}/src)
 
 # --- Libraries ---
 #set	(GTKSPELL			${LIBS}/gtkspell-2.0.11-patch-BT)
 set	(LIVEMEDIA			${LIBS}/live555)
 
-set (SOUNDTOUCH_LIBRARY_DIRS ${LIBS_BIN}/soundtouch-1.4.0/source/SoundTouch)
-set (SOUNDTOUCH_INCLUDE_DIRS ${LIBS_SRC}/soundtouch-1.4.0/include)
+set (SOUNDTOUCH_LIBRARY_DIRS ${PROJECT_BINARY_DIR}/libs/soundtouch-1.4.0/source/SoundTouch)
+set (SOUNDTOUCH_INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/libs/soundtouch-1.4.0/include)
 
 set (AGLIB_LIBRARY_DIRS		${PROJECT_BINARY_DIR}/libs/aglib-2.0.1/src/ag)
 set (AGLIB_INCLUDE_DIRS		${PROJECT_SOURCE_DIR}/libs/aglib-2.0.1/src/ag)
@@ -295,6 +293,3 @@ configure_file (
   "${PROJECT_SOURCE_DIR}/include/config.h.in"
   "${PROJECT_BINARY_DIR}/include/config.h"
   )
-
-# --- CPack Settings ---
-

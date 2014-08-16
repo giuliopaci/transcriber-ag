@@ -12,8 +12,8 @@ include_directories(
 
 # --- Links ---
 link_directories(
-	${GLIBMM_LIBRARY_DIRS}
 	${AGLIB_LIBRARY_DIRS}
+	${GLIBMM_LIBRARY_DIRS}
 )
 
 
@@ -43,13 +43,17 @@ add_executable(
 # --- Linking ---
 set(LINKS Common ag xerces-c)
 
-if (WIN32)
+if (WIN32 AND NOT MINGW)
 	set(LINKS TransAG ${LINKS} dl)
-endif (WIN32)
+endif (WIN32 AND NOT MINGW)
 
 if (APPLE)
 	set(LINKS TransAG ${LINKS})
 endif (APPLE)
+
+if (MINGW)
+	set(LINKS TransAG ${LINKS})
+endif (MINGW)
 
 target_link_libraries(
 	agfio_plugin_CTM

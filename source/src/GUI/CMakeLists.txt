@@ -65,7 +65,7 @@ set(APP_NAME	"TranscriberAG")
 SET(APP_ICON_OBJ	"")
 SET(APP_BUILD_MODE	"")
 
-if (WIN32)
+if (WIN32 AND NOT MINGW)
     find_program(WINDRES_EXECUTABLE NAMES windres)
 
     SET(RC_FILE         transag_icon.rc)
@@ -75,12 +75,12 @@ if (WIN32)
     add_custom_command(
         OUTPUT  ${APP_ICON_OBJ}
         COMMAND ${WINDRES_EXECUTABLE}
-        ARGS -i ${RC_FILE} -o ${TranscriberAG_SOURCE_DIR}/build/src/GUI/${APP_ICON_OBJ}
+        ARGS -i ${RC_FILE} -o ${PROJECT_BINARY_DIR}/src/GUI/${APP_ICON_OBJ}
         WORKING_DIRECTORY ${SRC}/GUI
     )
 
 	set(WIN32_LINKS	wsock32 ws2_32 dl)
-endif(WIN32)
+endif(WIN32 AND NOT MINGW)
 
 if(APPLE)
 	set(APPLE_LINKS "-framework CoreServices")

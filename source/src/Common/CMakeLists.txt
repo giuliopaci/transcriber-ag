@@ -12,9 +12,9 @@ endif(APPLE)
 
 if (LIBTAG)
     set(MM_INCLUDES  ${GLIBMM_INCLUDE_DIRS})
-   set(MM_LIBS  ${GLIBMM_LIBRARY_DIRS})
+    set(MM_LIBS  ${GLIBMM_LIBRARY_DIRS})
 else(LIBTAG)
-     set(MM_INCLUDES ${GTKMM_INCLUDE_DIRS})
+    set(MM_INCLUDES ${GTKMM_INCLUDE_DIRS})
     set(MM_LIBS ${GTKMM_LIBRARY_DIRS})
 endif(LIBTAG)
 
@@ -27,14 +27,10 @@ include_directories(
 	${APPLE_INCLUDES}
 )
 
-
-#set (CMAKE_CXX_FLAGS -fPIC)
-
 # --- Links ---
 link_directories(
 	${MM_LIBS}
 )
-
 
 # --- Library Definition ---
 ADD_LIBRARY(
@@ -94,19 +90,22 @@ if (NOT LIBTAG)
     	icons/IcoPackElement.cpp
     	icons/IcoPackImageButton.cpp
     )
-    set(COMMON_WIDGETS CommonWidgets) 
+    set(COMMON_WIDGETS CommonWidgets)
+    target_link_libraries(
+    	CommonWidgets
+	    ${WIN32_LINKS}
+	    ${GTKMM_LIBRARIES}
+    )
 endif(NOT LIBTAG)
 
 # --- Link ---
-if (WIN32)
-	set(WIN32_LINKS	${GTKMM_LINK_LIBRARIES} wsock32 ws2_32 imm32 dl)
-endif (WIN32)
-
+if (WIN32 AND NOT MINGW)
+	set(WIN32_LINKS wsock32 ws2_32 imm32 dl)
+endif (WIN32 AND NOT MINGW)
 
 target_link_libraries(
 	Common
 	${COMMON_WIDGETS}
-
-	${WIN32_LINKS}
+    ${WIN32_LINKS}
+	${GTKMM_LIBRARIES}
 )
-
