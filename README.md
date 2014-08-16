@@ -21,22 +21,18 @@ globally
 
 should do it. Then
 
- * `cd libs`
- * `cmake .`
+ * `mkdir build`
+ * `cd build`
+ * `cmake ../source`
  * `make`
  * `sudo make install`
- * `cd ../source`
- * `cmake .`
- * `make`
- * `sudo make install`
- * `cd ..`
- * `sudo cp -R etc/TransAG /etc/`
+ * `sudo cp -R ../source/etc/TransAG /etc/`
 
 
 
 ### Building for Windows ###
 
-#### MXE ####
+#### Cross-compile from Linux (MXE) ####
 
 (Not fully tested, only under Debian/sid and with MXE branch *master*): install [MXE](http://mxe.cc/) and build TranscriberAG's dependencies by running, in the repertory where you installed mxe:
 
@@ -44,8 +40,8 @@ should do it. Then
 
 (at this point, you can take a good nap, you have a large amount of compilation time). Then build the project using the newly compiled libraries by running, in the TranscriberAG directory:
 
- * `mkdir lib/build-mingw`
- * `cd lib/build-mingw`
- * `cmake .. -DCMAKE_TOOLCHAIN_FILE=/where MXE is installed/usr/i686-pc-mingw32/share/cmake/mxe-conf.cmake`
+ * `mkdir build-mingw`
+ * `cd build-mingw`
+ * `cmake .. -DCMAKE_TOOLCHAIN_FILE=/where MXE is installed/usr/i686-pc-mingw32.static/share/cmake/mxe-conf.cmake`
  * `make`
-
+ * `sudo make install`
