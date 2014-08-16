@@ -42,6 +42,6 @@ should do it. Then
 
  * `mkdir build-mingw`
  * `cd build-mingw`
- * `cmake .. -DCMAKE_TOOLCHAIN_FILE=/where MXE is installed/usr/i686-pc-mingw32.static/share/cmake/mxe-conf.cmake`
+ * `cmake ../source -DCMAKE_TOOLCHAIN_FILE=/where MXE is installed/usr/i686-pc-mingw32.static/share/cmake/mxe-conf.cmake`
  * `make`
  * `sudo make install`
