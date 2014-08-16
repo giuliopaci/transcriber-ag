@@ -10,12 +10,9 @@ include_directories(
 	${SRC}/DataModel
 	${SRC}/AudioWidget
 	${SRC}
-	${AGLIB}/src/ag
+	${AGLIB_INCLUDE_DIRS}
 #	${GTKSPELL}
-	${LIVEMEDIA}/liveMedia/include
-	${LIVEMEDIA}/groupsock/include
-	${LIVEMEDIA}/UsageEnvironment/include
-	${LIVEMEDIA}/BasicUsageEnvironment/include
+	${LIVEMEDIA_INCLUDE_DIRS}
 	${SOUNDTOUCH_INCLUDE_DIRS}
 	${GTKMM_INCLUDE_DIRS}
 	${PORTAUDIO_INCLUDE_DIRS}

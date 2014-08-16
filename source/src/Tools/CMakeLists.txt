@@ -12,11 +12,8 @@ endif(LIBTAG)
 
 # --- Includes ---
 include_directories(
-    ${LIVEMEDIA}/liveMedia/include
-    ${LIVEMEDIA}/groupsock/include
-    ${LIVEMEDIA}/UsageEnvironment/include
-    ${LIVEMEDIA}/BasicUsageEnvironment/include
-    ${AGLIB}/src/ag
+    ${LIVEMEDIA_INCLUDE_DIRS}
+    ${AGLIB_INCLUDE_DIRS}
     ${SRC}
 #	${SRC}/MediaComponent
 	${MM_INCLUDES}
@@ -28,12 +25,9 @@ include_directories(
 link_directories(
 	${SRC}/DataModel
 	${SRC}/Formats/TransAG
-	${AGLIB_BUILD}/src/ag
+	${AGLIB_LIBRARY_DIRS}
 	${MM_LIBS}
-	${LIVEMEDIA_BUILD}/liveMedia
-	${LIVEMEDIA_BUILD}/groupsock
-	${LIVEMEDIA_BUILD}/UsageEnvironment
-	${LIVEMEDIA_BUILD}/BasicUsageEnvironment
+	${LIVEMEDIA_LIBRARY_DIRS}
 	${SOUNDTOUCH_LIBRARY_DIRS}
 )
 

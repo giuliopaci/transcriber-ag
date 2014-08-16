@@ -6,11 +6,8 @@
 include_directories(
 	${SRC}
 	${SRC}/MediaComponent
-	${LIVEMEDIA}/liveMedia/include
-	${LIVEMEDIA}/groupsock/include
-	${LIVEMEDIA}/UsageEnvironment/include
-	${LIVEMEDIA}/BasicUsageEnvironment/include
-	${AGLIB}/src/ag
+	${LIVEMEDIA_INCLUDE_DIRS}
+	${AGLIB_INCLUDE_DIRS}
 	${GLIBMM_INCLUDE_DIRS}
 )
 
@@ -19,11 +16,8 @@ link_directories(
 	${GLIBMM_LIBRARY_DIRS}
 	${SRC}/MediaComponent
 #	${SOUNDTOUCH_LIBRARY_DIRS}
-	${AGLIB_BUILD}/src/ag
-	${LIVEMEDIA_BUILD}/liveMedia
-	${LIVEMEDIA_BUILD}/groupsock
-	${LIVEMEDIA_BUILD}/UsageEnvironment
-	${LIVEMEDIA_BUILD}/BasicUsageEnvironment
+	${AGLIB_LIBRARY_DIRS}
+	${LIVEMEDIA_LIBRARY_DIRS}
 )
 
 

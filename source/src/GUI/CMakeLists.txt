@@ -4,14 +4,11 @@
 
 # --- Includes ---
 include_directories(
-	${LIVEMEDIA}/liveMedia/include
-	${LIVEMEDIA}/groupsock/include
-	${LIVEMEDIA}/UsageEnvironment/include
-	${LIVEMEDIA}/BasicUsageEnvironment/include
+	${LIVEMEDIA_INCLUDE_DIRS}
 #	${GTKSPELL}
 	${SOUNDTOUCH_INCLUDE_DIRS}
 	${GTKMM_INCLUDE_DIRS}
-	${AGLIB}/src/ag
+	${AGLIB_INCLUDE_DIRS}
 	${SRC}/Editors
 	${SRC}/MediaComponent
 	${SRC}
@@ -28,11 +25,8 @@ include_directories(
 
 # --- Links ---
 link_directories(
-	${LIVEMEDIA_BUILD}/liveMedia
-	${LIVEMEDIA_BUILD}/groupsock
-	${LIVEMEDIA_BUILD}/UsageEnvironment
-	${LIVEMEDIA_BUILD}/BasicUsageEnvironment
-	${AGLIB_BUILD}/src/ag
+	${LIVEMEDIA_LIBRARY_DIRS}
+	${AGLIB_LIBRARY_DIRS}
 #	${GTKSPELL_BUILD}/gtkspell
 	${SOUNDTOUCH_LIBRARY_DIRS}
 	${GTKMM_LIBRARY_DIRS}

@@ -6,7 +6,7 @@
 include_directories(
 	${SRC}/Common
 	${SRC}/DataModel
-	${AGLIB}/src/ag
+	${AGLIB_INCLUDE_DIRS}
 	${GLIBMM_INCLUDE_DIRS}
 )
 
@@ -14,7 +14,7 @@ include_directories(
 # --- Links ---
 link_directories(
 	${GLIBMM_LIBRARY_DIRS}
-	${AGLIB_BUILD}/src/ag
+	${AGLIB_LIBRARY_DIRS}
 )
 
 

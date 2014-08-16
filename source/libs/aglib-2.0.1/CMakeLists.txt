@@ -9,11 +9,11 @@ cmake_minimum_required	(VERSION 2.6)
 project					(AGLIB_BT)
 
 # --- Win32 Settings ---
-if (WIN32)
+if (WIN32 AND NOT MINGW)
 	set (EXTLIBS			C:/Dev)
     set (WIN_32_EXT_GTKMM	${EXTLIBS}/gtkmm)
-    set (WIN_32_EXT_DL      ${EXTLIBS}/xerces-c)
-    set (WIN_32_EXT_XERCES  ${EXTLIBS}/dlfcn)
+    set (WIN_32_EXT_DL      ${EXTLIBS}/dlfcn)
+    set (WIN_32_EXT_XERCES  ${EXTLIBS}/xerces-c)
 
 	include_directories(
 		${WIN_32_EXT_GTKMM}/include
@@ -26,7 +26,7 @@ if (WIN32)
 		${WIN_32_EXT_DL}/lib
 		${WIN_32_EXT_XERCES}/lib
 )
-endif (WIN32)
+endif (WIN32 AND NOT MINGW)
 
 if (APPLE)
 	include_directories(

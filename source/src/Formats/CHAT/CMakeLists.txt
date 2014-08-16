@@ -6,19 +6,16 @@
 include_directories(
 	${SRC}
 	${SRC}/MediaComponent
-	${LIVEMEDIA}/liveMedia/include
-	${LIVEMEDIA}/groupsock/include
-	${LIVEMEDIA}/UsageEnvironment/include
-	${LIVEMEDIA}/BasicUsageEnvironment/include
-	${AGLIB}/src/ag
-     ${GLIBMM_INCLUDE_DIRS}
+	${LIVEMEDIA_INCLUDE_DIRS}
+	${AGLIB_INCLUDE_DIRS}
+    ${GLIBMM_INCLUDE_DIRS}
 )
 
 
 # --- Links ---
 link_directories(
 	${GLIBMM_LIBRARY_DIRS}
-	${AGLIB_BUILD}/src/ag
+	${AGLIB_LIBRARY_DIRS}
 )
 
 

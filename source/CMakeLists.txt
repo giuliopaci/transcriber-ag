@@ -35,13 +35,12 @@ if(LIBTAG)
 endif(LIBTAG)
 
 if(CMAKE_COMPILER_IS_GNUCC)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
   set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -ggdb3 -Wall -O0 -pedantic")
   set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -g -O2")
 endif()
 
 # --- Unix Settings ---
-if (UNIX)
+if (UNIX OR MINGW)
 	find_package			(X11		REQUIRED)
 	pkg_check_modules		(GLIBMM		glibmm-2.4)
     if (NOT LIBTAG)
@@ -58,35 +57,39 @@ if (UNIX)
 
 	# -- Install --
 	set(CMAKE_INSTALL_PREFIX	/usr)
-endif (UNIX)
+endif (UNIX OR MINGW)
+
+add_subdirectory	(libs)
 
 # --- Global variables ---
-set	(LIBS				${TranscriberAG_SOURCE_DIR}/../libs)
-set	(SRC				${TranscriberAG_SOURCE_DIR}/src)
+set	(LIBS_SRC			${PROJECT_SOURCE_DIR}/libs)
+set	(LIBS_BIN			${PROJECT_BINARY_DIR}/libs)
+set	(SRC				${PROJECT_SOURCE_DIR}/src)
 
 # --- Libraries ---
-set	(AGLIB				${LIBS}/aglib-2.0.1)
 #set	(GTKSPELL			${LIBS}/gtkspell-2.0.11-patch-BT)
 set	(LIVEMEDIA			${LIBS}/live555)
 
-set (SOUNDTOUCH_LIBRARY_DIRS ${LIBS}/soundtouch-1.4.0/source/SoundTouch)
-set (SOUNDTOUCH_INCLUDE_DIRS ${LIBS}/soundtouch-1.4.0/include)
+set (SOUNDTOUCH_LIBRARY_DIRS ${LIBS_BIN}/soundtouch-1.4.0/source/SoundTouch)
+set (SOUNDTOUCH_INCLUDE_DIRS ${LIBS_SRC}/soundtouch-1.4.0/include)
 
-set (AGLIB_BUILD		${LIBS}/aglib-2.0.1)
-#set	(GTKSPELL_BUILD		${LIBS}/build/gtkspell-2.0.11-patch-BT)
-set	(LIVEMEDIA_BUILD	${LIBS}/live555)
+set (AGLIB_LIBRARY_DIRS		${PROJECT_BINARY_DIR}/libs/aglib-2.0.1/src/ag)
+set (AGLIB_INCLUDE_DIRS		${PROJECT_SOURCE_DIR}/libs/aglib-2.0.1/src/ag)
+#set	(GTKSPELL_BUILD		${LIBS}/gtkspell-2.0.11-patch-BT)
+set (LIVEMEDIA_LIBRARY_DIRS		${PROJECT_BINARY_DIR}/libs/live555/liveMedia ${PROJECT_BINARY_DIR}/libs/live555/groupsock ${PROJECT_BINARY_DIR}/libs/live555/UsageEnvironment ${PROJECT_BINARY_DIR}/libs/live555/BasicUsageEnvironment)
+set (LIVEMEDIA_INCLUDE_DIRS		${PROJECT_SOURCE_DIR}/libs/live555/liveMedia/include ${PROJECT_SOURCE_DIR}/libs/live555/groupsock/include ${PROJECT_SOURCE_DIR}/libs/live555/UsageEnvironment/include ${PROJECT_SOURCE_DIR}/libs/live555/BasicUsageEnvironment/include)
 
 # --- Recent distributions need this ---
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__STDC_CONSTANT_MACROS -DCMAKE_INSTALL_PREFIX='${CMAKE_INSTALL_PREFIX}' -fPIC")
 
 # -- Global Includes --
 
-include_directories("${PROJECT_BINARY_DIR}/include/")
+include_directories(${PROJECT_BINARY_DIR}/include/ ${PROJECT_SOURCE_DIR}/include/)
 
 # --- Win32 Settings ---
 #
 # -- TODO here -> manage LIBTAG 
-if (WIN32)	
+if (WIN32 AND NOT MINGW)
 	set	(EXTLIBS	             C:/Dev)		
 	set	(WIN32_EXT_GTKMM	     ${EXTLIBS}/gtkmm)		
     set	(WIN32_EXT_LIBSNDFILE    ${EXTLIBS}/libsndfile)
@@ -140,7 +143,7 @@ if (WIN32)
 		${WIN32_EXT_FFMPEG}/lib
 		${WIN32_EXT_LIBSNDFILE}
 #		${WIN32_EXT_ASPELL}/lib
-		${LIBS}/build/portaudio/src
+		${LIBS}/portaudio/src
 		${WIN32_EXT_DL}/lib
 	)
 
@@ -167,7 +170,7 @@ if (WIN32)
 		gobject-2.0
 		gthread-2.0
 )
-endif (WIN32)
+endif (WIN32 AND NOT MINGW)
 
 
 # --- MacOSX Settings ---

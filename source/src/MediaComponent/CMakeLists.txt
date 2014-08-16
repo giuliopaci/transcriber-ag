@@ -24,10 +24,7 @@ endif (NOT VIDEO_BUILD)
 
 # --- Includes ---
 include_directories(
-	${LIVEMEDIA}/liveMedia/include
-	${LIVEMEDIA}/groupsock/include
-	${LIVEMEDIA}/UsageEnvironment/include
-	${LIVEMEDIA}/BasicUsageEnvironment/include
+	${LIVEMEDIA_INCLUDE_DIRS}
 	${SOUNDTOUCH_INCLUDE_DIRS}
 	${G_INCLUDE_DIRS}
     ${SRC}/MediaComponent
@@ -41,10 +38,7 @@ endif(WIN32)
 
 # --- Links ---
 link_directories(
-	${LIVEMEDIA_BUILD}/liveMedia
-	${LIVEMEDIA_BUILD}/groupsock
-	${LIVEMEDIA_BUILD}/UsageEnvironment
-	${LIVEMEDIA_BUILD}/BasicUsageEnvironment
+	${LIVEMEDIA_LIBRARY_DIRS}
 	${G_LIBRARY_DIRS}
     ${SOUNDTOUCH_LIBRARY_DIRS}
 )
