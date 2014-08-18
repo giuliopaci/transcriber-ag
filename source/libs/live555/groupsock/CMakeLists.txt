@@ -52,7 +52,7 @@ endif (APPLE)
 
 add_definitions( ${DEFINITIONS} )
 
-if (WIN32)
+if (WIN32 AND NOT MINGW)
 
 	target_link_libraries(
 		groupsock
@@ -61,5 +61,5 @@ if (WIN32)
 		wsock32
 		ws3_32
 	)
-endif (WIN32)
+endif (WIN32 AND NOT MINGW)
 

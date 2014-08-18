@@ -12,6 +12,8 @@ project					(TranscriberAG)
 
 # --- Global Package Dependencies ---
 find_package			(PkgConfig	REQUIRED)
+# modules
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake/")
 find_package			(Gettext	REQUIRED)
 
 # -----------------------
@@ -52,6 +54,7 @@ if (UNIX OR MINGW)
         if(MEDIA_TOOLS)
         	pkg_check_modules		(SNDFILE	sndfile)
         	pkg_check_modules		(PORTAUDIO	portaudio-2.0)
+   	    	pkg_check_modules		(FFMPEG		ffmpeg)
         endif(MEDIA_TOOLS)
     endif(NOT LIBTAG)
 endif (UNIX OR MINGW)
@@ -76,6 +79,9 @@ set (LIVEMEDIA_INCLUDE_DIRS		${PROJECT_SOURCE_DIR}/libs/live555/liveMedia/includ
 
 # --- Recent distributions need this ---
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__STDC_CONSTANT_MACROS -DCMAKE_INSTALL_PREFIX='${CMAKE_INSTALL_PREFIX}'")
+
+find_package(FFMPEG	REQUIRED)
+MESSAGE( STATUS "FFMPEG_LIBRARIES:     " ${FFMPEG_LIBRARIES} )
 
 # -- Global Includes --
 
@@ -248,23 +254,11 @@ set(LIVEMEDIA_LIBRARIES
 	UsageEnvironment
 )
 
-set(FFMPEG_LIBRARIES
-
-	avutil
-	avdevice
-	avcodec
-	avformat
-	swscale
-)
-
 
 # --- Main subdirectory - src ---
 add_subdirectory	(src)
 
 # -- Gettext handling --
-
-# adding some modules, coming from Wesnoth
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake/")
 
 # translation options
 if(NOT MSVC)

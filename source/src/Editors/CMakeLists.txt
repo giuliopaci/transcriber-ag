@@ -74,9 +74,9 @@ add_library(
 )
 
 # --- Link ---
-if (WIN32)
+if (WIN32 AND NOT MINGW)
 	set(WIN32_LINKS wsock32 ws2_32 dl)
-endif (WIN32)
+endif (WIN32 AND NOT MINGW)
 
 target_link_libraries(
 	AGEditors

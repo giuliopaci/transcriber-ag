@@ -198,7 +198,7 @@ target_link_libraries(
 	portaudio
 	sndfile
 	gthread-2.0
-	${GTKMM_LINK_LIBRARIES}
+	${GTKMM_LIBRARIES}
 	${APPLE_LINKS}
 	${WIN32_LINKS}
 )
@@ -231,7 +231,7 @@ target_link_libraries(
 	portaudio
 	sndfile
 	gthread-2.0
-	${GTKMM_LINK_LIBRARIES}
+	${GTKMM_LIBRARIES}
 	${APPLE_LINKS}
 	${WIN32_LINKS}
 )

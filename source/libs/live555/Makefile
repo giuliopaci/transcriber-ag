@@ -38,19 +38,22 @@ RM = /usr/bin/cmake -E remove -f
 # Escaping for special characters.
 EQUALS = =
 
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eroux/softs/transcriber-ag-debian/libs
+CMAKE_SOURCE_DIR = /home/eroux/softs/transcriber-ag-debian/source
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eroux/softs/transcriber-ag-debian/libs
+CMAKE_BINARY_DIR = /home/eroux/softs/transcriber-ag-debian/source
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running interactive CMake command-line interface..."
-	/usr/bin/cmake -i .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -98,6 +101,26 @@ list_install_components:
 list_install_components/fast: list_install_components
 .PHONY : list_install_components/fast
 
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
+	cd /home/eroux/softs/transcriber-ag-debian/source && /usr/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
+
+# Special rule for the target package
+package/fast: package
+.PHONY : package/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	cd /home/eroux/softs/transcriber-ag-debian/source && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/eroux/softs/transcriber-ag-debian/source/CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+.PHONY : package_source/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -110,14 +133,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/eroux/softs/transcriber-ag-debian/libs && $(CMAKE_COMMAND) -E cmake_progress_start /home/eroux/softs/transcriber-ag-debian/libs/CMakeFiles /home/eroux/softs/transcriber-ag-debian/libs/live555/CMakeFiles/progress.marks
-	cd /home/eroux/softs/transcriber-ag-debian/libs && $(MAKE) -f CMakeFiles/Makefile2 live555/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/eroux/softs/transcriber-ag-debian/libs/CMakeFiles 0
+	cd /home/eroux/softs/transcriber-ag-debian/source && $(CMAKE_COMMAND) -E cmake_progress_start /home/eroux/softs/transcriber-ag-debian/source/CMakeFiles /home/eroux/softs/transcriber-ag-debian/source/libs/live555/CMakeFiles/progress.marks
+	cd /home/eroux/softs/transcriber-ag-debian/source && $(MAKE) -f CMakeFiles/Makefile2 libs/live555/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/eroux/softs/transcriber-ag-debian/source/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/eroux/softs/transcriber-ag-debian/libs && $(MAKE) -f CMakeFiles/Makefile2 live555/clean
+	cd /home/eroux/softs/transcriber-ag-debian/source && $(MAKE) -f CMakeFiles/Makefile2 libs/live555/clean
 .PHONY : clean
 
 # The main clean target
@@ -126,17 +149,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/eroux/softs/transcriber-ag-debian/libs && $(MAKE) -f CMakeFiles/Makefile2 live555/preinstall
+	cd /home/eroux/softs/transcriber-ag-debian/source && $(MAKE) -f CMakeFiles/Makefile2 libs/live555/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/eroux/softs/transcriber-ag-debian/libs && $(MAKE) -f CMakeFiles/Makefile2 live555/preinstall
+	cd /home/eroux/softs/transcriber-ag-debian/source && $(MAKE) -f CMakeFiles/Makefile2 libs/live555/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/eroux/softs/transcriber-ag-debian/libs && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/eroux/softs/transcriber-ag-debian/source && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -150,6 +173,8 @@ help:
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... list_install_components"
+	@echo "... package"
+	@echo "... package_source"
 	@echo "... rebuild_cache"
 .PHONY : help
 
@@ -162,6 +187,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/eroux/softs/transcriber-ag-debian/libs && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/eroux/softs/transcriber-ag-debian/source && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

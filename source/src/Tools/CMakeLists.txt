@@ -18,6 +18,7 @@ include_directories(
 #	${SRC}/MediaComponent
 	${MM_INCLUDES}
 	${SOUNDTOUCH_INCLUDE_DIRS}
+	${FFMPEG_INCLUDE_DIRS}
 )
 
 
@@ -28,6 +29,7 @@ link_directories(
 	${AGLIB_LIBRARY_DIRS}
 	${MM_LIBS}
 	${LIVEMEDIA_LIBRARY_DIRS}
+	${FFMPEG_LIBRARY_DIRS}
 	${SOUNDTOUCH_LIBRARY_DIRS}
 )
 
@@ -122,9 +124,8 @@ target_link_libraries(
     groupsock
     ${FFMPEG_LIBRARIES}
     ${SNDFILE_LIBRARIES}
-    glibmm-2.4
-    portaudio
-    sndfile
+    ${GLIBMM_LIBRARIES}
+    ${PORTAUDIO_LIBRARIES}
     ${APPLE_LINKS}
     ${WIN32_LINKS}
 )
