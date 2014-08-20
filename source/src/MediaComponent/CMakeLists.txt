@@ -195,6 +195,7 @@ target_link_libraries(
 	${FFMPEG_LIBRARIES}
 	${GLIBMM_LIBRARIES}
 	${SNDFILE_LIBRARIES}
+	${PORTAUDIO_LIBRARIES}
 	portaudio
 	sndfile
 	gthread-2.0

@@ -17,8 +17,8 @@
 #include <glib.h>
 #include <time.h>
 
-#include "MediaComponent/base/Guesser.h"
 #include "Explorer_fileHelper.h"
+#include "MediaComponent/base/Guesser.h"
 #include "Explorer_utils.h"
 #include "Common/util/Utils.h"
 #include "Common/icons/Icons.h"

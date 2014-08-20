@@ -607,7 +607,7 @@ int main(int argc, char *argv[])
 
 		if ( Glib::file_test(log_file + ".log" , Glib::FILE_TEST_EXISTS) )
 		{
-			std::setlocale(LC_TIME,"");
+			setlocale(LC_TIME,"");
 
 			Glib::Date date;
 			date.set_time(time(0));
