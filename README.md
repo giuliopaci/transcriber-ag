@@ -36,7 +36,7 @@ should do it. Then
 
 (Not fully tested, only under Debian/sid and with MXE branch *master*): install [MXE](http://mxe.cc/) and build TranscriberAG's dependencies by running, in the repertory where you installed mxe:
 
- * `make libsndfile gtkmm2 portaudio xerces ffmpeg zlib dlfcn-win32 -j4`
+ * `make libsndfile gtkmm2 portaudio gettext xerces ffmpeg zlib dlfcn-win32 -j4`
 
 (at this point, you can take a good nap, you have a large amount of compilation time). Then build the project using the newly compiled libraries by running, in the TranscriberAG directory:
 
