@@ -11,8 +11,8 @@
 #ifndef MEDIACOMMON_H_
 #define MEDIACOMMON_H_
 
-#include "MediaComponent/base/Guesser.h"
 #include <gtkmm.h>
+#include "MediaComponent/base/Guesser.h"
 
 namespace tag {
 /**
