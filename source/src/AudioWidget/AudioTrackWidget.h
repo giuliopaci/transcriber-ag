@@ -228,7 +228,7 @@ public:
 		if (a_wave)
 			return a_wave->getVZoom();
 		else
-			return NULL ;
+			return 0.0 ;
 	}
 
 	/**
@@ -240,7 +240,7 @@ public:
 		if (v_filter)
 			return v_filter->getVolumeFactor();
 		else
-			return NULL ;
+			return 0.0 ;
 	}
 
 	/**
@@ -252,7 +252,7 @@ public:
 		if (st_filter)
 			return st_filter->getPitch();
 		else
-			return NULL ;
+			return 0.0 ;
 	}
 
 
