@@ -100,12 +100,10 @@ target_link_libraries(
     groupsock
     BasicUsageEnvironment
     UsageEnvironment
-	${FFMPEG_LIBRARIES}
-	${GLIBMM_LIBRARIES}
 	${SNDFILE_LIBRARIES}
+	${PORTAUDIO_LIBRARIES}
+	${FFMPEG_LIBRARIES}
 	gthread-2.0
-	portaudio
-	sndfile
 	${GTKMM_LINK_LIBRARIES}
 	${APPLE_LINKS}
 	${WIN32_LINKS}
@@ -162,8 +160,7 @@ target_link_libraries(
 	${FFMPEG_LIBRARIES}
 	${GLIBMM_LIBRARIES}
 	${SNDFILE_LIBRARIES}
-	portaudio
-	sndfile
+	${PORTAUDIO_LIBRARIES}
 	${GTKMM_LINK_LIBRARIES}
 	${APPLE_LINKS}
 	${WIN32_LINKS}
@@ -196,8 +193,6 @@ target_link_libraries(
 	${GLIBMM_LIBRARIES}
 	${SNDFILE_LIBRARIES}
 	${PORTAUDIO_LIBRARIES}
-	portaudio
-	sndfile
 	gthread-2.0
 	${GTKMM_LIBRARIES}
 	${APPLE_LINKS}
@@ -229,8 +224,7 @@ target_link_libraries(
 	${FFMPEG_LIBRARIES}
 	${GLIBMM_LIBRARIES}
 	${SNDFILE_LIBRARIES}
-	portaudio
-	sndfile
+	${PORTAUDIO_LIBRARIES}
 	gthread-2.0
 	${GTKMM_LIBRARIES}
 	${APPLE_LINKS}
@@ -262,11 +256,10 @@ target_link_libraries(
     UsageEnvironment
     groupsock
 	${FFMPEG_LIBRARIES}
-	${SNDFILE_LIBRARIES}
 	${GLIBMM_LIBRARIES}
 	gthread-2.0
-	portaudio
-	sndfile
+	${SNDFILE_LIBRARIES}
+	${PORTAUDIO_LIBRARIES}
 	${APPLE_LINKS}
 	${WIN32_LINKS}
 )

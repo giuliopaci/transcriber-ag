@@ -45,6 +45,7 @@ endif()
 if (UNIX OR MINGW)
 	find_package			(X11		REQUIRED)
 	pkg_check_modules		(GLIBMM		glibmm-2.4)
+	pkg_check_modules		(XERCES		xerces-c)
     if (NOT LIBTAG)
 #	    find_package			(ASPELL		REQUIRED)
     	pkg_check_modules		(GTKMM		gtkmm-2.4)
@@ -81,7 +82,7 @@ set (LIVEMEDIA_INCLUDE_DIRS		${PROJECT_SOURCE_DIR}/libs/live555/liveMedia/includ
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__STDC_CONSTANT_MACROS -DCMAKE_INSTALL_PREFIX='${CMAKE_INSTALL_PREFIX}'")
 
 find_package(FFMPEG	REQUIRED)
-MESSAGE( STATUS "FFMPEG_LIBRARIES:     " ${FFMPEG_LIBRARIES} )
+MESSAGE( STATUS "FFMPEG_LIBRARIES: " ${FFMPEG_LIBRARIES} )
 
 # -- Global Includes --
 

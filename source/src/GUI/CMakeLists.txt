@@ -124,16 +124,16 @@ target_link_libraries(
 	SoundTouch
 	${GTKMM_LIBRARIES}
 	${SNDFILE_LIBRARIES}
-	xerces-c
+	${XERCES_LIBRARIES}
 	gthread-2.0
 	ag
-	portaudio
-	sndfile
+	${PORTAUDIO_LIBRARIES}
 #	gtkspell
-	${GTKMM_LINK_LIBRARIES}
+	${GTKMM_LIBRARIES}
+	${FFMPEG_LIBRARIES}
 	${APPLE_LINKS}
 	${WIN32_LINKS}
-	X11
+	${X11_LIBRARIES}
 )
 
 # ------------------------------------------------
