@@ -246,14 +246,11 @@ endif (UNIX OR APPLE)
 
 # --- Main Libraries Variables ---
 set(LIVEMEDIA_LIBRARIES
-	
-	MediaComponent
 	liveMedia
 	groupsock
 	BasicUsageEnvironment
 	UsageEnvironment
 )
-
 
 # --- Main subdirectory - src ---
 add_subdirectory	(src)
