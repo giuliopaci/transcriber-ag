@@ -40,8 +40,14 @@ should do it. Then
 
 (at this point, you can take a good nap, you have a large amount of compilation time). Then build the project using the newly compiled libraries by running, in the TranscriberAG directory:
 
- * `mkdir build-mingw`
- * `cd build-mingw`
- * `cmake ../source -DCMAKE_TOOLCHAIN_FILE=/where MXE is installed/usr/i686-pc-mingw32.static/share/cmake/mxe-conf.cmake`
+ * `mkdir build-mxe`
+ * `cd build-mxe`
+ * `cmake ../source -DCMAKE_TOOLCHAIN_FILE=/where MXE is installed/usr/i686-pc-mingw32.static/share/cmake/mxe-conf.cmake -DCMAKE_INSTALL_PREFIX=""`
  * `make`
- * `sudo make install`
+ * `sudo make install DESTDIR="installdir"`
+ 
+This will install the .exe and .dll files in `build-mxe/installdir`.
+
+### Installer compilation ###
+
+First, install [`NSIS`](http://nsis.sourceforge.net/Download) (`sudo aptitude install nsis` under Debian)
