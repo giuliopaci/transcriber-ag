@@ -31,7 +31,7 @@ add_library(
 	PeakFinder.cpp
 )
 
-add_definitions( -O3 -msse -fcheck-new )
+add_definitions( -msse -fcheck-new )
 
 # --- Linking ---
 

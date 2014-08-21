@@ -38,8 +38,12 @@ endif(LIBTAG)
 
 if(CMAKE_COMPILER_IS_GNUCC)
   set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -ggdb3 -Wall -O0 -pedantic")
-  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -g -O2")
-endif()
+  if (MINGW)
+     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -s -Os")
+  else (MINGW)
+     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -g -O2")
+  endif(MINGW)
+endif(CMAKE_COMPILER_IS_GNUCC)
 
 # --- Unix Settings ---
 if (UNIX OR MINGW)
