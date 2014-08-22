@@ -123,8 +123,6 @@ agfio::store(const string& format,
   }
 }
 
-#define PREFIX AG_PLUGINDIR
-
 agfio_plugin*
 agfio::plug(const string& format)
   throw (const string&)
@@ -198,7 +196,11 @@ agfio::plug(const string& format)
   } 
   else 
   {
-	  plugin_name = PREFIX + plugin_name; 
+      #if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
+      plugin_name = plugin_name;
+      #else
+	  plugin_name = AG_PLUGINDIR + plugin_name;
+	  #endif
       cerr << " LOAD PLUGIN : " << plugin_name.c_str() << endl;
 	  plugin = dlopen(plugin_name.c_str(), RTLD_LAZY);
 	  if ( plugin == NULL)

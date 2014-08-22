@@ -143,48 +143,18 @@ int main(int argc, char *argv[])
 	//> -- TranscriberAG Configuration base
 	Glib::ustring defaultConfig_path = "" ;
 	Glib::ustring defaultLocale_path = "" ;
-	Glib::ustring current_name, up ;
-	bool found = false ;
-	up = FileInfo(exedir).dirname(lev-1);
 	bool start_ok0 = true ;
 	#if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
-	try
-	{
-		Glib::Dir dir(up) ;
-		//> -- For each files contained in it do recurence
-		while ( (current_name=dir.read_name()) != "" && !found)
-		{
-			if (current_name=="etc")
-			{
-				found = true ;
-				Glib::ustring etcTransAG = FileHelper::build_path("etc","TransAG") ;
-				defaultConfig_path = FileHelper::build_path(up,etcTransAG) ;
-			}
-		}
-
-		if ( !found )
-		{
-			Glib::ustring etcTransAG = FileHelper::build_path("etc","TransAG") ;
-			defaultConfig_path = FileHelper::build_path(transcriber_root,etcTransAG) ;
-		}
-
-		dir.close() ;
-	}
-	catch (Glib::FileError e)
-	{
-		start_ok0 = false ;
-		Log::err() << "TranscriberAG --> <*> General configuration problem :> can't read configuration file "<< std::endl ;
-	}
-	defaultLocale_path = defaultConfig_path + "/locales";
+	defaultConfig_path = FileHelper::build_path(exedir, "etc");
+	defaultLocale_path = FileHelper::build_path(exedir, "locale");
     #else
-    Glib::ustring etcTransAG = "/etc/TransAG";
     defaultConfig_path = "/etc/TransAG";
+    defaultLocale_path = LOCALEDIR;
+    #endif
     if ( ! Glib::file_test(defaultConfig_path, Glib::FILE_TEST_EXISTS) ) {
 		start_ok0 = false ;
 		Log::err() << "TranscriberAG --> <*> General configuration problem :> can't read configuration file "<< std::endl ;
     }
-    defaultLocale_path = LOCALEDIR;
-    #endif
 	Log::out() << "TranscriberAG --> <*> Configuration directory: " << defaultConfig_path << endl;
 
 	Glib::ustring ime_to_restore = "" ;

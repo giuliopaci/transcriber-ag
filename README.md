@@ -29,7 +29,6 @@ should do it. Then
  * `sudo cp -R ../source/etc/TransAG /etc/`
 
 
-
 ### Building for Windows ###
 
 #### Cross-compile from Linux (MXE) ####
@@ -50,4 +49,4 @@ This will install the .exe and .dll files in `build-mxe/installdir`.
 
 ### Installer compilation ###
 
-First, install [`NSIS`](http://nsis.sourceforge.net/Download) (`sudo aptitude install nsis` under Debian)
+First, install [`NSIS`](http://nsis.sourceforge.net/Download) (`sudo aptitude install nsis` under Debian), then build the installer: `makensis TranscriberAG.nsi`.
