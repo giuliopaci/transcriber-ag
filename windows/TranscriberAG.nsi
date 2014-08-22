@@ -26,7 +26,8 @@ Section
 
 SetOutPath $INSTDIR
 File "installdir/bin/TranscriberAG.exe"
-File "installdir/bin/*.dll"
+;File "installdir/bin/*.dll"
+File "installdir/bin/agfio_plugin_TransAG.dll"
 SetOutPath $INSTDIR\locale
 File /r "installdir/share/locale/"
 
@@ -47,7 +48,6 @@ Section "Uninstall"
 Delete $INSTDIR\TranscriberAG-uninstall.exe
  
 # now delete installed file
-Delete $INSTDIR\test.txt
 Delete "$SMPROGRAMS\TranscriberAG\Uninstall.lnk"
 Delete "$SMPROGRAMS\TranscriberAG\TranscriberAG.lnk"
  

@@ -31,22 +31,4 @@ should do it. Then
 
 ### Building for Windows ###
 
-#### Cross-compile from Linux (MXE) ####
-
-(Not fully tested, only under Debian/sid and with MXE branch *master*): install [MXE](http://mxe.cc/) and build TranscriberAG's dependencies by running, in the repertory where you installed mxe:
-
- * `make libsndfile gtkmm2 portaudio gettext xerces ffmpeg zlib dlfcn-win32 -j4`
-
-(at this point, you can take a good nap, you have a large amount of compilation time). Then build the project using the newly compiled libraries by running, in the TranscriberAG directory:
-
- * `mkdir build-mxe`
- * `cd build-mxe`
- * `cmake ../source -DCMAKE_TOOLCHAIN_FILE=/where MXE is installed/usr/i686-pc-mingw32.static/share/cmake/mxe-conf.cmake -DCMAKE_INSTALL_PREFIX=""`
- * `make`
- * `make install DESTDIR="../windows/installdir"`
- 
-This will install the .exe and .dll files in `build-mxe/installdir`.
-
-### Installer compilation ###
-
-First, install [`NSIS`](http://nsis.sourceforge.net/Download) (`sudo aptitude install nsis` under Debian), then build the installer: `makensis TranscriberAG.nsi`.
+See `README.Windows.md` in `windows` directory.
