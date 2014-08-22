@@ -36,4 +36,4 @@ should do it. Then
 
 ### Building for Windows ###
 
-See `README.Windows.md` in `windows` directory.
+See `README.md` in `windows` directory.
