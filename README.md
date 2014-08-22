@@ -44,7 +44,7 @@ should do it. Then
  * `cd build-mxe`
  * `cmake ../source -DCMAKE_TOOLCHAIN_FILE=/where MXE is installed/usr/i686-pc-mingw32.static/share/cmake/mxe-conf.cmake -DCMAKE_INSTALL_PREFIX=""`
  * `make`
- * `sudo make install DESTDIR="../windows/installdir"`
+ * `make install DESTDIR="../windows/installdir"`
  
 This will install the .exe and .dll files in `build-mxe/installdir`.
 

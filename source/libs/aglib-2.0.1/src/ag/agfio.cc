@@ -3,6 +3,7 @@
 #include <ag/AGAPI.h>
 #include <ag/AGException.h>
 #include "ag_dlfcn.h"
+#include "TranscriberAG-config.h"
 
 /* (( BT Patch -- */
 #include <unistd.h>
@@ -122,9 +123,7 @@ agfio::store(const string& format,
   }
 }
 
-#define xstr(s) str(s)
-#define str(s) #s
-#define PREFIX xstr(AG_PLUGINDIR)
+#define PREFIX AG_PLUGINDIR
 
 agfio_plugin*
 agfio::plug(const string& format)

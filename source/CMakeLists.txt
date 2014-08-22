@@ -24,8 +24,6 @@ option(DEBUG		"Sets Debug Mode"							OFF)
 option(LIBTAG		"Sets libtag only  mode"					OFF)
 option(MEDIA_TOOLS	"(use with LIBTAG=ON) Adds (audio) Media tools to build rules"	OFF)
 
-
-
 # --- Debug Mode ---
 if (DEBUG)
 	set(CMAKE_BUILD_TYPE Debug)
@@ -64,8 +62,6 @@ if (UNIX OR MINGW)
     endif(NOT LIBTAG)
 endif (UNIX OR MINGW)
 
-add_subdirectory	(libs)
-
 # --- Global variables ---
 set	(SRC				${PROJECT_SOURCE_DIR}/src)
 
@@ -83,7 +79,7 @@ set (LIVEMEDIA_LIBRARY_DIRS		${PROJECT_BINARY_DIR}/libs/live555/liveMedia ${PROJ
 set (LIVEMEDIA_INCLUDE_DIRS		${PROJECT_SOURCE_DIR}/libs/live555/liveMedia/include ${PROJECT_SOURCE_DIR}/libs/live555/groupsock/include ${PROJECT_SOURCE_DIR}/libs/live555/UsageEnvironment/include ${PROJECT_SOURCE_DIR}/libs/live555/BasicUsageEnvironment/include)
 
 # --- Recent distributions need this ---
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__STDC_CONSTANT_MACROS -DCMAKE_INSTALL_PREFIX='${CMAKE_INSTALL_PREFIX}'")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__STDC_CONSTANT_MACROS")
 
 find_package(FFMPEG	REQUIRED)
 
@@ -243,10 +239,10 @@ if (APPLE)
 
 endif (APPLE)
 
-if (UNIX OR APPLE)
-    set(LOCALEDIR "/usr/share/locale" CACHE STRING "change the name of the locale data directory to a non-default name")
-    add_definitions(-DLOCALEDIR=${LOCALEDIR})    
-endif (UNIX OR APPLE)
+if (UNIX OR APPLE OR MINGW)
+    set(LOCALEDIR 	  "${CMAKE_INSTALL_PREFIX}/share/locale" CACHE STRING "change the name of the locale data directory to a non-default name")
+    set(AG_PLUGINDIR "${CMAKE_INSTALL_PREFIX}/lib/ag/"      CACHE STRING "change the name of the AG plugin directory to a non-default name")
+endif (UNIX OR APPLE OR MINGW)
 
 # --- Main Libraries Variables ---
 set(LIVEMEDIA_LIBRARIES
@@ -256,7 +252,12 @@ set(LIVEMEDIA_LIBRARIES
 	UsageEnvironment
 )
 
-# --- Main subdirectory - src ---
+configure_file (
+  "${PROJECT_SOURCE_DIR}/include/config.h.in"
+  "${PROJECT_BINARY_DIR}/include/TranscriberAG-config.h"
+  )
+
+add_subdirectory	(libs)
 add_subdirectory	(src)
 
 # -- Gettext handling --
@@ -283,8 +284,3 @@ if(ENABLE_POT_UPDATE_TARGET)
 endif(ENABLE_POT_UPDATE_TARGET)
 
 add_subdirectory(po)
-
-configure_file (
-  "${PROJECT_SOURCE_DIR}/include/config.h.in"
-  "${PROJECT_BINARY_DIR}/include/config.h"
-  )

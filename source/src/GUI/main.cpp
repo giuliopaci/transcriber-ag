@@ -30,12 +30,9 @@
 #include "Common/util/FormatTime.h"
 #include "Common/VersionInfo.h"
 #include "Common/util/Utils.h"
+#include "TranscriberAG-config.h"
 
 using namespace tag ;
-
-#define xstr(s) str(s)
-#define str(s) #s
-#define STR_LOCALEDIR xstr(LOCALEDIR)
 
 int main(int argc, char *argv[])
 {
@@ -186,7 +183,7 @@ int main(int argc, char *argv[])
 		start_ok0 = false ;
 		Log::err() << "TranscriberAG --> <*> General configuration problem :> can't read configuration file "<< std::endl ;
     }
-    defaultLocale_path = STR_LOCALEDIR;
+    defaultLocale_path = LOCALEDIR;
     #endif
 	Log::out() << "TranscriberAG --> <*> Configuration directory: " << defaultConfig_path << endl;
 
