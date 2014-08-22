@@ -7,10 +7,15 @@ people needing to build it from sources, with a few improvements.
 
 ##Changelog##
 
+Start version is 2.0.0 version plus Debian patches.
+
  * improving translation system
+ * improving CMAKE general build system
  * adding Tibetan as possible input language
- * minor improvements to make compilation possible
- * 2.0.0 version plus Debian patches
+ * make compilation possible on modern systems:
+    * xerces 2 -> 3
+    * small fixes for recent versions of ffmpeg
+    * small fixes for recent versions of gtkmm
  
 ## Build and installation ##
 
