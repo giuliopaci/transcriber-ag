@@ -149,9 +149,7 @@ if(ENABLE_POT_UPDATE_TARGET)
 endif(ENABLE_POT_UPDATE_TARGET)
 
 if(ENABLENLS)
-
 	set(GETTEXT_MSGFMT_PARAMETER --check-format --check-domain )
-
 	if(ENABLE_POT_UPDATE_TARGET)
 		# Only set the verbose flag for maintainers.
 		set(GETTEXT_MSGFMT_PARAMETER -v ${GETTEXT_MSGFMT_PARAMETER} )
@@ -182,10 +180,10 @@ if(ENABLENLS)
 				COMMENT "mo-update [${LINGUA}]: Creating mo file."
 			)
 
-            IF (UNIX OR APPLE)
+            IF (UNIX OR APPLE OR MINGW)
 			    install(FILES ${CMAKE_BINARY_DIR}/po/${LINGUA}/LC_MESSAGES/TranscriberAG.mo
 					DESTINATION ${LOCALEDIR}/${LINGUA}/LC_MESSAGES)
-		    ENDIF (UNIX OR APPLE)
+		    ENDIF (UNIX OR APPLE OR MINGW)
 
 			set(mo-update-SRC ${mo-update-SRC} 
 				${CMAKE_BINARY_DIR}/po/${LINGUA}/LC_MESSAGES/TranscriberAG.mo
@@ -209,5 +207,4 @@ if(ENABLENLS)
 		COMMENT "mo-update: Done."
 		DEPENDS ${mo-update-SRC}
 	)
-
 endif(ENABLENLS)
