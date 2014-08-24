@@ -12,7 +12,7 @@
 #ifndef _HAVE_COMMON_GLOBALS_H
 #define _HAVE_COMMON_GLOBALS_H 1
 
-#include "config.h"
+#include "TranscriberAG-config.h"
 
 #if ENABLE_NLS
 

@@ -35,7 +35,7 @@ if(LIBTAG)
 endif(LIBTAG)
 
 if(CMAKE_COMPILER_IS_GNUCC)
-  set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -ggdb3 -Wall -O0 -pedantic")
+  set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Og -pedantic")
   if (MINGW)
      set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -s -Os")
   else (MINGW)
@@ -252,11 +252,6 @@ set(LIVEMEDIA_LIBRARIES
 	UsageEnvironment
 )
 
-configure_file (
-  "${PROJECT_SOURCE_DIR}/include/config.h.in"
-  "${PROJECT_BINARY_DIR}/include/TranscriberAG-config.h"
-  )
-
 add_subdirectory	(libs)
 add_subdirectory	(src)
 
@@ -278,6 +273,11 @@ endif (ENABLENLS)
 file(READ po/LINGUAS LINGUAS)
 string(REPLACE "\n" "" LINGUAS ${LINGUAS})
 separate_arguments(LINGUAS)
+
+configure_file (
+  "${PROJECT_SOURCE_DIR}/include/config.h.in"
+  "${PROJECT_BINARY_DIR}/include/TranscriberAG-config.h"
+  )
 
 if(ENABLE_POT_UPDATE_TARGET)
 	find_package(TranslationTools REQUIRED)

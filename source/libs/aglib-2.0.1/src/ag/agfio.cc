@@ -197,7 +197,7 @@ agfio::plug(const string& format)
   else 
   {
       #if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
-      plugin_name = plugin_name;
+      plugin_name = "C:\\Program Files\\TranscriberAG\\" + plugin_name;
       #else
 	  plugin_name = AG_PLUGINDIR + plugin_name;
 	  #endif
