@@ -109,16 +109,16 @@ InputLanguageArabic::get_unicode_ar_type(gunichar_type before_type, gunichar_typ
 }
 
 void
-InputLanguageArabic::postLoadingKeyMap(DOMNode *node, gunichar c)
+InputLanguageArabic::postLoadingKeyMap(xercesc::DOMNode *node, gunichar c)
 {
 	if(node == NULL)
 		return;
-	DOMNode *childNode = node->getFirstChild();
-	DOMNode *attrNode;
+	xercesc::DOMNode *childNode = node->getFirstChild();
+	xercesc::DOMNode *attrNode;
 	char *buf, *buf2, *stopPtr;
 	unsigned int keyVal;
 	XMLCh* ch;
-	DOMNamedNodeMap *attrList;
+	xercesc::DOMNamedNodeMap *attrList;
 	Unicode_Ar_Form *ar_form = new Unicode_Ar_Form();
 	ar_form->available_types = (unicode_val_flag)(ar_form->available_types | AR_ORIGINAL);
 	ar_form->original_val = c;
@@ -126,18 +126,18 @@ InputLanguageArabic::postLoadingKeyMap(DOMNode *node, gunichar c)
 
 	while(childNode)
 	{
-		if(childNode->getNodeType() == DOMNode::ELEMENT_NODE)
+		if(childNode->getNodeType() == xercesc::DOMNode::ELEMENT_NODE)
 		{
 			attrList = childNode->getAttributes();
 			if(attrList == NULL)
 				continue;
-			buf = XMLString::transcode(childNode->getNodeName());
-			ch = XMLString::transcode(XML_VALUE);
+			buf = xercesc::XMLString::transcode(childNode->getNodeName());
+			ch = xercesc::XMLString::transcode(XML_VALUE);
 			attrNode = attrList->getNamedItem(ch);
-			XMLString::release(&ch);
+			xercesc::XMLString::release(&ch);
 			if(attrNode)
 			{
-				buf2 = XMLString::transcode(attrNode->getNodeValue());
+				buf2 = xercesc::XMLString::transcode(attrNode->getNodeValue());
 				keyVal = (unsigned int)strtoul(buf2, &stopPtr, 0);
 				if(!strcasecmp("", stopPtr))
 				{
@@ -183,9 +183,9 @@ InputLanguageArabic::postLoadingKeyMap(DOMNode *node, gunichar c)
 						ar_form->no_check = keyVal ;
 					}
 				}
-				XMLString::release(&buf2);
+				xercesc::XMLString::release(&buf2);
 			}
-			XMLString::release(&buf);
+			xercesc::XMLString::release(&buf);
 		}
 		childNode = childNode->getNextSibling();
 	}
