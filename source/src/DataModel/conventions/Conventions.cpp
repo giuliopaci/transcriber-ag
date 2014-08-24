@@ -32,9 +32,9 @@
 using namespace std;
 
 #ifdef WIN32
-#define DEFAULT_CFG_DIR "c:\\Program Files\\TranscriberAG\\etc\\TransAG\\conventions"
+#define DEFAULT_CFG_DIR "c:\\Program Files\\TranscriberAG\\etc\\conventions"
 #else
-#define DEFAULT_CFG_DIR "/usr/local/etc/TransAG/conventions"
+#define DEFAULT_CFG_DIR "/etc/TransAG/conventions"
 #endif
 
 #define DEFAULT_CONVENTIONS "transag_default"
