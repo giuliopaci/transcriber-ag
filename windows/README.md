@@ -3,7 +3,7 @@ Windows build system
 
 The current build system doesn't work perfectly yet...
 
-#### File path convention ####
+### File path convention ###
 
 As Windows doesn't have standard path, the conventions used are the following:
 
@@ -11,6 +11,8 @@ As Windows doesn't have standard path, the conventions used are the following:
  * `libag.dll` and the `agfio\_plugin\_*.dll` are in `${INSTALLDIR}`
  * the main config files are in `${INSTALLDIR}\etc` (equivalent of `/etc/TransAG`)
  * locale files are in `${INSTALLDIR}\locale` (equivalent of `/usr/share/locale`)
+
+# Compiling From Linux (or OSX) #
 
 ### Cross-compile from Linux (MXE) ###
 
@@ -33,3 +35,14 @@ Sometimes you will get an error on the cmake command, running it two times usual
 ### Installer compilation ###
 
 First, install [`NSIS`](http://nsis.sourceforge.net/Download) (`sudo aptitude install nsis` under Debian), then build the installer: `makensis TranscriberAG.nsi`.
+
+### Debugging under Windows ###
+
+ * install [Mingw-W64](http://sourceforge.net/projects/mingw-w64/) for `gdb.exe` (the one from mxe doesn't work here, no idea why)
+ * make a release in Debug mode (add `-DCMAKE_BUILD_TYPE=Debug` to cmake command)
+ * install the obtained files in Windows
+ * copy the sources repertory of TranscriberAG in some place on your computer. All the directories up to `/` must be present, for instance if your sources are under `/home/user/transag/sources/`, copy them to `C:\\TransAG\\home\\user\\transag\\sources\\`.
+ * run `gdb.exe` under Windows:
+    * `directory Path\\to\\sources\\` (`C:\\TransAG` in previous example)
+    * `file Path\\to\\TranscriberAG.exe`
+    * enjoy!
