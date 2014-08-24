@@ -28,6 +28,8 @@ First, install [MXE](http://mxe.cc/), the *master* branch. Then build Transcribe
  
 This will install the .exe and .dll files in `build-mxe/installdir`.
 
+Sometimes you will get an error on the cmake command, running it two times usually solves it (it looks more like a bug in cmake than in the actual code).
+
 ### Installer compilation ###
 
 First, install [`NSIS`](http://nsis.sourceforge.net/Download) (`sudo aptitude install nsis` under Debian), then build the installer: `makensis TranscriberAG.nsi`.

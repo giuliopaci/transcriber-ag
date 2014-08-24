@@ -35,7 +35,9 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #include <string.h>
 
 #define closeSocket closesocket
-#define EWOULDBLOCK WSAEWOULDBLOCK
+#ifndef EWOULDBLOCK
+    #define EWOULDBLOCK WSAEWOULDBLOCK
+#endif
 
 #if defined(_WIN32_WCE)
 #define NO_STRSTREAM 1

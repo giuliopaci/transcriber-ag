@@ -20,19 +20,14 @@ find_package			(Gettext	REQUIRED)
 # --- Project Options ---
 # -----------------------
 option(VIDEO_BUILD	"Adds Video Player Module to Build Rules"	ON)
-option(DEBUG		"Sets Debug Mode"							OFF)
-option(LIBTAG		"Sets libtag only  mode"					OFF)
+option(LIBTAG		"Sets libtag only mode"					OFF)
 option(MEDIA_TOOLS	"(use with LIBTAG=ON) Adds (audio) Media tools to build rules"	OFF)
 
-# --- Debug Mode ---
-if (DEBUG)
-	set(CMAKE_BUILD_TYPE Debug)
-	add_definitions(-D_DEBUGMODE)
-	message(-- DEBUG MODE [ON])
-endif(DEBUG)
 if(LIBTAG)
     set(VIDEO_BUILD OFF)
 endif(LIBTAG)
+
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D_DEBUGMODE")
 
 if(CMAKE_COMPILER_IS_GNUCC)
   set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Og -pedantic")
