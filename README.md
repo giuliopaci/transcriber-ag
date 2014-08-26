@@ -19,6 +19,8 @@ Start version is 2.0.0 version plus Debian patches.
  
 ## Build and installation ##
 
+#### Linux (Debian/Ubuntu) ####
+
 You'll have to play a bit with apt/aptitude to get the right dependencies, but
 globally
 
@@ -34,6 +36,18 @@ should do it. Then
  * `sudo cp -R ../source/etc/TransAG /etc/`
 
 
-### Building for Windows ###
+#### Building for Windows ####
 
 See `README.md` in `windows` directory.
+
+## TODO ##
+
+ * debugging Windows build
+ * making Windows binaries smaller (find the good mxe options)
+ * include a variable in the conf to change UI language (especially for Windows)
+ * remove deprecated functions in ffmpeg, gthread and glib (requires some knowledge, especially for ffmpeg, but feasible)
+ * update SoundTouch (1.4 -> 1.8)
+ * possibility to link against stock SoundTouch (quite difficult: Debian SoundTouch is compiled with float samples, while the code here expects int16_t...)
+ * OSX compilation (should be straightforward, I'm just lacking the OS...)
+ * gtkspellmm inclusion
+ * doc to compile under Windows?
