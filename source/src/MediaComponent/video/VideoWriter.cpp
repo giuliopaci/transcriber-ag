@@ -126,7 +126,7 @@ VideoWriter::addVideoStream(AVFormatContext *formatCtx, AVCodecID codecID)
 	AVCodecContext*	codecCtx;
 	AVStream*		stream;
 
-	stream = av_new_stream(formatCtx, 0);
+	stream = avformat_new_stream(formatCtx, NULL);
 
 	if (!stream)
 	{
