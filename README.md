@@ -22,7 +22,7 @@ Start version is 2.0.0 version plus Debian patches.
 You'll have to play a bit with apt/aptitude to get the right dependencies, but
 globally
 
-`aptitude install cdbs libxerces-c-dev libavcodec-dev libavformat-dev libswscale-dev libavdevice-dev libgtkmm-2.4-dev portaudio19-dev libsndfile1-dev xsltproc`
+`aptitude install build-essential cmake gettext cdbs libxerces-c-dev libavcodec-dev libavformat-dev libswscale-dev libavdevice-dev libgtkmm-2.4-dev portaudio19-dev libsndfile1-dev xsltproc`
 
 should do it. Then
 
