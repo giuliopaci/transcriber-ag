@@ -91,7 +91,7 @@ bool FFMpegHandler::m_open(const char *inMedium, int)
 		return false;
 	}
 
-	av_find_stream_info(formatCtx);
+	avformat_find_stream_info(formatCtx, NULL);
 
 	// Step 2 - Storing Streams Indexes
 	for(unsigned int i=0; i<formatCtx->nb_streams; i++)
