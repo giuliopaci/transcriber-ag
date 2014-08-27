@@ -11,16 +11,18 @@ if(APPLE)
 endif(APPLE) 
 
 if (LIBTAG)
-    set(MM_INCLUDES  ${GLIBMM_INCLUDE_DIRS})
-    set(MM_LIBS  ${GLIBMM_LIBRARY_DIRS})
+    set(MM_INCLUDE_DIRS  ${GLIBMM_INCLUDE_DIRS})
+    set(MM_LIBRARY_DIRS  ${GLIBMM_LIBRARY_DIRS})
+    set(MM_LIBS  ${GLIBMM_LIBRARIES})
 else(LIBTAG)
-    set(MM_INCLUDES ${GTKMM_INCLUDE_DIRS})
-    set(MM_LIBS ${GTKMM_LIBRARY_DIRS})
+    set(MM_INCLUDE_DIRS ${GTKMM_INCLUDE_DIRS})
+    set(MM_LIBRARY_DIRS ${GTKMM_LIBRARY_DIRS})
+    set(MM_LIBS  ${GTKMM_LIBRARIES})
 endif(LIBTAG)
 
 # --- Includes ---
 include_directories(
-	${MM_INCLUDES}
+	${MM_INCLUDE_DIRS}
 	${GETTEXT_INCLUDE_DIR}
 	${SRC}
 	${SRC}/Common
@@ -29,7 +31,7 @@ include_directories(
 
 # --- Links ---
 link_directories(
-	${MM_LIBS}
+	${MM_LIBRARY_DIRS}
 )
 
 # --- Library Definition ---
@@ -95,6 +97,7 @@ if (NOT LIBTAG)
     	CommonWidgets
 	    ${WIN32_LINKS}
 	    ${GTKMM_LIBRARIES}
+	    ${X11_LIBRARIES}
     )
 endif(NOT LIBTAG)
 
@@ -107,5 +110,6 @@ target_link_libraries(
 	Common
 	${COMMON_WIDGETS}
     ${WIN32_LINKS}
-	${GTKMM_LIBRARIES}
+	${MM_LIBRARIES}
+	
 )
