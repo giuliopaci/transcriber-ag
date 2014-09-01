@@ -80,7 +80,7 @@ void Conventions::configure(string conventions, string lang, bool fullmode)
 //		if ( *(m_configDir.rbegin()) != '/' )
 //		m_configDir += "/";
 //	}
-
+    Log::setTraceLevel(Log::FINE);
 	TRACE_D << "CONVENTIONS DIR= " <<  m_configDir << std::endl ;
 
 	string tail = FileInfo(conventions).tail();
@@ -462,7 +462,7 @@ void Conventions::loadTopics(const string& path, string lang)
  * @param key option key
  * @return option value
  */
-const std::string& Conventions::getConfiguration(const std::string& key, std::map<std::string, std::string> configuration) const
+const std::string& Conventions::getConfiguration(const std::string& key, const std::map<std::string, std::string>& configuration) const
 {
 	map<string, string>::const_iterator it = configuration.find(key);
 	if ( it != configuration.end() )
@@ -923,9 +923,13 @@ void Conventions::updMainstreamTypes(const string& graphtype, Parameters* param,
 		}
 
 		// annotation features
-		const string& feats = getConfiguration(*it+",features");
-		vector<string> v;
-		StringOps(feats).split(v, ";,");
+		key = *it+",features";
+		std::vector<string> v;
+		//const string& feats = getConfiguration(key);
+		//StringOps(feats).split(v, ";,");
+		if ( configuration.find(key) != configuration.end() ) {
+		    StringOps(configuration[key].c_str()).split(v, ";,");
+		}
 		if ( v.size() > 0 )
 		{
 			vector<string>::iterator itv;

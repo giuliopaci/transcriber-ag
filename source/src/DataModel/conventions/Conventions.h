@@ -739,7 +739,7 @@ class Conventions
 
 	private:
 
-		const std::string& getConfiguration(const std::string& key, std::map<std::string, std::string> configuration) const;
+		const std::string& getConfiguration(const std::string& key, const std::map<std::string, std::string>& configuration) const;
 
 		int addExtraGraphs() ;
 		void updateGraphDescriptor(const string& graphtype, Parameters* param, bool reset_mode);
