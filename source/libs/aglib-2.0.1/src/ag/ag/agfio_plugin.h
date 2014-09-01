@@ -14,12 +14,14 @@
 #include <list>
 #include <map>
 
+#define DLL_EXPORT __declspec(dllexport)
+
 using namespace std;
 
 #define AGFIO_PLUGIN(t) \
     extern "C" {\
-      DllExport agfio_plugin* create() {return new t;}\
-      DllExport void destroy(agfio_plugin* m) {delete (t*) m;}\
+      DLL_EXPORT agfio_plugin* create() {return new t;}\
+      DLL_EXPORT void destroy(agfio_plugin* m) {delete (t*) m;}\
     }
 
 /**
@@ -136,6 +138,7 @@ protected:
     throw (const string&);
 
 public:
+   virtual ~agfio_plugin() {};
   /**
    * Load a file, converting it to AG's.
    *
