@@ -29,12 +29,14 @@ if (APPLE)
 endif (APPLE)
 if (WIN32)
    # code for win32 won't rely on this, but a default is used somewhere...
-   set(DEFAULT_ETC_DIR "C:\\Program Files\TranscriberAG\etc")
+   set(DEFAULT_ETC_DIR "C:\\\\Program Files\\TranscriberAG\\etc")
 endif(WIN32)
 if (UNIX)
    set(DEFAULT_ETC_DIR "/etc/TranscriberAG")
    option(ETC_DIR      "Directory containing the documentation"	${DEFAULT_ETC_DIR})
 endif(UNIX)
+
+
 
 if(LIBTAG)
     set(VIDEO_BUILD OFF)
