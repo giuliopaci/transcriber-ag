@@ -33,7 +33,6 @@ add_library(
 # --- MacOSX ---
 if (APPLE)
 	set(DEFINITIONS
-
 		-DBSD=1
 		-O2
 		-DSOCKLEN_T=socklen_t
@@ -41,7 +40,6 @@ if (APPLE)
 	)
 else (APPLE)
 	set(DEFINITIONS
-		-O2
 		-r
 		-static
 		-DSOCKLEN_T=socklen_t
@@ -53,7 +51,6 @@ endif (APPLE)
 add_definitions( ${DEFINITIONS} )
 
 if (WIN32 AND NOT MINGW)
-
 	target_link_libraries(
 		groupsock
 

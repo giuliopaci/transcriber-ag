@@ -34,13 +34,11 @@ if (APPLE)
 	set(DEFINITIONS
 
 		-DBSD=1
-		-O2
 		-DSOCKLEN_T=socklen_t
 		-DHAVE_SOCKADDR_LEN=1
 	)
 else (APPLE)
 	set(DEFINITIONS
-		-O2
 		-r
 		-static
 		-DSOCKLEN_T=socklen_t

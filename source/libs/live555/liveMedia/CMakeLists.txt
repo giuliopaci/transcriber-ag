@@ -157,14 +157,12 @@ if (APPLE)
 	set(DEFINITIONS
 
 		-DBSD=1
-		-O2
 		-DSOCKLEN_T=socklen_t
 		-DHAVE_SOCKADDR_LEN=1
 	)
 else (APPLE)
 	set(DEFINITIONS
 
-		-O2
 		-DSOCKLEN_T=socklen_t
 		-D_LARGEFILE_SOURCE=1
 		-D_FILE_OFFSET_BITS=64
