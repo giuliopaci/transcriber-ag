@@ -22,18 +22,27 @@ find_package			(Gettext	REQUIRED)
 option(VIDEO_BUILD	"Adds Video Player Module to Build Rules"	ON)
 option(LIBTAG		"Sets libtag only mode"					OFF)
 option(MEDIA_TOOLS	"(use with LIBTAG=ON) Adds (audio) Media tools to build rules"	OFF)
-# Default config directory
+
+# Default config, share and doc directory
 if (APPLE)
    set(DEFAULT_ETC_DIR ${CMAKE_INSTALL_PREFIX}/etc/TranscriberAG)
-   option(ETC_DIR      "Directory containing the documentation"	${DEFAULT_ETC_DIR})
+   option(ETC_DIR      "Directory containing the configuration"	${DEFAULT_ETC_DIR})
+   set(DEFAULT_SHARE_DIR ${CMAKE_INSTALL_PREFIX}/share/TranscriberAG)
+   option(ETC_DIR      "Directory containing the "	${DEFAULT_SHARE_DIR})
+   set(DEFAULT_DOC_DIR ${CMAKE_INSTALL_PREFIX}/share/doc/TranscriberAG)
+   option(ETC_DIR      "Directory containing the "	${DEFAULT_DOC_DIR})
 endif (APPLE)
 if (WIN32)
    # code for win32 won't rely on this, but a default is used somewhere...
    set(DEFAULT_ETC_DIR "C:\\\\Program Files\\TranscriberAG\\etc")
+   set(DEFAULT_SHARE_DIR "C:\\\\Program Files\\TranscriberAG\\share")
+   set(DEFAULT_DOC_DIR "C:\\\\Program Files\\TranscriberAG\\doc")
 endif(WIN32)
 if (UNIX)
    set(DEFAULT_ETC_DIR "/etc/TranscriberAG")
    option(ETC_DIR      "Directory containing the documentation"	${DEFAULT_ETC_DIR})
+   set(DEFAULT_SHARE_DIR ${CMAKE_INSTALL_PREFIX}/share/TranscriberAG)
+   set(DEFAULT_DOC_DIR ${CMAKE_INSTALL_PREFIX}/share/doc/TranscriberAG)
 endif(UNIX)
 
 
@@ -46,11 +55,8 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D_DEBUGMODE")
 
 if(CMAKE_COMPILER_IS_GNUCC)
   set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -O0 -ggdb3 -pedantic")
-  if (MINGW)
-     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -s -Os")
-  else (MINGW)
-     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -g -O2")
-  endif(MINGW)
+  set(CMAKE_CXX_FLAGS_MINSIZEREL "${CMAKE_CXX_FLAGS_RELEASE} -s -Os")
+  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O2")
 endif(CMAKE_COMPILER_IS_GNUCC)
 
 # --- Unix Settings ---
