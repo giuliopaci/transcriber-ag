@@ -42,7 +42,8 @@ See `README.md` in `windows` directory.
 
 ## TODO ##
 
- * debugging Windows build
+ * debugging Windows build (almost done)
+ * separate etc/, share/ and doc/ to be more Debian-compliant (and facilitate a future well-formed Debian package)
  * making Windows binaries smaller (find the good mxe options)
  * include a variable in the conf to change UI language (especially for Windows)
  * remove deprecated functions in ffmpeg, gthread and glib (requires some knowledge, especially for ffmpeg, but feasible)
@@ -50,4 +51,3 @@ See `README.md` in `windows` directory.
  * possibility to link against stock SoundTouch (quite difficult: Debian SoundTouch is compiled with float samples, while the code here expects int16_t...)
  * OSX compilation (should be straightforward, I'm just lacking the OS...)
  * gtkspellmm inclusion
- * doc to compile under Windows?
