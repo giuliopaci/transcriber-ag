@@ -43,13 +43,18 @@ add_library(
 	regfree.c
 )
 
-
-
+if (WIN32)
 target_link_libraries(
 	ag
-	
+	dl
+	-lshlwapi
+)
+else (WIN32)
+target_link_libraries(
+	ag
 	dl
 )
+endif (WIN32)
 
 install(
 	TARGETS ag

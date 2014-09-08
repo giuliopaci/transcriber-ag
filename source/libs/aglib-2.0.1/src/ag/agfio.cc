@@ -11,9 +11,11 @@
 #include <stdlib.h>
 
 #ifdef _WIN32
-#define DIR_SEPARATOR "\\"
+  #define DIR_SEPARATOR "\\"
+  #include <windows.h> // for GetModuleFileName
+  #include <shlwapi.h>
 #else
-#define DIR_SEPARATOR "/"
+  #define DIR_SEPARATOR "/"
 #endif
 /* -- BT Patch )) */ 
 
@@ -197,8 +199,12 @@ agfio::plug(const string& format)
   } 
   else 
   {
-      #if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
-      plugin_name = "C:\\Program Files\\TranscriberAG\\" + plugin_name;
+      #if defined(_WIN32) && !defined(__CYGWIN__)
+      char cCurrentPath[FILENAME_MAX];
+      GetModuleFileName(NULL, cCurrentPath, sizeof(cCurrentPath));
+      PathRemoveFileSpec(cCurrentPath);
+      string plugin_dir(cCurrentPath);
+      plugin_name = plugin_dir + DIR_SEPARATOR + plugin_name;
       #else
 	  plugin_name = AG_PLUGINDIR + plugin_name;
 	  #endif
