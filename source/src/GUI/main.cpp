@@ -182,7 +182,7 @@ int main(int argc, char *argv[])
 	Glib::ustring rcDefaultUserFile_path ;
 	Glib::ustring localConfig_name ;
  	Glib::ustring localConfig_path ;
- 	Glib::ustring home_dir = Glib::get_home_dir() ;
+ 	Glib::ustring config_dir = g_get_user_config_dir() ;
 
 	if (start_ok0)
 	{
@@ -210,7 +210,10 @@ int main(int argc, char *argv[])
 			//merge parameters
 			Parameters::mergeUserParameters(&default_user_parameters, &default_parameters, false) ;
 
-			localConfig_name = default_parameters.getParameterValue("General", "start,homeFolder") ;
+			localConfig_name = default_parameters.getParameterValue("General", "start,homeFolder");
+			#if !defined (_WIN32)
+			   localConfig_name = "."+localConfig_name;
+			#endif
 		}
 		catch (const char* e)
 		{
@@ -224,7 +227,7 @@ int main(int argc, char *argv[])
 		 	bool exist_user_parameter = false ;
 
 			//> -- Compute path for rc local file
-		 	localConfig_path = FileHelper::build_path(home_dir,localConfig_name) ;
+		 	localConfig_path = FileHelper::build_path(config_dir,localConfig_name) ;
 			Log::out() << "TranscriberAG --> <*> Home directory: " << localConfig_path<< endl;
 			Glib::ustring rcLocalFile_path = FileHelper::build_path(localConfig_path,rcFile_name) ;
 			Glib::ustring rcUserLocalFile_path = FileHelper::build_path(localConfig_path,rcUserFile_name) ;
@@ -234,7 +237,7 @@ int main(int argc, char *argv[])
 	 		Glib::ustring defaultDtdConfig_path = FileHelper::build_path(defaultConfig_path, dtdConf_name) ;
 
 			//> -- Check home configuration directory
-			if ( FileHelper::exist_file_in_dir(home_dir, localConfig_name) )
+			if ( FileHelper::exist_file_in_dir(config_dir, localConfig_name) )
 		 	{
 				try
 				{

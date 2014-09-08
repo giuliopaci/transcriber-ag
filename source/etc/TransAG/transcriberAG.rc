@@ -111,7 +111,7 @@
 		<section id="start" label="Start">
 			<parameter id="config" label="" value=""/>
 			<parameter id="demo" label="default demo directory" value="demo"/>
-			<parameter id="homeFolder" label="HomeFolder" value=".TransAG"/>
+			<parameter id="homeFolder" label="HomeFolder" value="TranscriberAG"/>
 			<parameter id="dtd" label="Dtd" value="TransAG-3.0.dtd"/>
 			<parameter id="dtd_config" label="Dtd for configuration files" value="configurationAG.dtd"/>
 			<parameter id="gtkrc" label="Gtkrc" value="transcriber_default.gtkrc"/>
