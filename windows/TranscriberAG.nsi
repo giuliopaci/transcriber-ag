@@ -1,5 +1,8 @@
 OutFile "TranscriberAG-setup.exe"
 
+# For removing Start Menu shortcut in Windows 7
+RequestExecutionLevel user
+
 Name "TranscriberAG"
 !define MUI_PRODUCT "TranscriberAG"
 !define MUI_FILE "savefile"
@@ -19,13 +22,11 @@ InstallDir "$PROGRAMFILES\${MUI_PRODUCT}"
 !insertmacro MUI_PAGE_FINISH
 !insertmacro MUI_LANGUAGE "English"
 
-# For removing Start Menu shortcut in Windows 7
-RequestExecutionLevel user
-
 Section
 
 SetOutPath $INSTDIR
 File "installdir/bin/TranscriberAG.exe"
+File "installdir/bin/libag.dll"
 ;File "installdir/bin/*.dll"
 File "installdir/bin/agfio_plugin_TransAG.dll"
 SetOutPath $INSTDIR\locale

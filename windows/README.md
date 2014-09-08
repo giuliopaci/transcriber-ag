@@ -34,7 +34,13 @@ Sometimes you will get an error on the cmake command, running it two times usual
 
 ### Installer compilation ###
 
-First, install [`NSIS`](http://nsis.sourceforge.net/Download) (`sudo aptitude install nsis` under Debian), then build the installer: `makensis TranscriberAG.nsi`.
+#### InnoSetup Installer ###
+
+Install [InnoSetup](http://www.jrsoftware.org/isdl.php) (works well under wine) and use the file `TranscriberAG.iss`.
+
+#### NSIS Installer ####
+
+This method is not advised for recent Windows versions. First, install [`NSIS`](http://nsis.sourceforge.net/Download) (`sudo aptitude install nsis` under Debian), then build the installer: `makensis TranscriberAG.nsi`.
 
 ### Debugging under Windows ###
 
