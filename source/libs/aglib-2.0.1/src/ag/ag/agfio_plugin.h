@@ -14,7 +14,11 @@
 #include <list>
 #include <map>
 
-#define DLL_EXPORT __declspec(dllexport)
+#ifdef _WIN32
+  #define DLL_EXPORT __declspec(dllexport)
+#else
+  #define DLL_EXPORT DllExport
+#endif
 
 using namespace std;
 
