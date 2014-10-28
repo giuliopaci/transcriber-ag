@@ -181,7 +181,7 @@ bool FFMpegHandler::m_open(const char *inMedium, int)
 bool FFMpegHandler::m_close()
 {
 	if (formatCtx != NULL)
-		av_close_input_file(formatCtx);
+		avformat_close_input(&formatCtx);
 
 	av_free(frame->samples);
 	delete frame;
