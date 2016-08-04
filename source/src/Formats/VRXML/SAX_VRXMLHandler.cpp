@@ -486,7 +486,7 @@ void SAX_VRXMLHandler::WordEnd(const XMLCh* const name)
 
 // invoked when PCDATA encountered
 void SAX_VRXMLHandler::characters
-(const XMLCh* const chars, const unsigned int length)
+(const XMLCh* const chars, const XMLSize_t length)
 {
 	string s;
 	set_string(s, chars);
@@ -530,7 +530,7 @@ void SAX_VRXMLHandler::fatalError(const SAXParseException& e)
 }
 
 void SAX_VRXMLHandler::writeChars(const XMLByte* const toWrite,
-                                 const unsigned int count,
+                                 const XMLSize_t count,
                                  XMLFormatter* const formatter)
 {
   targetString.assign((char*) toWrite, count);

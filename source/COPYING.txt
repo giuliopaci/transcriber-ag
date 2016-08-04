@@ -1,14 +1,20 @@
-/******************************************************/
-/*  Copyright (C) 2006-2011 Bertin Technologies, SAS  */ 
-/*                   TranscriberAG                    */
-/******************************************************/
+                             TranscriberAG
 
-This program (TranscriberAG) is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License.
+Copyright (C) 2006-2011 Bertin Technologies, SAS
+Copyright (C) 2014 Elie Roux <elie.roux@telecom-bretagne.eu>
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+This program (TranscriberAG) is free software: you can redistribute it
+and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation, version 3 of the License.
 
-You should have received a copy of the GNU General Public License along with this program (see file gpl-3.0.txt). If not, see <http://www.gnu.org/licenses/>.
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+for more details.
 
-/*******************************************/
-/* website: http://transag.sourceforge.net */
-/*******************************************/
+You should have received a copy of the GNU General Public License along
+with this program (see file gpl-3.0.txt).
+If not, see <http://www.gnu.org/licenses/>.
+
+website: http://transag.sourceforge.net
+git: https://github.com/eroux/transcriber-ag

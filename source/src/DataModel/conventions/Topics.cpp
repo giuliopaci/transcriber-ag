@@ -216,7 +216,7 @@ Topics_XMLHandler::endElement (const XMLCh * const uri,
 }
 
 void
-Topics_XMLHandler::characters (const XMLCh * const chars, const unsigned int length)
+Topics_XMLHandler::characters (const XMLCh * const chars, const XMLSize_t length)
 {
 	if (length != 0 && in_context )
 	  	current_context += getString(chars);

@@ -84,7 +84,7 @@ class SAXAnnotationsHandler : public DefaultHandler
 		void endElement(const XMLCh* const uri, const XMLCh* const localname, const XMLCh* const qname);
 
 		/**! Character element handler */
-		void characters(const XMLCh* const chars, const unsigned int length);
+		void characters(const XMLCh* const chars, const XMLSize_t length);
 
 	private :
 		std::map<string, list<Property> >* a_annotationProperties;

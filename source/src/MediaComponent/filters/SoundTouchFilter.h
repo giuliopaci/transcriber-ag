@@ -136,9 +136,9 @@ private:
 	// -- SoundTouch --
 	SoundTouch*	st;
 	int			st_size;
-	int16_t*	st_output;
-	int16_t*	st_input;
-	int16_t*	st_recv;
+	SAMPLETYPE*	st_output;
+	SAMPLETYPE*	st_input;
+	SAMPLETYPE*	st_recv;
 
 	// -- IODevice --
 	IODevice*	device;

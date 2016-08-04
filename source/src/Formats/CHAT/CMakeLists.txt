@@ -6,19 +6,16 @@
 include_directories(
 	${SRC}
 	${SRC}/MediaComponent
-	${LIVEMEDIA}/liveMedia/include
-	${LIVEMEDIA}/groupsock/include
-	${LIVEMEDIA}/UsageEnvironment/include
-	${LIVEMEDIA}/BasicUsageEnvironment/include
-	${AGLIB}/src/ag
-     ${GLIBMM_INCLUDE_DIRS}
+	${LIVEMEDIA_INCLUDE_DIRS}
+	${AGLIB_INCLUDE_DIRS}
+    ${GLIBMM_INCLUDE_DIRS}
 )
 
 
 # --- Links ---
 link_directories(
+	${AGLIB_LIBRARY_DIRS}
 	${GLIBMM_LIBRARY_DIRS}
-	${AGLIB_BUILD}/src/ag
 )
 
 
@@ -43,18 +40,23 @@ add_executable(tag2chat	tag2chat.cpp)
 # --- Linking ---
 set(LINKS	Common ag xerces-c)
 
-if (WIN32)
+if (WIN32 AND NOT MINGW)
 	set(LINKS TransAG ${LINKS} dl)
-endif (WIN32)
+endif (WIN32 AND NOT MINGW)
 
 if (APPLE)
 	set(LINKS TransAG ${LINKS})
 endif (APPLE)
 
+if (MINGW)
+	set(LINKS TransAG ${LINKS})
+endif (MINGW)
+
 target_link_libraries(
 	agfio_plugin_CHAT
 
 	${LINKS}
+	Common CommonWidgets ag xerces-c
 )
 
 target_link_libraries(
@@ -62,7 +64,7 @@ target_link_libraries(
 
 	TransAG
 	${LINKS}
-	${GLIBMM_LINK_LIBRARIES}
+	${GLIBMM_LIBRARIES}
 )
 
 target_link_libraries(
@@ -71,7 +73,7 @@ target_link_libraries(
 	TransAG
 	Common
 	${LINKS}
-	${GLIBMM_LINK_LIBRARIES}
+	${GLIBMM_LIBRARIES}
 )
 
 

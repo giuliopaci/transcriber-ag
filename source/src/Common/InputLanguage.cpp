@@ -118,7 +118,7 @@ InputLanguage::postProcessing(Gtk::TextView *view, Gtk::TextIter iter)
 }
 
 void
-InputLanguage::postLoadingKeyMap(DOMNode *node, gunichar c)
+InputLanguage::postLoadingKeyMap(xercesc::DOMNode *node, gunichar c)
 {
 }
 

@@ -45,8 +45,6 @@
 #define LANGUAGE_HARDWARE_MAPPING 	"Hardware"
 #define LANGUAGE_LOGIC_MAPPING		"Logic"
 
-XERCES_CPP_NAMESPACE_USE
-
 namespace tag
 {
 
@@ -231,7 +229,7 @@ class InputLanguage
 		 * @param node		Node to modify
 		 * @param c			Unicode character
 		 */
-		virtual void postLoadingKeyMap(DOMNode *node, gunichar c);
+		virtual void postLoadingKeyMap(xercesc::DOMNode *node, gunichar c);
 
 		/**
 		 * Manages backspace key event

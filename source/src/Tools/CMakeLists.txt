@@ -4,22 +4,21 @@
 
 if (LIBTAG)
     set(MM_INCLUDES  ${GLIBMM_INCLUDE_DIRS})
-   set(MM_LIBS  ${GLIBMM_LIBRARY_DIRS})
+    set(MM_LIBS  ${GLIBMM_LIBRARY_DIRS})
 else(LIBTAG)
-     set(MM_INCLUDES ${GTKMM_INCLUDE_DIRS})
+    set(MM_INCLUDES ${GTKMM_INCLUDE_DIRS})
     set(MM_LIBS ${GTKMM_LIBRARY_DIRS})
 endif(LIBTAG)
 
 # --- Includes ---
 include_directories(
-    ${LIVEMEDIA}/liveMedia/include
-    ${LIVEMEDIA}/groupsock/include
-    ${LIVEMEDIA}/UsageEnvironment/include
-    ${LIVEMEDIA}/BasicUsageEnvironment/include
-    ${AGLIB}/src/ag
+    ${LIVEMEDIA_INCLUDE_DIRS}
+    ${AGLIB_INCLUDE_DIRS}
     ${SRC}
 #	${SRC}/MediaComponent
 	${MM_INCLUDES}
+	${SOUNDTOUCH_INCLUDE_DIRS}
+	${FFMPEG_INCLUDE_DIRS}
 )
 
 
@@ -27,13 +26,11 @@ include_directories(
 link_directories(
 	${SRC}/DataModel
 	${SRC}/Formats/TransAG
-	${AGLIB_BUILD}/src/ag
+	${AGLIB_LIBRARY_DIRS}
 	${MM_LIBS}
-	${LIVEMEDIA_BUILD}/liveMedia
-	${LIVEMEDIA_BUILD}/groupsock
-	${LIVEMEDIA_BUILD}/UsageEnvironment
-	${LIVEMEDIA_BUILD}/BasicUsageEnvironment
-	${SOUNDTOUCH_BUILD}/source/SoundTouch
+	${LIVEMEDIA_LIBRARY_DIRS}
+	${FFMPEG_LIBRARY_DIRS}
+	${SOUNDTOUCH_LIBRARY_DIRS}
 )
 
 
@@ -58,11 +55,11 @@ add_executable(
 
 
 # --- Linking ---
-set(LINKS	TransAG TAG TXT Common ag xerces-c ${GLIBMM_LINK_LIBRARIES})
+set(LINKS	TransAG TAG TXT Common ag xerces-c ${GLIBMM_LIBRARIES})
 
-if (WIN32)
+if (WIN32 AND NOT MINGW)
 	set(LINKS ${LINKS} dl)
-endif(WIN32)
+endif(WIN32 AND NOT MINGW)
 
 target_link_libraries(
 	add_section
@@ -127,9 +124,14 @@ target_link_libraries(
     groupsock
     ${FFMPEG_LIBRARIES}
     ${SNDFILE_LIBRARIES}
-    glibmm-2.4
-    portaudio
-    sndfile
+    ${GLIBMM_LIBRARIES}
+    ${PORTAUDIO_LIBRARIES}
     ${APPLE_LINKS}
     ${WIN32_LINKS}
+)
+install(
+	TARGETS	add_section clean_tag convert_tag extract_speaker_segments merge_tag print_spk printtag tagstats testag
+	
+	RUNTIME	DESTINATION bin
+	LIBRARY	DESTINATION lib
 )

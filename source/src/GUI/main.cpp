@@ -30,9 +30,9 @@
 #include "Common/util/FormatTime.h"
 #include "Common/VersionInfo.h"
 #include "Common/util/Utils.h"
+#include "TranscriberAG-config.h"
 
 using namespace tag ;
-
 
 int main(int argc, char *argv[])
 {
@@ -142,39 +142,19 @@ int main(int argc, char *argv[])
 
 	//> -- TranscriberAG Configuration base
 	Glib::ustring defaultConfig_path = "" ;
-	Glib::ustring current_name, up ;
-	bool found = false ;
-	up = FileInfo(exedir).dirname(lev-1);
+	Glib::ustring defaultLocale_path = "" ;
 	bool start_ok0 = true ;
-
-	try
-	{
-		Glib::Dir dir(up) ;
-		//> -- For each files contained in it do recurence
-		while ( (current_name=dir.read_name()) != "" && !found)
-		{
-			if (current_name=="etc")
-			{
-				found = true ;
-				Glib::ustring etcTransAG = FileHelper::build_path("etc","TransAG") ;
-				defaultConfig_path = FileHelper::build_path(up,etcTransAG) ;
-			}
-		}
-
-		if ( !found )
-		{
-			Glib::ustring etcTransAG = FileHelper::build_path("etc","TransAG") ;
-			defaultConfig_path = FileHelper::build_path(transcriber_root,etcTransAG) ;
-		}
-
-		dir.close() ;
-	}
-	catch (Glib::FileError e)
-	{
+	#if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
+	defaultConfig_path = FileHelper::build_path(exedir, "etc");
+	defaultLocale_path = FileHelper::build_path(exedir, "locale");
+    #else
+    defaultConfig_path = "/etc/TransAG";
+    defaultLocale_path = LOCALEDIR;
+    #endif
+    if ( ! Glib::file_test(defaultConfig_path, Glib::FILE_TEST_EXISTS) ) {
 		start_ok0 = false ;
 		Log::err() << "TranscriberAG --> <*> General configuration problem :> can't read configuration file "<< std::endl ;
-	}
-
+    }
 	Log::out() << "TranscriberAG --> <*> Configuration directory: " << defaultConfig_path << endl;
 
 	Glib::ustring ime_to_restore = "" ;
@@ -202,15 +182,18 @@ int main(int argc, char *argv[])
 	Glib::ustring rcDefaultUserFile_path ;
 	Glib::ustring localConfig_name ;
  	Glib::ustring localConfig_path ;
- 	Glib::ustring home_dir = Glib::get_home_dir() ;
+ 	Glib::ustring config_dir = g_get_user_config_dir() ;
 
 	if (start_ok0)
 	{
 		//> -- Prepare domain
-		bindtextdomain(GETTEXT_PACKAGE, (defaultConfig_path + "/locales").c_str());
+		setlocale(LC_ALL,"");
+		bindtextdomain(GETTEXT_PACKAGE, (defaultLocale_path).c_str());
+		bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+        textdomain (GETTEXT_PACKAGE);
 		
 		#ifdef __APPLE__
-		bindtextdomain("gtk20", (defaultConfig_path + "/locales").c_str());
+		bindtextdomain("gtk20", (defaultLocale_path).c_str());
 		#endif
 
 		//> -- Load Default Parameters
@@ -227,7 +210,10 @@ int main(int argc, char *argv[])
 			//merge parameters
 			Parameters::mergeUserParameters(&default_user_parameters, &default_parameters, false) ;
 
-			localConfig_name = default_parameters.getParameterValue("General", "start,homeFolder") ;
+			localConfig_name = default_parameters.getParameterValue("General", "start,homeFolder");
+			#if !defined (_WIN32)
+			   localConfig_name = "."+localConfig_name;
+			#endif
 		}
 		catch (const char* e)
 		{
@@ -241,7 +227,7 @@ int main(int argc, char *argv[])
 		 	bool exist_user_parameter = false ;
 
 			//> -- Compute path for rc local file
-		 	localConfig_path = FileHelper::build_path(home_dir,localConfig_name) ;
+		 	localConfig_path = FileHelper::build_path(config_dir,localConfig_name) ;
 			Log::out() << "TranscriberAG --> <*> Home directory: " << localConfig_path<< endl;
 			Glib::ustring rcLocalFile_path = FileHelper::build_path(localConfig_path,rcFile_name) ;
 			Glib::ustring rcUserLocalFile_path = FileHelper::build_path(localConfig_path,rcUserFile_name) ;
@@ -251,7 +237,7 @@ int main(int argc, char *argv[])
 	 		Glib::ustring defaultDtdConfig_path = FileHelper::build_path(defaultConfig_path, dtdConf_name) ;
 
 			//> -- Check home configuration directory
-			if ( FileHelper::exist_file_in_dir(home_dir, localConfig_name) )
+			if ( FileHelper::exist_file_in_dir(config_dir, localConfig_name) )
 		 	{
 				try
 				{
@@ -591,7 +577,7 @@ int main(int argc, char *argv[])
 
 		if ( Glib::file_test(log_file + ".log" , Glib::FILE_TEST_EXISTS) )
 		{
-			std::setlocale(LC_TIME,"");
+			setlocale(LC_TIME,"");
 
 			Glib::Date date;
 			date.set_time(time(0));

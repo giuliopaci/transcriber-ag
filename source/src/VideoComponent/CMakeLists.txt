@@ -6,21 +6,15 @@
 include_directories(
 	${SRC}
 	${SRC}/MediaComponent
-	${LIVEMEDIA}/liveMedia/include
-	${LIVEMEDIA}/groupsock/include
-	${LIVEMEDIA}/UsageEnvironment/include
-	${LIVEMEDIA}/BasicUsageEnvironment/include
-	${SOUNDTOUCH}/include
+	${LIVEMEDIA_INCLUDE_DIRS}
+	${SOUNDTOUCH_INCLUDE_DIRS}
 	${GTKMM_INCLUDE_DIRS}
 )
 
 
 # --- Links ---
 link_directories(
-	${LIVEMEDIA}/liveMedia
-	${LIVEMEDIA}/groupsock
-	${LIVEMEDIA}/UsageEnvironment
-	${LIVEMEDIA}/BasicUsageEnvironment
+	${LIVEMEDIA_LIBRARY_DIRS}
 	${GTKMM_LIBRARY_DIRS}
 )
 

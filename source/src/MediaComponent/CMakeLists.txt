@@ -24,11 +24,8 @@ endif (NOT VIDEO_BUILD)
 
 # --- Includes ---
 include_directories(
-	${LIVEMEDIA}/liveMedia/include
-	${LIVEMEDIA}/groupsock/include
-	${LIVEMEDIA}/UsageEnvironment/include
-	${LIVEMEDIA}/BasicUsageEnvironment/include
-	${SOUNDTOUCH}/include
+	${LIVEMEDIA_INCLUDE_DIRS}
+	${SOUNDTOUCH_INCLUDE_DIRS}
 	${G_INCLUDE_DIRS}
     ${SRC}/MediaComponent
 	${SRC}/Common
@@ -41,12 +38,9 @@ endif(WIN32)
 
 # --- Links ---
 link_directories(
-	${LIVEMEDIA_BUILD}/liveMedia
-	${LIVEMEDIA_BUILD}/groupsock
-	${LIVEMEDIA_BUILD}/UsageEnvironment
-	${LIVEMEDIA_BUILD}/BasicUsageEnvironment
+	${LIVEMEDIA_LIBRARY_DIRS}
 	${G_LIBRARY_DIRS}
-    ${SOUNDTOUCH_BUILD}/source/SoundTouch
+    ${SOUNDTOUCH_LIBRARY_DIRS}
 )
 
 SET(APP_BUILD_MODE	"")
@@ -106,12 +100,10 @@ target_link_libraries(
     groupsock
     BasicUsageEnvironment
     UsageEnvironment
-	${FFMPEG_LIBRARIES}
-	${GLIBMM_LIBRARIES}
 	${SNDFILE_LIBRARIES}
+	${PORTAUDIO_LIBRARIES}
+	${FFMPEG_LIBRARIES}
 	gthread-2.0
-	portaudio
-	sndfile
 	${GTKMM_LINK_LIBRARIES}
 	${APPLE_LINKS}
 	${WIN32_LINKS}
@@ -168,8 +160,7 @@ target_link_libraries(
 	${FFMPEG_LIBRARIES}
 	${GLIBMM_LIBRARIES}
 	${SNDFILE_LIBRARIES}
-	portaudio
-	sndfile
+	${PORTAUDIO_LIBRARIES}
 	${GTKMM_LINK_LIBRARIES}
 	${APPLE_LINKS}
 	${WIN32_LINKS}
@@ -201,10 +192,9 @@ target_link_libraries(
 	${FFMPEG_LIBRARIES}
 	${GLIBMM_LIBRARIES}
 	${SNDFILE_LIBRARIES}
-	portaudio
-	sndfile
+	${PORTAUDIO_LIBRARIES}
 	gthread-2.0
-	${GTKMM_LINK_LIBRARIES}
+	${GTKMM_LIBRARIES}
 	${APPLE_LINKS}
 	${WIN32_LINKS}
 )
@@ -234,10 +224,9 @@ target_link_libraries(
 	${FFMPEG_LIBRARIES}
 	${GLIBMM_LIBRARIES}
 	${SNDFILE_LIBRARIES}
-	portaudio
-	sndfile
+	${PORTAUDIO_LIBRARIES}
 	gthread-2.0
-	${GTKMM_LINK_LIBRARIES}
+	${GTKMM_LIBRARIES}
 	${APPLE_LINKS}
 	${WIN32_LINKS}
 )
@@ -267,13 +256,18 @@ target_link_libraries(
     UsageEnvironment
     groupsock
 	${FFMPEG_LIBRARIES}
-	${SNDFILE_LIBRARIES}
 	${GLIBMM_LIBRARIES}
 	gthread-2.0
-	portaudio
-	sndfile
+	${SNDFILE_LIBRARIES}
+	${PORTAUDIO_LIBRARIES}
 	${APPLE_LINKS}
 	${WIN32_LINKS}
+)
+install(
+	TARGETS	GenPeaks MMPlayer MediumGuesser MultimediaRTSPServer ThumbnailerTest audioTool
+	
+	RUNTIME	DESTINATION bin
+	LIBRARY	DESTINATION lib
 )
 endif (VIDEO_BUILD)
 

@@ -264,7 +264,7 @@ class Topics_XMLHandler : public CommonXMLHandler
 		 * @param chars
 		 * @param length
 		 */
-		void characters(const XMLCh* const chars, const unsigned int length);
+		void characters(const XMLCh* const chars, const XMLSize_t length);
 
 	private:
 		std::map<Glib::ustring,Topics*>& m_topicsGroups;

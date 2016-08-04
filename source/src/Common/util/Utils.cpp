@@ -420,7 +420,7 @@ void print_trace(Glib::ustring s, int mode)
 
 void mySleep(float time)
 {
-	Glib::Timer tim ;
+	Glib::Timer tim ; 
 	tim.start() ;
 	while( tim.elapsed() < time ) ;
 }

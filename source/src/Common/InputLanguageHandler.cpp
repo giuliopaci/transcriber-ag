@@ -5,6 +5,7 @@
 /* See COPYING for license information										  	*/
 /* 	         																	*/
 /********************************************************************************/
+
 #include "InputLanguageHandler.h"
 #include "InputLanguage.h"
 #include "InputLanguageArabic.h"
@@ -22,6 +23,7 @@
 #ifdef WIN32
 	#include <gdk/gdkwin32.h>
 #endif
+
 using namespace std;
 
 namespace tag
@@ -46,39 +48,39 @@ InputLanguageHandler::load_language_map(const std::string & filePath, bool exter
 {
 	try
 	{
-		XMLPlatformUtils::Initialize();
+		xercesc::XMLPlatformUtils::Initialize();
 	}
-    catch (const XMLException& toCatch)
+    catch (const xercesc::XMLException& toCatch)
     {
-        char* message = XMLString::transcode(toCatch.getMessage());
+        char* message = xercesc::XMLString::transcode(toCatch.getMessage());
         Log::err() << "Error during initialization! :\n"
              << message << "\n";
-        XMLString::release(&message);
+        xercesc::XMLString::release(&message);
         return false;
     }
 
-	XercesDOMParser* parser = new XercesDOMParser();
+	xercesc::XercesDOMParser* parser = new xercesc::XercesDOMParser();
 
 	std::vector<std::string> mappedTOime ;
 
 	try
     {
     	parser->parse(filePath.c_str());
-    	DOMDocument *doc = parser->getDocument();
+    	xercesc::DOMDocument *doc = parser->getDocument();
     	if(!doc)
     	{
     		delete parser;
     		return false;
     	}
     	InputLanguageHandler::free_resources();//if reload==>free resources
-    	DOMNode *rootNode = doc->getDocumentElement();
-    	char *buf1 = XMLString::transcode(rootNode->getNodeName());
+    	xercesc::DOMNode *rootNode = doc->getDocumentElement();
+    	char *buf1 = xercesc::XMLString::transcode(rootNode->getNodeName());
     	if(!strcasecmp(buf1, XML_LANGUAGES))//<Languages>
     	{
-	    	DOMNode *childNode = rootNode->getFirstChild();
-	    	DOMNode *tmp1;
-	    	DOMNamedNodeMap *attrList;
-	    	DOMNode *attrNode, *attrNode2, *attrNode3, *attrNode4, *attrNode5, *attrNode6;
+	    	xercesc::DOMNode *childNode = rootNode->getFirstChild();
+	    	xercesc::DOMNode *tmp1;
+	    	xercesc::DOMNamedNodeMap *attrList;
+	    	xercesc::DOMNode *attrNode, *attrNode2, *attrNode3, *attrNode4, *attrNode5, *attrNode6;
 	    	char *buf2, *buf3, *buf4, *buf5, *buf6;
 	    	XMLCh *ch1;
 	    	InputLanguage *il;
@@ -93,9 +95,9 @@ InputLanguageHandler::load_language_map(const std::string & filePath, bool exter
 	    		type = "";
 	    		shortcut = "";
 
-	    		if(childNode->getNodeType() == DOMNode::ELEMENT_NODE)
+	    		if(childNode->getNodeType() == xercesc::DOMNode::ELEMENT_NODE)
 	    		{
-	    			buf2 = XMLString::transcode(childNode->getNodeName());
+	    			buf2 = xercesc::XMLString::transcode(childNode->getNodeName());
 	    			//> NIVEAU 0: balise Language
 	    			if(!strcasecmp(buf2, XML_LANGUAGE))
 					{
@@ -103,88 +105,88 @@ InputLanguageHandler::load_language_map(const std::string & filePath, bool exter
 						if(attrList)
 						{
 
-							ch1 = XMLString::transcode(XML_NAME);
+							ch1 = xercesc::XMLString::transcode(XML_NAME);
 							attrNode = attrList->getNamedItem(ch1);
-							XMLString::release(&ch1);
+							xercesc::XMLString::release(&ch1);
 							if(attrNode)
 							{
 
 								//get language name
-								buf3 = XMLString::transcode(attrNode->getNodeValue());
+								buf3 = xercesc::XMLString::transcode(attrNode->getNodeValue());
 
 								//get language type
-								ch1 = XMLString::transcode(XML_TYPE);
+								ch1 = xercesc::XMLString::transcode(XML_TYPE);
 								attrNode2 = attrList->getNamedItem(ch1);
-								XMLString::release(&ch1);
+								xercesc::XMLString::release(&ch1);
 								if(attrNode2)
 								{
-									buf4 = XMLString::transcode(attrNode2->getNodeValue());
+									buf4 = xercesc::XMLString::transcode(attrNode2->getNodeValue());
 									type = std::string(buf4);
-									XMLString::release(&buf4);
+									xercesc::XMLString::release(&buf4);
 								}
 
 								//get language shortcut
-								ch1 = XMLString::transcode(XML_SHORTCUT);
+								ch1 = xercesc::XMLString::transcode(XML_SHORTCUT);
 								attrNode2 = attrList->getNamedItem(ch1);
-								XMLString::release(&ch1);
+								xercesc::XMLString::release(&ch1);
 								if(attrNode2)
 								{
-									buf4 = XMLString::transcode(attrNode2->getNodeValue());
+									buf4 = xercesc::XMLString::transcode(attrNode2->getNodeValue());
 									shortcut = std::string(buf4);
-									XMLString::release(&buf4);
+									xercesc::XMLString::release(&buf4);
 								}
 
 								//get language write mode
-								ch1 = XMLString::transcode(XML_MODE_LEFT_2_RIGHT);
+								ch1 = xercesc::XMLString::transcode(XML_MODE_LEFT_2_RIGHT);
 								attrNode2 = attrList->getNamedItem(ch1);
-								XMLString::release(&ch1);
+								xercesc::XMLString::release(&ch1);
 								unsigned long modeLeft2Right = 1;
 								if(attrNode2)
 								{
-									buf4 = XMLString::transcode(attrNode2->getNodeValue());
+									buf4 = xercesc::XMLString::transcode(attrNode2->getNodeValue());
 									modeLeft2Right = strtoul(buf4, &stopPtr, 0);
 									if(strcmp(stopPtr, ""))//if an error occured during conversion
 										modeLeft2Right = 1;
-									XMLString::release(&buf4);
+									xercesc::XMLString::release(&buf4);
 								}
 
 								//get spaceseparated mode
-								ch1 = XMLString::transcode(XML_SPACESEPARATED);
+								ch1 = xercesc::XMLString::transcode(XML_SPACESEPARATED);
 								attrNode2 = attrList->getNamedItem(ch1);
-								XMLString::release(&ch1);
+								xercesc::XMLString::release(&ch1);
 								unsigned long spaceSeparated = 1 ;
 								if(attrNode2)
 								{
-									buf4 = XMLString::transcode(attrNode2->getNodeValue());
+									buf4 = xercesc::XMLString::transcode(attrNode2->getNodeValue());
 									spaceSeparated = strtoul(buf4, &stopPtr, 0);
 									if(strcmp(stopPtr, ""))//if an error occured during conversion
 										spaceSeparated = 1;
-									XMLString::release(&buf4);
+									xercesc::XMLString::release(&buf4);
 								}
 
 								//get isActivated
-								ch1 = XMLString::transcode(XML_ISACTIVATED);
+								ch1 = xercesc::XMLString::transcode(XML_ISACTIVATED);
 								attrNode2 = attrList->getNamedItem(ch1);
-								XMLString::release(&ch1);
+								xercesc::XMLString::release(&ch1);
 								unsigned long isActivated = 1 ;
 								if(attrNode2)
 								{
-									buf4 = XMLString::transcode(attrNode2->getNodeValue());
+									buf4 = xercesc::XMLString::transcode(attrNode2->getNodeValue());
 									isActivated = strtoul(buf4, &stopPtr, 0);
 									if(strcmp(stopPtr, ""))//if an error occured during conversion
 										isActivated = 1;
-									XMLString::release(&buf4);
+									xercesc::XMLString::release(&buf4);
 								}
 
 								//get mapping mode
-								ch1 = XMLString::transcode(XML_MAPPINGMODE);
+								ch1 = xercesc::XMLString::transcode(XML_MAPPINGMODE);
 								attrNode2 = attrList->getNamedItem(ch1);
-								XMLString::release(&ch1);
+								xercesc::XMLString::release(&ch1);
 								if(attrNode2)
 								{
-									buf4 = XMLString::transcode(attrNode2->getNodeValue());
+									buf4 = xercesc::XMLString::transcode(attrNode2->getNodeValue());
 									mappingMode = std::string(buf4);
-									XMLString::release(&buf4);
+									xercesc::XMLString::release(&buf4);
 								}
 
 								il = NULL ;
@@ -210,53 +212,53 @@ InputLanguageHandler::load_language_map(const std::string & filePath, bool exter
 								tmp1 = childNode->getFirstChild();
 								while(tmp1 && il)
 								{
-									if(tmp1->getNodeType() == DOMNode::ELEMENT_NODE)
+									if(tmp1->getNodeType() == xercesc::DOMNode::ELEMENT_NODE)
 									{
-										buf4 = XMLString::transcode(tmp1->getNodeName());
+										buf4 = xercesc::XMLString::transcode(tmp1->getNodeName());
 										if(!strcasecmp(buf4, XML_KEY_MAP))//<KeyMap>
 										{
 											attrList = tmp1->getAttributes();
 											if(attrList)
 											{
 												//get gdk Key ID attributes
-												ch1 = XMLString::transcode(XML_KEY_VAL);
+												ch1 = xercesc::XMLString::transcode(XML_KEY_VAL);
 												attrNode2 = attrList->getNamedItem(ch1);
-												XMLString::release(&ch1);
+												xercesc::XMLString::release(&ch1);
 
-												ch1 = XMLString::transcode(XML_KEY_HARDWARE);
+												ch1 = xercesc::XMLString::transcode(XML_KEY_HARDWARE);
 												attrNode3 = attrList->getNamedItem(ch1);
-												XMLString::release(&ch1);
+												xercesc::XMLString::release(&ch1);
 
 												if(attrNode2 && attrNode3)
 												{
-													buf5 = XMLString::transcode(attrNode2->getNodeValue());
+													buf5 = xercesc::XMLString::transcode(attrNode2->getNodeValue());
 													gdkKeyVal = (unsigned int)strtoul(buf5, &stopPtr, 0);
-													XMLString::release(&buf5);
+													xercesc::XMLString::release(&buf5);
 
-													buf5 = XMLString::transcode(attrNode3->getNodeValue());
+													buf5 = xercesc::XMLString::transcode(attrNode3->getNodeValue());
 													hardware_code = (unsigned int)strtoul(buf5, &stopPtr2, 0);
-													XMLString::release(&buf5);
+													xercesc::XMLString::release(&buf5);
 													if(!strcmp(stopPtr, "") && !strcmp(stopPtr2, ""))//succeed in conversion
 													{
 														//get unicode value
-														ch1 = XMLString::transcode(XML_UNICODE_VALUE);
+														ch1 = xercesc::XMLString::transcode(XML_UNICODE_VALUE);
 														attrNode4 = attrList->getNamedItem(ch1);
-														XMLString::release(&ch1);
+														xercesc::XMLString::release(&ch1);
 														//get unicode replace
-														ch1 = XMLString::transcode(XML_UNICODE_REPLACE);
+														ch1 = xercesc::XMLString::transcode(XML_UNICODE_REPLACE);
 														attrNode5 = attrList->getNamedItem(ch1);
-														XMLString::release(&ch1);
+														xercesc::XMLString::release(&ch1);
 														//get modifier
-														ch1 = XMLString::transcode(XML_MODIFIER);
+														ch1 = xercesc::XMLString::transcode(XML_MODIFIER);
 														attrNode6 = attrList->getNamedItem(ch1);
-														XMLString::release(&ch1);
+														xercesc::XMLString::release(&ch1);
 
 														if(attrNode4)
 														{
 															Glib::ustring replace = "" ;
 															if (attrNode5)
 															{
-																buf5 = XMLString::transcode(attrNode5->getNodeValue());
+																buf5 = xercesc::XMLString::transcode(attrNode5->getNodeValue());
 																vector<string> sub;
 																vector<string>::iterator it;
 																StringOps(buf5).split(sub, ", ");
@@ -269,19 +271,19 @@ InputLanguageHandler::load_language_map(const std::string & filePath, bool exter
 																		break;
 																	}
 																}
-																XMLString::release(&buf5);
+																xercesc::XMLString::release(&buf5);
 															}
 
 															std::string modifier = "" ;
 															if (attrNode6)
 															{
-																buf6 = XMLString::transcode(attrNode6->getNodeValue());
+																buf6 = xercesc::XMLString::transcode(attrNode6->getNodeValue());
 																Glib::ustring str = Glib::ustring(buf6);
 																modifier = str ;
-																XMLString::release(&buf6);
+																xercesc::XMLString::release(&buf6);
 															}
 
-															buf5 = XMLString::transcode(attrNode4->getNodeValue());
+															buf5 = xercesc::XMLString::transcode(attrNode4->getNodeValue());
 															keyVal = (unsigned int)strtoul(buf5, &stopPtr3, 0);
 															if ( replace == "" ) replace = Glib::ustring(1, keyVal);
 
@@ -290,7 +292,7 @@ InputLanguageHandler::load_language_map(const std::string & filePath, bool exter
 																il->addKeyMap(gdkKeyVal, hardware_code, keyVal, replace, modifier);
 																il->postLoadingKeyMap(tmp1, keyVal);
 															}
-															XMLString::release(&buf5);
+															xercesc::XMLString::release(&buf5);
 														}
 													}
 													else MSGOUT << " syntax error in map for  keyval= " << attrNode2 << endl;
@@ -305,21 +307,21 @@ InputLanguageHandler::load_language_map(const std::string & filePath, bool exter
 											if(attrList)
 											{
 												//start attribute
-												ch1 = XMLString::transcode(XML_START);
+												ch1 = xercesc::XMLString::transcode(XML_START);
 												attrNode2 = attrList->getNamedItem(ch1);
-												XMLString::release(&ch1);
-												buf5 = XMLString::transcode(attrNode2->getNodeValue());
+												xercesc::XMLString::release(&ch1);
+												buf5 = xercesc::XMLString::transcode(attrNode2->getNodeValue());
 												keyVal = (unsigned int)strtoul(buf5, &stopPtr, 0);
-												XMLString::release(&buf5);
+												xercesc::XMLString::release(&buf5);
 												if(!strcmp(stopPtr, ""))
 													start = keyVal;
 
-												ch1 = XMLString::transcode(XML_END);
+												ch1 = xercesc::XMLString::transcode(XML_END);
 												attrNode2 = attrList->getNamedItem(ch1);
-												XMLString::release(&ch1);
-												buf5 = XMLString::transcode(attrNode2->getNodeValue());
+												xercesc::XMLString::release(&ch1);
+												buf5 = xercesc::XMLString::transcode(attrNode2->getNodeValue());
 												keyVal = (unsigned int)strtoul(buf5, &stopPtr, 0);
-												XMLString::release(&buf5);
+												xercesc::XMLString::release(&buf5);
 												if(!strcmp(stopPtr, ""))
 													end = keyVal;
 											}
@@ -327,7 +329,7 @@ InputLanguageHandler::load_language_map(const std::string & filePath, bool exter
 												il->addGunicharRange(new GunicharRange(start, end));
 										}
 
-										XMLString::release(&buf4);
+										xercesc::XMLString::release(&buf4);
 									}
 
 									tmp1 = tmp1->getNextSibling();
@@ -336,16 +338,16 @@ InputLanguageHandler::load_language_map(const std::string & filePath, bool exter
 								//add input language to map
 								if (il)
 									m_ilMap[shortcut] = il;
-								XMLString::release(&buf3);
+								xercesc::XMLString::release(&buf3);
 							}
 						}
 					}
-					XMLString::release(&buf2);
+					xercesc::XMLString::release(&buf2);
 				}
 	    		childNode = childNode->getNextSibling();
 	    	}
     	}
-    	XMLString::release(&buf1);
+    	xercesc::XMLString::release(&buf1);
 
     	//> ADD INPUT THAT DOESN'T MODIFY MAPPING
     	// (USING X or EXTERNAL IME)
@@ -355,20 +357,20 @@ InputLanguageHandler::load_language_map(const std::string & filePath, bool exter
     	if (externalIME)
     		m_ilMap[IME_LANGUAGE] = createInputLanguage(IME_LANGUAGE, IME_LANGUAGE, "", true, IME_LANGUAGE, "", true, true, modifyMap) ;
     }
-    catch (const XMLException& toCatch)
+    catch (const xercesc::XMLException& toCatch)
     {
-        char* message = XMLString::transcode(toCatch.getMessage());
+        char* message = xercesc::XMLString::transcode(toCatch.getMessage());
         Log::err() << "Exception message is: \n"
              << message << "\n";
-        XMLString::release(&message);
+        xercesc::XMLString::release(&message);
         return false;
     }
-	catch (const DOMException& toCatch)
+	catch (const xercesc::DOMException& toCatch)
 	{
-		char* message = XMLString::transcode(toCatch.msg);
+		char* message = xercesc::XMLString::transcode(toCatch.msg);
 	    Log::err() << "Exception message is: \n"
 	         << message << "\n";
-	    XMLString::release(&message);
+	    xercesc::XMLString::release(&message);
 	    return false;
 	}
 	catch (...)

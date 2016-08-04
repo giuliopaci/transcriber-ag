@@ -7,7 +7,7 @@
 # --- Includes ---
 include_directories(
 	${SRC}
-	${AGLIB}/src/ag
+	${AGLIB_INCLUDE_DIRS}
 	${GLIBMM_INCLUDE_DIRS}
 )
 
@@ -15,7 +15,7 @@ include_directories(
 # --- Links ---
 link_directories(
 	${GLIBMM_LIBRARY_DIRS}
-	${AGLIB_BUILD}/src/ag
+	${AGLIB_LIBRARY_DIRS}
 )
 
 
@@ -51,16 +51,16 @@ add_library(
 
 
 # --- Link ---
-if (WIN32)
+if (WIN32 AND NOT MINGW)
 	SET(WIN32_LINKS	dl)
-endif (WIN32)
+endif (WIN32 AND NOT MINGW)
 
 target_link_libraries(
 	TransAG
 
-	${GLIBMM_LIBRARIES}
 	TAG
 	Common
+	${GLIBMM_LIBRARIES}
 	xerces-c
 	ag
 

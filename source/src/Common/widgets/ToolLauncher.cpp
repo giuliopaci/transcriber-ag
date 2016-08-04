@@ -490,7 +490,7 @@ void ToolLauncher_XMLHandler::endElement (const XMLCh * const uri,
 	}
 }
 
-void ToolLauncher_XMLHandler::characters (const XMLCh * const chars, const unsigned int length)
+void ToolLauncher_XMLHandler::characters (const XMLCh * const chars, const XMLSize_t length)
 {
 	if (length != 0 && in_object )
 	  	current_object += getString(chars);

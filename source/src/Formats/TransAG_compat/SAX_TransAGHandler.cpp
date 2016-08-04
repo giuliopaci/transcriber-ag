@@ -326,7 +326,7 @@ void SAX_TransAGHandler::FeatureEnd(const XMLCh* const name)
 }
 
 void SAX_TransAGHandler::characters
-(const XMLCh* const chars, const unsigned int length)
+(const XMLCh* const chars, const XMLSize_t length)
 {
   string s;
   set_string(s, chars);
@@ -356,7 +356,7 @@ void SAX_TransAGHandler::fatalError(const SAXParseException& e)
 }
 
 void SAX_TransAGHandler::writeChars(const XMLByte* const toWrite,
-                                 const unsigned int count,
+                                 const XMLSize_t count,
                                  XMLFormatter* const formatter)
 {
   targetString->assign((char*) toWrite, count);

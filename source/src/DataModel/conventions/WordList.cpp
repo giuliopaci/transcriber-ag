@@ -116,7 +116,7 @@ WordList_XMLHandler::endElement (const XMLCh * const uri,
 }
 
 void
-WordList_XMLHandler::characters (const XMLCh * const chars, const unsigned int length)
+WordList_XMLHandler::characters (const XMLCh * const chars, const XMLSize_t length)
 {
   if (length != 0 && m_inword ) {
 		m_curWord += getString(chars);

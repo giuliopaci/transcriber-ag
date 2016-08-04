@@ -1,0 +1,4382 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: https://github.com/eroux/transcriber-ag-debian/"
+"issues/\n"
+"POT-Creation-Date: 2014-08-09 11:56+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/AudioWidget/AudioEqualizerControlWidget.cpp:90
+#: src/AudioWidget/AudioVolumeControlWidget.cpp:62
+msgid "Mute"
+msgstr "Muet"
+
+#: src/AudioWidget/AudioEqualizerControlWidget.cpp:164
+#: src/AudioWidget/AudioEqualizerControlWidget.cpp:178
+msgid "Equalizer"
+msgstr "Egaliseur"
+
+#: src/AudioWidget/AudioEqualizerControlWidget.cpp:307
+msgid "inf."
+msgstr "inf."
+
+#: src/AudioWidget/AudioEqualizerControlWidget.cpp:326
+#: src/AudioWidget/AudioSoundTouchControlWidget.cpp:309
+#: src/AudioWidget/AudioVolumeControlWidget.cpp:307
+msgid "Reset"
+msgstr "RAZ"
+
+#: src/AudioWidget/AudioPitchControlWidget.h:35
+msgid "Pitch"
+msgstr "Pitch"
+
+#: src/AudioWidget/AudioSignalView.cpp:220
+msgid "Define a delay in seconds for stopping playback before looping"
+msgstr "Definir un délai pour stopper la lecture avant de boucler (secondes)"
+
+#: src/AudioWidget/AudioSignalView.cpp:233
+#: src/AudioWidget/SegmentTrackWidget.cpp:115
+msgid "Delay"
+msgstr "Délai"
+
+#: src/AudioWidget/AudioSignalView.cpp:256
+msgid "Loop "
+msgstr "En boucle "
+
+#: src/AudioWidget/AudioSignalView.cpp:257
+msgid "Playback"
+msgstr "Lecture"
+
+#: src/AudioWidget/AudioSignalView.cpp:258
+msgid "Only speech"
+msgstr "Parole uniquement"
+
+#: src/AudioWidget/AudioSignalView.cpp:261
+msgid "Start or stop playing timeline at current cursor position."
+msgstr "Lecture / Pause à la position du curseur"
+
+#: src/AudioWidget/AudioSignalView.cpp:262
+msgid ""
+"Enable or disable looping when reaching the end of the signal or the end of "
+"a selection."
+msgstr "Activer/désactiver la lecture en boucle"
+
+#: src/AudioWidget/AudioSignalView.cpp:263
+msgid "Enable or disable playing only speech segments."
+msgstr "Activer/désactiver la lecture des segments de parole uniquement"
+
+#: src/AudioWidget/AudioSignalView.cpp:289
+#: src/AudioWidget/AudioSignalView.cpp:393
+#: src/Editors/AnnotationEditor/dialogs/SaveAudioDialog.cpp:63
+#: src/GUI/Preferences/ColorsFrame.cpp:212
+msgid "Selection"
+msgstr "Sélection"
+
+#: src/AudioWidget/AudioSignalView.cpp:290
+msgid "Auto play"
+msgstr "Lecture auto"
+
+#: src/AudioWidget/AudioSignalView.cpp:293
+msgid "Enable or disable auto playing when making a selection."
+msgstr ""
+"Active ou désactive le démarrage automatique de la lecture sur sélection "
+"d'une portion de signal"
+
+#: src/AudioWidget/AudioSignalView.cpp:320
+msgid "Expand or collapse playback options."
+msgstr "Afficher / masquer les options de lecture audio"
+
+#: src/AudioWidget/AudioSignalView.cpp:329
+msgid "Adjust tempo factor from 0.25 (4x slower) to 4 (4x faster)"
+msgstr ""
+"Ajuster le facteur de tempo de 0.25 (4x plus lent) à 4 (4x plus rapide)"
+
+#: src/AudioWidget/AudioSignalView.cpp:331
+#: src/AudioWidget/AudioTrackWidget.cpp:76
+#: src/AudioWidget/AudioVZoomControlWidget.cpp:49
+#: src/AudioWidget/AudioVolumeControlWidget.cpp:169
+msgid "CTRL + click for reset"
+msgstr "CTRL + click souris pour RAZ"
+
+#: src/AudioWidget/AudioSignalView.cpp:370
+msgid "Zoom"
+msgstr "Zoom"
+
+#: src/AudioWidget/AudioSignalView.cpp:373
+msgid "Increase waveform display resolution"
+msgstr "Augmenter la résolution du signal"
+
+#: src/AudioWidget/AudioSignalView.cpp:374
+msgid "Decrease waveform display resolution"
+msgstr "Diminuer la résolution du signal"
+
+#: src/AudioWidget/AudioSignalView.cpp:394
+msgid "All"
+msgstr "Tout"
+
+#: src/AudioWidget/AudioSignalView.cpp:480
+msgid "Informations"
+msgstr "Informations"
+
+#: src/AudioWidget/AudioSignalView.cpp:1163
+msgid ""
+"Audio Device (soundcard) is unavailable, probably required by an external "
+"program.\n"
+"Please shutdown this program and restart it.\n"
+"\n"
+msgstr ""
+"Le pérophérique audio est indisponible, sûrement réservé par un programme "
+"externe.\n"
+"Veuillez quitter le programme et le relancer.\n"
+
+#: src/AudioWidget/AudioSignalView.cpp:1166
+msgid "PortAudio Error: "
+msgstr "Erreur de PortAudio : "
+
+#: src/AudioWidget/AudioSignalView.cpp:1610
+#, c-format
+msgid "Cur. [%s]"
+msgstr ""
+
+#: src/AudioWidget/AudioSignalView.cpp:1616
+#, c-format
+msgid "Total : %s"
+msgstr ""
+
+#: src/AudioWidget/AudioSignalView.cpp:1624
+#: src/AudioWidget/AudioSignalView.cpp:1626
+msgid "Sel. [none]"
+msgstr ""
+
+#: src/AudioWidget/AudioSignalView.cpp:1630
+#, c-format
+msgid "Sel. [%s]"
+msgstr ""
+
+#: src/AudioWidget/AudioSignalView.cpp:2039
+msgid "Audio track"
+msgstr "Piste audio"
+
+#: src/AudioWidget/AudioSignalView.cpp:2060
+msgid " track "
+msgstr " piste "
+
+#: src/AudioWidget/AudioSignalView.cpp:2076
+msgid "Time scale"
+msgstr "Echelle temporelle"
+
+#: src/AudioWidget/AudioSignalView.cpp:2618
+#: src/AudioWidget/AudioSignalView.cpp:2636
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: src/AudioWidget/AudioSignalView.cpp:3069
+msgid "Extracting signal..."
+msgstr "Extraction du signal en cours..."
+
+#: src/AudioWidget/AudioSignalView.cpp:3138
+msgid "The signal has been extracted successfully"
+msgstr "Le signal a été extrait avec succès"
+
+#: src/AudioWidget/AudioSignalView.cpp:3144
+msgid "The signal extraction has failed"
+msgstr "L'extraction du signal a échoué"
+
+#: src/AudioWidget/AudioSpeedControlWidget.h:35
+msgid "Speed"
+msgstr "Vitesse"
+
+#: src/AudioWidget/AudioTempoControlWidget.h:33
+msgid "Tempo"
+msgstr "Tempo"
+
+#: src/AudioWidget/AudioTrackWidget.cpp:63
+msgid "Enable / Disable Current Track"
+msgstr "Activer / Désactiver la piste courante"
+
+#: src/AudioWidget/AudioTrackWidget.cpp:74
+msgid ""
+"Adjust pitch factor from 0.4 (2.5x lower) to 2.5 (2.5x upper). This modifies "
+"pitch without altering playback speed."
+msgstr "Ajustement du facteur de pitch"
+
+#: src/AudioWidget/AudioTrackWidget.cpp:89
+msgid "Reset pitch factor to 1, normal pitch."
+msgstr "Reset du facteur de pitch"
+
+#: src/AudioWidget/AudioTrackWidget.cpp:111
+msgid ""
+"Define the offset (in seconds) to apply to this audio track and all its "
+"linked segments. Setting a positive offset makes start the signal later, a "
+"negative makes start the signal sooner, 0 cancels the offset."
+msgstr "Définition d'un décalage de lecture"
+
+#: src/AudioWidget/AudioTrackWidget.cpp:120
+msgid "Apply the offset."
+msgstr "Appliquer le décalage"
+
+#: src/AudioWidget/AudioTrackWidget.cpp:173
+msgid ""
+"Expand or collapse the pitch and the offset frame. Only volume frame is "
+"always showed."
+msgstr ""
+"Afficher/masquer le panneau de de définition du pitch et du décalage de "
+"lecture."
+
+#: src/AudioWidget/AudioVZoomControlWidget.cpp:33
+#: src/AudioWidget/AudioVZoomControlWidget.cpp:68
+msgid "VZoom"
+msgstr "VZoom"
+
+#: src/AudioWidget/AudioVZoomControlWidget.cpp:47
+msgid "Adjust vertical zoom factor"
+msgstr "Ajuster le facteur de zoom vertical"
+
+#: src/AudioWidget/AudioVolumeControlWidget.cpp:142
+#: src/AudioWidget/AudioVolumeControlWidget.cpp:144
+msgid "Volume"
+msgstr "Volume"
+
+#: src/AudioWidget/AudioVolumeControlWidget.cpp:167
+msgid "Adjust volume factor from -14dB to +14dB"
+msgstr "Ajuster l'atténuation du volume de -14db à +14db"
+
+#: src/AudioWidget/AudioVolumeControlWidget.cpp:311
+msgid "Reset volume factor to 1, normal volume."
+msgstr "Remettre le volume au niveau normal"
+
+#: src/AudioWidget/MarkTrackWidget.cpp:41
+msgid "Allow repositionning cursor at the previous mark."
+msgstr "Aller à la marque précédente"
+
+#: src/AudioWidget/MarkTrackWidget.cpp:51
+msgid "Allow repositionning cursor at the next mark."
+msgstr "Aller à la marque suivante"
+
+#: src/AudioWidget/SegmentTooltip.cpp:44
+msgid "(no text)"
+msgstr "(pas de texte)"
+
+#: src/AudioWidget/SegmentTrackWidget.cpp:64
+#: src/AudioWidget/SegmentTrackWidget.cpp:84
+msgid " boundary."
+msgstr " frontière."
+
+#: src/AudioWidget/SegmentTrackWidget.cpp:64
+msgid "Allow repositioning cursor at the previous "
+msgstr "Repositionner le curseur au précédent "
+
+#: src/AudioWidget/SegmentTrackWidget.cpp:84
+msgid "Allow repositioning cursor at the next "
+msgstr "Repositionner le curseur au suivant "
+
+#: src/AudioWidget/SegmentTrackWidget.cpp:125
+msgid ""
+"Define a delay (in seconds) when reaching a segment end, before resuming "
+"playback."
+msgstr "Délai avant de reprendre la lecture (secondes)"
+
+#: src/AudioWidget/SegmentTrackWidget.cpp:134
+msgid "Stop"
+msgstr "Stop"
+
+#: src/AudioWidget/SegmentTrackWidget.cpp:137
+msgid "Stop playback when reaching a segment end."
+msgstr "Arrêt de l'écoute en fin de segment"
+
+#: src/AudioWidget/SegmentTrackWidget.cpp:165
+msgid "Expand or collapse the \"on segment end\" frame."
+msgstr "Ouvrir/refermer la fenêtre de paramétrage d'écoute"
+
+#: src/Common/Dialogs.cpp:36
+msgid "Confirmation"
+msgstr "Confirmation"
+
+#: src/Common/Dialogs.cpp:119
+msgid "Details"
+msgstr ""
+
+#: src/Common/Explorer_filter.cpp:102
+msgid "Directory"
+msgstr "Répertoire"
+
+#: src/Common/Explorer_filter.cpp:103
+msgid "unknown"
+msgstr "inconnu"
+
+#: src/Common/Explorer_filter.cpp:104 src/Common/Explorer_filter.h:22
+msgid "All files"
+msgstr "Tous les fichiers"
+
+#: src/Common/Explorer_filter.cpp:107
+msgid "WAVE Audio file"
+msgstr "Fichier audio WAVE"
+
+#: src/Common/Explorer_filter.cpp:108
+msgid "MP3 Audio file"
+msgstr "Fichier audio MP3"
+
+#: src/Common/Explorer_filter.cpp:109
+msgid "AU Audio file"
+msgstr "Fichier audio AU"
+
+#: src/Common/Explorer_filter.cpp:110 src/Common/Explorer_filter.cpp:111
+msgid "AIFF Audio file"
+msgstr "Fichier audio AIFF"
+
+#: src/Common/Explorer_filter.cpp:112
+msgid "SPHERE Audio file"
+msgstr "Fichier audio SPHERE"
+
+#: src/Common/Explorer_filter.cpp:115
+msgid "JPG Image file"
+msgstr "Image JPG"
+
+#: src/Common/Explorer_filter.cpp:116
+msgid "JPEG Image file"
+msgstr "Image JPEG"
+
+#: src/Common/Explorer_filter.cpp:117
+msgid "GIF Image file"
+msgstr "Image GIF"
+
+#: src/Common/Explorer_filter.cpp:118
+msgid "PNG Image file"
+msgstr "Image PNG"
+
+#: src/Common/Explorer_filter.cpp:119
+msgid "BMP Image file"
+msgstr "Image BMP"
+
+#: src/Common/Explorer_filter.cpp:122
+msgid "MPEG Video file"
+msgstr "Fichier audio MPEG"
+
+#: src/Common/Explorer_filter.cpp:123
+msgid "MPG Video file"
+msgstr "Fichier audio MPG"
+
+#: src/Common/Explorer_filter.cpp:124
+msgid "AVI Video file"
+msgstr "Fichier audio AVI"
+
+#: src/Common/Explorer_filter.cpp:127
+msgid "INFO file"
+msgstr "Fichier INFO"
+
+#: src/Common/Explorer_filter.cpp:128
+msgid "BACKUP file"
+msgstr "Fichier BACKUP"
+
+#: src/Common/Explorer_filter.cpp:130
+msgid "PDF document"
+msgstr "Document PDF"
+
+#: src/Common/Explorer_filter.cpp:131
+msgid "WORD document"
+msgstr "Document WORD"
+
+#: src/Common/Explorer_filter.cpp:132
+msgid "EXCEL document"
+msgstr "Document EXCEL"
+
+#: src/Common/Explorer_filter.cpp:133
+msgid "POWERPOINT presentation"
+msgstr "Présentation POWERPOINT"
+
+#: src/Common/Explorer_filter.cpp:134
+msgid "SHELL script"
+msgstr "Script Shell"
+
+#: src/Common/Explorer_filter.cpp:136
+msgid "TEXT file"
+msgstr "Fichier Texte"
+
+#: src/Common/Explorer_filter.cpp:137
+msgid "Archive"
+msgstr "Archive"
+
+#: src/Common/Explorer_filter.cpp:138
+msgid "WINRAR archive"
+msgstr "Archive WINRAR"
+
+#: src/Common/Explorer_filter.cpp:139
+msgid "WINZIP archive"
+msgstr "Archive WINZIP"
+
+#: src/Common/Explorer_filter.cpp:140
+msgid "RPM Package"
+msgstr "Paquet RPM"
+
+#: src/Common/Explorer_filter.cpp:141
+msgid "Compressed archive"
+msgstr "Archive Compressée"
+
+#: src/Common/Explorer_filter.cpp:142
+msgid "Static library"
+msgstr "Librairie statique"
+
+#: src/Common/Explorer_filter.cpp:144
+msgid "C/C++ object file"
+msgstr "Fichier objet C/C++"
+
+#: src/Common/Explorer_filter.cpp:145 src/Common/Explorer_filter.cpp:146
+msgid "C++ source file"
+msgstr "Fichier source C++"
+
+#: src/Common/Explorer_filter.cpp:147
+msgid "C source file"
+msgstr "Fichier source C"
+
+#: src/Common/Explorer_filter.cpp:148
+msgid "C/C++ header file"
+msgstr "Fichier d'entête C/C++"
+
+#: src/Common/Explorer_filter.cpp:149
+msgid "Java source file"
+msgstr "Fichier source Java"
+
+#: src/Common/Explorer_filter.cpp:150
+msgid "Java class file"
+msgstr "Fichier classe Java"
+
+#: src/Common/Explorer_filter.cpp:151
+msgid "PHP file"
+msgstr "Fichier source PHP"
+
+#: src/Common/Explorer_filter.h:19
+msgid "Audio / Annotation files"
+msgstr "Audio / Fichiers d'annotation"
+
+#: src/Common/Explorer_filter.h:20
+msgid "TranscriberAG Files"
+msgstr "Fichier TranscriberAG"
+
+#: src/Common/Explorer_filter.h:21 src/GUI/GuiWidget.cpp:1842
+msgid "Audio files"
+msgstr "Fichiers audio"
+
+#: src/Common/Explorer_filter.h:23 src/GUI/GuiWidget.cpp:1845
+msgid "Video files"
+msgstr "Fichiers vidéo"
+
+#: src/Common/Explorer_utils.cpp:174
+msgid "bytes"
+msgstr "octets"
+
+#: src/Common/Explorer_utils.cpp:180
+msgid "Kb"
+msgstr "Ko"
+
+#: src/Common/Explorer_utils.cpp:186
+msgid "Mb"
+msgstr "Mo"
+
+#: src/Common/Formats.cpp:102
+msgid "TAG Annotation file"
+msgstr "Fichier d'annotation TAG"
+
+#: src/Common/InputLanguageHandler.h:22
+msgid "Default"
+msgstr "Défaut"
+
+#: src/Common/util/StringOps.cpp:164 src/Tools/txt2tag.cpp:92
+msgid "Invalid time format : should be hh:mm:ss.ddd or ss.ddd"
+msgstr "Format de temps non-valide: devrait être hh:mm:ss ou ss.ddd"
+
+#: src/Common/widgets/GtUtil.cpp:96
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:277
+#: src/GUI/Common/Explorer_popup.h:28 src/GUI/Tree/TreeManager.cpp:381
+msgid "Copy"
+msgstr "Copier"
+
+#: src/Common/widgets/GtUtil.cpp:97
+msgid "TO: "
+msgstr "VERS: "
+
+#: src/Common/widgets/GtUtil.cpp:106
+msgid "Copy failed for file"
+msgstr "La copie a échoué pour le fichier"
+
+#: src/Common/widgets/GtUtil.cpp:108 src/GUI/Tree/Explorer_tree.cpp:168
+#: src/GUI/Tree/Explorer_tree.cpp:239 src/GUI/Tree/TreeManager.cpp:295
+#: src/GUI/Tree/TreeManager.cpp:399
+msgid "Permissions problem on file, target directory or source directory"
+msgstr "Problème de permissions sur le fichier cible"
+
+#: src/Common/widgets/GtUtil.cpp:110 src/GUI/Tree/Explorer_tree.cpp:242
+#: src/GUI/Tree/TreeManager.cpp:402
+msgid "Can't find the source file or source directory"
+msgstr "Fichier ou répertoire source non trouvé"
+
+#: src/Common/widgets/GtUtil.cpp:112 src/GUI/Tree/TreeManager.cpp:404
+msgid "Can't find destination directory"
+msgstr "Répertoire cible non trouvé"
+
+#: src/Common/widgets/GtUtil.cpp:114 src/GUI/Tree/TreeManager.cpp:406
+msgid "Copying file problem"
+msgstr "Erreur de copie de fichier"
+
+#: src/Common/widgets/GtUtil.cpp:121 src/GUI/Tree/TreeManager.cpp:393
+msgid "Copied"
+msgstr "Copié"
+
+#: src/Common/widgets/ProgressionWatcher.h:68
+#: src/GUI/Common/ProgressionWatcher.h:68
+msgid "Processing..."
+msgstr "En cours..."
+
+#: src/Common/widgets/ToolLauncher.cpp:120
+msgid "Command"
+msgstr "Commande"
+
+#: src/Common/widgets/ToolLauncher.cpp:127
+msgid "Standard output"
+msgstr "Sortie standard"
+
+#: src/Common/widgets/ToolLauncher.cpp:131
+msgid "Error output"
+msgstr "Sortie erreur"
+
+#: src/Common/widgets/ToolLauncher.cpp:141
+msgid "EXTERNAL TOOLS"
+msgstr "OUTILS EXTERNES"
+
+#: src/Common/widgets/ToolLauncher.cpp:150
+msgid "Inactive"
+msgstr "Inactif"
+
+#: src/Common/widgets/ToolLauncher.cpp:172
+msgid "Terminated with errors"
+msgstr "Terminé avec erreur"
+
+#: src/Common/widgets/ToolLauncher.cpp:177
+msgid "Successfully terminated"
+msgstr "Terminé avec succès"
+
+#: src/Common/widgets/ToolLauncher.cpp:194
+msgid "Active"
+msgstr "Actif"
+
+#: src/Common/widgets/ToolLauncher.cpp:199
+msgid "... Processing ..."
+msgstr "... En cours ..."
+
+#: src/DataModel/DataModel.cpp:1084 src/DataModel/DataModel.cpp:1270
+#: src/DataModel/DataModel.cpp:3895 src/DataModel/DataModel.cpp:3920
+#, c-format
+msgid "segment size must be > %f secs"
+msgstr "la taille du segment doit être > %f secs"
+
+#: src/DataModel/DataModel.cpp:1140 src/DataModel/DataModel.cpp:1293
+msgid "signal offset doesn't match current insertion position"
+msgstr ""
+"L'offset signal n'est pas cohérent avec la position du curseur dans le texte"
+
+#: src/DataModel/DataModel.cpp:1157
+msgid "No signal offset defined for segment"
+msgstr "Pas d'offset signal défini pour le segment"
+
+#: src/DataModel/DataModel.cpp:1203
+#, c-format
+msgid "A %s is already set at current %s"
+msgstr "Un %s existe déjà au %s courant"
+
+#: src/DataModel/DataModel.cpp:1210
+#, c-format
+msgid "Do you want to overlap a %s ?"
+msgstr "Voulez-vous superposer un %s ?"
+
+#: src/DataModel/DataModel.cpp:1237
+#, c-format
+msgid "Can't add  %s-type segment within overlapped branch"
+msgstr "Impossible d'ajouter un segment de type %s dans une branche superposée"
+
+#: src/DataModel/DataModel.cpp:1330
+#, c-format
+msgid "background size must be > %f secs"
+msgstr "le bruit de fond doit être > %f secondes"
+
+#: src/DataModel/DataModel.cpp:1363
+msgid "would overlap existing background"
+msgstr "Risque d'entrelacement du bruit de fond existant"
+
+#: src/DataModel/DataModel.cpp:1371
+msgid "Problem while inserting background: aborted"
+msgstr "Problème dans l'insertion du bruit de fond : interruption de l'action"
+
+#: src/DataModel/DataModel.cpp:2508
+msgid "Invalid annotation:"
+msgstr "Annotation invalide:"
+
+#: src/DataModel/DataModel.cpp:2697
+msgid "Can't delete main branch of overlapping segments !"
+msgstr ""
+"Impossible de supprimer le premier segment d'un tour de parole superposée"
+
+#: src/DataModel/DataModel.cpp:2707
+msgid "Can't delete first segment of a multi-segmented overlapping branch"
+msgstr ""
+"Suppression du premier segment d'une branche segmentée de parole superposée "
+"impossible"
+
+#: src/DataModel/DataModel.cpp:2742
+msgid "No segment with same end node found !"
+msgstr "Aucun segment ayant le même noeud terminal trouvé"
+
+#: src/DataModel/DataModel.cpp:3296
+#, c-format
+msgid "can't delete first %s"
+msgstr "ne peut pas supprimer le premier %s"
+
+#: src/DataModel/DataModel.cpp:3494 src/DataModel/DataModel.cpp:3546
+msgid "Same qualifier already exists for current segment"
+msgstr "Le qualifieur existe déjà pour le segment courant"
+
+#: src/DataModel/DataModel.cpp:3816
+msgid "You can't change the start time"
+msgstr "Impossible de modifier le temps de début"
+
+#: src/DataModel/DataModel.cpp:3821
+msgid "You can't change the end time"
+msgstr "Impossible de modifier le temps de fin"
+
+#: src/DataModel/DataModel.cpp:3893 src/DataModel/DataModel.cpp:3918
+msgid "Can't set segment end beyond previous/next segment"
+msgstr "Impossible de placer le segment sur le segment précédent/suivant"
+
+#: src/DataModel/DataModel_CPHelper.cpp:73
+msgid "Incompatible graphs : no"
+msgstr "Graphes incompatibles: pas de type"
+
+#: src/DataModel/DataModel_CPHelper.cpp:73
+msgid "type annotation found in inserted graph."
+msgstr "trouvé dans le graphe à insérer."
+
+#: src/DataModel/DataModel_CPHelper.cpp:84
+msgid "Segment size must be >"
+msgstr "La taille du segment doit être supérieure à"
+
+#: src/DataModel/DataModel_CPHelper.cpp:84
+msgid "secondes"
+msgstr "secondes"
+
+#: src/DataModel/DataModel_CPHelper.cpp:131
+msgid "Inserted graph offsets go beyond current segment start offset"
+msgstr "Le TimeCode d'insertion est supérieur au début du segment suivant"
+
+#: src/DataModel/DataModel_CPHelper.cpp:147
+msgid "Inserted graph offsets go after current segment end offset"
+msgstr "Le TimeCode inséré dépasse le TimeCode courant"
+
+#: src/DataModel/DataModel_CPHelper.cpp:163
+msgid "Can't insert segment after segment start"
+msgstr "Impossible d'insérer un segment au-delà du début suivant"
+
+#: src/DataModel/DataModel_CPHelper.cpp:183
+msgid ""
+"Insertion of signal-anchored elements in overlapping segment not supported"
+msgstr ""
+"L'insertion d'éléments ancrés temporellement dans un segment superposé n'est "
+"pas autorisée"
+
+#: src/DataModel/DataModel_IO.cpp:175 src/DataModel/DataModel_IO.cpp:202
+msgid "Error loading file"
+msgstr "Erreur de chargement du fichier"
+
+#: src/DataModel/DataModel_IO.cpp:512
+msgid "Error while saving file..."
+msgstr "Erreur lors de la sauvegarde du fichier..."
+
+#: src/DataModel/DataModel_IO.cpp:520
+msgid "No write access on "
+msgstr "Pas de droit d'écriture sur "
+
+#: src/DataModel/DataModel_IO.cpp:567
+msgid "Error saving file"
+msgstr "Erreur lors de la sauvegarde du fichier"
+
+#: src/DataModel/DataModel_IO.cpp:712
+msgid "File open failed"
+msgstr "L'ouverture de fichier a échoué"
+
+#: src/DataModel/conventions/Topics.h:19
+msgid "not in database"
+msgstr "inconnu dans la liste de thèmes"
+
+#: src/DataModel/speakers/Speaker.cpp:139
+msgid "male"
+msgstr "homme"
+
+#: src/DataModel/speakers/Speaker.cpp:140
+msgid "female"
+msgstr "femme"
+
+#: src/DataModel/speakers/Speaker.cpp:182
+msgid "local"
+msgstr "local"
+
+#: src/DataModel/speakers/Speaker.cpp:183
+msgid "global"
+msgstr "global"
+
+#: src/DataModel/speakers/Speaker.h:250 src/Formats/HTML/HTMLWriter.cpp:98
+#: src/Formats/STM/STMWriter.cpp:53 src/Formats/TXT/TXTWriter.cpp:50
+msgid "(No speaker)"
+msgstr "(Pas de locuteur)"
+
+#: src/DataModel/speakers/SpeakerDictionary.cpp:32
+#, c-format
+msgid "speaker#%d"
+msgstr ""
+
+#: src/DataModel/speakers/SpeakerDictionary.cpp:33
+#, c-format
+msgid "spk%d"
+msgstr ""
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:204
+msgid "Save file"
+msgstr "Enregistrer le fichier"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:211
+msgid "Save file as"
+msgstr "Enregistrer le fichier sous"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:218
+msgid "Close file"
+msgstr "Fermer le fichier"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:225
+msgid "Refresh file"
+msgstr "Rafraîchir"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:228
+msgid "_Export file"
+msgstr "_Exporter le fichier"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:231
+msgid "Export file"
+msgstr "Exporter le fichier"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:234
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:235
+msgid "Revert to saved file"
+msgstr "Restaurer la dernière sauvegarde du fichier"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:238
+msgid "Revert from file"
+msgstr "Restaurer la dernière sauvegarde du fichier"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:242
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:243
+msgid "Revert to autosaved file"
+msgstr "Restaurer la dernière sauvegarde automatique du fichier"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:247
+msgid "Revert from autosave"
+msgstr "Restaurer la dernière sauvegarde automatique du fichier"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:275
+msgid "Insert new section at current time"
+msgstr "Insérer une nouvelle selection à l'instant courant"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:275
+msgid "New se_ction"
+msgstr "Nouvelle se_ction"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:281
+msgid "Insert new turn at current time"
+msgstr "Insérer un nouveau tour au temps courant"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:281
+msgid "New _turn"
+msgstr "Nouveau _tour"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:287
+msgid "Insert new segment at current time"
+msgstr "Insérer un nouveau segment à la position actuelle du curseur"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:287
+msgid "New _segment"
+msgstr "Nouveau _segment"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:293
+msgid "Add a _time stamp"
+msgstr "Poser une marque temporelle"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:293
+msgid "Insert new time anchor"
+msgstr "Insérer une marque temporelle"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:299
+msgid "New _event"
+msgstr "Nouvel événement"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:300
+msgid "Insert new event at current cursor position"
+msgstr "Insèrer un nouvel événement à la position du curseur"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:306
+msgid "New named en_tity"
+msgstr "Nouvelle en_tité nommée"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:307
+msgid "Insert new named entity at current cursor position"
+msgstr "Insérer une nouvelle entitée nommée"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:313
+msgid "Insert new background segment at current time"
+msgstr "Insérer un nouvel arrière-plan à la position actuelle du curseur"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:313
+msgid "New b_ackground segment"
+msgstr "Nouveau _bruit de fond"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:318
+msgid "Edit background properties"
+msgstr "Editer les propriétés du bruit de fond"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:318
+msgid "Edit background segment"
+msgstr "Editer le bruit de fond"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:323
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:324
+msgid "Delete background segment"
+msgstr "Supprimer le bruit de fond"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:331
+msgid "Edit / Read only mode"
+msgstr "Ecriture / Lecture seule"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:337
+msgid "Show / Hide tags"
+msgstr "Afficher / Cacher les balises"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:337
+msgid "Show / _Hide tags"
+msgstr "Afficher / _Cacher les balises"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:341
+msgid "Enable / Disable hi_ghlight"
+msgstr "Activer / _Désactiver la surbrillance"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:342
+msgid "Enable / Disable highlight"
+msgstr "Activer / Désactiver la surbrillance"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:348
+msgid "Enable / Disable _dual display"
+msgstr "Activer / Désactiver la _vue séparée"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:349
+msgid "Enable / Disable dual display"
+msgstr "Activer / Désactiver la vue séparée"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:842
+msgid "Loading file..."
+msgstr "Chargement du fichier..."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:880
+msgid "Checking file name..."
+msgstr "Vérification du nom du fichier..."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:893
+msgid "Checking autosave..."
+msgstr "Vérification de l'autosave..."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:908
+msgid "Loading model..."
+msgstr "Chargement du model..."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:926
+msgid "Checking conventions..."
+msgstr "Vérification des conventions..."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:972
+msgid "Loading existing transcription..."
+msgstr "Chargement de la transcription existante..."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:979
+msgid "No signal file for "
+msgstr "Pas de signal pour "
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:1043
+msgid "Initializing signal view..."
+msgstr "Initialisation de la vue du signal..."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:1058
+msgid "Setting new transcription sheet..."
+msgstr "Préparation de la nouvelle transcription"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:1068
+msgid "Initializing editor interface..."
+msgstr "Initialisation de l'editeur..."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:1352
+msgid "Select signal file"
+msgstr "Selectionner le fichier audio"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:1353
+msgid " for "
+msgstr " pour "
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:1412
+msgid "Select video file for "
+msgstr "Sé"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:1530
+msgid ""
+"Number of media channels is greater than the one required by file, please "
+"choose manually"
+msgstr ""
+"Le nombre de pistes du média est supérieur à celui requis par le fichier "
+"d'annotation. Veuillez sélectionner le fichier audio correspondant au "
+"fichier d'annotation."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:1561
+msgid "Unknown file format"
+msgstr "Format de fichier inconnu"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:1602
+msgid "Error while loading file"
+msgstr "Erreur pendant le chargement du fichier"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:1605
+msgid "This format can't be imported"
+msgstr "Ce format ne peut être importé"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:1737
+msgid "Recover from autosaved file?"
+msgstr "Récupérer la sauvegarde automatique du fichier ?"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2015
+msgid "Please wait for the file to be loaded."
+msgstr "Veuillez attendre la fin du chargement SVP."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2020
+msgid "A file is beeing copied, please wait."
+msgstr "Une copie de fichier est en cours, veuillez patienter."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2027
+msgid "The file"
+msgstr "Le fichier"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2029
+msgid "has been modified, save file before closing ?"
+msgstr "a été modifié, enregistrer les modifications avant fermeture ?"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2033
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2386
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2563
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2757
+#: src/GUI/Dialogs/Explorer_dialog.cpp:58
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:1056
+msgid "Confirm"
+msgstr "Confirmer"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2062
+msgid ""
+"You will loose all unsaved modifications.\n"
+"Do you want to reload file ?"
+msgstr ""
+"Vous allez perdre toutes les modifications non sauvegardées, voulez-vous "
+"continuer ?"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2077
+msgid "Can't reload new file !"
+msgstr "Restauration impossible pour un nouveau fichier !"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2094
+msgid "Autosave file not found"
+msgstr "Impossible de trouver le fichier de sauvegarde automatique"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2096
+#: src/GUI/GuiWidget.cpp:420 src/GUI/Speaker/DictionaryManager.cpp:129
+msgid "File not found"
+msgstr "Fichier non trouvé"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2243
+msgid "SGML import can't be saved."
+msgstr "L'import SGML ne peut être sauvé"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2284
+msgid "Delete unused speakers from file dictionary ?"
+msgstr "Suppression des locuteurs non utilisés dans la transcription ?"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2312
+msgid "File will be converted to TransAG format"
+msgstr "Le fichier va être converti au format TransAG"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2370
+msgid ""
+"Destination directory doesn't exist or you don't have permission to modify "
+"it\n"
+" Please choose another directory"
+msgstr ""
+"Le répertoire destination n'existe pas ou n'est pas modifiable\n"
+" Sélectionnez un autre répertoire."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2383
+msgid "An annotation file with same name already exists."
+msgstr "Un fichier d'annotation de même nom existe."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2385
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2562
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2758
+msgid "Overwrite existing file ?"
+msgstr "Écrire par dessus le fichier existant ?"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2400
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2769
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2771
+msgid "Name already in use, please choose another name"
+msgstr "Ce nom est déjà utilisé"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2468
+msgid "An error occurred while saving file."
+msgstr "Une erreur s'est produite pendant la sauvegarde du fichier"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2546
+msgid "Copying media files... PLEASE WAIT..."
+msgstr "Copie des fichiers médias en cours... VEUILLEZ PATIENTER..."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2560
+msgid "A media file with same name already exists."
+msgstr "Un fichier média de même nom existe."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2646
+msgid "Autosaving..."
+msgstr "Sauvegarde automatique..."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2669
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2672
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2680
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2683
+msgid "Autosave failure, can't write on current file's directory"
+msgstr ""
+"Echec de la sauvegarde automatique, impossible d'écrire dans le répertoire "
+"parent"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2733
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2735
+msgid "SGML import cannot be exported."
+msgstr "Les imports SGML ne peuvent être exporté"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2807
+msgid "The file has been successfully exported."
+msgstr "Le fichier a été exporté avec succès"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2809
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2819
+msgid "An error occurred while exporting file."
+msgstr "Une erreur s'est produite durant l'export du fichier"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2939
+msgid "No signal portion selected"
+msgstr "Pas de signal sélectionné"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:2968
+msgid "Active editor doesn't correspond to selected audio signal"
+msgstr "Le fichier courant ne semble pas correspondre à la piste sélectionnée"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:3219
+msgid "The video file could not be opened, aborted."
+msgstr "Impossible de charger le fichier vidéo, annulé."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:3241
+msgid "An error occurred when opening media, closing file..."
+msgstr ""
+"Une erreur s'est produite à l'ouverture du média, fermeture en cours..."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:3339
+msgid "Active track"
+msgstr "Piste courante"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:3346
+msgid "Set track as current track for annotations"
+msgstr "Définir la piste comme piste courante pour l'annotation"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:3358
+msgid "Enable / Disable _text to signal synchronization"
+msgstr "Activer / Désactiver la synchronisation du _texte sur le signal"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:3359
+msgid "Toggle text to signal synchronization option"
+msgstr "Synchroniser le text sur le signal"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:3365
+msgid "Enable / Disable _signal to text synchronization"
+msgstr "Activer / Désactiver la synchronisation du _signal sur le texte"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:3366
+msgid "Toggle signal to text synchronization option"
+msgstr "Synchroniser le signal sur le texte"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:3376
+msgid "Save signa_l selection"
+msgstr "Sauvegarder la sélection du signa_l"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:3377
+msgid "save selected portion signal"
+msgstr "sauvegarder la portion de signal sélectionnée"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:3383
+msgid "Export signal/selection to Audacity"
+msgstr "Ouvrir la portion de signal sélectionnée avec _Audacity"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:3384
+msgid "Export selected portion or file to Audacity"
+msgstr "Ouvrir la portion de signal sélectionnée avec Audacity"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:3389
+msgid "Export signal/selection to Wavesur_fer"
+msgstr "Ouvrir la portion de signal sélectionnée avec _Wavesurfer"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:3390
+msgid "Export selected portion or file to Wavesurfer"
+msgstr "Ouvrir la portion de signal sélectionnée avec Wavesurfer"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:3395
+msgid "Export signal/selection to Praa_t"
+msgstr "Ouvrir la portion de signal sélectionnée avec Praa_t"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:3396
+msgid "Export selected portion or file to Praat"
+msgstr "Ouvrir la portion de signal sélectionnée avec Praat"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:3404
+msgid "Go to signal position"
+msgstr "Aller à la _position du signal"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:3405
+msgid "Go to signal position (in seconds)"
+msgstr "Aller à la "
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:3763
+msgid "Initializing signal tracks..."
+msgstr "Initialisation des pistes du signal..."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:3888
+#: src/VideoComponent/FrameBrowser/FrameBrowser.cpp:37
+msgid "Loading..."
+msgstr "Chargement en cours..."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:3935
+msgid "Initializing signal segments..."
+msgstr "Initialisation des segments du signal..."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:4122
+msgid "Updating signal path..."
+msgstr "Mise à jour du signal"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:4131
+msgid "Creating backup..."
+msgstr "Sauvegarde de restauration en cours..."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:4203
+msgid "Displaying signal segments..."
+msgstr "Affichage des segments du signal..."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:4930
+msgid "Can't save audio selection with multi file audio transcription mode"
+msgstr "Impossible de sauvegarder la sélection dans le mode multi-audios"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:4938
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:4940
+msgid "Can't save audio selection with streaming mode"
+msgstr "Impossible de sauvegarder la sélection dans le mode streaming"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:4974
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:5025
+msgid "An error occurred when saving signal..."
+msgstr "Une erreur s'est produite à la sauvergarde du signal..."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:5054
+msgid "Please install it or check binary path."
+msgstr "Veuillez l'installer ou vérifier le chemin de l'exécutable"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:5054
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:5059
+msgid "Unable to find external : "
+msgstr "Impossible de trouver en externe : "
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:5060
+msgid "Binary path can be changed in the file"
+msgstr "Le chemin de l'exécutable peut être modifié dans le fichier"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:5062
+msgid "in the section External"
+msgstr "dans la section External"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:5098
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:5155
+msgid "Error while launching external tool..."
+msgstr "Erreur lors du lancement de l'outil externe..."
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:5222
+msgid "New annotation file"
+msgstr "Nouveau fichier d'annotation"
+
+#: src/Editors/AnnotationEditor/AnnotationEditor.cpp:5224
+msgid "Select main transcription language"
+msgstr "Sélectionnez la langue principale de transcription"
+
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:273
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:279
+msgid "Special paste"
+msgstr "Collage spécial"
+
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:276
+#: src/GUI/Common/Explorer_popup.h:30
+msgid "Cut"
+msgstr "Couper"
+
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:278
+#: src/GUI/Common/Explorer_popup.h:29
+msgid "Paste"
+msgstr "Coller"
+
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:282
+#: src/Editors/AnnotationEditor/dialogs/QualifierPropertiesDialog.cpp:170
+#: src/Editors/AnnotationEditor/dialogs/SectionPropertiesDialog.cpp:116
+msgid "Input language"
+msgstr "Langue de saisie"
+
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:285
+msgid "Next language"
+msgstr "Langue suivante"
+
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:289
+msgid "Previous language"
+msgstr "Langue précédente"
+
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:1027
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:1029
+msgid "You can't edit several backgrounds at same time"
+msgstr "Impossible d'éditer plusieurs bruits de fond simultanément"
+
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:1033
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:1035
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:1236
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:1238
+msgid "No background for displaying properties"
+msgstr "Aucun bruit de fond trouvé"
+
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:1054
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:1056
+msgid "You can't delete several backgrounds at same time"
+msgstr "Impossible de supprimer plusieurs bruits de fond simultanément"
+
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:1060
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:1062
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:1208
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:1210
+msgid "No background to delete"
+msgstr "Aucun bruit de fond trouvé"
+
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:1084
+msgid "No selected text"
+msgstr "Pas de texte selectionné"
+
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:1158
+msgid "Impossible action"
+msgstr "Action impossible"
+
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:1216
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:1218
+#: src/Editors/AnnotationEditor/dialogs/BackgroundDialog.cpp:160
+msgid "Delete background segment ? "
+msgstr "Supprimer le bruit de fond ?"
+
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:1737
+msgid "Loading"
+msgstr "Chargement des"
+
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:1865
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:1867
+msgid "Undo-Redo stack error, stack reset"
+msgstr "Défaire / Refaire erreur : remise à zéro de la pile des actions"
+
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:3374
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:3380
+msgid "An error occurred when inserting selection."
+msgstr "Une erreur s'est produite au collage de la sélection."
+
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:4813
+msgid "Predefined _words"
+msgstr "_Mots prédéfinis"
+
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:4881
+msgid "New _foreground event"
+msgstr "Nouvel événement de _premier plan"
+
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:4905
+msgid "New annotation _event"
+msgstr "Nouvel événement _annoté"
+
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:4935
+msgid "New named _entity"
+msgstr "Nouvelle _entité nommée"
+
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:4991
+msgid "Error while redoing action."
+msgstr "Refaire action : erreur."
+
+#: src/Editors/AnnotationEditor/AnnotationView.cpp:4993
+msgid "Error while undoing action."
+msgstr "Défaire action : erreur."
+
+#: src/Editors/AnnotationEditor/UndoableTextView.cpp:2544
+msgid "Undo last action"
+msgstr "Défaire"
+
+#: src/Editors/AnnotationEditor/UndoableTextView.cpp:2549
+msgid "Redo last action"
+msgstr "Refaire"
+
+#: src/Editors/AnnotationEditor/dialogs/AnchoredElementDialog.cpp:109
+#: src/Editors/AnnotationEditor/dialogs/TurnPropertiesDialog.cpp:121
+msgid "Start time :"
+msgstr "Temps de début :"
+
+#: src/Editors/AnnotationEditor/dialogs/AnchoredElementDialog.cpp:110
+#: src/Editors/AnnotationEditor/dialogs/TurnPropertiesDialog.cpp:122
+msgid "End time :"
+msgstr "Temps de fin :"
+
+#: src/Editors/AnnotationEditor/dialogs/AnchoredElementDialog.cpp:185
+#: src/Editors/AnnotationEditor/dialogs/TurnPropertiesDialog.cpp:187
+msgid "properties"
+msgstr "propriétés"
+
+#: src/Editors/AnnotationEditor/dialogs/AnchoredElementDialog.cpp:219
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:391
+#: src/Editors/AnnotationEditor/dialogs/TurnPropertiesDialog.cpp:221
+#: src/GUI/Preferences/PreferencesDialog.cpp:157
+msgid "Transcription"
+msgstr "Transcription"
+
+#: src/Editors/AnnotationEditor/dialogs/AnchoredElementDialog.cpp:283
+#: src/Editors/AnnotationEditor/dialogs/QualifierPropertiesDialog.cpp:149
+#: src/Editors/AnnotationEditor/dialogs/SectionPropertiesDialog.cpp:95
+#: src/Editors/AnnotationEditor/dialogs/TurnPropertiesDialog.cpp:344
+msgid "Unable to find element"
+msgstr "Incapable de trouver l'élément"
+
+#: src/Editors/AnnotationEditor/dialogs/BackgroundDialog.cpp:43
+msgid "Background properties"
+msgstr "Propriété du bruit de fond"
+
+#: src/Editors/AnnotationEditor/dialogs/BackgroundDialog.cpp:68
+#: src/Editors/AnnotationEditor/dialogs/DialogMore.cpp:67
+msgid "Time"
+msgstr "Temps"
+
+#: src/Editors/AnnotationEditor/dialogs/BackgroundDialog.cpp:96
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:469
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:866
+#: src/Editors/AnnotationEditor/dialogs/QualifierPropertiesDialog.cpp:179
+#: src/Editors/AnnotationEditor/dialogs/SectionPropertiesDialog.cpp:125
+msgid "Type"
+msgstr "Type"
+
+#: src/Editors/AnnotationEditor/dialogs/BackgroundDialog.cpp:98
+msgid "Level"
+msgstr "Niveau sonore"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:73
+msgid "Add in correction list"
+msgstr "Ajouter dans la liste de correction"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:74
+msgid "Fix error"
+msgstr "Réparer les erreurs"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:207
+msgid "Close dialog"
+msgstr "Fermer la fenêtre"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:207
+#: src/GUI/Search/tags/TSearchDialog.cpp:57
+#: src/GUI/Search/text/SearchReplaceDialog.cpp:56
+msgid "_Close"
+msgstr "_Fermer"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:208
+msgid "Apply all actions selected in dialog"
+msgstr "Appliquer toutes les actions sélectionnées dans la fenêtre"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:208
+msgid "_Fix selected errors"
+msgstr "_Corriger les erreurs sélectionnées"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:228
+msgid "LOADING REPORT"
+msgstr "RAPPORT DE CHARGEMENT"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:293
+msgid "Information"
+msgstr "Information"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:299
+msgid ""
+"The following graph is defined in convention but not in file, file has been "
+"updated: "
+msgstr ""
+"Le graphe suivant est défini dans les conventions mais pas dans le fichier, "
+"le fichier a été mis à jour : "
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:301
+msgid ""
+"The following graphs are defined in convention but not in file, file has "
+"been updated: "
+msgstr ""
+"Le graphe suivant est défini dans les conventions mais pas dans le fichier, "
+"le fichier a été mis à jour : "
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:322
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:850
+msgid "Warning"
+msgstr "Attention"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:324
+msgid "Errors"
+msgstr "Erreurs"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:380
+msgid "Graph"
+msgstr "Graphe"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:381
+msgid "of type"
+msgstr "du type"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:391
+msgid "has base type element not defined in conventions"
+msgstr "a des éléments de base non définis dans les conventions"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:392
+msgid ""
+"The following base type annotation types are not defined in conventions: "
+msgstr "Les types de base suivants ne sont pas définis: "
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:393
+msgid "Delete base type elements of unknown types"
+msgstr "Supprimer les unités de base de type inconnu"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:404
+msgid "has foreground element whose type is undefined in conventions"
+msgstr "a des éléments de premier plan de type indéfini"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:405
+msgid "The following type are not defined in conventions: "
+msgstr "Les types suivants ne sont pas définis dans les conventions: "
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:406
+msgid "Delete foreground elements of unknown types"
+msgstr "Supprimer les élements de premier plan de type inconnu"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:423
+msgid "has foreground element whose subtype is undefined in conventions"
+msgstr "a des éléments de premier plan de sous-type indéfini"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:424
+msgid "The following subtype are not defined in conventions: "
+msgstr "Les sous-types suivants ne sont pas définis dans les conventions: "
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:425
+msgid "Delete foreground elements of unknown subtypes"
+msgstr "Supprimer les élements de premier plan de sous-type inconnu"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:450
+msgid "has annotation types not defined in conventions"
+msgstr "a des types d'annotations non définis dans les conventions"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:451
+msgid "The following annotation types are not defined in conventions: "
+msgstr ""
+"Les types d'annotations suivants ne sont pas définis dans les conventions : "
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:452
+msgid "Delete elements of unknown types"
+msgstr "Supprimer les éléments de type inconnu"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:462
+msgid "has annotation sub-types not defined in conventions"
+msgstr "a des sous-types d'annotation non définis dans les conventions"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:463
+msgid "Delete types with unknown sub-types"
+msgstr "Supprimer les types dont le sous-type est inconnu"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:470
+msgid "has unknown subtypes"
+msgstr "a des sous-types inconnus"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:471
+msgid "Delete elements of unknown sub-types"
+msgstr "Supprimer les éléments dont le sous-type est inconnu"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:485
+msgid "has no base type elements"
+msgstr "n'a pas d'éléments de type de base"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:487
+msgid "Base element type defined in conventions: "
+msgstr "Le type de base est défini dans les conventions : "
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:488
+msgid "No elements of this type exists in file"
+msgstr "Il n'y a pas d'éléments de ce type dans le fichier"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:489
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:503
+msgid "Graph has been skipped"
+msgstr "Le graphe n'a pas été traité"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:494
+msgid "is not continuous"
+msgstr "n'est pas continu"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:495
+msgid "The graph is defined as continuous in conventions"
+msgstr "Le graphe est défini comme continu dans les conventions"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:496
+msgid "Continuity check failed"
+msgstr "Le test de continuité a échoué"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:501
+msgid "is not defined in conventions"
+msgstr "n'est pas défini dans les conventions"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:502
+msgid "This type of graph is not defined in conventions"
+msgstr "Ce type de graphe n'est pas défini dans les conventions"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:513
+msgid "Unable to find conventions file"
+msgstr "Impossible de trouver le fichier de conventions"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:514
+msgid "The file requires the following conventions:"
+msgstr "Le fichier requiert les conventions suivantes : "
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:516
+msgid "Not found in convention directory "
+msgstr "Introuvable dans le repertoire de convention"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:517
+msgid "Default convention applied: "
+msgstr "La convention par défaut est utilisée : "
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:526
+msgid "Conventions version doesn't match"
+msgstr "Les versions de conventions diffèrent"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:527
+msgid "The file is using the convention"
+msgstr "Le fichier utilise la convention"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:528
+msgid "of version"
+msgstr "de la version"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:529
+msgid "The file requires version"
+msgstr "Le fichier requiert la version"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:534
+msgid "Error while importing format"
+msgstr "Erreur à l'import du format"
+
+#: src/Editors/AnnotationEditor/dialogs/CheckerDialog.cpp:535
+msgid "Importing file"
+msgstr "Import du fichier"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:24
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:105
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:1228
+msgid "File properties"
+msgstr "Propriétés du fichier"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:106
+msgid "Signals"
+msgstr "Signal"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:107
+msgid "Statistics"
+msgstr "Statistiques"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:144
+msgid "Identification"
+msgstr "Identification"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:176
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:827
+#: src/Editors/AnnotationEditor/tests/testedit.cpp:129
+#: src/Editors/AnnotationEditor/tests/testedit2.cpp:96
+msgid "File"
+msgstr "Fichier"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:184
+msgid "Corpus"
+msgstr "Corpus"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:191
+msgid "Corpus version"
+msgstr "Version de corpus"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:197
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:1265
+msgid "Version"
+msgstr "Version"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:202
+msgid "More"
+msgstr "Plus"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:209
+msgid "Creation"
+msgstr "Création"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:215
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:232
+#: src/Editors/AnnotationEditor/dialogs/DialogMore.cpp:56
+msgid "By"
+msgstr "Par"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:218
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:235
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:246
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:901
+#: src/Editors/AnnotationEditor/dialogs/DialogMore.cpp:91
+msgid "Comment"
+msgstr "Commentaire"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:229
+msgid "Last modification"
+msgstr "Dernière modif."
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:337
+msgid "Add signal"
+msgstr "Ajouter signal"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:342
+msgid "Remove signal"
+msgstr "Supprimer signal"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:365
+msgid "Annotations"
+msgstr "Annotations"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:397
+msgid "Fast"
+msgstr "Rapide"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:398
+msgid "Detailed"
+msgstr "Détaillée"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:399
+msgid "Automatic"
+msgstr "Automatique"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:407
+#: src/Editors/AnnotationEditor/dialogs/TurnPropertiesDialog.cpp:256
+#: src/GUI/Preferences/DataModelFrame.cpp:36
+#: src/GUI/Speaker/SpeakerData.cpp:158 src/GUI/Speaker/SpeakerData.cpp:454
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:189
+msgid "Language"
+msgstr "Langue"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:429
+#: src/Editors/AnnotationEditor/dialogs/TurnPropertiesDialog.cpp:261
+#: src/GUI/Speaker/SpeakerData.cpp:468
+msgid "Dialect"
+msgstr "Dialecte"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:445
+msgid "Named entities"
+msgstr "Entités nommées"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:447
+msgid "Themes"
+msgstr "Thèmes"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:763
+#: src/GUI/Common/Explorer_popup.h:27
+msgid "Properties"
+msgstr "Propriétés"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:770
+msgid "Channels display"
+msgstr "Chaines affichées"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:790
+msgid "Signal 1"
+msgstr "Signal 1"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:791
+msgid "Signal 2"
+msgstr "Signal 2"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:833
+msgid "Format"
+msgstr "Format"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:838
+msgid "Encoding"
+msgstr "Codage"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:843
+msgid "Channels"
+msgstr "Canaux"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:850
+msgid "Length"
+msgstr "Durée"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:874
+msgid "Source"
+msgstr "Source"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:878
+#: src/Editors/AnnotationEditor/dialogs/DialogMore.cpp:45
+msgid "Date"
+msgstr "Date"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:1021
+msgid "Use signal as a mono channel signal"
+msgstr "Utiliser le signal comme un signal mono"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:1023
+msgid "Force editor to display the file as a mono signal file"
+msgstr "Forcer l'éditor à afficher le signal comme un fichier à signal mono"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:1043
+msgid ""
+"Only one track and its annotations will be visible, the others will be "
+"hidden."
+msgstr ""
+"Seulement une piste et ses annotations seront visibles, les autres seront "
+"cachées"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:1046
+msgid "File will be reloaded."
+msgstr "Le fichier va être re-chargé"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:1257
+#: src/GUI/Preferences/DataModelFrame.cpp:33
+msgid "Convention"
+msgstr "Convention"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogFileProperties.cpp:1272
+msgid "Reference"
+msgstr "Références"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogMore.cpp:14
+msgid "Version history"
+msgstr "Version :"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogMore.cpp:35
+msgid "No"
+msgstr "No"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogSelectConventions.cpp:39
+msgid "Transcription language"
+msgstr "Langue de transcription"
+
+#: src/Editors/AnnotationEditor/dialogs/DialogSelectConventions.cpp:42
+msgid "Transcription conventions"
+msgstr "Conventions de transcription"
+
+#: src/Editors/AnnotationEditor/dialogs/FileDialogs.cpp:32
+#: src/Editors/AnnotationEditor/tests/testedit.cpp:310
+#: src/Editors/AnnotationEditor/tests/testedit2.cpp:231
+#: src/GUI/GuiWidget.cpp:1800
+msgid "Open annotation file"
+msgstr "Ouvrir un fichier d'annotation"
+
+#: src/Editors/AnnotationEditor/dialogs/FileDialogs.cpp:34
+msgid "Save annotation file"
+msgstr "Enregistrer le fichier d'annotation"
+
+#: src/Editors/AnnotationEditor/dialogs/FileDialogs.cpp:64
+msgid "Copy associated media file(s) in the same directory"
+msgstr "Copier le(s) fichier(s) média(s) associé(s) dans le même répertoire."
+
+#: src/Editors/AnnotationEditor/dialogs/FileDialogs.cpp:126
+msgid "Export annotation file"
+msgstr "Exporter un fichier d'annotation"
+
+#: src/Editors/AnnotationEditor/dialogs/FileDialogs.cpp:149
+msgid "Select output format: "
+msgstr "Sélectionner un format de sortie"
+
+#: src/Editors/AnnotationEditor/dialogs/FileDialogs.cpp:186
+#: src/GUI/GuiWidget.cpp:1839
+msgid "Transcription files"
+msgstr "Fichiers de transcription"
+
+#: src/Editors/AnnotationEditor/dialogs/FileDialogs.cpp:223
+#: src/Editors/AnnotationEditor/dialogs/FileDialogs.cpp:310
+msgid "Audio file to open"
+msgstr "Fichier audio àouvrir"
+
+#: src/Editors/AnnotationEditor/dialogs/FileDialogs.cpp:269
+msgid "Without signal"
+msgstr "Sans signal"
+
+#: src/Editors/AnnotationEditor/dialogs/FileDialogs.cpp:289
+msgid "This audio file has too much channels for current transcription"
+msgstr "Ce fichier audio a trop de pistes pour la transcription courante"
+
+#: src/Editors/AnnotationEditor/dialogs/GoToDialog.cpp:20
+msgid "Go to offset"
+msgstr "Aller à l'offset"
+
+#: src/Editors/AnnotationEditor/dialogs/GoToDialog.cpp:26
+msgid "Position (seconds):"
+msgstr "Position (en seconde) :"
+
+#: src/Editors/AnnotationEditor/dialogs/QualifierPropertiesDialog.cpp:112
+msgid "Named entity properties"
+msgstr "Propriétés de l'entité nommée"
+
+#: src/Editors/AnnotationEditor/dialogs/QualifierPropertiesDialog.cpp:119
+msgid "Event properties"
+msgstr "Propriétés de l'évènement"
+
+#: src/Editors/AnnotationEditor/dialogs/QualifierPropertiesDialog.cpp:190
+#: src/Editors/AnnotationEditor/dialogs/SectionPropertiesDialog.cpp:188
+#: src/GUI/Speaker/SpeakerData.cpp:178
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:191
+msgid "Description"
+msgstr "Description"
+
+#: src/Editors/AnnotationEditor/dialogs/QualifierPropertiesDialog.cpp:222
+msgid "Normalisation : "
+msgstr "Normalisation : "
+
+#: src/Editors/AnnotationEditor/dialogs/SaveAudioDialog.cpp:48
+msgid "Save Audio Signal"
+msgstr "Sauvegarder le signal audio"
+
+#: src/Editors/AnnotationEditor/dialogs/SaveAudioDialog.cpp:53
+msgid "From file"
+msgstr "Fichier source"
+
+#: src/Editors/AnnotationEditor/dialogs/SaveAudioDialog.cpp:71
+msgid "Destination directory"
+msgstr "Répertoire cible"
+
+#: src/Editors/AnnotationEditor/dialogs/SaveAudioDialog.cpp:77
+msgid "Choose a name"
+msgstr "Choisir un nom"
+
+#: src/Editors/AnnotationEditor/dialogs/SaveAudioDialog.cpp:93
+msgid "Choose folder to save audio selection"
+msgstr "Choisir un répertoire pour le fichier à créer"
+
+#: src/Editors/AnnotationEditor/dialogs/SaveAudioDialog.cpp:125
+msgid "Invalid file name"
+msgstr "Nom de fichier invalide"
+
+#: src/Editors/AnnotationEditor/dialogs/SaveAudioDialog.cpp:127
+msgid "Please choose a valid destination directory"
+msgstr "Veuillez choisir un répertoire cible valide"
+
+#: src/Editors/AnnotationEditor/dialogs/SaveAudioDialog.cpp:129
+msgid "Directory for read only"
+msgstr "Répertoire en lecture seule"
+
+#: src/Editors/AnnotationEditor/dialogs/SaveAudioDialog.cpp:136
+msgid ""
+"A file with same name already exists, please change name or destination "
+"directory"
+msgstr ""
+"Un fichier de même nom existe déjà, veuillez changer de nom ou de répertoire"
+
+#: src/Editors/AnnotationEditor/dialogs/SectionPropertiesDialog.cpp:56
+msgid "Section properties"
+msgstr "Propriétés de la section"
+
+#: src/Editors/AnnotationEditor/dialogs/SectionPropertiesDialog.cpp:155
+msgid "Topic : "
+msgstr "Thème : "
+
+#: src/Editors/AnnotationEditor/dialogs/SectionPropertiesDialog.cpp:156
+msgid "_Change"
+msgstr "_Modifier"
+
+#: src/Editors/AnnotationEditor/dialogs/SectionPropertiesDialog.cpp:157
+msgid "N_o topic"
+msgstr "A_ucun"
+
+#: src/Editors/AnnotationEditor/dialogs/SectionPropertiesDialog.cpp:342
+#: src/GUI/Search/tags/TSearchGeneral.cpp:256
+msgid "error while choosing topic"
+msgstr "erreur lors de la définition du thème"
+
+#: src/Editors/AnnotationEditor/dialogs/TopicsDialog.cpp:77
+msgid "Topic details: "
+msgstr "Détails du thème : "
+
+#: src/Editors/AnnotationEditor/dialogs/TopicsDialog.cpp:96
+msgid "Category"
+msgstr "Catégorie"
+
+#: src/Editors/AnnotationEditor/dialogs/TopicsDialog.cpp:97
+msgid "Context"
+msgstr "Contexte"
+
+#: src/Editors/AnnotationEditor/dialogs/TopicsDialog.cpp:154
+msgid "Annotation Topics"
+msgstr "Thèmes d'annotation"
+
+#: src/Editors/AnnotationEditor/dialogs/TopicsDialog.cpp:283
+msgid "Without theme"
+msgstr "Sans thème"
+
+#: src/Editors/AnnotationEditor/dialogs/TurnPropertiesDialog.cpp:246
+msgid "Speech"
+msgstr "Parole"
+
+#: src/Editors/AnnotationEditor/dialogs/TurnPropertiesDialog.cpp:250
+msgid "Speaker"
+msgstr "Locuteur"
+
+#: src/Editors/AnnotationEditor/dialogs/TurnPropertiesDialog.cpp:265
+msgid "No speech"
+msgstr "Pas de parole"
+
+#: src/Editors/AnnotationEditor/dialogs/TurnPropertiesDialog.cpp:532
+msgid "File language"
+msgstr "Langue du fichier"
+
+#: src/Editors/AnnotationEditor/dialogs/TurnPropertiesDialog.cpp:549
+msgid "Turn language"
+msgstr "Langue du tour"
+
+#: src/Editors/AnnotationEditor/menus/AnnotationMenu.cpp:74
+msgid "event"
+msgstr "évènement"
+
+#: src/Editors/AnnotationEditor/menus/AnnotationMenu.cpp:76
+msgid "named entity"
+msgstr "entité"
+
+#: src/Editors/AnnotationEditor/menus/AnnotationMenu.cpp:78
+msgid "unit"
+msgstr "unité de base"
+
+#: src/Editors/AnnotationEditor/menus/AnnotationMenu.cpp:81
+#, c-format
+msgid "_Edit %s properties"
+msgstr "_Editer propriétés %s"
+
+#: src/Editors/AnnotationEditor/menus/AnnotationMenu.cpp:83
+#, c-format
+msgid "_Display %s properties"
+msgstr "_Afficher propriétés %s"
+
+#: src/Editors/AnnotationEditor/menus/AnnotationMenu.cpp:89
+#, c-format
+msgid "_Delete %s"
+msgstr "_Supprimer %s"
+
+#: src/Editors/AnnotationEditor/menus/AnnotationMenu.cpp:92
+#, c-format
+msgid "_Remove time mark %s"
+msgstr "Supprimer le timestamp %s"
+
+#: src/Editors/AnnotationEditor/menus/AnnotationMenu.h:47
+msgid "annotation"
+msgstr "annotation"
+
+#: src/Editors/AnnotationEditor/menus/QualifiersMenu.cpp:93
+#: src/Editors/AnnotationEditor/menus/UnitMenu.cpp:122
+msgid "_Other"
+msgstr "_Autre"
+
+#: src/Editors/AnnotationEditor/menus/QualifiersMenu.cpp:121
+msgid ""
+"Some qualifier types or subtypes are used in conventions but are not "
+"specified: "
+msgstr ""
+"Des types ou sous-types de qualifiers sont utilisés dans les conventions "
+"mais ne sont pas spécifiés:"
+
+#: src/Editors/AnnotationEditor/menus/QualifiersMenu.cpp:122
+msgid "Check your conventions files."
+msgstr "Vérifiez les fichiers de conventions."
+
+#: src/Editors/AnnotationEditor/menus/SectionMenu.cpp:37
+msgid "section"
+msgstr "section"
+
+#: src/Editors/AnnotationEditor/menus/SignalPopupMenu.cpp:39
+msgid "signal"
+msgstr "Signal"
+
+#: src/Editors/AnnotationEditor/menus/SignalPopupMenu.cpp:57
+msgid "New no speech turn"
+msgstr "Nouveau tour de non-parole"
+
+#: src/Editors/AnnotationEditor/menus/SignalPopupMenu.cpp:61
+msgid "Turn"
+msgstr "Tour de parole"
+
+#: src/Editors/AnnotationEditor/menus/SignalPopupMenu.cpp:89
+#: src/GUI/Preferences/ColorsFrame.cpp:62
+#: src/GUI/Preferences/ColorsFrame.cpp:115
+#: src/GUI/Preferences/ColorsFrame.cpp:180
+msgid "Background"
+msgstr "Arrière-plan"
+
+#: src/Editors/AnnotationEditor/menus/SignalPopupMenu.cpp:129
+msgid "Show _tracks"
+msgstr "Afficher les _pistes"
+
+#: src/Editors/AnnotationEditor/menus/SignalPopupMenu.cpp:152
+#: src/Editors/AnnotationEditor/menus/SignalPopupMenu.cpp:157
+msgid "SIGNAL ACTIONS"
+msgstr "SIGNAL"
+
+#: src/Editors/AnnotationEditor/menus/SpeakerMenu.cpp:61
+msgid "(Silence)"
+msgstr "(Silence)"
+
+#: src/Editors/AnnotationEditor/menus/SpeakerMenu.cpp:62
+msgid "(Noise)"
+msgstr "(Bruit)"
+
+#: src/Editors/AnnotationEditor/menus/SpeakerMenu.cpp:63
+msgid "(Music)"
+msgstr "(Musique)"
+
+#: src/Editors/AnnotationEditor/menus/SpeakerMenu.cpp:70
+msgid "turn"
+msgstr "tour de parole"
+
+#: src/Editors/AnnotationEditor/menus/SpeakerMenu.cpp:83
+msgid "New speaker"
+msgstr "Nouveau locuteur"
+
+#: src/Editors/AnnotationEditor/menus/SpeakerMenu.cpp:94
+msgid "Overlapping speech"
+msgstr "Parole superposée"
+
+#: src/Editors/AnnotationEditor/menus/SpeakerMenu.cpp:100
+msgid "Set speaker"
+msgstr "Définir le locuteur"
+
+#: src/Editors/AnnotationEditor/menus/SpeakerMenu.cpp:101
+msgid "Speaker properties"
+msgstr "Propriétés du locuteur"
+
+#: src/Editors/AnnotationEditor/menus/SpeakerMenu.cpp:106
+msgid "_Display speaker properties"
+msgstr "_Afficher propriétés locuteur"
+
+#: src/Editors/AnnotationEditor/menus/UnitMenu.cpp:158
+msgid "Error when loading annotation menu for foreground events: "
+msgstr ""
+"Erreur au chargement du menu d'annotation des événements de premier plan"
+
+#: src/Editors/AnnotationEditor/renderers/BackgroundRenderer.cpp:92
+#: src/Editors/AnnotationEditor/renderers/BackgroundRenderer.cpp:135
+msgid "Display Error"
+msgstr "Erreur d'affichage"
+
+#: src/Editors/AnnotationEditor/renderers/BackgroundRenderer.cpp:94
+#: src/Editors/AnnotationEditor/renderers/BackgroundRenderer.cpp:137
+msgid "(can't find corresponding base type element)"
+msgstr "(impossible de trouver l'élément correspondant)"
+
+#: src/Editors/AnnotationEditor/renderers/UnitRenderer.cpp:357
+msgid "foreground event"
+msgstr "évenement de premier plan"
+
+#: src/Editors/AnnotationEditor/tests/testedit.cpp:243
+#: src/Editors/AnnotationEditor/tests/testedit2.cpp:110
+msgid "Edit"
+msgstr "Edition"
+
+#: src/Editors/AnnotationEditor/tests/testedit.cpp:250
+msgid "Annotate"
+msgstr "Annoter"
+
+#: src/Editors/AnnotationEditor/tests/testedit.cpp:274
+#: src/Editors/AnnotationEditor/tests/testedit2.cpp:204
+#: src/GUI/Preferences/ColorsFrame.cpp:85
+#: src/GUI/Preferences/ColorsFrame.cpp:197
+msgid "Signal"
+msgstr "Signal"
+
+#: src/Formats/CHAT/CHATParser.cpp:154 src/Formats/LBL/LBL.cpp:177
+#: src/Formats/MDTM/MDTMParser.cpp:124 src/Formats/STM/STMParser.cpp:96
+#: src/Formats/TXT/TXTParser.cpp:94 src/Formats/VSFT/VSFT.cpp:209
+#: src/Tools/txt2tag.cpp:348
+msgid "Unknown transcription language, using 'eng' as default"
+msgstr "Langue de transcription inconnu, 'eng' par défaut"
+
+#: src/Formats/CTM/CTM.cpp:265 src/Formats/LBL/LBL.cpp:214
+msgid "speaker"
+msgstr "locuteur"
+
+#: src/Formats/SGML/SGML.cpp:53 src/Formats/SGML/SGML.cpp:170
+#: src/Formats/SGML/SGML.cpp:175 src/Formats/SGML/SGML.cpp:208
+#: src/Formats/SGML/SGML.cpp:215
+msgid "Error while importing format:"
+msgstr "Erreur durant l'importation de format :"
+
+#: src/Formats/SGML/SGML.cpp:216
+msgid "Cannot determinate file encoding"
+msgstr "Impossible de déterminer l'encodage du fichier"
+
+#: src/Formats/TRS/TRS.cpp:186
+msgid "NO CONVENTION FILE for TRS import specified !"
+msgstr "Pas de fichier de convention pour l'import TRS spécifié !"
+
+#: src/Formats/TRS/TRS.cpp:187
+msgid "Display can be altered."
+msgstr "L'affichage peut être altéré"
+
+#: src/Formats/TRS/TRS.cpp:196
+msgid "NO MAPPING FILE for TRS import !"
+msgstr "Pas de fichier de mapping pour l'import TRS !"
+
+#: src/Formats/TRS/TRS.cpp:197
+msgid "Format conversion can be incomplete."
+msgstr "Le résultat de l'import est peut-être incomplet"
+
+#: src/Formats/VSFT/VSFT.cpp:195 src/Tools/txt2tag.cpp:360
+msgid "Transcription end time set to signal duration "
+msgstr "Fin de la transcription positionnée à la fin du signal"
+
+#: src/Formats/VSFT/VSFT.cpp:382
+msgid "ENCODING Problem"
+msgstr "Problème d'encodage"
+
+#: src/Formats/VSFT/VSFT.cpp:384
+msgid "Can't correctly import characters codeset"
+msgstr "Impossibilité d'importer correctement le jeu de caractères"
+
+#: src/GUI/Common/Explorer_popup.h:20
+#: src/VideoComponent/VideoPlayer/ToolBox.cpp:30
+#: src/VideoComponent/VideoPlayer/ToolBox.cpp:79
+msgid "Play"
+msgstr "Lire"
+
+#: src/GUI/Common/Explorer_popup.h:21
+msgid "New Folder"
+msgstr "Nouveau dossier"
+
+#: src/GUI/Common/Explorer_popup.h:22
+msgid "Rename"
+msgstr "Renommer"
+
+#: src/GUI/Common/Explorer_popup.h:23 src/GUI/Tools/Clipboard.cpp:42
+msgid "Delete"
+msgstr "Supprimer"
+
+#: src/GUI/Common/Explorer_popup.h:24
+msgid "Import in current file"
+msgstr "Importer dans le fichier courant"
+
+#: src/GUI/Common/Explorer_popup.h:25
+msgid "Import"
+msgstr "Importer"
+
+#: src/GUI/Common/Explorer_popup.h:26 src/GUI/GuiWidget.cpp:1080
+msgid "Open"
+msgstr "Ouvrir"
+
+#: src/GUI/Common/Explorer_popup.h:31
+msgid "Add to shortcut"
+msgstr "Ajouter un favori"
+
+#: src/GUI/Common/Explorer_popup.h:33
+msgid "Create new transcription"
+msgstr "Créer une nouvelle transcription"
+
+#: src/GUI/Common/Explorer_popup.h:34
+msgid "Create new multi-chanel transcription"
+msgstr "Créer une transcription multi-audio"
+
+#: src/GUI/Common/Explorer_popup.h:36
+msgid "Download"
+msgstr "Télécharger"
+
+#: src/GUI/Common/Explorer_popup.h:37
+msgid "Upload"
+msgstr "Envoyer"
+
+#: src/GUI/Common/Explorer_popup.h:39
+msgid "Modify shortcut"
+msgstr "Modifier le favori"
+
+#: src/GUI/Common/Explorer_popup.h:40
+msgid "Delete shortcut"
+msgstr "Supprimer le favori"
+
+#: src/GUI/Common/Explorer_popup.h:41
+msgid "Refresh"
+msgstr "Rafraîchir"
+
+#: src/GUI/Common/Explorer_popup.h:42
+msgid "Actualize"
+msgstr "Actualiser"
+
+#: src/GUI/Common/Explorer_popup.h:44
+msgid "Increase priority"
+msgstr "Incrémenter la priorité"
+
+#: src/GUI/Common/Explorer_popup.h:45
+msgid "Decrease priority"
+msgstr "Décrémenter la priorité"
+
+#: src/GUI/Common/Explorer_popup.h:46
+msgid "Interrupt all treatments"
+msgstr "Interrompre tous les traitements"
+
+#: src/GUI/Common/Explorer_popup.h:47 src/GUI/Common/Explorer_popup.h:49
+msgid "Cancel all treatments"
+msgstr "Annuler tous les traitements"
+
+#: src/GUI/Dialogs/AboutDialog.cpp:50
+msgid "Cl_ose"
+msgstr "_Fermer"
+
+#: src/GUI/Dialogs/CreateTranscriptionDialog.cpp:85
+msgid "New Transcription"
+msgstr "Nouvelle transcription"
+
+#: src/GUI/Dialogs/CreateTranscriptionDialog.cpp:91
+msgid "Choose audio file(s) for new transcription"
+msgstr "Choisir un/des fichier(s) audio(s) pour la nouvelle transcription"
+
+#: src/GUI/Dialogs/CreateTranscriptionDialog.cpp:105
+msgid "Add an audio file for create new transcription"
+msgstr "Ajouter un fichier audio pour la nouvelle transcription"
+
+#: src/GUI/Dialogs/CreateTranscriptionDialog.cpp:105
+msgid "Add audio file"
+msgstr "Ajouter un fichier audio"
+
+#: src/GUI/Dialogs/CreateTranscriptionDialog.cpp:108
+msgid "Create transcription"
+msgstr "Créer une transcription"
+
+#: src/GUI/Dialogs/Explorer_dialog.cpp:169
+msgid "Please enter a name"
+msgstr "Veuillez saisir un nom"
+
+#: src/GUI/Dialogs/Explorer_dialog.cpp:170
+msgid ""
+"Name already in use\n"
+"Please choose another name"
+msgstr "Ce nom est déjà utilisé, veuillez en choisir un autre"
+
+#: src/GUI/Dialogs/Explorer_dialog.cpp:171
+msgid "invalid name"
+msgstr "nom invalide"
+
+#: src/GUI/Dialogs/Explorer_dialog.cpp:189
+#: src/GUI/Dialogs/Explorer_dialog.cpp:197 src/GUI/Dialogs/UserDialog.cpp:106
+#: src/GUI/Preferences/GeneralFrame.cpp:303
+msgid "Please enter an identifier"
+msgstr "Veuillez choisir un identifiant"
+
+#: src/GUI/Dialogs/Explorer_dialog.cpp:199 src/GUI/Dialogs/UserDialog.cpp:108
+#: src/GUI/Preferences/GeneralFrame.cpp:305
+msgid "Please choose a shorter identifier"
+msgstr "Veuillez choisir un identifiant"
+
+#: src/GUI/Dialogs/Explorer_dialog.cpp:201 src/GUI/Dialogs/UserDialog.cpp:110
+#: src/GUI/Preferences/GeneralFrame.cpp:307
+msgid "Identifier contains invalid symbol"
+msgstr "L'identifiant contient des caractères non autorisés"
+
+#: src/GUI/Dialogs/Explorer_dialog.cpp:231
+msgid ""
+"Create a new annotation file ?\n"
+"(choose NO to use existing one)"
+msgstr ""
+"Créer un nouveau fichier d'annotation ?\n"
+"(choisissez NON pour utiliser le fichier existant)"
+
+#: src/GUI/Dialogs/Explorer_dialog.cpp:232
+msgid "Existing file: "
+msgstr "Fichier existant : "
+
+#: src/GUI/Dialogs/Explorer_dialog.cpp:239
+msgid "No anotation file found, a new file will be created"
+msgstr "Pas de fichier d'annotation trouvé, un nouveau fichier va être créé"
+
+#: src/GUI/Dialogs/FilePropertyDialog.cpp:24
+msgid "Properties: "
+msgstr "Propriétés : "
+
+#: src/GUI/Dialogs/FilePropertyDialog.cpp:82
+#: src/GUI/Preferences/GeneralFrame.cpp:19
+#: src/GUI/Preferences/PreferencesDialog.cpp:149
+msgid "General"
+msgstr "Général"
+
+#: src/GUI/Dialogs/FilePropertyDialog.cpp:161
+#: src/GUI/Dialogs/FilePropertyDialog.cpp:341
+msgid "Type: "
+msgstr "Type : "
+
+#: src/GUI/Dialogs/FilePropertyDialog.cpp:162
+msgid "Size: "
+msgstr "Taille : "
+
+#: src/GUI/Dialogs/FilePropertyDialog.cpp:163
+msgid "Location: "
+msgstr "Localisation :"
+
+#: src/GUI/Dialogs/FilePropertyDialog.cpp:165
+msgid "Modified: "
+msgstr "Modifié :"
+
+#: src/GUI/Dialogs/FilePropertyDialog.cpp:166
+msgid "Last access: "
+msgstr "Dernier accès : "
+
+#: src/GUI/Dialogs/FilePropertyDialog.cpp:220
+msgid "audio"
+msgstr "audio"
+
+#: src/GUI/Dialogs/FilePropertyDialog.cpp:269
+#: src/GUI/Tree/Explorer_tooltip.cpp:165
+msgid "Mono"
+msgstr "Mono"
+
+#: src/GUI/Dialogs/FilePropertyDialog.cpp:271
+#: src/GUI/Tree/Explorer_tooltip.cpp:167
+msgid "Stereo"
+msgstr "Stereo"
+
+#: src/GUI/Dialogs/FilePropertyDialog.cpp:291
+msgid "bits"
+msgstr "bits"
+
+#: src/GUI/Dialogs/FilePropertyDialog.cpp:348
+msgid "Duration: "
+msgstr "Durée : "
+
+#: src/GUI/Dialogs/FilePropertyDialog.cpp:355
+msgid "Channel: "
+msgstr "Canaux : "
+
+#: src/GUI/Dialogs/FilePropertyDialog.cpp:362
+msgid "Sampling rate: "
+msgstr "Taux d'échantillonnage : "
+
+#: src/GUI/Dialogs/FilePropertyDialog.cpp:369
+msgid "Sample count: "
+msgstr "Nombre d'échantillons : "
+
+#: src/GUI/Dialogs/FilePropertyDialog.cpp:376
+msgid "Sampling resolution: "
+msgstr "Résolution d'échantillonnage : "
+
+#: src/GUI/Dialogs/FilePropertyDialog.cpp:383
+msgid "Encoding: "
+msgstr "Encodage : "
+
+#: src/GUI/Dialogs/ShortcutDialog.cpp:29
+msgid "Choose target shortcut"
+msgstr "Définissez la cible du raccourci"
+
+#: src/GUI/Dialogs/ShortcutDialog.cpp:32
+msgid "Configure shortcut"
+msgstr "Définition du favori"
+
+#: src/GUI/Dialogs/ShortcutDialog.cpp:73
+msgid "Target path "
+msgstr "Répertoire cible"
+
+#: src/GUI/Dialogs/ShortcutDialog.cpp:74
+msgid "Shortcut name "
+msgstr "Nom du favori"
+
+#: src/GUI/Dialogs/ShortcutDialog.cpp:143
+msgid "Please enter a shortcut name "
+msgstr "Entrez un nom pour le favori"
+
+#: src/GUI/Dialogs/ShortcutDialog.cpp:145
+msgid "Please choose a target"
+msgstr "Définissez le répertoire cible"
+
+#: src/GUI/Dialogs/ShortcutDialog.cpp:147
+msgid "This target is already used by a shortcut"
+msgstr "Un favori est déjà défini pour ce répertoire"
+
+#: src/GUI/Dialogs/ShortcutDialog.cpp:149
+msgid "This target does not exist"
+msgstr "Le répertoire n'existe pas"
+
+#: src/GUI/Dialogs/ShortcutDialog.cpp:151
+msgid "This name is too long or contains invalid symbol, please choose another"
+msgstr ""
+"Nom trop long ou contenant des caractères interdits, veuillez saisir un "
+"autre nom"
+
+#: src/GUI/Dialogs/ShortcutDialog.cpp:153
+msgid ""
+"Please change directory permissions (enable read and execute) or change "
+"directory"
+msgstr "Modifiez les permissions du répertoire ou changez de répertoire"
+
+#: src/GUI/Dialogs/UserDialog.cpp:75
+msgid "Please choose an identifier"
+msgstr "Veuillez choisir un identifiant"
+
+#: src/GUI/Dialogs/UserDialog.cpp:81
+msgid "Identifier:"
+msgstr "Identifiant : "
+
+#: src/GUI/GuiWidget.cpp:869
+msgid "Find/Replace in file"
+msgstr "Rechercher/Remplacer dans le fichier"
+
+#: src/GUI/GuiWidget.cpp:869
+msgid "_Find/Replace"
+msgstr "_Rechercher/Remplacer"
+
+#: src/GUI/GuiWidget.cpp:876 src/GUI/GuiWidget.cpp:953
+msgid "S_pecial search"
+msgstr "Recherche s_péciale"
+
+#: src/GUI/GuiWidget.cpp:876
+msgid "Special search"
+msgstr "Recherche spéciale"
+
+#: src/GUI/GuiWidget.cpp:884 src/GUI/GuiWidget.cpp:962
+msgid "Display file speaker dictionary"
+msgstr "Afficher le dictionnaire de locuteurs du fichier"
+
+#: src/GUI/GuiWidget.cpp:884 src/GUI/GuiWidget.cpp:962
+msgid "_File speaker dictionary"
+msgstr "Dictionnaire de locuteurs du _fichier"
+
+#: src/GUI/GuiWidget.cpp:945
+msgid "Search in file"
+msgstr "Recherche dans un fichier"
+
+#: src/GUI/GuiWidget.cpp:945 src/GUI/GuiWidget.cpp:1070
+msgid "_Search"
+msgstr "_Rechercher"
+
+#: src/GUI/GuiWidget.cpp:1006
+msgid "_Tools"
+msgstr "Ou_tils"
+
+#: src/GUI/GuiWidget.cpp:1036
+msgid "_External actions"
+msgstr "Actions _externes"
+
+#: src/GUI/GuiWidget.cpp:1065
+msgid "_File"
+msgstr "_Fichier"
+
+#: src/GUI/GuiWidget.cpp:1066
+msgid "_Edit"
+msgstr "_Edition"
+
+#: src/GUI/GuiWidget.cpp:1067
+msgid "_Annotate"
+msgstr "_Annoter"
+
+#: src/GUI/GuiWidget.cpp:1068
+msgid "_Display"
+msgstr "Aff_icher"
+
+#: src/GUI/GuiWidget.cpp:1069
+msgid "Spea_kers"
+msgstr "_Locuteurs"
+
+#: src/GUI/GuiWidget.cpp:1071
+msgid "Si_gnal"
+msgstr "Si_gnal"
+
+#: src/GUI/GuiWidget.cpp:1072
+msgid "_Video"
+msgstr "_Vidéo"
+
+#: src/GUI/GuiWidget.cpp:1073
+msgid "_Window"
+msgstr "Fe_nêtre"
+
+#: src/GUI/GuiWidget.cpp:1074
+msgid "_Help"
+msgstr "_Aide"
+
+#: src/GUI/GuiWidget.cpp:1077
+msgid "Create a new transcription"
+msgstr "Créer une nouvelle transcription"
+
+#: src/GUI/GuiWidget.cpp:1077
+msgid "Create a new transcription file"
+msgstr "Créer un nouveau fichier de transcription"
+
+#: src/GUI/GuiWidget.cpp:1080
+msgid "Open a file"
+msgstr "Ouvrir un fichier"
+
+#: src/GUI/GuiWidget.cpp:1082
+msgid "Quit"
+msgstr "Quitter"
+
+#: src/GUI/GuiWidget.cpp:1086
+msgid "_Recent Files"
+msgstr "Fichiers _récents"
+
+#: src/GUI/GuiWidget.cpp:1089
+msgid "_User manual"
+msgstr "Manuel _utilisateur"
+
+#: src/GUI/GuiWidget.cpp:1091
+msgid "_About"
+msgstr "_A propos"
+
+#: src/GUI/GuiWidget.cpp:1095
+msgid "Show / Hide _explorer"
+msgstr "Afficher / Cacher l'explorateur"
+
+#: src/GUI/GuiWidget.cpp:1095
+msgid "Show or hide file explorer"
+msgstr "Afficher / Cacher l'explorateur"
+
+#: src/GUI/GuiWidget.cpp:1100
+msgid "Display the global speaker dictionary"
+msgstr "Afficher le dictionnaire global de locuteurs"
+
+#: src/GUI/GuiWidget.cpp:1100
+msgid "_Global speaker dictionary"
+msgstr "Dictionnaire _global de locuteurs"
+
+#: src/GUI/GuiWidget.cpp:1105
+msgid "Go to the next tab"
+msgstr "Aller à l'onglet suivant"
+
+#: src/GUI/GuiWidget.cpp:1105
+msgid "Ne_xt tab"
+msgstr "Onglet suivant"
+
+#: src/GUI/GuiWidget.cpp:1109
+msgid "Go to the previous tab"
+msgstr "Aller à l'onglet précédent"
+
+#: src/GUI/GuiWidget.cpp:1109
+msgid "Pre_vious tab"
+msgstr "Onglet précédent"
+
+#: src/GUI/GuiWidget.cpp:1113
+msgid "Cl_ose current page"
+msgstr "Fermer l'onglet"
+
+#: src/GUI/GuiWidget.cpp:1113
+msgid "Close current page"
+msgstr "Fermer l'onglet courant"
+
+#: src/GUI/GuiWidget.cpp:1117
+msgid "Switch to enlarged editor display"
+msgstr "Elargir la zone d'édition"
+
+#: src/GUI/GuiWidget.cpp:1117
+msgid "_Switch to enlarged editor display"
+msgstr "_Elargir la zone d'édition"
+
+#: src/GUI/GuiWidget.cpp:1127
+msgid "Display file properties"
+msgstr "Afficher les propriétés du fichier"
+
+#: src/GUI/GuiWidget.cpp:1127
+msgid "_File properties"
+msgstr "Propriétés du fichier"
+
+#: src/GUI/GuiWidget.cpp:1133
+msgid "_Clipboard"
+msgstr "_Presse-papier"
+
+#: src/GUI/GuiWidget.cpp:1134
+msgid "_Revert file"
+msgstr "Restaurer le fichier"
+
+#: src/GUI/GuiWidget.cpp:1135
+msgid "Display _clipboard"
+msgstr "Afficher le presse-papier"
+
+#: src/GUI/GuiWidget.cpp:1135
+msgid "Display clipboard"
+msgstr "Afficher le presse-papier"
+
+#: src/GUI/GuiWidget.cpp:1140
+msgid "Display preferences panel"
+msgstr "Afficher les propriétés du configuration de TranscriberAG"
+
+#: src/GUI/GuiWidget.cpp:1140
+msgid "_Preferences"
+msgstr "_Préférences"
+
+#: src/GUI/GuiWidget.cpp:1145
+msgid "Show / Hide _toolbar"
+msgstr "Afficher / Cacher la barre d'outils"
+
+#: src/GUI/GuiWidget.cpp:1145
+msgid "Show / Hide toolbar"
+msgstr "Afficher / Cacher la barre d'outils"
+
+#: src/GUI/GuiWidget.cpp:1150
+msgid "Show / Hide _status bar"
+msgstr "Afficher / Cacher la _barre d'état"
+
+#: src/GUI/GuiWidget.cpp:1150
+msgid "Show / Hide status bar"
+msgstr "Afficher / Cacher la barre d'état"
+
+#: src/GUI/GuiWidget.cpp:1369
+msgid "SYSTEM"
+msgstr "SYSTEME DE FICHIER"
+
+#: src/GUI/GuiWidget.cpp:1382
+msgid "MY SHORTCUTS"
+msgstr "FAVORIS"
+
+#: src/GUI/GuiWidget.cpp:1400
+msgid "Add a new shortcut"
+msgstr "Ajouter un favori"
+
+#: src/GUI/GuiWidget.cpp:1410
+msgid "My Computer"
+msgstr "Mon ordinateur"
+
+#: src/GUI/GuiWidget.cpp:1414
+msgid "Work AG"
+msgstr "Répertoire de travail"
+
+#: src/GUI/GuiWidget.cpp:1426
+msgid " Filter  "
+msgstr " Filtre "
+
+#: src/GUI/GuiWidget.cpp:1641
+msgid "Please close file before changing its name"
+msgstr "Fermer le fichier avant de le renommer"
+
+#: src/GUI/GuiWidget.cpp:1652
+msgid "Please close file before removing it"
+msgstr "Fermer le fichier avant de le supprimer"
+
+#: src/GUI/GuiWidget.cpp:1664
+msgid "The directory can't be created, check your permission"
+msgstr "Le répertoire ne peut pas être créé, vérifiez les permissions"
+
+#: src/GUI/GuiWidget.cpp:1673
+msgid "Please close file"
+msgstr "Fermer au préalable le fichier"
+
+#: src/GUI/GuiWidget.cpp:1729
+msgid "Not yet available"
+msgstr "Fonction non disponible"
+
+#: src/GUI/GuiWidget.cpp:1780
+msgid "Do you want to delete the shortcurt"
+msgstr "Voulez-vous supprimer le raccourci"
+
+#: src/GUI/GuiWidget.cpp:1872 src/GUI/GuiWidget.cpp:2044
+msgid "This file is being edited"
+msgstr "Le fichier est en train d'être édité"
+
+#: src/GUI/GuiWidget.cpp:1950
+msgid "This file type is not supported by Transcriber"
+msgstr "Type de fichier non supporté par Transcriber"
+
+#: src/GUI/GuiWidget.cpp:1984
+msgid "Multi-audio transcription accepts mono audio files only."
+msgstr ""
+"Le mode de transcription multi-audio accepte uniquement les fichiers mono"
+
+#: src/GUI/GuiWidget.cpp:1988
+msgid "Multi-audio transcription accepts files of same type only."
+msgstr "Le mode multi-audio recquiert des fichiers de même type"
+
+#: src/GUI/GuiWidget.cpp:1992
+msgid "Multi-audio transcription needs different files."
+msgstr "Le mode multi-audio recquiert des fichiers différents"
+
+#: src/GUI/GuiWidget.cpp:1996
+msgid ""
+"Selected files have different frame rates, it may cause a distorted sound"
+msgstr ""
+"Les fichiers sélectionnés ont des frame rate différents, ceci peut altérer "
+"la lecture"
+
+#: src/GUI/GuiWidget.cpp:2127 src/GUI/GuiWidget.cpp:2181
+msgid "Some file preferences have been changed."
+msgstr "Des paramètres ont été changés."
+
+#: src/GUI/GuiWidget.cpp:2132
+msgid "The modifications will be saved when the files are saved."
+msgstr "Les modifications seront sauvegardées à la sauvegarde des fichiers."
+
+#: src/GUI/GuiWidget.cpp:2133
+msgid "Save all now"
+msgstr "Tout sauvegarder maintenant"
+
+#: src/GUI/GuiWidget.cpp:2136
+msgid "All opened files need to be reloaded for enabling these modifications."
+msgstr ""
+"Tous les fichiers ouverts doivent être rechargés pour que les modifications "
+"soient appliquées."
+
+#: src/GUI/GuiWidget.cpp:2137
+msgid "Reload all now"
+msgstr "Tout recharger maintenant"
+
+#: src/GUI/GuiWidget.cpp:2140
+msgid ""
+"All opened files need to be saved and reloaded for enabling these "
+"modifications."
+msgstr ""
+"Tous les fichiers ouverts doivent être sauvegardés et rechargés pour que les "
+"modifications soient appliquées."
+
+#: src/GUI/GuiWidget.cpp:2141
+msgid "Save and reload all now"
+msgstr "Tout sauvegarder et recharger"
+
+#: src/GUI/GuiWidget.cpp:2144 src/GUI/GuiWidget.cpp:2198
+msgid "I'll do it later"
+msgstr "Je le ferai plus tard"
+
+#: src/GUI/GuiWidget.cpp:2186
+msgid "The modifications will be saved when the file is saved."
+msgstr "Les modifications seront sauvegardées à la sauvegarde du fichier."
+
+#: src/GUI/GuiWidget.cpp:2187
+msgid "Save now"
+msgstr "Sauvegarder maintenant"
+
+#: src/GUI/GuiWidget.cpp:2190
+msgid "The file needs to be reloaded for enabling these modifications."
+msgstr ""
+"Le fichier doit être rechargé pour que les modifications soient prises en "
+"compte."
+
+#: src/GUI/GuiWidget.cpp:2191
+msgid "Reload now"
+msgstr "Recharger maintenant"
+
+#: src/GUI/GuiWidget.cpp:2194
+msgid ""
+"The file needs to be saved and reloaded for enabling these modifications."
+msgstr ""
+"Le fichier doit être sauvegardé et rechargé pour que les modifications "
+"soient prises en compte."
+
+#: src/GUI/GuiWidget.cpp:2195
+msgid "Save and reload now"
+msgstr "Sauvegarder et recharger"
+
+#: src/GUI/GuiWidget.cpp:2240
+msgid "Do you want to reload the file ?"
+msgstr "Voulez-vous recharger le fichier ?"
+
+#: src/GUI/GuiWidget.cpp:2349
+msgid "Show / Hide clipboard"
+msgstr "Afficher / Cacher le presse papier"
+
+#: src/GUI/GuiWidget.cpp:2350
+msgid "Alt + Shift + C"
+msgstr "Alt + Shift + C"
+
+#: src/GUI/GuiWidget.cpp:2403
+msgid "Merged display"
+msgstr "Affichage unique"
+
+#: src/GUI/GuiWidget.cpp:2404
+msgid "Change single editor"
+msgstr "Changer la piste éditée"
+
+#: src/GUI/GuiWidget.cpp:2407
+msgid "Merged editor"
+msgstr "Affichage unique"
+
+#: src/GUI/GuiWidget.cpp:2411
+msgid "Track 1 editor"
+msgstr "Affichage piste 1"
+
+#: src/GUI/GuiWidget.cpp:2415
+msgid "Track 2 editor"
+msgstr "Affichage piste 2"
+
+#: src/GUI/GuiWidget.cpp:2430 src/GUI/GuiWidget.cpp:2637
+msgid "Highlight active"
+msgstr "Surbrillance activée"
+
+#: src/GUI/GuiWidget.cpp:2431
+msgid "Change highlight scope"
+msgstr "Modifier le surlignage"
+
+#: src/GUI/GuiWidget.cpp:2433
+msgid "Selected track"
+msgstr "Piste sélectionnée"
+
+#: src/GUI/GuiWidget.cpp:2437
+msgid "Both track"
+msgstr "Les 2 pistes"
+
+#: src/GUI/GuiWidget.cpp:2441 src/GUI/Preferences/TextEditorFrame.h:40
+msgid "Track 1"
+msgstr "Piste 1"
+
+#: src/GUI/GuiWidget.cpp:2445 src/GUI/Preferences/TextEditorFrame.h:41
+msgid "Track 2"
+msgstr "Piste 2"
+
+#: src/GUI/GuiWidget.cpp:2481 src/GUI/GuiWidget.cpp:2565
+msgid "Editor Tags are displayed"
+msgstr "Les balises de l'éditeur textuel sont affichées "
+
+#: src/GUI/GuiWidget.cpp:2482
+msgid "Change hidden tag options"
+msgstr "Changer les options des balises cachées"
+
+#: src/GUI/GuiWidget.cpp:2484
+msgid "Hide all qualifiers"
+msgstr "Masquer tous les qualifieurs"
+
+#: src/GUI/GuiWidget.cpp:2488
+msgid "Hide foreground elements"
+msgstr "Masquer les éléments de premier plan"
+
+#: src/GUI/GuiWidget.cpp:2492
+msgid "Hide events"
+msgstr "Masquer les évènements"
+
+#: src/GUI/GuiWidget.cpp:2496
+msgid "Hide named entities"
+msgstr "Masquer les entités nommées"
+
+#: src/GUI/GuiWidget.cpp:2500
+msgid "Hide unknown qualifiers"
+msgstr "Masquer les qualifieurs inconnus"
+
+#: src/GUI/GuiWidget.cpp:2523
+msgid "Global speakers"
+msgstr "Locuteurs"
+
+#: src/GUI/GuiWidget.cpp:2524
+msgid "Global Speakers Dictionary"
+msgstr "Dictionnaire global de locuteurs"
+
+#: src/GUI/GuiWidget.cpp:2530
+msgid "File explorer"
+msgstr "Explorateur"
+
+#: src/GUI/GuiWidget.cpp:2531
+msgid "Show / Hide explorer"
+msgstr "Explorateur de fichiers"
+
+#: src/GUI/GuiWidget.cpp:2572
+msgid "Editor Tags are hidden"
+msgstr "Les balises de l'éditeur textuel sont cachées"
+
+#: src/GUI/GuiWidget.cpp:2642
+msgid "Highlight inactive"
+msgstr "Surbrillance inactivée"
+
+#: src/GUI/GuiWidget.cpp:2720
+msgid "Separated editor"
+msgstr "Vues séparées"
+
+#: src/GUI/GuiWidget.cpp:2725 src/GUI/GuiWidget.cpp:2731
+#: src/GUI/GuiWidget.cpp:2737 src/GUI/GuiWidget.cpp:2751
+msgid "Unique editor"
+msgstr "Vue unique"
+
+#: src/GUI/GuiWidget.cpp:2784
+msgid "Signal is synchronised with text"
+msgstr "Signal synchronisé sur le texte"
+
+#: src/GUI/GuiWidget.cpp:2789
+msgid "Signal is not synchronised with text"
+msgstr "Signal non synchronisé sur le texte"
+
+#: src/GUI/GuiWidget.cpp:2794
+msgid "Text is synchronised with signal"
+msgstr "Texte synchronisé sur le signal"
+
+#: src/GUI/GuiWidget.cpp:2799
+msgid "Text is not synchronised with signal"
+msgstr "Texte non synchronisé sur le signal"
+
+#: src/GUI/GuiWidget.cpp:2841
+msgid "File not editable"
+msgstr "Fichier non editable"
+
+#: src/GUI/GuiWidget.cpp:2846
+msgid "File in edition mode"
+msgstr "Fichier en mode édition"
+
+#: src/GUI/GuiWidget.cpp:3082
+msgid "Are you sure to quit Transcriber AG ?"
+msgstr "Êtes-vous sûr de vouloir quitter TranscriberAG?"
+
+#: src/GUI/GuiWidget.cpp:3200
+msgid "No local dictionary available."
+msgstr "Aucun ditionnaire local disponible."
+
+#: src/GUI/GuiWidget.cpp:3439
+msgid "About"
+msgstr "A propos"
+
+#: src/GUI/GuiWidget.cpp:3448
+msgid "Annotation Graphs Transcription Tool"
+msgstr "Outil de transcription par graphes d'annotation"
+
+#: src/GUI/GuiWidget.cpp:3453
+msgid "Version: "
+msgstr "Version : "
+
+#: src/GUI/GuiWidget.cpp:3454
+msgid "Date: "
+msgstr "Date : "
+
+#: src/GUI/GuiWidget.cpp:3461
+msgid "Developed by Bertin Technologies, TIC activity, 2011."
+msgstr "Développé par Bertin Technologies, activité TIC, 2011."
+
+#: src/GUI/Preferences/AudioFrame.cpp:13
+#: src/GUI/Preferences/ColorsFrame.cpp:78
+msgid "Audio panel"
+msgstr "Audio"
+
+#: src/GUI/Preferences/AudioFrame.cpp:19 src/GUI/Preferences/FontsFrame.cpp:17
+#: src/GUI/Preferences/TextEditorFrame.cpp:17
+msgid "Display options"
+msgstr "Affichage"
+
+#: src/GUI/Preferences/AudioFrame.cpp:27
+msgid "Use absolute norm for audio signal peaks"
+msgstr "Utiliser une norme absolue pour les pics du signal audio"
+
+#: src/GUI/Preferences/AudioFrame.cpp:34
+msgid "Show time scale"
+msgstr "Afficher l'échelle de temps"
+
+#: src/GUI/Preferences/AudioFrame.cpp:43
+msgid "Audio signal zone size"
+msgstr "Taille du composant signal-audio"
+
+#: src/GUI/Preferences/AudioFrame.cpp:59
+msgid "Stop playing when signal clicked"
+msgstr "Arrêter la lecture lorsque l'on clique sur le signal"
+
+#: src/GUI/Preferences/AudioFrame.cpp:75
+msgid "Play options"
+msgstr "Options de lecture"
+
+#: src/GUI/Preferences/AudioFrame.cpp:89
+msgid "Advanced options"
+msgstr "Options avancées"
+
+#: src/GUI/Preferences/AudioFrame.cpp:92
+msgid "Maximal zoom resolution (seconds/pixel)"
+msgstr "Zoom maximal (secondes/pixel)"
+
+#: src/GUI/Preferences/AudioFrame.cpp:93
+msgid "Go back before playing (seconds)"
+msgstr "Retour arrière avant la lecture (secondes)"
+
+#: src/GUI/Preferences/AudioFrame.cpp:117
+#: src/GUI/Preferences/GeneralFrame.cpp:120
+msgid "Mouse button 1: smallest incrementation"
+msgstr "Souris bouton 1 : incrémentation minimale"
+
+#: src/GUI/Preferences/AudioFrame.cpp:119
+#: src/GUI/Preferences/GeneralFrame.cpp:122
+msgid "Mouse wheel click: larger incrementation"
+msgstr "Souris click molette : incrémentation maximale"
+
+#: src/GUI/Preferences/AudioFrame.cpp:121
+#: src/GUI/Preferences/GeneralFrame.cpp:124
+msgid "Mouse button 3: reach min/max value"
+msgstr "Souris bouton 3 : valeurs minimale/maximale"
+
+#: src/GUI/Preferences/ColorsFrame.cpp:13
+#: src/GUI/Preferences/PreferencesDialog.cpp:214
+msgid "Colors"
+msgstr "Couleurs"
+
+#: src/GUI/Preferences/ColorsFrame.cpp:27
+msgid "Annotation Editor"
+msgstr "Editeur"
+
+#: src/GUI/Preferences/ColorsFrame.cpp:36
+#: src/GUI/Preferences/ColorsFrame.cpp:168
+#: src/GUI/Search/text/SearchReplaceGeneral.cpp:715
+#: src/GUI/Search/text/SearchReplaceGeneral.cpp:726
+#: src/GUI/Search/text/SearchReplaceGeneral.cpp:740
+msgid "Text"
+msgstr "Texte"
+
+#: src/GUI/Preferences/ColorsFrame.cpp:44
+#: src/GUI/Preferences/ColorsFrame.cpp:162
+msgid "Events"
+msgstr "Evénements"
+
+#: src/GUI/Preferences/ColorsFrame.cpp:53
+msgid "Named Entities"
+msgstr "Entités nommées"
+
+#: src/GUI/Preferences/ColorsFrame.cpp:71
+msgid "Highlight"
+msgstr "Surlignage"
+
+#: src/GUI/Preferences/ColorsFrame.cpp:114
+msgid "Foreground"
+msgstr "Premier plan"
+
+#: src/GUI/Preferences/ColorsFrame.cpp:174
+msgid "Default entities"
+msgstr "Entités nommées par défaut"
+
+#: src/GUI/Preferences/ColorsFrame.cpp:186
+msgid "Track 1 highlight"
+msgstr "Surlignage piste 1"
+
+#: src/GUI/Preferences/ColorsFrame.cpp:191
+msgid "Track 2 highlight "
+msgstr "Surlignage piste 2"
+
+#: src/GUI/Preferences/ColorsFrame.cpp:202
+msgid "Activated signal"
+msgstr "Signal activé"
+
+#: src/GUI/Preferences/ColorsFrame.cpp:207
+msgid "Disabled signal"
+msgstr "Signal désactivé"
+
+#: src/GUI/Preferences/ColorsFrame.cpp:217
+msgid "Selection tooltip"
+msgstr "Infobulle de sélection"
+
+#: src/GUI/Preferences/ColorsFrame.cpp:222
+msgid "Cursor"
+msgstr "Curseur"
+
+#: src/GUI/Preferences/ColorsFrame.cpp:227
+msgid "Segment end indicator"
+msgstr "Indicateur de fin de segment"
+
+#: src/GUI/Preferences/DataModelFrame.cpp:16
+msgid "Data Model"
+msgstr "Modèle de données"
+
+#: src/GUI/Preferences/DataModelFrame.cpp:19
+msgid "Change default annotation conventions"
+msgstr "Modifier les conventions d'annotation par défaut"
+
+#: src/GUI/Preferences/FTPFrame.cpp:15
+msgid "Ftp connection"
+msgstr "Connexion FTP"
+
+#: src/GUI/Preferences/FTPFrame.cpp:27
+msgid "Distant machine"
+msgstr "Machine distante : "
+
+#: src/GUI/Preferences/FontsFrame.cpp:13
+#: src/GUI/Preferences/PreferencesDialog.cpp:225
+msgid "Fonts"
+msgstr "Polices"
+
+#: src/GUI/Preferences/FontsFrame.cpp:27
+msgid "Editor text font"
+msgstr "Editeur : police du texte"
+
+#: src/GUI/Preferences/FontsFrame.cpp:28
+msgid "Editor labels font"
+msgstr "Editeur : police des labels"
+
+#: src/GUI/Preferences/GeneralFrame.cpp:22
+msgid "User identifier"
+msgstr "Identifiant utilisateur"
+
+#: src/GUI/Preferences/GeneralFrame.cpp:30
+msgid "Change"
+msgstr "Modifier"
+
+#: src/GUI/Preferences/GeneralFrame.cpp:36
+#: src/GUI/Preferences/GeneralFrame.cpp:51
+#: src/GUI/Preferences/SpeakersFrame.cpp:17
+#: src/GUI/Preferences/SpellerFrame.cpp:29
+msgid "Choose a directory"
+msgstr "Répertoire distant"
+
+#: src/GUI/Preferences/GeneralFrame.cpp:37
+msgid "Default directory for signal audio files"
+msgstr "Répertoire par défaut pour les fichiers audio"
+
+#: src/GUI/Preferences/GeneralFrame.cpp:52
+msgid "Default browser"
+msgstr "Navigateur par défaut"
+
+#: src/GUI/Preferences/GeneralFrame.cpp:65
+msgid "Load files that were opened when TransAG shut down"
+msgstr "Recharger les fichiers ouverts à la dernière session"
+
+#: src/GUI/Preferences/GeneralFrame.cpp:70
+msgid "Display status bar"
+msgstr "Afficher la barre d'état"
+
+#: src/GUI/Preferences/GeneralFrame.cpp:75
+msgid "Display toolbar"
+msgstr "Afficher la barre d'outils"
+
+#: src/GUI/Preferences/GeneralFrame.cpp:82
+msgid "Choose toolbar style"
+msgstr "Style de la barre d'outils"
+
+#: src/GUI/Preferences/GeneralFrame.cpp:97
+msgid "File autosave periodicity (seconds)"
+msgstr "Fréquence des sauvergardes automatiques (secondes)"
+
+#: src/GUI/Preferences/GeneralFrame.cpp:149
+msgid "system default"
+msgstr "défaut"
+
+#: src/GUI/Preferences/GeneralFrame.cpp:236
+#: src/GUI/Preferences/SpeakersFrame.cpp:50
+#: src/GUI/Preferences/SpellerFrame.cpp:117
+msgid "This directory doesn't exist"
+msgstr "Le répertoire n'existe pas"
+
+#: src/GUI/Preferences/GeneralFrame.h:19
+msgid "Only icons"
+msgstr "Icones uniquement"
+
+#: src/GUI/Preferences/GeneralFrame.h:20
+msgid "Icons and text"
+msgstr "Icones et labels"
+
+#: src/GUI/Preferences/GeneralFrame.h:21
+msgid "Only text"
+msgstr "Labels uniquement"
+
+#: src/GUI/Preferences/PreferencesDialog.cpp:38
+msgid "Preferences"
+msgstr "Préférences"
+
+#: src/GUI/Preferences/PreferencesDialog.cpp:96
+msgid "_Apply"
+msgstr "_Appliquer"
+
+#: src/GUI/Preferences/PreferencesDialog.cpp:97
+msgid "_Cancel"
+msgstr "A_nnuler"
+
+#: src/GUI/Preferences/PreferencesDialog.cpp:165
+#: src/GUI/Preferences/TextEditorFrame.cpp:13
+msgid "Text Editor"
+msgstr "Editeur"
+
+#: src/GUI/Preferences/PreferencesDialog.cpp:173
+msgid "Audio Panel"
+msgstr "Audio"
+
+#: src/GUI/Preferences/PreferencesDialog.cpp:181
+msgid "Video Panel"
+msgstr "Vidéo"
+
+#: src/GUI/Preferences/PreferencesDialog.cpp:198
+#: src/GUI/Preferences/SpeakersFrame.cpp:13
+msgid "Speakers"
+msgstr "Locuteurs"
+
+#: src/GUI/Preferences/PreferencesDialog.cpp:206
+msgid "Look'N'Feel"
+msgstr "Apparence"
+
+#: src/GUI/Preferences/PreferencesDialog.cpp:237
+msgid "FTP connection"
+msgstr "Connection FTP"
+
+#: src/GUI/Preferences/PreferencesDialog.cpp:398
+msgid "Parameters has been modified, do you want to save ?"
+msgstr "Des paramètres ont changé, voulez-vous les sauvegarder ?"
+
+#: src/GUI/Preferences/PreferencesDialog.cpp:445
+msgid "An error occurred when saving preferences."
+msgstr "Une erreur s'est produite lors de l'enregistrement des préférences."
+
+#: src/GUI/Preferences/PreferencesDialog.cpp:446
+#: src/GUI/Preferences/PreferencesDialog.cpp:478
+msgid ""
+"Check if the configuration files in the personal folder still exist and are "
+"not corrupted."
+msgstr ""
+"Vérifier que les fichiers de configuration placés dans le dossier "
+"utilisateur existent bien et ne sont pas corrompus."
+
+#: src/GUI/Preferences/PreferencesDialog.cpp:477
+msgid "An error occurred when reloading preferences."
+msgstr "Une erreur s'est produite lors du chargement des préférences"
+
+#: src/GUI/Preferences/PreferencesFrame.cpp:98
+msgid ""
+"Opened files need to be re-opened\n"
+"for enabling modifications"
+msgstr ""
+"Les fichiers en cours d'édition doivent être réouverts\n"
+"pour que les modifications soient prises en compte"
+
+#: src/GUI/Preferences/PreferencesFrame.cpp:104
+msgid ""
+"Application need to be restarted\n"
+"for enabling modifications"
+msgstr ""
+"L'application doit être relancée\n"
+"pour que les modifications soient prises en compte"
+
+#: src/GUI/Preferences/SpeakersFrame.cpp:18
+msgid "Path of global speaker dictionary file"
+msgstr "Chemin du dictionnaire de locuteurs global"
+
+#: src/GUI/Preferences/SpellerFrame.cpp:14
+msgid "Speller Tool"
+msgstr "Correcteur"
+
+#: src/GUI/Preferences/SpellerFrame.cpp:18
+msgid "Use speller"
+msgstr "Utiliser le dictionnaire"
+
+#: src/GUI/Preferences/SpellerFrame.cpp:30
+msgid "Directory of speller dictionaries"
+msgstr "Répertoire des dictionnaires du correcteur orthographique"
+
+#: src/GUI/Preferences/SpellerFrame.cpp:41
+msgid "Allow use of personal dictionary"
+msgstr "Autoriser l'utilisation de dictionnaire personnel"
+
+#: src/GUI/Preferences/SpellerFrame.cpp:42
+msgid "Allow to ignore word"
+msgstr "Autoriser l'option ignorer"
+
+#: src/GUI/Preferences/TextEditorFrame.cpp:25
+msgid "Display colored background for named entity tags"
+msgstr "Afficher une couleur de fond pour les étiquettes des entités nommées"
+
+#: src/GUI/Preferences/TextEditorFrame.cpp:28
+msgid "Allow tooltips inside editor"
+msgstr "Autoriser les infobulles dans l'éditeur"
+
+#: src/GUI/Preferences/TextEditorFrame.cpp:35
+msgid "Input options"
+msgstr "Saisie"
+
+#: src/GUI/Preferences/TextEditorFrame.cpp:49
+msgid "Delete time-anchored elements with suppression key (del/backspace)"
+msgstr ""
+"Supprimer les marques temporelles avec les touches de suppression (suppr/"
+"retour arrière)"
+
+#: src/GUI/Preferences/TextEditorFrame.cpp:52
+msgid "Automatically set turn language as input language"
+msgstr ""
+"Langue de saisie automatiquement paramétré à la langue du tour de parole "
+"courant"
+
+#: src/GUI/Preferences/TextEditorFrame.cpp:57
+msgid "Mono mode"
+msgstr "Mode mono"
+
+#: src/GUI/Preferences/TextEditorFrame.cpp:64
+#: src/GUI/Preferences/TextEditorFrame.cpp:82
+msgid "Display turn label and segment label on same line"
+msgstr "Etiquette du tour de parole et étiquette du segment sur la même ligne"
+
+#: src/GUI/Preferences/TextEditorFrame.cpp:70
+msgid "Stereo mode"
+msgstr "Mode stéréo"
+
+#: src/GUI/Preferences/TextEditorFrame.cpp:85
+msgid "Default view mode for stereo"
+msgstr "Choisir le mode de vue par défaut pour la stéréo"
+
+#: src/GUI/Preferences/TextEditorFrame.cpp:91
+msgid "Default synchronization options"
+msgstr "Options de synchronisation par défaut"
+
+#: src/GUI/Preferences/TextEditorFrame.cpp:115
+msgid "SET OPTIONS FOR READ ONLY MODE"
+msgstr "OPTIONS POUR LE MODE LECTURE-SEULE"
+
+#: src/GUI/Preferences/TextEditorFrame.cpp:134
+#: src/GUI/Preferences/TextEditorFrame.cpp:140
+msgid "Synchronization signal to text"
+msgstr "Synchronisation signal/texte"
+
+#: src/GUI/Preferences/TextEditorFrame.cpp:135
+#: src/GUI/Preferences/TextEditorFrame.cpp:141
+msgid "Synchronization text to signal"
+msgstr "Synchronisation texte/signal"
+
+#: src/GUI/Preferences/TextEditorFrame.cpp:136
+#: src/GUI/Preferences/TextEditorFrame.cpp:142
+msgid "Highlight text at current position"
+msgstr "Surligner le texte à la position courante"
+
+#: src/GUI/Preferences/TextEditorFrame.h:26
+msgid "dual display"
+msgstr "Double affichage"
+
+#: src/GUI/Preferences/TextEditorFrame.h:27
+msgid "Track 1 display"
+msgstr "Affichage piste 1"
+
+#: src/GUI/Preferences/TextEditorFrame.h:28
+msgid "Track 2 display"
+msgstr "Affichage piste 2"
+
+#: src/GUI/Preferences/TextEditorFrame.h:29
+msgid "merged display"
+msgstr "Affichage fusionné"
+
+#: src/GUI/Preferences/TextEditorFrame.h:35
+msgid "Control + suppression key"
+msgstr "Control + touche de suppression"
+
+#: src/GUI/Preferences/TextEditorFrame.h:36
+msgid "Allowed"
+msgstr "Permis"
+
+#: src/GUI/Preferences/TextEditorFrame.h:37
+msgid "Forbidden"
+msgstr "Bloqué"
+
+#: src/GUI/Preferences/TextEditorFrame.h:39
+msgid "both tracks"
+msgstr "Toutes les pistes"
+
+#: src/GUI/Preferences/TextEditorFrame.h:42
+msgid "selected track"
+msgstr "Piste selectionnée"
+
+#: src/GUI/Preferences/TextEditorFrame.h:43
+msgid "none"
+msgstr "Aucune"
+
+#: src/GUI/Preferences/VideoFrame.cpp:13
+msgid "Video panel"
+msgstr "Vidéo"
+
+#: src/GUI/Preferences/VideoFrame.cpp:24
+msgid "Browser options"
+msgstr "Options du navigateur"
+
+#: src/GUI/Preferences/VideoFrame.cpp:27
+msgid "Extract a frame each N seconds"
+msgstr "Extraire une image toutes les N secondes"
+
+#: src/GUI/Search/tags/TSearchDialog.cpp:59
+msgid "Next"
+msgstr "Suivant"
+
+#: src/GUI/Search/tags/TSearchDialog.cpp:63
+msgid "Previous"
+msgstr "Précédent"
+
+#: src/GUI/Search/tags/TSearchDialog.cpp:66
+msgid "Sections with given topic"
+msgstr "Section avec le thème sélectionné"
+
+#: src/GUI/Search/tags/TSearchDialog.cpp:67
+msgid "Turn of given speaker"
+msgstr "Tour de parole du locuteur sélectionné"
+
+#: src/GUI/Search/tags/TSearchDialog.cpp:68
+msgid "Event with given text"
+msgstr "Évènement associé au texte"
+
+#: src/GUI/Search/tags/TSearchDialog.cpp:69
+msgid "Entity with given text"
+msgstr "Entité associé au texte"
+
+#: src/GUI/Search/tags/TSearchDialog.cpp:115
+msgid "Type of research"
+msgstr "Type de recherche"
+
+#: src/GUI/Search/tags/TSearchDialog.cpp:122
+msgid "Object of research"
+msgstr "Objet de recherche"
+
+#: src/GUI/Search/tags/TSearchGeneral.cpp:142
+msgid "Select topic"
+msgstr "Sélection du thème"
+
+#: src/GUI/Search/tags/TSearchGeneral.cpp:143
+#: src/GUI/Search/tags/TSearchGeneral.cpp:192
+msgid "Select topic: "
+msgstr "Sélectionner le thème : "
+
+#: src/GUI/Search/tags/TSearchGeneral.cpp:151
+#: src/GUI/Search/tags/TSearchGeneral.cpp:283
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:727
+msgid "Select speaker"
+msgstr "Sélection du speaker"
+
+#: src/GUI/Search/tags/TSearchGeneral.cpp:152
+#: src/GUI/Search/tags/TSearchGeneral.cpp:210
+msgid "Select speaker: "
+msgstr "Sélectionner le locuteur : "
+
+#: src/GUI/Search/tags/TSearchGeneral.cpp:160
+#: src/GUI/Search/tags/TSearchGeneral.cpp:228
+msgid "Enter text: "
+msgstr "Entrer le texte : "
+
+#: src/GUI/Search/tags/TSearchGeneral.cpp:616
+msgid "no more occurrences"
+msgstr "plus d'occurences"
+
+#: src/GUI/Search/tags/TSearchGeneral.cpp:620
+#: src/GUI/Search/text/SearchReplaceGeneral.cpp:549
+msgid "No more occurrences, research from the start ?"
+msgstr "Plus d'occurences, chercher à partir du début ?"
+
+#: src/GUI/Search/tags/TSearchGeneral.cpp:637
+msgid "Please choose a topic"
+msgstr "Choisir un thème"
+
+#: src/GUI/Search/tags/TSearchGeneral.cpp:640
+msgid "Please choose a speaker"
+msgstr "Choisir un locuteur"
+
+#: src/GUI/Search/tags/TSearchGeneral.cpp:643
+msgid "Please enter a text"
+msgstr "Entrer un texte"
+
+#: src/GUI/Search/text/MiniSearch.cpp:33
+msgid "Change to search / replace mode"
+msgstr "Changer pour le mode recherche / remplacement"
+
+#: src/GUI/Search/text/MiniSearch.cpp:34
+msgid "Close search toolbar"
+msgstr "Fermer la barre d'outil de recherche"
+
+#: src/GUI/Search/text/MiniSearch.cpp:38
+#: src/GUI/Search/text/SearchReplaceDialog.cpp:70
+msgid "_Next"
+msgstr "_Suivant"
+
+#: src/GUI/Search/text/MiniSearch.cpp:39
+#: src/GUI/Search/text/SearchReplaceDialog.cpp:74
+msgid "_Previous"
+msgstr "_Précédent"
+
+#: src/GUI/Search/text/MiniSearch.cpp:48
+#: src/GUI/Search/text/SearchReplaceDialog.cpp:83
+msgid "Whole word"
+msgstr "Mot entier"
+
+#: src/GUI/Search/text/MiniSearch.cpp:49
+msgid "Case"
+msgstr "Casse"
+
+#: src/GUI/Search/text/MiniSearch.cpp:51
+msgid "Clear selection"
+msgstr "Annuler la sélection"
+
+#: src/GUI/Search/text/SearchReplaceDialog.cpp:54
+msgid "Change to toolbar mode"
+msgstr "Changer pour le mode barre d'outil"
+
+#: src/GUI/Search/text/SearchReplaceDialog.cpp:57
+msgid "_Toolbar mode"
+msgstr "Mode _barre d'outil"
+
+#: src/GUI/Search/text/SearchReplaceDialog.cpp:59
+msgid "Replace with"
+msgstr "Remplacer par"
+
+#: src/GUI/Search/text/SearchReplaceDialog.cpp:60
+msgid "Find"
+msgstr "Chercher"
+
+#: src/GUI/Search/text/SearchReplaceDialog.cpp:62
+msgid "Input language: "
+msgstr "Langue de saisie : "
+
+#: src/GUI/Search/text/SearchReplaceDialog.cpp:64
+msgid "Options"
+msgstr "Options"
+
+#: src/GUI/Search/text/SearchReplaceDialog.cpp:67
+msgid "Scope"
+msgstr "Portée"
+
+#: src/GUI/Search/text/SearchReplaceDialog.cpp:76
+msgid "Replace / Find >>"
+msgstr "Remplacer / chercher >>"
+
+#: src/GUI/Search/text/SearchReplaceDialog.cpp:77
+msgid "<< Replace / Find"
+msgstr "<< Remplacer / chercher"
+
+#: src/GUI/Search/text/SearchReplaceDialog.cpp:78
+msgid "_Replace"
+msgstr "_Remplacer"
+
+#: src/GUI/Search/text/SearchReplaceDialog.cpp:79
+msgid "Replace _all"
+msgstr "Remplacer _tout"
+
+#: src/GUI/Search/text/SearchReplaceDialog.cpp:81
+msgid "All lines"
+msgstr "Toute les lignes"
+
+#: src/GUI/Search/text/SearchReplaceDialog.cpp:82
+msgid "Selected lines"
+msgstr "Lignes sélectionnées"
+
+#: src/GUI/Search/text/SearchReplaceDialog.cpp:84
+msgid "Case sensitive"
+msgstr "Respecter la casse"
+
+#: src/GUI/Search/text/SearchReplaceGeneral.cpp:545
+msgid "occurrences replaced"
+msgstr "occurences remplacées"
+
+#: src/GUI/Search/text/SearchReplaceGeneral.cpp:560
+msgid "no occurences found"
+msgstr "aucune occurence trouvée"
+
+#: src/GUI/Search/text/SearchReplaceGeneral.cpp:714
+#: src/GUI/Search/text/SearchReplaceGeneral.cpp:723
+#: src/GUI/Search/text/SearchReplaceGeneral.cpp:738
+msgid "Text & Tags"
+msgstr "Texte & Étiquettes"
+
+#: src/GUI/Search/text/SearchReplaceGeneral.cpp:716
+#: src/GUI/Search/text/SearchReplaceGeneral.cpp:729
+msgid "Tags"
+msgstr "Étiquettes"
+
+#: src/GUI/Speaker/DictionaryManager.cpp:144
+#: src/GUI/Speaker/DictionaryManager.cpp:173
+msgid "Loading dictionary error"
+msgstr "Erreur de chargement du dictionnaire"
+
+#: src/GUI/Speaker/SpeakerData.cpp:31
+msgid "Speakers data"
+msgstr "Données des locuteurs"
+
+#: src/GUI/Speaker/SpeakerData.cpp:108
+msgid "Add language"
+msgstr "Ajouter"
+
+#: src/GUI/Speaker/SpeakerData.cpp:108
+msgid "add a new language"
+msgstr "Ajouter une langue"
+
+#: src/GUI/Speaker/SpeakerData.cpp:111
+msgid "Remove language"
+msgstr "Supprimer"
+
+#: src/GUI/Speaker/SpeakerData.cpp:111
+msgid "remove the selected language"
+msgstr "Supprimer la langue sélectionnée"
+
+#: src/GUI/Speaker/SpeakerData.cpp:116
+msgid "_Validate"
+msgstr "_Valider"
+
+#: src/GUI/Speaker/SpeakerData.cpp:163
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:187
+msgid "First Name"
+msgstr "Prénom"
+
+#: src/GUI/Speaker/SpeakerData.cpp:168
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:185
+msgid "Last Name"
+msgstr "Nom de famille"
+
+#: src/GUI/Speaker/SpeakerData.cpp:173
+msgid "Gender"
+msgstr "Genre"
+
+#: src/GUI/Speaker/SpeakerData.cpp:200 src/GUI/Speaker/SpeakerData.cpp:403
+msgid "Speaker Data"
+msgstr "Données des locuteurs"
+
+#: src/GUI/Speaker/SpeakerData.cpp:229
+msgid "Please fill the "
+msgstr "Veuillez remplir le "
+
+#: src/GUI/Speaker/SpeakerData.cpp:230
+msgid "Invalid character in "
+msgstr "Caractère non autorisé dans "
+
+#: src/GUI/Speaker/SpeakerData.cpp:296
+msgid "Invalid language, check the information"
+msgstr "Langue invalide, vérifiez les informations saisies"
+
+#: src/GUI/Speaker/SpeakerData.cpp:311 src/GUI/Speaker/SpeakerData.cpp:335
+msgid "Male"
+msgstr "Homme"
+
+#: src/GUI/Speaker/SpeakerData.cpp:314 src/GUI/Speaker/SpeakerData.cpp:336
+msgid "Female"
+msgstr "Femme"
+
+#: src/GUI/Speaker/SpeakerData.cpp:317 src/GUI/Speaker/SpeakerData.cpp:327
+#: src/GUI/Speaker/SpeakerData.cpp:337
+msgid "Undefined"
+msgstr "Indéfini"
+
+#: src/GUI/Speaker/SpeakerData.cpp:418
+msgid "NEW SPEAKER"
+msgstr "NOUVEAU Locuteur"
+
+#: src/GUI/Speaker/SpeakerData.cpp:482
+msgid "Accent"
+msgstr "Accent"
+
+#: src/GUI/Speaker/SpeakerData.cpp:490
+msgid "is usual"
+msgstr "est usuel"
+
+#: src/GUI/Speaker/SpeakerData.cpp:499
+msgid "is native"
+msgstr "est natif"
+
+#: src/GUI/Speaker/SpeakerData.cpp:680
+msgid "This language already exists for this speaker"
+msgstr "Cette langue existe déjà pour ce locuteur"
+
+#: src/GUI/Speaker/SpeakerData.cpp:791
+msgid "Select a language"
+msgstr "Sélectionner une langue"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:28
+msgid "Speaker Dictionary"
+msgstr "Dictionnaire de locuteurs"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:261
+msgid "GLOBAL dictionary"
+msgstr "Dictionnaire GLOBAL"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:275
+msgid "Raise current file dictionary"
+msgstr "Afficher le dictionnaire du fichier actif"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:277
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:335
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:413
+msgid "Show details"
+msgstr "Afficher les détails"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:319
+msgid "Local dictionary"
+msgstr "Dictionnaire local"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:333
+msgid "Raise global dictionary"
+msgstr "Afficher le dictionnaire global"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:371
+msgid "_Add a speaker"
+msgstr "_Ajouter un locuteur"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:372
+msgid "add a new speaker"
+msgstr "Ajouter un nouveau locuteur"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:374
+msgid "_Remove speaker"
+msgstr "_Supprimer un locuteur"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:375
+msgid "remove the selected speaker"
+msgstr "supprime le locuteur sélectionné"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:402
+msgid "Hide details"
+msgstr "Cacher les détails"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:454
+msgid "Error while replacing speaker"
+msgstr "La mise à jour du locuteur a échoué"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:498
+msgid ""
+"An existing speaker seems to correspond to the one you want to add\n"
+"Do you want to continue ?"
+msgstr ""
+"Un locuteur existant semble correspondre à celui que vous souhaitez ajouter\n"
+"Voulez-vous continuer ?"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:500
+msgid ""
+"Existing speakers seem to correspond to the one you want to add\n"
+"Do you want to continue ?"
+msgstr ""
+"Des locuteurs existants semblent correspondre à ceux que vous souhaitez "
+"ajouter\n"
+"Voulez-vous continuer ?"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:538
+msgid "Error while adding speaker"
+msgstr "Erreur d'ajout de locuteur"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:590
+msgid "Current speaker has been modified, continue ?"
+msgstr "Le locuteur courant a été modifié, continuer ?"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:591
+msgid "Modifications not validated will be lost"
+msgstr "Les modifications non validées seront perdues"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:606
+msgid "This speaker is used in the annotation file, can't remove it"
+msgstr ""
+"Ce locuteur est référencé dans la transcription, il ne peut être supprimé"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:611
+msgid "Are you sure to delete the selected speaker ?"
+msgstr "Êtes-vous sûr de vouloir supprimer le locuteur sélectionné ?"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:616
+msgid "error while deleting speaker"
+msgstr "erreur de suppression du locuteur"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:666
+msgid "error while updating speaker"
+msgstr "erreur de mise à jour du locuteur"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:683
+msgid "Please check dictionary permissions"
+msgstr "Vérifier les permissions du dictionnaire de locuteurs"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:688
+msgid "Error while saving dictionary"
+msgstr "Erreur d'enregistrement du dictionnaire des locuteurs"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:839
+msgid "New speaker has not been validated, continue edition ?"
+msgstr "Le nouveau locuteur n'a pas été validé, continuer l'édition ?"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:840
+msgid "if you choose NO, new speaker won't be added"
+msgstr "si vous choisissez NON, le nouveau locuteur ne sera pas créé"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:851
+msgid ""
+"Current speaker has been modified, do you want to validate modifications ?"
+msgstr ""
+"Le locuteur courant a été modifié, voulez-vous valider les modifications ?"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:1010
+msgid "User not found"
+msgstr "Locuteur non trouvé"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:1030
+msgid "Do you want to replace this speaker ?"
+msgstr "Voulez-vous remplacer ce locuteur"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:1036
+msgid "Functionality not available in global dictionary"
+msgstr "Fonctionnalité non disponible pour le dictionnaire de locuteurs global"
+
+#: src/GUI/Speaker/SpeakerDico_dialog.cpp:1057
+msgid ""
+"Global speaker dictionary has been modified, do you want to save it before "
+"closing ?"
+msgstr "le dictionnaire global a été modifié, enregistrer avant fermeture ?"
+
+#: src/GUI/Tools/Clipboard.cpp:41
+msgid "Delete All"
+msgstr "Supprimer tout"
+
+#: src/GUI/Tools/Clipboard.cpp:51
+msgid "Up selection"
+msgstr "Sélection précédente"
+
+#: src/GUI/Tools/Clipboard.cpp:52
+msgid "Alt + Up"
+msgstr "Alt + Flêche haut"
+
+#: src/GUI/Tools/Clipboard.cpp:55
+msgid "Down selection"
+msgstr "Sélection suivante"
+
+#: src/GUI/Tools/Clipboard.cpp:56
+msgid "Alt + Down"
+msgstr "Alt + Flêche bas"
+
+#: src/GUI/Tools/Clipboard.cpp:59
+msgid "Paste selection in editor"
+msgstr "Copier l'élément sélectionné du presse-papier vers l'éditeur"
+
+#: src/GUI/Tools/Clipboard.cpp:60
+msgid "Alt + Left"
+msgstr "Alt + Flêche gauche"
+
+#: src/GUI/Tools/Clipboard.cpp:63
+msgid "Keep editor selection in clipboard"
+msgstr "Copier l'élément sélectionné de l'éditeur vers le presse-papier"
+
+#: src/GUI/Tools/Clipboard.cpp:64
+msgid "Alt + Right"
+msgstr "Alt + Flêche droite"
+
+#: src/GUI/Tools/Clipboard.cpp:67
+msgid "Suppress all clipboard"
+msgstr "Vider le clipboard"
+
+#: src/GUI/Tools/Clipboard.cpp:68
+msgid "Alt + Shift + Space"
+msgstr "Alt + Shift + Espace"
+
+#: src/GUI/Tools/Clipboard.cpp:71
+msgid "Suppress clipboard selection"
+msgstr "Supprimer la sélection courante"
+
+#: src/GUI/Tools/Clipboard.cpp:72
+msgid "Alt + Shift + Suppress"
+msgstr "Alt + Shift + Suppr"
+
+#: src/GUI/Tools/Clipboard.cpp:75 src/GUI/Tools/Clipboard.cpp:153
+msgid "A -> Z"
+msgstr "A -> Z"
+
+#: src/GUI/Tools/Clipboard.cpp:79 src/GUI/Tools/Clipboard.cpp:156
+msgid "Z -> A"
+msgstr "Z -> A"
+
+#: src/GUI/Tools/Clipboard.cpp:135
+msgid "Previous clipboard entry"
+msgstr "Elément précédent du presse-papier"
+
+#: src/GUI/Tools/Clipboard.cpp:135
+msgid "_Previous entry"
+msgstr "Elément _précédent"
+
+#: src/GUI/Tools/Clipboard.cpp:138
+msgid "Next clipboard entry"
+msgstr "Elément suivant du presse-papier"
+
+#: src/GUI/Tools/Clipboard.cpp:138
+msgid "_Next entry"
+msgstr "Elément _suivant"
+
+#: src/GUI/Tools/Clipboard.cpp:141
+msgid "Export from clipboard"
+msgstr "Exporter à partir du presse-papier"
+
+#: src/GUI/Tools/Clipboard.cpp:141
+msgid "_Export from clipboard"
+msgstr "_Exporter à partir du presse-papier"
+
+#: src/GUI/Tools/Clipboard.cpp:144
+msgid "Import in clipboard"
+msgstr "Importer dans le presse-papier"
+
+#: src/GUI/Tools/Clipboard.cpp:144
+msgid "_Import in clipboard"
+msgstr "_Importer dans le presse-papier"
+
+#: src/GUI/Tools/Clipboard.cpp:147
+msgid "Clear all clipboard"
+msgstr "Vider le presse-papier"
+
+#: src/GUI/Tools/Clipboard.cpp:147
+msgid "_Clear clipboard"
+msgstr "_Vider le presse-papier"
+
+#: src/GUI/Tools/Clipboard.cpp:150
+msgid "Suppress selected line in clipboard"
+msgstr "Supprimer la ligne sélectionnée dans le presse-papier"
+
+#: src/GUI/Tools/Clipboard.cpp:150
+msgid "_Suppress clipboard selection"
+msgstr "Su_pprimer la sélection du presse-papier"
+
+#: src/GUI/Tools/Clipboard.cpp:153
+msgid "Alphabetic order"
+msgstr "Ordre alphabétique"
+
+#: src/GUI/Tools/Clipboard.cpp:156
+msgid "Reverse Alphabetic"
+msgstr "Ordre alphabétique inversé"
+
+#: src/GUI/Tools/Clipboard.cpp:159
+msgid "Display / Hide clipboard"
+msgstr "Afficher / Cacher le presse papier"
+
+#: src/GUI/Tools/Clipboard.cpp:159
+msgid "_Display / Hide clipboard"
+msgstr "_Afficher / Cacher le presse papier"
+
+#: src/GUI/Tools/Clipboard.cpp:583
+msgid "Clear all clipboard ?"
+msgstr "Vider le presse-papier ?"
+
+#: src/GUI/Tools/Doc.cpp:83
+msgid "An error occured while launching documentation browser"
+msgstr "Erreur lors du lancement du navigateur"
+
+#: src/GUI/Tools/Doc.cpp:84
+msgid "Please check your default browser in preferences"
+msgstr "Vérifiez le navigateur par défaut dans les préférences"
+
+#: src/GUI/Tools/Doc.cpp:91
+msgid "No browser found"
+msgstr "Aucun navigateur trouvé"
+
+#: src/GUI/Tools/NoteBook_mod.cpp:49
+msgid "Close"
+msgstr "Fermer"
+
+#: src/GUI/Tools/NoteBook_mod.cpp:129
+msgid "File needs to be reloaded for applying preferences modifications"
+msgstr ""
+"Le fichier doit être rechargé pour que les préférences soient prises en "
+"compte"
+
+#: src/GUI/Tools/NoteBook_mod.cpp:131
+msgid "Click for reloading"
+msgstr "Cliquer pour recharger"
+
+#: src/GUI/Tools/NoteBook_mod.cpp:273
+msgid "Loading file ..."
+msgstr "Chargement en cours..."
+
+#: src/GUI/Tools/NoteBook_mod.cpp:355
+msgid "Loading done..."
+msgstr "Chargement effectué..."
+
+#: src/GUI/Tools/NoteBook_mod.cpp:533
+msgid "Please close the file dictionary before closing the editor"
+msgstr "Fermer le dictionnaire avant de fermer l'éditeur"
+
+#: src/GUI/Tools/NoteBook_mod.cpp:790
+msgid "Refreshing..."
+msgstr "Rafraichissement..."
+
+#: src/GUI/Tools/TAGCommandLine.cpp:28
+msgid "- Annotation Graph Editor"
+msgstr "Editeur de graphes d'annotation"
+
+#: src/GUI/Tools/TAGCommandLine.cpp:34
+msgid "TranscriberAG command line options"
+msgstr "Options de ligne de commande TranscriberAG"
+
+#: src/GUI/Tools/TAGCommandLine.cpp:34
+msgid "options for TranscriberAG"
+msgstr "options pour TranscriberAG"
+
+#: src/GUI/Tools/TAGCommandLine.cpp:39
+msgid "FILEPATH"
+msgstr "CHEMIN"
+
+#: src/GUI/Tools/TAGCommandLine.cpp:39
+msgid "open an audio or an annotation file"
+msgstr "ouvrir un fichier audio ou d'annotation"
+
+#: src/GUI/Tools/TAGCommandLine.cpp:43
+msgid "display version of TranscriberAG"
+msgstr "afficher la version de TranscriberAG"
+
+#: src/GUI/Tools/TAGCommandLine.cpp:47
+msgid "OFFSET"
+msgstr ""
+
+#: src/GUI/Tools/TAGCommandLine.cpp:47
+msgid "open file at a specific signal offset (seconds)"
+msgstr ""
+
+#: src/GUI/Tools/TAGCommandLine.cpp:51
+msgid "REPORT_LEVEL"
+msgstr ""
+
+#: src/GUI/Tools/TAGCommandLine.cpp:51
+msgid "specify the report level: 0(never) - 1(always) - 2(only if errors)"
+msgstr ""
+
+#: src/GUI/Tools/TAGCommandLine.cpp:125
+msgid "Unknown option, use option -?/--help for usage"
+msgstr "Option inconnue, utiliser l'option -?/--help"
+
+#: src/GUI/Tools/TAGCommandLine.cpp:127
+msgid "Bad option value, use option -?/--help for usage"
+msgstr "Valeur non-valide, utiliser l'option -?/--help"
+
+#: src/GUI/Tools/TAGCommandLine.cpp:129
+msgid "Unknown option or bad option value, use option -?/--help for usage"
+msgstr "Option inconnue ou valeur non valide, utiliser l'option -?/--help"
+
+#: src/GUI/Tree/Explorer_tooltip.cpp:91
+msgid "Name: "
+msgstr "Nom : "
+
+#: src/GUI/Tree/Explorer_tooltip.cpp:97
+msgid "Path: "
+msgstr "Chemin : "
+
+#: src/GUI/Tree/Explorer_tooltip.cpp:172
+msgid " bits"
+msgstr " bits"
+
+#: src/GUI/Tree/Explorer_tooltip.cpp:244
+msgid "Type:"
+msgstr "Type : "
+
+#: src/GUI/Tree/Explorer_tooltip.cpp:245
+msgid "Name:"
+msgstr "Nom : "
+
+#: src/GUI/Tree/Explorer_tooltip.cpp:246
+msgid "Size:"
+msgstr "Taille : "
+
+#: src/GUI/Tree/Explorer_tooltip.cpp:248
+msgid "Encoding:"
+msgstr "Encodage : "
+
+#: src/GUI/Tree/Explorer_tooltip.cpp:249
+msgid "Duration:"
+msgstr "Durée :"
+
+#: src/GUI/Tree/Explorer_tooltip.cpp:250
+msgid "Status:"
+msgstr "Statut : "
+
+#: src/GUI/Tree/Explorer_tooltip.cpp:293
+msgid "Modified:"
+msgstr "Modifié : "
+
+#: src/GUI/Tree/Explorer_tree.cpp:134
+msgid "Are you sure to delete the directory"
+msgstr "Êtes-vous sûr de vouloir supprimer le répertoire ?"
+
+#: src/GUI/Tree/Explorer_tree.cpp:136
+msgid "Are you sure to delete the file "
+msgstr "Êtes-vous sûr de vouloir supprimer le fichier ?"
+
+#: src/GUI/Tree/Explorer_tree.cpp:143
+msgid "Removing"
+msgstr "Suppression en cours"
+
+#: src/GUI/Tree/Explorer_tree.cpp:160
+msgid "Removed"
+msgstr "Supprimé"
+
+#: src/GUI/Tree/Explorer_tree.cpp:171
+msgid "Can't find the file or directory to be removed"
+msgstr "Répertoire ou fichier à supprimer non trouvé"
+
+#: src/GUI/Tree/Explorer_tree.cpp:173
+msgid "Removing problem"
+msgstr "Problème de suppression"
+
+#: src/GUI/Tree/Explorer_tree.cpp:244
+msgid "Renaming problem"
+msgstr "Erreur de renommage"
+
+#: src/GUI/Tree/Explorer_tree.cpp:300
+msgid "This directory is not writable"
+msgstr "Le répertoire n'est pas inscriptible"
+
+#: src/GUI/Tree/Explorer_tree.cpp:303
+msgid "Problem while creating directory, check the permissions"
+msgstr "Erreur de création du répertoire, vérifiez les permissions"
+
+#: src/GUI/Tree/TreeManager.cpp:43
+msgid "File Manager"
+msgstr "Fichiers"
+
+#: src/GUI/Tree/TreeManager.cpp:256 src/GUI/Tree/TreeManager.cpp:361
+msgid "You can't move a directory to itself"
+msgstr "Vous ne pouvez déplacer un répertoire vers lui-même"
+
+#: src/GUI/Tree/TreeManager.cpp:264 src/GUI/Tree/TreeManager.cpp:369
+msgid ""
+"Directory already contains file with same name\n"
+"Do you want to replace it ?"
+msgstr ""
+"Le répertoire contient déjà un fichier de même nom\n"
+"Voulez-vous l'écraser ?"
+
+#: src/GUI/Tree/TreeManager.cpp:276
+msgid "Move"
+msgstr "Déplacer"
+
+#: src/GUI/Tree/TreeManager.cpp:289
+msgid "Moved"
+msgstr "Déplacé"
+
+#: src/GUI/Tree/TreeManager.cpp:298
+msgid "Moving file problem"
+msgstr "Erreur de déplacement fichier"
+
+#: src/GUI/main.cpp:553
+msgid "Error loading default configuration"
+msgstr "Erreur de chargement de la configuration utilisateur"
+
+#: src/GUI/main.cpp:555
+msgid "Error loading existing user local configuration"
+msgstr "Erreur de chargement de la configuration utilisateur"
+
+#: src/GUI/main.cpp:557
+msgid "Error loading updated user local configuration"
+msgstr "Erreur de chargement de la configuration utilisateur"
+
+#: src/GUI/main.cpp:559
+msgid "Error reading configuration directory"
+msgstr "Erreur de chargement de la configuration utilisateur"
+
+#: src/GUI/msgErr.cpp:73
+msgid "An instance of TranscriberAG is already running."
+msgstr "Une instance de TranscriberAG est déjà en cours d'exécution."
+
+#: src/MediaComponent/io/SndFileHandler.cpp:155
+msgid "WAV (Little Endian)"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:156
+msgid "Apple/SGI AIFF (Big Endian)"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:157
+msgid "Sun/NeXT AU (Big Endian)"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:158
+msgid "RAW PCM Data"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:159
+msgid "Ensoniq PARIS Format"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:160
+msgid "Amiga IFF / SVX8 / SV16"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:161
+msgid "Sphere NIST"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:162
+msgid "VOC"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:163
+msgid "Berkeley/IRCAM/CARL"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:164
+msgid "Sonic Foundry's 64 bit RIFF/WAV"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:165
+msgid "Matlab (TM) v4.2 / GNU Octave v2.0"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:166
+msgid "Matlab (TM) v5.0 / GNU Octave v2.1"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:167
+msgid "Portable Voice Format"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:168
+msgid "Fasttracker 2 Extended Instrument"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:169
+msgid "HMM Tool Kit Format"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:170
+msgid "Midi Sample Dump Standard"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:171
+msgid "Audio Visual Research"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:172
+msgid "MS WAVE With WAVEFORMATEX"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:173
+msgid "Sound Designer 2"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:174
+msgid "FLAC Lossless Format"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:175
+msgid "Core Audio File"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:176
+msgid "Unrecognized"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:201
+msgid "U-Law"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:202
+msgid "A-Law"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:203
+msgid "IMA ADPCM"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:204
+msgid "Microsoft ADPCM"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:205
+msgid "GSM 6.10 Encoding"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:206
+msgid "Oki Dialogic ADPCM Encoding"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:207
+msgid "32 Kbs G721 ADPCM Encoding"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:208
+msgid "24 Kbs G723 ADPCM Encoding"
+msgstr ""
+
+#: src/MediaComponent/io/SndFileHandler.cpp:209
+msgid "40 Kbs G723 ADPCM Encoding"
+msgstr ""
+
+#: src/Tools/txt2tag.cpp:244
+msgid "Can't open file for reading: "
+msgstr "Impossible d'ouvrir le fichier : "
+
+#: src/VideoComponent/FrameBrowser/FrameBrowser.cpp:53
+msgid "Resolution"
+msgstr "Résolution"
+
+#: src/VideoComponent/FrameBrowser/FrameBrowser.cpp:88
+msgid "Browser"
+msgstr "Navigateur"
+
+#: src/VideoComponent/FrameBrowser/FrameBrowser.cpp:294
+msgid "Error while computing video preview, aborted."
+msgstr "Erreur lors de la préparation des aperçus vidéo, annulé."
+
+#: src/VideoComponent/FrameBrowser/FrameBrowser.cpp:316
+msgid "Error while loading video preview, aborted."
+msgstr "Erreur lors du chargment des aperçus vidéo, annulé."
+
+#: src/VideoComponent/VideoManager.cpp:123
+msgid "Show/Hide video panels"
+msgstr "Afficher/Masquer les fenêtres vidéo"
+
+#: src/VideoComponent/VideoManager.cpp:127
+msgid "Show/Hide video browser"
+msgstr "Afficher/Masquer le navigateur vidéo"
+
+#: src/VideoComponent/VideoManager.cpp:131
+msgid "Show/Hide video player"
+msgstr "Afficher/Masquer le lecteur vidéo"
+
+#: src/VideoComponent/VideoPlayer/ToolBox.cpp:31
+msgid "Rewind by N frames"
+msgstr "Reculer de N frames"
+
+#: src/VideoComponent/VideoPlayer/ToolBox.cpp:32
+msgid "Rewind"
+msgstr "Reculer"
+
+#: src/VideoComponent/VideoPlayer/ToolBox.cpp:33
+msgid "Forward"
+msgstr "Avancer"
+
+#: src/VideoComponent/VideoPlayer/ToolBox.cpp:34
+msgid "Forward by N frames"
+msgstr "Avancer de N frames"
+
+#: src/VideoComponent/VideoPlayer/ToolBox.cpp:35
+msgid "Set in frame clipboard"
+msgstr "Garder la frame dans le presse-papier"
+
+#: src/VideoComponent/VideoPlayer/ToolBox.cpp:65
+msgid "Frame number navigation"
+msgstr "Navigation par N frames"
+
+#: src/VideoComponent/VideoPlayer/ToolBox.cpp:81
+msgid "Pause"
+msgstr "Pause"
+
+#: src/VideoComponent/VideoPlayer/VideoWidget.cpp:576
+msgid "Error while decoding frame... Aborted."
+msgstr "Erreur lors de l'encodage de la frame... Annulé."
+
+#: src/VideoComponent/VideoPlayer/VideoWidget.cpp:735
+msgid "forward by N frames"
+msgstr "avancer de N frames"
+
+#: src/VideoComponent/VideoPlayer/VideoWidget.cpp:739
+msgid "rewind by N frames"
+msgstr "reculer de N frames"
+
+#~ msgid "Speller error : "
+#~ msgstr "Correcteur orthographique - Erreur : "
+
+#~ msgid "Spelling suggestions"
+#~ msgstr "Orthographes suggérées "
+
+#~ msgid "_Increase tempo"
+#~ msgstr "_Incrémenter le tempo"
+
+#~ msgid "Increase tempo by 10%"
+#~ msgstr "Incrémenter le tempo de 10%"
+
+#~ msgid "_Decrease tempo"
+#~ msgstr "_Décrémenter le tempo"
+
+#~ msgid "Decrease tempo by 10%"
+#~ msgstr "Décrémenter le tempo de 10%"
+
+#~ msgid "Please install it, or define its path through configuration menu."
+#~ msgstr ""
+#~ "SVP installer le, ou définissez le à travers le menu de configuration"
+
+#~ msgid "Developed by Bertin Technologies, TIC department, 2010."
+#~ msgstr "Développé par Bertin Technologies, département TIC, 2010."

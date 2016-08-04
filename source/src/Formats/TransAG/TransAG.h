@@ -68,7 +68,7 @@ class TransAG : public agfio_plugin
 };
 
 #ifndef EXTERNAL_USE
-AGFIO_PLUGIN(TransAG);
+AGFIO_PLUGIN(TransAG)
 #endif
 
 #endif

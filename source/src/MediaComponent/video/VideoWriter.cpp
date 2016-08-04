@@ -42,15 +42,15 @@ VideoWriter::generateVideo()
 
 
 	// -- Format guesser & allocation --
-	outFormat = guess_format(NULL, sourcePath.c_str(), NULL);
+	outFormat = av_guess_format(NULL, sourcePath.c_str(), NULL);
 
 	if (!outFormat)
 	{
 		printf("Format Guess Fallback : mpeg\n");
-		outFormat = guess_format("mpeg", NULL, NULL);
+		outFormat = av_guess_format("mpeg", NULL, NULL);
 	}
     
-	formatCtx = av_alloc_format_context();
+	formatCtx = avformat_alloc_context();
 
 	if (!formatCtx)
 	{
@@ -67,16 +67,9 @@ VideoWriter::generateVideo()
 	// -- Single output video stream --
 	if (outFormat->video_codec != CODEC_ID_NONE)
 		video_st = addVideoStream(formatCtx, outFormat->video_codec);
-	
-	// -- Global parameters --
-	if (av_set_parameters(formatCtx, NULL) < 0)
-	{
-		printf("Invalid output format parameters\n");
-		exit(1);
-	}
     
 	// -- Format Log --
-	dump_format(formatCtx, 0, formatCtx->filename, 1);
+	av_dump_format(formatCtx, 0, formatCtx->filename, 1);
 
 
 	// -- Opening video stream --
@@ -91,16 +84,15 @@ VideoWriter::generateVideo()
 	if ( !(outFormat->flags & AVFMT_NOFILE) )
 	{
 		printf("Opening file : %s\n", formatCtx->filename);
-		if (url_fopen(&formatCtx->pb, formatCtx->filename, URL_WRONLY) < 0)
+		if (avio_open(&formatCtx->pb, formatCtx->filename, AVIO_FLAG_WRITE) < 0)
 		{
 			printf("Could not open '%s'\n", formatCtx->filename);
 			exit(1);
 		}
 	}
 
-
 	// -- File Header --
-	av_write_header(formatCtx);
+	avformat_write_header(formatCtx, NULL);
 
 	// -- Frame copy --
 	int nbframes = device->m_info()->video_duration / frameStep;
@@ -121,7 +113,7 @@ VideoWriter::generateVideo()
 	}
 
 	if (!(outFormat->flags & AVFMT_NOFILE))
-		url_fclose(formatCtx->pb);
+		avio_close(formatCtx->pb);
 
 	av_free(formatCtx);
 }
@@ -129,12 +121,12 @@ VideoWriter::generateVideo()
 
 // --- AddVideoStream ---
 AVStream*
-VideoWriter::addVideoStream(AVFormatContext *formatCtx, CodecID codecID)
+VideoWriter::addVideoStream(AVFormatContext *formatCtx, AVCodecID codecID)
 {
 	AVCodecContext*	codecCtx;
 	AVStream*		stream;
 
-	stream = av_new_stream(formatCtx, 0);
+	stream = avformat_new_stream(formatCtx, NULL);
 
 	if (!stream)
 	{
@@ -144,7 +136,7 @@ VideoWriter::addVideoStream(AVFormatContext *formatCtx, CodecID codecID)
 
 	codecCtx				= stream->codec;
 	codecCtx->codec_id		= CODEC_ID_BMP;
-	codecCtx->codec_type	= CODEC_TYPE_VIDEO;
+	codecCtx->codec_type	= AVMEDIA_TYPE_VIDEO;
 
 	// -- Sample parameters --
 	codecCtx->bit_rate		= device->m_info()->video_bit_rate;
@@ -221,7 +213,7 @@ VideoWriter::openVideo(AVFormatContext *formatCtx, AVStream *stream)
 		printf("codec found\n");
 
 	/* open the codec */
-	if (avcodec_open(codecCtx, codec) < 0)
+	if (avcodec_open2(codecCtx, codec, NULL) < 0)
 		printf("could not open codec\n");
 	else
 		printf("codec opened successfully\n");

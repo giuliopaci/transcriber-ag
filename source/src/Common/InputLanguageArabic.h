@@ -124,7 +124,7 @@ class InputLanguageArabic :	public InputLanguage
 
 		/*** Herited methods ***/
 		virtual void postProcessing(Gtk::TextView *view, Gtk::TextIter iter);
-		virtual void postLoadingKeyMap(DOMNode *node, gunichar c);
+		virtual void postLoadingKeyMap(xercesc::DOMNode *node, gunichar c);
 		virtual bool proceedDeletion(GdkEventKey *event, Gtk::TextView  *view, Gtk::TextIter it);
 		virtual Glib::ustring processingString(Glib::ustring s)  ;
 		Glib::ustring unprocessingString(Glib::ustring s) ;

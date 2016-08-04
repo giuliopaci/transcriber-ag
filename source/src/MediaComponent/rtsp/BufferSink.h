@@ -124,7 +124,7 @@ private:
 	// -- Internals --
 	unsigned char*		fBuffer;
 	unsigned			fBufferSize;
-	CodecID				ffmpeg_codec_id;
+	AVCodecID			ffmpeg_codec_id;
 	int					sink_sample_rate;
 	int					sink_frame_size;
 	int					sink_channels;

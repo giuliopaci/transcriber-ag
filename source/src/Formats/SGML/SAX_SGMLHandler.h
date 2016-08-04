@@ -66,7 +66,7 @@ class SAX_SGMLHandler : public HandlerBase, private XMLFormatTarget
 		void endElement(const XMLCh* const name);
 
 		/** Characters element handler */
-		void characters(const XMLCh* const chars, const unsigned int length);
+		void characters(const XMLCh* const chars, const XMLSize_t length);
 
 		/** Warning handler */
 		void warning(const SAXParseException& exception);
@@ -139,7 +139,7 @@ class SAX_SGMLHandler : public HandlerBase, private XMLFormatTarget
 		string targetString;
 		string localDTD;
 
-		void writeChars(const XMLByte* const, const unsigned int, XMLFormatter* const);
+		void writeChars(const XMLByte* const, const XMLSize_t, XMLFormatter* const);
 		string& set_string(string&, const XMLCh* const);
 
 		// StartFP: a type for function pointers to element handlers which are

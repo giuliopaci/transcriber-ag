@@ -13,7 +13,7 @@
 #ifndef _HAVE_PORTABILITE_H
 #define _HAVE_PORTABILITE_H
 
-#ifdef WIN32
+#if defined(WIN32) && !defined(__MINGW32__)
 #include <stdarg.h>
 #include <windef.h>
 #include <winbase.h>

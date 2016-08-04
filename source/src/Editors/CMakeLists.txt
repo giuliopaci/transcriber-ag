@@ -10,13 +10,10 @@ include_directories(
 	${SRC}/DataModel
 	${SRC}/AudioWidget
 	${SRC}
-	${AGLIB}/src/ag
+	${AGLIB_INCLUDE_DIRS}
 #	${GTKSPELL}
-	${LIVEMEDIA}/liveMedia/include
-	${LIVEMEDIA}/groupsock/include
-	${LIVEMEDIA}/UsageEnvironment/include
-	${LIVEMEDIA}/BasicUsageEnvironment/include
-	${SOUNDTOUCH}/include
+	${LIVEMEDIA_INCLUDE_DIRS}
+	${SOUNDTOUCH_INCLUDE_DIRS}
 	${GTKMM_INCLUDE_DIRS}
 	${PORTAUDIO_INCLUDE_DIRS}
 )
@@ -77,9 +74,9 @@ add_library(
 )
 
 # --- Link ---
-if (WIN32)
+if (WIN32 AND NOT MINGW)
 	set(WIN32_LINKS wsock32 ws2_32 dl)
-endif (WIN32)
+endif (WIN32 AND NOT MINGW)
 
 target_link_libraries(
 	AGEditors

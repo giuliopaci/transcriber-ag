@@ -2,6 +2,13 @@
 # --- TranscriberAG - CMake File ---
 # ----------------------------------
 
+if(CMAKE_COMPILER_IS_GNUCC)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++0x")
+    if (NOT MINGW)
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+    endif(NOT MINGW)
+endif()
+
 # --- Subdirectories ---
 add_subdirectory	(Common)
 add_subdirectory	(DataModel)

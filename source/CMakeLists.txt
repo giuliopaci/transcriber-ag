@@ -3,7 +3,7 @@
 # ----------------------------------
 
 # --- CMake Internals ---
-cmake_minimum_required	(VERSION 2.6)
+cmake_minimum_required	(VERSION 2.8)
 include (CPack)
 
 # --- Project Root Name ---
@@ -12,31 +12,58 @@ project					(TranscriberAG)
 
 # --- Global Package Dependencies ---
 find_package			(PkgConfig	REQUIRED)
+# modules
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake/")
 find_package			(Gettext	REQUIRED)
 
 # -----------------------
 # --- Project Options ---
 # -----------------------
 option(VIDEO_BUILD	"Adds Video Player Module to Build Rules"	ON)
-option(DEBUG		"Sets Debug Mode"							OFF)
-option(LIBTAG		"Sets libtag only  mode"					OFF)
+option(LIBTAG		"Sets libtag only mode"					OFF)
 option(MEDIA_TOOLS	"(use with LIBTAG=ON) Adds (audio) Media tools to build rules"	OFF)
 
-# --- Debug Mode ---
-if (DEBUG)
-	set(CMAKE_BUILD_TYPE Debug)
-	add_definitions(-D_DEBUGMODE)
-	message(-- DEBUG MODE [ON])
-endif(DEBUG)
+# Default config, share and doc directory
+if (APPLE)
+   set(DEFAULT_ETC_DIR ${CMAKE_INSTALL_PREFIX}/etc/TranscriberAG)
+   option(ETC_DIR      "Directory containing the configuration"	${DEFAULT_ETC_DIR})
+   set(DEFAULT_SHARE_DIR ${CMAKE_INSTALL_PREFIX}/share/TranscriberAG)
+   option(ETC_DIR      "Directory containing the "	${DEFAULT_SHARE_DIR})
+   set(DEFAULT_DOC_DIR ${CMAKE_INSTALL_PREFIX}/share/doc/TranscriberAG)
+   option(ETC_DIR      "Directory containing the "	${DEFAULT_DOC_DIR})
+endif (APPLE)
+if (WIN32)
+   # code for win32 won't rely on this, but a default is used somewhere...
+   set(DEFAULT_ETC_DIR "C:\\\\Program Files\\TranscriberAG\\etc")
+   set(DEFAULT_SHARE_DIR "C:\\\\Program Files\\TranscriberAG\\share")
+   set(DEFAULT_DOC_DIR "C:\\\\Program Files\\TranscriberAG\\doc")
+endif(WIN32)
+if (UNIX)
+   set(DEFAULT_ETC_DIR "/etc/TranscriberAG")
+   option(ETC_DIR      "Directory containing the documentation"	${DEFAULT_ETC_DIR})
+   set(DEFAULT_SHARE_DIR ${CMAKE_INSTALL_PREFIX}/share/TranscriberAG)
+   set(DEFAULT_DOC_DIR ${CMAKE_INSTALL_PREFIX}/share/doc/TranscriberAG)
+endif(UNIX)
+
+
+
 if(LIBTAG)
     set(VIDEO_BUILD OFF)
 endif(LIBTAG)
 
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D_DEBUGMODE")
+
+if(CMAKE_COMPILER_IS_GNUCC)
+  set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -O0 -ggdb3 -pedantic")
+  set(CMAKE_CXX_FLAGS_MINSIZEREL "${CMAKE_CXX_FLAGS_RELEASE} -s -Os")
+  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O2")
+endif(CMAKE_COMPILER_IS_GNUCC)
 
 # --- Unix Settings ---
-if (UNIX)
-	find_package			(X11		REQUIRED)
+if (UNIX OR MINGW)
+	pkg_check_modules		(X11		x11)
 	pkg_check_modules		(GLIBMM		glibmm-2.4)
+	pkg_check_modules		(XERCES		xerces-c)
     if (NOT LIBTAG)
 #	    find_package			(ASPELL		REQUIRED)
     	pkg_check_modules		(GTKMM		gtkmm-2.4)
@@ -48,40 +75,37 @@ if (UNIX)
         	pkg_check_modules		(PORTAUDIO	portaudio-2.0)
         endif(MEDIA_TOOLS)
     endif(NOT LIBTAG)
-
-	# -- Install --
-	set(CMAKE_INSTALL_PREFIX	/usr/local)
-endif (UNIX)
+endif (UNIX OR MINGW)
 
 # --- Global variables ---
-set	(LIBS				${TranscriberAG_SOURCE_DIR}/../libs)
-set	(SRC				${TranscriberAG_SOURCE_DIR}/src)
+set	(SRC				${PROJECT_SOURCE_DIR}/src)
 
 # --- Libraries ---
-set	(AGLIB				${LIBS}/aglib-2.0.1)
 #set	(GTKSPELL			${LIBS}/gtkspell-2.0.11-patch-BT)
 set	(LIVEMEDIA			${LIBS}/live555)
-set	(SOUNDTOUCH			${LIBS}/soundtouch-1.4.0)
 
-set (AGLIB_BUILD		${LIBS}/build/aglib-2.0.1)
-#set	(GTKSPELL_BUILD		${LIBS}/build/gtkspell-2.0.11-patch-BT)
-set	(LIVEMEDIA_BUILD	${LIBS}/build/live555)
-set	(SOUNDTOUCH_BUILD	${LIBS}/build/soundtouch-1.4.0)
+set (SOUNDTOUCH_LIBRARY_DIRS ${PROJECT_BINARY_DIR}/libs/soundtouch-1.4.0/source/SoundTouch)
+set (SOUNDTOUCH_INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/libs/soundtouch-1.4.0/include)
+
+set (AGLIB_LIBRARY_DIRS		${PROJECT_BINARY_DIR}/libs/aglib-2.0.1/src/ag)
+set (AGLIB_INCLUDE_DIRS		${PROJECT_SOURCE_DIR}/libs/aglib-2.0.1/src/ag)
+#set	(GTKSPELL_BUILD		${LIBS}/gtkspell-2.0.11-patch-BT)
+set (LIVEMEDIA_LIBRARY_DIRS		${PROJECT_BINARY_DIR}/libs/live555/liveMedia ${PROJECT_BINARY_DIR}/libs/live555/groupsock ${PROJECT_BINARY_DIR}/libs/live555/UsageEnvironment ${PROJECT_BINARY_DIR}/libs/live555/BasicUsageEnvironment)
+set (LIVEMEDIA_INCLUDE_DIRS		${PROJECT_SOURCE_DIR}/libs/live555/liveMedia/include ${PROJECT_SOURCE_DIR}/libs/live555/groupsock/include ${PROJECT_SOURCE_DIR}/libs/live555/UsageEnvironment/include ${PROJECT_SOURCE_DIR}/libs/live555/BasicUsageEnvironment/include)
 
 # --- Recent distributions need this ---
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__STDC_CONSTANT_MACROS")
 
-
-# --- GetText ---
-file(GLOB PO_FILES *.po)
-
+find_package(FFMPEG	REQUIRED)
 
 # -- Global Includes --
+
+include_directories(${PROJECT_BINARY_DIR}/include/ ${PROJECT_SOURCE_DIR}/include/)
 
 # --- Win32 Settings ---
 #
 # -- TODO here -> manage LIBTAG 
-if (WIN32)	
+if (WIN32 AND NOT MINGW)
 	set	(EXTLIBS	             C:/Dev)		
 	set	(WIN32_EXT_GTKMM	     ${EXTLIBS}/gtkmm)		
     set	(WIN32_EXT_LIBSNDFILE    ${EXTLIBS}/libsndfile)
@@ -135,7 +159,7 @@ if (WIN32)
 		${WIN32_EXT_FFMPEG}/lib
 		${WIN32_EXT_LIBSNDFILE}
 #		${WIN32_EXT_ASPELL}/lib
-		${LIBS}/build/portaudio/src
+		${LIBS}/portaudio/src
 		${WIN32_EXT_DL}/lib
 	)
 
@@ -162,7 +186,7 @@ if (WIN32)
 		gobject-2.0
 		gthread-2.0
 )
-endif (WIN32)
+endif (WIN32 AND NOT MINGW)
 
 
 # --- MacOSX Settings ---
@@ -230,31 +254,48 @@ if (APPLE)
 
 endif (APPLE)
 
+if (UNIX OR APPLE OR MINGW)
+    set(LOCALEDIR 	  "${CMAKE_INSTALL_PREFIX}/share/locale" CACHE STRING "change the name of the locale data directory to a non-default name")
+    set(AG_PLUGINDIR "${CMAKE_INSTALL_PREFIX}/lib/ag/"      CACHE STRING "change the name of the AG plugin directory to a non-default name")
+endif (UNIX OR APPLE OR MINGW)
 
 # --- Main Libraries Variables ---
 set(LIVEMEDIA_LIBRARIES
-	
-	MediaComponent
 	liveMedia
 	groupsock
 	BasicUsageEnvironment
 	UsageEnvironment
 )
 
-set(FFMPEG_LIBRARIES
-
-	avutil
-	avdevice
-	avcodec
-	avformat
-	swscale
-)
-
-
-# --- Main subdirectory - src ---
+add_subdirectory	(libs)
 add_subdirectory	(src)
-add_subdirectory	(po)
 
+# -- Gettext handling --
 
-# --- CPack Settings ---
+# translation options
+if(NOT MSVC)
+# Pot updates don't work under Windows so no reason to even try
+option(ENABLE_POT_UPDATE_TARGET "Enables the tools to update the pot files and manuals. This target has extra dependencies." ON)
+endif(NOT MSVC)
+option(ENABLENLS "Enable building of translations" ON)
+if (ENABLENLS)
+  set(ENABLE_NLS 1)
+else (ENABLENLS)
+  set(ENABLE_NLS 0)
+endif (ENABLENLS)
 
+# get languages
+file(READ po/LINGUAS LINGUAS)
+string(REPLACE "\n" "" LINGUAS ${LINGUAS})
+separate_arguments(LINGUAS)
+
+configure_file (
+  "${PROJECT_SOURCE_DIR}/include/config.h.in"
+  "${PROJECT_BINARY_DIR}/include/TranscriberAG-config.h"
+  )
+
+if(ENABLE_POT_UPDATE_TARGET)
+	find_package(TranslationTools REQUIRED)
+endif(ENABLE_POT_UPDATE_TARGET)
+
+add_subdirectory(po)

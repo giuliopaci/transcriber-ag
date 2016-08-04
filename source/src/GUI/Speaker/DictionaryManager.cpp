@@ -48,7 +48,7 @@ SpeakerDico_dialog* DictionaryManager::new_dialog(AnnotationEditor* editor, int 
 
 	//-- Creation
 	SpeakerDico_dialog* dialog = NULL ;
-	dicos.insert(dicos.end(), new SpeakerDico_dialog::SpeakerDico_dialog(editable, modal, win) ) ;
+	dicos.insert(dicos.end(), new SpeakerDico_dialog(editable, modal, win) ) ;
 	dialog = dicos[dicos.size()-1] ;
 
 	//> -- Post options
@@ -90,7 +90,7 @@ SpeakerDico_dialog* DictionaryManager::new_dialog(Glib::ustring url, int forcedE
 
 	//> -- Creation
 	SpeakerDico_dialog* dialog = NULL ;
-	dicos.insert(dicos.end(), new SpeakerDico_dialog::SpeakerDico_dialog(editable, modal, win) ) ;
+	dicos.insert(dicos.end(), new SpeakerDico_dialog(editable, modal, win) ) ;
 	dialog = dicos[dicos.size()-1] ;
 	global_dictionary = dialog ;
 

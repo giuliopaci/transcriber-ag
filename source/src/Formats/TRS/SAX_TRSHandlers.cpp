@@ -1117,7 +1117,7 @@ void SAX_TRSHandlers::TurnEnd(const XMLCh* const name)
  *
  * Let's keep them in a stack, they will be applied at the next SYNC start tag
  */
-void SAX_TRSHandlers::characters (const XMLCh* const chars, const unsigned int length)
+void SAX_TRSHandlers::characters (const XMLCh* const chars, const XMLSize_t length)
 {
 	string current_chars;
 	set_string(current_chars, chars);
@@ -1175,7 +1175,7 @@ void SAX_TRSHandlers::fatalError(const SAXParseException& e)
 }
 
 void SAX_TRSHandlers::writeChars(const XMLByte* const toWrite,
-			const unsigned int count,
+			const XMLSize_t count,
 			XMLFormatter* const formatter)
 {
 	targetString.assign((char*) toWrite, count);

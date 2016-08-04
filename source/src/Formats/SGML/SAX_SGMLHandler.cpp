@@ -276,7 +276,7 @@ void SAX_SGMLHandler::PathEnd(const XMLCh* const name)
 }
 
 // invoked when PCDATA encountered
-void SAX_SGMLHandler::characters(const XMLCh* const chars, const unsigned int length)
+void SAX_SGMLHandler::characters(const XMLCh* const chars, const XMLSize_t length)
 {
 	currentCDATAvalue.clear() ;
 	string s;
@@ -334,7 +334,7 @@ void SAX_SGMLHandler::fatalError(const SAXParseException& e)
 }
 
 void SAX_SGMLHandler::writeChars(const XMLByte* const toWrite,
-			const unsigned int count,
+			const XMLSize_t count,
 			XMLFormatter* const formatter)
 {
 	targetString.assign((char*) toWrite, count);

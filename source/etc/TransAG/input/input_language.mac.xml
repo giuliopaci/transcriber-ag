@@ -609,6 +609,9 @@
 		<Language_gunichar_range start="0xf900" end="0xf9ff"/>
 		<Language_gunichar_range start="0xf800" end="0x2fa1f"/>
 		<Language_gunichar_range start="0x20000" end="0x200ff"/>
-	</Language>	
+	</Language>
 	
+	<Language Name="Tibetan" Shortcut="bod" ModeLeft2Right="1" SpaceSeparated="0" IsActivated="2" MappingMode="Hardware">
+		<Language_gunichar_range start="0x0f00" end="0x0fff"/>
+	</Language>	
 </Input_Languages>

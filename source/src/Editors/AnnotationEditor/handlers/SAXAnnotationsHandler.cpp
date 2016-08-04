@@ -68,7 +68,7 @@ void SAXAnnotationsHandler::endElement(const XMLCh* const uri, const XMLCh* cons
 
 }
 
-void SAXAnnotationsHandler::characters(const XMLCh* const chars, const unsigned int length) {
+void SAXAnnotationsHandler::characters(const XMLCh* const chars, const XMLSize_t length) {
 
 	if (length == 0) return;
 	char* str = XMLString::transcode(chars);

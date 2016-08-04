@@ -4,14 +4,11 @@
 
 # --- Includes ---
 include_directories(
-	${LIVEMEDIA}/liveMedia/include
-	${LIVEMEDIA}/groupsock/include
-	${LIVEMEDIA}/UsageEnvironment/include
-	${LIVEMEDIA}/BasicUsageEnvironment/include
+	${LIVEMEDIA_INCLUDE_DIRS}
 #	${GTKSPELL}
-	${SOUNDTOUCH}/include
+	${SOUNDTOUCH_INCLUDE_DIRS}
 	${GTKMM_INCLUDE_DIRS}
-	${AGLIB}/src/ag
+	${AGLIB_INCLUDE_DIRS}
 	${SRC}/Editors
 	${SRC}/MediaComponent
 	${SRC}
@@ -28,13 +25,10 @@ include_directories(
 
 # --- Links ---
 link_directories(
-	${LIVEMEDIA_BUILD}/liveMedia
-	${LIVEMEDIA_BUILD}/groupsock
-	${LIVEMEDIA_BUILD}/UsageEnvironment
-	${LIVEMEDIA_BUILD}/BasicUsageEnvironment
-	${AGLIB_BUILD}/src/ag
+	${LIVEMEDIA_LIBRARY_DIRS}
+	${AGLIB_LIBRARY_DIRS}
 #	${GTKSPELL_BUILD}/gtkspell
-	${SOUNDTOUCH_BUILD}/source/SoundTouch
+	${SOUNDTOUCH_LIBRARY_DIRS}
 	${GTKMM_LIBRARY_DIRS}
 	${SRC}/Common
 	${SRC}/CommonWidgets
@@ -71,7 +65,7 @@ set(APP_NAME	"TranscriberAG")
 SET(APP_ICON_OBJ	"")
 SET(APP_BUILD_MODE	"")
 
-if (WIN32)
+if (WIN32 AND NOT MINGW)
     find_program(WINDRES_EXECUTABLE NAMES windres)
 
     SET(RC_FILE         transag_icon.rc)
@@ -81,12 +75,12 @@ if (WIN32)
     add_custom_command(
         OUTPUT  ${APP_ICON_OBJ}
         COMMAND ${WINDRES_EXECUTABLE}
-        ARGS -i ${RC_FILE} -o ${TranscriberAG_SOURCE_DIR}/build/src/GUI/${APP_ICON_OBJ}
+        ARGS -i ${RC_FILE} -o ${PROJECT_BINARY_DIR}/src/GUI/${APP_ICON_OBJ}
         WORKING_DIRECTORY ${SRC}/GUI
     )
 
 	set(WIN32_LINKS	wsock32 ws2_32 dl)
-endif(WIN32)
+endif(WIN32 AND NOT MINGW)
 
 if(APPLE)
 	set(APPLE_LINKS "-framework CoreServices")
@@ -130,15 +124,16 @@ target_link_libraries(
 	SoundTouch
 	${GTKMM_LIBRARIES}
 	${SNDFILE_LIBRARIES}
-	xerces-c
+	${XERCES_LIBRARIES}
 	gthread-2.0
 	ag
-	portaudio
-	sndfile
+	${PORTAUDIO_LIBRARIES}
 #	gtkspell
-	${GTKMM_LINK_LIBRARIES}
+	${GTKMM_LIBRARIES}
+	${FFMPEG_LIBRARIES}
 	${APPLE_LINKS}
 	${WIN32_LINKS}
+	${X11_LIBRARIES}
 )
 
 # ------------------------------------------------
@@ -166,4 +161,11 @@ target_link_libraries(
 	${GTKMM_LINK_LIBRARIES}
 	${APPLE_LINKS}
 	${WIN32_LINKS}
+)
+
+install(
+	TARGETS ${ERR_APP} ${APP_NAME}
+
+	RUNTIME	DESTINATION bin
+	LIBRARY	DESTINATION lib
 )

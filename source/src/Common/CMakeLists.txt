@@ -11,30 +11,28 @@ if(APPLE)
 endif(APPLE) 
 
 if (LIBTAG)
-    set(MM_INCLUDES  ${GLIBMM_INCLUDE_DIRS})
-   set(MM_LIBS  ${GLIBMM_LIBRARY_DIRS})
+    set(MM_INCLUDE_DIRS  ${GLIBMM_INCLUDE_DIRS})
+    set(MM_LIBRARY_DIRS  ${GLIBMM_LIBRARY_DIRS})
+    set(MM_LIBS  ${GLIBMM_LIBRARIES})
 else(LIBTAG)
-     set(MM_INCLUDES ${GTKMM_INCLUDE_DIRS})
-    set(MM_LIBS ${GTKMM_LIBRARY_DIRS})
+    set(MM_INCLUDE_DIRS ${GTKMM_INCLUDE_DIRS})
+    set(MM_LIBRARY_DIRS ${GTKMM_LIBRARY_DIRS})
+    set(MM_LIBS  ${GTKMM_LIBRARIES})
 endif(LIBTAG)
 
 # --- Includes ---
 include_directories(
-	${MM_INCLUDES}
+	${MM_INCLUDE_DIRS}
 	${GETTEXT_INCLUDE_DIR}
 	${SRC}
 	${SRC}/Common
 	${APPLE_INCLUDES}
 )
 
-
-#set (CMAKE_CXX_FLAGS -fPIC)
-
 # --- Links ---
 link_directories(
-	${MM_LIBS}
+	${MM_LIBRARY_DIRS}
 )
-
 
 # --- Library Definition ---
 ADD_LIBRARY(
@@ -94,19 +92,24 @@ if (NOT LIBTAG)
     	icons/IcoPackElement.cpp
     	icons/IcoPackImageButton.cpp
     )
-    set(COMMON_WIDGETS CommonWidgets) 
+    set(COMMON_WIDGETS CommonWidgets)
+    target_link_libraries(
+    	CommonWidgets
+	    ${WIN32_LINKS}
+	    ${GTKMM_LIBRARIES}
+	    ${X11_LIBRARIES}
+    )
 endif(NOT LIBTAG)
 
 # --- Link ---
-if (WIN32)
-	set(WIN32_LINKS	${GTKMM_LINK_LIBRARIES} wsock32 ws2_32 imm32 dl)
-endif (WIN32)
-
+if (WIN32 AND NOT MINGW)
+	set(WIN32_LINKS wsock32 ws2_32 imm32 dl)
+endif (WIN32 AND NOT MINGW)
 
 target_link_libraries(
 	Common
 	${COMMON_WIDGETS}
-
-	${WIN32_LINKS}
+    ${WIN32_LINKS}
+	${MM_LIBRARIES}
+	
 )
-

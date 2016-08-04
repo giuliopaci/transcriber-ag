@@ -250,7 +250,6 @@ int FileHelper::remove_from_filesystem(const std::string& path, Gtk::ProgressBar
 
 int FileHelper::create_directory(const std::string& path)
 {
-	int cpt ;
 	std::string path_tmp = path ;
 	std::string father = Glib::path_get_dirname(path_tmp) ;
 	// if father not writable
@@ -258,20 +257,18 @@ int FileHelper::create_directory(const std::string& path)
 	if (!is_writable(father) || !is_executable(father))
 		return -20 ;
 
-#ifdef WIN32
-	cpt = g_mkdir(path.c_str(), S_IRUSR|S_IWUSR|S_IXUSR) ;
+#ifdef _WIN32
+	return g_mkdir(path.c_str(), 0) ;
 #else
-	cpt = g_mkdir(path.c_str(), S_IRUSR|S_IWUSR|S_IRGRP|S_IXUSR) ;
+	return g_mkdir(path.c_str(), S_IRUSR|S_IWUSR|S_IRGRP|S_IXUSR) ;
 #endif
-
-	return cpt ;
 }
 
 int FileHelper::create_directory_with_parents(const std::string& path)
 {
 	int res ;
 	//if father not writable
-#ifdef WIN32
+#ifdef _WIN32
 	res = g_mkdir_with_parents(path.c_str(), S_IRUSR|S_IWUSR|S_IXUSR) ;
 #else
 	res = g_mkdir_with_parents(path.c_str(), S_IRUSR|S_IWUSR|S_IRGRP|S_IXUSR) ;
@@ -522,9 +519,11 @@ bool FileHelper::is_readable(const std::string& path)
 bool FileHelper::is_executable(const std::string& path)
 {
 	bool res = true ;
+	#if !defined(_WIN32)
 	int i = g_access(path.c_str(), X_OK) ;
 	if (i!=0)
 		res = false ;
+	#endif
 	return res ;
 }
 

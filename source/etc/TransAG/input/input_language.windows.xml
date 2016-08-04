@@ -613,4 +613,8 @@
 		<Language_gunichar_range start="0x2f800" end="0x2fa1f"/><!--compatibility supplements-->	
 		<Language_gunichar_range start="0x3190" end="0x319f"/><!--kanbun-->										
 	</Language>	
+	
+	<Language Name="Tibetan" Shortcut="bod" ModeLeft2Right="1" SpaceSeparated="0" IsActivated="2" MappingMode="Hardware">
+		<Language_gunichar_range start="0x0f00" end="0x0fff"/>
+	</Language>	
 </Input_Languages>

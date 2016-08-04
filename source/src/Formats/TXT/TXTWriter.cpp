@@ -90,7 +90,7 @@ int TXTWriter::write(ostream& out, DataModel* data)
 	out << "# Nombre de Pistes : " << nb_tracks << endl;
 
 	// DUREE
-	out << "# Durée :" << FormatTime::FormatTime(m_data->getSignalDuration(), true, true)  << endl ;
+	out << "# Durée :" << FormatTime(m_data->getSignalDuration(), true, true)  << endl ;
 
 	// NB DE SPEAKER
 	out << "# Nombre de locuteurs : " << m_data->getSpeakerDictionary().size()  << endl;
